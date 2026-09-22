@@ -36,6 +36,40 @@ describe("atlas store", () => {
     expect(after.focusNonce).toBe(before + 1);
   });
 
+  it("reveal turns the system on, unhides the part, clears isolation and focuses it", () => {
+    const s = useAtlasStore.getState();
+    s.hidePart("FJ1");
+    s.isolate("FJ2");
+    expect(useAtlasStore.getState().visibleSystems.arterial).toBe(false);
+    const before = useAtlasStore.getState().focusNonce;
+
+    s.reveal("FJ1", "arterial");
+
+    const st = useAtlasStore.getState();
+    expect(st.visibleSystems.arterial).toBe(true);
+    expect(st.hiddenParts.FJ1).toBeUndefined();
+    expect(st.isolatedPartId).toBeNull();
+    expect(st.selectedPartId).toBe("FJ1");
+    expect(st.focusPartId).toBe("FJ1");
+    expect(st.focusNonce).toBe(before + 1);
+    expect(isPartVisible(st, "FJ1", "arterial")).toBe(true);
+  });
+
+  it("reveal leaves other hidden parts hidden and builds a new hiddenParts object", () => {
+    const s = useAtlasStore.getState();
+    s.hidePart("FJ1");
+    s.hidePart("FJ7");
+    const beforeHidden = useAtlasStore.getState().hiddenParts;
+
+    s.reveal("FJ1", "venous");
+
+    const st = useAtlasStore.getState();
+    expect(st.hiddenParts.FJ7).toBe(true);
+    expect(st.hiddenParts.FJ1).toBeUndefined();
+    expect(st.hiddenParts).not.toBe(beforeHidden); // immutable update
+    expect(beforeHidden.FJ1).toBe(true); // previous object untouched
+  });
+
   it("reset restores defaults", () => {
     const s = useAtlasStore.getState();
     s.toggleSystem("venous");

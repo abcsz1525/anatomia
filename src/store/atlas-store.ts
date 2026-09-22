@@ -16,6 +16,8 @@ export interface AtlasState {
   hidePart(id: string): void;
   isolate(id: string | null): void;
   focus(id: string): void;
+  /** Search hit: make the part actually visible (system on, unhidden, isolation off), then focus it. */
+  reveal(id: string, system: SystemId): void;
   reset(): void;
 }
 
@@ -58,5 +60,18 @@ export const useAtlasStore = create<AtlasState>((set) => ({
     })),
   isolate: (id) => set({ isolatedPartId: id }),
   focus: (id) => set((s) => ({ focusPartId: id, selectedPartId: id, focusNonce: s.focusNonce + 1 })),
+  reveal: (id, system) =>
+    set((s) => {
+      const hiddenParts = { ...s.hiddenParts };
+      delete hiddenParts[id];
+      return {
+        visibleSystems: { ...s.visibleSystems, [system]: true },
+        hiddenParts,
+        isolatedPartId: null,
+        focusPartId: id,
+        selectedPartId: id,
+        focusNonce: s.focusNonce + 1,
+      };
+    }),
   reset: () => set((s) => ({ ...initial(), resetNonce: s.resetNonce + 1 })),
 }));

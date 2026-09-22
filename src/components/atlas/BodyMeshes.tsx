@@ -94,9 +94,7 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
     // check `delta` themselves, or orbiting the camera selects on release.
     if (e.delta > 2) return;
     e.stopPropagation();
-    const batchId =
-      (e as unknown as { batchId?: number }).batchId ??
-      e.intersections.find((i) => i.object === b.mesh)?.batchId;
+    const batchId = e.batchId ?? e.intersections.find((i) => i.object === b.mesh)?.batchId;
     if (batchId === undefined || batchId === null) return;
     select(b.parts[batchId].id);
   };

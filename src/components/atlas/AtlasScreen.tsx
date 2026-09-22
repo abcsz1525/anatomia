@@ -25,7 +25,7 @@ export function AtlasScreen() {
   const select = useAtlasStore((s) => s.select);
   const hidePart = useAtlasStore((s) => s.hidePart);
   const isolate = useAtlasStore((s) => s.isolate);
-  const focus = useAtlasStore((s) => s.focus);
+  const reveal = useAtlasStore((s) => s.reveal);
 
   const partById = useMemo(() => {
     if (state.status !== "ready") return new Map<string, AtlasPart>();
@@ -42,7 +42,15 @@ export function AtlasScreen() {
           {state.status === "error" && <LoadingOverlay loaded={0} total={0} error={state.message} onRetry={state.retry} />}
           {state.status === "ready" && (
             <>
-              <SearchBox manifest={state.data.manifest} onPick={(id) => focus(id)} />
+              {/* search covers all systems, most of which are hidden by default — reveal
+                  the hit's system (and unhide/un-isolate it) before flying the camera there */}
+              <SearchBox
+                manifest={state.data.manifest}
+                onPick={(id) => {
+                  const part = partById.get(id);
+                  if (part) reveal(id, part.system);
+                }}
+              />
               {/* the canvas must mount so the synchronous BatchedMesh build runs; the
                   overlay stays on top of it until BodyMeshes reports it is ready */}
               <AtlasCanvas data={state.data} onReady={onReady} />

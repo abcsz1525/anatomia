@@ -42,6 +42,19 @@ test("search focuses a structure and shows its card", async ({ page }) => {
   await expect(page.getByTestId("part-en")).toContainText(/femur/i);
 });
 
+test("search reveals a hidden system", async ({ page }) => {
+  await page.goto("/atlas");
+  await expect(page.locator("[data-atlas-ready='true']")).toBeVisible({ timeout: 90_000 });
+
+  // "Артерии" is off by default, so picking an aorta hit must turn the system on.
+  await expect(page.getByLabel("Артерии")).not.toBeChecked();
+  await page.getByLabel("Поиск структуры").fill("aorta");
+  await page.getByRole("listbox").getByRole("button").first().click();
+
+  await expect(page.getByTestId("part-en")).toContainText(/aorta/i);
+  await expect(page.getByLabel("Артерии")).toBeChecked();
+});
+
 test("about page lists BodyParts3D attribution", async ({ page }) => {
   await page.goto("/about");
   // "BodyParts3D" appears twice (the dataset link and the citation text),
