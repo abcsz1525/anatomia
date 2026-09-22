@@ -4,7 +4,7 @@ import { SYSTEMS, SYSTEM_BY_ID } from "./systems";
 import type { AtlasManifest } from "./types";
 
 const manifest = JSON.parse(
-  readFileSync("public/models/atlas.json", "utf8"),
+  readFileSync("public/models/v1/atlas.json", "utf8"),
 ) as AtlasManifest;
 
 describe("SYSTEMS", () => {

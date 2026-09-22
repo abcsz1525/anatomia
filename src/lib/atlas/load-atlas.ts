@@ -58,7 +58,7 @@ async function fetchWithRetry(url: string, opts: LoadOptions): Promise<Response>
 }
 
 export async function loadManifest(baseUrl: string, opts: LoadOptions = {}): Promise<AtlasManifest> {
-  const url = `${baseUrl}/models/atlas.json`;
+  const url = `${baseUrl}/models/v1/atlas.json`;
   const res = await fetchWithRetry(url, opts);
   try {
     return (await res.json()) as AtlasManifest;

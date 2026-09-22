@@ -14,5 +14,5 @@ pnpm typecheck
 
 ## Данные
 
-`public/models` — BodyParts3D 4.0 (CC BY 4.0), см. `public/models/ATTRIBUTION.md`.
+`public/models/v1` — BodyParts3D 4.0 (CC BY 4.0), см. `public/models/v1/ATTRIBUTION.md`.
 Спецификация: `docs/superpowers/specs/2026-09-22-anatomia-mvp-design.md`.

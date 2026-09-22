@@ -32,3 +32,5 @@ This is a reference assembly with whole-body surface and selected organs, includ
 
 Binary chunk packaging and simplification taken from the open-source project
 human-atlas (https://github.com/ismailatilan-44/human-atlas, MIT license, code not used here).
+
+Chunk URLs rewritten to /models/v1/ for cache versioning.

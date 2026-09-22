@@ -21,7 +21,7 @@ describe("loadManifest", () => {
   it("fetches and parses atlas.json from baseUrl", async () => {
     const fetchImpl = vi.fn(async () => okResponse(JSON.stringify(manifest), "application/json"));
     const m = await loadManifest("http://x", { fetchImpl });
-    expect(fetchImpl).toHaveBeenCalledWith("http://x/models/atlas.json", expect.anything());
+    expect(fetchImpl).toHaveBeenCalledWith("http://x/models/v1/atlas.json", expect.anything());
     expect(m.chunks.length).toBe(2);
   });
 
