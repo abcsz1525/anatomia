@@ -1,3 +1,5 @@
+"use client";
+
 export function LoadingOverlay({
   loaded,
   total,

@@ -54,13 +54,19 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
 
   useEffect(() => {
     onReady?.();
-    return () => {
+  }, [batches, onReady]);
+
+  // GPU ownership is keyed on `batches` alone: an `onReady` identity change must
+  // never dispose meshes that are still mounted.
+  useEffect(
+    () => () => {
       for (const b of batches) {
         b.mesh.dispose();
         (b.mesh.material as THREE.Material).dispose();
       }
-    };
-  }, [batches, onReady]);
+    },
+    [batches],
+  );
 
   const visibleSystems = useAtlasStore((s) => s.visibleSystems);
   const hiddenParts = useAtlasStore((s) => s.hiddenParts);
@@ -84,8 +90,13 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
   }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId]);
 
   const onClick = (b: SystemBatch) => (e: ThreeEvent<MouseEvent>) => {
+    // R3F applies its drag threshold only to onPointerMissed; hit handlers must
+    // check `delta` themselves, or orbiting the camera selects on release.
+    if (e.delta > 2) return;
     e.stopPropagation();
-    const batchId = (e as unknown as { batchId?: number }).batchId ?? e.intersections[0]?.batchId;
+    const batchId =
+      (e as unknown as { batchId?: number }).batchId ??
+      e.intersections.find((i) => i.object === b.mesh)?.batchId;
     if (batchId === undefined || batchId === null) return;
     select(b.parts[batchId].id);
   };

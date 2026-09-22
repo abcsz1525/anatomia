@@ -27,6 +27,8 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   // initial framing of the whole body
   // eslint-disable-next-line react-hooks/immutability -- the three.js camera is external mutable state
   useEffect(() => {
+    // cancel any in-flight fly-to, otherwise it overrides this framing
+    target.current = null;
     const all = unionBounds(manifest.parts.map((p) => p.bounds));
     const c = boundsCenter(all);
     const dist = cameraDistance(boundsRadius(all), camera.fov, 1.1);
