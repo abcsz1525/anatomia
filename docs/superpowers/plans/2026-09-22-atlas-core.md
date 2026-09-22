@@ -769,13 +769,14 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
     isolatedPartId: string | null;
     focusPartId: string | null;
     focusNonce: number;                 // растёт при каждом focus(), чтобы повторный фокус на ту же структуру срабатывал
+    resetNonce: number;                 // растёт при каждом reset(); CameraRig по нему возвращает камеру к полному телу
     setSystemVisible(id: SystemId, visible: boolean): void;
     toggleSystem(id: SystemId): void;
     select(id: string | null): void;
     hidePart(id: string): void;
     isolate(id: string | null): void;
     focus(id: string): void;            // также делает select(id)
-    reset(): void;                      // всё к значениям по умолчанию
+    reset(): void;                      // всё к значениям по умолчанию, resetNonce += 1
   }
   export const useAtlasStore: UseBoundStore<StoreApi<AtlasState>>;
   export function defaultVisibleSystems(): Record<SystemId, boolean>;
@@ -829,8 +830,10 @@ describe("atlas store", () => {
     s.toggleSystem("venous");
     s.hidePart("FJ9");
     s.isolate("FJ9");
+    const nonce = useAtlasStore.getState().resetNonce;
     s.reset();
     const st = useAtlasStore.getState();
+    expect(st.resetNonce).toBe(nonce + 1);
     expect(st.visibleSystems.venous).toBe(false);
     expect(st.hiddenParts).toEqual({});
     expect(st.isolatedPartId).toBeNull();
@@ -868,6 +871,7 @@ export interface AtlasState {
   isolatedPartId: string | null;
   focusPartId: string | null;
   focusNonce: number;
+  resetNonce: number;
   setSystemVisible(id: SystemId, visible: boolean): void;
   toggleSystem(id: SystemId): void;
   select(id: string | null): void;
@@ -900,8 +904,10 @@ const initial = () => ({
   focusNonce: 0,
 });
 
+
 export const useAtlasStore = create<AtlasState>((set) => ({
   ...initial(),
+  resetNonce: 0,
   setSystemVisible: (id, visible) =>
     set((s) => ({ visibleSystems: { ...s.visibleSystems, [id]: visible } })),
   toggleSystem: (id) =>
@@ -914,7 +920,7 @@ export const useAtlasStore = create<AtlasState>((set) => ({
     })),
   isolate: (id) => set({ isolatedPartId: id }),
   focus: (id) => set((s) => ({ focusPartId: id, selectedPartId: id, focusNonce: s.focusNonce + 1 })),
-  reset: () => set(initial()),
+  reset: () => set((s) => ({ ...initial(), resetNonce: s.resetNonce + 1 })),
 }));
 ```
 
@@ -1113,7 +1119,7 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   const mesh = new THREE.BatchedMesh(parts.length, vertexCount, indexCount, material);
   mesh.name = system;
   mesh.perObjectFrustumCulled = true;
-  for (const part of parts) {
+  parts.forEach((part, index) => {
     const g = partGeometry(buffers[part.chunk], part);
     const geometry = new THREE.BufferGeometry();
     geometry.setAttribute("position", new THREE.BufferAttribute(g.positions, 3));
@@ -1121,10 +1127,10 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     geometry.setIndex(new THREE.BufferAttribute(g.indices, 1));
     const geometryId = mesh.addGeometry(geometry);
     const instanceId = mesh.addInstance(geometryId);
-    if (instanceId !== parts.indexOf(part)) throw new Error("BatchedMesh instance order mismatch");
+    if (instanceId !== index) throw new Error("BatchedMesh instance order mismatch");
     mesh.setColorAt(instanceId, baseColor);
     geometry.dispose();
-  }
+  });
   mesh.computeBoundingSphere();
   return { system, mesh, parts, baseColor };
 }
@@ -1207,7 +1213,7 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   const target = useRef<{ position: THREE.Vector3; lookAt: THREE.Vector3; t: number } | null>(null);
   const focusPartId = useAtlasStore((s) => s.focusPartId);
   const focusNonce = useAtlasStore((s) => s.focusNonce);
-  const resetNonce = useAtlasStore((s) => s.focusNonce === 0 && s.selectedPartId === null && s.isolatedPartId === null);
+  const resetNonce = useAtlasStore((s) => s.resetNonce);
 
   const flyTo = (center: [number, number, number], radius: number) => {
     const lookAt = new THREE.Vector3(...center);
