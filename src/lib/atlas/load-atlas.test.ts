@@ -24,6 +24,11 @@ describe("loadManifest", () => {
     expect(fetchImpl).toHaveBeenCalledWith("http://x/models/atlas.json", expect.anything());
     expect(m.chunks.length).toBe(2);
   });
+
+  it("rejects with AtlasLoadError when the manifest body is not valid JSON", async () => {
+    const fetchImpl = vi.fn(async () => okResponse("not json", "application/json"));
+    await expect(loadManifest("http://x", { fetchImpl })).rejects.toBeInstanceOf(AtlasLoadError);
+  });
 });
 
 describe("loadChunk", () => {
@@ -56,6 +61,38 @@ describe("loadChunk", () => {
       loadChunk("http://x/models/a.bin", { fetchImpl, retries: 2, retryDelayMs: 0 }),
     ).rejects.toBeInstanceOf(AtlasLoadError);
     expect(fetchImpl).toHaveBeenCalledTimes(3); // 1 + 2 retries
+  });
+
+  it("rejects with AtlasLoadError when the gzip payload is corrupt", async () => {
+    const fetchImpl = vi.fn(async () => okResponse(new Uint8Array([1, 2, 3])));
+    await expect(loadChunk("http://x/models/a.bin.gz", { fetchImpl })).rejects.toBeInstanceOf(
+      AtlasLoadError,
+    );
+  });
+
+  it("aborts during backoff without waiting the full delay", async () => {
+    const fetchImpl = vi.fn(async () => new Response(null, { status: 503 }));
+    const controller = new AbortController();
+    const p = loadChunk("http://x/models/a.bin", {
+      fetchImpl,
+      retryDelayMs: 10_000,
+      signal: controller.signal,
+    });
+    controller.abort();
+    await expect(p).rejects.toThrow();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it("drains the body of a failed response before retrying", async () => {
+    const cancel = vi.fn().mockResolvedValue(undefined);
+    const failResponse = { ok: false, status: 500, body: { cancel } } as unknown as Response;
+    const fetchImpl = vi
+      .fn()
+      .mockResolvedValueOnce(failResponse)
+      .mockResolvedValueOnce(okResponse(new Uint8Array([5])));
+    const buf = await loadChunk("http://x/models/a.bin", { fetchImpl, retryDelayMs: 0 });
+    expect(cancel).toHaveBeenCalledTimes(1);
+    expect(new Uint8Array(buf)[0]).toBe(5);
   });
 });
 
