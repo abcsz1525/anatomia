@@ -1,7 +1,9 @@
 import type { AtlasManifest } from "./types";
 
+export type FetchLike = (url: string, init?: { signal?: AbortSignal }) => Promise<Response>;
+
 export interface LoadOptions {
-  fetchImpl?: typeof fetch;
+  fetchImpl?: FetchLike;
   retries?: number;
   signal?: AbortSignal;
   retryDelayMs?: number;
