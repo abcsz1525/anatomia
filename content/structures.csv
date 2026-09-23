@@ -29,27 +29,61 @@ FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus supe
 FJ1279,Right upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
+FJ1283,Left anterior ethmoidal nerve,Nervus ethmoidalis anterior,Передний решётчатый нерв,cranial-nerves,
 FJ1284,Check ligament of left lateral rectus,Lacertus musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,retinaculum musculi recti lateralis
+FJ1288,Left ciliary ganglion,Ganglion ciliare,Ресничный узел,cranial-nerves,ресничный ганглий
+FJ1290,Left frontal nerve,Nervus frontalis,Лобный нерв,cranial-nerves,
 FJ1292,Check ligament of left medial rectus,Lacertus musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,retinaculum musculi recti medialis
+FJ1293,Inferior branch of left oculomotor nerve,"Nervus oculomotorius, ramus inferior","Глазодвигательный нерв, нижняя ветвь",cranial-nerves,ramus inferior nervi oculomotorii;нижняя ветвь глазодвигательного нерва
 FJ1294,Left inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
 FJ1295,Left inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
+FJ1296,Left infratrochlear nerve,Nervus infratrochlearis,Подблоковый нерв,cranial-nerves,
+FJ1300,Left lacrimal nerve,Nervus lacrimalis,Слёзный нерв,cranial-nerves,
 FJ1304,Left lateral rectus,Musculus rectus lateralis,Латеральная прямая мышца глаза,muscles-head,musculus rectus lateralis bulbi
 FJ1306,Left levator palpebrae superioris,Musculus levator palpebrae superioris,"Мышца, поднимающая верхнее веко",muscles-head,
 FJ1308,Left medial rectus,Musculus rectus medialis,Медиальная прямая мышца глаза,muscles-head,musculus rectus medialis bulbi
+FJ1310,Left nasociliary nerve,Nervus nasociliaris,Носоресничный нерв,cranial-nerves,
+FJ1311,Communicating branch of left nasociliary nerve with left ciliary ganglion,Ramus communicans nervi nasociliaris cum ganglio ciliari,Соединительная ветвь носоресничного нерва с ресничным узлом,cranial-nerves,ramus communicans cum ganglio ciliari;radix sensoria ganglii ciliaris;чувствительный корешок ресничного узла
+FJ1312,Left ophthalmic nerve,Nervus ophthalmicus,Глазной нерв,cranial-nerves,первая ветвь тройничного нерва
+FJ1313,Left optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
+FJ1315,Left posterior ethmoidal nerve,Nervus ethmoidalis posterior,Задний решётчатый нерв,cranial-nerves,
+FJ1318,Left long ciliary nerve,Nervus ciliaris longus,Длинный ресничный нерв,cranial-nerves,nervi ciliares longi;длинные ресничные нервы
+FJ1319,Short ciliary nerve,Nervus ciliaris brevis,Короткий ресничный нерв,cranial-nerves,nervi ciliares breves;короткие ресничные нервы
+FJ1321,Superior branch of left oculomotor nerve,"Nervus oculomotorius, ramus superior","Глазодвигательный нерв, верхняя ветвь",cranial-nerves,ramus superior nervi oculomotorii;верхняя ветвь глазодвигательного нерва
 FJ1322,Left superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
 FJ1323,Left superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
+FJ1325,Left supra-orbital nerve,Nervus supraorbitalis,Надглазничный нерв,cranial-nerves,
+FJ1326,Left supratrochlear nerve,Nervus supratrochlearis,Надблоковый нерв,cranial-nerves,
 FJ1329,Trochlea of left superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
+FJ1330,Left trochlear nerve,Nervus trochlearis,Блоковый нерв,cranial-nerves,IV пара черепных нервов
+FJ1333,Right anterior ethmoidal nerve,Nervus ethmoidalis anterior,Передний решётчатый нерв,cranial-nerves,
 FJ1334,Check ligament of right lateral rectus,Lacertus musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,retinaculum musculi recti lateralis
 FJ1335,Check ligament of right medial rectus,Lacertus musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,retinaculum musculi recti medialis
+FJ1339,Right ciliary ganglion,Ganglion ciliare,Ресничный узел,cranial-nerves,ресничный ганглий
+FJ1341,Right frontal nerve,Nervus frontalis,Лобный нерв,cranial-nerves,
 FJ1343,Tendon of right levator palpebrae superioris,Tendo musculi levatoris palpebrae superioris,"Сухожилие мышцы, поднимающей верхнее веко",ligaments-head-neck,
+FJ1344,Inferior branch of right oculomotor nerve,"Nervus oculomotorius, ramus inferior","Глазодвигательный нерв, нижняя ветвь",cranial-nerves,ramus inferior nervi oculomotorii;нижняя ветвь глазодвигательного нерва
 FJ1345,Right inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
 FJ1346,Right inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
+FJ1347,Right infratrochlear nerve,Nervus infratrochlearis,Подблоковый нерв,cranial-nerves,
+FJ1351,Right lacrimal nerve,Nervus lacrimalis,Слёзный нерв,cranial-nerves,
 FJ1355,Right lateral rectus,Musculus rectus lateralis,Латеральная прямая мышца глаза,muscles-head,musculus rectus lateralis bulbi
 FJ1357,Right levator palpebrae superioris,Musculus levator palpebrae superioris,"Мышца, поднимающая верхнее веко",muscles-head,
 FJ1359,Right medial rectus,Musculus rectus medialis,Медиальная прямая мышца глаза,muscles-head,musculus rectus medialis bulbi
+FJ1361,Right nasociliary nerve,Nervus nasociliaris,Носоресничный нерв,cranial-nerves,
+FJ1362,Communicating branch of right nasociliary nerve with right ciliary ganglion,Ramus communicans nervi nasociliaris cum ganglio ciliari,Соединительная ветвь носоресничного нерва с ресничным узлом,cranial-nerves,ramus communicans cum ganglio ciliari;radix sensoria ganglii ciliaris;чувствительный корешок ресничного узла
+FJ1363,Right ophthalmic nerve,Nervus ophthalmicus,Глазной нерв,cranial-nerves,первая ветвь тройничного нерва
+FJ1364,Right optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
+FJ1366,Right posterior ethmoidal nerve,Nervus ethmoidalis posterior,Задний решётчатый нерв,cranial-nerves,
+FJ1369,Right long ciliary nerve,Nervus ciliaris longus,Длинный ресничный нерв,cranial-nerves,nervi ciliares longi;длинные ресничные нервы
+FJ1370,Short ciliary nerve,Nervus ciliaris brevis,Короткий ресничный нерв,cranial-nerves,nervi ciliares breves;короткие ресничные нервы
+FJ1372,Superior branch of right oculomotor nerve,"Nervus oculomotorius, ramus superior","Глазодвигательный нерв, верхняя ветвь",cranial-nerves,ramus superior nervi oculomotorii;верхняя ветвь глазодвигательного нерва
 FJ1373,Right superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
 FJ1374,Right superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
+FJ1376,Right supra-orbital nerve,Nervus supraorbitalis,Надглазничный нерв,cranial-nerves,
+FJ1377,Right supratrochlear nerve,Nervus supratrochlearis,Надблоковый нерв,cranial-nerves,
 FJ1380,Trochlea of right superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
+FJ1381,Right trochlear nerve,Nervus trochlearis,Блоковый нерв,cranial-nerves,IV пара черепных нервов
 FJ1383,First lumbrical of right foot,Musculus lumbricalis I pedis,I червеобразная мышца стопы,muscles-lower-limb,
 FJ1383M,First lumbrical of left foot,Musculus lumbricalis I pedis,I червеобразная мышца стопы,muscles-lower-limb,
 FJ1384,First plantar interosseous of right foot,Musculus interosseus plantaris I,I подошвенная межкостная мышца,muscles-lower-limb,
@@ -576,6 +610,118 @@ FJ1728,Superior vermian branch of medial branch of right superior cerebellar art
 FJ1728M,Superior vermian branch of medial branch of left superior cerebellar artery,Arteria vermis superior,Артерия верхнего червя,arteries-head-neck,ramus vermis superior rami medialis arteriae superioris cerebelli;верхняя червячная артерия
 FJ1729,Temporo-occipital branch of right middle cerebral artery,Arteria temporooccipitalis,Височно-затылочная артерия,arteries-head-neck,ramus temporooccipitalis arteriae cerebri mediae;височно-затылочная ветвь средней мозговой артерии
 FJ1729M,Temporo-occipital branch of left middle cerebral artery,Arteria temporooccipitalis,Височно-затылочная артерия,arteries-head-neck,ramus temporooccipitalis arteriae cerebri mediae;височно-затылочная ветвь средней мозговой артерии
+FJ1730,Third ventricle,Ventriculus tertius,Третий желудочек,cns,
+FJ1731,Fourth ventricle,Ventriculus quartus,Четвёртый желудочек,cns,
+FJ1732,Left angular gyrus,Gyrus angularis,Угловая извилина,cns,
+FJ1733,Right angular gyrus,Gyrus angularis,Угловая извилина,cns,
+FJ1734,Anterior commissure,Commissura anterior,Передняя спайка,cns,
+FJ1735,Brachium of left superior colliculus,Brachium colliculi superioris,Ручка верхнего холмика,cns,
+FJ1736,Brachium of right superior colliculus,Brachium colliculi superioris,Ручка верхнего холмика,cns,
+FJ1737,Central canal of spinal cord,Canalis centralis,Центральный канал,cns,canalis centralis medullae spinalis;центральный канал спинного мозга
+FJ1738,Cerebral aqueduct,Aqueductus mesencephali,Водопровод среднего мозга,cns,aqueductus cerebri;водопровод мозга;сильвиев водопровод
+FJ1739,Left cingulate gyrus,Gyrus cinguli,Поясная извилина,cns,
+FJ1740,Right cingulate gyrus,Gyrus cinguli,Поясная извилина,cns,
+FJ1741,Commissure of fornix of forebrain,Commissura fornicis,Спайка свода,cns,psalterium;лира давида
+FJ1742,Corpus callosum,Corpus callosum,Мозолистое тело,cns,
+FJ1743,Habenula,Habenula,Поводок,cns,habenulae;поводки
+FJ1744,Left inferior frontal gyrus,Gyrus frontalis inferior,Нижняя лобная извилина,cns,
+FJ1745,Right inferior frontal gyrus,Gyrus frontalis inferior,Нижняя лобная извилина,cns,
+FJ1746,Left inferior temporal gyrus,Gyrus temporalis inferior,Нижняя височная извилина,cns,
+FJ1747,Right inferior temporal gyrus,Gyrus temporalis inferior,Нижняя височная извилина,cns,
+FJ1748,Left insula,Insula,Островок,cns,lobus insularis;островковая доля
+FJ1749,Right insula,Insula,Островок,cns,lobus insularis;островковая доля
+FJ1750,Left internal capsule,Capsula interna,Внутренняя капсула,cns,
+FJ1751,Right internal capsule,Capsula interna,Внутренняя капсула,cns,
+FJ1752,Interventricular foramen,Foramen interventriculare,Межжелудочковое отверстие,cns,foramina interventricularia;монроево отверстие
+FJ1753,Left amygdala,Corpus amygdaloideum,Миндалевидное тело,cns,amygdala;миндалина
+FJ1754,Left caudate nucleus,Nucleus caudatus,Хвостатое ядро,cns,
+FJ1755,Choroid plexus of cerebral hemisphere,Plexus choroideus ventriculi lateralis,Сосудистое сплетение бокового желудочка,cns,сосудистое сплетение полушария большого мозга
+FJ1756,Left fornix of forebrain,Fornix,Свод,cns,свод мозга
+FJ1757,Left globus pallidus,Globus pallidus,Бледный шар,cns,
+FJ1758,White matter of left cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария
+FJ1759,Left hippocampus,Hippocampus,Гиппокамп,cns,аммонов рог;cornu ammonis
+FJ1760,Hypothalamus,Hypothalamus,Гипоталамус,cns,
+FJ1761,Brachium of left inferior colliculus,Brachium colliculi inferioris,Ручка нижнего холмика,cns,
+FJ1762,Left inferior colliculus,Colliculus inferior,Нижний холмик,cns,
+FJ1763,Interpeduncular fossa,Fossa interpeduncularis,Межножковая ямка,cns,
+FJ1764,Lamina terminalis,Lamina terminalis,Терминальная пластинка,cns,конечная пластинка
+FJ1766,Left lateral geniculate body,Corpus geniculatum laterale,Латеральное коленчатое тело,cns,
+FJ1767,Left lateral ventricle,Ventriculus lateralis,Боковой желудочек,cns,
+FJ1768,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,
+FJ1769,Medulla oblongata,Medulla oblongata,Продолговатый мозг,cns,
+FJ1770,Midbrain,Mesencephalon,Средний мозг,cns,
+FJ1771,Optic chiasm,Chiasma opticum,Зрительный перекрёст,cranial-nerves,хиазма
+FJ1772,Left optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
+FJ1773,Left optic tract,Tractus opticus,Зрительный тракт,cranial-nerves,
+FJ1774,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга
+FJ1775,Pons,Pons,Мост,cns,варолиев мост
+FJ1776,Left putamen,Putamen,Скорлупа,cns,
+FJ1777,Left stria medullaris of thalamus,Stria medullaris thalami,Мозговая полоска таламуса,cns,
+FJ1778,Left stria terminalis,Stria terminalis,Терминальная полоска,cns,конечная полоска
+FJ1779,Left superior colliculus,Colliculus superior,Верхний холмик,cns,
+FJ1780,Tuber cinereum,Tuber cinereum,Серый бугор,cns,
+FJ1781,Cerebellum,Cerebellum,Мозжечок,cns,
+FJ1782,Left thalamus,Thalamus,Таламус,cns,зрительный бугор
+FJ1783,Left fusiform gyrus,Gyrus fusiformis,Веретеновидная извилина,cns,gyrus occipitotemporalis lateralis;латеральная затылочно-височная извилина
+FJ1784,Right fusiform gyrus,Gyrus fusiformis,Веретеновидная извилина,cns,gyrus occipitotemporalis lateralis;латеральная затылочно-височная извилина
+FJ1785,Left parahippocampal gyrus,Gyrus parahippocampalis,Парагиппокампальная извилина,cns,извилина гиппокампа
+FJ1786,Right parahippocampal gyrus,Gyrus parahippocampalis,Парагиппокампальная извилина,cns,извилина гиппокампа
+FJ1787,Left middle frontal gyrus,Gyrus frontalis medius,Средняя лобная извилина,cns,
+FJ1788,Right middle frontal gyrus,Gyrus frontalis medius,Средняя лобная извилина,cns,
+FJ1789,Left middle temporal gyrus,Gyrus temporalis medius,Средняя височная извилина,cns,
+FJ1790,Right middle temporal gyrus,Gyrus temporalis medius,Средняя височная извилина,cns,
+FJ1791,Left occipital lobe,Lobus occipitalis,Затылочная доля,cns,
+FJ1792,Right occipital lobe,Lobus occipitalis,Затылочная доля,cns,
+FJ1793,Orbital gyrus,Gyrus orbitalis,Глазничная извилина,cns,gyri orbitales;глазничные извилины
+FJ1794,Orbital gyrus,Gyrus orbitalis,Глазничная извилина,cns,gyri orbitales;глазничные извилины
+FJ1797,Left postcentral gyrus,Gyrus postcentralis,Постцентральная извилина,cns,
+FJ1798,Right postcentral gyrus,Gyrus postcentralis,Постцентральная извилина,cns,
+FJ1799,Posterior commissure,Commissura posterior,Задняя спайка,cns,commissura epithalamica;эпиталамическая спайка
+FJ1800,Left precentral gyrus,Gyrus precentralis,Предцентральная извилина,cns,
+FJ1801,Right precentral gyrus,Gyrus precentralis,Предцентральная извилина,cns,
+FJ1802,Right caudate nucleus,Nucleus caudatus,Хвостатое ядро,cns,
+FJ1803,Choroid plexus of cerebral hemisphere,Plexus choroideus ventriculi lateralis,Сосудистое сплетение бокового желудочка,cns,сосудистое сплетение полушария большого мозга
+FJ1804,Right fornix of forebrain,Fornix,Свод,cns,свод мозга
+FJ1805,Right globus pallidus,Globus pallidus,Бледный шар,cns,
+FJ1806,White matter of right cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария
+FJ1807,Right hippocampus,Hippocampus,Гиппокамп,cns,аммонов рог;cornu ammonis
+FJ1808,Hypothalamus,Hypothalamus,Гипоталамус,cns,
+FJ1809,Brachium of right inferior colliculus,Brachium colliculi inferioris,Ручка нижнего холмика,cns,
+FJ1810,Right inferior colliculus,Colliculus inferior,Нижний холмик,cns,
+FJ1811,Interpeduncular fossa,Fossa interpeduncularis,Межножковая ямка,cns,
+FJ1812,Lamina terminalis,Lamina terminalis,Терминальная пластинка,cns,конечная пластинка
+FJ1813,Right lateral geniculate body,Corpus geniculatum laterale,Латеральное коленчатое тело,cns,
+FJ1814,Right lateral ventricle,Ventriculus lateralis,Боковой желудочек,cns,
+FJ1815,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,
+FJ1816,Right medial geniculate body,Corpus geniculatum mediale,Медиальное коленчатое тело,cns,
+FJ1816M,Left medial geniculate body,Corpus geniculatum mediale,Медиальное коленчатое тело,cns,
+FJ1817,Midbrain,Mesencephalon,Средний мозг,cns,
+FJ1818,Optic chiasm,Chiasma opticum,Зрительный перекрёст,cranial-nerves,хиазма
+FJ1819,Right optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
+FJ1820,Right optic tract,Tractus opticus,Зрительный тракт,cranial-nerves,
+FJ1821,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга
+FJ1822,Pons,Pons,Мост,cns,варолиев мост
+FJ1823,Right putamen,Putamen,Скорлупа,cns,
+FJ1824,Right stria medullaris of thalamus,Stria medullaris thalami,Мозговая полоска таламуса,cns,
+FJ1825,Stria terminalis,Stria terminalis,Терминальная полоска,cns,striae terminales;терминальные полоски;конечная полоска
+FJ1826,Right superior colliculus,Colliculus superior,Верхний холмик,cns,
+FJ1827,Right thalamus,Thalamus,Таламус,cns,зрительный бугор
+FJ1828,Tuber cinereum,Tuber cinereum,Серый бугор,cns,
+FJ1829,Right amygdala,Corpus amygdaloideum,Миндалевидное тело,cns,amygdala;миндалина
+FJ1830,Cerebellum,Cerebellum,Мозжечок,cns,
+FJ1831,Medulla oblongata,Medulla oblongata,Продолговатый мозг,cns,
+FJ1832,Septum of telencephalon,Septum pellucidum,Прозрачная перегородка,cns,septum telencephali;перегородка конечного мозга;septum of telencephalon (BodyParts3D label)
+FJ1833,Left superior frontal gyrus,Gyrus frontalis superior,Верхняя лобная извилина,cns,
+FJ1834,Right superior frontal gyrus,Gyrus frontalis superior,Верхняя лобная извилина,cns,
+FJ1835,Left superior parietal lobule,Lobulus parietalis superior,Верхняя теменная долька,cns,
+FJ1836,Right superior parietal lobule,Lobulus parietalis superior,Верхняя теменная долька,cns,
+FJ1837,Anterior part of left superior temporal gyrus,"Gyrus temporalis superior, pars anterior","Верхняя височная извилина, передняя часть",cns,передняя часть верхней височной извилины
+FJ1838,Anterior part of right superior temporal gyrus,"Gyrus temporalis superior, pars anterior","Верхняя височная извилина, передняя часть",cns,передняя часть верхней височной извилины
+FJ1839,Posterior part of left superior temporal gyrus,"Gyrus temporalis superior, pars posterior","Верхняя височная извилина, задняя часть",cns,задняя часть верхней височной извилины
+FJ1840,Posterior part of right superior temporal gyrus,"Gyrus temporalis superior, pars posterior","Верхняя височная извилина, задняя часть",cns,задняя часть верхней височной извилины
+FJ1841,Left supramarginal gyrus,Gyrus supramarginalis,Надкраевая извилина,cns,
+FJ1842,Right supramarginal gyrus,Gyrus supramarginalis,Надкраевая извилина,cns,
+FJ1843,Tentorium cerebelli,Tentorium cerebelli,Намёт мозжечка,cns,палатка мозжечка
 FJ1844,Basilar artery,Arteria basilaris,Базилярная артерия,arteries-head-neck,основная артерия
 FJ1846,Celiac artery,Truncus coeliacus,Чревный ствол,arteries-trunk,arteria coeliaca;чревная артерия
 FJ1853,Hepatic portal vein,Vena portae hepatis,Воротная вена печени,veins-trunk,vena portae;воротная вена
