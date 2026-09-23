@@ -20,6 +20,11 @@ describe("sideFor", () => {
     expect(sideFor("FJ1469", "Left flexor pollicis brevis")).toBe("right");
     expect(sideFor("FJ1469M", "Right flexor pollicis brevis")).toBe("left");
   });
+  it("pins the LAD's 'right anterior branch … of left coronary artery' meshes to the left", () => {
+    const en = "First right anterior branch of anterior interventricular branch of left coronary artery";
+    expect(detectSide(en)).toBe("right"); // first match wins without the override
+    for (const id of ["FJ2632", "FJ2641", "FJ2645", "FJ2646", "FJ2647"]) expect(sideFor(id, en)).toBe("left");
+  });
   it("falls back to detectSide for ids without an override", () => {
     expect(sideFor("FJ1254", "Left femur")).toBe("left");
   });
