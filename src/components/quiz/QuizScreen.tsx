@@ -9,116 +9,23 @@ import { loadProgress, saveProgress } from "@/lib/progress/storage";
 import { checkFind, checkName } from "@/lib/quiz/check";
 import { generateSession } from "@/lib/quiz/generate";
 import { courseTopics, distinctConcepts, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
-import type { AnswerRecord, Question, QuizMode, SessionResult } from "@/lib/quiz/types";
+import {
+  FIND_ATTEMPTS,
+  initialQuizState,
+  isAnswered,
+  reducer,
+} from "@/lib/quiz/session";
+import type { Question, QuizMode, SessionResult } from "@/lib/quiz/types";
 import { useAtlasStore } from "@/store/atlas-store";
 import { QuizResult } from "./QuizResult";
-import { QuizRunner, isAnswered, type Feedback } from "./QuizRunner";
+import { QuizRunner } from "./QuizRunner";
 import { QuizSetup, type TopicGroup } from "./QuizSetup";
-
-/** Число кликов по модели на один вопрос режима «найди». */
-const FIND_ATTEMPTS = 3;
-
-type QuizState =
-  | { phase: "setup" }
-  | {
-      phase: "running";
-      topicId: string;
-      mode: QuizMode;
-      questions: Question[];
-      index: number;
-      answers: AnswerRecord[];
-      /** Использовано попыток на текущем вопросе (клики/выборы). */
-      attempts: number;
-      feedback: Feedback;
-      startedAt: string;
-    }
-  | { phase: "result"; result: SessionResult };
-
-type Action =
-  | { type: "start"; topicId: string; mode: QuizMode; questions: Question[]; startedAt: string }
-  | { type: "answer"; correct: boolean }
-  | { type: "offtopic" }
-  | { type: "choose"; index: number; correct: boolean }
-  | { type: "next"; now: string }
-  | { type: "abort" };
-
-function answerFor(q: Question, correct: boolean, attempts: number): AnswerRecord {
-  return { partId: q.target.id, la: q.target.la, ru: q.target.ru, correct, attempts };
-}
-
-function reducer(state: QuizState, action: Action): QuizState {
-  switch (action.type) {
-    case "start":
-      return {
-        phase: "running",
-        topicId: action.topicId,
-        mode: action.mode,
-        questions: action.questions,
-        index: 0,
-        answers: [],
-        attempts: 0,
-        feedback: { kind: "idle" },
-        startedAt: action.startedAt,
-      };
-    case "abort":
-      return { phase: "setup" };
-    case "answer": {
-      if (state.phase !== "running" || isAnswered(state.feedback)) return state;
-      const q = state.questions[state.index];
-      const attempts = state.attempts + 1;
-      if (action.correct) {
-        return { ...state, attempts, answers: [...state.answers, answerFor(q, true, attempts)], feedback: { kind: "correct" } };
-      }
-      // третий промах закрывает вопрос: ответ показан, записывается как ошибка
-      if (attempts >= FIND_ATTEMPTS) {
-        return {
-          ...state,
-          attempts,
-          answers: [...state.answers, answerFor(q, false, FIND_ATTEMPTS)],
-          feedback: { kind: "revealed" },
-        };
-      }
-      return { ...state, attempts, feedback: { kind: "wrong", left: FIND_ATTEMPTS - attempts } };
-    }
-    // клик по скелету-контексту чужой темы: подсказка вместо попытки
-    case "offtopic":
-      if (state.phase !== "running" || isAnswered(state.feedback)) return state;
-      return { ...state, feedback: { kind: "offtopic" } };
-    case "choose": {
-      if (state.phase !== "running" || isAnswered(state.feedback)) return state;
-      const q = state.questions[state.index];
-      return {
-        ...state,
-        attempts: 1,
-        answers: [...state.answers, answerFor(q, action.correct, 1)],
-        feedback: { kind: "chosen", index: action.index, correct: action.correct },
-      };
-    }
-    case "next": {
-      if (state.phase !== "running" || !isAnswered(state.feedback)) return state;
-      const next = state.index + 1;
-      if (next < state.questions.length) {
-        return { ...state, index: next, attempts: 0, feedback: { kind: "idle" } };
-      }
-      return {
-        phase: "result",
-        result: {
-          topicId: state.topicId,
-          mode: state.mode,
-          startedAt: state.startedAt,
-          finishedAt: action.now,
-          answers: state.answers,
-        },
-      };
-    }
-  }
-}
 
 export function QuizScreen() {
   const atlas = useAtlasData();
   const [ready, setReady] = useState(false);
   const onReady = useCallback(() => setReady(true), []);
-  const [quiz, dispatch] = useReducer(reducer, { phase: "setup" } as QuizState);
+  const [quiz, dispatch] = useReducer(reducer, initialQuizState);
   const [topicId, setTopicId] = useState<string | null>(null);
   const [mode, setMode] = useState<QuizMode>("find");
 
@@ -183,19 +90,26 @@ export function QuizScreen() {
     [bundle, clearQuiz, setRestrict, reframe],
   );
 
+  // показ ответа уводит камеру вплотную к структуре: следующий вопрос режима
+  // «найди» нужно начинать с общего кадра темы, иначе искать не на чем
+  const cameFromReveal = useRef(false);
+
   // подсветка/камера для вновь показанного вопроса; между вопросами подсветки сбрасываются
   const questions = quiz.phase === "running" ? quiz.questions : null;
   const index = quiz.phase === "running" ? quiz.index : 0;
   useEffect(() => {
     const q = questions?.[index];
     if (!q) return;
+    const afterReveal = cameFromReveal.current;
+    cameFromReveal.current = false;
     if (q.kind === "name") {
       setHighlights({ [q.target.id]: "target" });
-      flyTo(q.target.id);
+      flyTo(q.target.id); // камера и так едет к цели, перекадрировать не нужно
     } else {
       setHighlights({});
+      if (afterReveal) reframe();
     }
-  }, [questions, index, setHighlights, flyTo]);
+  }, [questions, index, setHighlights, flyTo, reframe]);
 
   // ответами считаются только части самой темы: visibleIdsForTopic добавляет
   // скелет как декорацию для мышц/связок, и клик по нему не должен стоить попытки
@@ -253,7 +167,10 @@ export function QuizScreen() {
     [quiz],
   );
 
-  const handleNext = useCallback(() => dispatch({ type: "next", now: new Date().toISOString() }), []);
+  const handleNext = useCallback(() => {
+    cameFromReveal.current = quiz.phase === "running" && quiz.feedback.kind === "revealed";
+    dispatch({ type: "next", now: new Date().toISOString() });
+  }, [quiz]);
   const handleAbort = useCallback(() => {
     clearQuiz();
     dispatch({ type: "abort" });

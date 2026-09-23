@@ -1,27 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { sideLabel } from "@/lib/content/names";
+import { FIND_ATTEMPTS, isAnswered, type Feedback } from "@/lib/quiz/session";
 import type { Question } from "@/lib/quiz/types";
-
-/**
- * Состояние текущего вопроса в панели.
- * - "wrong" — только режим «найди»: попытки ещё есть, вопрос не закрыт.
- * - "offtopic" — клик по части-декорации (скелет-контекст): попытка не тратится.
- * - "revealed" — попытки кончились, ответ показан на модели.
- * - "chosen" — режим «назови»: вариант выбран, вопрос закрыт.
- */
-export type Feedback =
-  | { kind: "idle" }
-  | { kind: "correct" }
-  | { kind: "wrong"; left: number }
-  | { kind: "offtopic" }
-  | { kind: "revealed" }
-  | { kind: "chosen"; index: number; correct: boolean };
-
-/** Вопрос закрыт: ответ записан, дальше только «Дальше». */
-export function isAnswered(f: Feedback): boolean {
-  return f.kind === "correct" || f.kind === "revealed" || f.kind === "chosen";
-}
 
 function promptText(q: Question): string {
   if (q.kind === "name") return "Назовите подсвеченную структуру";
@@ -37,8 +18,10 @@ function feedbackText(f: Feedback, q: Question): string {
       return "Верно";
     case "wrong":
       return `Не то, осталось попыток: ${f.left}`;
+    // попытка не потрачена — повторяем счётчик, чтобы клик по кости-декорации
+    // не читался как потерянная попытка
     case "offtopic":
-      return "Это не относится к теме";
+      return `Это не относится к теме (осталось попыток: ${f.left})`;
     case "revealed":
       return "Правильный ответ показан";
     case "chosen":
@@ -100,7 +83,7 @@ export function QuizRunner({
 
       <div className="min-h-0 flex-1 overflow-y-auto">
         {question.kind === "find" ? (
-          <p className="text-xs text-neutral-500">Кликните по структуре на модели. Попыток: 3.</p>
+          <p className="text-xs text-neutral-500">Кликните по структуре на модели. Попыток: {FIND_ATTEMPTS}.</p>
         ) : (
           <div className="space-y-2">
             {question.options.map((option, i) => (
