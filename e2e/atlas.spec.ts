@@ -13,6 +13,7 @@ test("atlas loads the model and a click selects a structure", async ({ page }) =
   const card = page.getByTestId("part-card");
   await expect(card).toBeVisible();
   await expect(page.getByTestId("part-en")).not.toHaveText("");
+  await expect(page.getByTestId("part-ru")).not.toHaveText("");
 });
 
 test("clicking empty space deselects", async ({ page }) => {
@@ -40,6 +41,17 @@ test("search focuses a structure and shows its card", async ({ page }) => {
   await page.getByLabel("Поиск структуры").fill("femur");
   await page.getByRole("listbox").getByRole("button").first().click();
   await expect(page.getByTestId("part-en")).toContainText(/femur/i);
+});
+
+test("search in russian shows latin name", async ({ page }) => {
+  await page.goto("/atlas");
+  await expect(page.locator("[data-atlas-ready='true']")).toBeVisible({ timeout: 90_000 });
+  await page.getByLabel("Поиск структуры").fill("бедренная");
+  await page.getByRole("listbox").getByRole("button").first().click();
+  await expect(page.getByTestId("part-la")).toHaveText("Femur");
+  await expect(page.getByTestId("part-ru")).toContainText("Бедренная кость");
+  // femur entries carry a side, so the card must also show «слева»/«справа».
+  await expect(page.getByTestId("part-ru")).toContainText(/\((слева|справа)\)/);
 });
 
 test("search reveals a hidden system", async ({ page }) => {
