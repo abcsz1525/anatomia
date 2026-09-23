@@ -35,6 +35,12 @@ const GOOD_SCORE = 3;
  * в худшем случае, когда цель не видна ниоткуда и перебор идёт до конца.
  */
 const DIRECTIONS = 46;
+/**
+ * Потолок на весь перебор: сцена и «худший случай» зависят от машины и набора
+ * видимых слоёв, и полный перебор 46 направлений может подвесить кадр. По
+ * истечении бюджета берём лучшее найденное направление (или текущее).
+ */
+const SEARCH_BUDGET_MS = 150;
 
 /** Сколько лучей из SAMPLES упираются именно в цель, если смотреть из dir. */
 function visibleScore(
@@ -79,6 +85,7 @@ function visibleScore(
  * приводил камеру к затылку соседа; поэтому трассируем сцену из каждого кандидата
  * (ближайшие к текущему — первыми) и берём лучший по числу попаданий в цель.
  * Если цель не видна ниоткуда — остаёмся на текущем ракурсе.
+ * Перебор ограничен SEARCH_BUDGET_MS, чтобы не ронять кадр на тяжёлой сцене.
  */
 function visibleDirection(
   scene: THREE.Scene,
@@ -98,7 +105,11 @@ function visibleDirection(
   const dir = new THREE.Vector3();
   let best: THREE.Vector3 | null = null;
   let bestScore = 0;
+  const deadline = performance.now() + SEARCH_BUDGET_MS;
   for (const [x, y, z] of candidateDirections([current.x, current.y, current.z], DIRECTIONS)) {
+    // кандидаты идут от ближайшего к текущему ракурсу, так что обрыв по времени
+    // оставляет лучшее из уже проверенного — не худший результат, просто менее полный
+    if (performance.now() > deadline) break;
     dir.set(x, y, z);
     const score = visibleScore(meshes, raycaster, center, half, dist, dir, accept);
     // строгое сравнение оставляет первого из равных — то есть ближайший к текущему ракурс
