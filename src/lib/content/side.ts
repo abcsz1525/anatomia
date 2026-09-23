@@ -6,7 +6,7 @@ const SIDE_RE = /\b(left|right)\b/i;
 // «Arteria gastrica sinistra», «Cavitas ventriculi dextri». В таких строках
 // сторона — часть анатомического термина, а не признак меша, поэтому бейдж
 // «(слева)/(справа)» не нужен: имя уже её называет.
-export const LATIN_SIDE = /\b(dext(er|ra|rum|ri)|sinist(er|ra|rum|ri))\b/i;
+export const LATIN_SIDE = /\b(dext(er|ra|rum|ri|rae)|sinist(er|ra|rum|ri|rae))\b/i;
 
 export function detectSide(en: string): Side {
   const m = SIDE_RE.exec(en);
@@ -29,11 +29,6 @@ export function detectSide(en: string): Side {
 export const SIDE_OVERRIDES: Record<string, Side> = {
   FJ1469: "right",
   FJ1469M: "left",
-  FJ2632: "left",
-  FJ2641: "left",
-  FJ2645: "left",
-  FJ2646: "left",
-  FJ2647: "left",
   // "Right fibular vein" FJ2190 is actually the perforating veins of the
   // LEFT thigh (x > 0 in the model).
   FJ2190: "left",
@@ -52,6 +47,12 @@ export const SIDE_OVERRIDES: Record<string, Side> = {
   // anterior/posterior), а en BodyParts3D называет: сердце непарное, бейджа нет.
   FJ2417: "",
   FJ2431: "",
+  // Ветви венечных артерий, чья la не называет сторону, а en — только сторону
+  // родительской артерии («… of left coronary artery»): сердце непарное,
+  // бейдж «(слева)/(справа)» здесь не признак меша, поэтому его нет.
+  FJ2632: "", FJ2633: "", FJ2634: "", FJ2635: "", FJ2636: "", FJ2637: "", FJ2638: "",
+  FJ2639: "", FJ2640: "", FJ2641: "", FJ2642: "", FJ2643: "", FJ2644: "", FJ2645: "",
+  FJ2646: "", FJ2647: "", FJ2648: "", FJ2735: "", FJ2736: "",
 };
 
 export function sideFor(id: string, en: string, la: string): Side {

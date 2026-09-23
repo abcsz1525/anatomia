@@ -78,6 +78,12 @@ describe("validateContent", () => {
     const msgs = validateContent(invented, cuspManifest, topics).map((e) => e.message);
     expect(msgs.join("\n")).toMatch(/FJ5.*side word in la\/ru/);
     expect(msgs.some((m) => m.includes("FJ2435"))).toBe(false);
+    // …и в косвенном падеже тоже
+    const invented2 = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Ветвь левой грудины" } : r));
+    expect(validateContent(invented2, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ5.*side word in la\/ru/);
+    // родительный падеж латинской стороны требует стороны в ru
+    const genitive = rows.map((r) => (r.id === "FJ2435" ? { ...r, la: "Ramus circumflexus arteriae coronariae sinistrae", ru: "Огибающая ветвь венечной артерии" } : r));
+    expect(validateContent(genitive, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
   });
   it("rejects a container topic: rows belong to leaves only", () => {
     const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "osteology" } : r));

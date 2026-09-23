@@ -46,7 +46,7 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (SIDE_WORDS.test(r.la)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
     else if (LATIN_SIDE.test(r.la)) {
       if (!RU_SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side missing in ru` });
-    } else if (SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
+    } else if (RU_SIDE_WORDS.test(r.ru) || SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
     if (!knownIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: unknown topic ${r.topic}` });
     else if (!leafIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: non-leaf topic ${r.topic}` });
     else {

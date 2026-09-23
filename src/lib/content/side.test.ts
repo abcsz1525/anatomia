@@ -21,6 +21,8 @@ describe("LATIN_SIDE", () => {
       "Arteria gastrica sinistra", "Bronchus principalis dexter", "Cavitas ventriculi sinistri",
       "Paries atrii dextri", "Lobus sinister thymi", "Ramus lobi dextri arteriae hepaticae dextrae",
       "Valva aortae, valvula semilunaris dextra", "Ductus lobi caudati sinister",
+      // родительный падеж: сторона принадлежит родительской артерии
+      "Ramus circumflexus arteriae coronariae sinistrae", "Ramus interventricularis posterior arteriae coronariae dextrae",
     ]) expect(LATIN_SIDE.test(la), la).toBe(true);
   });
   it("does not match Latin names without a side word", () => {
@@ -40,6 +42,7 @@ describe("sideFor", () => {
     expect(sideFor("FJ2435", "Anterior cusp of aortic valve", "Valva aortae, valvula semilunaris dextra")).toBe("");
     expect(sideFor("FJ2437", "Septal papillary muscle of right ventricle", "Musculus papillaris septalis ventriculi dextri")).toBe("");
     expect(sideFor("FJ2701", "Posterior vein of left ventricle", "Vena ventriculi sinistri posterior")).toBe("");
+    expect(sideFor("FJ2649", "Circumflex branch of left coronary artery", "Ramus circumflexus arteriae coronariae sinistrae")).toBe("");
   });
   it("keeps the badge for paired structures whose la says nothing about the side", () => {
     expect(sideFor("FJ1254", "Left femur", "Femur")).toBe("left");
@@ -49,12 +52,13 @@ describe("sideFor", () => {
     expect(sideFor("FJ1469", "Left flexor pollicis brevis", "Musculus flexor pollicis brevis")).toBe("right");
     expect(sideFor("FJ1469M", "Right flexor pollicis brevis", "Musculus flexor pollicis brevis")).toBe("left");
   });
-  it("pins the LAD's 'right anterior branch … of left coronary artery' meshes to the left", () => {
+  it("gives coronary branches whose en only names the parent artery's side no badge", () => {
     const en = "First right anterior branch of anterior interventricular branch of left coronary artery";
     const la = "Ramus ventricularis anterior I rami interventricularis anterioris";
-    expect(detectSide(en)).toBe("right"); // first match wins without the override
+    expect(detectSide(en)).toBe("right"); // без оверрайда победил бы первый left/right
     expect(LATIN_SIDE.test(la)).toBe(false); // la не называет сторону — правило тут не работает
-    for (const id of ["FJ2632", "FJ2641", "FJ2645", "FJ2646", "FJ2647"]) expect(sideFor(id, en, la)).toBe("left");
+    for (const id of ["FJ2632", "FJ2641", "FJ2645", "FJ2646", "FJ2647"]) expect(sideFor(id, en, la)).toBe("");
+    expect(sideFor("FJ2633", "Diagonal branch of anterior interventricular branch of left coronary artery", "Ramus diagonalis rami interventricularis anterioris")).toBe("");
   });
   it("pins the mislabeled 'Right fibular vein' FJ2190 (left-thigh perforating veins) to the left", () => {
     expect(sideFor("FJ2190", "Right fibular vein", "Vena fibularis")).toBe("left");
