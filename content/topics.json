@@ -19,7 +19,6 @@
   { "id": "muscles-pelvis", "ru": "Мышцы таза и промежности", "la": "Musculi pelvis et perinei", "parent": "myology" },
   { "id": "muscles-upper-limb", "ru": "Мышцы верхней конечности", "la": "Musculi membri superioris", "parent": "myology" },
   { "id": "muscles-lower-limb", "ru": "Мышцы нижней конечности", "la": "Musculi membri inferioris", "parent": "myology" },
-  { "id": "other", "ru": "Вне программы первого курса" },
   { "id": "angiology", "ru": "Ангиология", "la": "Angiologia" },
   { "id": "heart", "ru": "Сердце", "la": "Cor", "parent": "angiology" },
   { "id": "arteries-head-neck", "ru": "Артерии головы и шеи", "la": "Arteriae capitis et colli", "parent": "angiology" },
@@ -37,5 +36,6 @@
   { "id": "glands", "ru": "Эндокринные и лимфоидные органы", "la": "Glandulae", "parent": "splanchnology" },
   { "id": "sense", "ru": "Органы чувств и кожа", "la": "Organa sensuum" },
   { "id": "eye", "ru": "Орган зрения", "la": "Organum visus", "parent": "sense" },
-  { "id": "ear-skin", "ru": "Ухо и кожа", "la": "Auris et cutis", "parent": "sense" }
+  { "id": "ear-skin", "ru": "Ухо и кожа", "la": "Auris et cutis", "parent": "sense" },
+  { "id": "other", "ru": "Прочее" }
 ]
