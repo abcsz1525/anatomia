@@ -1,18 +1,28 @@
 import { describe, expect, it } from "vitest";
 import type { AnswerRecord, SessionResult } from "@/lib/quiz/types";
-import type { ProgressV1 } from "./types";
 import { emptyProgress, recordSession } from "./record";
+import { dayKey } from "./stats";
+import type { ProgressV1 } from "./types";
 
 function answer(partId: string, la: string, correct: boolean, attempts = 1): AnswerRecord {
   return { partId, la, ru: la, correct, attempts };
+}
+
+/**
+ * ISO timestamp built from local Date components (not a literal "...Z"
+ * string), so fixtures and their expected dayKey()s stay in agreement
+ * under any runner timezone.
+ */
+function localIso(y: number, m: number, d: number, h = 10, min = 0): string {
+  return new Date(y, m - 1, d, h, min).toISOString();
 }
 
 function session(overrides: Partial<SessionResult> = {}): SessionResult {
   return {
     topicId: "lower-limb-bones",
     mode: "find",
-    startedAt: "2026-09-23T10:00:00.000Z",
-    finishedAt: "2026-09-23T10:05:00.000Z",
+    startedAt: localIso(2026, 9, 23, 10, 0),
+    finishedAt: localIso(2026, 9, 23, 10, 5),
     answers: [answer("FJ1", "Femur", true), answer("TIB1", "Tibia", false)],
     ...overrides,
   };
@@ -44,7 +54,7 @@ describe("recordSession", () => {
     const r1 = session();
     const after1 = recordSession(p, r1);
     const r2 = session({
-      finishedAt: "2026-09-24T10:05:00.000Z",
+      finishedAt: localIso(2026, 9, 24, 10, 5),
       answers: [answer("FJ1", "Femur", true), answer("TIB1", "Tibia", true)],
     });
     const after2 = recordSession(after1, r2);
@@ -68,27 +78,30 @@ describe("recordSession", () => {
     const r = session();
     const next = recordSession(p, r);
 
-    expect(next.activeDays).toEqual(["2026-09-23"]);
+    expect(next.activeDays).toEqual([dayKey(r.finishedAt)]);
   });
 
   it("does not add a duplicate day for a second session on the same day", () => {
     const p = emptyProgress();
     const after1 = recordSession(p, session());
-    const after2 = recordSession(
-      after1,
-      session({ finishedAt: "2026-09-23T18:00:00.000Z" }),
-    );
+    const later = session({ finishedAt: localIso(2026, 9, 23, 18, 0) });
+    const after2 = recordSession(after1, later);
 
-    expect(after2.activeDays).toEqual(["2026-09-23"]);
+    expect(after2.activeDays).toEqual([dayKey(later.finishedAt)]);
   });
 
   it("keeps activeDays sorted without duplicates across days", () => {
     const p = emptyProgress();
-    const after1 = recordSession(p, session({ finishedAt: "2026-09-24T10:00:00.000Z" }));
-    const after2 = recordSession(after1, session({ finishedAt: "2026-09-22T10:00:00.000Z" }));
-    const after3 = recordSession(after2, session({ finishedAt: "2026-09-23T10:00:00.000Z" }));
+    const r24 = session({ finishedAt: localIso(2026, 9, 24, 10, 0) });
+    const r22 = session({ finishedAt: localIso(2026, 9, 22, 10, 0) });
+    const r23 = session({ finishedAt: localIso(2026, 9, 23, 10, 0) });
+    const after1 = recordSession(p, r24);
+    const after2 = recordSession(after1, r22);
+    const after3 = recordSession(after2, r23);
 
-    expect(after3.activeDays).toEqual(["2026-09-22", "2026-09-23", "2026-09-24"]);
+    expect(after3.activeDays).toEqual(
+      [r22, r23, r24].map((r) => dayKey(r.finishedAt)).sort(),
+    );
   });
 
   it("is pure: does not mutate the input progress object", () => {
@@ -107,7 +120,7 @@ describe("recordSession", () => {
     const p = recordSession(emptyProgress(), session());
     const snapshot = JSON.parse(JSON.stringify(p));
     const r2 = session({
-      finishedAt: "2026-09-24T10:00:00.000Z",
+      finishedAt: localIso(2026, 9, 24, 10, 0),
       answers: [answer("FJ1", "Femur", true)],
     });
 
