@@ -34,6 +34,14 @@ describe("sideFor", () => {
   it("pins the mislabeled 'Right fibular vein' FJ2190 (left-thigh perforating veins) to the left", () => {
     expect(sideFor("FJ2190", "Right fibular vein")).toBe("left");
   });
+  it("swaps the mislabeled superior colliculus brachia", () => {
+    expect(sideFor("FJ1735", "Brachium of left superior colliculus")).toBe("right");
+    expect(sideFor("FJ1736", "Brachium of right superior colliculus")).toBe("left");
+  });
+  it("swaps the mislabeled middle pharyngeal constrictors", () => {
+    expect(sideFor("FJ2742", "Right middle pharyngeal constrictor")).toBe("left");
+    expect(sideFor("FJ2754", "Left middle pharyngeal constrictor")).toBe("right");
+  });
   it("falls back to detectSide for ids without an override", () => {
     expect(sideFor("FJ1254", "Left femur")).toBe("left");
   });

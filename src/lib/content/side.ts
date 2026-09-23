@@ -39,6 +39,17 @@ export const SIDE_OVERRIDES: Record<string, Side> = {
   // "Right fibular vein" FJ2190 is actually the perforating veins of the
   // LEFT thigh (x > 0 in the model).
   FJ2190: "left",
+  // The superior colliculus brachia are swapped upstream: FJ1735 ("Brachium
+  // of left superior colliculus") is actually the right one, and its mirror
+  // FJ1736 ("Brachium of right superior colliculus") is the left one
+  // (x > 0 is left in this model).
+  FJ1735: "right",
+  FJ1736: "left",
+  // The middle pharyngeal constrictors are swapped upstream: FJ2742 ("Right
+  // middle pharyngeal constrictor") is actually the left one, and FJ2754
+  // ("Left middle pharyngeal constrictor") is actually the right one.
+  FJ2742: "left",
+  FJ2754: "right",
 };
 
 export function sideFor(id: string, en: string): Side {

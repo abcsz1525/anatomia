@@ -621,7 +621,7 @@ FJ1737,Central canal of spinal cord,Canalis centralis,Центральный к�
 FJ1738,Cerebral aqueduct,Aqueductus mesencephali,Водопровод среднего мозга,cns,aqueductus cerebri;водопровод мозга;сильвиев водопровод
 FJ1739,Left cingulate gyrus,Gyrus cinguli,Поясная извилина,cns,
 FJ1740,Right cingulate gyrus,Gyrus cinguli,Поясная извилина,cns,
-FJ1741,Commissure of fornix of forebrain,Commissura fornicis,Спайка свода,cns,psalterium;лира давида
+FJ1741,Commissure of fornix of forebrain,Commissura fornicis,Спайка свода,cns,psalterium;лира Давида
 FJ1742,Corpus callosum,Corpus callosum,Мозолистое тело,cns,
 FJ1743,Habenula,Habenula,Поводок,cns,habenulae;поводки
 FJ1744,Left inferior frontal gyrus,Gyrus frontalis inferior,Нижняя лобная извилина,cns,
@@ -638,7 +638,7 @@ FJ1754,Left caudate nucleus,Nucleus caudatus,Хвостатое ядро,cns,
 FJ1755,Choroid plexus of cerebral hemisphere,Plexus choroideus ventriculi lateralis,Сосудистое сплетение бокового желудочка,cns,сосудистое сплетение полушария большого мозга
 FJ1756,Left fornix of forebrain,Fornix,Свод,cns,свод мозга
 FJ1757,Left globus pallidus,Globus pallidus,Бледный шар,cns,
-FJ1758,White matter of left cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария
+FJ1758,White matter of left cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария;centrum semiovale;полуовальный центр
 FJ1759,Left hippocampus,Hippocampus,Гиппокамп,cns,аммонов рог;cornu ammonis
 FJ1760,Hypothalamus,Hypothalamus,Гипоталамус,cns,
 FJ1761,Brachium of left inferior colliculus,Brachium colliculi inferioris,Ручка нижнего холмика,cns,
@@ -647,13 +647,13 @@ FJ1763,Interpeduncular fossa,Fossa interpeduncularis,Межножковая ям
 FJ1764,Lamina terminalis,Lamina terminalis,Терминальная пластинка,cns,конечная пластинка
 FJ1766,Left lateral geniculate body,Corpus geniculatum laterale,Латеральное коленчатое тело,cns,
 FJ1767,Left lateral ventricle,Ventriculus lateralis,Боковой желудочек,cns,
-FJ1768,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,
+FJ1768,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,corpus mamillare
 FJ1769,Medulla oblongata,Medulla oblongata,Продолговатый мозг,cns,
 FJ1770,Midbrain,Mesencephalon,Средний мозг,cns,
 FJ1771,Optic chiasm,Chiasma opticum,Зрительный перекрёст,cranial-nerves,хиазма
 FJ1772,Left optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
 FJ1773,Left optic tract,Tractus opticus,Зрительный тракт,cranial-nerves,
-FJ1774,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга
+FJ1774,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга;crus cerebri;основание ножки мозга
 FJ1775,Pons,Pons,Мост,cns,варолиев мост
 FJ1776,Left putamen,Putamen,Скорлупа,cns,
 FJ1777,Left stria medullaris of thalamus,Stria medullaris thalami,Мозговая полоска таламуса,cns,
@@ -683,7 +683,7 @@ FJ1802,Right caudate nucleus,Nucleus caudatus,Хвостатое ядро,cns,
 FJ1803,Choroid plexus of cerebral hemisphere,Plexus choroideus ventriculi lateralis,Сосудистое сплетение бокового желудочка,cns,сосудистое сплетение полушария большого мозга
 FJ1804,Right fornix of forebrain,Fornix,Свод,cns,свод мозга
 FJ1805,Right globus pallidus,Globus pallidus,Бледный шар,cns,
-FJ1806,White matter of right cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария
+FJ1806,White matter of right cerebral hemisphere,Substantia alba hemispherii cerebri,Белое вещество полушария большого мозга,cns,белое вещество полушария;centrum semiovale;полуовальный центр
 FJ1807,Right hippocampus,Hippocampus,Гиппокамп,cns,аммонов рог;cornu ammonis
 FJ1808,Hypothalamus,Hypothalamus,Гипоталамус,cns,
 FJ1809,Brachium of right inferior colliculus,Brachium colliculi inferioris,Ручка нижнего холмика,cns,
@@ -692,14 +692,14 @@ FJ1811,Interpeduncular fossa,Fossa interpeduncularis,Межножковая ям
 FJ1812,Lamina terminalis,Lamina terminalis,Терминальная пластинка,cns,конечная пластинка
 FJ1813,Right lateral geniculate body,Corpus geniculatum laterale,Латеральное коленчатое тело,cns,
 FJ1814,Right lateral ventricle,Ventriculus lateralis,Боковой желудочек,cns,
-FJ1815,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,
+FJ1815,Mammillary body,Corpus mammillare,Сосцевидное тело,cns,corpus mamillare
 FJ1816,Right medial geniculate body,Corpus geniculatum mediale,Медиальное коленчатое тело,cns,
 FJ1816M,Left medial geniculate body,Corpus geniculatum mediale,Медиальное коленчатое тело,cns,
 FJ1817,Midbrain,Mesencephalon,Средний мозг,cns,
 FJ1818,Optic chiasm,Chiasma opticum,Зрительный перекрёст,cranial-nerves,хиазма
 FJ1819,Right optic nerve,Nervus opticus,Зрительный нерв,cranial-nerves,II пара черепных нервов
 FJ1820,Right optic tract,Tractus opticus,Зрительный тракт,cranial-nerves,
-FJ1821,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга
+FJ1821,Peduncle of midbrain,Pedunculus cerebri,Ножка мозга,cns,ножка среднего мозга;crus cerebri;основание ножки мозга
 FJ1822,Pons,Pons,Мост,cns,варолиев мост
 FJ1823,Right putamen,Putamen,Скорлупа,cns,
 FJ1824,Right stria medullaris of thalamus,Stria medullaris thalami,Мозговая полоска таламуса,cns,
@@ -789,9 +789,9 @@ FJ2056,Deep dorsal vein of penis,Vena dorsalis profunda penis,Глубокая �
 FJ2057,Descending branch of right lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
 FJ2058,Distal perforating artery,Ramus perforans distalis arteriae metatarsalis plantaris,Дистальная прободающая ветвь подошвенной плюсневой артерии,arteries-limbs,arteria perforans distalis;дистальная прободающая артерия
 FJ2059,Dorsal venous arch of left foot,Vena marginalis lateralis,Латеральная краевая вена,veins-limbs,латеральная краевая вена стопы;arcus venosus dorsalis pedis;тыльная венозная дуга стопы;dorsal venous arch of foot (BodyParts3D label)
-FJ2060,Dorsal venous arch of left foot,Arcus venosus dorsalis pedis,Тыльная венозная дуга стопы,veins-limbs,
+FJ2060,Dorsal venous arch of left foot,Venae perforantes,Прободающие вены,veins-limbs,"arcus venosus dorsalis pedis (BodyParts3D label);вена, сопровождающая глубокую подошвенную артерию"
 FJ2061,Dorsal venous arch of right foot,Vena marginalis lateralis,Латеральная краевая вена,veins-limbs,латеральная краевая вена стопы;arcus venosus dorsalis pedis;тыльная венозная дуга стопы;dorsal venous arch of foot (BodyParts3D label)
-FJ2062,Dorsal venous arch of right foot,Arcus venosus dorsalis pedis,Тыльная венозная дуга стопы,veins-limbs,
+FJ2062,Dorsal venous arch of right foot,Venae perforantes,Прободающие вены,veins-limbs,"arcus venosus dorsalis pedis (BodyParts3D label);вена, сопровождающая глубокую подошвенную артерию"
 FJ2063,Descending branch of left lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
 FJ2064,Distal perforating artery,Ramus perforans distalis arteriae metatarsalis plantaris,Дистальная прободающая ветвь подошвенной плюсневой артерии,arteries-limbs,arteria perforans distalis;дистальная прободающая артерия
 FJ2065,Left anterior tibial artery,Arteria tibialis anterior,Передняя большеберцовая артерия,arteries-limbs,
@@ -880,17 +880,17 @@ FJ2179,Right superficial medial plantar artery,"Arteria plantaris medialis, ramu
 FJ2181,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;латеральная верхняя коленная вена
 FJ2182,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;медиальная верхняя коленная вена
 FJ2183,Left anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены
-FJ2184,Left fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
+FJ2184,Left fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены;пяточная венозная сеть;rami calcanei
 FJ2185,Set of dorsal digital veins,Venae digitales dorsales pedis,Тыльные пальцевые вены стопы,veins-limbs,
 FJ2186,Dorsal metacarpal vein,Vena metatarsalis dorsalis,Тыльная плюсневая вена,veins-limbs,venae metatarsales dorsales;тыльные плюсневые вены;dorsal metacarpal vein (BodyParts3D label)
 FJ2187,Left fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
 FJ2188,Left lateral circumflex femoral vein,Vena circumflexa femoris lateralis,"Латеральная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris laterales;латеральные вены, огибающие бедренную кость;латеральная огибающая вена бедра"
 FJ2189,Left medial circumflex femoral vein,Vena circumflexa femoris medialis,"Медиальная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris mediales;медиальные вены, огибающие бедренную кость;медиальная огибающая вена бедра"
-FJ2190,Right fibular vein,Venae perforantes,Прободающие вены,veins-limbs,venae perforantes venae profundae femoris;прободающие вены глубокой вены бедра;right fibular vein (BodyParts3D label)
+FJ2190,Right fibular vein,Venae perforantes,Прободающие вены,veins-limbs,venae perforantes venae profundae femoris;прободающие вены глубокой вены бедра;fibular vein (BodyParts3D label)
 FJ2191,Plantar metatarsal vein,Vena metatarsalis plantaris,Подошвенная плюсневая вена,veins-limbs,venae metatarsales plantares;подошвенные плюсневые вены
 FJ2192,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,venae perforantes venae profundae femoris;прободающие вены глубокой вены бедра
 FJ2193,Right anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены
-FJ2194,Right fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
+FJ2194,Right fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены;пяточная венозная сеть;rami calcanei
 FJ2195,Set of calcaneal branches of posterior tibial artery,Rami arteriae circumflexae femoris lateralis,"Ветви латеральной артерии, огибающей бедренную кость",arteries-limbs,calcaneal branches of posterior tibial artery (BodyParts3D label);rami calcanei
 FJ2196,Set of common plantar digital arteries,Arteriae digitales plantares communes,Общие подошвенные пальцевые артерии,arteries-limbs,
 FJ2197,Set of dorsal digital arteries,Arteria fibularis,Малоберцовая артерия,arteries-limbs,arteria peronea;set of dorsal digital arteries of foot (BodyParts3D label)
@@ -1015,7 +1015,7 @@ FJ2315,Left first common palmar digital artery,Arteria digitalis palmaris commun
 FJ2316,Left second common palmar digital artery,Arteria digitalis palmaris communis II,Общая ладонная пальцевая артерия II,arteries-limbs,вторая общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2317,Left third common palmar digital artery,Arteria digitalis palmaris communis III,Общая ладонная пальцевая артерия III,arteries-limbs,третья общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2318,Set of dorsal digital arteries,Arteriae digitales dorsales manus,Тыльные пальцевые артерии кисти,arteries-limbs,
-FJ2319,Proper palmar digital vein of left little finger,Venae digitales palmares,Ладонные пальцевые вены,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца
+FJ2319,Proper palmar digital vein of left little finger,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца;venae digitales palmares
 FJ2320,Left palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
 FJ2321,Proper palmar digital vein of left little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
 FJ2322,Common palmar digital vein,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,venae digitales palmares communes;общие ладонные пальцевые вены
@@ -1045,7 +1045,7 @@ FJ2345,Right third common palmar digital artery,Arteria digitalis palmaris commu
 FJ2346,Set of dorsal digital arteries,Arteriae digitales dorsales manus,Тыльные пальцевые артерии кисти,arteries-limbs,
 FJ2347,Set of dorsal metacarpal arteries,Arteriae metacarpales dorsales,Тыльные пястные артерии,arteries-limbs,
 FJ2348,Set of dorsal metacarpal arteries,Arteriae metacarpales dorsales,Тыльные пястные артерии,arteries-limbs,
-FJ2349,Proper palmar digital vein of right little finger,Venae digitales palmares,Ладонные пальцевые вены,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца
+FJ2349,Proper palmar digital vein of right little finger,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца;venae digitales palmares
 FJ2350,Right palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
 FJ2351,Proper palmar digital vein of right little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
 FJ2352,Common palmar digital vein,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,venae digitales palmares communes;общие ладонные пальцевые вены
