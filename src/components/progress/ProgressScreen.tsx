@@ -5,10 +5,10 @@ import type { AtlasManifest } from "@/lib/atlas/types";
 import { loadContent } from "@/lib/content/load-content";
 import type { ContentBundle } from "@/lib/content/types";
 import { daysLabel, sessionsLabel } from "@/lib/progress/format";
-import { emptyProgress } from "@/lib/progress/record";
+import { emptyProgress, normalizeActiveDays } from "@/lib/progress/record";
 import { parseProgress, stringifyProgress } from "@/lib/progress/serialize";
 import { dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
-import { hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
+import { clearBackup, hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
 import { courseTopics, topicParts } from "@/lib/quiz/pool";
 
@@ -134,8 +134,12 @@ export function ProgressScreen() {
       setMessage("Файл не распознан");
       return;
     }
-    saveProgress(parsed);
-    setProgress(parsed);
+    const normalized = normalizeActiveDays(parsed);
+    saveProgress(normalized);
+    setProgress(normalized);
+    // a fresh import replaces whatever prompted the corrupted-progress notice
+    clearBackup();
+    setBackupNotice(false);
     setMessage("Прогресс загружен из файла.");
   }, []);
 
@@ -143,6 +147,8 @@ export function ProgressScreen() {
     const empty = emptyProgress();
     saveProgress(empty);
     setProgress(empty);
+    clearBackup();
+    setBackupNotice(false);
     setConfirming(false);
     setMessage("Прогресс очищен.");
   }, []);

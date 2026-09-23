@@ -1,4 +1,4 @@
-import { emptyProgress } from "./record";
+import { emptyProgress, normalizeActiveDays } from "./record";
 import { parseProgress, stringifyProgress } from "./serialize";
 import type { ProgressV1 } from "./types";
 
@@ -27,7 +27,10 @@ export function loadProgress(): ProgressV1 {
       return emptyProgress();
     }
 
-    return parsed;
+    // normalise activeDays on every load: older saves may carry keys written
+    // by the pre-local-day dayKey() (UTC-based), which would otherwise stay
+    // wrong forever since nothing else rewrites activeDays for past sessions
+    return normalizeActiveDays(parsed);
   } catch {
     return emptyProgress();
   }
@@ -41,6 +44,17 @@ export function hasBackup(): boolean {
     return localStorage.getItem(BACKUP_KEY) !== null;
   } catch {
     return false;
+  }
+}
+
+/** Удаляет BACKUP_KEY (после успешного сброса/импорта прогресса). No-op без localStorage. */
+export function clearBackup(): void {
+  if (typeof localStorage === "undefined") return;
+
+  try {
+    localStorage.removeItem(BACKUP_KEY);
+  } catch {
+    // ignore — storage may be unavailable (private mode, etc.)
   }
 }
 

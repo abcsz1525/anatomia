@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { AnswerRecord, SessionResult } from "@/lib/quiz/types";
-import { emptyProgress, recordSession } from "./record";
+import { emptyProgress, normalizeActiveDays, recordSession } from "./record";
 import { dayKey } from "./stats";
 import type { ProgressV1 } from "./types";
 
@@ -125,6 +125,51 @@ describe("recordSession", () => {
     });
 
     recordSession(p, r2);
+
+    expect(p).toEqual(snapshot);
+  });
+});
+
+describe("normalizeActiveDays", () => {
+  it("recomputes activeDays from sessions using the current (local) dayKey", () => {
+    const finishedAt = localIso(2026, 9, 23, 10, 5);
+    const p: ProgressV1 = {
+      version: 1,
+      parts: {},
+      sessions: [{ topicId: "lower-limb-bones", mode: "find", finishedAt, correct: 1, total: 2 }],
+      // stale key, e.g. as written by the old UTC-based dayKey()
+      activeDays: ["1999-01-01"],
+    };
+
+    const next = normalizeActiveDays(p);
+
+    expect(next.activeDays).toEqual([dayKey(finishedAt)]);
+  });
+
+  it("dedupes and sorts activeDays across sessions on different days", () => {
+    const sessions = [
+      { topicId: "t", mode: "find" as const, finishedAt: localIso(2026, 9, 24, 10, 0), correct: 1, total: 1 },
+      { topicId: "t", mode: "find" as const, finishedAt: localIso(2026, 9, 22, 10, 0), correct: 1, total: 1 },
+      { topicId: "t", mode: "find" as const, finishedAt: localIso(2026, 9, 22, 18, 0), correct: 1, total: 1 },
+    ];
+    const p: ProgressV1 = { version: 1, parts: {}, sessions, activeDays: [] };
+
+    const next = normalizeActiveDays(p);
+
+    expect(next.activeDays).toEqual(
+      [dayKey(sessions[1].finishedAt), dayKey(sessions[0].finishedAt)],
+    );
+  });
+
+  it("returns empty activeDays when there are no sessions", () => {
+    expect(normalizeActiveDays(emptyProgress()).activeDays).toEqual([]);
+  });
+
+  it("is pure: does not mutate the input progress object", () => {
+    const p = recordSession(emptyProgress(), session());
+    const snapshot = JSON.parse(JSON.stringify(p));
+
+    normalizeActiveDays(p);
 
     expect(p).toEqual(snapshot);
   });

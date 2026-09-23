@@ -39,3 +39,14 @@ export function recordSession(p: ProgressV1, r: SessionResult): ProgressV1 {
 
   return { version: 1, parts, sessions, activeDays };
 }
+
+/**
+ * Чистая функция: пересчитывает activeDays из sessions текущим (местным)
+ * dayKey(). Нужна на загрузке/импорте прогресса — ключи, записанные старой
+ * UTC-версией dayKey() (или иначе разошедшиеся с sessions), иначе остаются
+ * неверными до следующей сессии, а не только для новых дней.
+ */
+export function normalizeActiveDays(p: ProgressV1): ProgressV1 {
+  const activeDays = Array.from(new Set(p.sessions.map((s) => dayKey(s.finishedAt)))).sort();
+  return { ...p, activeDays };
+}
