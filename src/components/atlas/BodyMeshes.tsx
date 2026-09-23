@@ -31,6 +31,9 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   const mesh = new THREE.BatchedMesh(parts.length, vertexCount, indexCount, material);
   mesh.name = system;
   mesh.perObjectFrustumCulled = true;
+  // batchId попадания -> id структуры: CameraRig трассирует сцену, подбирая
+  // ракурс, с которого цель действительно видна
+  mesh.userData.partIds = parts.map((p) => p.id);
   parts.forEach((part, index) => {
     const g = partGeometry(buffers[part.chunk], part);
     const geometry = new THREE.BufferGeometry();

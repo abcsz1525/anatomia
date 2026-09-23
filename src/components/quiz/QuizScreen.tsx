@@ -6,7 +6,7 @@ import { WebGLGate } from "@/components/atlas/WebGLGate";
 import { useAtlasData } from "@/hooks/use-atlas-data";
 import { recordSession } from "@/lib/progress/record";
 import { loadProgress, saveProgress } from "@/lib/progress/storage";
-import { checkFind, checkName } from "@/lib/quiz/check";
+import { acceptIds, checkFind, checkName } from "@/lib/quiz/check";
 import { generateSession } from "@/lib/quiz/generate";
 import { courseTopics, distinctConcepts, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
 import {
@@ -94,6 +94,18 @@ export function QuizScreen() {
   // «найди» нужно начинать с общего кадра темы, иначе искать не на чем
   const cameFromReveal = useRef(false);
 
+  // ответами считаются только части самой темы: visibleIdsForTopic добавляет
+  // скелет как декорацию для мышц/связок, и клик по нему не должен стоить попытки
+  const runningTopicId = quiz.phase === "running" ? quiz.topicId : null;
+  const runningParts = useMemo(() => {
+    if (!bundle || !runningTopicId) return null;
+    return topicParts(bundle.content, bundle.manifest, runningTopicId);
+  }, [bundle, runningTopicId]);
+  const topicPartIds = useMemo(
+    () => (runningParts ? new Set(runningParts.map((p) => p.id)) : null),
+    [runningParts],
+  );
+
   // подсветка/камера для вновь показанного вопроса; между вопросами подсветки сбрасываются
   const questions = quiz.phase === "running" ? quiz.questions : null;
   const index = quiz.phase === "running" ? quiz.index : 0;
@@ -104,20 +116,14 @@ export function QuizScreen() {
     cameFromReveal.current = false;
     if (q.kind === "name") {
       setHighlights({ [q.target.id]: "target" });
-      flyTo(q.target.id); // камера и так едет к цели, перекадрировать не нужно
+      // камера и так едет к цели, перекадрировать не нужно; список accept нужен
+      // подбору ракурса: у структуры бывает несколько мешей
+      flyTo(q.target.id, runningParts ? acceptIds(q.target, runningParts) : undefined);
     } else {
       setHighlights({});
       if (afterReveal) reframe();
     }
-  }, [questions, index, setHighlights, flyTo, reframe]);
-
-  // ответами считаются только части самой темы: visibleIdsForTopic добавляет
-  // скелет как декорацию для мышц/связок, и клик по нему не должен стоить попытки
-  const runningTopicId = quiz.phase === "running" ? quiz.topicId : null;
-  const topicPartIds = useMemo(() => {
-    if (!bundle || !runningTopicId) return null;
-    return new Set(topicParts(bundle.content, bundle.manifest, runningTopicId).map((p) => p.id));
-  }, [bundle, runningTopicId]);
+  }, [questions, index, runningParts, setHighlights, flyTo, reframe]);
 
   // результат записывается ровно один раз на сессию
   const result = quiz.phase === "result" ? quiz.result : null;
@@ -147,7 +153,7 @@ export function QuizScreen() {
         setHighlights({ [clickedId]: "correct" });
       } else if (quiz.attempts + 1 >= FIND_ATTEMPTS) {
         setHighlights({ [q.target.id]: "target" });
-        flyTo(q.target.id);
+        flyTo(q.target.id, q.accept);
       } else {
         // прошлые промахи остаются красными — читаем их прямо из стора
         setHighlights({ ...useAtlasStore.getState().highlights, [clickedId]: "wrong" });

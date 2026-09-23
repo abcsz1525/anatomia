@@ -178,6 +178,28 @@ describe("atlas store", () => {
     expect(st.selectedPartId).toBe("FJ1");
   });
 
+  it("flyTo records the ids accepted as the focused structure", () => {
+    const s = useAtlasStore.getState();
+    expect(useAtlasStore.getState().focusAccept).toBeNull();
+
+    s.flyTo("FJ1", ["FJ1", "FJ1b"]);
+    expect(useAtlasStore.getState().focusAccept).toEqual(["FJ1", "FJ1b"]);
+
+    // без списка цель — сама структура
+    s.flyTo("FJ2");
+    expect(useAtlasStore.getState().focusAccept).toEqual(["FJ2"]);
+
+    s.reveal("FJ3", "arterial");
+    expect(useAtlasStore.getState().focusAccept).toEqual(["FJ3"]);
+
+    s.focus("FJ4");
+    expect(useAtlasStore.getState().focusAccept).toEqual(["FJ4"]);
+
+    // иначе ракурс следующего вопроса искался бы по цели прошлой сессии
+    s.clearQuiz();
+    expect(useAtlasStore.getState().focusAccept).toBeNull();
+  });
+
   it("reset clears quiz state", () => {
     const s = useAtlasStore.getState();
     s.setRestrict(["FJ1"]);

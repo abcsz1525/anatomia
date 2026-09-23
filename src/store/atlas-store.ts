@@ -11,6 +11,12 @@ export interface AtlasState {
   isolatedPartId: string | null;
   focusPartId: string | null;
   focusNonce: number;
+  /**
+   * Id, попадание в которые считается «цель видна» при подборе ракурса:
+   * у одной структуры бывает несколько мешей (парные/разрезанные части).
+   * null — принимать только сам focusPartId.
+   */
+  focusAccept: string[] | null;
   resetNonce: number;
   /** Викторина: если не null — видимы только эти id, системы/скрытие/изоляция игнорируются. */
   restrictTo: Record<string, true> | null;
@@ -25,8 +31,11 @@ export interface AtlasState {
   focus(id: string): void;
   /** Search hit: make the part actually visible (system on, unhidden, isolation off), then focus it. */
   reveal(id: string, system: SystemId): void;
-  /** Камера к структуре БЕЗ выделения (викторина не должна подсказывать ответ карточкой). */
-  flyTo(id: string): void;
+  /**
+   * Камера к структуре БЕЗ выделения (викторина не должна подсказывать ответ карточкой).
+   * `accept` — все id той же структуры, любой из них считается видимой целью.
+   */
+  flyTo(id: string, accept?: string[]): void;
   /** Перекадрировать камеру на всё тело, не трогая ограничение/подсветки/выбор. */
   reframe(): void;
   setRestrict(ids: string[] | null): void;
@@ -57,6 +66,7 @@ const initial = () => ({
   isolatedPartId: null,
   focusPartId: null,
   focusNonce: 0,
+  focusAccept: null as string[] | null,
   resetNonce: 0,
   restrictTo: null as Record<string, true> | null,
   highlights: {} as Record<string, HighlightKind>,
@@ -85,7 +95,8 @@ export const useAtlasStore = create<AtlasState>((set) => ({
       selectedPartId: s.selectedPartId === id ? null : s.selectedPartId,
     })),
   isolate: (id) => set({ isolatedPartId: id }),
-  focus: (id) => set((s) => ({ focusPartId: id, selectedPartId: id, focusNonce: s.focusNonce + 1 })),
+  focus: (id) =>
+    set((s) => ({ focusPartId: id, selectedPartId: id, focusNonce: s.focusNonce + 1, focusAccept: [id] })),
   reveal: (id, system) =>
     set((s) => {
       const hiddenParts = { ...s.hiddenParts };
@@ -97,9 +108,11 @@ export const useAtlasStore = create<AtlasState>((set) => ({
         focusPartId: id,
         selectedPartId: id,
         focusNonce: s.focusNonce + 1,
+        focusAccept: [id],
       };
     }),
-  flyTo: (id) => set((s) => ({ focusPartId: id, focusNonce: s.focusNonce + 1 })),
+  flyTo: (id, accept) =>
+    set((s) => ({ focusPartId: id, focusNonce: s.focusNonce + 1, focusAccept: accept ?? [id] })),
   reframe: () => set((s) => ({ resetNonce: s.resetNonce + 1 })),
   setRestrict: (ids) =>
     set({ restrictTo: ids ? Object.fromEntries(ids.map((i) => [i, true as const])) : null }),
@@ -107,6 +120,7 @@ export const useAtlasStore = create<AtlasState>((set) => ({
   // focusPartId тоже гасим: эффект фокуса в CameraRig срабатывает при монтировании
   // (focusPartId && focusNonce > 0), и без этого атлас после теста улетал бы
   // к последней цели викторины вместо общего кадра
-  clearQuiz: () => set({ restrictTo: null, highlights: {}, selectedPartId: null, focusPartId: null }),
+  clearQuiz: () =>
+    set({ restrictTo: null, highlights: {}, selectedPartId: null, focusPartId: null, focusAccept: null }),
   reset: () => set((s) => ({ ...initial(), resetNonce: s.resetNonce + 1 })),
 }));
