@@ -62,8 +62,12 @@ export function useAtlasData(): AtlasDataState {
           }),
         ]);
         settled = true;
-        cache = { manifest, buffers, content };
-        setState({ status: "ready", data: cache });
+        const data: AtlasData = { manifest, buffers, content };
+        // деградировавший контент (имена не загрузились — см. catch выше) в кэш
+        // не кладём: иначе английские подписи залипли бы на все переходы до
+        // перезагрузки страницы. Кэшируем только полный бандл.
+        if (content.topics.length > 0) cache = data;
+        setState({ status: "ready", data });
       } catch (e) {
         settled = true;
         if (controller.signal.aborted) return;

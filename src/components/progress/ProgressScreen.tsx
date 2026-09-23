@@ -114,7 +114,9 @@ export function ProgressScreen() {
     document.body.appendChild(a);
     a.click();
     a.remove();
-    URL.revokeObjectURL(url);
+    // некоторые браузеры читают blob уже после обработки клика: отзываем URL
+    // с задержкой, иначе файл изредка сохраняется пустым
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
     setMessage(`Файл ${EXPORT_FILENAME} сохранён.`);
   }, [progress]);
 
@@ -223,7 +225,7 @@ export function ProgressScreen() {
         <input
           ref={fileRef}
           type="file"
-          accept="application/json"
+          accept=".json,application/json"
           aria-label="Файл прогресса"
           data-testid="progress-import-input"
           className="sr-only"
