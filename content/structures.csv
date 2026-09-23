@@ -578,7 +578,13 @@ FJ1729,Temporo-occipital branch of right middle cerebral artery,Arteria temporoo
 FJ1729M,Temporo-occipital branch of left middle cerebral artery,Arteria temporooccipitalis,Височно-затылочная артерия,arteries-head-neck,ramus temporooccipitalis arteriae cerebri mediae;височно-затылочная ветвь средней мозговой артерии
 FJ1844,Basilar artery,Arteria basilaris,Базилярная артерия,arteries-head-neck,основная артерия
 FJ1846,Celiac artery,Truncus coeliacus,Чревный ствол,arteries-trunk,arteria coeliaca;чревная артерия
+FJ1853,Hepatic portal vein,Vena portae hepatis,Воротная вена печени,veins-trunk,vena portae;воротная вена
+FJ1858,Hepatovenous segment IX,"Vena hepatica, segmentum IX","Печёночная вена, сегмент IX",veins-trunk,segmentum hepatovenosum IX;печёночно-венозный сегмент IX;hepatovenous segment IX
+FJ1867,Tributary of middle hepatic vein,"Vena hepatica intermedia, affluens","Средняя печёночная вена, приток",veins-trunk,приток средней печёночной вены
 FJ1874,Left lobe branch of left hepatic artery,Ramus lobi sinistri arteriae hepaticae sinistrae,Ветвь печёночной артерии к доле печени,arteries-trunk,ветвь левой печёночной артерии к левой доле печени
+FJ1893,Left portal vein,Ramus sinister venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"левая ветвь воротной вены;vena portae, ramus sinister"
+FJ1913,Right portal vein,Ramus dexter venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"правая ветвь воротной вены;vena portae, ramus dexter"
+FJ1914,Caudate lobe branch of right portal vein,Ramus lobi caudati venae portae hepatis,Ветвь воротной вены к хвостатой доле,veins-trunk,rami lobi caudati;ветвь правой ветви воротной вены к хвостатой доле
 FJ1916,Caudate lobe branch of right hepatic artery,Ramus lobi caudati arteriae hepaticae dextrae,Ветвь печёночной артерии к хвостатой доле,arteries-trunk,ramus lobi caudati;ветвь хвостатой доли;ветвь правой печёночной артерии к хвостатой доле
 FJ1924,Right lobe branch of right hepatic artery,Ramus lobi dextri arteriae hepaticae dextrae,Ветвь печёночной артерии к доле печени,arteries-trunk,ветвь правой печёночной артерии к правой доле печени
 FJ1928,Superior mesenteric artery,Arteria mesenterica superior,Верхняя брыжеечная артерия,arteries-trunk,вба
@@ -604,6 +610,16 @@ FJ1975,Posterior intercostal arteries,Arteriae intercostales posteriores,Зад�
 FJ1976,Left lateral thoracic artery,Arteria thoracica lateralis,Латеральная грудная артерия,arteries-limbs,
 FJ1977,Left subcostal artery,Arteria subcostalis,Подрёберная артерия,arteries-trunk,
 FJ1979,Left musculophrenic artery,Arteria musculophrenica,Мышечно-диафрагмальная артерия,arteries-trunk,
+FJ1981,Accessory hemiazygos vein,Vena hemiazygos accessoria,Добавочная полунепарная вена,veins-trunk,
+FJ1985,Set of anterior intercostal veins,Venae intercostales anteriores,Передние межрёберные вены,veins-trunk,
+FJ1986,Left superior intercostal vein,Vena intercostalis superior sinistra,Верхняя межрёберная вена,veins-trunk,левая верхняя межрёберная вена
+FJ1987,Left subcostal vein,Vena subcostalis,Подрёберная вена,veins-trunk,
+FJ1988,Left musculophrenic vein,Vena musculophrenica,Мышечно-диафрагмальная вена,veins-trunk,
+FJ1991,Right superior intercostal vein,Vena intercostalis superior dextra,Верхняя межрёберная вена,veins-trunk,правая верхняя межрёберная вена
+FJ1993,Right internal thoracic vein,Vena thoracica interna,Внутренняя грудная вена,veins-trunk,venae thoracicae internae;vena mammaria interna;внутренние грудные вены
+FJ1994,Set of anterior intercostal veins,Venae intercostales anteriores,Передние межрёберные вены,veins-trunk,
+FJ1995,Right subcostal vein,Vena subcostalis,Подрёберная вена,veins-trunk,
+FJ1996,Right musculophrenic vein,Vena musculophrenica,Мышечно-диафрагмальная вена,veins-trunk,
 FJ2011,Superior mesenteric artery,Arteria mesenterica superior,Верхняя брыжеечная артерия,arteries-trunk,вба
 FJ2013,Celiac artery,Truncus coeliacus,Чревный ствол,arteries-trunk,arteria coeliaca;чревная артерия
 FJ2025,Marginal colic artery,Arteria marginalis coli,Краевая ободочная артерия,arteries-trunk,arteria juxtacolica;краевая артерия ободочной кишки;артерия драммонда
@@ -620,6 +636,7 @@ FJ2052,Superior segmental branch of left renal artery,Arteria segmenti superiori
 FJ2053,Posterior segmental branch of left renal artery,Arteria segmenti posterioris renis,Артерия заднего сегмента почки,arteries-trunk,задняя сегментарная артерия почки
 FJ2054,Posterior segmental branch of left renal artery,Arteria segmenti posterioris renis,Артерия заднего сегмента почки,arteries-trunk,задняя сегментарная артерия почки
 FJ2055,Right dorsalis pedis artery,Arteria dorsalis pedis,Тыльная артерия стопы,arteries-limbs,
+FJ2056,Deep dorsal vein of penis,Vena dorsalis profunda penis,Глубокая тыльная вена полового члена,veins-trunk,глубокая дорсальная вена полового члена
 FJ2057,Descending branch of right lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
 FJ2058,Distal perforating artery,Ramus perforans distalis arteriae metatarsalis plantaris,Дистальная прободающая ветвь подошвенной плюсневой артерии,arteries-limbs,arteria perforans distalis;дистальная прободающая артерия
 FJ2063,Descending branch of left lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
@@ -680,6 +697,7 @@ FJ2203,Set of perforating arteries,Arteriae perforantes,Прободающие �
 FJ2204,Set of plantar digital arteries proper,Arteriae digitales plantares propriae,Собственные подошвенные пальцевые артерии,arteries-limbs,
 FJ2205,Set of plantar digital arteries proper,Arteriae digitales plantares propriae,Собственные подошвенные пальцевые артерии,arteries-limbs,
 FJ2206,Plantar metatarsal artery,Arteria metatarsalis plantaris,Подошвенная плюсневая артерия,arteries-limbs,arteriae metatarsales plantares;подошвенные плюсневые артерии
+FJ2208,Superficial dorsal vein of penis,Vena dorsalis superficialis penis,Поверхностная тыльная вена полового члена,veins-trunk,venae dorsales superficiales penis;поверхностная дорсальная вена полового члена
 FJ2209,Right inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
 FJ2210,Left inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
 FJ2211,Acromial branch of left thoraco-acromial artery,"Arteria thoracoacromialis, ramus acromialis","Грудоакромиальная артерия, акромиальная ветвь",arteries-limbs,ramus acromialis arteriae thoracoacromialis;акромиальная ветвь грудоакромиальной артерии
@@ -707,6 +725,7 @@ FJ2243,Left radial recurrent artery,Arteria recurrens radialis,Лучевая в
 FJ2245,Left recurrent interosseous artery,Arteria interossea recurrens,Возвратная межкостная артерия,arteries-limbs,межкостная возвратная артерия
 FJ2246,Left subscapular artery,Arteria subscapularis,Подлопаточная артерия,arteries-limbs,
 FJ2248,Left superficial palmar arterial arch,Arcus palmaris superficialis,Поверхностная ладонная дуга,arteries-limbs,
+FJ2250,Left suprascapular vein,Vena suprascapularis,Надлопаточная вена,veins-head-neck,
 FJ2251,Left suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
 FJ2252,Trunk of left thoraco-acromial artery,Arteria thoracoacromialis,Грудоакромиальная артерия,arteries-limbs,ствол грудоакромиальной артерии;arteria thoracoacromialis
 FJ2253,Left thoracodorsal artery,Arteria thoracodorsalis,Грудоспинная артерия,arteries-limbs,
@@ -742,6 +761,7 @@ FJ2295,Right radial recurrent artery,Arteria recurrens radialis,Лучевая �
 FJ2297,Right recurrent interosseous artery,Arteria interossea recurrens,Возвратная межкостная артерия,arteries-limbs,межкостная возвратная артерия
 FJ2298,Right subscapular artery,Arteria subscapularis,Подлопаточная артерия,arteries-limbs,
 FJ2300,Right superficial palmar arterial arch,Arcus palmaris superficialis,Поверхностная ладонная дуга,arteries-limbs,
+FJ2302,Right suprascapular vein,Vena suprascapularis,Надлопаточная вена,veins-head-neck,
 FJ2303,Right suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
 FJ2304,Trunk of right thoraco-acromial artery,Arteria thoracoacromialis,Грудоакромиальная артерия,arteries-limbs,ствол грудоакромиальной артерии;arteria thoracoacromialis
 FJ2305,Right thoracodorsal artery,Arteria thoracodorsalis,Грудоспинная артерия,arteries-limbs,
@@ -788,6 +808,12 @@ FJ2373,Right superior ulnar collateral artery,Arteria collateralis ulnaris super
 FJ2374,Left superior ulnar collateral artery,Arteria collateralis ulnaris superior,Верхняя локтевая коллатеральная артерия,arteries-limbs,
 FJ2386,Caudate lobe branch of right hepatic artery,Ramus lobi caudati arteriae hepaticae dextrae,Ветвь печёночной артерии к хвостатой доле,arteries-trunk,ramus lobi caudati;ветвь хвостатой доли;ветвь правой печёночной артерии к хвостатой доле
 FJ2394,Right lobe branch of right hepatic artery,Ramus lobi dextri arteriae hepaticae dextrae,Ветвь печёночной артерии к доле печени,arteries-trunk,ветвь правой печёночной артерии к правой доле печени
+FJ2404,Left portal vein,Ramus sinister venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"левая ветвь воротной вены;vena portae, ramus sinister"
+FJ2405,Right portal vein,Ramus dexter venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"правая ветвь воротной вены;vena portae, ramus dexter"
+FJ2409,Hepatovenous segment VII,"Vena hepatica, segmentum VII","Печёночная вена, сегмент VII",veins-trunk,segmentum hepatovenosum VII;печёночно-венозный сегмент VII;hepatovenous segment VII
+FJ2414,Middle hepatic vein,Vena hepatica intermedia,Средняя печёночная вена,veins-trunk,vena hepatica media
+FJ2415,Left hepatic vein,Vena hepatica sinistra,Печёночная вена,veins-trunk,левая печёночная вена
+FJ2416,Right hepatic vein,Vena hepatica dextra,Печёночная вена,veins-trunk,правая печёночная вена
 FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",heart,латеральная сосочковая мышца;musculus papillaris lateralis
 FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,heart,
 FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,heart,musculus papillaris lateralis;латеральная сосочковая мышца
@@ -835,6 +861,17 @@ FJ2651,Circumflex branch of left coronary artery,Ramus circumflexus arteriae cor
 FJ2652,Circumflex branch of left coronary artery,Ramus circumflexus arteriae coronariae sinistrae,Огибающая ветвь венечной артерии,arteries-trunk,огибающая ветвь левой венечной артерии;ов;lcx
 FJ2653,Circumflex branch of left coronary artery,Ramus circumflexus arteriae coronariae sinistrae,Огибающая ветвь венечной артерии,arteries-trunk,огибающая ветвь левой венечной артерии;ов;lcx
 FJ2654,Circumflex branch of left coronary artery,Ramus circumflexus arteriae coronariae sinistrae,Огибающая ветвь венечной артерии,arteries-trunk,огибающая ветвь левой венечной артерии;ов;lcx
+FJ2655,Coronary sinus,Sinus coronarius,Венечный синус,veins-trunk,коронарный синус
+FJ2656,Great cardiac vein,Vena cardiaca magna,Большая вена сердца,veins-trunk,vena cordis magna
+FJ2657,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2658,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2659,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2660,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2661,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2662,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2663,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2664,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
+FJ2665,Anterior interventricular vein,Vena interventricularis anterior,Передняя межжелудочковая вена,veins-trunk,начальный отдел большой вены сердца
 FJ2667,Marginal branch of right coronary artery,Ramus marginalis dexter arteriae coronariae dextrae,Краевая ветвь венечной артерии,arteries-trunk,правая краевая ветвь правой венечной артерии;ветвь острого края
 FJ2668,Marginal branch of right coronary artery,Ramus marginalis dexter arteriae coronariae dextrae,Краевая ветвь венечной артерии,arteries-trunk,правая краевая ветвь правой венечной артерии;ветвь острого края
 FJ2670,Right conus artery,Ramus coni arteriosi arteriae coronariae dextrae,Ветвь артериального конуса венечной артерии,arteries-trunk,артерия конуса;ветвь артериального конуса правой венечной артерии
@@ -845,6 +882,20 @@ FJ2674,Marginal branch of right coronary artery,Ramus marginalis dexter arteriae
 FJ2675,Marginal branch of right coronary artery,Ramus marginalis dexter arteriae coronariae dextrae,Краевая ветвь венечной артерии,arteries-trunk,правая краевая ветвь правой венечной артерии;ветвь острого края
 FJ2676,Right conus artery,Ramus coni arteriosi arteriae coronariae dextrae,Ветвь артериального конуса венечной артерии,arteries-trunk,артерия конуса;ветвь артериального конуса правой венечной артерии
 FJ2677,First anterior ventricular branch of right coronary artery,Ramus ventricularis anterior I arteriae coronariae dextrae,Передняя желудочковая ветвь I венечной артерии,arteries-trunk,первая передняя желудочковая ветвь правой венечной артерии
+FJ2678,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2679,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2680,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2681,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2682,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2683,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2684,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2685,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2686,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2687,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2688,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2689,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2690,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
+FJ2691,Middle cardiac vein,Vena cardiaca media,Средняя вена сердца,veins-trunk,vena cordis media;vena interventricularis posterior;задняя межжелудочковая вена
 FJ2692,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
 FJ2693,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
 FJ2694,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
@@ -854,6 +905,19 @@ FJ2697,Posterior interventricular branch of right coronary artery,Ramus interven
 FJ2698,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
 FJ2699,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
 FJ2700,Posterior interventricular branch of right coronary artery,Ramus interventricularis posterior arteriae coronariae dextrae,Задняя межжелудочковая ветвь венечной артерии,arteries-trunk,задняя межжелудочковая ветвь правой венечной артерии;змжв;задняя нисходящая артерия;pda
+FJ2701,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2702,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2703,Left marginal vein,Vena marginalis sinistra,Краевая вена,veins-trunk,левая краевая вена;вена тупого края сердца
+FJ2704,Left marginal vein,Vena marginalis sinistra,Краевая вена,veins-trunk,левая краевая вена;вена тупого края сердца
+FJ2705,Left marginal vein,Vena marginalis sinistra,Краевая вена,veins-trunk,левая краевая вена;вена тупого края сердца
+FJ2706,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2707,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2708,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2709,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2710,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2711,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2712,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
+FJ2713,Posterior vein of left ventricle,Vena ventriculi sinistri posterior,Задняя вена левого желудочка,veins-trunk,vena posterior ventriculi sinistri
 FJ2714,First posterior ventricular branch of right coronary artery,Ramus ventricularis posterior I arteriae coronariae dextrae,Задняя желудочковая ветвь I венечной артерии,arteries-trunk,первая задняя желудочковая ветвь правой венечной артерии;ramus posterolateralis dexter
 FJ2715,First posterior ventricular branch of right coronary artery,Ramus ventricularis posterior I arteriae coronariae dextrae,Задняя желудочковая ветвь I венечной артерии,arteries-trunk,первая задняя желудочковая ветвь правой венечной артерии;ramus posterolateralis dexter
 FJ2716,First posterior ventricular branch of right coronary artery,Ramus ventricularis posterior I arteriae coronariae dextrae,Задняя желудочковая ветвь I венечной артерии,arteries-trunk,первая задняя желудочковая ветвь правой венечной артерии;ramus posterolateralis dexter
@@ -864,6 +928,13 @@ FJ2720,First posterior ventricular branch of right coronary artery,Ramus ventric
 FJ2721,First posterior ventricular branch of right coronary artery,Ramus ventricularis posterior I arteriae coronariae dextrae,Задняя желудочковая ветвь I венечной артерии,arteries-trunk,первая задняя желудочковая ветвь правой венечной артерии;ramus posterolateralis dexter
 FJ2722,First posterior ventricular branch of right coronary artery,Ramus ventricularis posterior I arteriae coronariae dextrae,Задняя желудочковая ветвь I венечной артерии,arteries-trunk,первая задняя желудочковая ветвь правой венечной артерии;ramus posterolateralis dexter
 FJ2723,Trunk of right coronary artery,Arteria coronaria dextra,Венечная артерия,arteries-trunk,правая венечная артерия;правая коронарная артерия;пка;ствол правой венечной артерии
+FJ2724,Small cardiac vein,Vena cardiaca parva,Малая вена сердца,veins-trunk,vena cordis parva
+FJ2725,Anterior cardiac vein,Vena cardiaca anterior,Передняя вена сердца,veins-trunk,venae cardiacae anteriores;venae ventriculi dextri anteriores;передние вены сердца;передние вены правого желудочка
+FJ2727,Right marginal vein,Vena marginalis dextra,Краевая вена,veins-trunk,правая краевая вена;вена острого края сердца
+FJ2728,Right marginal vein,Vena marginalis dextra,Краевая вена,veins-trunk,правая краевая вена;вена острого края сердца
+FJ2729,Right marginal vein,Vena marginalis dextra,Краевая вена,veins-trunk,правая краевая вена;вена острого края сердца
+FJ2730,Anterior cardiac vein,Vena cardiaca anterior,Передняя вена сердца,veins-trunk,venae cardiacae anteriores;venae ventriculi dextri anteriores;передние вены сердца;передние вены правого желудочка
+FJ2731,Small cardiac vein,Vena cardiaca parva,Малая вена сердца,veins-trunk,vena cordis parva
 FJ2732,Septal branch of anterior interventricular artery,Ramus interventricularis septalis rami interventricularis anterioris,Перегородочная межжелудочковая ветвь передней межжелудочковой ветви,arteries-trunk,rami interventriculares septales;перегородочная ветвь
 FJ2733,Septal branch of anterior interventricular artery,Ramus interventricularis septalis rami interventricularis anterioris,Перегородочная межжелудочковая ветвь передней межжелудочковой ветви,arteries-trunk,rami interventriculares septales;перегородочная ветвь
 FJ2734,Septal branch of anterior interventricular artery,Ramus interventricularis septalis rami interventricularis anterioris,Перегородочная межжелудочковая ветвь передней межжелудочковой ветви,arteries-trunk,rami interventriculares septales;перегородочная ветвь
@@ -925,6 +996,13 @@ FJ2806,Right vocalis,Musculus vocalis,Голосовая мышца,muscles-neck
 FJ2807,Thyro-epiglottic ligament,Ligamentum thyroepiglotticum,Щитонадгортанная связка,ligaments-head-neck,
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
 FJ2809,Transverse arytenoid,Musculus arytenoideus transversus,Поперечная черпаловидная мышца,muscles-neck,
+FJ2818,Hepatovenous segment II,"Vena hepatica, segmentum II","Печёночная вена, сегмент II",veins-trunk,segmentum hepatovenosum II;печёночно-венозный сегмент II;hepatovenous segment II
+FJ2819,Hepatovenous segment III,"Vena hepatica, segmentum III","Печёночная вена, сегмент III",veins-trunk,segmentum hepatovenosum III;печёночно-венозный сегмент III;hepatovenous segment III
+FJ2820,Hepatovenous segment IV,"Vena hepatica, segmentum IV","Печёночная вена, сегмент IV",veins-trunk,segmentum hepatovenosum IV;печёночно-венозный сегмент IV;hepatovenous segment IV
+FJ2821,Hepatovenous segment V,"Vena hepatica, segmentum V","Печёночная вена, сегмент V",veins-trunk,segmentum hepatovenosum V;печёночно-венозный сегмент V;hepatovenous segment V
+FJ2822,Hepatovenous segment VI,"Vena hepatica, segmentum VI","Печёночная вена, сегмент VI",veins-trunk,segmentum hepatovenosum VI;печёночно-венозный сегмент VI;hepatovenous segment VI
+FJ2823,Hepatovenous segment VIII,"Vena hepatica, segmentum VIII","Печёночная вена, сегмент VIII",veins-trunk,segmentum hepatovenosum VIII;печёночно-венозный сегмент VIII;hepatovenous segment VIII
+FJ2824,Hepatovenous segment VIII,"Vena hepatica, segmentum VIII","Печёночная вена, сегмент VIII",veins-trunk,segmentum hepatovenosum VIII;печёночно-венозный сегмент VIII;hepatovenous segment VIII
 FJ2881,Left posterior basal segmental artery,Arteria basalis posterior,Задняя базальная сегментарная артерия,arteries-trunk,arteria segmentalis basalis posterior
 FJ2882,Left lateral basal segmental artery,Arteria basalis lateralis,Латеральная базальная сегментарная артерия,arteries-trunk,arteria segmentalis basalis lateralis
 FJ2883,Left anterior basal segmental artery,Arteria basalis anterior,Передняя базальная сегментарная артерия,arteries-trunk,arteria segmentalis basalis anterior
@@ -969,6 +1047,47 @@ FJ2921,Left lateral basal segmental artery,Arteria basalis lateralis,Латер�
 FJ2922,Left lateral basal segmental artery,Arteria basalis lateralis,Латеральная базальная сегментарная артерия,arteries-trunk,arteria segmentalis basalis lateralis
 FJ2923,Left lateral basal segmental artery,Arteria basalis lateralis,Латеральная базальная сегментарная артерия,arteries-trunk,arteria segmentalis basalis lateralis
 FJ2924,Left pulmonary artery,Arteria pulmonalis sinistra,Лёгочная артерия,arteries-trunk,левая лёгочная артерия
+FJ2925,Left superior pulmonary vein,Vena pulmonalis superior sinistra,Верхняя лёгочная вена,veins-trunk,vena pulmonalis sinistra superior;левая верхняя лёгочная вена
+FJ2926,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2927,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2928,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2929,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2930,Left anterior segmental vein,Vena anterior lobi superioris,Передняя вена верхней доли,veins-trunk,передняя сегментарная вена
+FJ2931,Left anterior segmental vein,Vena anterior lobi superioris,Передняя вена верхней доли,veins-trunk,передняя сегментарная вена
+FJ2932,Left anterior segmental vein,Vena anterior lobi superioris,Передняя вена верхней доли,veins-trunk,передняя сегментарная вена
+FJ2933,Left superior pulmonary vein,Vena pulmonalis superior sinistra,Верхняя лёгочная вена,veins-trunk,vena pulmonalis sinistra superior;левая верхняя лёгочная вена
+FJ2934,Inferior lingular vein,"Vena lingularis, pars inferior","Язычковая вена, нижняя часть",veins-trunk,vena lingularis inferior;нижняя язычковая вена
+FJ2935,Inferior lingular vein,"Vena lingularis, pars inferior","Язычковая вена, нижняя часть",veins-trunk,vena lingularis inferior;нижняя язычковая вена
+FJ2936,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2937,Superior lingular vein,"Vena lingularis, pars superior","Язычковая вена, верхняя часть",veins-trunk,vena lingularis superior;верхняя язычковая вена
+FJ2938,Superior lingular vein,"Vena lingularis, pars superior","Язычковая вена, верхняя часть",veins-trunk,vena lingularis superior;верхняя язычковая вена
+FJ2939,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2940,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2941,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2942,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2943,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
+FJ2944,Left inferior pulmonary vein,Vena pulmonalis inferior sinistra,Нижняя лёгочная вена,veins-trunk,vena pulmonalis sinistra inferior;левая нижняя лёгочная вена
+FJ2945,Left posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ2946,Left posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ2947,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2948,Left posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ2949,Left posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ2950,Left inferior pulmonary vein,Vena pulmonalis inferior sinistra,Нижняя лёгочная вена,veins-trunk,vena pulmonalis sinistra inferior;левая нижняя лёгочная вена
+FJ2951,Left lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ2952,Left lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ2953,Left lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ2954,Left lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ2955,Left inferior pulmonary vein,Vena pulmonalis inferior sinistra,Нижняя лёгочная вена,veins-trunk,vena pulmonalis sinistra inferior;левая нижняя лёгочная вена
+FJ2956,Left anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ2957,Left anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ2958,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2959,Left anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ2960,Left anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ2961,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2962,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2963,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2964,Left apical segmental vein,Vena apicalis lobi superioris,Верхушечная вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;верхушечная сегментарная вена
+FJ2965,Left posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,vena apicoposterior;верхушечно-задняя вена;задняя сегментарная вена
 FJ2966,Pulmonary trunk,Truncus pulmonalis,Лёгочный ствол,arteries-trunk,
 FJ2967,Apical part of right apical segmental artery,"Arteria segmentalis apicalis, ramus apicalis","Верхушечная сегментарная артерия, верхушечная ветвь",arteries-trunk,
 FJ2968,Apical part of right posterior segmental artery,"Arteria segmentalis posterior, ramus apicalis","Задняя сегментарная артерия, верхушечная ветвь",arteries-trunk,
@@ -1023,21 +1142,98 @@ FJ3016,Apical part of right apical segmental artery,"Arteria segmentalis apicali
 FJ3017,Apical part of right apical segmental artery,"Arteria segmentalis apicalis, ramus apicalis","Верхушечная сегментарная артерия, верхушечная ветвь",arteries-trunk,
 FJ3018,Apical part of right posterior segmental artery,"Arteria segmentalis posterior, ramus apicalis","Задняя сегментарная артерия, верхушечная ветвь",arteries-trunk,
 FJ3019,Right pulmonary artery,Arteria pulmonalis dextra,Лёгочная артерия,arteries-trunk,правая лёгочная артерия
+FJ3020,Right superior pulmonary vein,Vena pulmonalis superior dextra,Верхняя лёгочная вена,veins-trunk,vena pulmonalis dextra superior;правая верхняя лёгочная вена
+FJ3021,Inferior part of right anterior segmental vein,"Vena anterior lobi superioris, pars inferior","Передняя вена верхней доли, нижняя часть",veins-trunk,нижняя часть передней сегментарной вены
+FJ3022,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3023,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3024,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3025,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3026,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3027,Superior part of right anterior segmental vein,"Vena anterior lobi superioris, pars superior","Передняя вена верхней доли, верхняя часть",veins-trunk,верхняя часть передней сегментарной вены
+FJ3028,Right anterior segmental vein,Vena anterior lobi superioris,Передняя вена верхней доли,veins-trunk,передняя сегментарная вена
+FJ3029,Right anterior segmental vein,Vena anterior lobi superioris,Передняя вена верхней доли,veins-trunk,передняя сегментарная вена
+FJ3030,Superior part of medial segmental vein,"Vena lobi medii, pars medialis superior","Вена средней доли, верхняя медиальная часть",veins-trunk,верхняя часть медиальной сегментарной вены
+FJ3031,Trunk of right apical segmental vein,"Vena apicalis lobi superioris, truncus","Верхушечная вена верхней доли, ствол",veins-trunk,ствол верхушечной сегментарной вены
+FJ3032,Inferior part of medial segmental vein,"Vena lobi medii, pars medialis inferior","Вена средней доли, нижняя медиальная часть",veins-trunk,нижняя часть медиальной сегментарной вены
+FJ3033,Inferior part of medial segmental vein,"Vena lobi medii, pars medialis inferior","Вена средней доли, нижняя медиальная часть",veins-trunk,нижняя часть медиальной сегментарной вены
+FJ3034,Anterior part of lateral segmental vein,"Vena lobi medii, pars lateralis anterior","Вена средней доли, передняя латеральная часть",veins-trunk,передняя часть латеральной сегментарной вены
+FJ3035,Anterior part of lateral segmental vein,"Vena lobi medii, pars lateralis anterior","Вена средней доли, передняя латеральная часть",veins-trunk,передняя часть латеральной сегментарной вены
+FJ3036,Anterior part of lateral segmental vein,"Vena lobi medii, pars lateralis anterior","Вена средней доли, передняя латеральная часть",veins-trunk,передняя часть латеральной сегментарной вены
+FJ3037,Posterior part of lateral segmental vein,"Vena lobi medii, pars lateralis posterior","Вена средней доли, задняя латеральная часть",veins-trunk,задняя часть латеральной сегментарной вены
+FJ3038,Posterior part of lateral segmental vein,"Vena lobi medii, pars lateralis posterior","Вена средней доли, задняя латеральная часть",veins-trunk,задняя часть латеральной сегментарной вены
+FJ3039,Posterior part of lateral segmental vein,"Vena lobi medii, pars lateralis posterior","Вена средней доли, задняя латеральная часть",veins-trunk,задняя часть латеральной сегментарной вены
+FJ3040,Right inferior pulmonary vein,Vena pulmonalis inferior dextra,Нижняя лёгочная вена,veins-trunk,vena pulmonalis dextra inferior;правая нижняя лёгочная вена
+FJ3041,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3042,Anterior part of right apical segmental vein,"Vena apicalis lobi superioris, pars anterior","Верхушечная вена верхней доли, передняя часть",veins-trunk,передняя часть верхушечной сегментарной вены
+FJ3043,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3044,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3045,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3046,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3047,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3048,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3049,Right anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ3050,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3051,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3052,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3053,Anterior part of right apical segmental vein,"Vena apicalis lobi superioris, pars anterior","Верхушечная вена верхней доли, передняя часть",veins-trunk,передняя часть верхушечной сегментарной вены
+FJ3054,Right medial basal segmental vein,Vena basalis medialis,Медиальная базальная вена,veins-trunk,медиальная базальная сегментарная вена
+FJ3055,Right medial basal segmental vein,Vena basalis medialis,Медиальная базальная вена,veins-trunk,медиальная базальная сегментарная вена
+FJ3056,Right anterior basal segmental vein,Vena basalis anterior,Передняя базальная вена,veins-trunk,передняя базальная сегментарная вена
+FJ3057,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3058,Right posterior basal segmental vein,Vena basalis posterior,Задняя базальная вена,veins-trunk,задняя базальная сегментарная вена
+FJ3059,Right lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ3060,Right lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ3061,Right lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ3062,Right lateral basal segmental vein,Vena basalis lateralis,Латеральная базальная вена,veins-trunk,латеральная базальная сегментарная вена
+FJ3063,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3064,Apical part of right apical segmental vein,"Vena apicalis lobi superioris, pars apicalis","Верхушечная вена верхней доли, верхушечная часть",veins-trunk,верхушечная часть верхушечной сегментарной вены
+FJ3065,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3066,Right superior segmental vein,Vena superior lobi inferioris,Верхняя вена нижней доли,veins-trunk,верхняя сегментарная вена нижней доли;vena superior
+FJ3067,Apical part of right apical segmental vein,"Vena apicalis lobi superioris, pars apicalis","Верхушечная вена верхней доли, верхушечная часть",veins-trunk,верхушечная часть верхушечной сегментарной вены
+FJ3068,Apical part of right apical segmental vein,"Vena apicalis lobi superioris, pars apicalis","Верхушечная вена верхней доли, верхушечная часть",veins-trunk,верхушечная часть верхушечной сегментарной вены
+FJ3069,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3070,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3073,Anterior superior segmental branch of right portal vein,Ramus segmenti VIII venae portae hepatis,Ветвь воротной вены к сегменту VIII,veins-trunk,передневерхняя сегментарная ветвь правой ветви воротной вены
+FJ3074,Anterior inferior segmental branch of right portal vein,Ramus segmenti V venae portae hepatis,Ветвь воротной вены к сегменту V,veins-trunk,передненижняя сегментарная ветвь правой ветви воротной вены
 FJ3075,Anterior inferior segmental hepatic artery,Arteria segmenti anterioris inferioris hepatis,Артерия переднего нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента V печени
 FJ3076,Anterior superior segmental hepatic artery,Arteria segmenti anterioris superioris hepatis,Артерия переднего верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента VIII печени
 FJ3077,Caudate lobe branch of left hepatic artery,Ramus lobi caudati arteriae hepaticae sinistrae,Ветвь печёночной артерии к хвостатой доле,arteries-trunk,ramus lobi caudati;ветвь хвостатой доли;ветвь левой печёночной артерии к хвостатой доле
 FJ3078,Common hepatic artery,Arteria hepatica communis,Общая печёночная артерия,arteries-trunk,
 FJ3081,Hepatic artery proper,Arteria hepatica propria,Собственная печёночная артерия,arteries-trunk,
+FJ3082,Pre-hepatic portal vein,Vena portae hepatis,Воротная вена печени,veins-trunk,vena portae;воротная вена;предпечёночная часть воротной вены
+FJ3083,Anterior inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti V","Средняя печёночная вена, приток от сегмента V",veins-trunk,передненижний сегментарный приток средней печёночной вены
+FJ3084,Medial inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti IVb","Средняя печёночная вена, приток от сегмента IVb",veins-trunk,медиальный нижний сегментарный приток средней печёночной вены
+FJ3085,Medial inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti IVb","Средняя печёночная вена, приток от сегмента IVb",veins-trunk,медиальный нижний сегментарный приток средней печёночной вены
+FJ3086,Anterior inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti V","Средняя печёночная вена, приток от сегмента V",veins-trunk,передненижний сегментарный приток средней печёночной вены
 FJ3091,Lateral superior segmental hepatic artery,Arteria segmenti lateralis superioris hepatis,Артерия латерального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента II печени
 FJ3092,Lateral inferior segmental hepatic artery,Arteria segmenti lateralis inferioris hepatis,Артерия латерального нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента III печени
 FJ3093,Lateral superior segmental hepatic artery,Arteria segmenti lateralis superioris hepatis,Артерия латерального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента II печени
 FJ3095,Trunk of left hepatic artery,"Arteria hepatica propria, ramus sinister","Собственная печёночная артерия, долевая ветвь",arteries-trunk,arteria hepatica sinistra;левая ветвь собственной печёночной артерии;левая печёночная артерия
+FJ3097,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
+FJ3098,Lateral superior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti II","Печёночная вена, приток от сегмента II",veins-trunk,латеральный верхний сегментарный приток левой печёночной вены
+FJ3099,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
+FJ3100,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
+FJ3101,Medial superior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti IVa","Печёночная вена, приток от сегмента IVa",veins-trunk,медиальный верхний сегментарный приток левой печёночной вены
+FJ3102,Trunk of left portal vein,Truncus rami sinistri venae portae hepatis,Ствол ветви воротной вены печени,veins-trunk,ствол левой ветви воротной вены
 FJ3106,Medial inferior segmental hepatic artery,Arteria segmenti medialis inferioris hepatis,Артерия медиального нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента IVb печени
 FJ3107,Medial superior segmental hepatic artery,Arteria segmenti medialis superioris hepatis,Артерия медиального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента IVa печени
+FJ3111,Posterior inferior segmental branch of right portal vein,Ramus segmenti VI venae portae hepatis,Ветвь воротной вены к сегменту VI,veins-trunk,задненижняя сегментарная ветвь правой ветви воротной вены
+FJ3112,Posterior superior segmental branch of right portal vein,Ramus segmenti VII venae portae hepatis,Ветвь воротной вены к сегменту VII,veins-trunk,задневерхняя сегментарная ветвь правой ветви воротной вены
+FJ3113,Posterior superior segmental branch of right portal vein,Ramus segmenti VII venae portae hepatis,Ветвь воротной вены к сегменту VII,veins-trunk,задневерхняя сегментарная ветвь правой ветви воротной вены
 FJ3114,Posterior inferior segmental hepatic artery,Arteria segmenti posterioris inferioris hepatis,Артерия заднего нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента VI печени
 FJ3115,Posterior superior segmental hepatic artery,Arteria segmenti posterioris superioris hepatis,Артерия заднего верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента VII печени
 FJ3116,Posterior superior segmental hepatic artery,Arteria segmenti posterioris superioris hepatis,Артерия заднего верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента VII печени
 FJ3117,Trunk of right hepatic artery,"Arteria hepatica propria, ramus dexter","Собственная печёночная артерия, долевая ветвь",arteries-trunk,arteria hepatica dextra;правая ветвь собственной печёночной артерии;правая печёночная артерия
+FJ3118,Posterior inferior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VI","Печёночная вена, приток от сегмента VI",veins-trunk,задненижний сегментарный приток правой печёночной вены
+FJ3119,Posterior superior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VII","Печёночная вена, приток от сегмента VII",veins-trunk,задневерхний сегментарный приток правой печёночной вены
+FJ3120,Posterior inferior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VI","Печёночная вена, приток от сегмента VI",veins-trunk,задненижний сегментарный приток правой печёночной вены
+FJ3121,Anterior superior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VIII","Печёночная вена, приток от сегмента VIII",veins-trunk,передневерхний сегментарный приток правой печёночной вены
+FJ3122,Trunk of right portal vein,Truncus rami dextri venae portae hepatis,Ствол ветви воротной вены печени,veins-trunk,ствол правой ветви воротной вены
+FJ3124,Caudate lobe branch of left portal vein,Ramus lobi caudati venae portae hepatis,Ветвь воротной вены к хвостатой доле,veins-trunk,rami lobi caudati;ветвь левой ветви воротной вены к хвостатой доле
+FJ3125,Lateral inferior segmental branch of left portal vein,Ramus segmenti III venae portae hepatis,Ветвь воротной вены к сегменту III,veins-trunk,латеральная нижняя сегментарная ветвь левой ветви воротной вены
+FJ3126,Lateral superior segmental branch of left portal vein,Ramus segmenti II venae portae hepatis,Ветвь воротной вены к сегменту II,veins-trunk,латеральная верхняя сегментарная ветвь левой ветви воротной вены
+FJ3127,Medial superior segmental branch of left portal vein,Ramus segmenti IVa venae portae hepatis,Ветвь воротной вены к сегменту IVa,veins-trunk,медиальная верхняя сегментарная ветвь левой ветви воротной вены
+FJ3128,Medial inferior segmental branch of left portal vein,Ramus segmenti IVb venae portae hepatis,Ветвь воротной вены к сегменту IVb,veins-trunk,медиальная нижняя сегментарная ветвь левой ветви воротной вены
 FJ3131,Diaphragm,Diaphragma,Диафрагма,muscles-thorax,грудобрюшная преграда
 FJ3152,Right hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
@@ -1282,6 +1478,7 @@ FJ3393,Sacrum,Os sacrum,Крестец,spine,крестцовая кость
 FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
 FJ3395,Vomer,Vomer,Сошник,skull-facial,
 FJ3399,Ascending branch of left colic artery,"Arteria colica sinistra, ramus ascendens","Ободочная артерия, восходящая ветвь",arteries-trunk,восходящая ветвь левой ободочной артерии
+FJ3400,Left colic vein,Vena colica sinistra,Ободочная вена,veins-trunk,левая ободочная вена
 FJ3401,Anterior inferior pancreaticoduodenal artery,"Arteria pancreaticoduodenalis inferior, ramus anterior","Нижняя панкреатодуоденальная артерия, передняя ветвь",arteries-trunk,передняя нижняя панкреатодуоденальная артерия;передняя нижняя поджелудочно-двенадцатиперстная артерия
 FJ3406,Anterior cecal artery,Arteria caecalis anterior,Передняя слепокишечная артерия,arteries-trunk,
 FJ3409,Anterior superior pancreaticoduodenal artery,Arteria pancreaticoduodenalis superior anterior,Передняя верхняя панкреатодуоденальная артерия,arteries-trunk,передняя верхняя поджелудочно-двенадцатиперстная артерия
@@ -1289,22 +1486,37 @@ FJ3410,Appendicular artery,Arteria appendicularis,Артерия червеоб�
 FJ3411,Arch of aorta,Arcus aortae,Дуга аорты,arteries-trunk,
 FJ3413,Ascending aorta,Aorta ascendens,Восходящая аорта,arteries-trunk,pars ascendens aortae;восходящая часть аорты
 FJ3414,Ascending branch of inferior branch of ileocolic artery,"Arteria ileocolica, ramus colicus","Подвздошно-ободочная артерия, ободочная ветвь",arteries-trunk,ramus ascendens;восходящая ветвь подвздошно-ободочной артерии
+FJ3415,Ileocolic vein,Vena ileocolica,Подвздошно-ободочная вена,veins-trunk,
+FJ3416,Azygos vein,Vena azygos,Непарная вена,veins-trunk,
 FJ3417,Brachiocephalic artery,Truncus brachiocephalicus,Плечеголовной ствол,arteries-trunk,arteria brachiocephalica;плечеголовная артерия
 FJ3418,Bronchial branch of arch of aorta,"Arcus aortae, ramus bronchialis","Дуга аорты, бронхиальная ветвь",arteries-trunk,ramus bronchialis;бронхиальная ветвь дуги аорты
 FJ3419,Caudal pancreatic artery,Arteria caudae pancreatis,Артерия хвоста поджелудочной железы,arteries-trunk,хвостовая панкреатическая артерия
 FJ3420,Splenic artery,Arteria splenica,Селезёночная артерия,arteries-trunk,arteria lienalis
 FJ3421,Celiac trunk,Truncus coeliacus,Чревный ствол,arteries-trunk,arteria coeliaca;чревная артерия
+FJ3426,Left superficial dorsal vein of penis,Vena dorsalis superficialis penis,Поверхностная тыльная вена полового члена,veins-trunk,venae dorsales superficiales penis;левая поверхностная тыльная вена полового члена
 FJ3427,Descending aorta,Aorta descendens,Нисходящая аорта,arteries-trunk,pars descendens aortae;нисходящая часть аорты
 FJ3428,Descending branch of left colic artery,"Arteria colica sinistra, ramus descendens","Ободочная артерия, нисходящая ветвь",arteries-trunk,нисходящая ветвь левой ободочной артерии
+FJ3429,Left colic vein,Vena colica sinistra,Ободочная вена,veins-trunk,левая ободочная вена
 FJ3430,Dorsal pancreatic artery,Arteria pancreatica dorsalis,Дорсальная панкреатическая артерия,arteries-trunk,дорсальная артерия поджелудочной железы
 FJ3431,Set of oesophageal branches of thoracic aorta,Rami oesophageales aortae thoracicae,Пищеводные ветви грудной аорты,arteries-trunk,пищеводные ветви
 FJ3432,Trunk of gastroduodenal artery,Arteria gastroduodenalis,Желудочно-двенадцатиперстная артерия,arteries-trunk,ствол желудочно-двенадцатиперстной артерии;гастродуоденальная артерия
 FJ3433,Great pancreatic artery,Arteria pancreatica magna,Большая панкреатическая артерия,arteries-trunk,большая артерия поджелудочной железы
+FJ3434,Hemiazygos vein,Vena hemiazygos,Полунепарная вена,veins-trunk,
 FJ3437,Ileal artery,Arteria ilealis,Подвздошно-кишечная артерия,arteries-trunk,arteriae ileales;подвздошно-кишечные артерии
+FJ3438,Ileal vein,Vena ilealis,Подвздошно-кишечная вена,veins-trunk,venae ileales;подвздошно-кишечные вены;вена подвздошной кишки
 FJ3439,Ileocolic artery,Arteria ileocolica,Подвздошно-ободочная артерия,arteries-trunk,
+FJ3440,Ileocolic vein,Vena ileocolica,Подвздошно-ободочная вена,veins-trunk,
+FJ3441,Inferior vena cava,Vena cava inferior,Нижняя полая вена,veins-trunk,нпв
 FJ3442,Inferior mesenteric artery,Arteria mesenterica inferior,Нижняя брыжеечная артерия,arteries-trunk,нба
+FJ3443,Inferior mesenteric vein,Vena mesenterica inferior,Нижняя брыжеечная вена,veins-trunk,нбв
 FJ3444,Inferior pancreatic artery,Arteria pancreatica inferior,Нижняя панкреатическая артерия,arteries-trunk,нижняя артерия поджелудочной железы
 FJ3446,Inferior pancreaticoduodenal artery,Arteria pancreaticoduodenalis inferior,Нижняя панкреатодуоденальная артерия,arteries-trunk,нижняя поджелудочно-двенадцатиперстная артерия
+FJ3447,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
+FJ3448,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
+FJ3449,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
+FJ3450,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
+FJ3451,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
+FJ3452,Inferior phrenic vein,Vena phrenica inferior,Нижняя диафрагмальная вена,veins-trunk,venae phrenicae inferiores;нижние диафрагмальные вены
 FJ3458,Anterior division of left renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
 FJ3459,Anterior division of left renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
 FJ3460,Anterior division of left renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
@@ -1312,23 +1524,41 @@ FJ3461,Anterior division of left renal artery,"Arteria renalis, ramus anterior",
 FJ3462,Anterior division of left renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
 FJ3463,Anterior division of left renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
 FJ3464,Left common iliac artery,Arteria iliaca communis,Общая подвздошная артерия,arteries-trunk,
+FJ3465,Left common iliac vein,Vena iliaca communis,Общая подвздошная вена,veins-trunk,
 FJ3466,Left external iliac artery,Arteria iliaca externa,Наружная подвздошная артерия,arteries-trunk,
 FJ3467,Left inferior suprarenal artery,Arteria suprarenalis inferior,Нижняя надпочечниковая артерия,arteries-trunk,
 FJ3468,Left internal iliac artery,Arteria iliaca interna,Внутренняя подвздошная артерия,arteries-trunk,
+FJ3469,Left internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3470,Left internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3471,Left internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
 FJ3472,Left middle suprarenal artery,Arteria suprarenalis media,Средняя надпочечниковая артерия,arteries-trunk,
 FJ3473,Posterior division of left renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3474,Posterior division of left renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3475,Posterior division of left renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3476,Trunk of left renal artery,Arteria renalis,Почечная артерия,arteries-trunk,ствол почечной артерии
+FJ3477,Left renal vein,Vena renalis sinistra,Почечная вена,veins-trunk,левая почечная вена
+FJ3478,Left renal vein,Vena renalis sinistra,Почечная вена,veins-trunk,левая почечная вена
 FJ3479,Left subclavian artery,Arteria subclavia,Подключичная артерия,arteries-head-neck,
+FJ3480,Left suprarenal vein,Vena suprarenalis sinistra,Надпочечниковая вена,veins-trunk,левая надпочечниковая вена
 FJ3481,Ureteric segment of left renal artery,"Arteria renalis, ramus uretericus","Почечная артерия, мочеточниковая ветвь",arteries-trunk,rami ureterici;мочеточниковые ветви почечной артерии
+FJ3482,Left brachiocephalic vein,Vena brachiocephalica sinistra,Плечеголовная вена,veins-head-neck,левая плечеголовная вена;безымянная вена
 FJ3483,Left common carotid artery,Arteria carotis communis,Общая сонная артерия,arteries-head-neck,оса
+FJ3484,Left external iliac vein,Vena iliaca externa,Наружная подвздошная вена,veins-trunk,
+FJ3485,Left internal jugular vein,Vena jugularis interna,Внутренняя яремная вена,veins-head-neck,
+FJ3486,Left subclavian vein,Vena subclavia,Подключичная вена,veins-head-neck,
+FJ3493,Left ascending lumbar vein,Vena lumbalis ascendens,Восходящая поясничная вена,veins-trunk,
 FJ3494,Left colic artery,Arteria colica sinistra,Ободочная артерия,arteries-trunk,левая ободочная артерия
+FJ3495,Left colic vein,Vena colica sinistra,Ободочная вена,veins-trunk,левая ободочная вена
 FJ3496,Left dorsal artery of penis,Arteria dorsalis penis,Дорсальная артерия полового члена,arteries-trunk,тыльная артерия полового члена
 FJ3497,Left dorsal artery of penis,Arteria dorsalis penis,Дорсальная артерия полового члена,arteries-trunk,тыльная артерия полового члена
 FJ3499,Left gastric artery,Arteria gastrica sinistra,Желудочная артерия,arteries-trunk,левая желудочная артерия
+FJ3500,Left gastric vein,Vena gastrica sinistra,Желудочная вена,veins-trunk,левая желудочная вена;венечная вена желудка
 FJ3501,Left gastro-epiploic artery,Arteria gastroomentalis sinistra,Желудочно-сальниковая артерия,arteries-trunk,arteria gastroepiploica sinistra;левая желудочно-сальниковая артерия
+FJ3502,Left gastroepiploic vein,Vena gastroomentalis sinistra,Желудочно-сальниковая вена,veins-trunk,vena gastroepiploica sinistra;левая желудочно-сальниковая вена
+FJ3510,Left iliolumbar vein,Vena iliolumbalis,Подвздошно-поясничная вена,veins-trunk,
 FJ3511,Left inferior epigastric artery,Arteria epigastrica inferior,Нижняя надчревная артерия,arteries-trunk,
+FJ3512,Left inferior epigastric vein,Vena epigastrica inferior,Нижняя надчревная вена,veins-trunk,
+FJ3513,Left inferior gluteal vein,Vena glutea inferior,Нижняя ягодичная вена,veins-trunk,venae gluteae inferiores;нижние ягодичные вены
 FJ3514,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3515,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3516,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
@@ -1336,11 +1566,23 @@ FJ3517,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя ди�
 FJ3518,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3519,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3520,Left inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
+FJ3522,Left external iliac vein,Vena iliaca externa,Наружная подвздошная вена,veins-trunk,
+FJ3523,Left external iliac vein,Vena iliaca externa,Наружная подвздошная вена,veins-trunk,
+FJ3524,Left external iliac vein,Vena iliaca externa,Наружная подвздошная вена,veins-trunk,
+FJ3525,Left internal pudendal vein,Vena pudenda interna,Внутренняя половая вена,veins-trunk,
+FJ3526,Left lateral sacral vein,Vena sacralis lateralis,Латеральная крестцовая вена,veins-trunk,venae sacrales laterales;латеральные крестцовые вены
+FJ3527,Left obturator vein,Vena obturatoria,Запирательная вена,veins-trunk,
 FJ3529,Left superficial epigastric artery,Arteria epigastrica superficialis,Поверхностная надчревная артерия,arteries-limbs,
+FJ3530,Left superior epigastric vein,Vena epigastrica superior,Верхняя надчревная вена,veins-trunk,
+FJ3531,Left superior gluteal vein,Vena glutea superior,Верхняя ягодичная вена,veins-trunk,venae gluteae superiores;верхние ягодичные вены
 FJ3532,Left testicular artery,Arteria testicularis,Яичковая артерия,arteries-trunk,
+FJ3533,Left testicular vein,Vena testicularis sinistra,Яичковая вена,veins-trunk,левая яичковая вена
 FJ3534,Marginal artery of colon,Arteria marginalis coli,Краевая ободочная артерия,arteries-trunk,arteria juxtacolica;краевая артерия ободочной кишки;артерия драммонда
+FJ3541,Median sacral vein,Vena sacralis mediana,Срединная крестцовая вена,veins-trunk,
 FJ3542,Middle colic artery,Arteria colica media,Средняя ободочная артерия,arteries-trunk,
+FJ3543,Middle colic vein,Vena colica media,Средняя ободочная вена,veins-trunk,
 FJ3544,Splenic artery,Arteria splenica,Селезёночная артерия,arteries-trunk,arteria lienalis
+FJ3545,Pancreaticoduodenal vein,Vena pancreaticoduodenalis,Панкреатодуоденальная вена,veins-trunk,venae pancreaticoduodenales;поджелудочно-двенадцатиперстная вена;панкреатодуоденальные вены
 FJ3546,Posterior inferior pancreaticoduodenal artery,"Arteria pancreaticoduodenalis inferior, ramus posterior","Нижняя панкреатодуоденальная артерия, задняя ветвь",arteries-trunk,задняя нижняя панкреатодуоденальная артерия;задняя нижняя поджелудочно-двенадцатиперстная артерия
 FJ3553,Posterior cecal artery,Arteria caecalis posterior,Задняя слепокишечная артерия,arteries-trunk,
 FJ3557,Posterior superior pancreaticoduodenal artery,Arteria pancreaticoduodenalis superior posterior,Задняя верхняя панкреатодуоденальная артерия,arteries-trunk,задняя верхняя поджелудочно-двенадцатиперстная артерия
@@ -1352,25 +1594,52 @@ FJ3562,Anterior division of right renal artery,"Arteria renalis, ramus anterior"
 FJ3563,Anterior division of right renal artery,"Arteria renalis, ramus anterior","Почечная артерия, передняя ветвь",arteries-trunk,передняя ветвь почечной артерии
 FJ3564,Right common carotid artery,Arteria carotis communis,Общая сонная артерия,arteries-head-neck,оса
 FJ3565,Right common iliac artery,Arteria iliaca communis,Общая подвздошная артерия,arteries-trunk,
+FJ3566,Right common iliac vein,Vena iliaca communis,Общая подвздошная вена,veins-trunk,
 FJ3567,Right external iliac artery,Arteria iliaca externa,Наружная подвздошная артерия,arteries-trunk,
+FJ3568,Right external iliac vein,Vena iliaca externa,Наружная подвздошная вена,veins-trunk,
 FJ3569,Right internal iliac artery,Arteria iliaca interna,Внутренняя подвздошная артерия,arteries-trunk,
+FJ3570,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3571,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3572,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
 FJ3573,Posterior division of right renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3574,Posterior division of right renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3575,Posterior division of right renal artery,"Arteria renalis, ramus posterior","Почечная артерия, задняя ветвь",arteries-trunk,задняя ветвь почечной артерии
 FJ3576,Trunk of right renal artery,Arteria renalis,Почечная артерия,arteries-trunk,ствол почечной артерии
+FJ3577,Right renal vein,Vena renalis dextra,Почечная вена,veins-trunk,правая почечная вена
+FJ3578,Right renal vein,Vena renalis dextra,Почечная вена,veins-trunk,правая почечная вена
 FJ3579,Right subclavian artery,Arteria subclavia,Подключичная артерия,arteries-head-neck,
+FJ3580,Right suprarenal vein,Vena suprarenalis dextra,Надпочечниковая вена,veins-trunk,правая надпочечниковая вена
 FJ3581,Ureteric segment of right renal artery,"Arteria renalis, ramus uretericus","Почечная артерия, мочеточниковая ветвь",arteries-trunk,rami ureterici;мочеточниковые ветви почечной артерии
 FJ3582,Ureteric segment of right renal artery,"Arteria renalis, ramus uretericus","Почечная артерия, мочеточниковая ветвь",arteries-trunk,rami ureterici;мочеточниковые ветви почечной артерии
+FJ3583,Right brachiocephalic vein,Vena brachiocephalica dextra,Плечеголовная вена,veins-head-neck,правая плечеголовная вена;безымянная вена
 FJ3584,Right inferior suprarenal artery,Arteria suprarenalis inferior,Нижняя надпочечниковая артерия,arteries-trunk,
+FJ3585,Right internal jugular vein,Vena jugularis interna,Внутренняя яремная вена,veins-head-neck,
 FJ3586,Right middle suprarenal artery,Arteria suprarenalis media,Средняя надпочечниковая артерия,arteries-trunk,
+FJ3587,Right subclavian vein,Vena subclavia,Подключичная вена,veins-head-neck,
+FJ3589,Right ascending lumbar vein,Vena lumbalis ascendens,Восходящая поясничная вена,veins-trunk,
 FJ3590,Right colic artery,Arteria colica dextra,Ободочная артерия,arteries-trunk,правая ободочная артерия
+FJ3591,Right colic vein,Vena colica dextra,Ободочная вена,veins-trunk,правая ободочная вена
 FJ3592,Right dorsal artery of penis,Arteria dorsalis penis,Дорсальная артерия полового члена,arteries-trunk,тыльная артерия полового члена
 FJ3593,Right dorsal artery of penis,Arteria dorsalis penis,Дорсальная артерия полового члена,arteries-trunk,тыльная артерия полового члена
 FJ3594,Right gastric artery,Arteria gastrica dextra,Желудочная артерия,arteries-trunk,правая желудочная артерия
+FJ3595,Right gastric vein,Vena gastrica dextra,Желудочная вена,veins-trunk,правая желудочная вена;пилорическая вена
 FJ3596,Right gastro-epiploic artery,Arteria gastroomentalis dextra,Желудочно-сальниковая артерия,arteries-trunk,arteria gastroepiploica dextra;правая желудочно-сальниковая артерия
+FJ3597,Right gastroepiploic vein,Vena gastroomentalis dextra,Желудочно-сальниковая вена,veins-trunk,vena gastroepiploica dextra;правая желудочно-сальниковая вена
+FJ3603,Right iliolumbar vein,Vena iliolumbalis,Подвздошно-поясничная вена,veins-trunk,
 FJ3604,Right inferior epigastric artery,Arteria epigastrica inferior,Нижняя надчревная артерия,arteries-trunk,
+FJ3605,Right inferior epigastric vein,Vena epigastrica inferior,Нижняя надчревная вена,veins-trunk,
+FJ3606,Right inferior gluteal vein,Vena glutea inferior,Нижняя ягодичная вена,veins-trunk,venae gluteae inferiores;нижние ягодичные вены
+FJ3607,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3608,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3609,Right internal iliac vein,Vena iliaca interna,Внутренняя подвздошная вена,veins-trunk,vena hypogastrica;подчревная вена
+FJ3610,Right internal pudendal vein,Vena pudenda interna,Внутренняя половая вена,veins-trunk,
+FJ3611,Right lateral sacral vein,Vena sacralis lateralis,Латеральная крестцовая вена,veins-trunk,venae sacrales laterales;латеральные крестцовые вены
+FJ3612,Right obturator vein,Vena obturatoria,Запирательная вена,veins-trunk,
 FJ3614,Right superficial epigastric artery,Arteria epigastrica superficialis,Поверхностная надчревная артерия,arteries-limbs,
+FJ3615,Right superior epigastric vein,Vena epigastrica superior,Верхняя надчревная вена,veins-trunk,
+FJ3616,Right superior gluteal vein,Vena glutea superior,Верхняя ягодичная вена,veins-trunk,venae gluteae superiores;верхние ягодичные вены
 FJ3617,Right testicular artery,Arteria testicularis,Яичковая артерия,arteries-trunk,
+FJ3618,Right testicular vein,Vena testicularis dextra,Яичковая вена,veins-trunk,правая яичковая вена
 FJ3619,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3620,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3621,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
@@ -1379,9 +1648,28 @@ FJ3623,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя ди
 FJ3624,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3625,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
 FJ3626,Right inferior phrenic artery,Arteria phrenica inferior,Нижняя диафрагмальная артерия,arteries-trunk,
+FJ3631,Lumbar vein,Vena lumbalis,Поясничная вена,veins-trunk,venae lumbales;поясничные вены
 FJ3632,Lumbar artery,Arteria lumbalis,Поясничная артерия,arteries-trunk,arteriae lumbales;поясничные артерии
+FJ3635,Lumbar vein,Vena lumbalis,Поясничная вена,veins-trunk,venae lumbales;поясничные вены
 FJ3636,Lumbar artery,Arteria lumbalis,Поясничная артерия,arteries-trunk,arteriae lumbales;поясничные артерии
+FJ3637,Right superficial dorsal vein of penis,Vena dorsalis superficialis penis,Поверхностная тыльная вена полового члена,veins-trunk,venae dorsales superficiales penis;правая поверхностная тыльная вена полового члена
 FJ3638,Sigmoid artery,Arteria sigmoidea,Сигмовидная артерия,arteries-trunk,arteriae sigmoideae;сигмовидные артерии
+FJ3639,Sigmoid vein,Vena sigmoidea,Сигмовидная вена,veins-trunk,venae sigmoideae;сигмовидные вены
 FJ3640,Splenic artery,Arteria splenica,Селезёночная артерия,arteries-trunk,arteria lienalis
+FJ3641,Splenic vein,Vena splenica,Селезёночная вена,veins-trunk,vena lienalis
 FJ3644,Trunk of superior mesenteric artery,Arteria mesenterica superior,Верхняя брыжеечная артерия,arteries-trunk,вба;ствол верхней брыжеечной артерии
+FJ3645,Superior vena cava,Vena cava superior,Верхняя полая вена,veins-trunk,впв
+FJ3646,Pancreaticoduodenal vein,Vena pancreaticoduodenalis,Панкреатодуоденальная вена,veins-trunk,venae pancreaticoduodenales;поджелудочно-двенадцатиперстная вена;панкреатодуоденальные вены
+FJ3647,Superior mesenteric vein,Vena mesenterica superior,Верхняя брыжеечная вена,veins-trunk,вбв
+FJ3648,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3649,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3650,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3651,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3652,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3653,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3654,Superior phrenic vein,Vena phrenica superior,Верхняя диафрагмальная вена,veins-trunk,venae phrenicae superiores;верхние диафрагмальные вены
+FJ3655,Pancreaticoduodenal vein,Vena pancreaticoduodenalis,Панкреатодуоденальная вена,veins-trunk,venae pancreaticoduodenales;поджелудочно-двенадцатиперстная вена;панкреатодуоденальные вены
 FJ3656,Superior rectal artery,Arteria rectalis superior,Верхняя прямокишечная артерия,arteries-trunk,
+FJ3657,Superior rectal vein,Vena rectalis superior,Верхняя прямокишечная вена,veins-trunk,
+FJ3658,Ascending lumbar vein,Vena lumbalis ascendens,Восходящая поясничная вена,veins-trunk,
+FJ3659,Inferior vena cava,Vena cava inferior,Нижняя полая вена,veins-trunk,нпв
