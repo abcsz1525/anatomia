@@ -31,10 +31,24 @@ FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis supe
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
 FJ1284,Check ligament of left lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
 FJ1292,Check ligament of left medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
+FJ1294,Left inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
+FJ1295,Left inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
+FJ1304,Left lateral rectus,Musculus rectus lateralis,Латеральная прямая мышца глаза,muscles-head,musculus rectus lateralis bulbi
+FJ1306,Left levator palpebrae superioris,Musculus levator palpebrae superioris,"Мышца, поднимающая верхнее веко",muscles-head,
+FJ1308,Left medial rectus,Musculus rectus medialis,Медиальная прямая мышца глаза,muscles-head,musculus rectus medialis bulbi
+FJ1322,Left superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
+FJ1323,Left superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
 FJ1329,Trochlea of left superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
 FJ1334,Check ligament of right lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
 FJ1335,Check ligament of right medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
 FJ1343,Tendon of right levator palpebrae superioris,Tendo musculi levatoris palpebrae superioris,"Сухожилие мышцы, поднимающей верхнее веко",ligaments-head-neck,
+FJ1345,Right inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
+FJ1346,Right inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
+FJ1355,Right lateral rectus,Musculus rectus lateralis,Латеральная прямая мышца глаза,muscles-head,musculus rectus lateralis bulbi
+FJ1357,Right levator palpebrae superioris,Musculus levator palpebrae superioris,"Мышца, поднимающая верхнее веко",muscles-head,
+FJ1359,Right medial rectus,Musculus rectus medialis,Медиальная прямая мышца глаза,muscles-head,musculus rectus medialis bulbi
+FJ1373,Right superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
+FJ1374,Right superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
 FJ1380,Trochlea of right superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
 FJ1392,Interosseous membrane of right leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
 FJ1392M,Interosseous membrane of left leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
@@ -50,53 +64,241 @@ FJ1423,Right iliotibial tract,Tractus iliotibialis,Подвздошно-боль
 FJ1423M,Left iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
 FJ1424,Right long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
 FJ1424M,Left long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
+FJ1426,Right obturator internus,Musculus obturatorius internus,Внутренняя запирательная мышца,muscles-pelvis,
+FJ1426M,Left obturator internus,Musculus obturatorius internus,Внутренняя запирательная мышца,muscles-pelvis,
+FJ1428,Right piriformis,Musculus piriformis,Грушевидная мышца,muscles-pelvis,
+FJ1428M,Left piriformis,Musculus piriformis,Грушевидная мышца,muscles-pelvis,
+FJ1431,Right psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
+FJ1431M,Left psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
 FJ1438,Right tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
 FJ1438M,Left tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
 FJ1439,Right tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1439M,Left tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1440,Right tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
 FJ1440M,Left tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
+FJ1446,Abdominal part of right pectoralis major,"Musculus pectoralis major, pars abdominalis","Большая грудная мышца, брюшная часть",muscles-thorax,
+FJ1446M,Abdominal part of left pectoralis major,"Musculus pectoralis major, pars abdominalis","Большая грудная мышца, брюшная часть",muscles-thorax,
+FJ1447,Clavicular part of right pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
+FJ1447M,Clavicular part of left pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
 FJ1448,Linea alba,Linea alba,Белая линия живота,ligaments-trunk,белая линия
+FJ1449M,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
+FJ1450,superficial perineal muscle,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса;musculus perinei superficialis;поверхностная мышца промежности
+FJ1450M,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
+FJ1451,external intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
+FJ1451M,External intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
+FJ1452,Right external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-abdomen,
+FJ1452M,Left external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-abdomen,
+FJ1453M,Left iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ1454,innermost intercostal muscle,Musculus intercostalis intimus,Самая внутренняя межрёберная мышца,muscles-thorax,musculi intercostales intimi;самые внутренние межрёберные мышцы
+FJ1454M,Innermost intercostal muscle,Musculus intercostalis intimus,Самая внутренняя межрёберная мышца,muscles-thorax,musculi intercostales intimi;самые внутренние межрёберные мышцы
+FJ1455,internal intercostal muscle,Musculus intercostalis internus,Внутренняя межрёберная мышца,muscles-thorax,musculi intercostales interni;внутренние межрёберные мышцы
+FJ1455M,Internal intercostal muscle,Musculus intercostalis internus,Внутренняя межрёберная мышца,muscles-thorax,musculi intercostales interni;внутренние межрёберные мышцы
+FJ1456,Right pectoralis minor,Musculus pectoralis minor,Малая грудная мышца,muscles-thorax,
+FJ1456M,Left pectoralis minor,Musculus pectoralis minor,Малая грудная мышца,muscles-thorax,
+FJ1457M,Left pubococcygeus,Musculus pubococcygeus,Лобково-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ1458M,Left puborectalis,Musculus puborectalis,Лобково-прямокишечная мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ1459,Right serratus anterior,Musculus serratus anterior,Передняя зубчатая мышца,muscles-thorax,
+FJ1459M,Left serratus anterior,Musculus serratus anterior,Передняя зубчатая мышца,muscles-thorax,
+FJ1460,Right subclavius,Musculus subclavius,Подключичная мышца,muscles-thorax,
+FJ1460M,Left subclavius,Musculus subclavius,Подключичная мышца,muscles-thorax,
+FJ1461,Right transversus thoracis,Musculus transversus thoracis,Поперечная мышца груди,muscles-thorax,
+FJ1461M,Left transversus thoracis,Musculus transversus thoracis,Поперечная мышца груди,muscles-thorax,
+FJ1462,Set of right levatores costarum breves,Musculi levatores costarum breves,"Короткие мышцы, поднимающие рёбра",muscles-thorax,
+FJ1462M,Set of left levatores costarum breves,Musculi levatores costarum breves,"Короткие мышцы, поднимающие рёбра",muscles-thorax,
+FJ1463,Set of right levatores costarum longi,Musculi levatores costarum longi,"Длинные мышцы, поднимающие рёбра",muscles-thorax,
+FJ1463M,Set of left levatores costarum longi,Musculi levatores costarum longi,"Длинные мышцы, поднимающие рёбра",muscles-thorax,
+FJ1464,Sternocostal part of right pectoralis major,"Musculus pectoralis major, pars sternocostalis","Большая грудная мышца, грудино-рёберная часть",muscles-thorax,
+FJ1464M,Sternocostal part of left pectoralis major,"Musculus pectoralis major, pars sternocostalis","Большая грудная мышца, грудино-рёберная часть",muscles-thorax,
 FJ1465,tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ1465M,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ1476,Interosseous membrane of right forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
 FJ1476M,Interosseous membrane of left forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
 FJ1504,Right subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
 FJ1504M,Left subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
+FJ1520,Ascending part of right trapezius,"Musculus trapezius, pars ascendens","Трапециевидная мышца, восходящая часть",muscles-back,
+FJ1520M,Ascending part of left trapezius,"Musculus trapezius, pars ascendens","Трапециевидная мышца, восходящая часть",muscles-back,
+FJ1521,Descending part of right trapezius,"Musculus trapezius, pars descendens","Трапециевидная мышца, нисходящая часть",muscles-back,
+FJ1521M,Descending part of left trapezius,"Musculus trapezius, pars descendens","Трапециевидная мышца, нисходящая часть",muscles-back,
+FJ1522,Right lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы
+FJ1522M,Left lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы
+FJ1524,Right cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи
+FJ1524M,Left cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи
+FJ1525,thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди
+FJ1525M,Thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди
+FJ1526,Right iliocostalis cervicis,Musculus iliocostalis cervicis,Подвздошно-рёберная мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1526M,Left iliocostalis cervicis,Musculus iliocostalis cervicis,Подвздошно-рёберная мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1527,Right iliocostalis lumborum,Musculus iliocostalis lumborum,Подвздошно-рёберная мышца поясницы,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1527M,Left iliocostalis lumborum,Musculus iliocostalis lumborum,Подвздошно-рёберная мышца поясницы,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1528,Right iliocostalis thoracis,Musculus iliocostalis thoracis,Подвздошно-рёберная мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1528M,Left iliocostalis thoracis,Musculus iliocostalis thoracis,Подвздошно-рёберная мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1532,Right levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
 FJ1532M,Left levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
+FJ1533,Right longissimus capitis,Musculus longissimus capitis,Длиннейшая мышца головы,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1533M,Left longissimus capitis,Musculus longissimus capitis,Длиннейшая мышца головы,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1534,Right longissimus cervicis,Musculus longissimus cervicis,Длиннейшая мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1534M,Left longissimus cervicis,Musculus longissimus cervicis,Длиннейшая мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1535,Right longissimus thoracis,Musculus longissimus thoracis,Длиннейшая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1535M,Left longissimus thoracis,Musculus longissimus thoracis,Длиннейшая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1536,Right rhomboid major,Musculus rhomboideus major,Большая ромбовидная мышца,muscles-back,
+FJ1536M,Left rhomboid major,Musculus rhomboideus major,Большая ромбовидная мышца,muscles-back,
+FJ1537,Right rhomboid minor,Musculus rhomboideus minor,Малая ромбовидная мышца,muscles-back,
+FJ1537M,Left rhomboid minor,Musculus rhomboideus minor,Малая ромбовидная мышца,muscles-back,
+FJ1538,Right semispinalis capitis,Musculus semispinalis capitis,Полуостистая мышца головы,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1538M,Left semispinalis capitis,Musculus semispinalis capitis,Полуостистая мышца головы,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1539,Right semispinalis cervicis,Musculus semispinalis cervicis,Полуостистая мышца шеи,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1539M,Left semispinalis cervicis,Musculus semispinalis cervicis,Полуостистая мышца шеи,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1540,Right semispinalis thoracis,Musculus semispinalis thoracis,Полуостистая мышца груди,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1540M,Left semispinalis thoracis,Musculus semispinalis thoracis,Полуостистая мышца груди,muscles-back,musculus transversospinalis;поперечно-остистая мышца
+FJ1541,Right serratus posterior inferior,Musculus serratus posterior inferior,Нижняя задняя зубчатая мышца,muscles-back,
+FJ1541M,Left serratus posterior inferior,Musculus serratus posterior inferior,Нижняя задняя зубчатая мышца,muscles-back,
+FJ1542,Right serratus posterior superior,Musculus serratus posterior superior,Верхняя задняя зубчатая мышца,muscles-back,
+FJ1542M,Left serratus posterior superior,Musculus serratus posterior superior,Верхняя задняя зубчатая мышца,muscles-back,
+FJ1543,spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,musculus spinalis;остистая мышца
+FJ1543M,Spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,musculus spinalis;остистая мышца
+FJ1544,Right spinalis thoracis,Musculus spinalis thoracis,Остистая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1544M,Left spinalis thoracis,Musculus spinalis thoracis,Остистая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1545,Right splenius capitis,Musculus splenius capitis,Ременная мышца головы,muscles-back,
+FJ1545M,Left splenius capitis,Musculus splenius capitis,Ременная мышца головы,muscles-back,
+FJ1546,Right splenius cervicis,Musculus splenius cervicis,Ременная мышца шеи,muscles-back,
+FJ1546M,Left splenius cervicis,Musculus splenius cervicis,Ременная мышца шеи,muscles-back,
+FJ1547,lateral lumbar intertransversarius,Musculus intertransversarius lateralis lumborum,Латеральная межпоперечная мышца поясницы,muscles-back,
+FJ1547M,Lateral lumbar intertransversarius,Musculus intertransversarius lateralis lumborum,Латеральная межпоперечная мышца поясницы,muscles-back,
+FJ1548,medial lumbar intertransversarius,Musculus intertransversarius medialis lumborum,Медиальная межпоперечная мышца поясницы,muscles-back,
+FJ1548M,Medial lumbar intertransversarius,Musculus intertransversarius medialis lumborum,Медиальная межпоперечная мышца поясницы,muscles-back,
+FJ1549,set of anterior cervical intertransversarii,Musculi intertransversarii anteriores cervicis,Передние межпоперечные мышцы шеи,muscles-back,
+FJ1549M,Set of anterior cervical intertransversarii,Musculi intertransversarii anteriores cervicis,Передние межпоперечные мышцы шеи,muscles-back,
+FJ1550,set of interspinales lumborum,Musculi interspinales lumborum,Межостистые мышцы поясницы,muscles-back,
+FJ1550M,Set of interspinales lumborum,Musculi interspinales lumborum,Межостистые мышцы поясницы,muscles-back,
+FJ1551,Right interspinalis thoracis,Musculus interspinalis thoracis,Межостистая мышца груди,muscles-back,
+FJ1551M,Left interspinalis thoracis,Musculus interspinalis thoracis,Межостистая мышца груди,muscles-back,
+FJ1552,set of interspinales cervicis,Musculi interspinales cervicis,Межостистые мышцы шеи,muscles-back,
+FJ1552M,Set of interspinales cervicis,Musculi interspinales cervicis,Межостистые мышцы шеи,muscles-back,
+FJ1553,set of posterior cervical intertransversarii,Musculi intertransversarii posteriores cervicis,Задние межпоперечные мышцы шеи,muscles-back,
+FJ1553M,Set of posterior cervical intertransversarii,Musculi intertransversarii posteriores cervicis,Задние межпоперечные мышцы шеи,muscles-back,
+FJ1554,Transverse part of right trapezius,"Musculus trapezius, pars transversa","Трапециевидная мышца, поперечная часть",muscles-back,
+FJ1554M,Transverse part of left trapezius,"Musculus trapezius, pars transversa","Трапециевидная мышца, поперечная часть",muscles-back,
+FJ1555,Left digastric,"Musculus digastricus, venter anterior","Двубрюшная мышца, переднее брюшко",muscles-neck,
+FJ1556,Right digastric,"Musculus digastricus, venter anterior","Двубрюшная мышца, переднее брюшко",muscles-neck,
+FJ1557,Inferior oblique part of left longus colli,"Musculus longus colli, pars obliqua inferior","Длинная мышца шеи, нижняя косая часть",muscles-neck,
+FJ1558,Left platysma,Platysma,Подкожная мышца шеи,muscles-neck,musculus platysma
+FJ1559,Left geniohyoid,Musculus geniohyoideus,Подбородочно-подъязычная мышца,muscles-neck,
+FJ1560,Left digastric,Tendo intermedius musculi digastrici,Промежуточное сухожилие двубрюшной мышцы,ligaments-head-neck,
+FJ1561,Left longus capitis,Musculus longus capitis,Длинная мышца головы,muscles-neck,
+FJ1562,Left mylohyoid,Musculus mylohyoideus,Челюстно-подъязычная мышца,muscles-neck,диафрагма рта
+FJ1563,Left obliquus capitis inferior,Musculus obliquus capitis inferior,Нижняя косая мышца головы,muscles-neck,
+FJ1564,Left obliquus capitis superior,Musculus obliquus capitis superior,Верхняя косая мышца головы,muscles-neck,
+FJ1565,Left omohyoid,Musculus omohyoideus,Лопаточно-подъязычная мышца,muscles-neck,
+FJ1566,Left rectus capitis anterior,Musculus rectus capitis anterior,Передняя прямая мышца головы,muscles-neck,
+FJ1567,Left rectus capitis posterior major,Musculus rectus capitis posterior major,Большая задняя прямая мышца головы,muscles-neck,
+FJ1568,Left rectus capitis posterior minor,Musculus rectus capitis posterior minor,Малая задняя прямая мышца головы,muscles-neck,
+FJ1569,Left rectus capitis lateralis,Musculus rectus capitis lateralis,Латеральная прямая мышца головы,muscles-neck,
+FJ1570,Left scalenus anterior,Musculus scalenus anterior,Передняя лестничная мышца,muscles-neck,
+FJ1571,Left scalenus medius,Musculus scalenus medius,Средняя лестничная мышца,muscles-neck,
+FJ1572,Left scalenus posterior,Musculus scalenus posterior,Задняя лестничная мышца,muscles-neck,
+FJ1573,Left sternocleidomastoid,Musculus sternocleidomastoideus,Грудино-ключично-сосцевидная мышца,muscles-neck,кивательная мышца
+FJ1574,Left sternohyoid,Musculus sternohyoideus,Грудино-подъязычная мышца,muscles-neck,
+FJ1575,Left sternothyroid,Musculus sternothyroideus,Грудино-щитовидная мышца,muscles-neck,
+FJ1576,Left stylohyoid,Musculus stylohyoideus,Шилоподъязычная мышца,muscles-neck,
+FJ1577,Left thyrohyoid,Musculus thyrohyoideus,Щитоподъязычная мышца,muscles-neck,
+FJ1578,Left digastric,"Musculus digastricus, venter posterior","Двубрюшная мышца, заднее брюшко",muscles-neck,
+FJ1579,Right digastric,"Musculus digastricus, venter posterior","Двубрюшная мышца, заднее брюшко",muscles-neck,
+FJ1580,Right geniohyoid,Musculus geniohyoideus,Подбородочно-подъязычная мышца,muscles-neck,
 FJ1581,Right intermediate tendon,Tendo intermedius musculi digastrici,Промежуточное сухожилие двубрюшной мышцы,ligaments-head-neck,
+FJ1582,Right longus capitis,Musculus longus capitis,Длинная мышца головы,muscles-neck,
+FJ1583,Right mylohyoid,Musculus mylohyoideus,Челюстно-подъязычная мышца,muscles-neck,диафрагма рта
+FJ1584,Right obliquus capitis inferior,Musculus obliquus capitis inferior,Нижняя косая мышца головы,muscles-neck,
+FJ1585,Right obliquus capitis superior,Musculus obliquus capitis superior,Верхняя косая мышца головы,muscles-neck,
+FJ1586,Right omohyoid,Musculus omohyoideus,Лопаточно-подъязычная мышца,muscles-neck,
+FJ1587,Right platysma,Platysma,Подкожная мышца шеи,muscles-neck,musculus platysma
+FJ1588,Right rectus capitis anterior,Musculus rectus capitis anterior,Передняя прямая мышца головы,muscles-neck,
+FJ1589,Right rectus capitis posterior major,Musculus rectus capitis posterior major,Большая задняя прямая мышца головы,muscles-neck,
+FJ1590,Right rectus capitis posterior minor,Musculus rectus capitis posterior minor,Малая задняя прямая мышца головы,muscles-neck,
+FJ1591,Right rectus capitis lateralis,Musculus rectus capitis lateralis,Латеральная прямая мышца головы,muscles-neck,
+FJ1592,Right scalenus anterior,Musculus scalenus anterior,Передняя лестничная мышца,muscles-neck,
+FJ1593,Right scalenus medius,Musculus scalenus medius,Средняя лестничная мышца,muscles-neck,
+FJ1594,Right scalenus posterior,Musculus scalenus posterior,Задняя лестничная мышца,muscles-neck,
+FJ1595,Right sternocleidomastoid,Musculus sternocleidomastoideus,Грудино-ключично-сосцевидная мышца,muscles-neck,кивательная мышца
+FJ1596,Right sternohyoid,Musculus sternohyoideus,Грудино-подъязычная мышца,muscles-neck,
+FJ1597,Right sternothyroid,Musculus sternothyroideus,Грудино-щитовидная мышца,muscles-neck,
+FJ1598,Right stylohyoid,Musculus stylohyoideus,Шилоподъязычная мышца,muscles-neck,
+FJ1599,Right thyrohyoid,Musculus thyrohyoideus,Щитоподъязычная мышца,muscles-neck,
+FJ1600,Superior oblique part of left longus colli,"Musculus longus colli, pars obliqua superior","Длинная мышца шеи, верхняя косая часть",muscles-neck,
+FJ1601,Vertical intermediate part of left longus colli,"Musculus longus colli, pars verticalis","Длинная мышца шеи, вертикальная часть",muscles-neck,pars intermedia;промежуточная часть
+FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",other,латеральная сосочковая мышца
+FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,other,
+FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,other,musculus papillaris lateralis;латеральная сосочковая мышца
+FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,other,
+FJ2437,Septal papillary muscle of right ventricle,Musculus papillaris septalis ventriculi dextri,Перегородочная сосочковая мышца правого желудочка,other,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2542,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
+FJ2543,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
+FJ2544,Left iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ2545,Left pubococcygeus,Musculus pubococcygeus,Лобково-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ2546,Left puborectalis,Musculus puborectalis,Лобково-прямокишечная мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ2547,Right coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
+FJ2548,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
+FJ2549,Right iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ2550,Right pubococcygeus,Musculus pubococcygeus,Лобково-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
+FJ2551,Right puborectalis,Musculus puborectalis,Лобково-прямокишечная мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
 FJ2552,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ2553,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
+FJ2738,Left genioglossus,Musculus genioglossus,Подбородочно-язычная мышца,muscles-head,
+FJ2739,Left hyoglossus,Musculus hyoglossus,Подъязычно-язычная мышца,muscles-head,
+FJ2741,Left levator veli palatini,Musculus levator veli palatini,"Мышца, поднимающая нёбную занавеску",muscles-head,
 FJ2744,Left pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2748,Left tensor veli palatini,Musculus tensor veli palatini,"Мышца, напрягающая нёбную занавеску",muscles-head,
 FJ2749,Pharyngeal raphe,Raphe pharyngis,Шов глотки,ligaments-head-neck,
+FJ2750,Right genioglossus,Musculus genioglossus,Подбородочно-язычная мышца,muscles-head,
+FJ2751,Right hyoglossus,Musculus hyoglossus,Подъязычно-язычная мышца,muscles-head,
+FJ2753,Right levator veli palatini,Musculus levator veli palatini,"Мышца, поднимающая нёбную занавеску",muscles-head,
 FJ2756,Right pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2760,Right tensor veli palatini,Musculus tensor veli palatini,"Мышца, напрягающая нёбную занавеску",muscles-head,
+FJ2762,Uvular muscle,Musculus uvulae,Мышца язычка,muscles-head,
 FJ2763,Left stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2764,Right stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2771,Hyo-epiglottic ligament,Ligamentum hyoepiglotticum,Подъязычно-надгортанная связка,ligaments-head-neck,
 FJ2772,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
 FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
+FJ2774,Left aryepiglotticus,Musculus aryepiglotticus,Черпалонадгортанная мышца,muscles-neck,
 FJ2775,Left arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2776,Left corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
 FJ2777,Left conus elasticus,Conus elasticus,Эластический конус,ligaments-head-neck,membrana cricovocalis
+FJ2778,Left lateral crico-arytenoid,Musculus cricoarytenoideus lateralis,Латеральная перстнечерпаловидная мышца,muscles-neck,
 FJ2779,Left lateral thyrohyoid ligament,Ligamentum thyrohyoideum laterale,Латеральная щитоподъязычная связка,ligaments-head-neck,
+FJ2780,Left oblique arytenoid,Musculus arytenoideus obliquus,Косая черпаловидная мышца,muscles-neck,
+FJ2781,Oblique part of left cricothyroid,"Musculus cricothyroideus, pars obliqua","Перстнещитовидная мышца, косая часть",muscles-neck,
+FJ2782,Left posterior crico-arytenoid,Musculus cricoarytenoideus posterior,Задняя перстнечерпаловидная мышца,muscles-neck,
+FJ2783,Straight part of left cricothyroid,"Musculus cricothyroideus, pars recta","Перстнещитовидная мышца, прямая часть",muscles-neck,
+FJ2784,Left thyro-arytenoid,Musculus thyroarytenoideus,Щиточерпаловидная мышца,muscles-neck,
+FJ2785,Left thyro-arytenoid,"Musculus thyroarytenoideus, pars thyroepiglottica","Щиточерпаловидная мышца, щитонадгортанная часть",muscles-neck,musculus thyroepiglotticus;щитонадгортанная мышца
 FJ2786,Left thyrohyoid membrane,Membrana thyrohyoidea,Щитоподъязычная мембрана,ligaments-head-neck,щитоподъязычная перепонка
 FJ2787,Left vocal ligament,Ligamentum vocale,Голосовая связка,ligaments-head-neck,
+FJ2788,Left vocalis,Musculus vocalis,Голосовая мышца,muscles-neck,
 FJ2789,Median cricothyroid ligament,Ligamentum cricothyroideum medianum,Срединная перстнещитовидная связка,ligaments-head-neck,ligamentum cricothyroideum;перстнещитовидная связка
 FJ2790,Median thyrohyoid ligament,Ligamentum thyrohyoideum medianum,Срединная щитоподъязычная связка,ligaments-head-neck,
+FJ2791,Right aryepiglotticus,Musculus aryepiglotticus,Черпалонадгортанная мышца,muscles-neck,
 FJ2792,Right arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2793,Right corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
 FJ2794,Right conus elasticus,Conus elasticus,Эластический конус,ligaments-head-neck,membrana cricovocalis
 FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
+FJ2796,Right lateral crico-arytenoid,Musculus cricoarytenoideus lateralis,Латеральная перстнечерпаловидная мышца,muscles-neck,
 FJ2797,Right lateral thyrohyoid ligament,Ligamentum thyrohyoideum laterale,Латеральная щитоподъязычная связка,ligaments-head-neck,
+FJ2798,Right oblique arytenoid,Musculus arytenoideus obliquus,Косая черпаловидная мышца,muscles-neck,
+FJ2799,Oblique part of right cricothyroid,"Musculus cricothyroideus, pars obliqua","Перстнещитовидная мышца, косая часть",muscles-neck,
+FJ2800,Right posterior crico-arytenoid,Musculus cricoarytenoideus posterior,Задняя перстнечерпаловидная мышца,muscles-neck,
+FJ2801,Straight part of right cricothyroid,"Musculus cricothyroideus, pars recta","Перстнещитовидная мышца, прямая часть",muscles-neck,
+FJ2802,Right thyro-arytenoid,Musculus thyroarytenoideus,Щиточерпаловидная мышца,muscles-neck,
+FJ2803,Right thyro-arytenoid,"Musculus thyroarytenoideus, pars thyroepiglottica","Щиточерпаловидная мышца, щитонадгортанная часть",muscles-neck,musculus thyroepiglotticus;щитонадгортанная мышца
 FJ2804,Right thyrohyoid membrane,Membrana thyrohyoidea,Щитоподъязычная мембрана,ligaments-head-neck,щитоподъязычная перепонка
 FJ2805,Right vocal ligament,Ligamentum vocale,Голосовая связка,ligaments-head-neck,
+FJ2806,Right vocalis,Musculus vocalis,Голосовая мышца,muscles-neck,
 FJ2807,Thyro-epiglottic ligament,Ligamentum thyroepiglotticum,Щитонадгортанная связка,ligaments-head-neck,
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
+FJ2809,Transverse arytenoid,Musculus arytenoideus transversus,Поперечная черпаловидная мышца,muscles-neck,
+FJ3131,Diaphragm,Diaphragma,Диафрагма,muscles-thorax,грудобрюшная преграда
 FJ3152,Right hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
 FJ3154,Tenth thoracic vertebra,Vertebra thoracica X,X грудной позвонок,spine,Th10
