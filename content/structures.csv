@@ -639,6 +639,10 @@ FJ2055,Right dorsalis pedis artery,Arteria dorsalis pedis,Тыльная арт�
 FJ2056,Deep dorsal vein of penis,Vena dorsalis profunda penis,Глубокая тыльная вена полового члена,veins-trunk,глубокая дорсальная вена полового члена
 FJ2057,Descending branch of right lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
 FJ2058,Distal perforating artery,Ramus perforans distalis arteriae metatarsalis plantaris,Дистальная прободающая ветвь подошвенной плюсневой артерии,arteries-limbs,arteria perforans distalis;дистальная прободающая артерия
+FJ2059,Dorsal venous arch of left foot,Vena marginalis lateralis,Латеральная краевая вена,veins-limbs,латеральная краевая вена стопы;arcus venosus dorsalis pedis;тыльная венозная дуга стопы;dorsal venous arch of foot (BodyParts3D label)
+FJ2060,Dorsal venous arch of left foot,Arcus venosus dorsalis pedis,Тыльная венозная дуга стопы,veins-limbs,
+FJ2061,Dorsal venous arch of right foot,Vena marginalis lateralis,Латеральная краевая вена,veins-limbs,латеральная краевая вена стопы;arcus venosus dorsalis pedis;тыльная венозная дуга стопы;dorsal venous arch of foot (BodyParts3D label)
+FJ2062,Dorsal venous arch of right foot,Arcus venosus dorsalis pedis,Тыльная венозная дуга стопы,veins-limbs,
 FJ2063,Descending branch of left lateral circumflex femoral artery,"Arteria circumflexa femoris lateralis, ramus descendens","Латеральная артерия, огибающая бедренную кость, нисходящая ветвь",arteries-limbs,"нисходящая ветвь латеральной артерии, огибающей бедренную кость"
 FJ2064,Distal perforating artery,Ramus perforans distalis arteriae metatarsalis plantaris,Дистальная прободающая ветвь подошвенной плюсневой артерии,arteries-limbs,arteria perforans distalis;дистальная прободающая артерия
 FJ2065,Left anterior tibial artery,Arteria tibialis anterior,Передняя большеберцовая артерия,arteries-limbs,
@@ -669,112 +673,210 @@ FJ2093,Set of dorsal digital arteries,Arteria fibularis,Малоберцовая
 FJ2094,Set of perforating arteries,Arteriae perforantes,Прободающие артерии,arteries-limbs,arteriae perforantes arteriae profundae femoris;прободающие артерии глубокой артерии бедра
 FJ2095,Set of plantar digital arteries proper,Arteriae digitales plantares propriae,Собственные подошвенные пальцевые артерии,arteries-limbs,
 FJ2096,Plantar metatarsal artery,Arteria metatarsalis plantaris,Подошвенная плюсневая артерия,arteries-limbs,arteriae metatarsales plantares;подошвенные плюсневые артерии
+FJ2097,Left anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены;vena recurrens tibialis anterior;передняя большеберцовая возвратная вена
+FJ2099,Left deep femoral vein,Vena profunda femoris,Глубокая вена бедра,veins-limbs,
+FJ2100,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,прободающие вены стопы;rami perforantes
+FJ2102,Left femoral vein,Vena femoralis,Бедренная вена,veins-limbs,
+FJ2103,Left great saphenous vein,Vena saphena magna,Большая подкожная вена ноги,veins-limbs,большая подкожная вена
+FJ2107,Left genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;латеральная нижняя коленная вена
+FJ2108,Left genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;медиальная нижняя коленная вена
+FJ2113,Tributary of plantar venous arch,Vena plantaris lateralis,Латеральная подошвенная вена,veins-limbs,venae plantares laterales;латеральные подошвенные вены;приток подошвенной венозной дуги;tributary of plantar venous arch (BodyParts3D label)
+FJ2115,Tributary of plantar venous arch,Vena plantaris medialis,Медиальная подошвенная вена,veins-limbs,venae plantares mediales;медиальные подошвенные вены;приток подошвенной венозной дуги;tributary of plantar venous arch (BodyParts3D label)
+FJ2117,Left popliteal vein,Vena poplitea,Подколенная вена,veins-limbs,
+FJ2118,Left posterior tibial vein,Vena tibialis posterior,Задняя большеберцовая вена,veins-limbs,venae tibiales posteriores;задние большеберцовые вены
+FJ2119,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,прободающие вены стопы;rami perforantes
+FJ2120,Set of plantar digital veins,Venae digitales plantares,Подошвенные пальцевые вены,veins-limbs,
+FJ2121,Left small saphenous vein,Vena saphena parva,Малая подкожная вена ноги,veins-limbs,малая подкожная вена
+FJ2122,Left superficial epigastric vein,Vena epigastrica superficialis,Поверхностная надчревная вена,veins-limbs,
+FJ2124,Left genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;латеральная верхняя коленная вена
+FJ2125,Left genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;медиальная верхняя коленная вена
 FJ2127,Set of perforating arteries,Arteriae perforantes,Прободающие артерии,arteries-limbs,arteriae perforantes arteriae profundae femoris;прободающие артерии глубокой артерии бедра
+FJ2128,Plantar venous arch of left foot,Arcus venosus plantaris,Подошвенная венозная дуга,veins-limbs,
+FJ2129,Plantar venous arch of right foot,Arcus venosus plantaris,Подошвенная венозная дуга,veins-limbs,
 FJ2130,Right anterior tibial artery,Arteria tibialis anterior,Передняя большеберцовая артерия,arteries-limbs,
 FJ2131,Right anterior tibial recurrent artery,Arteria recurrens tibialis anterior,Передняя большеберцовая возвратная артерия,arteries-limbs,передняя возвратная большеберцовая артерия
+FJ2132,Right anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены;vena recurrens tibialis anterior;передняя большеберцовая возвратная вена
 FJ2133,Right arcuate artery,Arteria arcuata,Дугообразная артерия,arteries-limbs,
+FJ2135,Right deep femoral vein,Vena profunda femoris,Глубокая вена бедра,veins-limbs,
 FJ2136,Right deep plantar artery,Arteria plantaris profunda,Глубокая подошвенная артерия,arteries-limbs,ramus plantaris profundus;глубокая подошвенная ветвь
 FJ2137,Right descending genicular artery,Arteria descendens genicularis,Нисходящая коленная артерия,arteries-limbs,arteria descendens genus
+FJ2138,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,прободающие вены стопы;rami perforantes
 FJ2141,Dorsal digital artery of foot,Arteria digitalis dorsalis pedis,Тыльная пальцевая артерия стопы,arteries-limbs,arteriae digitales dorsales pedis;тыльные пальцевые артерии стопы
 FJ2143,Right femoral artery,Arteria femoralis,Бедренная артерия,arteries-limbs,
+FJ2144,Right femoral vein,Vena femoralis,Бедренная вена,veins-limbs,
+FJ2145,Right great saphenous vein,Vena saphena magna,Большая подкожная вена ноги,veins-limbs,большая подкожная вена
 FJ2150,Right inferior lateral genicular artery,Arteria inferior lateralis genus,Латеральная нижняя коленная артерия,arteries-limbs,нижняя латеральная коленная артерия
+FJ2151,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;латеральная нижняя коленная вена
 FJ2152,Right inferior medial genicular artery,Arteria inferior medialis genus,Медиальная нижняя коленная артерия,arteries-limbs,нижняя медиальная коленная артерия
+FJ2153,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;медиальная нижняя коленная вена
 FJ2158,Right lateral circumflex femoral artery,Arteria circumflexa femoris lateralis,"Латеральная артерия, огибающая бедренную кость",arteries-limbs,латеральная огибающая артерия бедра
 FJ2159,Right lateral plantar artery,Arteria plantaris lateralis,Латеральная подошвенная артерия,arteries-limbs,
+FJ2160,Tributary of plantar venous arch,Vena plantaris lateralis,Латеральная подошвенная вена,veins-limbs,venae plantares laterales;латеральные подошвенные вены;приток подошвенной венозной дуги;tributary of plantar venous arch (BodyParts3D label)
 FJ2162,Right lateral superior genicular artery,Arteria superior lateralis genus,Латеральная верхняя коленная артерия,arteries-limbs,верхняя латеральная коленная артерия
 FJ2163,Right lateral tarsal artery,Arteria tarsalis lateralis,Латеральная предплюсневая артерия,arteries-limbs,
 FJ2164,Right medial plantar artery,Arteria plantaris medialis,Медиальная подошвенная артерия,arteries-limbs,
+FJ2165,Tributary of plantar venous arch,Vena plantaris medialis,Медиальная подошвенная вена,veins-limbs,venae plantares mediales;медиальные подошвенные вены;приток подошвенной венозной дуги;tributary of plantar venous arch (BodyParts3D label)
 FJ2166,Right medial superior genicular artery,Arteria superior medialis genus,Медиальная верхняя коленная артерия,arteries-limbs,верхняя медиальная коленная артерия
 FJ2167,Right middle genicular artery,Arteria media genus,Средняя коленная артерия,arteries-limbs,
 FJ2169,Right plantar arch,Arcus plantaris profundus,Глубокая подошвенная дуга,arteries-limbs,arcus plantaris;подошвенная дуга
 FJ2170,Right popliteal artery,Arteria poplitea,Подколенная артерия,arteries-limbs,
+FJ2171,Right popliteal vein,Vena poplitea,Подколенная вена,veins-limbs,
 FJ2172,Right posterior tibial artery,Arteria tibialis posterior,Задняя большеберцовая артерия,arteries-limbs,
+FJ2173,Right posterior tibial vein,Vena tibialis posterior,Задняя большеберцовая вена,veins-limbs,venae tibiales posteriores;задние большеберцовые вены
+FJ2174,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,прободающие вены стопы;rami perforantes
+FJ2175,Set of plantar digital veins,Venae digitales plantares,Подошвенные пальцевые вены,veins-limbs,
+FJ2176,Right small saphenous vein,Vena saphena parva,Малая подкожная вена ноги,veins-limbs,малая подкожная вена
+FJ2178,Right superficial epigastric vein,Vena epigastrica superficialis,Поверхностная надчревная вена,veins-limbs,
 FJ2179,Right superficial medial plantar artery,"Arteria plantaris medialis, ramus superficialis","Медиальная подошвенная артерия, поверхностная ветвь",arteries-limbs,поверхностная ветвь медиальной подошвенной артерии
+FJ2181,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;латеральная верхняя коленная вена
+FJ2182,Right genicular vein,Vena genicularis,Коленная вена,veins-limbs,venae geniculares;коленные вены;медиальная верхняя коленная вена
+FJ2183,Left anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены
+FJ2184,Left fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
+FJ2185,Set of dorsal digital veins,Venae digitales dorsales pedis,Тыльные пальцевые вены стопы,veins-limbs,
+FJ2186,Dorsal metacarpal vein,Vena metatarsalis dorsalis,Тыльная плюсневая вена,veins-limbs,venae metatarsales dorsales;тыльные плюсневые вены;dorsal metacarpal vein (BodyParts3D label)
+FJ2187,Left fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
+FJ2188,Left lateral circumflex femoral vein,Vena circumflexa femoris lateralis,"Латеральная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris laterales;латеральные вены, огибающие бедренную кость;латеральная огибающая вена бедра"
+FJ2189,Left medial circumflex femoral vein,Vena circumflexa femoris medialis,"Медиальная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris mediales;медиальные вены, огибающие бедренную кость;медиальная огибающая вена бедра"
+FJ2190,Right fibular vein,Venae perforantes,Прободающие вены,veins-limbs,venae perforantes venae profundae femoris;прободающие вены глубокой вены бедра;right fibular vein (BodyParts3D label)
+FJ2191,Plantar metatarsal vein,Vena metatarsalis plantaris,Подошвенная плюсневая вена,veins-limbs,venae metatarsales plantares;подошвенные плюсневые вены
+FJ2192,Set of perforating veins,Venae perforantes,Прободающие вены,veins-limbs,venae perforantes venae profundae femoris;прободающие вены глубокой вены бедра
+FJ2193,Right anterior tibial vein,Vena tibialis anterior,Передняя большеберцовая вена,veins-limbs,venae tibiales anteriores;передние большеберцовые вены
+FJ2194,Right fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
 FJ2195,Set of calcaneal branches of posterior tibial artery,Rami arteriae circumflexae femoris lateralis,"Ветви латеральной артерии, огибающей бедренную кость",arteries-limbs,calcaneal branches of posterior tibial artery (BodyParts3D label);rami calcanei
 FJ2196,Set of common plantar digital arteries,Arteriae digitales plantares communes,Общие подошвенные пальцевые артерии,arteries-limbs,
 FJ2197,Set of dorsal digital arteries,Arteria fibularis,Малоберцовая артерия,arteries-limbs,arteria peronea;set of dorsal digital arteries of foot (BodyParts3D label)
+FJ2198,Set of dorsal digital veins,Venae digitales dorsales pedis,Тыльные пальцевые вены стопы,veins-limbs,
+FJ2199,Dorsal metacarpal vein,Vena metatarsalis dorsalis,Тыльная плюсневая вена,veins-limbs,venae metatarsales dorsales;тыльные плюсневые вены;dorsal metacarpal vein (BodyParts3D label)
+FJ2200,Right fibular vein,Vena fibularis,Малоберцовая вена,veins-limbs,vena peronea;venae fibulares;малоберцовые вены
+FJ2201,Right lateral circumflex femoral vein,Vena circumflexa femoris lateralis,"Латеральная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris laterales;латеральные вены, огибающие бедренную кость;латеральная огибающая вена бедра"
+FJ2202,Right medial circumflex femoral vein,Vena circumflexa femoris medialis,"Медиальная вена, огибающая бедренную кость",veins-limbs,"venae circumflexae femoris mediales;медиальные вены, огибающие бедренную кость;медиальная огибающая вена бедра"
 FJ2203,Set of perforating arteries,Arteriae perforantes,Прободающие артерии,arteries-limbs,arteriae perforantes arteriae profundae femoris;прободающие артерии глубокой артерии бедра
 FJ2204,Set of plantar digital arteries proper,Arteriae digitales plantares propriae,Собственные подошвенные пальцевые артерии,arteries-limbs,
 FJ2205,Set of plantar digital arteries proper,Arteriae digitales plantares propriae,Собственные подошвенные пальцевые артерии,arteries-limbs,
 FJ2206,Plantar metatarsal artery,Arteria metatarsalis plantaris,Подошвенная плюсневая артерия,arteries-limbs,arteriae metatarsales plantares;подошвенные плюсневые артерии
+FJ2207,Plantar metatarsal vein,Vena metatarsalis plantaris,Подошвенная плюсневая вена,veins-limbs,venae metatarsales plantares;подошвенные плюсневые вены
 FJ2208,Superficial dorsal vein of penis,Vena dorsalis superficialis penis,Поверхностная тыльная вена полового члена,veins-trunk,venae dorsales superficiales penis;поверхностная дорсальная вена полового члена
 FJ2209,Right inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
 FJ2210,Left inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
 FJ2211,Acromial branch of left thoraco-acromial artery,"Arteria thoracoacromialis, ramus acromialis","Грудоакромиальная артерия, акромиальная ветвь",arteries-limbs,ramus acromialis arteriae thoracoacromialis;акромиальная ветвь грудоакромиальной артерии
 FJ2212,Left anterior circumflex humeral artery,Arteria circumflexa humeri anterior,"Передняя артерия, огибающая плечевую кость",arteries-limbs,передняя огибающая артерия плеча
+FJ2213,Left anterior circumflex humeral vein,Vena circumflexa humeri anterior,"Передняя вена, огибающая плечевую кость",veins-limbs,передняя огибающая вена плеча
 FJ2214,Left anterior interosseous artery,Arteria interossea anterior,Передняя межкостная артерия,arteries-limbs,
 FJ2215,Left inferior ulnar collateral artery,Arteria collateralis ulnaris inferior,Нижняя локтевая коллатеральная артерия,arteries-limbs,
 FJ2216,Left axillary artery,Arteria axillaris,Подмышечная артерия,arteries-limbs,
+FJ2217,Left axillary vein,Vena axillaris,Подмышечная вена,veins-limbs,
+FJ2218,Left basilic vein,Vena basilica,Медиальная подкожная вена руки,veins-limbs,царская вена;основная вена руки
 FJ2219,Left brachial artery,Arteria brachialis,Плечевая артерия,arteries-limbs,
+FJ2220,Left cephalic vein,Vena cephalica,Латеральная подкожная вена руки,veins-limbs,головная вена
 FJ2221,Left circumflex scapular artery,Arteria circumflexa scapulae,"Артерия, огибающая лопатку",arteries-limbs,
+FJ2222,Left circumflex scapular vein,Vena circumflexa scapulae,"Вена, огибающая лопатку",veins-limbs,огибающая вена лопатки
 FJ2223,Left common interosseous artery,Arteria interossea communis,Общая межкостная артерия,arteries-limbs,
 FJ2224,Left costocervical trunk,Truncus costocervicalis,Рёберно-шейный ствол,arteries-head-neck,реберно-шейный ствол
 FJ2225,Left deep brachial artery,Arteria profunda brachii,Глубокая артерия плеча,arteries-limbs,
 FJ2226,Left deep cervical artery,Arteria cervicalis profunda,Глубокая шейная артерия,arteries-head-neck,
 FJ2227,Left deep palmar arch,Arcus palmaris profundus,Глубокая ладонная дуга,arteries-limbs,
+FJ2228,Dorsal venous network of left hand,Rete venosum dorsale manus,Тыльная венозная сеть кисти,veins-limbs,
+FJ2229,Left deep palmar venous arch,Arcus venosus palmaris profundus,Глубокая ладонная венозная дуга,veins-limbs,
 FJ2230,Deltoid branch of left thoraco-acromial artery,"Arteria thoracoacromialis, ramus deltoideus","Грудоакромиальная артерия, дельтовидная ветвь",arteries-limbs,ramus deltoideus arteriae thoracoacromialis;дельтовидная ветвь грудоакромиальной артерии
 FJ2231,Dorsal carpal branch of left radial artery,"Arteria radialis, ramus carpalis dorsalis","Лучевая артерия, тыльная запястная ветвь",arteries-limbs,ramus carpalis dorsalis arteriae radialis;тыльная запястная ветвь лучевой артерии
 FJ2232,Left dorsal scapular artery,Arteria dorsalis scapulae,Дорсальная лопаточная артерия,arteries-head-neck,тыльная артерия лопатки
+FJ2233,Left lateral thoracic vein,Vena thoracica lateralis,Латеральная грудная вена,veins-limbs,
+FJ2234,Left median antebrachial vein,Vena mediana antebrachii,Промежуточная вена предплечья,veins-limbs,vena intermedia antebrachii;срединная вена предплечья
+FJ2235,Left median cubital vein,Vena mediana cubiti,Промежуточная вена локтя,veins-limbs,vena intermedia cubiti;срединная вена локтя;срединная локтевая вена
 FJ2236,Left dorsal carpal branch of ulnar artery,"Arteria ulnaris, ramus carpalis dorsalis","Локтевая артерия, тыльная запястная ветвь",arteries-limbs,ramus carpalis dorsalis arteriae ulnaris;тыльная запястная ветвь локтевой артерии
 FJ2237,Left palmar metacarpal artery,Arteria metacarpalis palmaris,Ладонная пястная артерия,arteries-limbs,arteriae metacarpales palmares;ладонные пястные артерии
+FJ2238,Left palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,venae metacarpales palmares;ладонные пястные вены
 FJ2239,Left posterior circumflex humeral artery,Arteria circumflexa humeri posterior,"Задняя артерия, огибающая плечевую кость",arteries-limbs,задняя огибающая артерия плеча
 FJ2240,Left posterior circumflex humeral artery,Arteria circumflexa humeri posterior,"Задняя артерия, огибающая плечевую кость",arteries-limbs,задняя огибающая артерия плеча
 FJ2241,Left posterior ulnar recurrent artery,"Arteria recurrens ulnaris, ramus posterior","Локтевая возвратная артерия, задняя ветвь",arteries-limbs,задняя локтевая возвратная артерия
 FJ2242,Left radial artery,Arteria radialis,Лучевая артерия,arteries-limbs,
 FJ2243,Left radial recurrent artery,Arteria recurrens radialis,Лучевая возвратная артерия,arteries-limbs,возвратная лучевая артерия
+FJ2244,Left radial vein,Vena radialis,Лучевая вена,veins-limbs,venae radiales;лучевые вены
 FJ2245,Left recurrent interosseous artery,Arteria interossea recurrens,Возвратная межкостная артерия,arteries-limbs,межкостная возвратная артерия
 FJ2246,Left subscapular artery,Arteria subscapularis,Подлопаточная артерия,arteries-limbs,
+FJ2247,Left subscapular vein,Vena subscapularis,Подлопаточная вена,veins-limbs,
 FJ2248,Left superficial palmar arterial arch,Arcus palmaris superficialis,Поверхностная ладонная дуга,arteries-limbs,
+FJ2249,Left superficial palmar venous arch,Arcus venosus palmaris superficialis,Поверхностная ладонная венозная дуга,veins-limbs,
 FJ2250,Left suprascapular vein,Vena suprascapularis,Надлопаточная вена,veins-trunk,
 FJ2251,Left suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
 FJ2252,Trunk of left thoraco-acromial artery,Arteria thoracoacromialis,Грудоакромиальная артерия,arteries-limbs,ствол грудоакромиальной артерии;arteria thoracoacromialis
 FJ2253,Left thoracodorsal artery,Arteria thoracodorsalis,Грудоспинная артерия,arteries-limbs,
+FJ2254,Left thoracodorsal vein,Vena thoracodorsalis,Грудоспинная вена,veins-limbs,
 FJ2255,Left thyrocervical trunk,Truncus thyrocervicalis,Щитошейный ствол,arteries-head-neck,
 FJ2256,Left superficial cervical artery,Arteria cervicalis superficialis,Поверхностная шейная артерия,arteries-head-neck,ramus superficialis arteriae transversae colli;поверхностная ветвь поперечной артерии шеи
 FJ2257,Left transverse cervical artery,Arteria transversa colli,Поперечная артерия шеи,arteries-head-neck,arteria transversa cervicis
 FJ2258,Left ulnar artery,Arteria ulnaris,Локтевая артерия,arteries-limbs,
 FJ2259,Left anterior ulnar recurrent artery,"Arteria recurrens ulnaris, ramus anterior","Локтевая возвратная артерия, передняя ветвь",arteries-limbs,передняя локтевая возвратная артерия
+FJ2260,Left ulnar vein,Vena ulnaris,Локтевая вена,veins-limbs,venae ulnares;локтевые вены
 FJ2261,Radial collateral branch of left deep brachial artery,Arteria collateralis radialis,Лучевая коллатеральная артерия,arteries-limbs,ramus collateralis radialis arteriae profundae brachii;лучевая коллатеральная ветвь глубокой артерии плеча
 FJ2262,Radial collateral branch of right deep brachial artery,Arteria collateralis radialis,Лучевая коллатеральная артерия,arteries-limbs,ramus collateralis radialis arteriae profundae brachii;лучевая коллатеральная ветвь глубокой артерии плеча
 FJ2263,Acromial branch of right thoraco-acromial artery,"Arteria thoracoacromialis, ramus acromialis","Грудоакромиальная артерия, акромиальная ветвь",arteries-limbs,ramus acromialis arteriae thoracoacromialis;акромиальная ветвь грудоакромиальной артерии
 FJ2264,Right anterior circumflex humeral artery,Arteria circumflexa humeri anterior,"Передняя артерия, огибающая плечевую кость",arteries-limbs,передняя огибающая артерия плеча
+FJ2265,Right anterior circumflex humeral vein,Vena circumflexa humeri anterior,"Передняя вена, огибающая плечевую кость",veins-limbs,передняя огибающая вена плеча
 FJ2266,Right anterior interosseous artery,Arteria interossea anterior,Передняя межкостная артерия,arteries-limbs,
 FJ2267,Right inferior ulnar collateral artery,Arteria collateralis ulnaris inferior,Нижняя локтевая коллатеральная артерия,arteries-limbs,
 FJ2268,Right axillary artery,Arteria axillaris,Подмышечная артерия,arteries-limbs,
+FJ2269,Right axillary vein,Vena axillaris,Подмышечная вена,veins-limbs,
+FJ2270,Right basilic vein,Vena basilica,Медиальная подкожная вена руки,veins-limbs,царская вена;основная вена руки
 FJ2271,Right brachial artery,Arteria brachialis,Плечевая артерия,arteries-limbs,
+FJ2272,Right cephalic vein,Vena cephalica,Латеральная подкожная вена руки,veins-limbs,головная вена
 FJ2273,Right circumflex scapular artery,Arteria circumflexa scapulae,"Артерия, огибающая лопатку",arteries-limbs,
+FJ2274,Right circumflex scapular vein,Vena circumflexa scapulae,"Вена, огибающая лопатку",veins-limbs,огибающая вена лопатки
 FJ2275,Right common interosseous artery,Arteria interossea communis,Общая межкостная артерия,arteries-limbs,
 FJ2276,Right costocervical trunk,Truncus costocervicalis,Рёберно-шейный ствол,arteries-head-neck,реберно-шейный ствол
 FJ2277,Right deep brachial artery,Arteria profunda brachii,Глубокая артерия плеча,arteries-limbs,
 FJ2278,Right deep cervical artery,Arteria cervicalis profunda,Глубокая шейная артерия,arteries-head-neck,
 FJ2279,Right deep palmar arch,Arcus palmaris profundus,Глубокая ладонная дуга,arteries-limbs,
+FJ2280,Dorsal venous network of right hand,Rete venosum dorsale manus,Тыльная венозная сеть кисти,veins-limbs,
+FJ2281,Right deep palmar venous arch,Arcus venosus palmaris profundus,Глубокая ладонная венозная дуга,veins-limbs,
 FJ2282,Deltoid branch of right thoraco-acromial artery,"Arteria thoracoacromialis, ramus deltoideus","Грудоакромиальная артерия, дельтовидная ветвь",arteries-limbs,ramus deltoideus arteriae thoracoacromialis;дельтовидная ветвь грудоакромиальной артерии
 FJ2283,Dorsal carpal branch of right radial artery,"Arteria radialis, ramus carpalis dorsalis","Лучевая артерия, тыльная запястная ветвь",arteries-limbs,ramus carpalis dorsalis arteriae radialis;тыльная запястная ветвь лучевой артерии
 FJ2284,Right dorsal scapular artery,Arteria dorsalis scapulae,Дорсальная лопаточная артерия,arteries-head-neck,тыльная артерия лопатки
+FJ2285,Right lateral thoracic vein,Vena thoracica lateralis,Латеральная грудная вена,veins-limbs,
+FJ2286,Right median antebrachial vein,Vena mediana antebrachii,Промежуточная вена предплечья,veins-limbs,vena intermedia antebrachii;срединная вена предплечья
+FJ2287,Right median cubital vein,Vena mediana cubiti,Промежуточная вена локтя,veins-limbs,vena intermedia cubiti;срединная вена локтя;срединная локтевая вена
 FJ2288,Right dorsal carpal branch of ulnar artery,"Arteria ulnaris, ramus carpalis dorsalis","Локтевая артерия, тыльная запястная ветвь",arteries-limbs,ramus carpalis dorsalis arteriae ulnaris;тыльная запястная ветвь локтевой артерии
 FJ2289,Right palmar metacarpal artery,Arteria metacarpalis palmaris,Ладонная пястная артерия,arteries-limbs,arteriae metacarpales palmares;ладонные пястные артерии
+FJ2290,Right palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,venae metacarpales palmares;ладонные пястные вены
 FJ2291,Right posterior circumflex humeral artery,Arteria circumflexa humeri posterior,"Задняя артерия, огибающая плечевую кость",arteries-limbs,задняя огибающая артерия плеча
 FJ2292,Right posterior circumflex humeral artery,Arteria circumflexa humeri posterior,"Задняя артерия, огибающая плечевую кость",arteries-limbs,задняя огибающая артерия плеча
 FJ2293,Right posterior ulnar recurrent artery,"Arteria recurrens ulnaris, ramus posterior","Локтевая возвратная артерия, задняя ветвь",arteries-limbs,задняя локтевая возвратная артерия
 FJ2294,Right radial artery,Arteria radialis,Лучевая артерия,arteries-limbs,
 FJ2295,Right radial recurrent artery,Arteria recurrens radialis,Лучевая возвратная артерия,arteries-limbs,возвратная лучевая артерия
+FJ2296,Right radial vein,Vena radialis,Лучевая вена,veins-limbs,venae radiales;лучевые вены
 FJ2297,Right recurrent interosseous artery,Arteria interossea recurrens,Возвратная межкостная артерия,arteries-limbs,межкостная возвратная артерия
 FJ2298,Right subscapular artery,Arteria subscapularis,Подлопаточная артерия,arteries-limbs,
+FJ2299,Right subscapular vein,Vena subscapularis,Подлопаточная вена,veins-limbs,
 FJ2300,Right superficial palmar arterial arch,Arcus palmaris superficialis,Поверхностная ладонная дуга,arteries-limbs,
+FJ2301,Right superficial palmar venous arch,Arcus venosus palmaris superficialis,Поверхностная ладонная венозная дуга,veins-limbs,
 FJ2302,Right suprascapular vein,Vena suprascapularis,Надлопаточная вена,veins-trunk,
 FJ2303,Right suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
 FJ2304,Trunk of right thoraco-acromial artery,Arteria thoracoacromialis,Грудоакромиальная артерия,arteries-limbs,ствол грудоакромиальной артерии;arteria thoracoacromialis
 FJ2305,Right thoracodorsal artery,Arteria thoracodorsalis,Грудоспинная артерия,arteries-limbs,
+FJ2306,Right thoracodorsal vein,Vena thoracodorsalis,Грудоспинная вена,veins-limbs,
 FJ2307,Right thyrocervical trunk,Truncus thyrocervicalis,Щитошейный ствол,arteries-head-neck,
 FJ2308,Right superficial cervical artery,Arteria cervicalis superficialis,Поверхностная шейная артерия,arteries-head-neck,ramus superficialis arteriae transversae colli;поверхностная ветвь поперечной артерии шеи
 FJ2309,Right transverse cervical artery,Arteria transversa colli,Поперечная артерия шеи,arteries-head-neck,arteria transversa cervicis
 FJ2310,Right ulnar artery,Arteria ulnaris,Локтевая артерия,arteries-limbs,
 FJ2311,Right anterior ulnar recurrent artery,"Arteria recurrens ulnaris, ramus anterior","Локтевая возвратная артерия, передняя ветвь",arteries-limbs,передняя локтевая возвратная артерия
+FJ2312,Right ulnar vein,Vena ulnaris,Локтевая вена,veins-limbs,venae ulnares;локтевые вены
+FJ2313,Left medial brachial vein,Vena brachialis,Плечевая вена,veins-limbs,venae brachiales;плечевые вены;медиальная плечевая вена
 FJ2314,Left arteria radialis indicis,Arteria radialis indicis,Лучевая артерия указательного пальца,arteries-limbs,
 FJ2315,Left first common palmar digital artery,Arteria digitalis palmaris communis I,Общая ладонная пальцевая артерия I,arteries-limbs,первая общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2316,Left second common palmar digital artery,Arteria digitalis palmaris communis II,Общая ладонная пальцевая артерия II,arteries-limbs,вторая общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2317,Left third common palmar digital artery,Arteria digitalis palmaris communis III,Общая ладонная пальцевая артерия III,arteries-limbs,третья общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2318,Set of dorsal digital arteries,Arteriae digitales dorsales manus,Тыльные пальцевые артерии кисти,arteries-limbs,
+FJ2319,Proper palmar digital vein of left little finger,Venae digitales palmares,Ладонные пальцевые вены,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца
+FJ2320,Left palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
+FJ2321,Proper palmar digital vein of left little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2322,Common palmar digital vein,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,venae digitales palmares communes;общие ладонные пальцевые вены
+FJ2323,Left palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
+FJ2324,Proper palmar digital vein of left index finger,Vena digitalis palmaris propria indicis,Собственная ладонная пальцевая вена указательного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2325,Proper palmar digital vein of left index finger,Vena digitalis palmaris propria indicis,Собственная ладонная пальцевая вена указательного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2326,Proper palmar digital vein of left middle finger,Vena digitalis palmaris propria digiti medii,Собственная ладонная пальцевая вена среднего пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2327,Proper palmar digital vein of left ring finger,Vena digitalis palmaris propria digiti anularis,Собственная ладонная пальцевая вена безымянного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2328,Proper palmar digital vein of left ring finger,Vena digitalis palmaris propria digiti anularis,Собственная ладонная пальцевая вена безымянного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2329,Proper palmar digital vein of left little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
 FJ2330,Pectoral branch of left thoraco-acromial artery,"Arteria thoracoacromialis, ramus pectoralis","Грудоакромиальная артерия, грудная ветвь",arteries-limbs,rami pectorales arteriae thoracoacromialis;грудные ветви грудоакромиальной артерии
 FJ2331,Middle collateral branch of left deep brachial artery,Arteria collateralis media,Средняя коллатеральная артерия,arteries-limbs,ramus collateralis medius arteriae profundae brachii;средняя коллатеральная ветвь глубокой артерии плеча
 FJ2332,Left arteria radialis indicis,Arteria radialis indicis,Лучевая артерия указательного пальца,arteries-limbs,
@@ -785,6 +887,8 @@ FJ2336,Lateral proper palmar digital artery of left little finger,Arteria digita
 FJ2337,Left fourth common palmar digital artery,Arteria digitalis palmaris communis IV,Общая ладонная пальцевая артерия IV,arteries-limbs,четвёртая общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2338,Left arteria princeps pollicis,Arteria princeps pollicis,Артерия большого пальца кисти,arteries-limbs,главная артерия большого пальца
 FJ2339,Left arteria princeps pollicis,Arteria princeps pollicis,Артерия большого пальца кисти,arteries-limbs,главная артерия большого пальца
+FJ2340,Proper palmar digital vein of left middle finger,Vena digitalis palmaris propria digiti medii,Собственная ладонная пальцевая вена среднего пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2341,Right medial brachial vein,Vena brachialis,Плечевая вена,veins-limbs,venae brachiales;плечевые вены;медиальная плечевая вена
 FJ2342,Right arteria radialis indicis,Arteria radialis indicis,Лучевая артерия указательного пальца,arteries-limbs,
 FJ2343,Right first common palmar digital artery,Arteria digitalis palmaris communis I,Общая ладонная пальцевая артерия I,arteries-limbs,первая общая ладонная пальцевая артерия;arteriae digitales palmares communes
 FJ2344,Right second common palmar digital artery,Arteria digitalis palmaris communis II,Общая ладонная пальцевая артерия II,arteries-limbs,вторая общая ладонная пальцевая артерия;arteriae digitales palmares communes
@@ -792,6 +896,18 @@ FJ2345,Right third common palmar digital artery,Arteria digitalis palmaris commu
 FJ2346,Set of dorsal digital arteries,Arteriae digitales dorsales manus,Тыльные пальцевые артерии кисти,arteries-limbs,
 FJ2347,Set of dorsal metacarpal arteries,Arteriae metacarpales dorsales,Тыльные пястные артерии,arteries-limbs,
 FJ2348,Set of dorsal metacarpal arteries,Arteriae metacarpales dorsales,Тыльные пястные артерии,arteries-limbs,
+FJ2349,Proper palmar digital vein of right little finger,Venae digitales palmares,Ладонные пальцевые вены,veins-limbs,proper palmar digital vein of little finger (BodyParts3D label);собственная ладонная пальцевая вена мизинца
+FJ2350,Right palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
+FJ2351,Proper palmar digital vein of right little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2352,Common palmar digital vein,Vena digitalis palmaris communis,Общая ладонная пальцевая вена,veins-limbs,venae digitales palmares communes;общие ладонные пальцевые вены
+FJ2353,Right palmar metacarpal vein,Vena metacarpalis palmaris,Ладонная пястная вена,veins-limbs,"venae metacarpales palmares;ладонные пястные вены;вены, сопровождающие артерию большого пальца кисти"
+FJ2354,Proper palmar digital vein of right index finger,Vena digitalis palmaris propria indicis,Собственная ладонная пальцевая вена указательного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2355,Proper palmar digital vein of right index finger,Vena digitalis palmaris propria indicis,Собственная ладонная пальцевая вена указательного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2356,Proper palmar digital vein of right middle finger,Vena digitalis palmaris propria digiti medii,Собственная ладонная пальцевая вена среднего пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2357,Proper palmar digital vein of right middle finger,Vena digitalis palmaris propria digiti medii,Собственная ладонная пальцевая вена среднего пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2358,Proper palmar digital vein of right ring finger,Vena digitalis palmaris propria digiti anularis,Собственная ладонная пальцевая вена безымянного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2359,Proper palmar digital vein of right ring finger,Vena digitalis palmaris propria digiti anularis,Собственная ладонная пальцевая вена безымянного пальца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
+FJ2360,Proper palmar digital vein of right little finger,Vena digitalis palmaris propria digiti minimi,Собственная ладонная пальцевая вена мизинца,veins-limbs,venae digitales palmares propriae;собственные ладонные пальцевые вены
 FJ2361,Pectoral branch of right thoraco-acromial artery,"Arteria thoracoacromialis, ramus pectoralis","Грудоакромиальная артерия, грудная ветвь",arteries-limbs,rami pectorales arteriae thoracoacromialis;грудные ветви грудоакромиальной артерии
 FJ2362,Middle collateral branch of right deep brachial artery,Arteria collateralis media,Средняя коллатеральная артерия,arteries-limbs,ramus collateralis medius arteriae profundae brachii;средняя коллатеральная ветвь глубокой артерии плеча
 FJ2363,Right arteria radialis indicis,Arteria radialis indicis,Лучевая артерия указательного пальца,arteries-limbs,
