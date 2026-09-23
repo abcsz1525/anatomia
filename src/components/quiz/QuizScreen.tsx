@@ -201,8 +201,10 @@ export function QuizScreen() {
   }, [quiz]);
   const handleAbort = useCallback(() => {
     clearQuiz();
+    // иначе экран настройки открывается с прежним приближением к структуре
+    reframe();
     dispatch({ type: "abort" });
-  }, [clearQuiz]);
+  }, [clearQuiz, reframe]);
 
   return (
     <div className="flex h-full w-full" data-atlas-ready={ready ? "true" : "false"}>
