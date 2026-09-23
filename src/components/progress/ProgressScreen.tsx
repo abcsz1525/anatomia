@@ -8,7 +8,7 @@ import { daysLabel, sessionsLabel } from "@/lib/progress/format";
 import { emptyProgress } from "@/lib/progress/record";
 import { parseProgress, stringifyProgress } from "@/lib/progress/serialize";
 import { dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
-import { loadProgress, saveProgress } from "@/lib/progress/storage";
+import { hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
 import { courseTopics, topicParts } from "@/lib/quiz/pool";
 
@@ -40,6 +40,7 @@ export function ProgressScreen() {
   const [progress, setProgress] = useState<ProgressV1 | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [confirming, setConfirming] = useState(false);
+  const [backupNotice, setBackupNotice] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -65,6 +66,7 @@ export function ProgressScreen() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is unavailable until mount
     setProgress(loadProgress());
+    setBackupNotice(hasBackup());
   }, []);
 
   const groups = useMemo<TopicGroup[]>(() => {
@@ -154,6 +156,17 @@ export function ProgressScreen() {
           на другое устройство.
         </p>
       </header>
+
+      {backupNotice && (
+        <p
+          role="status"
+          data-testid="progress-backup-notice"
+          className="rounded border border-amber-300 bg-amber-50 px-4 py-2 text-sm text-amber-900"
+        >
+          Предыдущий прогресс не удалось прочитать; его копия сохранена в браузере под ключом
+          anatomia.progress.v1.backup
+        </p>
+      )}
 
       <div className="flex flex-wrap items-baseline gap-x-6 gap-y-1 rounded border px-4 py-3">
         <p data-testid="streak" className="text-base font-semibold">

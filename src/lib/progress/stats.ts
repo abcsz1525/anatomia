@@ -1,24 +1,30 @@
 import type { QuizPart } from "@/lib/quiz/types";
 import type { ProgressV1 } from "./types";
 
-const DAY_MS = 24 * 60 * 60 * 1000;
 const DAY_KEY_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
-/**
- * Календарный день ISO-метки времени в UTC (а не в локальном часовом
- * поясе): "2026-09-23" для любой метки внутри 2026-09-23T00:00:00.000Z —
- * 2026-09-23T23:59:59.999Z. Это делает activeDays детерминированными
- * независимо от часового пояса устройства.
- */
-export function dayKey(iso: string): string {
-  return new Date(iso).toISOString().slice(0, 10);
+/** Форматирует дату как местный календарный день "YYYY-MM-DD" (с ведущими нулями). */
+function formatDayKey(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
 }
 
-function dayKeyToUTCms(key: string): number {
+function parseDayKey(key: string): { y: number; m: number; d: number } | null {
   const m = DAY_KEY_RE.exec(key);
-  if (!m) return NaN;
-  const [, y, mo, d] = m;
-  return Date.UTC(Number(y), Number(mo) - 1, Number(d));
+  if (!m) return null;
+  return { y: Number(m[1]), m: Number(m[2]), d: Number(m[3]) };
+}
+
+/**
+ * Местный календарный день ISO-метки времени (часовой пояс устройства, а
+ * не UTC): "2026-09-23" для любой метки внутри местных суток 2026-09-23.
+ * activeDays поэтому отражает то, каким днём сессия ощущалась для
+ * пользователя, а не UTC-дату сервера.
+ */
+export function dayKey(iso: string): string {
+  return formatDayKey(new Date(iso));
 }
 
 /** Считает освоенные структуры: known = distinct la с суммой correct >= 2 по всем id этой la. */
@@ -45,25 +51,29 @@ export function topicMastery(p: ProgressV1, parts: QuizPart[]): { known: number;
 /** Подряд идущие дни активности, заканчивающиеся today или today-1; иначе 0. */
 export function streakDays(activeDays: string[], today: string): number {
   const days = new Set(activeDays);
-  const todayMs = dayKeyToUTCms(today);
-  if (Number.isNaN(todayMs)) return 0;
+  const parts = parseDayKey(today);
+  if (!parts) return 0;
+  const { y, m, d } = parts;
 
-  let cursor: number;
+  // new Date(y, m-1, d-n) is local-time, DST-safe day arithmetic: JS
+  // normalises out-of-range days (e.g. d-n <= 0) across month/year
+  // boundaries without any manual carrying.
+  let n: number;
   if (days.has(today)) {
-    cursor = todayMs;
+    n = 0;
   } else {
-    const yesterdayKey = new Date(todayMs - DAY_MS).toISOString().slice(0, 10);
+    const yesterdayKey = formatDayKey(new Date(y, m - 1, d - 1));
     if (days.has(yesterdayKey)) {
-      cursor = todayMs - DAY_MS;
+      n = 1;
     } else {
       return 0;
     }
   }
 
   let count = 0;
-  while (days.has(new Date(cursor).toISOString().slice(0, 10))) {
+  while (days.has(formatDayKey(new Date(y, m - 1, d - n)))) {
     count += 1;
-    cursor -= DAY_MS;
+    n += 1;
   }
   return count;
 }

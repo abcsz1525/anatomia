@@ -13,13 +13,15 @@ function progressWith(parts: ProgressV1["parts"]): ProgressV1 {
 }
 
 describe("dayKey", () => {
-  it("extracts the UTC calendar day from an ISO timestamp", () => {
-    expect(dayKey("2026-09-23T10:05:00.000Z")).toBe("2026-09-23");
+  // dayKey is local-calendar-day, not UTC, so inputs are built from local
+  // Date components (not literal "...Z" strings) — that's the only way an
+  // assertion about the resulting key stays true under any runner TZ.
+  it("extracts the local calendar day from an ISO timestamp", () => {
+    expect(dayKey(new Date(2026, 8, 23, 1, 0).toISOString())).toBe("2026-09-23");
   });
 
-  it("uses the UTC day even when the local offset would shift the calendar date", () => {
-    // 23:30 UTC on the 23rd is still the 23rd in UTC, regardless of local TZ.
-    expect(dayKey("2026-09-23T23:30:00.000Z")).toBe("2026-09-23");
+  it("uses the local day near the end of the day too", () => {
+    expect(dayKey(new Date(2026, 8, 23, 23, 30).toISOString())).toBe("2026-09-23");
   });
 });
 
@@ -86,5 +88,13 @@ describe("streakDays", () => {
 
   it("is 0 for an empty activeDays list", () => {
     expect(streakDays([], "2026-09-23")).toBe(0);
+  });
+
+  it("counts a streak across a month boundary", () => {
+    expect(streakDays(["2026-08-31", "2026-09-01"], "2026-09-01")).toBe(2);
+  });
+
+  it("counts a streak across a year boundary", () => {
+    expect(streakDays(["2025-12-31", "2026-01-01"], "2026-01-01")).toBe(2);
   });
 });

@@ -33,6 +33,17 @@ export function loadProgress(): ProgressV1 {
   }
 }
 
+/** true если под BACKUP_KEY лежат данные, испорченный прогресс, сохранённый loadProgress(). */
+export function hasBackup(): boolean {
+  if (typeof localStorage === "undefined") return false;
+
+  try {
+    return localStorage.getItem(BACKUP_KEY) !== null;
+  } catch {
+    return false;
+  }
+}
+
 export function saveProgress(p: ProgressV1): void {
   if (typeof localStorage === "undefined") return;
 
