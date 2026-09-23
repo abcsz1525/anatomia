@@ -50,39 +50,139 @@ FJ1359,Right medial rectus,Musculus rectus medialis,Медиальная пря�
 FJ1373,Right superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
 FJ1374,Right superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
 FJ1380,Trochlea of right superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
+FJ1383,First lumbrical of right foot,Musculus lumbricalis I pedis,I червеобразная мышца стопы,muscles-lower-limb,
+FJ1383M,First lumbrical of left foot,Musculus lumbricalis I pedis,I червеобразная мышца стопы,muscles-lower-limb,
+FJ1384,First plantar interosseous of right foot,Musculus interosseus plantaris I,I подошвенная межкостная мышца,muscles-lower-limb,
+FJ1384M,First plantar interosseous of left foot,Musculus interosseus plantaris I,I подошвенная межкостная мышца,muscles-lower-limb,
+FJ1385,Second lumbrical of right foot,Musculus lumbricalis II pedis,II червеобразная мышца стопы,muscles-lower-limb,
+FJ1385M,Second lumbrical of left foot,Musculus lumbricalis II pedis,II червеобразная мышца стопы,muscles-lower-limb,
+FJ1386,Second plantar interosseous of right foot,Musculus interosseus plantaris II,II подошвенная межкостная мышца,muscles-lower-limb,
+FJ1386M,Second plantar interosseous of left foot,Musculus interosseus plantaris II,II подошвенная межкостная мышца,muscles-lower-limb,
+FJ1387,Third lumbrical of right foot,Musculus lumbricalis III pedis,III червеобразная мышца стопы,muscles-lower-limb,
+FJ1387M,Third lumbrical of left foot,Musculus lumbricalis III pedis,III червеобразная мышца стопы,muscles-lower-limb,
+FJ1388,Third plantar interosseous of right foot,Musculus interosseus plantaris III,III подошвенная межкостная мышца,muscles-lower-limb,
+FJ1388M,Third plantar interosseous of left foot,Musculus interosseus plantaris III,III подошвенная межкостная мышца,muscles-lower-limb,
+FJ1389,Fourth lumbrical of right foot,Musculus lumbricalis IV pedis,IV червеобразная мышца стопы,muscles-lower-limb,
+FJ1389M,Fourth lumbrical of left foot,Musculus lumbricalis IV pedis,IV червеобразная мышца стопы,muscles-lower-limb,
+FJ1390,Abductor digiti minimi of right foot,Musculus abductor digiti minimi pedis,"Мышца, отводящая мизинец стопы",muscles-lower-limb,
+FJ1390M,Abductor digiti minimi of left foot,Musculus abductor digiti minimi pedis,"Мышца, отводящая мизинец стопы",muscles-lower-limb,
+FJ1391,Flexor digiti minimi brevis of right foot,Musculus flexor digiti minimi brevis pedis,Короткий сгибатель мизинца стопы,muscles-lower-limb,
+FJ1391M,Flexor digiti minimi brevis of left foot,Musculus flexor digiti minimi brevis pedis,Короткий сгибатель мизинца стопы,muscles-lower-limb,
 FJ1392,Interosseous membrane of right leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
 FJ1392M,Interosseous membrane of left leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
+FJ1393,Lateral head of right flexor hallucis brevis,"Musculus flexor hallucis brevis, caput laterale","Короткий сгибатель большого пальца стопы, латеральная головка",muscles-lower-limb,
+FJ1393M,Lateral head of left flexor hallucis brevis,"Musculus flexor hallucis brevis, caput laterale","Короткий сгибатель большого пальца стопы, латеральная головка",muscles-lower-limb,
+FJ1394,Lateral head of right gastrocnemius,"Musculus gastrocnemius, caput laterale","Икроножная мышца, латеральная головка",muscles-lower-limb,
+FJ1394M,Lateral head of left gastrocnemius,"Musculus gastrocnemius, caput laterale","Икроножная мышца, латеральная головка",muscles-lower-limb,
+FJ1395,Long head of right biceps femoris,"Musculus biceps femoris, caput longum","Двуглавая мышца бедра, длинная головка",muscles-lower-limb,
+FJ1395M,Long head of left biceps femoris,"Musculus biceps femoris, caput longum","Двуглавая мышца бедра, длинная головка",muscles-lower-limb,
+FJ1396,Medial head of right flexor hallucis brevis,"Musculus flexor hallucis brevis, caput mediale","Короткий сгибатель большого пальца стопы, медиальная головка",muscles-lower-limb,
+FJ1396M,Medial head of left flexor hallucis brevis,"Musculus flexor hallucis brevis, caput mediale","Короткий сгибатель большого пальца стопы, медиальная головка",muscles-lower-limb,
+FJ1397,Medial head of right gastrocnemius,"Musculus gastrocnemius, caput mediale","Икроножная мышца, медиальная головка",muscles-lower-limb,
+FJ1397M,Medial head of left gastrocnemius,"Musculus gastrocnemius, caput mediale","Икроножная мышца, медиальная головка",muscles-lower-limb,
+FJ1398,Oblique head of right adductor hallucis,"Musculus adductor hallucis, caput obliquum","Мышца, приводящая большой палец стопы, косая головка",muscles-lower-limb,
+FJ1398M,Oblique head of left adductor hallucis,"Musculus adductor hallucis, caput obliquum","Мышца, приводящая большой палец стопы, косая головка",muscles-lower-limb,
+FJ1399,Opponens digiti minimi of right foot,Musculus opponens digiti minimi pedis,"Мышца, противопоставляющая мизинец стопы",muscles-lower-limb,
+FJ1399M,Opponens digiti minimi of left foot,Musculus opponens digiti minimi pedis,"Мышца, противопоставляющая мизинец стопы",muscles-lower-limb,
+FJ1400,Right abductor hallucis,Musculus abductor hallucis,"Мышца, отводящая большой палец стопы",muscles-lower-limb,
+FJ1400M,Left abductor hallucis,Musculus abductor hallucis,"Мышца, отводящая большой палец стопы",muscles-lower-limb,
+FJ1401,Right adductor brevis,Musculus adductor brevis,Короткая приводящая мышца,muscles-lower-limb,
+FJ1401M,Left adductor brevis,Musculus adductor brevis,Короткая приводящая мышца,muscles-lower-limb,
+FJ1402,Right adductor longus,Musculus adductor longus,Длинная приводящая мышца,muscles-lower-limb,
+FJ1402M,Left adductor longus,Musculus adductor longus,Длинная приводящая мышца,muscles-lower-limb,
+FJ1403,Right adductor magnus,Musculus adductor magnus,Большая приводящая мышца,muscles-lower-limb,
+FJ1403M,Left adductor magnus,Musculus adductor magnus,Большая приводящая мышца,muscles-lower-limb,
+FJ1404,Right adductor minimus,Musculus adductor minimus,Малая приводящая мышца,muscles-lower-limb,
+FJ1404M,Left adductor minimus,Musculus adductor minimus,Малая приводящая мышца,muscles-lower-limb,
 FJ1405,Right calcaneal tendon,Tendo calcaneus,Пяточное сухожилие,ligaments-limbs,ахиллово сухожилие;tendo Achillis
 FJ1405M,Left calcaneal tendon,Tendo calcaneus,Пяточное сухожилие,ligaments-limbs,ахиллово сухожилие;tendo Achillis
+FJ1406,Right extensor digitorum longus,Musculus extensor digitorum longus,Длинный разгибатель пальцев,muscles-lower-limb,
+FJ1406M,Left extensor digitorum longus,Musculus extensor digitorum longus,Длинный разгибатель пальцев,muscles-lower-limb,
+FJ1407,Right extensor hallucis brevis,Musculus extensor hallucis brevis,Короткий разгибатель большого пальца стопы,muscles-lower-limb,
+FJ1407M,Left extensor hallucis brevis,Musculus extensor hallucis brevis,Короткий разгибатель большого пальца стопы,muscles-lower-limb,
+FJ1408,Right extensor hallucis longus,Musculus extensor hallucis longus,Длинный разгибатель большого пальца стопы,muscles-lower-limb,
+FJ1408M,Left extensor hallucis longus,Musculus extensor hallucis longus,Длинный разгибатель большого пальца стопы,muscles-lower-limb,
 FJ1409,Right fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
 FJ1409M,Left fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
 FJ1410,Right fibularis longus,Musculus fibularis longus,Длинная малоберцовая мышца,muscles-lower-limb,musculus peroneus longus
 FJ1410M,Left fibularis longus,Musculus fibularis longus,Длинная малоберцовая мышца,muscles-lower-limb,musculus peroneus longus
 FJ1411,Right fibularis tertius,Musculus fibularis tertius,Третья малоберцовая мышца,muscles-lower-limb,musculus peroneus tertius
 FJ1411M,Left fibularis tertius,Musculus fibularis tertius,Третья малоберцовая мышца,muscles-lower-limb,musculus peroneus tertius
+FJ1412,Right flexor accessorius,Musculus quadratus plantae,Квадратная мышца подошвы,muscles-lower-limb,musculus flexor accessorius;добавочный сгибатель
+FJ1412M,Left flexor accessorius,Musculus quadratus plantae,Квадратная мышца подошвы,muscles-lower-limb,musculus flexor accessorius;добавочный сгибатель
+FJ1413,Right flexor digitorum brevis,Musculus flexor digitorum brevis,Короткий сгибатель пальцев,muscles-lower-limb,
+FJ1413M,Left flexor digitorum brevis,Musculus flexor digitorum brevis,Короткий сгибатель пальцев,muscles-lower-limb,
+FJ1414,Right flexor digitorum longus,Musculus flexor digitorum longus,Длинный сгибатель пальцев,muscles-lower-limb,
+FJ1414M,Left flexor digitorum longus,Musculus flexor digitorum longus,Длинный сгибатель пальцев,muscles-lower-limb,
+FJ1415,Right flexor hallucis longus,Musculus flexor hallucis longus,Длинный сгибатель большого пальца стопы,muscles-lower-limb,
+FJ1415M,Left flexor hallucis longus,Musculus flexor hallucis longus,Длинный сгибатель большого пальца стопы,muscles-lower-limb,
+FJ1416,Right gemellus inferior,Musculus gemellus inferior,Нижняя близнецовая мышца,muscles-lower-limb,
+FJ1416M,Left gemellus inferior,Musculus gemellus inferior,Нижняя близнецовая мышца,muscles-lower-limb,
+FJ1417,Right gemellus superior,Musculus gemellus superior,Верхняя близнецовая мышца,muscles-lower-limb,
+FJ1417M,Left gemellus superior,Musculus gemellus superior,Верхняя близнецовая мышца,muscles-lower-limb,
+FJ1418,Right gluteus maximus,Musculus gluteus maximus,Большая ягодичная мышца,muscles-lower-limb,
+FJ1418M,Left gluteus maximus,Musculus gluteus maximus,Большая ягодичная мышца,muscles-lower-limb,
+FJ1419,Right gluteus medius,Musculus gluteus medius,Средняя ягодичная мышца,muscles-lower-limb,
+FJ1419M,Left gluteus medius,Musculus gluteus medius,Средняя ягодичная мышца,muscles-lower-limb,
+FJ1420,Right gluteus minimus,Musculus gluteus minimus,Малая ягодичная мышца,muscles-lower-limb,
+FJ1420M,Left gluteus minimus,Musculus gluteus minimus,Малая ягодичная мышца,muscles-lower-limb,
+FJ1421,Right gracilis,Musculus gracilis,Тонкая мышца,muscles-lower-limb,
+FJ1421M,Left gracilis,Musculus gracilis,Тонкая мышца,muscles-lower-limb,
+FJ1422,Right iliacus,Musculus iliacus,Подвздошная мышца,muscles-lower-limb,
+FJ1422M,Left iliacus,Musculus iliacus,Подвздошная мышца,muscles-lower-limb,
 FJ1423,Right iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
 FJ1423M,Left iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
 FJ1424,Right long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
 FJ1424M,Left long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
+FJ1425,Right obturator externus,Musculus obturatorius externus,Наружная запирательная мышца,muscles-lower-limb,musculus obturator externus
+FJ1425M,Left obturator externus,Musculus obturatorius externus,Наружная запирательная мышца,muscles-lower-limb,musculus obturator externus
 FJ1426,Right obturator internus,Musculus obturatorius internus,Внутренняя запирательная мышца,muscles-pelvis,
 FJ1426M,Left obturator internus,Musculus obturatorius internus,Внутренняя запирательная мышца,muscles-pelvis,
+FJ1427,Right pectineus,Musculus pectineus,Гребенчатая мышца,muscles-lower-limb,
+FJ1427M,Left pectineus,Musculus pectineus,Гребенчатая мышца,muscles-lower-limb,
 FJ1428,Right piriformis,Musculus piriformis,Грушевидная мышца,muscles-pelvis,
 FJ1428M,Left piriformis,Musculus piriformis,Грушевидная мышца,muscles-pelvis,
+FJ1429,Right plantaris,Musculus plantaris,Подошвенная мышца,muscles-lower-limb,
+FJ1429M,Left plantaris,Musculus plantaris,Подошвенная мышца,muscles-lower-limb,
+FJ1430,Right popliteus,Musculus popliteus,Подколенная мышца,muscles-lower-limb,
+FJ1430M,Left popliteus,Musculus popliteus,Подколенная мышца,muscles-lower-limb,
 FJ1431,Right psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
 FJ1431M,Left psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
+FJ1432,Right quadratus femoris,Musculus quadratus femoris,Квадратная мышца бедра,muscles-lower-limb,
+FJ1432M,Left quadratus femoris,Musculus quadratus femoris,Квадратная мышца бедра,muscles-lower-limb,
+FJ1433,Right rectus femoris,Musculus rectus femoris,Прямая мышца бедра,muscles-lower-limb,
+FJ1433M,Left rectus femoris,Musculus rectus femoris,Прямая мышца бедра,muscles-lower-limb,
+FJ1434,Right sartorius,Musculus sartorius,Портняжная мышца,muscles-lower-limb,
+FJ1434M,Left sartorius,Musculus sartorius,Портняжная мышца,muscles-lower-limb,
+FJ1435,Right semimembranosus,Musculus semimembranosus,Полуперепончатая мышца,muscles-lower-limb,
+FJ1435M,Left semimembranosus,Musculus semimembranosus,Полуперепончатая мышца,muscles-lower-limb,
+FJ1436,Right semitendinosus,Musculus semitendinosus,Полусухожильная мышца,muscles-lower-limb,
+FJ1436M,Left semitendinosus,Musculus semitendinosus,Полусухожильная мышца,muscles-lower-limb,
+FJ1437,Right soleus,Musculus soleus,Камбаловидная мышца,muscles-lower-limb,
+FJ1437M,Left soleus,Musculus soleus,Камбаловидная мышца,muscles-lower-limb,
 FJ1438,Right tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
 FJ1438M,Left tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
 FJ1439,Right tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1439M,Left tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1440,Right tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
 FJ1440M,Left tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
+FJ1441,Right vastus intermedius,Musculus vastus intermedius,Промежуточная широкая мышца бедра,muscles-lower-limb,
+FJ1441M,Left vastus intermedius,Musculus vastus intermedius,Промежуточная широкая мышца бедра,muscles-lower-limb,
+FJ1442,Right vastus lateralis,Musculus vastus lateralis,Латеральная широкая мышца бедра,muscles-lower-limb,
+FJ1442M,Left vastus lateralis,Musculus vastus lateralis,Латеральная широкая мышца бедра,muscles-lower-limb,
+FJ1443,Right vastus medialis,Musculus vastus medialis,Медиальная широкая мышца бедра,muscles-lower-limb,
+FJ1443M,Left vastus medialis,Musculus vastus medialis,Медиальная широкая мышца бедра,muscles-lower-limb,
+FJ1444,Short head of right biceps femoris,"Musculus biceps femoris, caput breve","Двуглавая мышца бедра, короткая головка",muscles-lower-limb,
+FJ1444M,Short head of left biceps femoris,"Musculus biceps femoris, caput breve","Двуглавая мышца бедра, короткая головка",muscles-lower-limb,
+FJ1445,Transverse head of right adductor hallucis,"Musculus adductor hallucis, caput transversum","Мышца, приводящая большой палец стопы, поперечная головка",muscles-lower-limb,
+FJ1445M,Transverse head of left adductor hallucis,"Musculus adductor hallucis, caput transversum","Мышца, приводящая большой палец стопы, поперечная головка",muscles-lower-limb,
 FJ1446,Abdominal part of right pectoralis major,"Musculus pectoralis major, pars abdominalis","Большая грудная мышца, брюшная часть",muscles-thorax,
 FJ1446M,Abdominal part of left pectoralis major,"Musculus pectoralis major, pars abdominalis","Большая грудная мышца, брюшная часть",muscles-thorax,
 FJ1447,Clavicular part of right pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
 FJ1447M,Clavicular part of left pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
 FJ1448,Linea alba,Linea alba,Белая линия живота,ligaments-trunk,белая линия
 FJ1449M,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
-FJ1450,superficial perineal muscle,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса;musculus perinei superficialis;поверхностная мышца промежности
+FJ1450,superficial perineal muscle,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса;поверхностная мышца промежности;musculus transversus perinei superficialis;поверхностная поперечная мышца промежности
 FJ1450M,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
 FJ1451,external intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
 FJ1451M,External intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
@@ -111,20 +211,120 @@ FJ1464,Sternocostal part of right pectoralis major,"Musculus pectoralis major, p
 FJ1464M,Sternocostal part of left pectoralis major,"Musculus pectoralis major, pars sternocostalis","Большая грудная мышца, грудино-рёберная часть",muscles-thorax,
 FJ1465,tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ1465M,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ1466,Abductor digiti minimi of right hand,Musculus abductor digiti minimi manus,"Мышца, отводящая мизинец кисти",muscles-upper-limb,
+FJ1466M,Abductor digiti minimi of left hand,Musculus abductor digiti minimi manus,"Мышца, отводящая мизинец кисти",muscles-upper-limb,
+FJ1467,Acromial part of right deltoid,"Musculus deltoideus, pars acromialis","Дельтовидная мышца, акромиальная часть",muscles-upper-limb,
+FJ1467M,Acromial part of left deltoid,"Musculus deltoideus, pars acromialis","Дельтовидная мышца, акромиальная часть",muscles-upper-limb,
+FJ1468,Clavicular part of right deltoid,"Musculus deltoideus, pars clavicularis","Дельтовидная мышца, ключичная часть",muscles-upper-limb,
+FJ1468M,Clavicular part of left deltoid,"Musculus deltoideus, pars clavicularis","Дельтовидная мышца, ключичная часть",muscles-upper-limb,
+FJ1469,Left flexor pollicis brevis,Musculus flexor pollicis brevis,Короткий сгибатель большого пальца кисти,muscles-upper-limb,
+FJ1469M,Right flexor pollicis brevis,Musculus flexor pollicis brevis,Короткий сгибатель большого пальца кисти,muscles-upper-limb,
+FJ1470,Flexor digiti minimi brevis of right hand,Musculus flexor digiti minimi brevis manus,Короткий сгибатель мизинца кисти,muscles-upper-limb,
+FJ1470M,Flexor digiti minimi brevis of left hand,Musculus flexor digiti minimi brevis manus,Короткий сгибатель мизинца кисти,muscles-upper-limb,
+FJ1472,Right extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
+FJ1472M,Left extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
+FJ1473,Humeral head of right flexor carpi ulnaris,"Musculus flexor carpi ulnaris, caput humerale","Локтевой сгибатель запястья, плечевая головка",muscles-upper-limb,
+FJ1473M,Humeral head of left flexor carpi ulnaris,"Musculus flexor carpi ulnaris, caput humerale","Локтевой сгибатель запястья, плечевая головка",muscles-upper-limb,
+FJ1474,Humeral head of right pronator teres,"Musculus pronator teres, caput humerale","Круглый пронатор, плечевая головка",muscles-upper-limb,
+FJ1474M,Humeral head of left pronator teres,"Musculus pronator teres, caput humerale","Круглый пронатор, плечевая головка",muscles-upper-limb,
+FJ1475,Right flexor digitorum superficialis,Musculus flexor digitorum superficialis,Поверхностный сгибатель пальцев,muscles-upper-limb,
+FJ1475M,Left flexor digitorum superficialis,Musculus flexor digitorum superficialis,Поверхностный сгибатель пальцев,muscles-upper-limb,
 FJ1476,Interosseous membrane of right forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
 FJ1476M,Interosseous membrane of left forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
+FJ1477,Lateral head of right triceps brachii,"Musculus triceps brachii, caput laterale","Трёхглавая мышца плеча, латеральная головка",muscles-upper-limb,
+FJ1477M,Lateral head of left triceps brachii,"Musculus triceps brachii, caput laterale","Трёхглавая мышца плеча, латеральная головка",muscles-upper-limb,
+FJ1478,Long head of right biceps brachii,"Musculus biceps brachii, caput longum","Двуглавая мышца плеча, длинная головка",muscles-upper-limb,
+FJ1478M,Long head of left biceps brachii,"Musculus biceps brachii, caput longum","Двуглавая мышца плеча, длинная головка",muscles-upper-limb,
+FJ1479,Long head of right triceps brachii,"Musculus triceps brachii, caput longum","Трёхглавая мышца плеча, длинная головка",muscles-upper-limb,
+FJ1479M,Long head of left triceps brachii,"Musculus triceps brachii, caput longum","Трёхглавая мышца плеча, длинная головка",muscles-upper-limb,
+FJ1480,Medial head of right triceps brachii,"Musculus triceps brachii, caput mediale","Трёхглавая мышца плеча, медиальная головка",muscles-upper-limb,
+FJ1480M,Medial head of left triceps brachii,"Musculus triceps brachii, caput mediale","Трёхглавая мышца плеча, медиальная головка",muscles-upper-limb,
+FJ1481,Oblique head of right adductor pollicis,"Musculus adductor pollicis, caput obliquum","Мышца, приводящая большой палец кисти, косая головка",muscles-upper-limb,
+FJ1481M,Oblique head of left adductor pollicis,"Musculus adductor pollicis, caput obliquum","Мышца, приводящая большой палец кисти, косая головка",muscles-upper-limb,
+FJ1482,Opponens digiti minimi of right hand,Musculus opponens digiti minimi manus,"Мышца, противопоставляющая мизинец кисти",muscles-upper-limb,
+FJ1482M,Opponens digiti minimi of left hand,Musculus opponens digiti minimi manus,"Мышца, противопоставляющая мизинец кисти",muscles-upper-limb,
+FJ1483,Right abductor pollicis brevis,Musculus abductor pollicis brevis,"Короткая мышца, отводящая большой палец кисти",muscles-upper-limb,
+FJ1483M,Left abductor pollicis brevis,Musculus abductor pollicis brevis,"Короткая мышца, отводящая большой палец кисти",muscles-upper-limb,
+FJ1484,Right abductor pollicis longus,Musculus abductor pollicis longus,"Длинная мышца, отводящая большой палец кисти",muscles-upper-limb,
+FJ1484M,Left abductor pollicis longus,Musculus abductor pollicis longus,"Длинная мышца, отводящая большой палец кисти",muscles-upper-limb,
+FJ1485,Right anconeus,Musculus anconeus,Локтевая мышца,muscles-upper-limb,
+FJ1485M,Left anconeus,Musculus anconeus,Локтевая мышца,muscles-upper-limb,
+FJ1486,Right brachialis,Musculus brachialis,Плечевая мышца,muscles-upper-limb,
+FJ1486M,Left brachialis,Musculus brachialis,Плечевая мышца,muscles-upper-limb,
+FJ1487,Right brachioradialis,Musculus brachioradialis,Плечелучевая мышца,muscles-upper-limb,
+FJ1487M,Left brachioradialis,Musculus brachioradialis,Плечелучевая мышца,muscles-upper-limb,
+FJ1488,Right coracobrachialis,Musculus coracobrachialis,Клювовидно-плечевая мышца,muscles-upper-limb,
+FJ1488M,Left coracobrachialis,Musculus coracobrachialis,Клювовидно-плечевая мышца,muscles-upper-limb,
+FJ1489,Right extensor carpi radialis brevis,Musculus extensor carpi radialis brevis,Короткий лучевой разгибатель запястья,muscles-upper-limb,
+FJ1489M,Left extensor carpi radialis brevis,Musculus extensor carpi radialis brevis,Короткий лучевой разгибатель запястья,muscles-upper-limb,
+FJ1490,Right extensor carpi radialis longus,Musculus extensor carpi radialis longus,Длинный лучевой разгибатель запястья,muscles-upper-limb,
+FJ1490M,Left extensor carpi radialis longus,Musculus extensor carpi radialis longus,Длинный лучевой разгибатель запястья,muscles-upper-limb,
+FJ1491,Right extensor digiti minimi,Musculus extensor digiti minimi,Разгибатель мизинца,muscles-upper-limb,
+FJ1491M,Left extensor digiti minimi,Musculus extensor digiti minimi,Разгибатель мизинца,muscles-upper-limb,
+FJ1492,Right extensor digitorum,Musculus extensor digitorum,Разгибатель пальцев,muscles-upper-limb,
+FJ1492M,Left extensor digitorum,Musculus extensor digitorum,Разгибатель пальцев,muscles-upper-limb,
+FJ1493,Right extensor indicis,Musculus extensor indicis,Разгибатель указательного пальца,muscles-upper-limb,
+FJ1493M,Left extensor indicis,Musculus extensor indicis,Разгибатель указательного пальца,muscles-upper-limb,
+FJ1494,Right extensor pollicis brevis,Musculus extensor pollicis brevis,Короткий разгибатель большого пальца кисти,muscles-upper-limb,
+FJ1494M,Left extensor pollicis brevis,Musculus extensor pollicis brevis,Короткий разгибатель большого пальца кисти,muscles-upper-limb,
+FJ1495,Right extensor pollicis longus,Musculus extensor pollicis longus,Длинный разгибатель большого пальца кисти,muscles-upper-limb,
+FJ1495M,Left extensor pollicis longus,Musculus extensor pollicis longus,Длинный разгибатель большого пальца кисти,muscles-upper-limb,
+FJ1496,Right flexor carpi radialis,Musculus flexor carpi radialis,Лучевой сгибатель запястья,muscles-upper-limb,
+FJ1496M,Left flexor carpi radialis,Musculus flexor carpi radialis,Лучевой сгибатель запястья,muscles-upper-limb,
+FJ1497,Right flexor digitorum profundus,Musculus flexor digitorum profundus,Глубокий сгибатель пальцев,muscles-upper-limb,
+FJ1497M,Left flexor digitorum profundus,Musculus flexor digitorum profundus,Глубокий сгибатель пальцев,muscles-upper-limb,
+FJ1498,Right flexor pollicis longus,Musculus flexor pollicis longus,Длинный сгибатель большого пальца кисти,muscles-upper-limb,
+FJ1498M,Left flexor pollicis longus,Musculus flexor pollicis longus,Длинный сгибатель большого пальца кисти,muscles-upper-limb,
+FJ1499,Right flexor digitorum superficialis,Musculus flexor digitorum superficialis,Поверхностный сгибатель пальцев,muscles-upper-limb,
+FJ1499M,Left flexor digitorum superficialis,Musculus flexor digitorum superficialis,Поверхностный сгибатель пальцев,muscles-upper-limb,
+FJ1500,Right infraspinatus muscle,Musculus infraspinatus,Подостная мышца,muscles-upper-limb,
+FJ1500M,Left infraspinatus muscle,Musculus infraspinatus,Подостная мышца,muscles-upper-limb,
+FJ1501,Right opponens pollicis,Musculus opponens pollicis,"Мышца, противопоставляющая большой палец кисти",muscles-upper-limb,
+FJ1501M,Left opponens pollicis,Musculus opponens pollicis,"Мышца, противопоставляющая большой палец кисти",muscles-upper-limb,
+FJ1502,Right palmaris longus,Musculus palmaris longus,Длинная ладонная мышца,muscles-upper-limb,
+FJ1502M,Left palmaris longus,Musculus palmaris longus,Длинная ладонная мышца,muscles-upper-limb,
+FJ1503,Right pronator quadratus,Musculus pronator quadratus,Квадратный пронатор,muscles-upper-limb,
+FJ1503M,Left pronator quadratus,Musculus pronator quadratus,Квадратный пронатор,muscles-upper-limb,
 FJ1504,Right subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
 FJ1504M,Left subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
+FJ1505,Right supinator,Musculus supinator,Супинатор,muscles-upper-limb,мышца-супинатор
+FJ1505M,Left supinator,Musculus supinator,Супинатор,muscles-upper-limb,мышца-супинатор
+FJ1506,Right supraspinatus,Musculus supraspinatus,Надостная мышца,muscles-upper-limb,
+FJ1506M,Left supraspinatus,Musculus supraspinatus,Надостная мышца,muscles-upper-limb,
+FJ1507,Right teres major,Musculus teres major,Большая круглая мышца,muscles-upper-limb,
+FJ1507M,Left teres major,Musculus teres major,Большая круглая мышца,muscles-upper-limb,
+FJ1508,Right teres minor,Musculus teres minor,Малая круглая мышца,muscles-upper-limb,
+FJ1508M,Left teres minor,Musculus teres minor,Малая круглая мышца,muscles-upper-limb,
+FJ1509,Set of dorsal interossei of right hand,Musculi interossei dorsales manus,Тыльные межкостные мышцы кисти,muscles-upper-limb,
+FJ1509M,Set of dorsal interossei of left hand,Musculi interossei dorsales manus,Тыльные межкостные мышцы кисти,muscles-upper-limb,
+FJ1510,Set of lumbricals of right hand,Musculi lumbricales manus,Червеобразные мышцы кисти,muscles-upper-limb,
+FJ1510M,Set of lumbricals of left hand,Musculi lumbricales manus,Червеобразные мышцы кисти,muscles-upper-limb,
+FJ1511,Set of palmar interossei of right hand,Musculi interossei palmares,Ладонные межкостные мышцы,muscles-upper-limb,
+FJ1511M,Set of palmar interossei of left hand,Musculi interossei palmares,Ладонные межкостные мышцы,muscles-upper-limb,
+FJ1512,Short head of right biceps brachii,"Musculus biceps brachii, caput breve","Двуглавая мышца плеча, короткая головка",muscles-upper-limb,
+FJ1512M,Short head of left biceps brachii,"Musculus biceps brachii, caput breve","Двуглавая мышца плеча, короткая головка",muscles-upper-limb,
+FJ1513,Spinal part of right deltoid,"Musculus deltoideus, pars spinalis","Дельтовидная мышца, остистая часть",muscles-upper-limb,
+FJ1513M,Spinal part of left deltoid,"Musculus deltoideus, pars spinalis","Дельтовидная мышца, остистая часть",muscles-upper-limb,
+FJ1514,Superficial head of right flexor pollicis brevis,"Musculus flexor pollicis brevis, caput superficiale","Короткий сгибатель большого пальца кисти, поверхностная головка",muscles-upper-limb,
+FJ1514M,Superficial head of left flexor pollicis brevis,"Musculus flexor pollicis brevis, caput superficiale","Короткий сгибатель большого пальца кисти, поверхностная головка",muscles-upper-limb,
+FJ1515,Transverse head of right adductor pollicis,"Musculus adductor pollicis, caput transversum","Мышца, приводящая большой палец кисти, поперечная головка",muscles-upper-limb,
+FJ1515M,Transverse head of left adductor pollicis,"Musculus adductor pollicis, caput transversum","Мышца, приводящая большой палец кисти, поперечная головка",muscles-upper-limb,
+FJ1516,Ulnar head of right pronator teres,"Musculus pronator teres, caput ulnare","Круглый пронатор, локтевая головка",muscles-upper-limb,
+FJ1516M,Ulnar head of left pronator teres,"Musculus pronator teres, caput ulnare","Круглый пронатор, локтевая головка",muscles-upper-limb,
+FJ1517,Right extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
+FJ1517M,Left extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
+FJ1518,Ulnar head of right flexor carpi ulnaris,"Musculus flexor carpi ulnaris, caput ulnare","Локтевой сгибатель запястья, локтевая головка",muscles-upper-limb,
+FJ1518M,Ulnar head of left flexor carpi ulnaris,"Musculus flexor carpi ulnaris, caput ulnare","Локтевой сгибатель запястья, локтевая головка",muscles-upper-limb,
 FJ1520,Ascending part of right trapezius,"Musculus trapezius, pars ascendens","Трапециевидная мышца, восходящая часть",muscles-back,
 FJ1520M,Ascending part of left trapezius,"Musculus trapezius, pars ascendens","Трапециевидная мышца, восходящая часть",muscles-back,
 FJ1521,Descending part of right trapezius,"Musculus trapezius, pars descendens","Трапециевидная мышца, нисходящая часть",muscles-back,
 FJ1521M,Descending part of left trapezius,"Musculus trapezius, pars descendens","Трапециевидная мышца, нисходящая часть",muscles-back,
-FJ1522,Right lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы
-FJ1522M,Left lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы
-FJ1524,Right cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи
-FJ1524M,Left cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи
-FJ1525,thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди
-FJ1525M,Thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди
+FJ1522,Right lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы;musculus transversospinalis;поперечно-остистая мышца
+FJ1522M,Left lumbar rotator,Musculus rotator lumborum,Мышца-вращатель поясницы,muscles-back,musculi rotatores lumborum;мышцы-вращатели поясницы;musculus transversospinalis;поперечно-остистая мышца
+FJ1524,Right cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи;musculus transversospinalis;поперечно-остистая мышца
+FJ1524M,Left cervical rotator,Musculus rotator cervicis,Мышца-вращатель шеи,muscles-back,musculi rotatores cervicis;мышцы-вращатели шеи;musculus transversospinalis;поперечно-остистая мышца
+FJ1525,thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди;musculus transversospinalis;поперечно-остистая мышца
+FJ1525M,Thoracic rotator,Musculus rotator thoracis,Мышца-вращатель груди,muscles-back,musculi rotatores thoracis;мышцы-вращатели груди;musculus transversospinalis;поперечно-остистая мышца
 FJ1526,Right iliocostalis cervicis,Musculus iliocostalis cervicis,Подвздошно-рёберная мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1526M,Left iliocostalis cervicis,Musculus iliocostalis cervicis,Подвздошно-рёберная мышца шеи,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1527,Right iliocostalis lumborum,Musculus iliocostalis lumborum,Подвздошно-рёберная мышца поясницы,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
@@ -149,12 +349,12 @@ FJ1539,Right semispinalis cervicis,Musculus semispinalis cervicis,Полуост
 FJ1539M,Left semispinalis cervicis,Musculus semispinalis cervicis,Полуостистая мышца шеи,muscles-back,musculus transversospinalis;поперечно-остистая мышца
 FJ1540,Right semispinalis thoracis,Musculus semispinalis thoracis,Полуостистая мышца груди,muscles-back,musculus transversospinalis;поперечно-остистая мышца
 FJ1540M,Left semispinalis thoracis,Musculus semispinalis thoracis,Полуостистая мышца груди,muscles-back,musculus transversospinalis;поперечно-остистая мышца
-FJ1541,Right serratus posterior inferior,Musculus serratus posterior inferior,Нижняя задняя зубчатая мышца,muscles-back,
-FJ1541M,Left serratus posterior inferior,Musculus serratus posterior inferior,Нижняя задняя зубчатая мышца,muscles-back,
-FJ1542,Right serratus posterior superior,Musculus serratus posterior superior,Верхняя задняя зубчатая мышца,muscles-back,
-FJ1542M,Left serratus posterior superior,Musculus serratus posterior superior,Верхняя задняя зубчатая мышца,muscles-back,
-FJ1543,spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,musculus spinalis;остистая мышца
-FJ1543M,Spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,musculus spinalis;остистая мышца
+FJ1541,Right serratus posterior inferior,Musculus serratus posterior inferior,Задняя нижняя зубчатая мышца,muscles-back,нижняя задняя зубчатая мышца
+FJ1541M,Left serratus posterior inferior,Musculus serratus posterior inferior,Задняя нижняя зубчатая мышца,muscles-back,нижняя задняя зубчатая мышца
+FJ1542,Right serratus posterior superior,Musculus serratus posterior superior,Задняя верхняя зубчатая мышца,muscles-back,верхняя задняя зубчатая мышца
+FJ1542M,Left serratus posterior superior,Musculus serratus posterior superior,Задняя верхняя зубчатая мышца,muscles-back,верхняя задняя зубчатая мышца
+FJ1543,spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,"musculus spinalis;остистая мышца;musculus erector spinae;мышца, выпрямляющая позвоночник"
+FJ1543M,Spinalis,Musculus spinalis cervicis,Остистая мышца шеи,muscles-back,"musculus spinalis;остистая мышца;musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1544,Right spinalis thoracis,Musculus spinalis thoracis,Остистая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1544M,Left spinalis thoracis,Musculus spinalis thoracis,Остистая мышца груди,muscles-back,"musculus erector spinae;мышца, выпрямляющая позвоночник"
 FJ1545,Right splenius capitis,Musculus splenius capitis,Ременная мышца головы,muscles-back,
@@ -223,8 +423,8 @@ FJ1597,Right sternothyroid,Musculus sternothyroideus,Грудино-щитови
 FJ1598,Right stylohyoid,Musculus stylohyoideus,Шилоподъязычная мышца,muscles-neck,
 FJ1599,Right thyrohyoid,Musculus thyrohyoideus,Щитоподъязычная мышца,muscles-neck,
 FJ1600,Superior oblique part of left longus colli,"Musculus longus colli, pars obliqua superior","Длинная мышца шеи, верхняя косая часть",muscles-neck,
-FJ1601,Vertical intermediate part of left longus colli,"Musculus longus colli, pars verticalis","Длинная мышца шеи, вертикальная часть",muscles-neck,pars intermedia;промежуточная часть
-FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",other,латеральная сосочковая мышца
+FJ1601,Vertical intermediate part of left longus colli,"Musculus longus colli, pars verticalis","Длинная мышца шеи, вертикальная часть",muscles-neck,pars intermedia;промежуточная часть;медиальная часть
+FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",other,латеральная сосочковая мышца;musculus papillaris lateralis
 FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,other,
 FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,other,musculus papillaris lateralis;латеральная сосочковая мышца
 FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,other,
