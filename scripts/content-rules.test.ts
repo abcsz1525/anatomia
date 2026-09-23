@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { buildBundle, validateContent, type CsvRow } from "./content-rules";
+import { SIDE_WORD_EXEMPT_IDS, buildBundle, validateContent, type CsvRow } from "./content-rules";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import type { Topic } from "@/lib/content/types";
 
-const part = (id: string, name: string, system: "skeletal" | "muscular" | "arterial") => ({
+const part = (id: string, name: string, system: "skeletal" | "muscular" | "arterial" | "cardiac") => ({
   id, name, conceptId: "FMA0", system, chunk: 0, positions: 0, normals: 0, indices: 0, vertexCount: 0, indexCount: 0,
   bounds: [[0, 0, 0], [1, 1, 1]] as [[number, number, number], [number, number, number]],
 });
@@ -59,6 +59,20 @@ describe("validateContent", () => {
     expect(msgs).toMatch(/FJ3.*la is empty/);
     expect(msgs).toMatch(/FJ3.*side word/);
     expect(msgs).toMatch(/FJ3.*unknown topic nope/);
+  });
+  it("exempts the semilunar cusps from the side-word rule (side is part of the name)", () => {
+    const cuspManifest: AtlasManifest = { ...manifest, parts: [...manifest.parts, part("FJ2435", "Anterior cusp of aortic valve", "cardiac")] };
+    const cusp: CsvRow = { id: "FJ2435", en: "Anterior cusp of aortic valve", la: "Valva aortae, valvula semilunaris dextra",
+      ru: "Клапан аорты, правая полулунная заслонка", topic: "other", aliases: "" };
+    // ids are strings: "FJ2435" sorts between "FJ2" and "FJ3"
+    const rows = [ok[0], ok[1], cusp, ...ok.slice(2)];
+    expect(SIDE_WORD_EXEMPT_IDS.has("FJ2435")).toBe(true);
+    expect(validateContent(rows, cuspManifest, topics)).toEqual([]);
+    // a non-exempt id with the same word still fails
+    const notExempt = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Правая грудина" } : r));
+    const msgs = validateContent(notExempt, cuspManifest, topics).map((e) => e.message);
+    expect(msgs.join("\n")).toMatch(/FJ5.*side word/);
+    expect(msgs.some((m) => m.includes("FJ2435"))).toBe(false);
   });
   it("rejects a container topic: rows belong to leaves only", () => {
     const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "osteology" } : r));

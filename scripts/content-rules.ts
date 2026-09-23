@@ -12,6 +12,15 @@ export interface RuleError { row?: number; id?: string; message: string }
 // прав(ая|ый|...) are actually detected.
 const SIDE_WORDS = /(?<![\p{L}\p{N}])(left|right|лев(?:ый|ая|ое|ые)|прав(?:ый|ая|ое|ые))(?![\p{L}\p{N}])/iu;
 
+// Semilunar cusps of the aortic and pulmonary valves: «правая/левая полулунная
+// заслонка» is the TA2/Сапин name of the cusp (valvula semilunaris dextra/
+// sinistra) — the side is part of the anatomical name, not the mesh side, so
+// rule 5 (no side words in la/ru) does not apply to these ids.
+export const SIDE_WORD_EXEMPT_IDS: ReadonlySet<string> = new Set([
+  "FJ2417", "FJ2427", "FJ2434", // valva trunci pulmonalis: anterior, sinistra, dextra
+  "FJ2426", "FJ2431", "FJ2435", // valva aortae: sinistra, posterior, dextra
+]);
+
 export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[]): RuleError[] {
   const errors: RuleError[] = [];
   const parts = new Map(manifest.parts.map((p) => [p.id, p]));
@@ -35,7 +44,8 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (part.name !== r.en) errors.push({ row, id: r.id, message: `${tag}: en mismatch (manifest: "${part.name}")` });
     if (!r.la.trim()) errors.push({ row, id: r.id, message: `${tag}: la is empty` });
     if (!r.ru.trim()) errors.push({ row, id: r.id, message: `${tag}: ru is empty` });
-    if (SIDE_WORDS.test(r.la) || SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
+    if (!SIDE_WORD_EXEMPT_IDS.has(r.id) && (SIDE_WORDS.test(r.la) || SIDE_WORDS.test(r.ru)))
+      errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
     if (!knownIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: unknown topic ${r.topic}` });
     else if (!leafIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: non-leaf topic ${r.topic}` });
     else {

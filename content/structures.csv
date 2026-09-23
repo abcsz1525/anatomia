@@ -712,7 +712,7 @@ FJ1791,Left occipital lobe,Lobus occipitalis,Затылочная доля,cns,
 FJ1792,Right occipital lobe,Lobus occipitalis,Затылочная доля,cns,
 FJ1793,Orbital gyrus,Gyrus orbitalis,Глазничная извилина,cns,gyri orbitales;глазничные извилины
 FJ1794,Orbital gyrus,Gyrus orbitalis,Глазничная извилина,cns,gyri orbitales;глазничные извилины
-FJ1795,Pineal body,Glandula pinealis,Шишковидная железа,glands,corpus pineale;эпифиз;шишковидное тело;epiphysis cerebri
+FJ1795,Pineal body,Glandula pinealis,Шишковидное тело,glands,corpus pineale;эпифиз;шишковидная железа;epiphysis cerebri
 FJ1796,Pituitary gland,Hypophysis,Гипофиз,glands,glandula pituitaria;питуитарная железа
 FJ1797,Left postcentral gyrus,Gyrus postcentralis,Постцентральная извилина,cns,
 FJ1798,Right postcentral gyrus,Gyrus postcentralis,Постцентральная извилина,cns,
@@ -1119,29 +1119,29 @@ FJ2409,Hepatovenous segment VII,"Vena hepatica, segmentum VII","Печёночн
 FJ2414,Middle hepatic vein,Vena hepatica intermedia,Средняя печёночная вена,veins-trunk,vena hepatica media
 FJ2415,Left hepatic vein,Vena hepatica sinistra,Печёночная вена,veins-trunk,левая печёночная вена
 FJ2416,Right hepatic vein,Vena hepatica dextra,Печёночная вена,veins-trunk,правая печёночная вена
-FJ2417,Left anterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris anterior sinistra","Клапан лёгочного ствола, передняя полулунная заслонка",heart,левая передняя полулунная заслонка;valvula semilunaris anterior
+FJ2417,Left anterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris anterior","Клапан лёгочного ствола, передняя полулунная заслонка",heart,valvula semilunaris anterior sinistra;левая передняя полулунная заслонка;left anterior cusp of pulmonary valve (BodyParts3D label)
 FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",heart,латеральная сосочковая мышца;musculus papillaris lateralis
 FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,heart,
 FJ2420,Anterior leaflet of mitral valve,"Valva mitralis, cuspis anterior","Митральный клапан, передняя створка",heart,valva atrioventricularis sinistra;левый предсердно-желудочковый клапан;valva bicuspidalis;двустворчатый клапан
 FJ2421,Anterior leaflet of tricuspid valve,"Valva tricuspidalis, cuspis anterior","Трёхстворчатый клапан, передняя створка",heart,valva atrioventricularis dextra;правый предсердно-желудочковый клапан
-FJ2422,Cavity of left ventricle,Cavitas ventriculi sinistri,Полость желудочка,heart,полость левого желудочка;ventriculus sinister;левый желудочек
-FJ2423,Cavity of right ventricle,Cavitas ventriculi dextri,Полость желудочка,heart,полость правого желудочка;ventriculus dexter;правый желудочек
-FJ2424,Cavity of right atrium,Cavitas atrii dextri,Полость предсердия,heart,полость правого предсердия;atrium dextrum;правое предсердие
-FJ2425,Cavity of left atrium,Cavitas atrii sinistri,Полость предсердия,heart,полость левого предсердия;atrium sinistrum;левое предсердие
-FJ2426,Left posterior cusp of aortic valve,"Valva aortae, valvula semilunaris posterior sinistra","Клапан аорты, задняя полулунная заслонка",heart,левая задняя полулунная заслонка;valvula semilunaris sinistra;valvula coronaria sinistra;левая полулунная заслонка;левая венечная заслонка
-FJ2427,Posterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris posterior","Клапан лёгочного ствола, задняя полулунная заслонка",heart,valvula semilunaris sinistra;левая полулунная заслонка
+FJ2422,Cavity of left ventricle,Cavitas ventriculi sinistri,Полость левого желудочка,heart,полость желудочка;ventriculus sinister;левый желудочек
+FJ2423,Cavity of right ventricle,Cavitas ventriculi dextri,Полость правого желудочка,heart,полость желудочка;ventriculus dexter;правый желудочек
+FJ2424,Cavity of right atrium,Cavitas atrii dextri,Полость правого предсердия,heart,полость предсердия;atrium dextrum;правое предсердие
+FJ2425,Cavity of left atrium,Cavitas atrii sinistri,Полость левого предсердия,heart,полость предсердия;atrium sinistrum;левое предсердие
+FJ2426,Left posterior cusp of aortic valve,"Valva aortae, valvula semilunaris sinistra","Клапан аорты, левая полулунная заслонка",heart,valvula coronaria sinistra;левая венечная заслонка;valvula semilunaris posterior sinistra;левая задняя полулунная заслонка;left posterior cusp of aortic valve (BodyParts3D label)
+FJ2427,Posterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris sinistra","Клапан лёгочного ствола, левая полулунная заслонка",heart,valvula semilunaris posterior;задняя полулунная заслонка;posterior cusp of pulmonary valve (BodyParts3D label)
 FJ2428,Wall of ventricle,Paries ventriculorum,Стенка желудочков,heart,paries ventriculi;стенка желудочка;myocardium ventriculorum;миокард желудочков;wall of ventricle (BodyParts3D label)
 FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,heart,musculus papillaris lateralis;латеральная сосочковая мышца
 FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,heart,
-FJ2431,Right posterior cusp of aortic valve,"Valva aortae, valvula semilunaris posterior dextra","Клапан аорты, задняя полулунная заслонка",heart,правая задняя полулунная заслонка;valvula semilunaris posterior;valvula non coronaria;невенечная заслонка
+FJ2431,Right posterior cusp of aortic valve,"Valva aortae, valvula semilunaris posterior","Клапан аорты, задняя полулунная заслонка",heart,valvula non coronaria;невенечная заслонка;valvula semilunaris posterior dextra;правая задняя полулунная заслонка;right posterior cusp of aortic valve (BodyParts3D label)
 FJ2432,Posterior leaflet of mitral valve,"Valva mitralis, cuspis posterior","Митральный клапан, задняя створка",heart,valva atrioventricularis sinistra;левый предсердно-желудочковый клапан;valva bicuspidalis;двустворчатый клапан
 FJ2433,Posterior leaflet of tricuspid valve,"Valva tricuspidalis, cuspis posterior","Трёхстворчатый клапан, задняя створка",heart,valva atrioventricularis dextra;правый предсердно-желудочковый клапан
-FJ2434,Right anterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris anterior dextra","Клапан лёгочного ствола, передняя полулунная заслонка",heart,правая передняя полулунная заслонка;valvula semilunaris dextra;правая полулунная заслонка
-FJ2435,Anterior cusp of aortic valve,"Valva aortae, valvula semilunaris anterior","Клапан аорты, передняя полулунная заслонка",heart,valvula semilunaris dextra;valvula coronaria dextra;правая полулунная заслонка;правая венечная заслонка
+FJ2434,Right anterior cusp of pulmonary valve,"Valva trunci pulmonalis, valvula semilunaris dextra","Клапан лёгочного ствола, правая полулунная заслонка",heart,valvula semilunaris anterior dextra;правая передняя полулунная заслонка;right anterior cusp of pulmonary valve (BodyParts3D label)
+FJ2435,Anterior cusp of aortic valve,"Valva aortae, valvula semilunaris dextra","Клапан аорты, правая полулунная заслонка",heart,valvula coronaria dextra;правая венечная заслонка;valvula semilunaris anterior;передняя полулунная заслонка;anterior cusp of aortic valve (BodyParts3D label)
 FJ2436,Septal leaflet of tricuspid valve,"Valva tricuspidalis, cuspis septalis","Трёхстворчатый клапан, перегородочная створка",heart,valva atrioventricularis dextra;правый предсердно-желудочковый клапан
 FJ2437,Septal papillary muscle of right ventricle,Musculus papillaris septalis ventriculi dextri,Перегородочная сосочковая мышца правого желудочка,heart,
-FJ2438,Wall of left atrium,Paries atrii sinistri,Стенка предсердия,heart,стенка левого предсердия;myocardium atrii sinistri
-FJ2439,Wall of right atrium,Paries atrii dextri,Стенка предсердия,heart,стенка правого предсердия;myocardium atrii dextri
+FJ2438,Wall of left atrium,Paries atrii sinistri,Стенка левого предсердия,heart,стенка предсердия;myocardium atrii sinistri
+FJ2439,Wall of right atrium,Paries atrii dextri,Стенка правого предсердия,heart,стенка предсердия;myocardium atrii dextri
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2441,Inferior lingular bronchial tree,Bronchus lingularis inferior,Нижний язычковый бронх,respiratory,inferior lingular bronchial tree;B V
 FJ2442,Left medial basal segmental bronchial tree,Bronchus segmentalis basalis medialis,Медиальный базальный сегментарный бронх,respiratory,bronchus cardiacus;сердечный бронх;medial basal segmental bronchial tree;B VII
@@ -1509,9 +1509,9 @@ FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,laryn
 FJ2809,Transverse arytenoid,Musculus arytenoideus transversus,Поперечная черпаловидная мышца,muscles-neck,
 FJ2810,Skin,Cutis,Кожа,ear-skin,
 FJ2811,External ear,Auriculae,Ушные раковины,ear-skin,auricula;ушная раковина;auris externa;наружное ухо;external ear (BodyParts3D label)
-FJ2812,Eyebrow,Supercilia,Брови,ear-skin,supercilium;бровь
+FJ2812,Eyebrow,Supercilia,Брови,ear-skin,supercilium;бровь;eyebrow (BodyParts3D label)
 FJ2813,Hair of head,Capilli,Волосы головы,ear-skin,
-FJ2814,Lip,Labia oris,Губы,ear-skin,labium oris;губа рта;labium superius;labium inferius;верхняя губа;нижняя губа;lip (BodyParts3D label)
+FJ2814,Lip,Labia oris,Губы,ear-skin,labium oris;labium superius;labium inferius;верхняя губа;нижняя губа;lip (BodyParts3D label)
 FJ2815,Pubic hair,Pubes,Лобковые волосы,ear-skin,
 FJ2816,Caudate lobe of liver,Lobus caudatus hepatis,Хвостатая доля печени,digestive,segmentum I;сегмент I
 FJ2817,Gallbladder,Vesica biliaris,Жёлчный пузырь,digestive,vesica fellea
@@ -1790,8 +1790,8 @@ FJ3146,Right ureter,Ureter,Мочеточник,urogenital,
 FJ3147,Right kidney,Ren,Почка,urogenital,
 FJ3148,Urethra,Urethra,Мочеиспускательный канал,urogenital,уретра;urethra masculina;мужской мочеиспускательный канал
 FJ3149,Urinary bladder,Vesica urinaria,Мочевой пузырь,urogenital,
-FJ3150,Left lobe of thymus,Lobus thymi sinister,Доля тимуса,glands,левая доля тимуса;thymus;тимус;вилочковая железа
-FJ3151,Right lobe of thymus,Lobus thymi dexter,Доля тимуса,glands,правая доля тимуса;thymus;тимус;вилочковая железа
+FJ3150,Left lobe of thymus,Lobus sinister thymi,Доля тимуса,glands,lobus thymi sinister;левая доля тимуса;thymus;тимус;вилочковая железа
+FJ3151,Right lobe of thymus,Lobus dexter thymi,Доля тимуса,glands,lobus thymi dexter;правая доля тимуса;thymus;тимус;вилочковая железа
 FJ3152,Right hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
 FJ3154,Tenth thoracic vertebra,Vertebra thoracica X,X грудной позвонок,spine,Th10

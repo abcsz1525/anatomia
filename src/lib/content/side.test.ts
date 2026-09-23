@@ -42,6 +42,20 @@ describe("sideFor", () => {
     expect(sideFor("FJ2742", "Right middle pharyngeal constrictor")).toBe("left");
     expect(sideFor("FJ2754", "Left middle pharyngeal constrictor")).toBe("right");
   });
+  it("treats heart chambers, walls, cusps and papillary muscles as sideless (the word names the chamber)", () => {
+    expect(detectSide("Cavity of left ventricle")).toBe("left");
+    for (const [id, en] of [
+      ["FJ2422", "Cavity of left ventricle"], ["FJ2423", "Cavity of right ventricle"],
+      ["FJ2424", "Cavity of right atrium"], ["FJ2425", "Cavity of left atrium"],
+      ["FJ2438", "Wall of left atrium"], ["FJ2439", "Wall of right atrium"],
+      ["FJ2417", "Left anterior cusp of pulmonary valve"], ["FJ2434", "Right anterior cusp of pulmonary valve"],
+      ["FJ2427", "Posterior cusp of pulmonary valve"], ["FJ2426", "Left posterior cusp of aortic valve"],
+      ["FJ2431", "Right posterior cusp of aortic valve"], ["FJ2435", "Anterior cusp of aortic valve"],
+      ["FJ2418", "Anterolateral head of lateral papillary muscle of left ventricle"],
+      ["FJ2419", "Anterior papillary muscle of right ventricle"], ["FJ2429", "Lateral papillary muscle of left ventricle"],
+      ["FJ2430", "Posterior papillary muscle of right ventricle"], ["FJ2437", "Septal papillary muscle of right ventricle"],
+    ]) expect(sideFor(id, en), id).toBe("");
+  });
   it("falls back to detectSide for ids without an override", () => {
     expect(sideFor("FJ1254", "Left femur")).toBe("left");
   });
