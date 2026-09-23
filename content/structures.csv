@@ -29,6 +29,22 @@ FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus supe
 FJ1279,Right upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
+FJ1409,Right fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
+FJ1409M,Left fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
+FJ1410,Right fibularis longus,Musculus fibularis longus,Длинная малоберцовая мышца,muscles-lower-limb,musculus peroneus longus
+FJ1410M,Left fibularis longus,Musculus fibularis longus,Длинная малоберцовая мышца,muscles-lower-limb,musculus peroneus longus
+FJ1411,Right fibularis tertius,Musculus fibularis tertius,Третья малоберцовая мышца,muscles-lower-limb,musculus peroneus tertius
+FJ1411M,Left fibularis tertius,Musculus fibularis tertius,Третья малоберцовая мышца,muscles-lower-limb,musculus peroneus tertius
+FJ1423,Right iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
+FJ1423M,Left iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
+FJ1439,Right tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
+FJ1439M,Left tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
+FJ1440,Right tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
+FJ1440M,Left tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
+FJ1504,Right subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
+FJ1504M,Left subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
+FJ1532,Right levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
+FJ1532M,Left levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
@@ -41,6 +57,7 @@ FJ2792,Right arytenoid cartilage,Cartilago arytenoidea,Черпаловидны�
 FJ2793,Right corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
 FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
+FJ3152,Right hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
 FJ3154,Tenth thoracic vertebra,Vertebra thoracica X,X грудной позвонок,spine,Th10
 FJ3155,Eleventh thoracic vertebra,Vertebra thoracica XI,XI грудной позвонок,spine,Th11
@@ -67,6 +84,26 @@ FJ3175,Ninth thoracic vertebra,Vertebra thoracica IX,IX грудной позв�
 FJ3176,Atlas,Atlas,Атлант,spine,первый шейный позвонок;C1
 FJ3177,Axis,Axis,Осевой позвонок,spine,второй шейный позвонок;C2;эпистрофей
 FJ3178,Body of sternum,Corpus sterni,Тело грудины,thorax,
+FJ3179,Distal phalanx of left second toe,Phalanx distalis digiti II pedis,Дистальная фаланга II пальца стопы,lower-limb-bones,
+FJ3180,Distal phalanx of left third toe,Phalanx distalis digiti III pedis,Дистальная фаланга III пальца стопы,lower-limb-bones,
+FJ3181,Distal phalanx of left fourth toe,Phalanx distalis digiti IV pedis,Дистальная фаланга IV пальца стопы,lower-limb-bones,
+FJ3182,Distal phalanx of left big toe,Phalanx distalis digiti I pedis,Дистальная фаланга большого пальца стопы,lower-limb-bones,
+FJ3183,Distal phalanx of left index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца,upper-limb-bones,
+FJ3184,Distal phalanx of left little finger,Phalanx distalis digiti V manus,Дистальная фаланга мизинца кисти,upper-limb-bones,
+FJ3185,Distal phalanx of left little toe,Phalanx distalis digiti V pedis,Дистальная фаланга V пальца стопы,lower-limb-bones,
+FJ3186,Distal phalanx of left middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца,upper-limb-bones,
+FJ3187,Distal phalanx of left ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца,upper-limb-bones,
+FJ3188,Distal phalanx of left thumb,Phalanx distalis digiti I manus,Дистальная фаланга большого пальца кисти,upper-limb-bones,
+FJ3189,Distal phalanx of right second toe,Phalanx distalis digiti II pedis,Дистальная фаланга II пальца стопы,lower-limb-bones,
+FJ3190,Distal phalanx of right third toe,Phalanx distalis digiti III pedis,Дистальная фаланга III пальца стопы,lower-limb-bones,
+FJ3191,Distal phalanx of right fourth toe,Phalanx distalis digiti IV pedis,Дистальная фаланга IV пальца стопы,lower-limb-bones,
+FJ3192,Distal phalanx of right big toe,Phalanx distalis digiti I pedis,Дистальная фаланга большого пальца стопы,lower-limb-bones,
+FJ3193,Distal phalanx of right index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца,upper-limb-bones,
+FJ3194,Distal phalanx of right little finger,Phalanx distalis digiti V manus,Дистальная фаланга мизинца кисти,upper-limb-bones,
+FJ3195,Distal phalanx of right little toe,Phalanx distalis digiti V pedis,Дистальная фаланга V пальца стопы,lower-limb-bones,
+FJ3196,Distal phalanx of right middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца,upper-limb-bones,
+FJ3197,Distal phalanx of right ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца,upper-limb-bones,
+FJ3198,Distal phalanx of right thumb,Phalanx distalis digiti I manus,Дистальная фаланга большого пальца кисти,upper-limb-bones,
 FJ3199,Ethmoid,Os ethmoidale,Решётчатая кость,skull-cerebral,решетчатая кость
 FJ3200,Frontal bone,Os frontale,Лобная кость,skull-cerebral,
 FJ3201,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
@@ -105,22 +142,96 @@ FJ3233,Left sixth rib,Costa VI,VI ребро,thorax,шестое ребро
 FJ3234,Left seventh rib,Costa VII,VII ребро,thorax,седьмое ребро
 FJ3235,Left eighth rib,Costa VIII,VIII ребро,thorax,восьмое ребро
 FJ3236,Left ninth rib,Costa IX,IX ребро,thorax,девятое ребро
+FJ3237,Left clavicle,Clavicula,Ключица,upper-limb-bones,
 FJ3239,Left first costal cartilage,Cartilago costalis I,Рёберный хрящ I,thorax,реберный хрящ I
+FJ3240,Left first metacarpal bone,Os metacarpale I,I пястная кость,upper-limb-bones,
+FJ3241,Left first metatarsal bone,Os metatarsale I,I плюсневая кость,lower-limb-bones,
 FJ3242,Left second costal cartilage,Cartilago costalis II,Рёберный хрящ II,thorax,реберный хрящ II
+FJ3243,Left second metacarpal bone,Os metacarpale II,II пястная кость,upper-limb-bones,
+FJ3244,Left second metatarsal bone,Os metatarsale II,II плюсневая кость,lower-limb-bones,
 FJ3245,Left third costal cartilage,Cartilago costalis III,Рёберный хрящ III,thorax,реберный хрящ III
+FJ3246,Left third metacarpal bone,Os metacarpale III,III пястная кость,upper-limb-bones,
+FJ3247,Left third metatarsal bone,Os metatarsale III,III плюсневая кость,lower-limb-bones,
 FJ3248,Left fourth costal cartilage,Cartilago costalis IV,Рёберный хрящ IV,thorax,реберный хрящ IV
+FJ3249,Left fourth metacarpal bone,Os metacarpale IV,IV пястная кость,upper-limb-bones,
+FJ3250,Left fourth metatarsal bone,Os metatarsale IV,IV плюсневая кость,lower-limb-bones,
 FJ3251,Left fifth costal cartilage,Cartilago costalis V,Рёберный хрящ V,thorax,реберный хрящ V
+FJ3252,Left fifth metacarpal bone,Os metacarpale V,V пястная кость,upper-limb-bones,
+FJ3253,Left fifth metatarsal bone,Os metatarsale V,V плюсневая кость,lower-limb-bones,
 FJ3254,Left sixth costal cartilage,Cartilago costalis VI,Рёберный хрящ VI,thorax,реберный хрящ VI
 FJ3255,Left seventh costal cartilage,Cartilago costalis VII,Рёберный хрящ VII,thorax,реберный хрящ VII
+FJ3256,Left calcaneus,Calcaneus,Пяточная кость,lower-limb-bones,
+FJ3257,Left capitate,Os capitatum,Головчатая кость,upper-limb-bones,
+FJ3258,Left cuboid bone,Os cuboideum,Кубовидная кость,lower-limb-bones,
+FJ3259,Left femur,Femur,Бедренная кость,lower-limb-bones,os femoris
+FJ3260,Left fibula,Fibula,Малоберцовая кость,lower-limb-bones,
+FJ3261,Left hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
+FJ3262,Left humerus,Humerus,Плечевая кость,upper-limb-bones,
+FJ3264,Left intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
+FJ3266,Sesamoid bone of left foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3267,Left lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
+FJ3268,Left lunate,Os lunatum,Полулунная кость,upper-limb-bones,
 FJ3269,Left maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
+FJ3270,Sesamoid bone of left foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3271,Left medial cuneiform bone,Os cuneiforme mediale,Медиальная клиновидная кость,lower-limb-bones,
 FJ3272,Left nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3273,Left palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
 FJ3274,Left parietal bone,Os parietale,Теменная кость,skull-cerebral,
+FJ3275,Left patella,Patella,Надколенник,lower-limb-bones,коленная чашечка
+FJ3276,Left pisiform,Os pisiforme,Гороховидная кость,upper-limb-bones,
+FJ3277,Left radius,Radius,Лучевая кость,upper-limb-bones,
+FJ3278,Left scaphoid,Os scaphoideum,Ладьевидная кость,upper-limb-bones,ладьевидная кость кисти
+FJ3279,Left scapula,Scapula,Лопатка,upper-limb-bones,
+FJ3280,Left talus,Talus,Таранная кость,lower-limb-bones,
 FJ3281,Left temporal bone,Os temporale,Височная кость,skull-cerebral,
+FJ3282,Left tibia,Tibia,Большеберцовая кость,lower-limb-bones,
+FJ3283,Left trapezium,Os trapezium,Кость-трапеция,upper-limb-bones,os multangulum majus;большая многоугольная кость
+FJ3284,Left trapezoid,Os trapezoideum,Трапециевидная кость,upper-limb-bones,os multangulum minus;малая многоугольная кость
+FJ3285,Left triquetral,Os triquetrum,Трёхгранная кость,upper-limb-bones,трехгранная кость
+FJ3286,Left ulna,Ulna,Локтевая кость,upper-limb-bones,
 FJ3287,Left zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
+FJ3288,Left hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3289,Mandible,Mandibula,Нижняя челюсть,skull-facial,
 FJ3290,Manubrium,Manubrium sterni,Рукоятка грудины,thorax,
+FJ3291,Middle phalanx of left ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца,upper-limb-bones,
+FJ3292,Middle phalanx of right ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца,upper-limb-bones,
+FJ3293,Middle phalanx of left second toe,Phalanx media digiti II pedis,Средняя фаланга II пальца стопы,lower-limb-bones,
+FJ3294,Middle phalanx of left third toe,Phalanx media digiti III pedis,Средняя фаланга III пальца стопы,lower-limb-bones,
+FJ3295,Middle phalanx of left fourth toe,Phalanx media digiti IV pedis,Средняя фаланга IV пальца стопы,lower-limb-bones,
+FJ3296,Middle phalanx of left index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца,upper-limb-bones,
+FJ3297,Middle phalanx of left little finger,Phalanx media digiti V manus,Средняя фаланга мизинца кисти,upper-limb-bones,
+FJ3298,Middle phalanx of left little toe,Phalanx media digiti V pedis,Средняя фаланга V пальца стопы,lower-limb-bones,
+FJ3299,Middle phalanx of left middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца,upper-limb-bones,
+FJ3300,Middle phalanx of right second toe,Phalanx media digiti II pedis,Средняя фаланга II пальца стопы,lower-limb-bones,
+FJ3301,Middle phalanx of right third toe,Phalanx media digiti III pedis,Средняя фаланга III пальца стопы,lower-limb-bones,
+FJ3302,Middle phalanx of right fourth toe,Phalanx media digiti IV pedis,Средняя фаланга IV пальца стопы,lower-limb-bones,
+FJ3303,Middle phalanx of right index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца,upper-limb-bones,
+FJ3304,Middle phalanx of right little finger,Phalanx media digiti V manus,Средняя фаланга мизинца кисти,upper-limb-bones,
+FJ3305,Middle phalanx of right little toe,Phalanx media digiti V pedis,Средняя фаланга V пальца стопы,lower-limb-bones,
+FJ3306,Middle phalanx of right middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца,upper-limb-bones,
+FJ3307,Navicular bone of left foot,Os naviculare,Ладьевидная кость стопы,lower-limb-bones,
+FJ3308,Navicular bone of right foot,Os naviculare,Ладьевидная кость стопы,lower-limb-bones,
 FJ3309,Occipital bone,Os occipitale,Затылочная кость,skull-cerebral,
+FJ3310,Proximal phalanx of right big toe,Phalanx proximalis digiti I pedis,Проксимальная фаланга большого пальца стопы,lower-limb-bones,
+FJ3311,Proximal phalanx of left third toe,Phalanx proximalis digiti III pedis,Проксимальная фаланга III пальца стопы,lower-limb-bones,
+FJ3312,Proximal phalanx of left fourth toe,Phalanx proximalis digiti IV pedis,Проксимальная фаланга IV пальца стопы,lower-limb-bones,
+FJ3313,Proximal phalanx of left index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца,upper-limb-bones,
+FJ3314,Proximal phalanx of left little finger,Phalanx proximalis digiti V manus,Проксимальная фаланга мизинца кисти,upper-limb-bones,
+FJ3315,Proximal phalanx of left little toe,Phalanx proximalis digiti V pedis,Проксимальная фаланга V пальца стопы,lower-limb-bones,
+FJ3316,Proximal phalanx of left middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца,upper-limb-bones,
+FJ3317,Proximal phalanx of left ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца,upper-limb-bones,
+FJ3318,Proximal phalanx of left thumb,Phalanx proximalis digiti I manus,Проксимальная фаланга большого пальца кисти,upper-limb-bones,
+FJ3319,Proximal phalanx of right second toe,Phalanx proximalis digiti II pedis,Проксимальная фаланга II пальца стопы,lower-limb-bones,
+FJ3320,Proximal phalanx of right third toe,Phalanx proximalis digiti III pedis,Проксимальная фаланга III пальца стопы,lower-limb-bones,
+FJ3321,Proximal phalanx of right fourth toe,Phalanx proximalis digiti IV pedis,Проксимальная фаланга IV пальца стопы,lower-limb-bones,
+FJ3322,Proximal phalanx of right index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца,upper-limb-bones,
+FJ3323,Proximal phalanx of right little finger,Phalanx proximalis digiti V manus,Проксимальная фаланга мизинца кисти,upper-limb-bones,
+FJ3324,Proximal phalanx of right little toe,Phalanx proximalis digiti V pedis,Проксимальная фаланга V пальца стопы,lower-limb-bones,
+FJ3325,Proximal phalanx of right middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца,upper-limb-bones,
+FJ3326,Proximal phalanx of right ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца,upper-limb-bones,
+FJ3327,Proximal phalanx of right thumb,Phalanx proximalis digiti I manus,Проксимальная фаланга большого пальца кисти,upper-limb-bones,
+FJ3328,Proximal phalanx of left second toe,Phalanx proximalis digiti II pedis,Проксимальная фаланга II пальца стопы,lower-limb-bones,
+FJ3329,Proximal phalanx of left big toe,Phalanx proximalis digiti I pedis,Проксимальная фаланга большого пальца стопы,lower-limb-bones,
 FJ3330,Right tenth rib,Costa X,X ребро,thorax,десятое ребро
 FJ3331,Right eleventh rib,Costa XI,XI ребро,thorax,одиннадцатое ребро
 FJ3332,Right twelfth rib,Costa XII,XII ребро,thorax,двенадцатое ребро
@@ -140,11 +251,46 @@ FJ3345,Right seventh costal cartilage,Cartilago costalis VII,Рёберный х
 FJ3346,Right seventh rib,Costa VII,VII ребро,thorax,седьмое ребро
 FJ3347,Right eighth rib,Costa VIII,VIII ребро,thorax,восьмое ребро
 FJ3348,Right ninth rib,Costa IX,IX ребро,thorax,девятое ребро
+FJ3349,Right radius,Radius,Лучевая кость,upper-limb-bones,
+FJ3350,Right first metacarpal bone,Os metacarpale I,I пястная кость,upper-limb-bones,
+FJ3351,Right first metatarsal bone,Os metatarsale I,I плюсневая кость,lower-limb-bones,
+FJ3352,Right second metacarpal bone,Os metacarpale II,II пястная кость,upper-limb-bones,
+FJ3353,Right second metatarsal bone,Os metatarsale II,II плюсневая кость,lower-limb-bones,
+FJ3354,Right third metacarpal bone,Os metacarpale III,III пястная кость,upper-limb-bones,
+FJ3355,Right third metatarsal bone,Os metatarsale III,III плюсневая кость,lower-limb-bones,
+FJ3356,Right fourth metacarpal bone,Os metacarpale IV,IV пястная кость,upper-limb-bones,
+FJ3357,Right fourth metatarsal bone,Os metatarsale IV,IV плюсневая кость,lower-limb-bones,
+FJ3358,Right fifth metacarpal bone,Os metacarpale V,V пястная кость,upper-limb-bones,
+FJ3359,Right fifth metatarsal bone,Os metatarsale V,V плюсневая кость,lower-limb-bones,
+FJ3360,Right calcaneus,Calcaneus,Пяточная кость,lower-limb-bones,
+FJ3361,Right capitate,Os capitatum,Головчатая кость,upper-limb-bones,
+FJ3362,Right clavicle,Clavicula,Ключица,upper-limb-bones,
+FJ3364,Right cuboid bone,Os cuboideum,Кубовидная кость,lower-limb-bones,
+FJ3365,Right femur,Femur,Бедренная кость,lower-limb-bones,os femoris
+FJ3366,Right fibula,Fibula,Малоберцовая кость,lower-limb-bones,
+FJ3367,Right hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
+FJ3368,Right humerus,Humerus,Плечевая кость,upper-limb-bones,
+FJ3370,Right intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
+FJ3372,Sesamoid bone of right foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3373,Right lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
+FJ3374,Right lunate,Os lunatum,Полулунная кость,upper-limb-bones,
 FJ3375,Right maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
+FJ3376,Sesamoid bone of right foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3377,Right medial cuneiform bone,Os cuneiforme mediale,Медиальная клиновидная кость,lower-limb-bones,
 FJ3378,Right nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3379,Right palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
 FJ3380,Right parietal bone,Os parietale,Теменная кость,skull-cerebral,
+FJ3381,Right patella,Patella,Надколенник,lower-limb-bones,коленная чашечка
+FJ3382,Right pisiform,Os pisiforme,Гороховидная кость,upper-limb-bones,
+FJ3383,Right scaphoid,Os scaphoideum,Ладьевидная кость,upper-limb-bones,ладьевидная кость кисти
+FJ3384,Right scapula,Scapula,Лопатка,upper-limb-bones,
+FJ3385,Right talus,Talus,Таранная кость,lower-limb-bones,
 FJ3386,Right temporal bone,Os temporale,Височная кость,skull-cerebral,
+FJ3387,Right tibia,Tibia,Большеберцовая кость,lower-limb-bones,
+FJ3388,Right trapezium,Os trapezium,Кость-трапеция,upper-limb-bones,os multangulum majus;большая многоугольная кость
+FJ3389,Right trapezoid,Os trapezoideum,Трапециевидная кость,upper-limb-bones,os multangulum minus;малая многоугольная кость
+FJ3390,Right triquetral,Os triquetrum,Трёхгранная кость,upper-limb-bones,трехгранная кость
+FJ3391,Right ulna,Ulna,Локтевая кость,upper-limb-bones,
 FJ3392,Right zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
 FJ3393,Sacrum,Os sacrum,Крестец,spine,крестцовая кость
 FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
