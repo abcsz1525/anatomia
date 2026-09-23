@@ -5,28 +5,28 @@ FJ1254,Left lower first secondary molar tooth,Dens molaris primus inferior,Ни�
 FJ1255,Left lower first secondary premolar tooth,Dens premolaris primus inferior,Нижний первый премоляр,teeth,
 FJ1256,Left lower second secondary molar tooth,Dens molaris secundus inferior,Нижний второй моляр,teeth,
 FJ1257,Left lower second secondary premolar tooth,Dens premolaris secundus inferior,Нижний второй премоляр,teeth,
-FJ1258,Left lower central secondary incisor tooth,Dens incisivus centralis inferior,Нижний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1258,Left lower central secondary incisor tooth,Dens incisivus medialis inferior,Нижний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1259,Left lower lateral secondary incisor tooth,Dens incisivus lateralis inferior,Нижний латеральный резец,teeth,
 FJ1260,Left lower secondary canine tooth,Dens caninus inferior,Нижний клык,teeth,
 FJ1261,Left upper first secondary molar tooth,Dens molaris primus superior,Верхний первый моляр,teeth,
 FJ1262,Left upper first secondary premolar tooth,Dens premolaris primus superior,Верхний первый премоляр,teeth,
 FJ1263,Left upper second secondary molar tooth,Dens molaris secundus superior,Верхний второй моляр,teeth,
 FJ1264,Left upper second secondary premolar tooth,Dens premolaris secundus superior,Верхний второй премоляр,teeth,
-FJ1265,Left upper central secondary incisor tooth,Dens incisivus centralis superior,Верхний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1265,Left upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1266,Left upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1267,Left upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
 FJ1268,Right lower first secondary molar tooth,Dens molaris primus inferior,Нижний первый моляр,teeth,
 FJ1269,Right lower first secondary premolar tooth,Dens premolaris primus inferior,Нижний первый премоляр,teeth,
 FJ1270,Right lower second secondary molar tooth,Dens molaris secundus inferior,Нижний второй моляр,teeth,
 FJ1271,Right lower second secondary premolar tooth,Dens premolaris secundus inferior,Нижний второй премоляр,teeth,
-FJ1272,Right lower central secondary incisor tooth,Dens incisivus centralis inferior,Нижний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1272,Right lower central secondary incisor tooth,Dens incisivus medialis inferior,Нижний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1273,Right lower lateral secondary incisor tooth,Dens incisivus lateralis inferior,Нижний латеральный резец,teeth,
 FJ1274,Right lower secondary canine tooth,Dens caninus inferior,Нижний клык,teeth,
 FJ1275,Right upper second secondary molar tooth,Dens molaris secundus superior,Верхний второй моляр,teeth,
 FJ1276,Right upper first secondary molar tooth,Dens molaris primus superior,Верхний первый моляр,teeth,
 FJ1277,Right upper first secondary premolar tooth,Dens premolaris primus superior,Верхний первый премоляр,teeth,
 FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus superior,Верхний второй премоляр,teeth,
-FJ1279,Right upper central secondary incisor tooth,Dens incisivus centralis superior,Верхний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1279,Right upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
@@ -34,16 +34,84 @@ FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2772,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
-FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ гортани,larynx-cartilages,клиновидный хрящ
+FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
 FJ2775,Left arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2776,Left corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
 FJ2792,Right arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2793,Right corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
-FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ гортани,larynx-cartilages,клиновидный хрящ
+FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
+FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
+FJ3154,Tenth thoracic vertebra,Vertebra thoracica X,X грудной позвонок,spine,Th10
+FJ3155,Eleventh thoracic vertebra,Vertebra thoracica XI,XI грудной позвонок,spine,Th11
+FJ3156,Twelfth thoracic vertebra,Vertebra thoracica XII,XII грудной позвонок,spine,Th12
+FJ3157,First lumbar vertebra,Vertebra lumbalis I,I поясничный позвонок,spine,L1
+FJ3158,First thoracic vertebra,Vertebra thoracica I,I грудной позвонок,spine,Th1
+FJ3159,Second lumbar vertebra,Vertebra lumbalis II,II поясничный позвонок,spine,L2
+FJ3160,Second thoracic vertebra,Vertebra thoracica II,II грудной позвонок,spine,Th2
+FJ3161,Third cervical vertebra,Vertebra cervicalis III,III шейный позвонок,spine,C3
+FJ3162,Third lumbar vertebra,Vertebra lumbalis III,III поясничный позвонок,spine,L3
+FJ3163,Third thoracic vertebra,Vertebra thoracica III,III грудной позвонок,spine,Th3
+FJ3164,Fourth cervical vertebra,Vertebra cervicalis IV,IV шейный позвонок,spine,C4
+FJ3165,Fourth lumbar vertebra,Vertebra lumbalis IV,IV поясничный позвонок,spine,L4
+FJ3166,Fourth thoracic vertebra,Vertebra thoracica IV,IV грудной позвонок,spine,Th4
+FJ3167,Fifth cervical vertebra,Vertebra cervicalis V,V шейный позвонок,spine,C5
+FJ3168,Fifth lumbar vertebra,Vertebra lumbalis V,V поясничный позвонок,spine,L5
+FJ3169,Fifth thoracic vertebra,Vertebra thoracica V,V грудной позвонок,spine,Th5
+FJ3170,Sixth cervical vertebra,Vertebra cervicalis VI,VI шейный позвонок,spine,C6
+FJ3171,Sixth thoracic vertebra,Vertebra thoracica VI,VI грудной позвонок,spine,Th6
+FJ3172,Seventh cervical vertebra,Vertebra cervicalis VII,VII шейный позвонок,spine,C7
+FJ3173,Seventh thoracic vertebra,Vertebra thoracica VII,VII грудной позвонок,spine,Th7
+FJ3174,Eighth thoracic vertebra,Vertebra thoracica VIII,VIII грудной позвонок,spine,Th8
+FJ3175,Ninth thoracic vertebra,Vertebra thoracica IX,IX грудной позвонок,spine,Th9
+FJ3176,Atlas,Atlas,Атлант,spine,первый шейный позвонок;C1
+FJ3177,Axis,Axis,Осевой позвонок,spine,второй шейный позвонок;C2;эпистрофей
+FJ3178,Body of sternum,Corpus sterni,Тело грудины,thorax,
 FJ3199,Ethmoid,Os ethmoidale,Решётчатая кость,skull-cerebral,решетчатая кость
 FJ3200,Frontal bone,Os frontale,Лобная кость,skull-cerebral,
 FJ3201,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
+FJ3202,Intervertebral disk of axis,Discus intervertebralis C2/C3,Межпозвоночный диск C2/C3,spine,межпозвонковый диск
+FJ3203,Intervertebral disk of fourth thoracic vertebra,Discus intervertebralis Th4/Th5,Межпозвоночный диск Th4/Th5,spine,межпозвонковый диск
+FJ3204,Intervertebral disk of fifth thoracic vertebra,Discus intervertebralis Th5/Th6,Межпозвоночный диск Th5/Th6,spine,межпозвонковый диск
+FJ3205,Intervertebral disk of sixth thoracic vertebra,Discus intervertebralis Th6/Th7,Межпозвоночный диск Th6/Th7,spine,межпозвонковый диск
+FJ3206,Intervertebral disk of seventh thoracic vertebra,Discus intervertebralis Th7/Th8,Межпозвоночный диск Th7/Th8,spine,межпозвонковый диск
+FJ3207,Intervertebral disk of eighth thoracic vertebra,Discus intervertebralis Th8/Th9,Межпозвоночный диск Th8/Th9,spine,межпозвонковый диск
+FJ3208,Intervertebral disk of ninth thoracic vertebra,Discus intervertebralis Th9/Th10,Межпозвоночный диск Th9/Th10,spine,межпозвонковый диск
+FJ3209,Intervertebral disk of tenth thoracic vertebra,Discus intervertebralis Th10/Th11,Межпозвоночный диск Th10/Th11,spine,межпозвонковый диск
+FJ3210,Intervertebral disk of eleventh thoracic vertebra,Discus intervertebralis Th11/Th12,Межпозвоночный диск Th11/Th12,spine,межпозвонковый диск
+FJ3211,Intervertebral disk,Discus intervertebralis Th12/L1,Межпозвоночный диск Th12/L1,spine,межпозвонковый диск
+FJ3212,Intervertebral disk of first lumbar vertebra,Discus intervertebralis L1/L2,Межпозвоночный диск L1/L2,spine,межпозвонковый диск
+FJ3213,Intervertebral disk of third cervical vertebra,Discus intervertebralis C3/C4,Межпозвоночный диск C3/C4,spine,межпозвонковый диск
+FJ3214,Intervertebral disk of second lumbar vertebra,Discus intervertebralis L2/L3,Межпозвоночный диск L2/L3,spine,межпозвонковый диск
+FJ3215,Intervertebral disk of third lumbar vertebra,Discus intervertebralis L3/L4,Межпозвоночный диск L3/L4,spine,межпозвонковый диск
+FJ3216,Intervertebral disk of fourth lumbar vertebra,Discus intervertebralis L4/L5,Межпозвоночный диск L4/L5,spine,межпозвонковый диск
+FJ3217,Intervertebral disk of fifth lumbar vertebra,Discus intervertebralis L5/S1,Межпозвоночный диск L5/S1,spine,межпозвонковый диск
+FJ3218,Intervertebral disk of fourth cervical vertebra,Discus intervertebralis C4/C5,Межпозвоночный диск C4/C5,spine,межпозвонковый диск
+FJ3219,Intervertebral disk of fifth cervical vertebra,Discus intervertebralis C5/C6,Межпозвоночный диск C5/C6,spine,межпозвонковый диск
+FJ3220,Intervertebral disk of sixth cervical vertebra,Discus intervertebralis C6/C7,Межпозвоночный диск C6/C7,spine,межпозвонковый диск
+FJ3221,Intervertebral disk of seventh cervical vertebra,Discus intervertebralis C7/Th1,Межпозвоночный диск C7/Th1,spine,межпозвонковый диск
+FJ3222,Intervertebral disk of first thoracic vertebra,Discus intervertebralis Th1/Th2,Межпозвоночный диск Th1/Th2,spine,межпозвонковый диск
+FJ3223,Intervertebral disk of second thoracic vertebra,Discus intervertebralis Th2/Th3,Межпозвоночный диск Th2/Th3,spine,межпозвонковый диск
+FJ3224,Intervertebral disk of third thoracic vertebra,Discus intervertebralis Th3/Th4,Межпозвоночный диск Th3/Th4,spine,межпозвонковый диск
+FJ3225,Left tenth rib,Costa X,X ребро,thorax,десятое ребро
+FJ3226,Left eleventh rib,Costa XI,XI ребро,thorax,одиннадцатое ребро
+FJ3227,Left twelfth rib,Costa XII,XII ребро,thorax,двенадцатое ребро
+FJ3228,Left first rib,Costa I,I ребро,thorax,первое ребро
+FJ3229,Left second rib,Costa II,II ребро,thorax,второе ребро
+FJ3230,Left third rib,Costa III,III ребро,thorax,третье ребро
+FJ3231,Left fourth rib,Costa IV,IV ребро,thorax,четвёртое ребро
+FJ3232,Left fifth rib,Costa V,V ребро,thorax,пятое ребро
+FJ3233,Left sixth rib,Costa VI,VI ребро,thorax,шестое ребро
+FJ3234,Left seventh rib,Costa VII,VII ребро,thorax,седьмое ребро
+FJ3235,Left eighth rib,Costa VIII,VIII ребро,thorax,восьмое ребро
+FJ3236,Left ninth rib,Costa IX,IX ребро,thorax,девятое ребро
+FJ3239,Left first costal cartilage,Cartilago costalis I,Рёберный хрящ I,thorax,реберный хрящ I
+FJ3242,Left second costal cartilage,Cartilago costalis II,Рёберный хрящ II,thorax,реберный хрящ II
+FJ3245,Left third costal cartilage,Cartilago costalis III,Рёберный хрящ III,thorax,реберный хрящ III
+FJ3248,Left fourth costal cartilage,Cartilago costalis IV,Рёберный хрящ IV,thorax,реберный хрящ IV
+FJ3251,Left fifth costal cartilage,Cartilago costalis V,Рёберный хрящ V,thorax,реберный хрящ V
+FJ3254,Left sixth costal cartilage,Cartilago costalis VI,Рёберный хрящ VI,thorax,реберный хрящ VI
+FJ3255,Left seventh costal cartilage,Cartilago costalis VII,Рёберный хрящ VII,thorax,реберный хрящ VII
 FJ3269,Left maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
 FJ3272,Left nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3273,Left palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
@@ -51,12 +119,33 @@ FJ3274,Left parietal bone,Os parietale,Теменная кость,skull-cerebra
 FJ3281,Left temporal bone,Os temporale,Височная кость,skull-cerebral,
 FJ3287,Left zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
 FJ3289,Mandible,Mandibula,Нижняя челюсть,skull-facial,
+FJ3290,Manubrium,Manubrium sterni,Рукоятка грудины,thorax,
 FJ3309,Occipital bone,Os occipitale,Затылочная кость,skull-cerebral,
+FJ3330,Right tenth rib,Costa X,X ребро,thorax,десятое ребро
+FJ3331,Right eleventh rib,Costa XI,XI ребро,thorax,одиннадцатое ребро
+FJ3332,Right twelfth rib,Costa XII,XII ребро,thorax,двенадцатое ребро
+FJ3333,Right first costal cartilage,Cartilago costalis I,Рёберный хрящ I,thorax,реберный хрящ I
+FJ3334,Right first rib,Costa I,I ребро,thorax,первое ребро
+FJ3335,Right second costal cartilage,Cartilago costalis II,Рёберный хрящ II,thorax,реберный хрящ II
+FJ3336,Right second rib,Costa II,II ребро,thorax,второе ребро
+FJ3337,Right third costal cartilage,Cartilago costalis III,Рёберный хрящ III,thorax,реберный хрящ III
+FJ3338,Right third rib,Costa III,III ребро,thorax,третье ребро
+FJ3339,Right fourth costal cartilage,Cartilago costalis IV,Рёберный хрящ IV,thorax,реберный хрящ IV
+FJ3340,Right fourth rib,Costa IV,IV ребро,thorax,четвёртое ребро
+FJ3341,Right fifth costal cartilage,Cartilago costalis V,Рёберный хрящ V,thorax,реберный хрящ V
+FJ3342,Right fifth rib,Costa V,V ребро,thorax,пятое ребро
+FJ3343,Right sixth costal cartilage,Cartilago costalis VI,Рёберный хрящ VI,thorax,реберный хрящ VI
+FJ3344,Right sixth rib,Costa VI,VI ребро,thorax,шестое ребро
+FJ3345,Right seventh costal cartilage,Cartilago costalis VII,Рёберный хрящ VII,thorax,реберный хрящ VII
+FJ3346,Right seventh rib,Costa VII,VII ребро,thorax,седьмое ребро
+FJ3347,Right eighth rib,Costa VIII,VIII ребро,thorax,восьмое ребро
+FJ3348,Right ninth rib,Costa IX,IX ребро,thorax,девятое ребро
 FJ3375,Right maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
 FJ3378,Right nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3379,Right palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
 FJ3380,Right parietal bone,Os parietale,Теменная кость,skull-cerebral,
 FJ3386,Right temporal bone,Os temporale,Височная кость,skull-cerebral,
 FJ3392,Right zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
+FJ3393,Sacrum,Os sacrum,Крестец,spine,крестцовая кость
 FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
 FJ3395,Vomer,Vomer,Сошник,skull-facial,
