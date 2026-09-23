@@ -426,6 +426,173 @@ FJ1598,Right stylohyoid,Musculus stylohyoideus,Шилоподъязычная м
 FJ1599,Right thyrohyoid,Musculus thyrohyoideus,Щитоподъязычная мышца,muscles-neck,
 FJ1600,Superior oblique part of left longus colli,"Musculus longus colli, pars obliqua superior","Длинная мышца шеи, верхняя косая часть",muscles-neck,
 FJ1601,Vertical intermediate part of left longus colli,"Musculus longus colli, pars verticalis","Длинная мышца шеи, вертикальная часть",muscles-neck,pars intermedia;промежуточная часть;медиальная часть
+FJ1654,Right anterior cerebral artery,Arteria cerebri anterior,Передняя мозговая артерия,arteries-head-neck,пма
+FJ1654M,Left anterior cerebral artery,Arteria cerebri anterior,Передняя мозговая артерия,arteries-head-neck,пма
+FJ1655,Anterior communicating artery,Arteria communicans anterior,Передняя соединительная артерия,arteries-head-neck,
+FJ1656,anterior inferior cerebellar artery,Arteria cerebelli inferior anterior,Передняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior anterior cerebelli;aica
+FJ1656M,Anterior inferior cerebellar artery,Arteria cerebelli inferior anterior,Передняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior anterior cerebelli;aica
+FJ1657,Right anterior spinal artery,Arteria spinalis anterior,Передняя спинномозговая артерия,arteries-head-neck,
+FJ1657M,Left anterior spinal artery,Arteria spinalis anterior,Передняя спинномозговая артерия,arteries-head-neck,
+FJ1658,Right anterior choroidal artery,Arteria choroidea anterior,Передняя ворсинчатая артерия,arteries-head-neck,
+FJ1658M,Left anterior choroidal artery,Arteria choroidea anterior,Передняя ворсинчатая артерия,arteries-head-neck,
+FJ1659,Right anterior temporal artery,Arteria temporalis anterior,Передняя височная артерия,arteries-head-neck,ramus temporalis anterior arteriae cerebri mediae;передняя височная ветвь средней мозговой артерии
+FJ1659M,Left anterior temporal artery,Arteria temporalis anterior,Передняя височная артерия,arteries-head-neck,ramus temporalis anterior arteriae cerebri mediae;передняя височная ветвь средней мозговой артерии
+FJ1660,Insular part of right middle cerebral artery,"Arteria cerebri media, pars insularis","Средняя мозговая артерия, островковая часть",arteries-head-neck,
+FJ1660M,Insular part of left middle cerebral artery,"Arteria cerebri media, pars insularis","Средняя мозговая артерия, островковая часть",arteries-head-neck,
+FJ1661,Anterior temporal branch of right lateral occipital artery,"Arteria occipitalis lateralis, ramus temporalis anterior","Латеральная затылочная артерия, передняя височная ветвь",arteries-head-neck,
+FJ1661M,Anterior temporal branch of left lateral occipital artery,"Arteria occipitalis lateralis, ramus temporalis anterior","Латеральная затылочная артерия, передняя височная ветвь",arteries-head-neck,
+FJ1662,Anterolateral central branch of right middle cerebral artery,Ramus centralis anterolateralis arteriae cerebri mediae,Переднелатеральная центральная ветвь средней мозговой артерии,arteries-head-neck,arteriae centrales anterolaterales;переднелатеральные центральные артерии
+FJ1662M,Anterolateral central branch of left middle cerebral artery,Ramus centralis anterolateralis arteriae cerebri mediae,Переднелатеральная центральная ветвь средней мозговой артерии,arteries-head-neck,arteriae centrales anterolaterales;переднелатеральные центральные артерии
+FJ1663,Anterolateral central branch of right middle cerebral artery,Ramus centralis anterolateralis arteriae cerebri mediae,Переднелатеральная центральная ветвь средней мозговой артерии,arteries-head-neck,arteriae centrales anterolaterales;переднелатеральные центральные артерии
+FJ1663M,Anterolateral central branch of left middle cerebral artery,Ramus centralis anterolateralis arteriae cerebri mediae,Переднелатеральная центральная ветвь средней мозговой артерии,arteries-head-neck,arteriae centrales anterolaterales;переднелатеральные центральные артерии
+FJ1664,artery of central sulcus,Arteria sulci centralis,Артерия центральной борозды,arteries-head-neck,
+FJ1664M,Artery of central sulcus,Arteria sulci centralis,Артерия центральной борозды,arteries-head-neck,
+FJ1665,artery of central sulcus,Arteria sulci centralis,Артерия центральной борозды,arteries-head-neck,
+FJ1665M,Artery of central sulcus,Arteria sulci centralis,Артерия центральной борозды,arteries-head-neck,
+FJ1666,Artery of right postcentral sulcus,Arteria sulci postcentralis,Артерия постцентральной борозды,arteries-head-neck,
+FJ1666M,Artery of left postcentral sulcus,Arteria sulci postcentralis,Артерия постцентральной борозды,arteries-head-neck,
+FJ1667,Right anterior parietal artery,Arteria parietalis anterior,Передняя теменная артерия,arteries-head-neck,
+FJ1667M,Left anterior parietal artery,Arteria parietalis anterior,Передняя теменная артерия,arteries-head-neck,
+FJ1668,Artery of right precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1668M,Artery of left precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1669,Artery of right precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1669M,Artery of left precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1670,Artery of right precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1670M,Artery of left precentral sulcus,Arteria sulci precentralis,Артерия предцентральной борозды,arteries-head-neck,
+FJ1671,Precuneal branch of right pericallosal artery,Ramus precunealis arteriae pericallosae,Предклинная ветвь околомозолистой артерии,arteries-head-neck,
+FJ1671M,Precuneal branch of left pericallosal artery,Ramus precunealis arteriae pericallosae,Предклинная ветвь околомозолистой артерии,arteries-head-neck,
+FJ1672,Basilar artery,Arteria basilaris,Базилярная артерия,arteries-head-neck,основная артерия
+FJ1673,Branch of right middle cerebral artery to right angular gyrus,Arteria gyri angularis,Артерия угловой извилины,arteries-head-neck,ramus arteriae cerebri mediae ad gyrum angularem;ветвь средней мозговой артерии к угловой извилине
+FJ1673M,Branch of left middle cerebral artery to left angular gyrus,Arteria gyri angularis,Артерия угловой извилины,arteries-head-neck,ramus arteriae cerebri mediae ad gyrum angularem;ветвь средней мозговой артерии к угловой извилине
+FJ1674,Branch of right anterior choroidal artery to posterior limb of right internal capsule,Ramus cruris posterioris capsulae internae arteriae choroideae anterioris,Ветвь передней ворсинчатой артерии к задней ножке внутренней капсулы,arteries-head-neck,
+FJ1674M,Branch of left anterior choroidal artery to posterior limb of left internal capsule,Ramus cruris posterioris capsulae internae arteriae choroideae anterioris,Ветвь передней ворсинчатой артерии к задней ножке внутренней капсулы,arteries-head-neck,
+FJ1675,Right thalamogeniculate artery,Arteria thalamogeniculata,Таламоколенчатая артерия,arteries-head-neck,
+FJ1675M,Left thalamogeniculate artery,Arteria thalamogeniculata,Таламоколенчатая артерия,arteries-head-neck,
+FJ1676,Right callosomarginal artery,Arteria callosomarginalis,Каллозомаргинальная артерия,arteries-head-neck,мозолисто-краевая артерия
+FJ1676M,Left callosomarginal artery,Arteria callosomarginalis,Каллозомаргинальная артерия,arteries-head-neck,мозолисто-краевая артерия
+FJ1677,Right splenial artery,"Arteria occipitalis medialis, ramus corporis callosi dorsalis","Медиальная затылочная артерия, дорсальная ветвь мозолистого тела",arteries-head-neck,arteria splenialis;артерия валика мозолистого тела;задняя околомозолистая артерия
+FJ1677M,Left splenial artery,"Arteria occipitalis medialis, ramus corporis callosi dorsalis","Медиальная затылочная артерия, дорсальная ветвь мозолистого тела",arteries-head-neck,arteria splenialis;артерия валика мозолистого тела;задняя околомозолистая артерия
+FJ1678,Right splenial artery,"Arteria occipitalis medialis, ramus corporis callosi dorsalis","Медиальная затылочная артерия, дорсальная ветвь мозолистого тела",arteries-head-neck,arteria splenialis;артерия валика мозолистого тела;задняя околомозолистая артерия
+FJ1678M,Left splenial artery,"Arteria occipitalis medialis, ramus corporis callosi dorsalis","Медиальная затылочная артерия, дорсальная ветвь мозолистого тела",arteries-head-neck,arteria splenialis;артерия валика мозолистого тела;задняя околомозолистая артерия
+FJ1679,Hypothalamic branch of right posterior communicating artery,Ramus hypothalamicus arteriae communicantis posterioris,Гипоталамическая ветвь задней соединительной артерии,arteries-head-neck,
+FJ1679M,Hypothalamic branch of left posterior communicating artery,Ramus hypothalamicus arteriae communicantis posterioris,Гипоталамическая ветвь задней соединительной артерии,arteries-head-neck,
+FJ1680,Middle temporal branch of right lateral occipital artery,"Arteria occipitalis lateralis, ramus temporalis intermedius","Латеральная затылочная артерия, промежуточная височная ветвь",arteries-head-neck,ramus temporalis medius;средняя височная ветвь
+FJ1680M,Middle temporal branch of left lateral occipital artery,"Arteria occipitalis lateralis, ramus temporalis intermedius","Латеральная затылочная артерия, промежуточная височная ветвь",arteries-head-neck,ramus temporalis medius;средняя височная ветвь
+FJ1681,Intermediomedial branch of right callosomarginal artery,Ramus frontalis intermediomedialis arteriae callosomarginalis,Промежуточно-медиальная лобная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1681M,Intermediomedial branch of left callosomarginal artery,Ramus frontalis intermediomedialis arteriae callosomarginalis,Промежуточно-медиальная лобная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1682,Right internal carotid artery,Arteria carotis interna,Внутренняя сонная артерия,arteries-head-neck,вса
+FJ1682M,Left internal carotid artery,Arteria carotis interna,Внутренняя сонная артерия,arteries-head-neck,вса
+FJ1683,Lateral branch of right superior cerebellar artery,"Arteria cerebelli superior, ramus lateralis","Верхняя мозжечковая артерия, латеральная ветвь",arteries-head-neck,
+FJ1683M,Lateral branch of left superior cerebellar artery,"Arteria cerebelli superior, ramus lateralis","Верхняя мозжечковая артерия, латеральная ветвь",arteries-head-neck,
+FJ1684,Lateral branch of right pontine artery,"Arteria pontis, ramus lateralis","Артерия моста, латеральная ветвь",arteries-head-neck,
+FJ1684M,Lateral branch of left pontine artery,"Arteria pontis, ramus lateralis","Артерия моста, латеральная ветвь",arteries-head-neck,
+FJ1685,Right lateral frontobasal artery,Arteria frontobasalis lateralis,Латеральная лобно-базальная артерия,arteries-head-neck,
+FJ1685M,Left lateral frontobasal artery,Arteria frontobasalis lateralis,Латеральная лобно-базальная артерия,arteries-head-neck,
+FJ1686,Right lateral frontobasal artery,Arteria frontobasalis lateralis,Латеральная лобно-базальная артерия,arteries-head-neck,
+FJ1686M,Left lateral frontobasal artery,Arteria frontobasalis lateralis,Латеральная лобно-базальная артерия,arteries-head-neck,
+FJ1687,Right lateral occipital artery,Arteria occipitalis lateralis,Латеральная затылочная артерия,arteries-head-neck,
+FJ1687M,Left lateral occipital artery,Arteria occipitalis lateralis,Латеральная затылочная артерия,arteries-head-neck,
+FJ1688,Medial branch of right superior cerebellar artery,"Arteria cerebelli superior, ramus medialis","Верхняя мозжечковая артерия, медиальная ветвь",arteries-head-neck,
+FJ1688M,Medial branch of left superior cerebellar artery,"Arteria cerebelli superior, ramus medialis","Верхняя мозжечковая артерия, медиальная ветвь",arteries-head-neck,
+FJ1689,Medial branch of right pontine artery,"Arteria pontis, ramus medialis","Артерия моста, медиальная ветвь",arteries-head-neck,
+FJ1689M,Medial branch of left pontine artery,"Arteria pontis, ramus medialis","Артерия моста, медиальная ветвь",arteries-head-neck,
+FJ1690,Right medial frontobasal artery,Arteria frontobasalis medialis,Медиальная лобно-базальная артерия,arteries-head-neck,
+FJ1690M,Left medial frontobasal artery,Arteria frontobasalis medialis,Медиальная лобно-базальная артерия,arteries-head-neck,
+FJ1691,Right medial occipital artery,Arteria occipitalis medialis,Медиальная затылочная артерия,arteries-head-neck,
+FJ1691M,Left medial occipital artery,Arteria occipitalis medialis,Медиальная затылочная артерия,arteries-head-neck,
+FJ1692,Sphenoid part of right middle cerebral artery,"Arteria cerebri media, pars sphenoidalis","Средняя мозговая артерия, клиновидная часть",arteries-head-neck,
+FJ1692M,Sphenoid part of left middle cerebral artery,"Arteria cerebri media, pars sphenoidalis","Средняя мозговая артерия, клиновидная часть",arteries-head-neck,
+FJ1693,Middle temporal branch of right middle cerebral artery,Ramus temporalis medius arteriae cerebri mediae,Средняя височная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1693M,Middle temporal branch of left middle cerebral artery,Ramus temporalis medius arteriae cerebri mediae,Средняя височная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1694,Insular part of right middle cerebral artery,"Arteria cerebri media, pars insularis","Средняя мозговая артерия, островковая часть",arteries-head-neck,
+FJ1694M,Insular part of left middle cerebral artery,"Arteria cerebri media, pars insularis","Средняя мозговая артерия, островковая часть",arteries-head-neck,
+FJ1695,Right ophthalmic artery,Arteria ophthalmica,Глазная артерия,arteries-head-neck,
+FJ1695M,Left ophthalmic artery,Arteria ophthalmica,Глазная артерия,arteries-head-neck,
+FJ1696,Paracentral branch of right callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1696M,Paracentral branch of left callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1697,Paracentral branch of right callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1697M,Paracentral branch of left callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1698,Paracentral branch of right callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1698M,Paracentral branch of left callosomarginal artery,Ramus paracentralis arteriae callosomarginalis,Парацентральная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1699,Right pericallosal artery,Arteria pericallosa,Околомозолистая артерия,arteries-head-neck,
+FJ1699M,Left pericallosal artery,Arteria pericallosa,Околомозолистая артерия,arteries-head-neck,
+FJ1700,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1700M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1701,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1701M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1702,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1702M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1703,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1703M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1704,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1704M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1705,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1705M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1706,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1706M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1707,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1707M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1708,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1708M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1709,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1709M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1710,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1710M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1711,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1711M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1712,Right polar temporal artery,Arteria polaris temporalis,Полярная височная артерия,arteries-head-neck,височная полярная артерия
+FJ1712M,Left polar temporal artery,Arteria polaris temporalis,Полярная височная артерия,arteries-head-neck,височная полярная артерия
+FJ1713,Right posterior communicating artery,Arteria communicans posterior,Задняя соединительная артерия,arteries-head-neck,
+FJ1713M,Left posterior communicating artery,Arteria communicans posterior,Задняя соединительная артерия,arteries-head-neck,
+FJ1714,Postcommunicating part of right posterior cerebral artery,"Arteria cerebri posterior, pars postcommunicalis","Задняя мозговая артерия, посткоммуникационная часть",arteries-head-neck,
+FJ1714M,Postcommunicating part of left posterior cerebral artery,"Arteria cerebri posterior, pars postcommunicalis","Задняя мозговая артерия, посткоммуникационная часть",arteries-head-neck,
+FJ1715,Right posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1715M,Left posterior inferior cerebellar artery,Arteria cerebelli inferior posterior,Задняя нижняя мозжечковая артерия,arteries-head-neck,arteria inferior posterior cerebelli;pica
+FJ1716,Right posterior parietal artery,Arteria parietalis posterior,Задняя теменная артерия,arteries-head-neck,
+FJ1716M,Left posterior parietal artery,Arteria parietalis posterior,Задняя теменная артерия,arteries-head-neck,
+FJ1717,Posterior temporal branch of right middle cerebral artery,Ramus temporalis posterior arteriae cerebri mediae,Задняя височная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1717M,Posterior temporal branch of left middle cerebral artery,Ramus temporalis posterior arteriae cerebri mediae,Задняя височная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1718,Trunk of inferior terminal branch of right middle cerebral artery,Truncus rami terminalis inferioris arteriae cerebri mediae,Ствол нижней конечной ветви средней мозговой артерии,arteries-head-neck,нижний ствол средней мозговой артерии
+FJ1718M,Trunk of inferior terminal branch of left middle cerebral artery,Truncus rami terminalis inferioris arteriae cerebri mediae,Ствол нижней конечной ветви средней мозговой артерии,arteries-head-neck,нижний ствол средней мозговой артерии
+FJ1719,set of posterior temporal branches of lateral occipital artery,"Arteria occipitalis lateralis, rami temporales posteriores","Латеральная затылочная артерия, задние височные ветви",arteries-head-neck,
+FJ1719M,Set of posterior temporal branches of lateral occipital artery,"Arteria occipitalis lateralis, rami temporales posteriores","Латеральная затылочная артерия, задние височные ветви",arteries-head-neck,
+FJ1720,Right thalamoperforating artery,Arteria thalamoperforans,Таламоперфорирующая артерия,arteries-head-neck,таламоперфорантная артерия
+FJ1720M,Left thalamoperforating artery,Arteria thalamoperforans,Таламоперфорирующая артерия,arteries-head-neck,таламоперфорантная артерия
+FJ1721,Posteromedial central branch of right posterior cerebral artery,Ramus centralis posteromedialis arteriae cerebri posterioris,Заднемедиальная центральная ветвь задней мозговой артерии,arteries-head-neck,arteriae centrales posteromediales;заднемедиальные центральные артерии
+FJ1721M,Posteromedial central branch of left posterior cerebral artery,Ramus centralis posteromedialis arteriae cerebri posterioris,Заднемедиальная центральная ветвь задней мозговой артерии,arteries-head-neck,arteriae centrales posteromediales;заднемедиальные центральные артерии
+FJ1722,Posteromedial branch of right callosomarginal artery,Ramus frontalis posteromedialis arteriae callosomarginalis,Заднемедиальная лобная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1722M,Posteromedial branch of left callosomarginal artery,Ramus frontalis posteromedialis arteriae callosomarginalis,Заднемедиальная лобная ветвь каллозомаргинальной артерии,arteries-head-neck,
+FJ1723,Precommunicating part of right posterior cerebral artery,"Arteria cerebri posterior, pars precommunicalis","Задняя мозговая артерия, прекоммуникационная часть",arteries-head-neck,
+FJ1723M,Precommunicating part of left posterior cerebral artery,"Arteria cerebri posterior, pars precommunicalis","Задняя мозговая артерия, прекоммуникационная часть",arteries-head-neck,
+FJ1724,Right prefrontal artery,Arteria prefrontalis,Предлобная артерия,arteries-head-neck,
+FJ1724M,Left prefrontal artery,Arteria prefrontalis,Предлобная артерия,arteries-head-neck,
+FJ1725,Right vertebral artery,Arteria vertebralis,Позвоночная артерия,arteries-head-neck,
+FJ1725M,Left vertebral artery,Arteria vertebralis,Позвоночная артерия,arteries-head-neck,
+FJ1726,Right superior cerebellar artery,Arteria cerebelli superior,Верхняя мозжечковая артерия,arteries-head-neck,arteria superior cerebelli
+FJ1726M,Left superior cerebellar artery,Arteria cerebelli superior,Верхняя мозжечковая артерия,arteries-head-neck,arteria superior cerebelli
+FJ1727,Right posterior medial choroidal artery,Ramus choroideus posterior medialis arteriae cerebri posterioris,Медиальная задняя ворсинчатая ветвь задней мозговой артерии,arteries-head-neck,arteria choroidea posterior medialis;задняя медиальная ворсинчатая артерия
+FJ1727M,Left posterior medial choroidal artery,Ramus choroideus posterior medialis arteriae cerebri posterioris,Медиальная задняя ворсинчатая ветвь задней мозговой артерии,arteries-head-neck,arteria choroidea posterior medialis;задняя медиальная ворсинчатая артерия
+FJ1728,Superior vermian branch of medial branch of right superior cerebellar artery,Ramus vermis superior rami medialis arteriae cerebelli superioris,Верхняя ветвь червя медиальной ветви верхней мозжечковой артерии,arteries-head-neck,
+FJ1728M,Superior vermian branch of medial branch of left superior cerebellar artery,Ramus vermis superior rami medialis arteriae cerebelli superioris,Верхняя ветвь червя медиальной ветви верхней мозжечковой артерии,arteries-head-neck,
+FJ1729,Temporo-occipital branch of right middle cerebral artery,Ramus temporooccipitalis arteriae cerebri mediae,Височно-затылочная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1729M,Temporo-occipital branch of left middle cerebral artery,Ramus temporooccipitalis arteriae cerebri mediae,Височно-затылочная ветвь средней мозговой артерии,arteries-head-neck,
+FJ1844,Basilar artery,Arteria basilaris,Базилярная артерия,arteries-head-neck,основная артерия
+FJ2209,Right inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
+FJ2210,Left inferior thyroid artery,Arteria thyroidea inferior,Нижняя щитовидная артерия,arteries-head-neck,
+FJ2224,Left costocervical trunk,Truncus costocervicalis,Рёберно-шейный ствол,arteries-head-neck,реберно-шейный ствол
+FJ2226,Left deep cervical artery,Arteria cervicalis profunda,Глубокая шейная артерия,arteries-head-neck,
+FJ2232,Left dorsal scapular artery,Arteria dorsalis scapulae,Дорсальная лопаточная артерия,arteries-head-neck,тыльная артерия лопатки
+FJ2251,Left suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
+FJ2255,Left thyrocervical trunk,Truncus thyrocervicalis,Щитошейный ствол,arteries-head-neck,
+FJ2256,Left superficial cervical artery,Arteria cervicalis superficialis,Поверхностная шейная артерия,arteries-head-neck,ramus superficialis arteriae transversae colli;поверхностная ветвь поперечной артерии шеи
+FJ2257,Left transverse cervical artery,Arteria transversa colli,Поперечная артерия шеи,arteries-head-neck,arteria transversa cervicis
+FJ2276,Right costocervical trunk,Truncus costocervicalis,Рёберно-шейный ствол,arteries-head-neck,реберно-шейный ствол
+FJ2278,Right deep cervical artery,Arteria cervicalis profunda,Глубокая шейная артерия,arteries-head-neck,
+FJ2284,Right dorsal scapular artery,Arteria dorsalis scapulae,Дорсальная лопаточная артерия,arteries-head-neck,тыльная артерия лопатки
+FJ2303,Right suprascapular artery,Arteria suprascapularis,Надлопаточная артерия,arteries-head-neck,
+FJ2307,Right thyrocervical trunk,Truncus thyrocervicalis,Щитошейный ствол,arteries-head-neck,
+FJ2308,Right superficial cervical artery,Arteria cervicalis superficialis,Поверхностная шейная артерия,arteries-head-neck,ramus superficialis arteriae transversae colli;поверхностная ветвь поперечной артерии шеи
+FJ2309,Right transverse cervical artery,Arteria transversa colli,Поперечная артерия шеи,arteries-head-neck,arteria transversa cervicis
 FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",heart,латеральная сосочковая мышца;musculus papillaris lateralis
 FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,heart,
 FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,heart,musculus papillaris lateralis;латеральная сосочковая мышца
@@ -746,3 +913,5 @@ FJ3392,Right zygomatic bone,Os zygomaticum,Скуловая кость,skull-fac
 FJ3393,Sacrum,Os sacrum,Крестец,spine,крестцовая кость
 FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
 FJ3395,Vomer,Vomer,Сошник,skull-facial,
+FJ3483,Left common carotid artery,Arteria carotis communis,Общая сонная артерия,arteries-head-neck,оса
+FJ3564,Right common carotid artery,Arteria carotis communis,Общая сонная артерия,arteries-head-neck,оса
