@@ -4,12 +4,15 @@ export interface DisplayNames {
   la: string;
   ru: string;
   en: string;
-  sideRu: "" | "левая" | "правая";
+  sideRu: "" | "слева" | "справа";
   topicRu: string;
   translated: boolean;
 }
 
-const SIDE_RU = { left: "левая", right: "правая", "": "" } as const;
+// "слева"/"справа" (adverbial) rather than "левая"/"правая" (adjective),
+// which would disagree in gender/number with masculine or plural heads
+// like «Надколенник» — «Надколенник (слева)», not «(левая)».
+const SIDE_RU = { left: "слева", right: "справа", "": "" } as const;
 
 /** "Кости нижней конечности · Остеология" — лист темы, затем родитель. */
 function topicPath(topicId: string, topics: Topic[]): string {

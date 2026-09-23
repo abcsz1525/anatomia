@@ -8,6 +8,19 @@ export function detectSide(en: string): Side {
   return m[1].toLowerCase() as Side;
 }
 
+// BodyParts3D mislabels this pair: FJ1469 ("Left flexor pollicis brevis")
+// is actually the mesh on the RIGHT (x = −0.279 in the model), and its
+// mirror FJ1469M ("Right flexor pollicis brevis") is the left one. Override
+// the manifest text rather than trust it for these two ids.
+export const SIDE_OVERRIDES: Record<string, Side> = {
+  FJ1469: "right",
+  FJ1469M: "left",
+};
+
+export function sideFor(id: string, en: string): Side {
+  return SIDE_OVERRIDES[id] ?? detectSide(en);
+}
+
 export function stripSide(en: string): string {
   const s = en.replace(SIDE_RE, "").replace(/\s{2,}/g, " ").trim();
   return s.charAt(0).toUpperCase() + s.slice(1);

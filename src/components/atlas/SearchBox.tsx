@@ -5,7 +5,7 @@ import type { AtlasManifest } from "@/lib/atlas/types";
 import { searchLabels } from "@/lib/content/names";
 import type { ContentBundle } from "@/lib/content/types";
 
-const SIDE_RU = { left: " (левая)", right: " (правая)", "": "" } as const;
+const SIDE_RU = { left: " (слева)", right: " (справа)", "": "" } as const;
 
 export function SearchBox({
   manifest, content, onPick,

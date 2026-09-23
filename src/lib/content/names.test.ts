@@ -6,7 +6,7 @@ const femur = { la: "Femur", ru: "Бедренная кость", topic: "lower-
 describe("displayNames", () => {
   it("renders translated entry with side and topic path", () => {
     expect(displayNames("Left femur", femur, topics)).toEqual({
-      la: "Femur", ru: "Бедренная кость", en: "Left femur", sideRu: "левая",
+      la: "Femur", ru: "Бедренная кость", en: "Left femur", sideRu: "слева",
       topicRu: "Кости нижней конечности · Остеология", translated: true,
     });
   });

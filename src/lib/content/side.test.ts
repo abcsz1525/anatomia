@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { detectSide, stripSide } from "./side";
+import { detectSide, sideFor, stripSide } from "./side";
 
 describe("detectSide", () => {
   it("finds side anywhere in the name", () => {
@@ -12,6 +12,16 @@ describe("detectSide", () => {
     expect(detectSide("Body of sternum")).toBe("");
     expect(detectSide("Diaphragm")).toBe("");
     expect(detectSide("Lateral lumbar intertransversarius")).toBe(""); // 'lateral' is not a side
+  });
+});
+
+describe("sideFor", () => {
+  it("overrides the mislabeled FJ1469 pair regardless of manifest text", () => {
+    expect(sideFor("FJ1469", "Left flexor pollicis brevis")).toBe("right");
+    expect(sideFor("FJ1469M", "Right flexor pollicis brevis")).toBe("left");
+  });
+  it("falls back to detectSide for ids without an override", () => {
+    expect(sideFor("FJ1254", "Left femur")).toBe("left");
   });
 });
 

@@ -1,5 +1,5 @@
 import type { AtlasManifest } from "@/lib/atlas/types";
-import { detectSide } from "@/lib/content/side";
+import { sideFor } from "@/lib/content/side";
 import type { ContentBundle, StructureEntry, Topic } from "@/lib/content/types";
 
 export const COURSE_SYSTEMS = ["skeletal", "connective", "muscular"] as const;
@@ -56,7 +56,7 @@ export function buildBundle(rows: CsvRow[], manifest: AtlasManifest, topics: Top
       la: r.la.trim(),
       ru: r.ru.trim(),
       topic: r.topic,
-      side: detectSide(r.en),
+      side: sideFor(r.id, r.en),
       aliases: r.aliases.split(";").map((a) => a.trim()).filter(Boolean),
     };
   }
