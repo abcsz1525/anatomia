@@ -27,6 +27,11 @@ export function AtlasCanvas({
       <ambientLight intensity={0.9} />
       <directionalLight position={[3, 5, 4]} intensity={1.6} />
       <directionalLight position={[-4, 2, -3]} intensity={0.6} />
+      {/* Order matters: BodyMeshes must precede CameraRig so its visibility effect
+          (mesh.visible / setVisibleAt) runs before CameraRig's focus raycast reads
+          scene.children. BodyMeshes must also keep its BatchedMeshes as direct
+          children of the scene (no wrapping <group>) — visibleDirection() filters
+          scene.children for BatchedMesh instances, it does not walk the graph. */}
       <BodyMeshes data={data} onReady={onReady} onPick={onPick} />
       <CameraRig manifest={data.manifest} />
     </Canvas>

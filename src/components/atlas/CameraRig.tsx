@@ -51,6 +51,7 @@ function visibleScore(
   dist: number,
   dir: THREE.Vector3,
   accept: string[],
+  deadline: number,
 ): number {
   // базис экрана для этого направления
   HELPER.set(Math.abs(dir.y) < 0.9 ? 0 : 1, Math.abs(dir.y) < 0.9 ? 1 : 0, 0);
@@ -65,6 +66,10 @@ function visibleScore(
   RAY_ORIGIN.copy(center).addScaledVector(dir, dist);
   let score = 0;
   for (const [a, b] of SAMPLES) {
+    // budget can run out mid-direction too — five raycasts against a heavy
+    // scene are not free; bail with whatever partial score we have so the
+    // outer loop's own deadline check (and the final return) stay honest
+    if (performance.now() > deadline) break;
     RAY_DIR.copy(center)
       .addScaledVector(AXIS_U, a * eu)
       .addScaledVector(AXIS_V, b * ev)
@@ -95,6 +100,7 @@ function visibleDirection(
   dist: number,
   current: THREE.Vector3,
   accept: string[],
+  radius: number,
 ): THREE.Vector3 {
   // сцена рисует по одному BatchedMesh на систему; невидимые инстансы
   // BatchedMesh.raycast пропускает сам, так что скрытые слои луч не ловят
@@ -106,12 +112,16 @@ function visibleDirection(
   let best: THREE.Vector3 | null = null;
   let bestScore = 0;
   const deadline = performance.now() + SEARCH_BUDGET_MS;
+  // лучи стартуют в dist от center (см. RAY_ORIGIN в visibleScore) и целятся в
+  // цель радиуса radius — ограничиваем дальность, чтобы intersectObjects не
+  // трассировал каждый луч через всю сцену за целью
+  raycaster.far = dist + radius;
   for (const [x, y, z] of candidateDirections([current.x, current.y, current.z], DIRECTIONS)) {
     // кандидаты идут от ближайшего к текущему ракурсу, так что обрыв по времени
     // оставляет лучшее из уже проверенного — не худший результат, просто менее полный
     if (performance.now() > deadline) break;
     dir.set(x, y, z);
-    const score = visibleScore(meshes, raycaster, center, half, dist, dir, accept);
+    const score = visibleScore(meshes, raycaster, center, half, dist, dir, accept, deadline);
     // строгое сравнение оставляет первого из равных — то есть ближайший к текущему ракурс
     if (score > bestScore) {
       bestScore = score;
@@ -119,6 +129,9 @@ function visibleDirection(
       if (score >= GOOD_SCORE) break;
     }
   }
+  // raycaster.current is a ref reused across every future focus event — leave
+  // it unbounded again rather than letting this search's far leak into the next
+  raycaster.far = Infinity;
   return best ?? current;
 }
 
@@ -177,7 +190,7 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     // у структуры бывает несколько мешей (парные/разрезанные части) — любой из них
     // засчитывается как «цель видна»
     const accept = useAtlasStore.getState().focusAccept ?? [focusPartId];
-    const dir = visibleDirection(scene, raycaster.current, lookAt, half, dist, current, accept);
+    const dir = visibleDirection(scene, raycaster.current, lookAt, half, dist, current, accept, radius);
     target.current = { position: lookAt.clone().add(dir.multiplyScalar(dist)), lookAt, t: 0 };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusPartId, focusNonce, manifest, scene]);
