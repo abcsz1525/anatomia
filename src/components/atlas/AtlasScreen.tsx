@@ -1,5 +1,6 @@
 "use client";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useAtlasData } from "@/hooks/use-atlas-data";
 import { SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasPart } from "@/lib/atlas/types";
@@ -34,6 +35,19 @@ export function AtlasScreen() {
     return new Map(state.data.manifest.parts.map((p) => [p.id, p]));
   }, [state]);
   const selected = selectedPartId ? partById.get(selectedPartId) : undefined;
+
+  // ?focus=<partId> — глубокая ссылка из разбора ошибок теста: как и поиск,
+  // включает систему структуры и наводит камеру, но ровно один раз на id,
+  // иначе клик по другой части тут же отменялся бы обратным фокусом
+  const focus = useSearchParams().get("focus");
+  const focused = useRef<string | null>(null);
+  useEffect(() => {
+    if (focus === null || focused.current === focus) return;
+    const part = partById.get(focus);
+    if (!part) return;
+    focused.current = focus;
+    reveal(focus, part.system);
+  }, [focus, partById, reveal]);
 
   return (
     <div className="flex h-full w-full" data-atlas-ready={ready ? "true" : "false"}>

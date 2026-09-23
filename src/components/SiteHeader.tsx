@@ -7,6 +7,7 @@ export function SiteHeader() {
       <nav className="flex gap-4 text-neutral-600">
         <Link href="/atlas" className="hover:text-neutral-900">Атлас</Link>
         <Link href="/quiz" className="hover:text-neutral-900">Тесты</Link>
+        <Link href="/progress" className="hover:text-neutral-900">Прогресс</Link>
         <Link href="/about" className="hover:text-neutral-900">Об источниках</Link>
       </nav>
     </header>
