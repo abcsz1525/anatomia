@@ -1,0 +1,402 @@
+FJ1294	Left inferior oblique
+FJ1295	Left inferior rectus
+FJ1304	Left lateral rectus
+FJ1306	Left levator palpebrae superioris
+FJ1308	Left medial rectus
+FJ1322	Left superior oblique
+FJ1323	Left superior rectus
+FJ1345	Right inferior oblique
+FJ1346	Right inferior rectus
+FJ1355	Right lateral rectus
+FJ1357	Right levator palpebrae superioris
+FJ1359	Right medial rectus
+FJ1373	Right superior oblique
+FJ1374	Right superior rectus
+FJ1383	First lumbrical of right foot
+FJ1383M	First lumbrical of left foot
+FJ1384	First plantar interosseous of right foot
+FJ1384M	First plantar interosseous of left foot
+FJ1385	Second lumbrical of right foot
+FJ1385M	Second lumbrical of left foot
+FJ1386	Second plantar interosseous of right foot
+FJ1386M	Second plantar interosseous of left foot
+FJ1387	Third lumbrical of right foot
+FJ1387M	Third lumbrical of left foot
+FJ1388	Third plantar interosseous of right foot
+FJ1388M	Third plantar interosseous of left foot
+FJ1389	Fourth lumbrical of right foot
+FJ1389M	Fourth lumbrical of left foot
+FJ1390	Abductor digiti minimi of right foot
+FJ1390M	Abductor digiti minimi of left foot
+FJ1391	Flexor digiti minimi brevis of right foot
+FJ1391M	Flexor digiti minimi brevis of left foot
+FJ1393	Lateral head of right flexor hallucis brevis
+FJ1393M	Lateral head of left flexor hallucis brevis
+FJ1394	Lateral head of right gastrocnemius
+FJ1394M	Lateral head of left gastrocnemius
+FJ1395	Long head of right biceps femoris
+FJ1395M	Long head of left biceps femoris
+FJ1396	Medial head of right flexor hallucis brevis
+FJ1396M	Medial head of left flexor hallucis brevis
+FJ1397	Medial head of right gastrocnemius
+FJ1397M	Medial head of left gastrocnemius
+FJ1398	Oblique head of right adductor hallucis
+FJ1398M	Oblique head of left adductor hallucis
+FJ1399	Opponens digiti minimi of right foot
+FJ1399M	Opponens digiti minimi of left foot
+FJ1400	Right abductor hallucis
+FJ1400M	Left abductor hallucis
+FJ1401	Right adductor brevis
+FJ1401M	Left adductor brevis
+FJ1402	Right adductor longus
+FJ1402M	Left adductor longus
+FJ1403	Right adductor magnus
+FJ1403M	Left adductor magnus
+FJ1404	Right adductor minimus
+FJ1404M	Left adductor minimus
+FJ1406	Right extensor digitorum longus
+FJ1406M	Left extensor digitorum longus
+FJ1407	Right extensor hallucis brevis
+FJ1407M	Left extensor hallucis brevis
+FJ1408	Right extensor hallucis longus
+FJ1408M	Left extensor hallucis longus
+FJ1412	Right flexor accessorius
+FJ1412M	Left flexor accessorius
+FJ1413	Right flexor digitorum brevis
+FJ1413M	Left flexor digitorum brevis
+FJ1414	Right flexor digitorum longus
+FJ1414M	Left flexor digitorum longus
+FJ1415	Right flexor hallucis longus
+FJ1415M	Left flexor hallucis longus
+FJ1416	Right gemellus inferior
+FJ1416M	Left gemellus inferior
+FJ1417	Right gemellus superior
+FJ1417M	Left gemellus superior
+FJ1418	Right gluteus maximus
+FJ1418M	Left gluteus maximus
+FJ1419	Right gluteus medius
+FJ1419M	Left gluteus medius
+FJ1420	Right gluteus minimus
+FJ1420M	Left gluteus minimus
+FJ1421	Right gracilis
+FJ1421M	Left gracilis
+FJ1422	Right iliacus
+FJ1422M	Left iliacus
+FJ1425	Right obturator externus
+FJ1425M	Left obturator externus
+FJ1426	Right obturator internus
+FJ1426M	Left obturator internus
+FJ1427	Right pectineus
+FJ1427M	Left pectineus
+FJ1428	Right piriformis
+FJ1428M	Left piriformis
+FJ1429	Right plantaris
+FJ1429M	Left plantaris
+FJ1430	Right popliteus
+FJ1430M	Left popliteus
+FJ1431	Right psoas major
+FJ1431M	Left psoas major
+FJ1432	Right quadratus femoris
+FJ1432M	Left quadratus femoris
+FJ1433	Right rectus femoris
+FJ1433M	Left rectus femoris
+FJ1434	Right sartorius
+FJ1434M	Left sartorius
+FJ1435	Right semimembranosus
+FJ1435M	Left semimembranosus
+FJ1436	Right semitendinosus
+FJ1436M	Left semitendinosus
+FJ1437	Right soleus
+FJ1437M	Left soleus
+FJ1441	Right vastus intermedius
+FJ1441M	Left vastus intermedius
+FJ1442	Right vastus lateralis
+FJ1442M	Left vastus lateralis
+FJ1443	Right vastus medialis
+FJ1443M	Left vastus medialis
+FJ1444	Short head of right biceps femoris
+FJ1444M	Short head of left biceps femoris
+FJ1445	Transverse head of right adductor hallucis
+FJ1445M	Transverse head of left adductor hallucis
+FJ1446	Abdominal part of right pectoralis major
+FJ1446M	Abdominal part of left pectoralis major
+FJ1447	Clavicular part of right pectoralis major
+FJ1447M	Clavicular part of left pectoralis major
+FJ1449M	Left coccygeus
+FJ1450	superficial perineal muscle
+FJ1450M	External anal sphincter
+FJ1451	external intercostal muscle
+FJ1451M	External intercostal muscle
+FJ1452	Right external oblique
+FJ1452M	Left external oblique
+FJ1453M	Left iliococcygeus
+FJ1454	innermost intercostal muscle
+FJ1454M	Innermost intercostal muscle
+FJ1455	internal intercostal muscle
+FJ1455M	Internal intercostal muscle
+FJ1456	Right pectoralis minor
+FJ1456M	Left pectoralis minor
+FJ1457M	Left pubococcygeus
+FJ1458M	Left puborectalis
+FJ1459	Right serratus anterior
+FJ1459M	Left serratus anterior
+FJ1460	Right subclavius
+FJ1460M	Left subclavius
+FJ1461	Right transversus thoracis
+FJ1461M	Left transversus thoracis
+FJ1462	Set of right levatores costarum breves
+FJ1462M	Set of left levatores costarum breves
+FJ1463	Set of right levatores costarum longi
+FJ1463M	Set of left levatores costarum longi
+FJ1464	Sternocostal part of right pectoralis major
+FJ1464M	Sternocostal part of left pectoralis major
+FJ1466	Abductor digiti minimi of right hand
+FJ1466M	Abductor digiti minimi of left hand
+FJ1467	Acromial part of right deltoid
+FJ1467M	Acromial part of left deltoid
+FJ1468	Clavicular part of right deltoid
+FJ1468M	Clavicular part of left deltoid
+FJ1469	Left flexor pollicis brevis
+FJ1469M	Right flexor pollicis brevis
+FJ1470	Flexor digiti minimi brevis of right hand
+FJ1470M	Flexor digiti minimi brevis of left hand
+FJ1472	Right extensor carpi ulnaris
+FJ1472M	Left extensor carpi ulnaris
+FJ1473	Humeral head of right flexor carpi ulnaris
+FJ1473M	Humeral head of left flexor carpi ulnaris
+FJ1474	Humeral head of right pronator teres
+FJ1474M	Humeral head of left pronator teres
+FJ1475	Right flexor digitorum superficialis
+FJ1475M	Left flexor digitorum superficialis
+FJ1477	Lateral head of right triceps brachii
+FJ1477M	Lateral head of left triceps brachii
+FJ1478	Long head of right biceps brachii
+FJ1478M	Long head of left biceps brachii
+FJ1479	Long head of right triceps brachii
+FJ1479M	Long head of left triceps brachii
+FJ1480	Medial head of right triceps brachii
+FJ1480M	Medial head of left triceps brachii
+FJ1481	Oblique head of right adductor pollicis
+FJ1481M	Oblique head of left adductor pollicis
+FJ1482	Opponens digiti minimi of right hand
+FJ1482M	Opponens digiti minimi of left hand
+FJ1483	Right abductor pollicis brevis
+FJ1483M	Left abductor pollicis brevis
+FJ1484	Right abductor pollicis longus
+FJ1484M	Left abductor pollicis longus
+FJ1485	Right anconeus
+FJ1485M	Left anconeus
+FJ1486	Right brachialis
+FJ1486M	Left brachialis
+FJ1487	Right brachioradialis
+FJ1487M	Left brachioradialis
+FJ1488	Right coracobrachialis
+FJ1488M	Left coracobrachialis
+FJ1489	Right extensor carpi radialis brevis
+FJ1489M	Left extensor carpi radialis brevis
+FJ1490	Right extensor carpi radialis longus
+FJ1490M	Left extensor carpi radialis longus
+FJ1491	Right extensor digiti minimi
+FJ1491M	Left extensor digiti minimi
+FJ1492	Right extensor digitorum
+FJ1492M	Left extensor digitorum
+FJ1493	Right extensor indicis
+FJ1493M	Left extensor indicis
+FJ1494	Right extensor pollicis brevis
+FJ1494M	Left extensor pollicis brevis
+FJ1495	Right extensor pollicis longus
+FJ1495M	Left extensor pollicis longus
+FJ1496	Right flexor carpi radialis
+FJ1496M	Left flexor carpi radialis
+FJ1497	Right flexor digitorum profundus
+FJ1497M	Left flexor digitorum profundus
+FJ1498	Right flexor pollicis longus
+FJ1498M	Left flexor pollicis longus
+FJ1499	Right flexor digitorum superficialis
+FJ1499M	Left flexor digitorum superficialis
+FJ1500	Right infraspinatus muscle
+FJ1500M	Left infraspinatus muscle
+FJ1501	Right opponens pollicis
+FJ1501M	Left opponens pollicis
+FJ1502	Right palmaris longus
+FJ1502M	Left palmaris longus
+FJ1503	Right pronator quadratus
+FJ1503M	Left pronator quadratus
+FJ1505	Right supinator
+FJ1505M	Left supinator
+FJ1506	Right supraspinatus
+FJ1506M	Left supraspinatus
+FJ1507	Right teres major
+FJ1507M	Left teres major
+FJ1508	Right teres minor
+FJ1508M	Left teres minor
+FJ1509	Set of dorsal interossei of right hand
+FJ1509M	Set of dorsal interossei of left hand
+FJ1510	Set of lumbricals of right hand
+FJ1510M	Set of lumbricals of left hand
+FJ1511	Set of palmar interossei of right hand
+FJ1511M	Set of palmar interossei of left hand
+FJ1512	Short head of right biceps brachii
+FJ1512M	Short head of left biceps brachii
+FJ1513	Spinal part of right deltoid
+FJ1513M	Spinal part of left deltoid
+FJ1514	Superficial head of right flexor pollicis brevis
+FJ1514M	Superficial head of left flexor pollicis brevis
+FJ1515	Transverse head of right adductor pollicis
+FJ1515M	Transverse head of left adductor pollicis
+FJ1516	Ulnar head of right pronator teres
+FJ1516M	Ulnar head of left pronator teres
+FJ1517	Right extensor carpi ulnaris
+FJ1517M	Left extensor carpi ulnaris
+FJ1518	Ulnar head of right flexor carpi ulnaris
+FJ1518M	Ulnar head of left flexor carpi ulnaris
+FJ1520	Ascending part of right trapezius
+FJ1520M	Ascending part of left trapezius
+FJ1521	Descending part of right trapezius
+FJ1521M	Descending part of left trapezius
+FJ1522	Right lumbar rotator
+FJ1522M	Left lumbar rotator
+FJ1524	Right cervical rotator
+FJ1524M	Left cervical rotator
+FJ1525	thoracic rotator
+FJ1525M	Thoracic rotator
+FJ1526	Right iliocostalis cervicis
+FJ1526M	Left iliocostalis cervicis
+FJ1527	Right iliocostalis lumborum
+FJ1527M	Left iliocostalis lumborum
+FJ1528	Right iliocostalis thoracis
+FJ1528M	Left iliocostalis thoracis
+FJ1533	Right longissimus capitis
+FJ1533M	Left longissimus capitis
+FJ1534	Right longissimus cervicis
+FJ1534M	Left longissimus cervicis
+FJ1535	Right longissimus thoracis
+FJ1535M	Left longissimus thoracis
+FJ1536	Right rhomboid major
+FJ1536M	Left rhomboid major
+FJ1537	Right rhomboid minor
+FJ1537M	Left rhomboid minor
+FJ1538	Right semispinalis capitis
+FJ1538M	Left semispinalis capitis
+FJ1539	Right semispinalis cervicis
+FJ1539M	Left semispinalis cervicis
+FJ1540	Right semispinalis thoracis
+FJ1540M	Left semispinalis thoracis
+FJ1541	Right serratus posterior inferior
+FJ1541M	Left serratus posterior inferior
+FJ1542	Right serratus posterior superior
+FJ1542M	Left serratus posterior superior
+FJ1543	spinalis
+FJ1543M	Spinalis
+FJ1544	Right spinalis thoracis
+FJ1544M	Left spinalis thoracis
+FJ1545	Right splenius capitis
+FJ1545M	Left splenius capitis
+FJ1546	Right splenius cervicis
+FJ1546M	Left splenius cervicis
+FJ1547	lateral lumbar intertransversarius
+FJ1547M	Lateral lumbar intertransversarius
+FJ1548	medial lumbar intertransversarius
+FJ1548M	Medial lumbar intertransversarius
+FJ1549	set of anterior cervical intertransversarii
+FJ1549M	Set of anterior cervical intertransversarii
+FJ1550	set of interspinales lumborum
+FJ1550M	Set of interspinales lumborum
+FJ1551	Right interspinalis thoracis
+FJ1551M	Left interspinalis thoracis
+FJ1552	set of interspinales cervicis
+FJ1552M	Set of interspinales cervicis
+FJ1553	set of posterior cervical intertransversarii
+FJ1553M	Set of posterior cervical intertransversarii
+FJ1554	Transverse part of right trapezius
+FJ1554M	Transverse part of left trapezius
+FJ1555	Left digastric
+FJ1556	Right digastric
+FJ1557	Inferior oblique part of left longus colli
+FJ1558	Left platysma
+FJ1559	Left geniohyoid
+FJ1560	Left digastric
+FJ1561	Left longus capitis
+FJ1562	Left mylohyoid
+FJ1563	Left obliquus capitis inferior
+FJ1564	Left obliquus capitis superior
+FJ1565	Left omohyoid
+FJ1566	Left rectus capitis anterior
+FJ1567	Left rectus capitis posterior major
+FJ1568	Left rectus capitis posterior minor
+FJ1569	Left rectus capitis lateralis
+FJ1570	Left scalenus anterior
+FJ1571	Left scalenus medius
+FJ1572	Left scalenus posterior
+FJ1573	Left sternocleidomastoid
+FJ1574	Left sternohyoid
+FJ1575	Left sternothyroid
+FJ1576	Left stylohyoid
+FJ1577	Left thyrohyoid
+FJ1578	Left digastric
+FJ1579	Right digastric
+FJ1580	Right geniohyoid
+FJ1582	Right longus capitis
+FJ1583	Right mylohyoid
+FJ1584	Right obliquus capitis inferior
+FJ1585	Right obliquus capitis superior
+FJ1586	Right omohyoid
+FJ1587	Right platysma
+FJ1588	Right rectus capitis anterior
+FJ1589	Right rectus capitis posterior major
+FJ1590	Right rectus capitis posterior minor
+FJ1591	Right rectus capitis lateralis
+FJ1592	Right scalenus anterior
+FJ1593	Right scalenus medius
+FJ1594	Right scalenus posterior
+FJ1595	Right sternocleidomastoid
+FJ1596	Right sternohyoid
+FJ1597	Right sternothyroid
+FJ1598	Right stylohyoid
+FJ1599	Right thyrohyoid
+FJ1600	Superior oblique part of left longus colli
+FJ1601	Vertical intermediate part of left longus colli
+FJ2418	Anterolateral head of lateral papillary muscle of left ventricle
+FJ2419	Anterior papillary muscle of right ventricle
+FJ2429	Lateral papillary muscle of left ventricle
+FJ2430	Posterior papillary muscle of right ventricle
+FJ2437	Septal papillary muscle of right ventricle
+FJ2542	Left coccygeus
+FJ2543	External anal sphincter
+FJ2544	Left iliococcygeus
+FJ2545	Left pubococcygeus
+FJ2546	Left puborectalis
+FJ2547	Right coccygeus
+FJ2548	External anal sphincter
+FJ2549	Right iliococcygeus
+FJ2550	Right pubococcygeus
+FJ2551	Right puborectalis
+FJ2738	Left genioglossus
+FJ2739	Left hyoglossus
+FJ2741	Left levator veli palatini
+FJ2748	Left tensor veli palatini
+FJ2750	Right genioglossus
+FJ2751	Right hyoglossus
+FJ2753	Right levator veli palatini
+FJ2760	Right tensor veli palatini
+FJ2762	Uvular muscle
+FJ2774	Left aryepiglotticus
+FJ2778	Left lateral crico-arytenoid
+FJ2780	Left oblique arytenoid
+FJ2781	Oblique part of left cricothyroid
+FJ2782	Left posterior crico-arytenoid
+FJ2783	Straight part of left cricothyroid
+FJ2784	Left thyro-arytenoid
+FJ2785	Left thyro-arytenoid
+FJ2788	Left vocalis
+FJ2791	Right aryepiglotticus
+FJ2796	Right lateral crico-arytenoid
+FJ2798	Right oblique arytenoid
+FJ2799	Oblique part of right cricothyroid
+FJ2800	Right posterior crico-arytenoid
+FJ2801	Straight part of right cricothyroid
+FJ2802	Right thyro-arytenoid
+FJ2803	Right thyro-arytenoid
+FJ2806	Right vocalis
+FJ2809	Transverse arytenoid
+FJ3131	Diaphragm

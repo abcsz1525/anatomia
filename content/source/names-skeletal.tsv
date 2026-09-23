@@ -1,0 +1,296 @@
+FJ1252	Gingiva of upper jaw
+FJ1253	Gingiva of lower jaw
+FJ1254	Left lower first secondary molar tooth
+FJ1255	Left lower first secondary premolar tooth
+FJ1256	Left lower second secondary molar tooth
+FJ1257	Left lower second secondary premolar tooth
+FJ1258	Left lower central secondary incisor tooth
+FJ1259	Left lower lateral secondary incisor tooth
+FJ1260	Left lower secondary canine tooth
+FJ1261	Left upper first secondary molar tooth
+FJ1262	Left upper first secondary premolar tooth
+FJ1263	Left upper second secondary molar tooth
+FJ1264	Left upper second secondary premolar tooth
+FJ1265	Left upper central secondary incisor tooth
+FJ1266	Left upper lateral secondary incisor tooth
+FJ1267	Left upper secondary canine tooth
+FJ1268	Right lower first secondary molar tooth
+FJ1269	Right lower first secondary premolar tooth
+FJ1270	Right lower second secondary molar tooth
+FJ1271	Right lower second secondary premolar tooth
+FJ1272	Right lower central secondary incisor tooth
+FJ1273	Right lower lateral secondary incisor tooth
+FJ1274	Right lower secondary canine tooth
+FJ1275	Right upper second secondary molar tooth
+FJ1276	Right upper first secondary molar tooth
+FJ1277	Right upper first secondary premolar tooth
+FJ1278	Right upper second secondary premolar tooth
+FJ1279	Right upper central secondary incisor tooth
+FJ1280	Right upper lateral secondary incisor tooth
+FJ1281	Right upper secondary canine tooth
+FJ1409	Right fibularis brevis
+FJ1409M	Left fibularis brevis
+FJ1410	Right fibularis longus
+FJ1410M	Left fibularis longus
+FJ1411	Right fibularis tertius
+FJ1411M	Left fibularis tertius
+FJ1423	Right iliotibial tract
+FJ1423M	Left iliotibial tract
+FJ1439	Right tibialis anterior
+FJ1439M	Left tibialis anterior
+FJ1440	Right tibialis posterior
+FJ1440M	Left tibialis posterior
+FJ1504	Right subscapularis
+FJ1504M	Left subscapularis
+FJ1532	Right levator scapulae
+FJ1532M	Left levator scapulae
+FJ2440	Cricoid cartilage
+FJ2554	Right major alar cartilage
+FJ2555	Left major alar cartilage
+FJ2769	Cricoid cartilage
+FJ2772	Hyoid bone
+FJ2773	Left cuneiform cartilage
+FJ2775	Left arytenoid cartilage
+FJ2776	Left corniculate cartilage
+FJ2792	Right arytenoid cartilage
+FJ2793	Right corniculate cartilage
+FJ2795	Right cuneiform cartilage
+FJ2808	Thyroid cartilage
+FJ3152	Right hip bone
+FJ3153	Xiphoid process
+FJ3154	Tenth thoracic vertebra
+FJ3155	Eleventh thoracic vertebra
+FJ3156	Twelfth thoracic vertebra
+FJ3157	First lumbar vertebra
+FJ3158	First thoracic vertebra
+FJ3159	Second lumbar vertebra
+FJ3160	Second thoracic vertebra
+FJ3161	Third cervical vertebra
+FJ3162	Third lumbar vertebra
+FJ3163	Third thoracic vertebra
+FJ3164	Fourth cervical vertebra
+FJ3165	Fourth lumbar vertebra
+FJ3166	Fourth thoracic vertebra
+FJ3167	Fifth cervical vertebra
+FJ3168	Fifth lumbar vertebra
+FJ3169	Fifth thoracic vertebra
+FJ3170	Sixth cervical vertebra
+FJ3171	Sixth thoracic vertebra
+FJ3172	Seventh cervical vertebra
+FJ3173	Seventh thoracic vertebra
+FJ3174	Eighth thoracic vertebra
+FJ3175	Ninth thoracic vertebra
+FJ3176	Atlas
+FJ3177	Axis
+FJ3178	Body of sternum
+FJ3179	Distal phalanx of left second toe
+FJ3180	Distal phalanx of left third toe
+FJ3181	Distal phalanx of left fourth toe
+FJ3182	Distal phalanx of left big toe
+FJ3183	Distal phalanx of left index finger
+FJ3184	Distal phalanx of left little finger
+FJ3185	Distal phalanx of left little toe
+FJ3186	Distal phalanx of left middle finger
+FJ3187	Distal phalanx of left ring finger
+FJ3188	Distal phalanx of left thumb
+FJ3189	Distal phalanx of right second toe
+FJ3190	Distal phalanx of right third toe
+FJ3191	Distal phalanx of right fourth toe
+FJ3192	Distal phalanx of right big toe
+FJ3193	Distal phalanx of right index finger
+FJ3194	Distal phalanx of right little finger
+FJ3195	Distal phalanx of right little toe
+FJ3196	Distal phalanx of right middle finger
+FJ3197	Distal phalanx of right ring finger
+FJ3198	Distal phalanx of right thumb
+FJ3199	Ethmoid
+FJ3200	Frontal bone
+FJ3201	Hyoid bone
+FJ3202	Intervertebral disk of axis
+FJ3203	Intervertebral disk of fourth thoracic vertebra
+FJ3204	Intervertebral disk of fifth thoracic vertebra
+FJ3205	Intervertebral disk of sixth thoracic vertebra
+FJ3206	Intervertebral disk of seventh thoracic vertebra
+FJ3207	Intervertebral disk of eighth thoracic vertebra
+FJ3208	Intervertebral disk of ninth thoracic vertebra
+FJ3209	Intervertebral disk of tenth thoracic vertebra
+FJ3210	Intervertebral disk of eleventh thoracic vertebra
+FJ3211	Intervertebral disk
+FJ3212	Intervertebral disk of first lumbar vertebra
+FJ3213	Intervertebral disk of third cervical vertebra
+FJ3214	Intervertebral disk of second lumbar vertebra
+FJ3215	Intervertebral disk of third lumbar vertebra
+FJ3216	Intervertebral disk of fourth lumbar vertebra
+FJ3217	Intervertebral disk of fifth lumbar vertebra
+FJ3218	Intervertebral disk of fourth cervical vertebra
+FJ3219	Intervertebral disk of fifth cervical vertebra
+FJ3220	Intervertebral disk of sixth cervical vertebra
+FJ3221	Intervertebral disk of seventh cervical vertebra
+FJ3222	Intervertebral disk of first thoracic vertebra
+FJ3223	Intervertebral disk of second thoracic vertebra
+FJ3224	Intervertebral disk of third thoracic vertebra
+FJ3225	Left tenth rib
+FJ3226	Left eleventh rib
+FJ3227	Left twelfth rib
+FJ3228	Left first rib
+FJ3229	Left second rib
+FJ3230	Left third rib
+FJ3231	Left fourth rib
+FJ3232	Left fifth rib
+FJ3233	Left sixth rib
+FJ3234	Left seventh rib
+FJ3235	Left eighth rib
+FJ3236	Left ninth rib
+FJ3237	Left clavicle
+FJ3239	Left first costal cartilage
+FJ3240	Left first metacarpal bone
+FJ3241	Left first metatarsal bone
+FJ3242	Left second costal cartilage
+FJ3243	Left second metacarpal bone
+FJ3244	Left second metatarsal bone
+FJ3245	Left third costal cartilage
+FJ3246	Left third metacarpal bone
+FJ3247	Left third metatarsal bone
+FJ3248	Left fourth costal cartilage
+FJ3249	Left fourth metacarpal bone
+FJ3250	Left fourth metatarsal bone
+FJ3251	Left fifth costal cartilage
+FJ3252	Left fifth metacarpal bone
+FJ3253	Left fifth metatarsal bone
+FJ3254	Left sixth costal cartilage
+FJ3255	Left seventh costal cartilage
+FJ3256	Left calcaneus
+FJ3257	Left capitate
+FJ3258	Left cuboid bone
+FJ3259	Left femur
+FJ3260	Left fibula
+FJ3261	Left hamate
+FJ3262	Left humerus
+FJ3264	Left intermediate cuneiform bone
+FJ3266	Sesamoid bone of left foot
+FJ3267	Left lateral cuneiform bone
+FJ3268	Left lunate
+FJ3269	Left maxilla
+FJ3270	Sesamoid bone of left foot
+FJ3271	Left medial cuneiform bone
+FJ3272	Left nasal bone
+FJ3273	Left palatine bone
+FJ3274	Left parietal bone
+FJ3275	Left patella
+FJ3276	Left pisiform
+FJ3277	Left radius
+FJ3278	Left scaphoid
+FJ3279	Left scapula
+FJ3280	Left talus
+FJ3281	Left temporal bone
+FJ3282	Left tibia
+FJ3283	Left trapezium
+FJ3284	Left trapezoid
+FJ3285	Left triquetral
+FJ3286	Left ulna
+FJ3287	Left zygomatic bone
+FJ3288	Left hip bone
+FJ3289	Mandible
+FJ3290	Manubrium
+FJ3291	Middle phalanx of left ring finger
+FJ3292	Middle phalanx of right ring finger
+FJ3293	Middle phalanx of left second toe
+FJ3294	Middle phalanx of left third toe
+FJ3295	Middle phalanx of left fourth toe
+FJ3296	Middle phalanx of left index finger
+FJ3297	Middle phalanx of left little finger
+FJ3298	Middle phalanx of left little toe
+FJ3299	Middle phalanx of left middle finger
+FJ3300	Middle phalanx of right second toe
+FJ3301	Middle phalanx of right third toe
+FJ3302	Middle phalanx of right fourth toe
+FJ3303	Middle phalanx of right index finger
+FJ3304	Middle phalanx of right little finger
+FJ3305	Middle phalanx of right little toe
+FJ3306	Middle phalanx of right middle finger
+FJ3307	Navicular bone of left foot
+FJ3308	Navicular bone of right foot
+FJ3309	Occipital bone
+FJ3310	Proximal phalanx of right big toe
+FJ3311	Proximal phalanx of left third toe
+FJ3312	Proximal phalanx of left fourth toe
+FJ3313	Proximal phalanx of left index finger
+FJ3314	Proximal phalanx of left little finger
+FJ3315	Proximal phalanx of left little toe
+FJ3316	Proximal phalanx of left middle finger
+FJ3317	Proximal phalanx of left ring finger
+FJ3318	Proximal phalanx of left thumb
+FJ3319	Proximal phalanx of right second toe
+FJ3320	Proximal phalanx of right third toe
+FJ3321	Proximal phalanx of right fourth toe
+FJ3322	Proximal phalanx of right index finger
+FJ3323	Proximal phalanx of right little finger
+FJ3324	Proximal phalanx of right little toe
+FJ3325	Proximal phalanx of right middle finger
+FJ3326	Proximal phalanx of right ring finger
+FJ3327	Proximal phalanx of right thumb
+FJ3328	Proximal phalanx of left second toe
+FJ3329	Proximal phalanx of left big toe
+FJ3330	Right tenth rib
+FJ3331	Right eleventh rib
+FJ3332	Right twelfth rib
+FJ3333	Right first costal cartilage
+FJ3334	Right first rib
+FJ3335	Right second costal cartilage
+FJ3336	Right second rib
+FJ3337	Right third costal cartilage
+FJ3338	Right third rib
+FJ3339	Right fourth costal cartilage
+FJ3340	Right fourth rib
+FJ3341	Right fifth costal cartilage
+FJ3342	Right fifth rib
+FJ3343	Right sixth costal cartilage
+FJ3344	Right sixth rib
+FJ3345	Right seventh costal cartilage
+FJ3346	Right seventh rib
+FJ3347	Right eighth rib
+FJ3348	Right ninth rib
+FJ3349	Right radius
+FJ3350	Right first metacarpal bone
+FJ3351	Right first metatarsal bone
+FJ3352	Right second metacarpal bone
+FJ3353	Right second metatarsal bone
+FJ3354	Right third metacarpal bone
+FJ3355	Right third metatarsal bone
+FJ3356	Right fourth metacarpal bone
+FJ3357	Right fourth metatarsal bone
+FJ3358	Right fifth metacarpal bone
+FJ3359	Right fifth metatarsal bone
+FJ3360	Right calcaneus
+FJ3361	Right capitate
+FJ3362	Right clavicle
+FJ3364	Right cuboid bone
+FJ3365	Right femur
+FJ3366	Right fibula
+FJ3367	Right hamate
+FJ3368	Right humerus
+FJ3370	Right intermediate cuneiform bone
+FJ3372	Sesamoid bone of right foot
+FJ3373	Right lateral cuneiform bone
+FJ3374	Right lunate
+FJ3375	Right maxilla
+FJ3376	Sesamoid bone of right foot
+FJ3377	Right medial cuneiform bone
+FJ3378	Right nasal bone
+FJ3379	Right palatine bone
+FJ3380	Right parietal bone
+FJ3381	Right patella
+FJ3382	Right pisiform
+FJ3383	Right scaphoid
+FJ3384	Right scapula
+FJ3385	Right talus
+FJ3386	Right temporal bone
+FJ3387	Right tibia
+FJ3388	Right trapezium
+FJ3389	Right trapezoid
+FJ3390	Right triquetral
+FJ3391	Right ulna
+FJ3392	Right zygomatic bone
+FJ3393	Sacrum
+FJ3394	Sphenoid bone
+FJ3395	Vomer
