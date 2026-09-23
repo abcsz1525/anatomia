@@ -5,7 +5,7 @@ import { dayKey } from "./stats";
 import type { ProgressV1 } from "./types";
 
 function answer(partId: string, la: string, correct: boolean, attempts = 1): AnswerRecord {
-  return { partId, la, ru: la, correct, attempts };
+  return { partId, la, ru: la, side: "left", correct, attempts };
 }
 
 /**

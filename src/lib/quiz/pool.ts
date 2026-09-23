@@ -65,3 +65,24 @@ export function distinctConcepts(parts: QuizPart[]): string[] {
   }
   return result;
 }
+
+/**
+ * Ключ группы дублей: одна структура часто разрезана на несколько мешей
+ * (`FJ1475`/`FJ1499` — одна и та же мышца). Латынь + сторона определяют
+ * структуру однозначно; пустая сторона совпадает только с пустой.
+ */
+export function groupKey(part: QuizPart): string {
+  return `${part.la}|${part.side}`;
+}
+
+/** Группы дублей темы: ключ → id всех её мешей, в порядке manifest.parts. */
+export function groupsOf(parts: QuizPart[]): Map<string, string[]> {
+  const result = new Map<string, string[]>();
+  for (const p of parts) {
+    const key = groupKey(p);
+    const ids = result.get(key);
+    if (ids) ids.push(p.id);
+    else result.set(key, [p.id]);
+  }
+  return result;
+}

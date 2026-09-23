@@ -67,6 +67,7 @@ describe("quiz session — find mode", () => {
         partId: s0.questions[0].target.id,
         la: s0.questions[0].target.la,
         ru: s0.questions[0].target.ru,
+        side: s0.questions[0].target.side,
         correct: true,
         attempts: 1,
       },
@@ -105,6 +106,7 @@ describe("quiz session — find mode", () => {
         partId: s0.questions[0].target.id,
         la: s0.questions[0].target.la,
         ru: s0.questions[0].target.ru,
+        side: s0.questions[0].target.side,
         correct: false,
         attempts: FIND_ATTEMPTS,
       },
@@ -156,7 +158,7 @@ describe("quiz session — name mode", () => {
     const s = running(apply(s0, { type: "choose", index: q.correctIndex, correct: true }));
     expect(s.feedback).toEqual({ kind: "chosen", index: q.correctIndex, correct: true });
     expect(s.answers).toEqual([
-      { partId: q.target.id, la: q.target.la, ru: q.target.ru, correct: true, attempts: 1 },
+      { partId: q.target.id, la: q.target.la, ru: q.target.ru, side: q.target.side, correct: true, attempts: 1 },
     ]);
   });
 
@@ -169,6 +171,30 @@ describe("quiz session — name mode", () => {
     expect(s.feedback).toEqual({ kind: "chosen", index: wrongIndex, correct: false });
     expect(s.answers[0]).toMatchObject({ partId: q.target.id, correct: false, attempts: 1 });
     expect(isAnswered(s.feedback)).toBe(true);
+  });
+});
+
+describe("quiz session — side in the record", () => {
+  it("copies the side of the target so left/right stay distinguishable", () => {
+    // две части с одной la и разной стороной: без side запись неотличима
+    const bySide = new Map(parts.map((p) => [p.id, p.side]));
+    for (const mode of ["find", "name"] as const) {
+      const s0 = running(start(mode));
+      const q = s0.questions[0];
+      const s =
+        mode === "find"
+          ? running(apply(s0, { type: "answer", correct: true }))
+          : running(apply(s0, { type: "choose", index: 0, correct: true }));
+      expect(s.answers[0].side).toBe(bySide.get(q.target.id));
+      expect(s.answers[0].side).toBe(q.target.side);
+    }
+  });
+
+  it("records the two femurs with different sides", () => {
+    const femL = parts.find((p) => p.id === "FEM_L")!;
+    const femR = parts.find((p) => p.id === "FEM_R")!;
+    expect(femL.la).toBe(femR.la);
+    expect(femL.side).not.toBe(femR.side);
   });
 });
 
@@ -218,6 +244,7 @@ describe("quiz session — next and abort", () => {
       expect(a.attempts).toBe(1);
       expect(typeof a.partId).toBe("string");
       expect(typeof a.la).toBe("string");
+      expect(["", "left", "right"]).toContain(a.side);
     }
   });
 

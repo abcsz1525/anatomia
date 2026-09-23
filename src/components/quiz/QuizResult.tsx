@@ -1,14 +1,20 @@
 "use client";
 import Link from "next/link";
+import { sideLabel } from "@/lib/content/names";
 import type { AnswerRecord, SessionResult } from "@/lib/quiz/types";
 
-/** Ошибки без повторов: одна и та же структура может выпасть в сессии дважды. */
+/**
+ * Ошибки без повторов: одна и та же структура может выпасть в сессии дважды,
+ * и притом разными мешами — поэтому ключ тот же, что у группы дублей (la|side),
+ * а не partId.
+ */
 function mistakes(answers: AnswerRecord[]): AnswerRecord[] {
   const seen = new Set<string>();
   const result: AnswerRecord[] = [];
   for (const a of answers) {
-    if (a.correct || seen.has(a.partId)) continue;
-    seen.add(a.partId);
+    const key = `${a.la}|${a.side}`;
+    if (a.correct || seen.has(key)) continue;
+    seen.add(key);
     result.push(a);
   }
   return result;
@@ -40,9 +46,12 @@ export function QuizResult({
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">Ошибки</p>
             <ul className="space-y-2">
               {wrong.map((a) => (
-                <li key={a.partId} data-testid="quiz-mistake" className="rounded border px-3 py-2">
+                <li key={`${a.la}|${a.side}`} data-testid="quiz-mistake" className="rounded border px-3 py-2">
                   <span className="block font-semibold italic">{a.la}</span>
-                  <span className="block text-xs text-neutral-500">{a.ru}</span>
+                  <span className="block text-xs text-neutral-500">
+                    {a.ru}
+                    {sideLabel(a.side) && ` (${sideLabel(a.side)})`}
+                  </span>
                   <Link href={`/atlas?focus=${a.partId}`} className="mt-1 inline-block text-xs text-blue-700 hover:underline">
                     Показать в атласе
                   </Link>

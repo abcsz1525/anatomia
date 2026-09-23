@@ -8,7 +8,7 @@ import { recordSession } from "@/lib/progress/record";
 import { loadProgress, saveProgress } from "@/lib/progress/storage";
 import { acceptIds, checkFind, checkName } from "@/lib/quiz/check";
 import { generateSession } from "@/lib/quiz/generate";
-import { courseTopics, distinctConcepts, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
+import { courseTopics, distinctConcepts, groupsOf, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
 import {
   FIND_ATTEMPTS,
   initialQuizState,
@@ -16,10 +16,17 @@ import {
   reducer,
 } from "@/lib/quiz/session";
 import type { Question, QuizMode, SessionResult } from "@/lib/quiz/types";
-import { useAtlasStore } from "@/store/atlas-store";
+import { useAtlasStore, type HighlightKind } from "@/store/atlas-store";
 import { QuizResult } from "./QuizResult";
 import { QuizRunner } from "./QuizRunner";
 import { QuizSetup, type TopicGroup } from "./QuizSetup";
+
+/** Одна подсветка на всю группу дублей: половины мышцы должны гореть вместе. */
+function paint(ids: string[], kind: HighlightKind): Record<string, HighlightKind> {
+  const map: Record<string, HighlightKind> = {};
+  for (const id of ids) map[id] = kind;
+  return map;
+}
 
 export function QuizScreen() {
   const atlas = useAtlasData();
@@ -105,6 +112,18 @@ export function QuizScreen() {
     () => (runningParts ? new Set(runningParts.map((p) => p.id)) : null),
     [runningParts],
   );
+  // одна структура часто разрезана на несколько мешей: красить нужно всю группу,
+  // иначе у цели загорается только половина. Считаем один раз на сессию.
+  const groupOfId = useMemo(() => {
+    const byId = new Map<string, string[]>();
+    if (!runningParts) return byId;
+    for (const ids of groupsOf(runningParts).values()) {
+      for (const id of ids) byId.set(id, ids);
+    }
+    return byId;
+  }, [runningParts]);
+  // клик может прийти по скелету-контексту, которого в группах темы нет
+  const groupIds = useCallback((id: string) => groupOfId.get(id) ?? [id], [groupOfId]);
 
   // подсветка/камера для вновь показанного вопроса; между вопросами подсветки сбрасываются
   const questions = quiz.phase === "running" ? quiz.questions : null;
@@ -115,7 +134,7 @@ export function QuizScreen() {
     const afterReveal = cameFromReveal.current;
     cameFromReveal.current = false;
     if (q.kind === "name") {
-      setHighlights({ [q.target.id]: "target" });
+      setHighlights(paint(groupIds(q.target.id), "target"));
       // камера и так едет к цели, перекадрировать не нужно; список accept нужен
       // подбору ракурса: у структуры бывает несколько мешей
       flyTo(q.target.id, runningParts ? acceptIds(q.target, runningParts) : undefined);
@@ -123,7 +142,7 @@ export function QuizScreen() {
       setHighlights({});
       if (afterReveal) reframe();
     }
-  }, [questions, index, runningParts, setHighlights, flyTo, reframe]);
+  }, [questions, index, runningParts, groupIds, setHighlights, flyTo, reframe]);
 
   // результат записывается ровно один раз на сессию
   const result = quiz.phase === "result" ? quiz.result : null;
@@ -142,25 +161,28 @@ export function QuizScreen() {
       if (quiz.phase !== "running" || isAnswered(quiz.feedback)) return;
       const q = quiz.questions[quiz.index];
       if (q.kind !== "find") return;
-      // повторный клик по уже отвергнутой части — не новая попытка
-      if (useAtlasStore.getState().highlights[clickedId] === "wrong") return;
+      // повторный клик по уже отвергнутой структуре — не новая попытка;
+      // соседний меш той же мышцы считается той же самой ошибкой
+      const highlights = useAtlasStore.getState().highlights;
+      const clicked = groupIds(clickedId);
+      if (clicked.some((id) => highlights[id] === "wrong")) return;
       if (topicPartIds && !topicPartIds.has(clickedId)) {
         dispatch({ type: "offtopic" });
         return;
       }
       const correct = checkFind(q, clickedId);
       if (correct) {
-        setHighlights({ [clickedId]: "correct" });
+        setHighlights(paint(clicked, "correct"));
       } else if (quiz.attempts + 1 >= FIND_ATTEMPTS) {
-        setHighlights({ [q.target.id]: "target" });
+        setHighlights(paint(groupIds(q.target.id), "target"));
         flyTo(q.target.id, q.accept);
       } else {
         // прошлые промахи остаются красными — читаем их прямо из стора
-        setHighlights({ ...useAtlasStore.getState().highlights, [clickedId]: "wrong" });
+        setHighlights({ ...highlights, ...paint(clicked, "wrong") });
       }
       dispatch({ type: "answer", correct });
     },
-    [quiz, topicPartIds, setHighlights, flyTo],
+    [quiz, topicPartIds, groupIds, setHighlights, flyTo],
   );
 
   const handleChoose = useCallback(

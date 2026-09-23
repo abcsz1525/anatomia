@@ -5,6 +5,8 @@ import {
   contextIds,
   courseTopics,
   distinctConcepts,
+  groupKey,
+  groupsOf,
   topicParts,
   visibleIdsForTopic,
 } from "./pool";
@@ -118,5 +120,59 @@ describe("distinctConcepts", () => {
   it("returns unique la values in order of first appearance", () => {
     const parts = topicParts(content, manifest, "lower-limb-bones");
     expect(distinctConcepts(parts)).toEqual(["Femur", "Tibia"]);
+  });
+});
+
+describe("groupKey", () => {
+  it("joins la and side", () => {
+    const [femL, femR, tibL] = topicParts(content, manifest, "lower-limb-bones");
+    expect(groupKey(femL)).toBe("Femur|left");
+    expect(groupKey(femR)).toBe("Femur|right");
+    expect(groupKey(tibL)).toBe("Tibia|left");
+  });
+
+  it("separates sides of the same la", () => {
+    const [femL, femR] = topicParts(content, manifest, "lower-limb-bones");
+    expect(groupKey(femL)).not.toBe(groupKey(femR));
+  });
+
+  it("matches an empty side only with an empty side", () => {
+    const unpaired = { id: "X", la: "Sacrum", ru: "Крестец", side: "" as const, system: "skeletal" as const, topic: "t" };
+    const left = { ...unpaired, id: "Y", side: "left" as const };
+    expect(groupKey(unpaired)).toBe("Sacrum|");
+    expect(groupKey(unpaired)).not.toBe(groupKey(left));
+  });
+});
+
+describe("groupsOf", () => {
+  it("keys every part by la|side, ids in manifest order", () => {
+    const parts = topicParts(content, manifest, "lower-limb-bones");
+    const groups = groupsOf(parts);
+    expect([...groups.keys()]).toEqual(["Femur|left", "Femur|right", "Tibia|left"]);
+    expect(groups.get("Femur|left")).toEqual(["FEM_L"]);
+    expect(groups.get("Tibia|left")).toEqual(["TIB_L"]);
+  });
+
+  it("collects the duplicate meshes of one structure into one group", () => {
+    // две половины одной мышцы: разные id, одна и та же la и сторона
+    const parts = [
+      { id: "FJ1475", la: "Flexor digitorum superficialis", ru: "Сгибатель", side: "right" as const, system: "muscular" as const, topic: "t" },
+      { id: "FJ1499", la: "Flexor digitorum superficialis", ru: "Сгибатель", side: "right" as const, system: "muscular" as const, topic: "t" },
+      { id: "FJ1476", la: "Flexor digitorum superficialis", ru: "Сгибатель", side: "left" as const, system: "muscular" as const, topic: "t" },
+    ];
+    const groups = groupsOf(parts);
+    expect(groups.size).toBe(2);
+    expect(groups.get("Flexor digitorum superficialis|right")).toEqual(["FJ1475", "FJ1499"]);
+    expect(groups.get("Flexor digitorum superficialis|left")).toEqual(["FJ1476"]);
+  });
+
+  it("returns an empty map for no parts", () => {
+    expect(groupsOf([]).size).toBe(0);
+  });
+
+  it("covers every part exactly once", () => {
+    const parts = topicParts(content, manifest, "muscles-upper-limb");
+    const ids = [...groupsOf(parts).values()].flat();
+    expect(ids.sort()).toEqual(parts.map((p) => p.id).sort());
   });
 });

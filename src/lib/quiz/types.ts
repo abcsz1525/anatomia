@@ -35,6 +35,8 @@ export interface AnswerRecord {
   partId: string;
   la: string;
   ru: string;
+  /** Сторона цели: без неё «Femur» слева и справа в разборе ошибок неразличимы. */
+  side: Side;
   correct: boolean;
   attempts: number;
 }

@@ -51,7 +51,7 @@ export type Action =
 export const initialQuizState: QuizState = { phase: "setup" };
 
 function answerFor(q: Question, correct: boolean, attempts: number): AnswerRecord {
-  return { partId: q.target.id, la: q.target.la, ru: q.target.ru, correct, attempts };
+  return { partId: q.target.id, la: q.target.la, ru: q.target.ru, side: q.target.side, correct, attempts };
 }
 
 /**
