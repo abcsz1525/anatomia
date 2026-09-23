@@ -14,9 +14,15 @@ const SIDE_WORDS = /(?<![\p{L}\p{N}])(left|right|лев(?:ый|ая|ое|ые)|�
 export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[]): RuleError[] {
   const errors: RuleError[] = [];
   const parts = new Map(manifest.parts.map((p) => [p.id, p]));
-  const topicIds = new Set(topics.map((t) => t.id));
+  // темы-контейнеры (у них есть дочерние) не принимают строки напрямую:
+  // раскладываем структуры только по листьям плюс «other»
+  const leafIds = new Set(topics.filter((t) => !topics.some((x) => x.parent === t.id)).map((t) => t.id));
+  leafIds.add("other");
+  const knownIds = new Set(topics.map((t) => t.id));
   const seen = new Set<string>();
-  const perTopic = new Map<string, number>();
+  // правило 8 считает РАЗНЫЕ термины (la), а не строки: левый и правый парный
+  // орган — один термин, и тема из одной пары не считается наполненной
+  const perTopic = new Map<string, Set<string>>();
 
   rows.forEach((r, i) => {
     const row = i + 2; // 1-based + header
@@ -29,8 +35,13 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (!r.la.trim()) errors.push({ row, id: r.id, message: `${tag}: la is empty` });
     if (!r.ru.trim()) errors.push({ row, id: r.id, message: `${tag}: ru is empty` });
     if (SIDE_WORDS.test(r.la) || SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
-    if (!topicIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: unknown topic ${r.topic}` });
-    else perTopic.set(r.topic, (perTopic.get(r.topic) ?? 0) + 1);
+    if (!knownIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: unknown topic ${r.topic}` });
+    else if (!leafIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: non-leaf topic ${r.topic}` });
+    else {
+      let terms = perTopic.get(r.topic);
+      if (!terms) { terms = new Set<string>(); perTopic.set(r.topic, terms); }
+      terms.add(r.la.trim().toLowerCase());
+    }
     if (i > 0 && rows[i - 1].id > r.id && !errors.some((e) => e.message.startsWith("rows are not sorted")))
       errors.push({ row: row - 1, message: `rows are not sorted by id (first at row ${row - 1})` });
   });
@@ -42,8 +53,8 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
   for (const t of topics) {
     const isLeaf = !topics.some((x) => x.parent === t.id);
     if (!isLeaf || t.id === "other") continue;
-    const n = perTopic.get(t.id) ?? 0;
-    if (n > 0 && n < 4) errors.push({ message: `topic ${t.id} has ${n} structures (<4)` });
+    const n = perTopic.get(t.id)?.size ?? 0;
+    if (n > 0 && n < 4) errors.push({ message: `topic ${t.id} has ${n} distinct terms (<4)` });
   }
   return errors;
 }

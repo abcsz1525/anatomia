@@ -12,7 +12,9 @@ const manifest: AtlasManifest = {
   parts: [
     part("FJ1", "Left femur", "skeletal"), part("FJ2", "Right femur", "skeletal"),
     part("FJ3", "Left tibia", "skeletal"), part("FJ4", "Right tibia", "skeletal"),
-    part("FJ5", "Sternum", "skeletal"), part("FJ9", "Aorta", "arterial"),
+    part("FJ5", "Sternum", "skeletal"), part("FJ6", "Left fibula", "skeletal"),
+    part("FJ7", "Right fibula", "skeletal"), part("FJ8", "Left patella", "skeletal"),
+    part("FJ9", "Aorta", "arterial"),
   ],
 };
 const topics: Topic[] = [
@@ -25,6 +27,10 @@ const ok: CsvRow[] = [
   { id: "FJ3", en: "Left tibia", la: "Tibia", ru: "Большеберцовая кость", topic: "lower-limb-bones", aliases: "" },
   { id: "FJ4", en: "Right tibia", la: "Tibia", ru: "Большеберцовая кость", topic: "lower-limb-bones", aliases: "" },
   { id: "FJ5", en: "Sternum", la: "Sternum", ru: "Грудина", topic: "other", aliases: "" },
+  // тема должна набрать ≥4 РАЗНЫХ термина, поэтому пар femur/tibia не хватает
+  { id: "FJ6", en: "Left fibula", la: "Fibula", ru: "Малоберцовая кость", topic: "lower-limb-bones", aliases: "" },
+  { id: "FJ7", en: "Right fibula", la: "Fibula", ru: "Малоберцовая кость", topic: "lower-limb-bones", aliases: "" },
+  { id: "FJ8", en: "Left patella", la: "Patella", ru: "Надколенник", topic: "lower-limb-bones", aliases: "" },
 ];
 
 describe("validateContent", () => {
@@ -50,9 +56,19 @@ describe("validateContent", () => {
     expect(msgs).toMatch(/FJ3.*side word/);
     expect(msgs).toMatch(/FJ3.*unknown topic nope/);
   });
-  it("requires ≥4 structures per course topic and sorted ids", () => {
+  it("rejects a container topic: rows belong to leaves only", () => {
+    const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "osteology" } : r));
+    const msgs = validateContent(rows, manifest, topics).map((e) => e.message);
+    expect(msgs.join("\n")).toMatch(/FJ5.*non-leaf topic osteology/);
+    // и такая строка не засчитывается ни одной теме
+    expect(msgs.some((m) => m.startsWith("topic osteology"))).toBe(false);
+  });
+  it("requires ≥4 distinct terms per course topic and sorted ids", () => {
     const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "thorax" } : r));
-    expect(validateContent(rows, manifest, topics).map((e) => e.message)).toContain("topic thorax has 1 structures (<4)");
+    expect(validateContent(rows, manifest, topics).map((e) => e.message)).toContain("topic thorax has 1 distinct terms (<4)");
+    // 4 строки, но всего 2 термина (две пары) — тема всё ещё не наполнена
+    const pairsOnly = ok.filter((r) => r.id !== "FJ8").map((r) => (r.id === "FJ6" || r.id === "FJ7" ? { ...r, topic: "thorax" } : r));
+    expect(validateContent(pairsOnly, manifest, topics).map((e) => e.message)).toContain("topic lower-limb-bones has 2 distinct terms (<4)");
     const unsorted = [ok[1], ok[0], ...ok.slice(2)];
     expect(validateContent(unsorted, manifest, topics).map((e) => e.message)).toContain("rows are not sorted by id (first at row 2)");
   });

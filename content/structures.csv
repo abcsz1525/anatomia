@@ -29,8 +29,8 @@ FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus supe
 FJ1279,Right upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
-FJ1284,Check ligament of left lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
-FJ1292,Check ligament of left medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
+FJ1284,Check ligament of left lateral rectus,Lacertus musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,retinaculum musculi recti lateralis
+FJ1292,Check ligament of left medial rectus,Lacertus musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,retinaculum musculi recti medialis
 FJ1294,Left inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
 FJ1295,Left inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
 FJ1304,Left lateral rectus,Musculus rectus lateralis,Латеральная прямая мышца глаза,muscles-head,musculus rectus lateralis bulbi
@@ -39,8 +39,8 @@ FJ1308,Left medial rectus,Musculus rectus medialis,Медиальная прям
 FJ1322,Left superior oblique,Musculus obliquus superior,Верхняя косая мышца глаза,muscles-head,musculus obliquus superior bulbi
 FJ1323,Left superior rectus,Musculus rectus superior,Верхняя прямая мышца глаза,muscles-head,musculus rectus superior bulbi
 FJ1329,Trochlea of left superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
-FJ1334,Check ligament of right lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
-FJ1335,Check ligament of right medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
+FJ1334,Check ligament of right lateral rectus,Lacertus musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,retinaculum musculi recti lateralis
+FJ1335,Check ligament of right medial rectus,Lacertus musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,retinaculum musculi recti medialis
 FJ1343,Tendon of right levator palpebrae superioris,Tendo musculi levatoris palpebrae superioris,"Сухожилие мышцы, поднимающей верхнее веко",ligaments-head-neck,
 FJ1345,Right inferior oblique,Musculus obliquus inferior,Нижняя косая мышца глаза,muscles-head,musculus obliquus inferior bulbi
 FJ1346,Right inferior rectus,Musculus rectus inferior,Нижняя прямая мышца глаза,muscles-head,musculus rectus inferior bulbi
@@ -146,8 +146,8 @@ FJ1429,Right plantaris,Musculus plantaris,Подошвенная мышца,musc
 FJ1429M,Left plantaris,Musculus plantaris,Подошвенная мышца,muscles-lower-limb,
 FJ1430,Right popliteus,Musculus popliteus,Подколенная мышца,muscles-lower-limb,
 FJ1430M,Left popliteus,Musculus popliteus,Подколенная мышца,muscles-lower-limb,
-FJ1431,Right psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
-FJ1431M,Left psoas major,Musculus psoas major,Большая поясничная мышца,muscles-abdomen,musculus iliopsoas;подвздошно-поясничная мышца
+FJ1431,Right psoas major,Musculus psoas major,Большая поясничная мышца,muscles-thorax,musculus iliopsoas;подвздошно-поясничная мышца
+FJ1431M,Left psoas major,Musculus psoas major,Большая поясничная мышца,muscles-thorax,musculus iliopsoas;подвздошно-поясничная мышца
 FJ1432,Right quadratus femoris,Musculus quadratus femoris,Квадратная мышца бедра,muscles-lower-limb,
 FJ1432M,Left quadratus femoris,Musculus quadratus femoris,Квадратная мышца бедра,muscles-lower-limb,
 FJ1433,Right rectus femoris,Musculus rectus femoris,Прямая мышца бедра,muscles-lower-limb,
@@ -180,14 +180,14 @@ FJ1446,Abdominal part of right pectoralis major,"Musculus pectoralis major, pars
 FJ1446M,Abdominal part of left pectoralis major,"Musculus pectoralis major, pars abdominalis","Большая грудная мышца, брюшная часть",muscles-thorax,
 FJ1447,Clavicular part of right pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
 FJ1447M,Clavicular part of left pectoralis major,"Musculus pectoralis major, pars clavicularis","Большая грудная мышца, ключичная часть",muscles-thorax,
-FJ1448,Linea alba,Linea alba,Белая линия живота,ligaments-trunk,белая линия
+FJ1448,Linea alba,Linea alba,Белая линия живота,ligaments-limbs,белая линия
 FJ1449M,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
 FJ1450,superficial perineal muscle,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса;поверхностная мышца промежности;musculus transversus perinei superficialis;поверхностная поперечная мышца промежности
 FJ1450M,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
 FJ1451,external intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
 FJ1451M,External intercostal muscle,Musculus intercostalis externus,Наружная межрёберная мышца,muscles-thorax,musculi intercostales externi;наружные межрёберные мышцы
-FJ1452,Right external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-abdomen,
-FJ1452M,Left external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-abdomen,
+FJ1452,Right external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-thorax,
+FJ1452M,Left external oblique,Musculus obliquus externus abdominis,Наружная косая мышца живота,muscles-thorax,
 FJ1453M,Left iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
 FJ1454,innermost intercostal muscle,Musculus intercostalis intimus,Самая внутренняя межрёберная мышца,muscles-thorax,musculi intercostales intimi;самые внутренние межрёберные мышцы
 FJ1454M,Innermost intercostal muscle,Musculus intercostalis intimus,Самая внутренняя межрёберная мышца,muscles-thorax,musculi intercostales intimi;самые внутренние межрёберные мышцы
@@ -209,8 +209,8 @@ FJ1463,Set of right levatores costarum longi,Musculi levatores costarum longi,"�
 FJ1463M,Set of left levatores costarum longi,Musculi levatores costarum longi,"Длинные мышцы, поднимающие рёбра",muscles-thorax,
 FJ1464,Sternocostal part of right pectoralis major,"Musculus pectoralis major, pars sternocostalis","Большая грудная мышца, грудино-рёберная часть",muscles-thorax,
 FJ1464M,Sternocostal part of left pectoralis major,"Musculus pectoralis major, pars sternocostalis","Большая грудная мышца, грудино-рёберная часть",muscles-thorax,
-FJ1465,tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
-FJ1465M,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ1465,tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-limbs,
+FJ1465M,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-limbs,
 FJ1466,Abductor digiti minimi of right hand,Musculus abductor digiti minimi manus,"Мышца, отводящая мизинец кисти",muscles-upper-limb,
 FJ1466M,Abductor digiti minimi of left hand,Musculus abductor digiti minimi manus,"Мышца, отводящая мизинец кисти",muscles-upper-limb,
 FJ1467,Acromial part of right deltoid,"Musculus deltoideus, pars acromialis","Дельтовидная мышца, акромиальная часть",muscles-upper-limb,
@@ -221,6 +221,8 @@ FJ1469,Left flexor pollicis brevis,Musculus flexor pollicis brevis,Коротк�
 FJ1469M,Right flexor pollicis brevis,Musculus flexor pollicis brevis,Короткий сгибатель большого пальца кисти,muscles-upper-limb,
 FJ1470,Flexor digiti minimi brevis of right hand,Musculus flexor digiti minimi brevis manus,Короткий сгибатель мизинца кисти,muscles-upper-limb,
 FJ1470M,Flexor digiti minimi brevis of left hand,Musculus flexor digiti minimi brevis manus,Короткий сгибатель мизинца кисти,muscles-upper-limb,
+FJ1471,Flexor retinaculum of right wrist,Retinaculum musculorum flexorum,Удерживатель сгибателей,ligaments-limbs,retinaculum flexorum
+FJ1471M,Flexor retinaculum of left wrist,Retinaculum musculorum flexorum,Удерживатель сгибателей,ligaments-limbs,retinaculum flexorum
 FJ1472,Right extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
 FJ1472M,Left extensor carpi ulnaris,Musculus extensor carpi ulnaris,Локтевой разгибатель запястья,muscles-upper-limb,
 FJ1473,Humeral head of right flexor carpi ulnaris,"Musculus flexor carpi ulnaris, caput humerale","Локтевой сгибатель запястья, плечевая головка",muscles-upper-limb,
@@ -440,10 +442,12 @@ FJ2548,External anal sphincter,Musculus sphincter ani externus,Наружный 
 FJ2549,Right iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
 FJ2550,Right pubococcygeus,Musculus pubococcygeus,Лобково-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
 FJ2551,Right puborectalis,Musculus puborectalis,Лобково-прямокишечная мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
-FJ2552,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
-FJ2553,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ2552,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-limbs,
+FJ2553,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-limbs,
 FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
+FJ2556,Left lateral nasal cartilage,Cartilago nasi lateralis,Латеральный хрящ носа,larynx-cartilages,
+FJ2558,Right lateral nasal cartilage,Cartilago nasi lateralis,Латеральный хрящ носа,larynx-cartilages,
 FJ2738,Left genioglossus,Musculus genioglossus,Подбородочно-язычная мышца,muscles-head,
 FJ2739,Left hyoglossus,Musculus hyoglossus,Подъязычно-язычная мышца,muscles-head,
 FJ2741,Left levator veli palatini,Musculus levator veli palatini,"Мышца, поднимающая нёбную занавеску",muscles-head,
@@ -459,6 +463,7 @@ FJ2762,Uvular muscle,Musculus uvulae,Мышца язычка,muscles-head,
 FJ2763,Left stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2764,Right stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2770,Epiglottis,Epiglottis,Надгортанник,larynx-cartilages,cartilago epiglottica;надгортанный хрящ
 FJ2771,Hyo-epiglottic ligament,Ligamentum hyoepiglotticum,Подъязычно-надгортанная связка,ligaments-head-neck,
 FJ2772,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
 FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
@@ -530,21 +535,21 @@ FJ3179,Distal phalanx of left second toe,Phalanx distalis digiti II pedis,Дис
 FJ3180,Distal phalanx of left third toe,Phalanx distalis digiti III pedis,Дистальная фаланга III пальца стопы,lower-limb-bones,
 FJ3181,Distal phalanx of left fourth toe,Phalanx distalis digiti IV pedis,Дистальная фаланга IV пальца стопы,lower-limb-bones,
 FJ3182,Distal phalanx of left big toe,Phalanx distalis digiti I pedis,Дистальная фаланга большого пальца стопы,lower-limb-bones,
-FJ3183,Distal phalanx of left index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца,upper-limb-bones,
+FJ3183,Distal phalanx of left index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца кисти,upper-limb-bones,
 FJ3184,Distal phalanx of left little finger,Phalanx distalis digiti V manus,Дистальная фаланга мизинца кисти,upper-limb-bones,
 FJ3185,Distal phalanx of left little toe,Phalanx distalis digiti V pedis,Дистальная фаланга V пальца стопы,lower-limb-bones,
-FJ3186,Distal phalanx of left middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца,upper-limb-bones,
-FJ3187,Distal phalanx of left ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца,upper-limb-bones,
+FJ3186,Distal phalanx of left middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца кисти,upper-limb-bones,
+FJ3187,Distal phalanx of left ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца кисти,upper-limb-bones,
 FJ3188,Distal phalanx of left thumb,Phalanx distalis digiti I manus,Дистальная фаланга большого пальца кисти,upper-limb-bones,
 FJ3189,Distal phalanx of right second toe,Phalanx distalis digiti II pedis,Дистальная фаланга II пальца стопы,lower-limb-bones,
 FJ3190,Distal phalanx of right third toe,Phalanx distalis digiti III pedis,Дистальная фаланга III пальца стопы,lower-limb-bones,
 FJ3191,Distal phalanx of right fourth toe,Phalanx distalis digiti IV pedis,Дистальная фаланга IV пальца стопы,lower-limb-bones,
 FJ3192,Distal phalanx of right big toe,Phalanx distalis digiti I pedis,Дистальная фаланга большого пальца стопы,lower-limb-bones,
-FJ3193,Distal phalanx of right index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца,upper-limb-bones,
+FJ3193,Distal phalanx of right index finger,Phalanx distalis digiti II manus,Дистальная фаланга указательного пальца кисти,upper-limb-bones,
 FJ3194,Distal phalanx of right little finger,Phalanx distalis digiti V manus,Дистальная фаланга мизинца кисти,upper-limb-bones,
 FJ3195,Distal phalanx of right little toe,Phalanx distalis digiti V pedis,Дистальная фаланга V пальца стопы,lower-limb-bones,
-FJ3196,Distal phalanx of right middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца,upper-limb-bones,
-FJ3197,Distal phalanx of right ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца,upper-limb-bones,
+FJ3196,Distal phalanx of right middle finger,Phalanx distalis digiti III manus,Дистальная фаланга среднего пальца кисти,upper-limb-bones,
+FJ3197,Distal phalanx of right ring finger,Phalanx distalis digiti IV manus,Дистальная фаланга безымянного пальца кисти,upper-limb-bones,
 FJ3198,Distal phalanx of right thumb,Phalanx distalis digiti I manus,Дистальная фаланга большого пальца кисти,upper-limb-bones,
 FJ3199,Ethmoid,Os ethmoidale,Решётчатая кость,skull-cerebral,решетчатая кость
 FJ3200,Frontal bone,Os frontale,Лобная кость,skull-cerebral,
@@ -609,7 +614,9 @@ FJ3259,Left femur,Femur,Бедренная кость,lower-limb-bones,os femori
 FJ3260,Left fibula,Fibula,Малоберцовая кость,lower-limb-bones,
 FJ3261,Left hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
 FJ3262,Left humerus,Humerus,Плечевая кость,upper-limb-bones,
+FJ3263,Left inferior nasal concha,Concha nasalis inferior,Нижняя носовая раковина,skull-facial,
 FJ3264,Left intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
+FJ3265,Left lacrimal bone,Os lacrimale,Слёзная кость,skull-facial,
 FJ3266,Sesamoid bone of left foot,Os sesamoideum mediale,Медиальная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3267,Left lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
 FJ3268,Left lunate,Os lunatum,Полулунная кость,upper-limb-bones,
@@ -635,42 +642,42 @@ FJ3287,Left zygomatic bone,Os zygomaticum,Скуловая кость,skull-faci
 FJ3288,Left hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3289,Mandible,Mandibula,Нижняя челюсть,skull-facial,
 FJ3290,Manubrium,Manubrium sterni,Рукоятка грудины,thorax,
-FJ3291,Middle phalanx of left ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца,upper-limb-bones,
-FJ3292,Middle phalanx of right ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца,upper-limb-bones,
+FJ3291,Middle phalanx of left ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца кисти,upper-limb-bones,
+FJ3292,Middle phalanx of right ring finger,Phalanx media digiti IV manus,Средняя фаланга безымянного пальца кисти,upper-limb-bones,
 FJ3293,Middle phalanx of left second toe,Phalanx media digiti II pedis,Средняя фаланга II пальца стопы,lower-limb-bones,
 FJ3294,Middle phalanx of left third toe,Phalanx media digiti III pedis,Средняя фаланга III пальца стопы,lower-limb-bones,
 FJ3295,Middle phalanx of left fourth toe,Phalanx media digiti IV pedis,Средняя фаланга IV пальца стопы,lower-limb-bones,
-FJ3296,Middle phalanx of left index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца,upper-limb-bones,
+FJ3296,Middle phalanx of left index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца кисти,upper-limb-bones,
 FJ3297,Middle phalanx of left little finger,Phalanx media digiti V manus,Средняя фаланга мизинца кисти,upper-limb-bones,
 FJ3298,Middle phalanx of left little toe,Phalanx media digiti V pedis,Средняя фаланга V пальца стопы,lower-limb-bones,
-FJ3299,Middle phalanx of left middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца,upper-limb-bones,
+FJ3299,Middle phalanx of left middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца кисти,upper-limb-bones,
 FJ3300,Middle phalanx of right second toe,Phalanx media digiti II pedis,Средняя фаланга II пальца стопы,lower-limb-bones,
 FJ3301,Middle phalanx of right third toe,Phalanx media digiti III pedis,Средняя фаланга III пальца стопы,lower-limb-bones,
 FJ3302,Middle phalanx of right fourth toe,Phalanx media digiti IV pedis,Средняя фаланга IV пальца стопы,lower-limb-bones,
-FJ3303,Middle phalanx of right index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца,upper-limb-bones,
+FJ3303,Middle phalanx of right index finger,Phalanx media digiti II manus,Средняя фаланга указательного пальца кисти,upper-limb-bones,
 FJ3304,Middle phalanx of right little finger,Phalanx media digiti V manus,Средняя фаланга мизинца кисти,upper-limb-bones,
 FJ3305,Middle phalanx of right little toe,Phalanx media digiti V pedis,Средняя фаланга V пальца стопы,lower-limb-bones,
-FJ3306,Middle phalanx of right middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца,upper-limb-bones,
+FJ3306,Middle phalanx of right middle finger,Phalanx media digiti III manus,Средняя фаланга среднего пальца кисти,upper-limb-bones,
 FJ3307,Navicular bone of left foot,Os naviculare,Ладьевидная кость стопы,lower-limb-bones,
 FJ3308,Navicular bone of right foot,Os naviculare,Ладьевидная кость стопы,lower-limb-bones,
 FJ3309,Occipital bone,Os occipitale,Затылочная кость,skull-cerebral,
 FJ3310,Proximal phalanx of right big toe,Phalanx proximalis digiti I pedis,Проксимальная фаланга большого пальца стопы,lower-limb-bones,
 FJ3311,Proximal phalanx of left third toe,Phalanx proximalis digiti III pedis,Проксимальная фаланга III пальца стопы,lower-limb-bones,
 FJ3312,Proximal phalanx of left fourth toe,Phalanx proximalis digiti IV pedis,Проксимальная фаланга IV пальца стопы,lower-limb-bones,
-FJ3313,Proximal phalanx of left index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца,upper-limb-bones,
+FJ3313,Proximal phalanx of left index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца кисти,upper-limb-bones,
 FJ3314,Proximal phalanx of left little finger,Phalanx proximalis digiti V manus,Проксимальная фаланга мизинца кисти,upper-limb-bones,
 FJ3315,Proximal phalanx of left little toe,Phalanx proximalis digiti V pedis,Проксимальная фаланга V пальца стопы,lower-limb-bones,
-FJ3316,Proximal phalanx of left middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца,upper-limb-bones,
-FJ3317,Proximal phalanx of left ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца,upper-limb-bones,
+FJ3316,Proximal phalanx of left middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца кисти,upper-limb-bones,
+FJ3317,Proximal phalanx of left ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца кисти,upper-limb-bones,
 FJ3318,Proximal phalanx of left thumb,Phalanx proximalis digiti I manus,Проксимальная фаланга большого пальца кисти,upper-limb-bones,
 FJ3319,Proximal phalanx of right second toe,Phalanx proximalis digiti II pedis,Проксимальная фаланга II пальца стопы,lower-limb-bones,
 FJ3320,Proximal phalanx of right third toe,Phalanx proximalis digiti III pedis,Проксимальная фаланга III пальца стопы,lower-limb-bones,
 FJ3321,Proximal phalanx of right fourth toe,Phalanx proximalis digiti IV pedis,Проксимальная фаланга IV пальца стопы,lower-limb-bones,
-FJ3322,Proximal phalanx of right index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца,upper-limb-bones,
+FJ3322,Proximal phalanx of right index finger,Phalanx proximalis digiti II manus,Проксимальная фаланга указательного пальца кисти,upper-limb-bones,
 FJ3323,Proximal phalanx of right little finger,Phalanx proximalis digiti V manus,Проксимальная фаланга мизинца кисти,upper-limb-bones,
 FJ3324,Proximal phalanx of right little toe,Phalanx proximalis digiti V pedis,Проксимальная фаланга V пальца стопы,lower-limb-bones,
-FJ3325,Proximal phalanx of right middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца,upper-limb-bones,
-FJ3326,Proximal phalanx of right ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца,upper-limb-bones,
+FJ3325,Proximal phalanx of right middle finger,Phalanx proximalis digiti III manus,Проксимальная фаланга среднего пальца кисти,upper-limb-bones,
+FJ3326,Proximal phalanx of right ring finger,Phalanx proximalis digiti IV manus,Проксимальная фаланга безымянного пальца кисти,upper-limb-bones,
 FJ3327,Proximal phalanx of right thumb,Phalanx proximalis digiti I manus,Проксимальная фаланга большого пальца кисти,upper-limb-bones,
 FJ3328,Proximal phalanx of left second toe,Phalanx proximalis digiti II pedis,Проксимальная фаланга II пальца стопы,lower-limb-bones,
 FJ3329,Proximal phalanx of left big toe,Phalanx proximalis digiti I pedis,Проксимальная фаланга большого пальца стопы,lower-limb-bones,
@@ -712,7 +719,9 @@ FJ3365,Right femur,Femur,Бедренная кость,lower-limb-bones,os femor
 FJ3366,Right fibula,Fibula,Малоберцовая кость,lower-limb-bones,
 FJ3367,Right hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
 FJ3368,Right humerus,Humerus,Плечевая кость,upper-limb-bones,
+FJ3369,Right inferior nasal concha,Concha nasalis inferior,Нижняя носовая раковина,skull-facial,
 FJ3370,Right intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
+FJ3371,Right lacrimal bone,Os lacrimale,Слёзная кость,skull-facial,
 FJ3372,Sesamoid bone of right foot,Os sesamoideum mediale,Медиальная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3373,Right lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
 FJ3374,Right lunate,Os lunatum,Полулунная кость,upper-limb-bones,
