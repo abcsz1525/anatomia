@@ -1,4 +1,4 @@
-import type { StructureEntry, Topic } from "./types";
+import type { Side, StructureEntry, Topic } from "./types";
 
 export interface DisplayNames {
   la: string;
@@ -14,6 +14,11 @@ export interface DisplayNames {
 // like «Надколенник» — «Надколенник (слева)», not «(левая)».
 const SIDE_RU = { left: "слева", right: "справа", "": "" } as const;
 
+/** Единственный источник русских меток стороны — карточка, поиск и т.д. */
+export function sideLabel(side: Side): "" | "слева" | "справа" {
+  return SIDE_RU[side];
+}
+
 /** "Кости нижней конечности · Остеология" — лист темы, затем родитель. */
 function topicPath(topicId: string, topics: Topic[]): string {
   const leaf = topics.find((t) => t.id === topicId);
@@ -28,7 +33,7 @@ export function displayNames(en: string, entry: StructureEntry | undefined, topi
     la: entry.la,
     ru: entry.ru,
     en,
-    sideRu: SIDE_RU[entry.side],
+    sideRu: sideLabel(entry.side),
     topicRu: topicPath(entry.topic, topics),
     translated: true,
   };

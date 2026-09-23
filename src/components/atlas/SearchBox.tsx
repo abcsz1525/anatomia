@@ -2,10 +2,8 @@
 import { useMemo, useState } from "react";
 import { buildIndex, search } from "@/lib/atlas/search";
 import type { AtlasManifest } from "@/lib/atlas/types";
-import { searchLabels } from "@/lib/content/names";
+import { searchLabels, sideLabel } from "@/lib/content/names";
 import type { ContentBundle } from "@/lib/content/types";
-
-const SIDE_RU = { left: " (слева)", right: " (справа)", "": "" } as const;
 
 export function SearchBox({
   manifest, content, onPick,
@@ -33,13 +31,14 @@ export function SearchBox({
             const part = byId.get(id);
             const entry = content.structures[id];
             const primary = entry?.ru ?? part?.name ?? id;
+            const side = entry ? sideLabel(entry.side) : "";
             return (
               <li key={id}>
                 <button
                   className="w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-100"
                   onClick={() => { onPick(id); setQ(""); }}
                 >
-                  <span className="font-medium">{primary}{entry ? SIDE_RU[entry.side] : ""}</span>
+                  <span className="font-medium">{primary}{side && ` (${side})`}</span>
                   {entry?.la && <span className="ml-1 italic text-neutral-500">{entry.la}</span>}
                 </button>
               </li>

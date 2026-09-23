@@ -13,7 +13,10 @@ test("atlas loads the model and a click selects a structure", async ({ page }) =
   const card = page.getByTestId("part-card");
   await expect(card).toBeVisible();
   await expect(page.getByTestId("part-en")).not.toHaveText("");
-  await expect(page.getByTestId("part-ru")).not.toHaveText("");
+  // какая именно структура окажется под центром канваса — зависит от кадра,
+  // поэтому проверяем форму подписи: перевод (при парном органе со стороной)
+  // либо явную заглушку «Перевод в работе», но не пустую строку.
+  await expect(page.getByTestId("part-ru")).toHaveText(/(\((слева|справа)\)|Перевод в работе|[А-Яа-яё]{3,})/);
 });
 
 test("clicking empty space deselects", async ({ page }) => {
