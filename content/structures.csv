@@ -1,1 +1,62 @@
 id,en,la,ru,topic,aliases
+FJ1252,Gingiva of upper jaw,Gingiva,Десна верхней челюсти,other,десна
+FJ1253,Gingiva of lower jaw,Gingiva,Десна нижней челюсти,other,десна
+FJ1254,Left lower first secondary molar tooth,Dens molaris primus inferior,Нижний первый моляр,teeth,
+FJ1255,Left lower first secondary premolar tooth,Dens premolaris primus inferior,Нижний первый премоляр,teeth,
+FJ1256,Left lower second secondary molar tooth,Dens molaris secundus inferior,Нижний второй моляр,teeth,
+FJ1257,Left lower second secondary premolar tooth,Dens premolaris secundus inferior,Нижний второй премоляр,teeth,
+FJ1258,Left lower central secondary incisor tooth,Dens incisivus centralis inferior,Нижний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1259,Left lower lateral secondary incisor tooth,Dens incisivus lateralis inferior,Нижний латеральный резец,teeth,
+FJ1260,Left lower secondary canine tooth,Dens caninus inferior,Нижний клык,teeth,
+FJ1261,Left upper first secondary molar tooth,Dens molaris primus superior,Верхний первый моляр,teeth,
+FJ1262,Left upper first secondary premolar tooth,Dens premolaris primus superior,Верхний первый премоляр,teeth,
+FJ1263,Left upper second secondary molar tooth,Dens molaris secundus superior,Верхний второй моляр,teeth,
+FJ1264,Left upper second secondary premolar tooth,Dens premolaris secundus superior,Верхний второй премоляр,teeth,
+FJ1265,Left upper central secondary incisor tooth,Dens incisivus centralis superior,Верхний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1266,Left upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
+FJ1267,Left upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
+FJ1268,Right lower first secondary molar tooth,Dens molaris primus inferior,Нижний первый моляр,teeth,
+FJ1269,Right lower first secondary premolar tooth,Dens premolaris primus inferior,Нижний первый премоляр,teeth,
+FJ1270,Right lower second secondary molar tooth,Dens molaris secundus inferior,Нижний второй моляр,teeth,
+FJ1271,Right lower second secondary premolar tooth,Dens premolaris secundus inferior,Нижний второй премоляр,teeth,
+FJ1272,Right lower central secondary incisor tooth,Dens incisivus centralis inferior,Нижний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1273,Right lower lateral secondary incisor tooth,Dens incisivus lateralis inferior,Нижний латеральный резец,teeth,
+FJ1274,Right lower secondary canine tooth,Dens caninus inferior,Нижний клык,teeth,
+FJ1275,Right upper second secondary molar tooth,Dens molaris secundus superior,Верхний второй моляр,teeth,
+FJ1276,Right upper first secondary molar tooth,Dens molaris primus superior,Верхний первый моляр,teeth,
+FJ1277,Right upper first secondary premolar tooth,Dens premolaris primus superior,Верхний первый премоляр,teeth,
+FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus superior,Верхний второй премоляр,teeth,
+FJ1279,Right upper central secondary incisor tooth,Dens incisivus centralis superior,Верхний центральный резец,teeth,dens incisivus medialis;медиальный резец
+FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
+FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
+FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
+FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
+FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2772,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
+FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ гортани,larynx-cartilages,клиновидный хрящ
+FJ2775,Left arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
+FJ2776,Left corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
+FJ2792,Right arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
+FJ2793,Right corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
+FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ гортани,larynx-cartilages,клиновидный хрящ
+FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
+FJ3199,Ethmoid,Os ethmoidale,Решётчатая кость,skull-cerebral,решетчатая кость
+FJ3200,Frontal bone,Os frontale,Лобная кость,skull-cerebral,
+FJ3201,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
+FJ3269,Left maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
+FJ3272,Left nasal bone,Os nasale,Носовая кость,skull-facial,
+FJ3273,Left palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
+FJ3274,Left parietal bone,Os parietale,Теменная кость,skull-cerebral,
+FJ3281,Left temporal bone,Os temporale,Височная кость,skull-cerebral,
+FJ3287,Left zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
+FJ3289,Mandible,Mandibula,Нижняя челюсть,skull-facial,
+FJ3309,Occipital bone,Os occipitale,Затылочная кость,skull-cerebral,
+FJ3375,Right maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
+FJ3378,Right nasal bone,Os nasale,Носовая кость,skull-facial,
+FJ3379,Right palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
+FJ3380,Right parietal bone,Os parietale,Теменная кость,skull-cerebral,
+FJ3386,Right temporal bone,Os temporale,Височная кость,skull-cerebral,
+FJ3392,Right zygomatic bone,Os zygomaticum,Скуловая кость,skull-facial,
+FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
+FJ3395,Vomer,Vomer,Сошник,skull-facial,
