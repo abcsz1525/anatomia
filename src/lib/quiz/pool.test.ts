@@ -61,6 +61,10 @@ const topics: Topic[] = [
   { id: "lower-limb-bones", ru: "Кости нижней конечности", la: "Ossa membri inferioris", parent: "osteology" },
   { id: "myology", ru: "Миология", la: "Myologia" },
   { id: "muscles-upper-limb", ru: "Мышцы верхней конечности", la: "Musculi membri superioris", parent: "myology" },
+  { id: "angiology", ru: "Ангиология", la: "Angiologia" },
+  { id: "arteries-limbs", ru: "Артерии конечностей", la: "Arteriae membrorum", parent: "angiology" },
+  { id: "splanchnology", ru: "Спланхнология", la: "Splanchnologia" },
+  { id: "digestive", ru: "Пищеварительная система", la: "Systema digestorium", parent: "splanchnology" },
   { id: "other", ru: "Вне программы первого курса" },
 ];
 
@@ -69,7 +73,12 @@ const content: ContentBundle = { structures, topics };
 describe("courseTopics", () => {
   it("returns leaves except 'other', in topics.json order", () => {
     const leaves = courseTopics(topics);
-    expect(leaves.map((t) => t.id)).toEqual(["lower-limb-bones", "muscles-upper-limb"]);
+    expect(leaves.map((t) => t.id)).toEqual([
+      "lower-limb-bones",
+      "muscles-upper-limb",
+      "arteries-limbs",
+      "digestive",
+    ]);
   });
 });
 
@@ -98,8 +107,13 @@ describe("contextIds", () => {
     expect(contextIds(manifest, topics, "muscles-upper-limb")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
   });
 
-  it("returns [] for topics not under myology/arthrology", () => {
+  it("returns all skeletal ids for topics under angiology", () => {
+    expect(contextIds(manifest, topics, "arteries-limbs")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
+  });
+
+  it("returns [] for topics not under myology/arthrology/angiology", () => {
     expect(contextIds(manifest, topics, "lower-limb-bones")).toEqual([]);
+    expect(contextIds(manifest, topics, "digestive")).toEqual([]);
   });
 });
 

@@ -31,6 +31,10 @@ const ok: CsvRow[] = [
   { id: "FJ6", en: "Left fibula", la: "Fibula", ru: "Малоберцовая кость", topic: "lower-limb-bones", aliases: "" },
   { id: "FJ7", en: "Right fibula", la: "Fibula", ru: "Малоберцовая кость", topic: "lower-limb-bones", aliases: "" },
   { id: "FJ8", en: "Left patella", la: "Patella", ru: "Надколенник", topic: "lower-limb-bones", aliases: "" },
+  // COURSE_SYSTEMS теперь включает все системы (включая arterial), поэтому
+  // FJ9 (Aorta) тоже обязателен по правилу 7 — держим строку в "other",
+  // чтобы не задевать правило 8 (там ≥4 термина не требуются)
+  { id: "FJ9", en: "Aorta", la: "Aorta", ru: "Аорта", topic: "other", aliases: "" },
 ];
 
 describe("validateContent", () => {

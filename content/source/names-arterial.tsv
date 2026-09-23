@@ -1,0 +1,639 @@
+FJ1654	Right anterior cerebral artery
+FJ1654M	Left anterior cerebral artery
+FJ1655	Anterior communicating artery
+FJ1656	anterior inferior cerebellar artery
+FJ1656M	Anterior inferior cerebellar artery
+FJ1657	Right anterior spinal artery
+FJ1657M	Left anterior spinal artery
+FJ1658	Right anterior choroidal artery
+FJ1658M	Left anterior choroidal artery
+FJ1659	Right anterior temporal artery
+FJ1659M	Left anterior temporal artery
+FJ1660	Insular part of right middle cerebral artery
+FJ1660M	Insular part of left middle cerebral artery
+FJ1661	Anterior temporal branch of right lateral occipital artery
+FJ1661M	Anterior temporal branch of left lateral occipital artery
+FJ1662	Anterolateral central branch of right middle cerebral artery
+FJ1662M	Anterolateral central branch of left middle cerebral artery
+FJ1663	Anterolateral central branch of right middle cerebral artery
+FJ1663M	Anterolateral central branch of left middle cerebral artery
+FJ1664	artery of central sulcus
+FJ1664M	Artery of central sulcus
+FJ1665	artery of central sulcus
+FJ1665M	Artery of central sulcus
+FJ1666	Artery of right postcentral sulcus
+FJ1666M	Artery of left postcentral sulcus
+FJ1667	Right anterior parietal artery
+FJ1667M	Left anterior parietal artery
+FJ1668	Artery of right precentral sulcus
+FJ1668M	Artery of left precentral sulcus
+FJ1669	Artery of right precentral sulcus
+FJ1669M	Artery of left precentral sulcus
+FJ1670	Artery of right precentral sulcus
+FJ1670M	Artery of left precentral sulcus
+FJ1671	Precuneal branch of right pericallosal artery
+FJ1671M	Precuneal branch of left pericallosal artery
+FJ1672	Basilar artery
+FJ1673	Branch of right middle cerebral artery to right angular gyrus
+FJ1673M	Branch of left middle cerebral artery to left angular gyrus
+FJ1674	Branch of right anterior choroidal artery to posterior limb of right internal capsule
+FJ1674M	Branch of left anterior choroidal artery to posterior limb of left internal capsule
+FJ1675	Right thalamogeniculate artery
+FJ1675M	Left thalamogeniculate artery
+FJ1676	Right callosomarginal artery
+FJ1676M	Left callosomarginal artery
+FJ1677	Right splenial artery
+FJ1677M	Left splenial artery
+FJ1678	Right splenial artery
+FJ1678M	Left splenial artery
+FJ1679	Hypothalamic branch of right posterior communicating artery
+FJ1679M	Hypothalamic branch of left posterior communicating artery
+FJ1680	Middle temporal branch of right lateral occipital artery
+FJ1680M	Middle temporal branch of left lateral occipital artery
+FJ1681	Intermediomedial branch of right callosomarginal artery
+FJ1681M	Intermediomedial branch of left callosomarginal artery
+FJ1682	Right internal carotid artery
+FJ1682M	Left internal carotid artery
+FJ1683	Lateral branch of right superior cerebellar artery
+FJ1683M	Lateral branch of left superior cerebellar artery
+FJ1684	Lateral branch of right pontine artery
+FJ1684M	Lateral branch of left pontine artery
+FJ1685	Right lateral frontobasal artery
+FJ1685M	Left lateral frontobasal artery
+FJ1686	Right lateral frontobasal artery
+FJ1686M	Left lateral frontobasal artery
+FJ1687	Right lateral occipital artery
+FJ1687M	Left lateral occipital artery
+FJ1688	Medial branch of right superior cerebellar artery
+FJ1688M	Medial branch of left superior cerebellar artery
+FJ1689	Medial branch of right pontine artery
+FJ1689M	Medial branch of left pontine artery
+FJ1690	Right medial frontobasal artery
+FJ1690M	Left medial frontobasal artery
+FJ1691	Right medial occipital artery
+FJ1691M	Left medial occipital artery
+FJ1692	Sphenoid part of right middle cerebral artery
+FJ1692M	Sphenoid part of left middle cerebral artery
+FJ1693	Middle temporal branch of right middle cerebral artery
+FJ1693M	Middle temporal branch of left middle cerebral artery
+FJ1694	Insular part of right middle cerebral artery
+FJ1694M	Insular part of left middle cerebral artery
+FJ1695	Right ophthalmic artery
+FJ1695M	Left ophthalmic artery
+FJ1696	Paracentral branch of right callosomarginal artery
+FJ1696M	Paracentral branch of left callosomarginal artery
+FJ1697	Paracentral branch of right callosomarginal artery
+FJ1697M	Paracentral branch of left callosomarginal artery
+FJ1698	Paracentral branch of right callosomarginal artery
+FJ1698M	Paracentral branch of left callosomarginal artery
+FJ1699	Right pericallosal artery
+FJ1699M	Left pericallosal artery
+FJ1700	Right posterior inferior cerebellar artery
+FJ1700M	Left posterior inferior cerebellar artery
+FJ1701	Right posterior inferior cerebellar artery
+FJ1701M	Left posterior inferior cerebellar artery
+FJ1702	Right posterior inferior cerebellar artery
+FJ1702M	Left posterior inferior cerebellar artery
+FJ1703	Right posterior inferior cerebellar artery
+FJ1703M	Left posterior inferior cerebellar artery
+FJ1704	Right posterior inferior cerebellar artery
+FJ1704M	Left posterior inferior cerebellar artery
+FJ1705	Right posterior inferior cerebellar artery
+FJ1705M	Left posterior inferior cerebellar artery
+FJ1706	Right posterior inferior cerebellar artery
+FJ1706M	Left posterior inferior cerebellar artery
+FJ1707	Right posterior inferior cerebellar artery
+FJ1707M	Left posterior inferior cerebellar artery
+FJ1708	Right posterior inferior cerebellar artery
+FJ1708M	Left posterior inferior cerebellar artery
+FJ1709	Right posterior inferior cerebellar artery
+FJ1709M	Left posterior inferior cerebellar artery
+FJ1710	Right posterior inferior cerebellar artery
+FJ1710M	Left posterior inferior cerebellar artery
+FJ1711	Right posterior inferior cerebellar artery
+FJ1711M	Left posterior inferior cerebellar artery
+FJ1712	Right polar temporal artery
+FJ1712M	Left polar temporal artery
+FJ1713	Right posterior communicating artery
+FJ1713M	Left posterior communicating artery
+FJ1714	Postcommunicating part of right posterior cerebral artery
+FJ1714M	Postcommunicating part of left posterior cerebral artery
+FJ1715	Right posterior inferior cerebellar artery
+FJ1715M	Left posterior inferior cerebellar artery
+FJ1716	Right posterior parietal artery
+FJ1716M	Left posterior parietal artery
+FJ1717	Posterior temporal branch of right middle cerebral artery
+FJ1717M	Posterior temporal branch of left middle cerebral artery
+FJ1718	Trunk of inferior terminal branch of right middle cerebral artery
+FJ1718M	Trunk of inferior terminal branch of left middle cerebral artery
+FJ1719	set of posterior temporal branches of lateral occipital artery
+FJ1719M	Set of posterior temporal branches of lateral occipital artery
+FJ1720	Right thalamoperforating artery
+FJ1720M	Left thalamoperforating artery
+FJ1721	Posteromedial central branch of right posterior cerebral artery
+FJ1721M	Posteromedial central branch of left posterior cerebral artery
+FJ1722	Posteromedial branch of right callosomarginal artery
+FJ1722M	Posteromedial branch of left callosomarginal artery
+FJ1723	Precommunicating part of right posterior cerebral artery
+FJ1723M	Precommunicating part of left posterior cerebral artery
+FJ1724	Right prefrontal artery
+FJ1724M	Left prefrontal artery
+FJ1725	Right vertebral artery
+FJ1725M	Left vertebral artery
+FJ1726	Right superior cerebellar artery
+FJ1726M	Left superior cerebellar artery
+FJ1727	Right posterior medial choroidal artery
+FJ1727M	Left posterior medial choroidal artery
+FJ1728	Superior vermian branch of medial branch of right superior cerebellar artery
+FJ1728M	Superior vermian branch of medial branch of left superior cerebellar artery
+FJ1729	Temporo-occipital branch of right middle cerebral artery
+FJ1729M	Temporo-occipital branch of left middle cerebral artery
+FJ1844	Basilar artery
+FJ1846	Celiac artery
+FJ1874	Left lobe branch of left hepatic artery
+FJ1916	Caudate lobe branch of right hepatic artery
+FJ1924	Right lobe branch of right hepatic artery
+FJ1928	Superior mesenteric artery
+FJ1931	Descending thoracic aorta
+FJ1932	Abdominal aorta
+FJ1933	Bronchial artery
+FJ1934	Esophageal artery
+FJ1935	Right superior intercostal artery
+FJ1936	Right superior epigastric artery
+FJ1937	Right internal thoracic artery
+FJ1938	Right lateral thoracic artery
+FJ1939	Right first posterior intercostal artery
+FJ1950	Right second posterior intercostal artery
+FJ1961	Posterior intercostal arteries
+FJ1967	Right subcostal artery
+FJ1969	Right musculophrenic artery
+FJ1970	Left superior intercostal artery
+FJ1971	Left superior epigastric artery
+FJ1972	Left internal thoracic artery
+FJ1973	Left first posterior intercostal artery
+FJ1974	Left second posterior intercostal artery
+FJ1975	Posterior intercostal arteries
+FJ1976	Left lateral thoracic artery
+FJ1977	Left subcostal artery
+FJ1979	Left musculophrenic artery
+FJ2011	Superior mesenteric artery
+FJ2013	Celiac artery
+FJ2025	Marginal colic artery
+FJ2034	Ileal branch of inferior branch of ileocolic artery
+FJ2038	Right renal artery
+FJ2041	Right anterior segmental artery
+FJ2042	Superior segmental branch of right renal artery
+FJ2043	Inferior segmental branch of right renal artery
+FJ2044	Right anterior segmental artery
+FJ2045	Posterior segmental branch of right renal artery
+FJ2046	Left renal artery
+FJ2049	Inferior segmental branch of left renal artery
+FJ2052	Superior segmental branch of left renal artery
+FJ2053	Posterior segmental branch of left renal artery
+FJ2054	Posterior segmental branch of left renal artery
+FJ2055	Right dorsalis pedis artery
+FJ2057	Descending branch of right lateral circumflex femoral artery
+FJ2058	Distal perforating artery
+FJ2063	Descending branch of left lateral circumflex femoral artery
+FJ2064	Distal perforating artery
+FJ2065	Left anterior tibial artery
+FJ2066	Left anterior tibial recurrent artery
+FJ2067	Left arcuate artery
+FJ2068	Left deep plantar artery
+FJ2069	Left descending genicular artery
+FJ2072	Dorsal digital artery of foot
+FJ2073	Left dorsalis pedis artery
+FJ2074	Left femoral artery
+FJ2076	Left inferior lateral genicular artery
+FJ2077	Left inferior medial genicular artery
+FJ2078	Left lateral circumflex femoral artery
+FJ2079	Left lateral plantar artery
+FJ2080	Left lateral superior genicular artery
+FJ2081	Left lateral tarsal artery
+FJ2082	Left medial plantar artery
+FJ2083	Left medial superior genicular artery
+FJ2084	Left middle genicular artery
+FJ2085	Left plantar arch
+FJ2086	Left popliteal artery
+FJ2087	Left posterior tibial artery
+FJ2089	Left superficial medial plantar artery
+FJ2090	Set of perforating arteries
+FJ2091	Set of calcaneal branches of posterior tibial artery
+FJ2092	Set of common plantar digital arteries
+FJ2093	Set of dorsal digital arteries
+FJ2094	Set of perforating arteries
+FJ2095	Set of plantar digital arteries proper
+FJ2096	Plantar metatarsal artery
+FJ2127	Set of perforating arteries
+FJ2130	Right anterior tibial artery
+FJ2131	Right anterior tibial recurrent artery
+FJ2133	Right arcuate artery
+FJ2136	Right deep plantar artery
+FJ2137	Right descending genicular artery
+FJ2141	Dorsal digital artery of foot
+FJ2143	Right femoral artery
+FJ2150	Right inferior lateral genicular artery
+FJ2152	Right inferior medial genicular artery
+FJ2158	Right lateral circumflex femoral artery
+FJ2159	Right lateral plantar artery
+FJ2162	Right lateral superior genicular artery
+FJ2163	Right lateral tarsal artery
+FJ2164	Right medial plantar artery
+FJ2166	Right medial superior genicular artery
+FJ2167	Right middle genicular artery
+FJ2169	Right plantar arch
+FJ2170	Right popliteal artery
+FJ2172	Right posterior tibial artery
+FJ2179	Right superficial medial plantar artery
+FJ2195	Set of calcaneal branches of posterior tibial artery
+FJ2196	Set of common plantar digital arteries
+FJ2197	Set of dorsal digital arteries
+FJ2203	Set of perforating arteries
+FJ2204	Set of plantar digital arteries proper
+FJ2205	Set of plantar digital arteries proper
+FJ2206	Plantar metatarsal artery
+FJ2209	Right inferior thyroid artery
+FJ2210	Left inferior thyroid artery
+FJ2211	Acromial branch of left thoraco-acromial artery
+FJ2212	Left anterior circumflex humeral artery
+FJ2214	Left anterior interosseous artery
+FJ2215	Left inferior ulnar collateral artery
+FJ2216	Left axillary artery
+FJ2219	Left brachial artery
+FJ2221	Left circumflex scapular artery
+FJ2223	Left common interosseous artery
+FJ2224	Left costocervical trunk
+FJ2225	Left deep brachial artery
+FJ2226	Left deep cervical artery
+FJ2227	Left deep palmar arch
+FJ2230	Deltoid branch of left thoraco-acromial artery
+FJ2231	Dorsal carpal branch of left radial artery
+FJ2232	Left dorsal scapular artery
+FJ2236	Left dorsal carpal branch of ulnar artery
+FJ2237	Left palmar metacarpal artery
+FJ2239	Left posterior circumflex humeral artery
+FJ2240	Left posterior circumflex humeral artery
+FJ2241	Left posterior ulnar recurrent artery
+FJ2242	Left radial artery
+FJ2243	Left radial recurrent artery
+FJ2245	Left recurrent interosseous artery
+FJ2246	Left subscapular artery
+FJ2248	Left superficial palmar arterial arch
+FJ2251	Left suprascapular artery
+FJ2252	Trunk of left thoraco-acromial artery
+FJ2253	Left thoracodorsal artery
+FJ2255	Left thyrocervical trunk
+FJ2256	Left superficial cervical artery
+FJ2257	Left transverse cervical artery
+FJ2258	Left ulnar artery
+FJ2259	Left anterior ulnar recurrent artery
+FJ2261	Radial collateral branch of left deep brachial artery
+FJ2262	Radial collateral branch of right deep brachial artery
+FJ2263	Acromial branch of right thoraco-acromial artery
+FJ2264	Right anterior circumflex humeral artery
+FJ2266	Right anterior interosseous artery
+FJ2267	Right inferior ulnar collateral artery
+FJ2268	Right axillary artery
+FJ2271	Right brachial artery
+FJ2273	Right circumflex scapular artery
+FJ2275	Right common interosseous artery
+FJ2276	Right costocervical trunk
+FJ2277	Right deep brachial artery
+FJ2278	Right deep cervical artery
+FJ2279	Right deep palmar arch
+FJ2282	Deltoid branch of right thoraco-acromial artery
+FJ2283	Dorsal carpal branch of right radial artery
+FJ2284	Right dorsal scapular artery
+FJ2288	Right dorsal carpal branch of ulnar artery
+FJ2289	Right palmar metacarpal artery
+FJ2291	Right posterior circumflex humeral artery
+FJ2292	Right posterior circumflex humeral artery
+FJ2293	Right posterior ulnar recurrent artery
+FJ2294	Right radial artery
+FJ2295	Right radial recurrent artery
+FJ2297	Right recurrent interosseous artery
+FJ2298	Right subscapular artery
+FJ2300	Right superficial palmar arterial arch
+FJ2303	Right suprascapular artery
+FJ2304	Trunk of right thoraco-acromial artery
+FJ2305	Right thoracodorsal artery
+FJ2307	Right thyrocervical trunk
+FJ2308	Right superficial cervical artery
+FJ2309	Right transverse cervical artery
+FJ2310	Right ulnar artery
+FJ2311	Right anterior ulnar recurrent artery
+FJ2314	Left arteria radialis indicis
+FJ2315	Left first common palmar digital artery
+FJ2316	Left second common palmar digital artery
+FJ2317	Left third common palmar digital artery
+FJ2318	Set of dorsal digital arteries
+FJ2330	Pectoral branch of left thoraco-acromial artery
+FJ2331	Middle collateral branch of left deep brachial artery
+FJ2332	Left arteria radialis indicis
+FJ2333	Medial proper palmar digital artery of left index finger
+FJ2334	Lateral proper palmar digital artery of left middle finger
+FJ2335	Lateral proper palmar digital artery of left ring finger
+FJ2336	Lateral proper palmar digital artery of left little finger
+FJ2337	Left fourth common palmar digital artery
+FJ2338	Left arteria princeps pollicis
+FJ2339	Left arteria princeps pollicis
+FJ2342	Right arteria radialis indicis
+FJ2343	Right first common palmar digital artery
+FJ2344	Right second common palmar digital artery
+FJ2345	Right third common palmar digital artery
+FJ2346	Set of dorsal digital arteries
+FJ2347	Set of dorsal metacarpal arteries
+FJ2348	Set of dorsal metacarpal arteries
+FJ2361	Pectoral branch of right thoraco-acromial artery
+FJ2362	Middle collateral branch of right deep brachial artery
+FJ2363	Right arteria radialis indicis
+FJ2364	Medial proper palmar digital artery of right index finger
+FJ2365	Lateral proper palmar digital artery of right middle finger
+FJ2366	Lateral proper palmar digital artery of right ring finger
+FJ2367	Medial proper palmar digital artery of right middle finger
+FJ2368	Lateral proper palmar digital artery of right little finger
+FJ2369	Medial proper palmar digital artery of right ring finger
+FJ2370	Right fourth common palmar digital artery
+FJ2371	Right arteria princeps pollicis
+FJ2372	Right arteria princeps pollicis
+FJ2373	Right superior ulnar collateral artery
+FJ2374	Left superior ulnar collateral artery
+FJ2386	Caudate lobe branch of right hepatic artery
+FJ2394	Right lobe branch of right hepatic artery
+FJ2562	Splenic artery
+FJ2631	Trunk of anterior interventricular branch of left coronary artery
+FJ2632	First right anterior branch of anterior interventricular branch of left coronary artery
+FJ2633	Diagonal branch of anterior descending branch of left coronary artery
+FJ2634	Diagonal branch of anterior descending branch of left coronary artery
+FJ2635	Diagonal branch of anterior descending branch of left coronary artery
+FJ2636	Diagonal branch of anterior descending branch of left coronary artery
+FJ2637	Diagonal branch of anterior descending branch of left coronary artery
+FJ2638	Diagonal branch of anterior descending branch of left coronary artery
+FJ2639	Diagonal branch of anterior descending branch of left coronary artery
+FJ2640	Diagonal branch of anterior descending branch of left coronary artery
+FJ2641	Third right anterior branch of anterior interventricular branch of left coronary artery
+FJ2642	Diagonal branch of anterior descending branch of left coronary artery
+FJ2643	Conus branch of anterior interventricular branch of left coronary artery
+FJ2644	Conus branch of anterior interventricular branch of left coronary artery
+FJ2645	First right anterior branch of anterior interventricular branch of left coronary artery
+FJ2646	Second right anterior branch of anterior interventricular branch of left coronary artery
+FJ2647	Third right anterior branch of anterior interventricular branch of left coronary artery
+FJ2648	Diagonal branch of anterior descending branch of left coronary artery
+FJ2649	Circumflex branch of left coronary artery
+FJ2650	Circumflex branch of left coronary artery
+FJ2651	Circumflex branch of left coronary artery
+FJ2652	Circumflex branch of left coronary artery
+FJ2653	Circumflex branch of left coronary artery
+FJ2654	Circumflex branch of left coronary artery
+FJ2667	Marginal branch of right coronary artery
+FJ2668	Marginal branch of right coronary artery
+FJ2670	Right conus artery
+FJ2671	First anterior ventricular branch of right coronary artery
+FJ2672	Marginal branch of right coronary artery
+FJ2673	First anterior ventricular branch of right coronary artery
+FJ2674	Marginal branch of right coronary artery
+FJ2675	Marginal branch of right coronary artery
+FJ2676	Right conus artery
+FJ2677	First anterior ventricular branch of right coronary artery
+FJ2692	Posterior interventricular branch of right coronary artery
+FJ2693	Posterior interventricular branch of right coronary artery
+FJ2694	Posterior interventricular branch of right coronary artery
+FJ2695	Posterior interventricular branch of right coronary artery
+FJ2696	Posterior interventricular branch of right coronary artery
+FJ2697	Posterior interventricular branch of right coronary artery
+FJ2698	Posterior interventricular branch of right coronary artery
+FJ2699	Posterior interventricular branch of right coronary artery
+FJ2700	Posterior interventricular branch of right coronary artery
+FJ2714	First posterior ventricular branch of right coronary artery
+FJ2715	First posterior ventricular branch of right coronary artery
+FJ2716	First posterior ventricular branch of right coronary artery
+FJ2717	First posterior ventricular branch of right coronary artery
+FJ2718	First posterior ventricular branch of right coronary artery
+FJ2719	First posterior ventricular branch of right coronary artery
+FJ2720	First posterior ventricular branch of right coronary artery
+FJ2721	First posterior ventricular branch of right coronary artery
+FJ2722	First posterior ventricular branch of right coronary artery
+FJ2723	Trunk of right coronary artery
+FJ2732	Septal branch of anterior interventricular artery
+FJ2733	Septal branch of anterior interventricular artery
+FJ2734	Septal branch of anterior interventricular artery
+FJ2735	First septal branch of right posterior interventricular artery
+FJ2736	Second septal branch of right posterior interventricular artery
+FJ2737	Trunk of left coronary artery
+FJ2881	Left posterior basal segmental artery
+FJ2882	Left lateral basal segmental artery
+FJ2883	Left anterior basal segmental artery
+FJ2884	Left medial basal segmental artery
+FJ2885	Left medial basal segmental artery
+FJ2886	Left anterior basal segmental artery
+FJ2887	Left anterior basal segmental artery
+FJ2888	Left superior segmental artery
+FJ2889	Left superior segmental artery
+FJ2890	Left superior segmental artery
+FJ2891	Left superior segmental artery
+FJ2892	Left posterior basal segmental artery
+FJ2893	Left superior segmental artery
+FJ2894	Left superior segmental artery
+FJ2895	Left superior segmental artery
+FJ2896	Inferior lingular artery
+FJ2897	Inferior lingular artery
+FJ2898	Superior lingular artery
+FJ2899	Superior lingular artery
+FJ2900	Superior lingular artery
+FJ2901	Superior lingular artery
+FJ2902	Left anterior segmental artery
+FJ2903	Left posterior basal segmental artery
+FJ2904	Left anterior segmental artery
+FJ2905	Left anterior segmental artery
+FJ2906	Left anterior segmental artery
+FJ2907	Left anterior segmental artery
+FJ2908	Left anterior segmental artery
+FJ2909	Left anterior segmental artery
+FJ2910	Left anterior segmental artery
+FJ2911	Left posterior segmental artery
+FJ2912	Left posterior segmental artery
+FJ2913	Left posterior segmental artery
+FJ2914	Left posterior basal segmental artery
+FJ2915	Left apical segmental artery
+FJ2916	Left apical segmental artery
+FJ2917	Left apical segmental artery
+FJ2918	Left apical segmental artery
+FJ2919	Left posterior basal segmental artery
+FJ2920	Left posterior basal segmental artery
+FJ2921	Left lateral basal segmental artery
+FJ2922	Left lateral basal segmental artery
+FJ2923	Left lateral basal segmental artery
+FJ2924	Left pulmonary artery
+FJ2966	Pulmonary trunk
+FJ2967	Apical part of right apical segmental artery
+FJ2968	Apical part of right posterior segmental artery
+FJ2969	Apical part of right posterior segmental artery
+FJ2970	Posterior part of right posterior segmental artery
+FJ2971	Posterior part of right posterior segmental artery
+FJ2972	Posterior part of right posterior segmental artery
+FJ2973	Right upper lobar artery
+FJ2974	Posterior branch of right anterior segmental artery
+FJ2975	Anterior branch of right anterior segmental artery
+FJ2976	Anterior branch of right anterior segmental artery
+FJ2977	Anterior branch of right anterior segmental artery
+FJ2978	Anterior part of right apical segmental artery
+FJ2979	Anterior branch of right anterior segmental artery
+FJ2980	Posterior branch of right anterior segmental artery
+FJ2981	Posterior branch of right anterior segmental artery
+FJ2982	Anterior branch of lateral segmental artery
+FJ2983	Posterior branch of lateral segmental artery
+FJ2984	Posterior branch of lateral segmental artery
+FJ2985	Anterior branch of lateral segmental artery
+FJ2986	Superior branch of medial segmental artery
+FJ2987	Inferior branch of medial segmental artery
+FJ2988	Inferior branch of medial segmental artery
+FJ2989	Anterior part of right apical segmental artery
+FJ2990	Superior branch of medial segmental artery
+FJ2991	Lateral branch of right superior segmental artery
+FJ2992	Lateral branch of right superior segmental artery
+FJ2993	Lateral branch of right superior segmental artery
+FJ2994	Medial branch of right superior segmental artery
+FJ2995	Medial branch of right superior segmental artery
+FJ2996	Medial branch of right superior segmental artery
+FJ2997	Superior branch of right superior segmental artery
+FJ2998	Superior branch of right superior segmental artery
+FJ2999	Superior branch of right superior segmental artery
+FJ3000	Anterior part of right apical segmental artery
+FJ3001	Lateral branch of right anterior basal segmental artery
+FJ3002	Basal branch of right anterior basal segmental artery
+FJ3003	Basal branch of right anterior basal segmental artery
+FJ3004	Lateral branch of right lateral basal segmental artery
+FJ3005	Lateral branch of right lateral basal segmental artery
+FJ3006	Lateral branch of right lateral basal segmental artery
+FJ3007	Lateral branch of right lateral basal segmental artery
+FJ3008	Mediobasal branch of right posterior basal segmental artery
+FJ3009	Accessory subsuperior branch of right posterior basal segmental artery
+FJ3010	Accessory subsuperior branch of right posterior basal segmental artery
+FJ3011	Anterior part of right apical segmental artery
+FJ3012	Mediobasal branch of right posterior basal segmental artery
+FJ3013	Laterobasal branch of right posterior basal segmental artery
+FJ3014	Laterobasal branch of right posterior basal segmental artery
+FJ3015	Apical part of right apical segmental artery
+FJ3016	Apical part of right apical segmental artery
+FJ3017	Apical part of right apical segmental artery
+FJ3018	Apical part of right posterior segmental artery
+FJ3019	Right pulmonary artery
+FJ3075	Anterior inferior segmental hepatic artery
+FJ3076	Anterior superior segmental hepatic artery
+FJ3077	Caudate lobe branch of left hepatic artery
+FJ3078	Common hepatic artery
+FJ3081	Hepatic artery proper
+FJ3091	Lateral superior segmental hepatic artery
+FJ3092	Lateral inferior segmental hepatic artery
+FJ3093	Lateral superior segmental hepatic artery
+FJ3095	Trunk of left hepatic artery
+FJ3106	Medial inferior segmental hepatic artery
+FJ3107	Medial superior segmental hepatic artery
+FJ3114	Posterior inferior segmental hepatic artery
+FJ3115	Posterior superior segmental hepatic artery
+FJ3116	Posterior superior segmental hepatic artery
+FJ3117	Trunk of right hepatic artery
+FJ3399	Ascending branch of left colic artery
+FJ3401	Anterior inferior pancreaticoduodenal artery
+FJ3406	Anterior cecal artery
+FJ3409	Anterior superior pancreaticoduodenal artery
+FJ3410	Appendicular artery
+FJ3411	Arch of aorta
+FJ3413	Ascending aorta
+FJ3414	Ascending branch of inferior branch of ileocolic artery
+FJ3417	Brachiocephalic artery
+FJ3418	Bronchial branch of arch of aorta
+FJ3419	Caudal pancreatic artery
+FJ3420	Splenic artery
+FJ3421	Celiac trunk
+FJ3427	Descending aorta
+FJ3428	Descending branch of left colic artery
+FJ3430	Dorsal pancreatic artery
+FJ3431	Set of oesophageal branches of thoracic aorta
+FJ3432	Trunk of gastroduodenal artery
+FJ3433	Great pancreatic artery
+FJ3437	Ileal artery
+FJ3439	Ileocolic artery
+FJ3442	Inferior mesenteric artery
+FJ3444	Inferior pancreatic artery
+FJ3446	Inferior pancreaticoduodenal artery
+FJ3458	Anterior division of left renal artery
+FJ3459	Anterior division of left renal artery
+FJ3460	Anterior division of left renal artery
+FJ3461	Anterior division of left renal artery
+FJ3462	Anterior division of left renal artery
+FJ3463	Anterior division of left renal artery
+FJ3464	Left common iliac artery
+FJ3466	Left external iliac artery
+FJ3467	Left inferior suprarenal artery
+FJ3468	Left internal iliac artery
+FJ3472	Left middle suprarenal artery
+FJ3473	Posterior division of left renal artery
+FJ3474	Posterior division of left renal artery
+FJ3475	Posterior division of left renal artery
+FJ3476	Trunk of left renal artery
+FJ3479	Left subclavian artery
+FJ3481	Ureteric segment of left renal artery
+FJ3483	Left common carotid artery
+FJ3494	Left colic artery
+FJ3496	Left dorsal artery of penis
+FJ3497	Left dorsal artery of penis
+FJ3499	Left gastric artery
+FJ3501	Left gastro-epiploic artery
+FJ3511	Left inferior epigastric artery
+FJ3514	Left inferior phrenic artery
+FJ3515	Left inferior phrenic artery
+FJ3516	Left inferior phrenic artery
+FJ3517	Left inferior phrenic artery
+FJ3518	Left inferior phrenic artery
+FJ3519	Left inferior phrenic artery
+FJ3520	Left inferior phrenic artery
+FJ3529	Left superficial epigastric artery
+FJ3532	Left testicular artery
+FJ3534	Marginal artery of colon
+FJ3542	Middle colic artery
+FJ3544	Splenic artery
+FJ3546	Posterior inferior pancreaticoduodenal artery
+FJ3553	Posterior cecal artery
+FJ3557	Posterior superior pancreaticoduodenal artery
+FJ3558	Anterior division of right renal artery
+FJ3559	Anterior division of right renal artery
+FJ3560	Anterior division of right renal artery
+FJ3561	Anterior division of right renal artery
+FJ3562	Anterior division of right renal artery
+FJ3563	Anterior division of right renal artery
+FJ3564	Right common carotid artery
+FJ3565	Right common iliac artery
+FJ3567	Right external iliac artery
+FJ3569	Right internal iliac artery
+FJ3573	Posterior division of right renal artery
+FJ3574	Posterior division of right renal artery
+FJ3575	Posterior division of right renal artery
+FJ3576	Trunk of right renal artery
+FJ3579	Right subclavian artery
+FJ3581	Ureteric segment of right renal artery
+FJ3582	Ureteric segment of right renal artery
+FJ3584	Right inferior suprarenal artery
+FJ3586	Right middle suprarenal artery
+FJ3590	Right colic artery
+FJ3592	Right dorsal artery of penis
+FJ3593	Right dorsal artery of penis
+FJ3594	Right gastric artery
+FJ3596	Right gastro-epiploic artery
+FJ3604	Right inferior epigastric artery
+FJ3614	Right superficial epigastric artery
+FJ3617	Right testicular artery
+FJ3619	Right inferior phrenic artery
+FJ3620	Right inferior phrenic artery
+FJ3621	Right inferior phrenic artery
+FJ3622	Right inferior phrenic artery
+FJ3623	Right inferior phrenic artery
+FJ3624	Right inferior phrenic artery
+FJ3625	Right inferior phrenic artery
+FJ3626	Right inferior phrenic artery
+FJ3632	Lumbar artery
+FJ3636	Lumbar artery
+FJ3638	Sigmoid artery
+FJ3640	Splenic artery
+FJ3644	Trunk of superior mesenteric artery
+FJ3656	Superior rectal artery

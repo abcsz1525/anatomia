@@ -1,6 +1,6 @@
 id,en,la,ru,topic,aliases
-FJ1252,Gingiva of upper jaw,Gingiva,Десна верхней челюсти,other,десна
-FJ1253,Gingiva of lower jaw,Gingiva,Десна нижней челюсти,other,десна
+FJ1252,Gingiva of upper jaw,Gingiva,Десна верхней челюсти,digestive,десна
+FJ1253,Gingiva of lower jaw,Gingiva,Десна нижней челюсти,digestive,десна
 FJ1254,Left lower first secondary molar tooth,Dens molaris primus inferior,Нижний первый моляр,teeth,
 FJ1255,Left lower first secondary premolar tooth,Dens premolaris primus inferior,Нижний первый премоляр,teeth,
 FJ1256,Left lower second secondary molar tooth,Dens molaris secundus inferior,Нижний второй моляр,teeth,
@@ -426,11 +426,11 @@ FJ1598,Right stylohyoid,Musculus stylohyoideus,Шилоподъязычная м
 FJ1599,Right thyrohyoid,Musculus thyrohyoideus,Щитоподъязычная мышца,muscles-neck,
 FJ1600,Superior oblique part of left longus colli,"Musculus longus colli, pars obliqua superior","Длинная мышца шеи, верхняя косая часть",muscles-neck,
 FJ1601,Vertical intermediate part of left longus colli,"Musculus longus colli, pars verticalis","Длинная мышца шеи, вертикальная часть",muscles-neck,pars intermedia;промежуточная часть;медиальная часть
-FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",other,латеральная сосочковая мышца;musculus papillaris lateralis
-FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,other,
-FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,other,musculus papillaris lateralis;латеральная сосочковая мышца
-FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,other,
-FJ2437,Septal papillary muscle of right ventricle,Musculus papillaris septalis ventriculi dextri,Перегородочная сосочковая мышца правого желудочка,other,
+FJ2418,Anterolateral head of lateral papillary muscle of left ventricle,"Musculus papillaris anterior ventriculi sinistri, caput anterolaterale","Передняя сосочковая мышца левого желудочка, переднелатеральная головка",heart,латеральная сосочковая мышца;musculus papillaris lateralis
+FJ2419,Anterior papillary muscle of right ventricle,Musculus papillaris anterior ventriculi dextri,Передняя сосочковая мышца правого желудочка,heart,
+FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior ventriculi sinistri,Передняя сосочковая мышца левого желудочка,heart,musculus papillaris lateralis;латеральная сосочковая мышца
+FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,heart,
+FJ2437,Septal papillary muscle of right ventricle,Musculus papillaris septalis ventriculi dextri,Перегородочная сосочковая мышца правого желудочка,heart,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2542,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
 FJ2543,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса

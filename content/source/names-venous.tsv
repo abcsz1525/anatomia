@@ -1,0 +1,404 @@
+FJ1853	Hepatic portal vein
+FJ1858	Hepatovenous segment IX
+FJ1867	Tributary of middle hepatic vein
+FJ1893	Left portal vein
+FJ1913	Right portal vein
+FJ1914	Caudate lobe branch of right portal vein
+FJ1981	Accessory hemiazygos vein
+FJ1985	Set of anterior intercostal veins
+FJ1986	Left superior intercostal vein
+FJ1987	Left subcostal vein
+FJ1988	Left musculophrenic vein
+FJ1991	Right superior intercostal vein
+FJ1993	Right internal thoracic vein
+FJ1994	Set of anterior intercostal veins
+FJ1995	Right subcostal vein
+FJ1996	Right musculophrenic vein
+FJ2056	Deep dorsal vein of penis
+FJ2059	Dorsal venous arch of left foot
+FJ2060	Dorsal venous arch of left foot
+FJ2061	Dorsal venous arch of right foot
+FJ2062	Dorsal venous arch of right foot
+FJ2097	Left anterior tibial vein
+FJ2099	Left deep femoral vein
+FJ2100	Set of perforating veins
+FJ2102	Left femoral vein
+FJ2103	Left great saphenous vein
+FJ2107	Left genicular vein
+FJ2108	Left genicular vein
+FJ2113	Tributary of plantar venous arch
+FJ2115	Tributary of plantar venous arch
+FJ2117	Left popliteal vein
+FJ2118	Left posterior tibial vein
+FJ2119	Set of perforating veins
+FJ2120	Set of plantar digital veins
+FJ2121	Left small saphenous vein
+FJ2122	Left superficial epigastric vein
+FJ2124	Left genicular vein
+FJ2125	Left genicular vein
+FJ2128	Plantar venous arch of left foot
+FJ2129	Plantar venous arch of right foot
+FJ2132	Right anterior tibial vein
+FJ2135	Right deep femoral vein
+FJ2138	Set of perforating veins
+FJ2144	Right femoral vein
+FJ2145	Right great saphenous vein
+FJ2151	Right genicular vein
+FJ2153	Right genicular vein
+FJ2160	Tributary of plantar venous arch
+FJ2165	Tributary of plantar venous arch
+FJ2171	Right popliteal vein
+FJ2173	Right posterior tibial vein
+FJ2174	Set of perforating veins
+FJ2175	Set of plantar digital veins
+FJ2176	Right small saphenous vein
+FJ2178	Right superficial epigastric vein
+FJ2181	Right genicular vein
+FJ2182	Right genicular vein
+FJ2183	Left anterior tibial vein
+FJ2184	Left fibular vein
+FJ2185	Set of dorsal digital veins
+FJ2186	Dorsal metacarpal vein
+FJ2187	Left fibular vein
+FJ2188	Left lateral circumflex femoral vein
+FJ2189	Left medial circumflex femoral vein
+FJ2190	Right fibular vein
+FJ2191	Plantar metatarsal vein
+FJ2192	Set of perforating veins
+FJ2193	Right anterior tibial vein
+FJ2194	Right fibular vein
+FJ2198	Set of dorsal digital veins
+FJ2199	Dorsal metacarpal vein
+FJ2200	Right fibular vein
+FJ2201	Right lateral circumflex femoral vein
+FJ2202	Right medial circumflex femoral vein
+FJ2207	Plantar metatarsal vein
+FJ2208	Superficial dorsal vein of penis
+FJ2213	Left anterior circumflex humeral vein
+FJ2217	Left axillary vein
+FJ2218	Left basilic vein
+FJ2220	Left cephalic vein
+FJ2222	Left circumflex scapular vein
+FJ2228	Dorsal venous network of left hand
+FJ2229	Left deep palmar venous arch
+FJ2233	Left lateral thoracic vein
+FJ2234	Left median antebrachial vein
+FJ2235	Left median cubital vein
+FJ2238	Left palmar metacarpal vein
+FJ2244	Left radial vein
+FJ2247	Left subscapular vein
+FJ2249	Left superficial palmar venous arch
+FJ2250	Left suprascapular vein
+FJ2254	Left thoracodorsal vein
+FJ2260	Left ulnar vein
+FJ2265	Right anterior circumflex humeral vein
+FJ2269	Right axillary vein
+FJ2270	Right basilic vein
+FJ2272	Right cephalic vein
+FJ2274	Right circumflex scapular vein
+FJ2280	Dorsal venous network of right hand
+FJ2281	Right deep palmar venous arch
+FJ2285	Right lateral thoracic vein
+FJ2286	Right median antebrachial vein
+FJ2287	Right median cubital vein
+FJ2290	Right palmar metacarpal vein
+FJ2296	Right radial vein
+FJ2299	Right subscapular vein
+FJ2301	Right superficial palmar venous arch
+FJ2302	Right suprascapular vein
+FJ2306	Right thoracodorsal vein
+FJ2312	Right ulnar vein
+FJ2313	Left medial brachial vein
+FJ2319	Proper palmar digital vein of left little finger
+FJ2320	Left palmar metacarpal vein
+FJ2321	Proper palmar digital vein of left little finger
+FJ2322	Common palmar digital vein
+FJ2323	Left palmar metacarpal vein
+FJ2324	Proper palmar digital vein of left index finger
+FJ2325	Proper palmar digital vein of left index finger
+FJ2326	Proper palmar digital vein of left middle finger
+FJ2327	Proper palmar digital vein of left ring finger
+FJ2328	Proper palmar digital vein of left ring finger
+FJ2329	Proper palmar digital vein of left little finger
+FJ2340	Proper palmar digital vein of left middle finger
+FJ2341	Right medial brachial vein
+FJ2349	Proper palmar digital vein of right little finger
+FJ2350	Right palmar metacarpal vein
+FJ2351	Proper palmar digital vein of right little finger
+FJ2352	Common palmar digital vein
+FJ2353	Right palmar metacarpal vein
+FJ2354	Proper palmar digital vein of right index finger
+FJ2355	Proper palmar digital vein of right index finger
+FJ2356	Proper palmar digital vein of right middle finger
+FJ2357	Proper palmar digital vein of right middle finger
+FJ2358	Proper palmar digital vein of right ring finger
+FJ2359	Proper palmar digital vein of right ring finger
+FJ2360	Proper palmar digital vein of right little finger
+FJ2404	Left portal vein
+FJ2405	Right portal vein
+FJ2409	Hepatovenous segment VII
+FJ2414	Middle hepatic vein
+FJ2415	Left hepatic vein
+FJ2416	Right hepatic vein
+FJ2655	Coronary sinus
+FJ2656	Great cardiac vein
+FJ2657	Anterior interventricular vein
+FJ2658	Anterior interventricular vein
+FJ2659	Anterior interventricular vein
+FJ2660	Anterior interventricular vein
+FJ2661	Anterior interventricular vein
+FJ2662	Anterior interventricular vein
+FJ2663	Anterior interventricular vein
+FJ2664	Anterior interventricular vein
+FJ2665	Anterior interventricular vein
+FJ2678	Middle cardiac vein
+FJ2679	Middle cardiac vein
+FJ2680	Middle cardiac vein
+FJ2681	Middle cardiac vein
+FJ2682	Middle cardiac vein
+FJ2683	Middle cardiac vein
+FJ2684	Middle cardiac vein
+FJ2685	Middle cardiac vein
+FJ2686	Middle cardiac vein
+FJ2687	Middle cardiac vein
+FJ2688	Middle cardiac vein
+FJ2689	Middle cardiac vein
+FJ2690	Middle cardiac vein
+FJ2691	Middle cardiac vein
+FJ2701	Posterior vein of left ventricle
+FJ2702	Posterior vein of left ventricle
+FJ2703	Left marginal vein
+FJ2704	Left marginal vein
+FJ2705	Left marginal vein
+FJ2706	Posterior vein of left ventricle
+FJ2707	Posterior vein of left ventricle
+FJ2708	Posterior vein of left ventricle
+FJ2709	Posterior vein of left ventricle
+FJ2710	Posterior vein of left ventricle
+FJ2711	Posterior vein of left ventricle
+FJ2712	Posterior vein of left ventricle
+FJ2713	Posterior vein of left ventricle
+FJ2724	Small cardiac vein
+FJ2725	Anterior cardiac vein
+FJ2727	Right marginal vein
+FJ2728	Right marginal vein
+FJ2729	Right marginal vein
+FJ2730	Anterior cardiac vein
+FJ2731	Small cardiac vein
+FJ2818	Hepatovenous segment II
+FJ2819	Hepatovenous segment III
+FJ2820	Hepatovenous segment IV
+FJ2821	Hepatovenous segment V
+FJ2822	Hepatovenous segment VI
+FJ2823	Hepatovenous segment VIII
+FJ2824	Hepatovenous segment VIII
+FJ2925	Left superior pulmonary vein
+FJ2926	Left posterior segmental vein
+FJ2927	Left posterior segmental vein
+FJ2928	Left posterior segmental vein
+FJ2929	Left posterior segmental vein
+FJ2930	Left anterior segmental vein
+FJ2931	Left anterior segmental vein
+FJ2932	Left anterior segmental vein
+FJ2933	Left superior pulmonary vein
+FJ2934	Inferior lingular vein
+FJ2935	Inferior lingular vein
+FJ2936	Left apical segmental vein
+FJ2937	Superior lingular vein
+FJ2938	Superior lingular vein
+FJ2939	Left posterior segmental vein
+FJ2940	Left posterior segmental vein
+FJ2941	Left posterior segmental vein
+FJ2942	Left posterior segmental vein
+FJ2943	Left posterior segmental vein
+FJ2944	Left inferior pulmonary vein
+FJ2945	Left posterior basal segmental vein
+FJ2946	Left posterior basal segmental vein
+FJ2947	Left apical segmental vein
+FJ2948	Left posterior basal segmental vein
+FJ2949	Left posterior basal segmental vein
+FJ2950	Left inferior pulmonary vein
+FJ2951	Left lateral basal segmental vein
+FJ2952	Left lateral basal segmental vein
+FJ2953	Left lateral basal segmental vein
+FJ2954	Left lateral basal segmental vein
+FJ2955	Left inferior pulmonary vein
+FJ2956	Left anterior basal segmental vein
+FJ2957	Left anterior basal segmental vein
+FJ2958	Left apical segmental vein
+FJ2959	Left anterior basal segmental vein
+FJ2960	Left anterior basal segmental vein
+FJ2961	Left apical segmental vein
+FJ2962	Left apical segmental vein
+FJ2963	Left apical segmental vein
+FJ2964	Left apical segmental vein
+FJ2965	Left posterior segmental vein
+FJ3020	Right superior pulmonary vein
+FJ3021	Inferior part of right anterior segmental vein
+FJ3022	Right posterior segmental vein
+FJ3023	Right posterior segmental vein
+FJ3024	Right posterior segmental vein
+FJ3025	Right posterior segmental vein
+FJ3026	Right posterior segmental vein
+FJ3027	Superior part of right anterior segmental vein
+FJ3028	Right anterior segmental vein
+FJ3029	Right anterior segmental vein
+FJ3030	Superior part of medial segmental vein
+FJ3031	Trunk of right apical segmental vein
+FJ3032	Inferior part of medial segmental vein
+FJ3033	Inferior part of medial segmental vein
+FJ3034	Anterior part of lateral segmental vein
+FJ3035	Anterior part of lateral segmental vein
+FJ3036	Anterior part of lateral segmental vein
+FJ3037	Posterior part of lateral segmental vein
+FJ3038	Posterior part of lateral segmental vein
+FJ3039	Posterior part of lateral segmental vein
+FJ3040	Right inferior pulmonary vein
+FJ3041	Right posterior basal segmental vein
+FJ3042	Anterior part of right apical segmental vein
+FJ3043	Right posterior basal segmental vein
+FJ3044	Right posterior basal segmental vein
+FJ3045	Right posterior basal segmental vein
+FJ3046	Right posterior basal segmental vein
+FJ3047	Right posterior basal segmental vein
+FJ3048	Right posterior basal segmental vein
+FJ3049	Right anterior basal segmental vein
+FJ3050	Right superior segmental vein
+FJ3051	Right superior segmental vein
+FJ3052	Right superior segmental vein
+FJ3053	Anterior part of right apical segmental vein
+FJ3054	Right medial basal segmental vein
+FJ3055	Right medial basal segmental vein
+FJ3056	Right anterior basal segmental vein
+FJ3057	Right posterior basal segmental vein
+FJ3058	Right posterior basal segmental vein
+FJ3059	Right lateral basal segmental vein
+FJ3060	Right lateral basal segmental vein
+FJ3061	Right lateral basal segmental vein
+FJ3062	Right lateral basal segmental vein
+FJ3063	Right superior segmental vein
+FJ3064	Apical part of right apical segmental vein
+FJ3065	Right superior segmental vein
+FJ3066	Right superior segmental vein
+FJ3067	Apical part of right apical segmental vein
+FJ3068	Apical part of right apical segmental vein
+FJ3069	Right posterior segmental vein
+FJ3070	Right posterior segmental vein
+FJ3073	Anterior superior segmental branch of right portal vein
+FJ3074	Anterior inferior segmental branch of right portal vein
+FJ3082	Pre-hepatic portal vein
+FJ3083	Anterior inferior segmental tributary of middle hepatic vein
+FJ3084	Medial inferior segmental tributary of middle hepatic vein
+FJ3085	Medial inferior segmental tributary of middle hepatic vein
+FJ3086	Anterior inferior segmental tributary of middle hepatic vein
+FJ3097	Lateral inferior segmental tributary of left hepatic vein
+FJ3098	Lateral superior segmental tributary of left hepatic vein
+FJ3099	Lateral inferior segmental tributary of left hepatic vein
+FJ3100	Lateral inferior segmental tributary of left hepatic vein
+FJ3101	Medial superior segmental tributary of left hepatic vein
+FJ3102	Trunk of left portal vein
+FJ3111	Posterior inferior segmental branch of right portal vein
+FJ3112	Posterior superior segmental branch of right portal vein
+FJ3113	Posterior superior segmental branch of right portal vein
+FJ3118	Posterior inferior segmental tributary of right hepatic vein
+FJ3119	Posterior superior segmental tributary of right hepatic vein
+FJ3120	Posterior inferior segmental tributary of right hepatic vein
+FJ3121	Anterior superior segmental tributary of right hepatic vein
+FJ3122	Trunk of right portal vein
+FJ3124	Caudate lobe branch of left portal vein
+FJ3125	Lateral inferior segmental branch of left portal vein
+FJ3126	Lateral superior segmental branch of left portal vein
+FJ3127	Medial superior segmental branch of left portal vein
+FJ3128	Medial inferior segmental branch of left portal vein
+FJ3400	Left colic vein
+FJ3415	Ileocolic vein
+FJ3416	Azygos vein
+FJ3426	Left superficial dorsal vein of penis
+FJ3429	Left colic vein
+FJ3434	Hemiazygos vein
+FJ3438	Ileal vein
+FJ3440	Ileocolic vein
+FJ3441	Inferior vena cava
+FJ3443	Inferior mesenteric vein
+FJ3447	Inferior phrenic vein
+FJ3448	Inferior phrenic vein
+FJ3449	Inferior phrenic vein
+FJ3450	Inferior phrenic vein
+FJ3451	Inferior phrenic vein
+FJ3452	Inferior phrenic vein
+FJ3465	Left common iliac vein
+FJ3469	Left internal iliac vein
+FJ3470	Left internal iliac vein
+FJ3471	Left internal iliac vein
+FJ3477	Left renal vein
+FJ3478	Left renal vein
+FJ3480	Left suprarenal vein
+FJ3482	Left brachiocephalic vein
+FJ3484	Left external iliac vein
+FJ3485	Left internal jugular vein
+FJ3486	Left subclavian vein
+FJ3493	Left ascending lumbar vein
+FJ3495	Left colic vein
+FJ3500	Left gastric vein
+FJ3502	Left gastroepiploic vein
+FJ3510	Left iliolumbar vein
+FJ3512	Left inferior epigastric vein
+FJ3513	Left inferior gluteal vein
+FJ3522	Left external iliac vein
+FJ3523	Left external iliac vein
+FJ3524	Left external iliac vein
+FJ3525	Left internal pudendal vein
+FJ3526	Left lateral sacral vein
+FJ3527	Left obturator vein
+FJ3530	Left superior epigastric vein
+FJ3531	Left superior gluteal vein
+FJ3533	Left testicular vein
+FJ3541	Median sacral vein
+FJ3543	Middle colic vein
+FJ3545	Pancreaticoduodenal vein
+FJ3566	Right common iliac vein
+FJ3568	Right external iliac vein
+FJ3570	Right internal iliac vein
+FJ3571	Right internal iliac vein
+FJ3572	Right internal iliac vein
+FJ3577	Right renal vein
+FJ3578	Right renal vein
+FJ3580	Right suprarenal vein
+FJ3583	Right brachiocephalic vein
+FJ3585	Right internal jugular vein
+FJ3587	Right subclavian vein
+FJ3589	Right ascending lumbar vein
+FJ3591	Right colic vein
+FJ3595	Right gastric vein
+FJ3597	Right gastroepiploic vein
+FJ3603	Right iliolumbar vein
+FJ3605	Right inferior epigastric vein
+FJ3606	Right inferior gluteal vein
+FJ3607	Right internal iliac vein
+FJ3608	Right internal iliac vein
+FJ3609	Right internal iliac vein
+FJ3610	Right internal pudendal vein
+FJ3611	Right lateral sacral vein
+FJ3612	Right obturator vein
+FJ3615	Right superior epigastric vein
+FJ3616	Right superior gluteal vein
+FJ3618	Right testicular vein
+FJ3631	Lumbar vein
+FJ3635	Lumbar vein
+FJ3637	Right superficial dorsal vein of penis
+FJ3639	Sigmoid vein
+FJ3641	Splenic vein
+FJ3645	Superior vena cava
+FJ3646	Pancreaticoduodenal vein
+FJ3647	Superior mesenteric vein
+FJ3648	Superior phrenic vein
+FJ3649	Superior phrenic vein
+FJ3650	Superior phrenic vein
+FJ3651	Superior phrenic vein
+FJ3652	Superior phrenic vein
+FJ3653	Superior phrenic vein
+FJ3654	Superior phrenic vein
+FJ3655	Pancreaticoduodenal vein
+FJ3657	Superior rectal vein
+FJ3658	Ascending lumbar vein
+FJ3659	Inferior vena cava

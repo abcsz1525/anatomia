@@ -1,8 +1,9 @@
 import type { AtlasManifest } from "@/lib/atlas/types";
+import { SYSTEMS } from "@/lib/atlas/systems";
 import { sideFor } from "@/lib/content/side";
 import type { ContentBundle, StructureEntry, Topic } from "@/lib/content/types";
 
-export const COURSE_SYSTEMS = ["skeletal", "connective", "muscular"] as const;
+export const COURSE_SYSTEMS = SYSTEMS.map((s) => s.id);
 export interface CsvRow { id: string; en: string; la: string; ru: string; topic: string; aliases: string }
 export interface RuleError { row?: number; id?: string; message: string }
 

@@ -27,12 +27,16 @@ export function topicParts(content: ContentBundle, manifest: AtlasManifest, topi
 }
 
 /**
- * Скелет как контекст для тем миологии/артрологии: без костей "найди мышцу"
- * не имеет смысла, но кости самой темы искать не нужно — только показать.
+ * Скелет как контекст для тем миологии/артрологии/ангиологии: без костей
+ * "найди мышцу" или "найди артерию" не имеет смысла, но кости самой темы
+ * искать не нужно — только показать. Для неврологии/спланхнологии/органов
+ * чувств контекста нет: череп закрыл бы мозг и глаз.
  */
+const SKELETAL_CONTEXT_PARENTS = new Set(["myology", "arthrology", "angiology"]);
+
 export function contextIds(manifest: AtlasManifest, topics: Topic[], topicId: string): string[] {
   const topic = topics.find((t) => t.id === topicId);
-  if (!topic?.parent || (topic.parent !== "myology" && topic.parent !== "arthrology")) return [];
+  if (!topic?.parent || !SKELETAL_CONTEXT_PARENTS.has(topic.parent)) return [];
   return manifest.parts.filter((p) => p.system === "skeletal").map((p) => p.id);
 }
 
