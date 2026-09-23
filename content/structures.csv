@@ -728,7 +728,10 @@ FJ1853,Hepatic portal vein,Vena portae hepatis,Воротная вена печ�
 FJ1858,Hepatovenous segment IX,"Vena hepatica, segmentum IX","Печёночная вена, сегмент IX",veins-trunk,segmentum hepatovenosum IX;печёночно-венозный сегмент IX;hepatovenous segment IX
 FJ1867,Tributary of middle hepatic vein,"Vena hepatica intermedia, affluens","Средняя печёночная вена, приток",veins-trunk,приток средней печёночной вены
 FJ1874,Left lobe branch of left hepatic artery,Ramus lobi sinistri arteriae hepaticae sinistrae,Долевая ветвь печёночной артерии,arteries-trunk,ветвь левой печёночной артерии к левой доле печени
+FJ1883,Caudate lobe tributary of left hepatic biliary tree,Ductus lobi caudati sinister,Проток хвостатой доли,digestive,левый проток хвостатой доли;ductus segmenti I;проток сегмента I;caudate lobe tributary of left hepatic biliary tree (BodyParts3D label)
 FJ1893,Left portal vein,Ramus sinister venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"левая ветвь воротной вены;vena portae, ramus sinister"
+FJ1895,Pancreas,Pancreas,Поджелудочная железа,digestive,
+FJ1896,Pancreatic duct,Ductus pancreaticus,Проток поджелудочной железы,digestive,ductus wirsungianus;вирсунгов проток;панкреатический проток
 FJ1913,Right portal vein,Ramus dexter venae portae hepatis,Ветвь воротной вены печени,veins-trunk,"правая ветвь воротной вены;vena portae, ramus dexter"
 FJ1914,Caudate lobe branch of right portal vein,Ramus lobi caudati venae portae hepatis,Ветвь воротной вены к хвостатой доле,veins-trunk,rami lobi caudati;ветвь правой ветви воротной вены к хвостатой доле
 FJ1916,Caudate lobe branch of right hepatic artery,Ramus lobi caudati arteriae hepaticae dextrae,Ветвь печёночной артерии к хвостатой доле,arteries-trunk,ramus lobi caudati;ветвь хвостатой доли;ветвь правой печёночной артерии к хвостатой доле
@@ -1082,6 +1085,107 @@ FJ2429,Lateral papillary muscle of left ventricle,Musculus papillaris anterior v
 FJ2430,Posterior papillary muscle of right ventricle,Musculus papillaris posterior ventriculi dextri,Задняя сосочковая мышца правого желудочка,heart,
 FJ2437,Septal papillary muscle of right ventricle,Musculus papillaris septalis ventriculi dextri,Перегородочная сосочковая мышца правого желудочка,heart,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2441,Inferior lingular bronchial tree,Bronchus lingularis inferior,Нижний язычковый бронх,respiratory,inferior lingular bronchial tree;B V
+FJ2442,Left medial basal segmental bronchial tree,Bronchus segmentalis basalis medialis,Медиальный базальный сегментарный бронх,respiratory,bronchus cardiacus;сердечный бронх;medial basal segmental bronchial tree;B VII
+FJ2443,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2444,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2445,Left lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2446,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2447,Left posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;posterior segmental bronchial tree;B I+II
+FJ2448,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2449,Lateral segmental bronchial tree,Bronchus segmentalis lateralis,Латеральный сегментарный бронх,respiratory,lateral segmental bronchial tree;B IV;латеральный сегментарный бронх средней доли
+FJ2450,Left main bronchus,Bronchus principalis sinister,Главный бронх,respiratory,левый главный бронх
+FJ2451,Medial segmental bronchial tree,Bronchus segmentalis medialis,Медиальный сегментарный бронх,respiratory,medial segmental bronchial tree;B V;медиальный сегментарный бронх средней доли
+FJ2452,Right anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2453,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2454,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2455,Right lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2456,Right medial basal segmental bronchial tree,Bronchus segmentalis basalis medialis,Медиальный базальный сегментарный бронх,respiratory,bronchus cardiacus;сердечный бронх;medial basal segmental bronchial tree;B VII
+FJ2457,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2458,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2459,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2460,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2461,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2462,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2463,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2464,Left apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;apical segmental bronchial tree;B I+II
+FJ2465,Left posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;posterior segmental bronchial tree;B I+II
+FJ2466,Left posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,bronchus segmentalis apicoposterior;верхушечно-задний сегментарный бронх;posterior segmental bronchial tree;B I+II
+FJ2467,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2468,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2469,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2470,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2471,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2472,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2473,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2474,Left anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2475,Inferior lingular bronchial tree,Bronchus lingularis inferior,Нижний язычковый бронх,respiratory,inferior lingular bronchial tree;B V
+FJ2476,Superior lingular bronchial tree,Bronchus lingularis superior,Верхний язычковый бронх,respiratory,superior lingular bronchial tree;B IV
+FJ2477,Superior lingular bronchial tree,Bronchus lingularis superior,Верхний язычковый бронх,respiratory,superior lingular bronchial tree;B IV
+FJ2478,Superior lingular bronchial tree,Bronchus lingularis superior,Верхний язычковый бронх,respiratory,superior lingular bronchial tree;B IV
+FJ2479,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2480,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2481,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2482,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2483,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2484,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2485,Left superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2486,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2487,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2488,Right medial basal segmental bronchial tree,Bronchus segmentalis basalis medialis,Медиальный базальный сегментарный бронх,respiratory,bronchus cardiacus;сердечный бронх;medial basal segmental bronchial tree;B VII
+FJ2489,Right posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2490,Right lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2491,Right lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2492,Right lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2493,Right anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2494,Right anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2495,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2496,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2497,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2498,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2499,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2500,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2501,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2502,Right superior segmental bronchial tree,Bronchus segmentalis superior,Верхний сегментарный бронх,respiratory,superior segmental bronchial tree;B VI;верхний сегментарный бронх нижней доли
+FJ2503,Lateral segmental bronchial tree,Bronchus segmentalis lateralis,Латеральный сегментарный бронх,respiratory,lateral segmental bronchial tree;B IV;латеральный сегментарный бронх средней доли
+FJ2504,Lateral segmental bronchial tree,Bronchus segmentalis lateralis,Латеральный сегментарный бронх,respiratory,lateral segmental bronchial tree;B IV;латеральный сегментарный бронх средней доли
+FJ2505,Lateral segmental bronchial tree,Bronchus segmentalis lateralis,Латеральный сегментарный бронх,respiratory,lateral segmental bronchial tree;B IV;латеральный сегментарный бронх средней доли
+FJ2506,Medial segmental bronchial tree,Bronchus segmentalis medialis,Медиальный сегментарный бронх,respiratory,medial segmental bronchial tree;B V;медиальный сегментарный бронх средней доли
+FJ2507,Medial segmental bronchial tree,Bronchus segmentalis medialis,Медиальный сегментарный бронх,respiratory,medial segmental bronchial tree;B V;медиальный сегментарный бронх средней доли
+FJ2508,Medial segmental bronchial tree,Bronchus segmentalis medialis,Медиальный сегментарный бронх,respiratory,medial segmental bronchial tree;B V;медиальный сегментарный бронх средней доли
+FJ2509,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2510,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2511,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2512,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2513,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2514,Right anterior segmental bronchial tree,Bronchus segmentalis anterior,Передний сегментарный бронх,respiratory,anterior segmental bronchial tree;B III
+FJ2515,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2516,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2517,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2518,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2519,Right posterior segmental bronchial tree,Bronchus segmentalis posterior,Задний сегментарный бронх,respiratory,posterior segmental bronchial tree;B II
+FJ2520,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2521,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2522,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2523,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2524,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2525,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2526,Right apical segmental bronchial tree,Bronchus segmentalis apicalis,Верхушечный сегментарный бронх,respiratory,apical segmental bronchial tree;B I
+FJ2527,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2528,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2529,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2530,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2531,Left posterior basal segmental bronchial tree,Bronchus segmentalis basalis posterior,Задний базальный сегментарный бронх,respiratory,posterior basal segmental bronchial tree;B X
+FJ2532,Left lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2533,Left lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2534,Left lateral basal segmental bronchial tree,Bronchus segmentalis basalis lateralis,Латеральный базальный сегментарный бронх,respiratory,lateral basal segmental bronchial tree;B IX
+FJ2535,Left anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2536,Left anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2537,Left medial basal segmental bronchial tree,Bronchus segmentalis basalis medialis,Медиальный базальный сегментарный бронх,respiratory,bronchus cardiacus;сердечный бронх;medial basal segmental bronchial tree;B VII
+FJ2538,Left anterior basal segmental bronchial tree,Bronchus segmentalis basalis anterior,Передний базальный сегментарный бронх,respiratory,anterior basal segmental bronchial tree;B VIII
+FJ2539,Right main bronchus proper,Bronchus principalis dexter,Главный бронх,respiratory,правый главный бронх;right main bronchus proper (BodyParts3D label)
+FJ2540,Superior lingular bronchial tree,Bronchus lingularis superior,Верхний язычковый бронх,respiratory,superior lingular bronchial tree;B IV
+FJ2541,Trachea,Trachea,Трахея,respiratory,
 FJ2542,Left coccygeus,Musculus coccygeus,Копчиковая мышца,muscles-pelvis,musculus ischiococcygeus;седалищно-копчиковая мышца
 FJ2543,External anal sphincter,Musculus sphincter ani externus,Наружный сфинктер заднего прохода,muscles-pelvis,наружный сфинктер ануса
 FJ2544,Left iliococcygeus,Musculus iliococcygeus,Подвздошно-копчиковая мышца,muscles-pelvis,"musculus levator ani;мышца, поднимающая задний проход"
@@ -1097,8 +1201,77 @@ FJ2553,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Су
 FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2556,Left lateral nasal cartilage,Cartilago nasi lateralis,Латеральный хрящ носа,larynx-cartilages,
+FJ2557,Septal nasal cartilage,Cartilago septi nasi,Хрящ перегородки носа,larynx-cartilages,хрящ носовой перегородки
 FJ2558,Right lateral nasal cartilage,Cartilago nasi lateralis,Латеральный хрящ носа,larynx-cartilages,
 FJ2562,Splenic artery,Arteria splenica,Селезёночная артерия,arteries-trunk,arteria lienalis
+FJ2563,Esophagus,Oesophagus,Пищевод,digestive,esophagus
+FJ2564,Stomach,Gaster,Желудок,digestive,ventriculus
+FJ2565,Appendix,Appendix vermiformis,Червеобразный отросток,digestive,аппендикс
+FJ2566,Ascending colon,Colon ascendens,Восходящая ободочная кишка,digestive,caecum;слепая кишка
+FJ2567,Descending colon,Colon descendens,Нисходящая ободочная кишка,digestive,colon sigmoideum;сигмовидная ободочная кишка
+FJ2568,Taenia libera,Taenia libera,Свободная лента,digestive,свободная лента ободочной кишки
+FJ2569,Taenia mesocolica,Taenia mesocolica,Брыжеечная лента,digestive,брыжеечная лента ободочной кишки
+FJ2570,Taenia omentalis,Taenia omentalis,Сальниковая лента,digestive,сальниковая лента ободочной кишки
+FJ2571,Rectum,Rectum,Прямая кишка,digestive,
+FJ2572,Transverse colon,Colon transversum,Поперечная ободочная кишка,digestive,
+FJ2573,Duodenum,Duodenum,Двенадцатиперстная кишка,digestive,
+FJ2574,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2575,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2576,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2577,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2578,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2579,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2580,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2581,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2582,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2583,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2584,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2585,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2586,Middle part of ileum,"Ileum, pars media","Подвздошная кишка, средняя часть",digestive,
+FJ2587,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2588,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2589,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2590,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2591,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2592,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2593,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2594,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2595,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2596,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2597,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2598,Distal part of ileum,"Ileum, pars distalis","Подвздошная кишка, дистальная часть",digestive,
+FJ2599,Ileocecal junction,Ostium ileale,Илеоцекальный переход,digestive,junctio ileocaecalis;илеоцекальное соединение;valva ileocaecalis;илеоцекальный клапан;ileocecal junction (BodyParts3D label)
+FJ2600,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2601,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2602,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2603,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2604,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2605,Proximal part of ileum,"Ileum, pars proximalis","Подвздошная кишка, проксимальная часть",digestive,
+FJ2606,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2607,Middle part of jejunum,"Jejunum, pars media","Тощая кишка, средняя часть",digestive,
+FJ2608,Middle part of jejunum,"Jejunum, pars media","Тощая кишка, средняя часть",digestive,
+FJ2609,Middle part of jejunum,"Jejunum, pars media","Тощая кишка, средняя часть",digestive,
+FJ2610,Middle part of jejunum,"Jejunum, pars media","Тощая кишка, средняя часть",digestive,
+FJ2611,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2612,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2613,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2614,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2615,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2616,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2617,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2618,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2619,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2620,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2621,Distal part of jejunum,"Jejunum, pars distalis","Тощая кишка, дистальная часть",digestive,
+FJ2622,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2623,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2624,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2625,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2626,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2627,Proximal part of jejunum,"Jejunum, pars proximalis","Тощая кишка, проксимальная часть",digestive,
+FJ2628,Middle part of jejunum,"Jejunum, pars media","Тощая кишка, средняя часть",digestive,
+FJ2629,Parenchyma of pancreas,Parenchyma pancreatis,Паренхима поджелудочной железы,digestive,
+FJ2630,Pancreatic duct tree,Ductus pancreaticus,Проток поджелудочной железы,digestive,ductus wirsungianus;вирсунгов проток;панкреатический проток;pancreatic duct tree
 FJ2631,Trunk of anterior interventricular branch of left coronary artery,Ramus interventricularis anterior arteriae coronariae sinistrae,Передняя межжелудочковая ветвь венечной артерии,arteries-trunk,передняя межжелудочковая ветвь левой венечной артерии;пмжв;передняя нисходящая артерия;lad
 FJ2632,First right anterior branch of anterior interventricular branch of left coronary artery,Ramus ventricularis anterior I rami interventricularis anterioris,Передняя желудочковая ветвь I передней межжелудочковой ветви,arteries-trunk,первая правая передняя ветвь передней межжелудочковой ветви
 FJ2633,Diagonal branch of anterior descending branch of left coronary artery,Ramus diagonalis rami interventricularis anterioris,Диагональная ветвь передней межжелудочковой ветви,arteries-trunk,ramus lateralis;латеральная ветвь;диагональная ветвь левой венечной артерии
@@ -1205,18 +1378,35 @@ FJ2736,Second septal branch of right posterior interventricular artery,Ramus int
 FJ2737,Trunk of left coronary artery,Arteria coronaria sinistra,Венечная артерия,arteries-trunk,левая венечная артерия;левая коронарная артерия;лка;ствол левой венечной артерии
 FJ2738,Left genioglossus,Musculus genioglossus,Подбородочно-язычная мышца,muscles-head,
 FJ2739,Left hyoglossus,Musculus hyoglossus,Подъязычно-язычная мышца,muscles-head,
+FJ2740,Left inferior pharyngeal constrictor,Musculus constrictor pharyngis inferior,Нижний констриктор глотки,digestive,нижний сжиматель глотки
 FJ2741,Left levator veli palatini,Musculus levator veli palatini,"Мышца, поднимающая нёбную занавеску",muscles-head,
+FJ2742,Right middle pharyngeal constrictor,Musculus constrictor pharyngis medius,Средний констриктор глотки,digestive,средний сжиматель глотки
+FJ2743,Left palatopharyngeus,Musculus palatopharyngeus,Нёбно-глоточная мышца,digestive,
 FJ2744,Left pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2745,Left salpingopharyngeus,Musculus salpingopharyngeus,Трубно-глоточная мышца,digestive,
+FJ2746,Left stylopharyngeus,Musculus stylopharyngeus,Шилоглоточная мышца,digestive,
+FJ2747,Left superior pharyngeal constrictor,Musculus constrictor pharyngis superior,Верхний констриктор глотки,digestive,верхний сжиматель глотки
 FJ2748,Left tensor veli palatini,Musculus tensor veli palatini,"Мышца, напрягающая нёбную занавеску",muscles-head,
 FJ2749,Pharyngeal raphe,Raphe pharyngis,Шов глотки,ligaments-head-neck,
 FJ2750,Right genioglossus,Musculus genioglossus,Подбородочно-язычная мышца,muscles-head,
 FJ2751,Right hyoglossus,Musculus hyoglossus,Подъязычно-язычная мышца,muscles-head,
+FJ2752,Right inferior pharyngeal constrictor,Musculus constrictor pharyngis inferior,Нижний констриктор глотки,digestive,нижний сжиматель глотки
 FJ2753,Right levator veli palatini,Musculus levator veli palatini,"Мышца, поднимающая нёбную занавеску",muscles-head,
+FJ2754,Left middle pharyngeal constrictor,Musculus constrictor pharyngis medius,Средний констриктор глотки,digestive,средний сжиматель глотки
+FJ2755,Right palatopharyngeus,Musculus palatopharyngeus,Нёбно-глоточная мышца,digestive,
 FJ2756,Right pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2757,Right salpingopharyngeus,Musculus salpingopharyngeus,Трубно-глоточная мышца,digestive,
+FJ2758,Right stylopharyngeus,Musculus stylopharyngeus,Шилоглоточная мышца,digestive,
+FJ2759,Right superior pharyngeal constrictor,Musculus constrictor pharyngis superior,Верхний констриктор глотки,digestive,верхний сжиматель глотки
 FJ2760,Right tensor veli palatini,Musculus tensor veli palatini,"Мышца, напрягающая нёбную занавеску",muscles-head,
+FJ2761,Tongue,Lingua,Язык,digestive,
 FJ2762,Uvular muscle,Musculus uvulae,Мышца язычка,muscles-head,
 FJ2763,Left stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2764,Right stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
+FJ2765,Left sublingual gland,Glandula sublingualis,Подъязычная железа,digestive,подъязычная слюнная железа
+FJ2766,Left submandibular gland,Glandula submandibularis,Поднижнечелюстная железа,digestive,поднижнечелюстная слюнная железа
+FJ2767,Right sublingual gland,Glandula sublingualis,Подъязычная железа,digestive,подъязычная слюнная железа
+FJ2768,Right submandibular gland,Glandula submandibularis,Поднижнечелюстная железа,digestive,поднижнечелюстная слюнная железа
 FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
 FJ2770,Epiglottis,Epiglottis,Надгортанник,larynx-cartilages,cartilago epiglottica;надгортанный хрящ
 FJ2771,Hyo-epiglottic ligament,Ligamentum hyoepiglotticum,Подъязычно-надгортанная связка,ligaments-head-neck,
@@ -1258,6 +1448,8 @@ FJ2806,Right vocalis,Musculus vocalis,Голосовая мышца,muscles-neck
 FJ2807,Thyro-epiglottic ligament,Ligamentum thyroepiglotticum,Щитонадгортанная связка,ligaments-head-neck,
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
 FJ2809,Transverse arytenoid,Musculus arytenoideus transversus,Поперечная черпаловидная мышца,muscles-neck,
+FJ2816,Caudate lobe of liver,Lobus caudatus hepatis,Хвостатая доля печени,digestive,segmentum I;сегмент I
+FJ2817,Gallbladder,Vesica biliaris,Жёлчный пузырь,digestive,vesica fellea
 FJ2818,Hepatovenous segment II,"Vena hepatica, segmentum II","Печёночная вена, сегмент II",veins-trunk,segmentum hepatovenosum II;печёночно-венозный сегмент II;hepatovenous segment II
 FJ2819,Hepatovenous segment III,"Vena hepatica, segmentum III","Печёночная вена, сегмент III",veins-trunk,segmentum hepatovenosum III;печёночно-венозный сегмент III;hepatovenous segment III
 FJ2820,Hepatovenous segment IV,"Vena hepatica, segmentum IV","Печёночная вена, сегмент IV",veins-trunk,segmentum hepatovenosum IV;печёночно-венозный сегмент IV;hepatovenous segment IV
@@ -1455,30 +1647,45 @@ FJ3067,Apical part of right apical segmental vein,"Vena apicalis lobi superioris
 FJ3068,Apical part of right apical segmental vein,"Vena apicalis lobi superioris, pars apicalis","Верхушечная вена верхней доли, верхушечная часть",veins-trunk,верхушечная часть верхушечной сегментарной вены
 FJ3069,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
 FJ3070,Right posterior segmental vein,Vena posterior lobi superioris,Задняя вена верхней доли,veins-trunk,задняя сегментарная вена
+FJ3071,Anterior superior tributary of right hepatic biliary tree,Ductus segmenti anterioris superioris,Проток переднего верхнего сегмента печени,digestive,ductus segmenti VIII;проток сегмента VIII;anterior superior tributary of right hepatic biliary tree (BodyParts3D label)
+FJ3072,Anterior inferior tributary of right hepatic biliary tree,Ductus segmenti anterioris inferioris,Проток переднего нижнего сегмента печени,digestive,ductus segmenti V;проток сегмента V;anterior inferior tributary of right hepatic biliary tree (BodyParts3D label)
 FJ3073,Anterior superior segmental branch of right portal vein,Ramus segmenti VIII venae portae hepatis,Ветвь воротной вены к сегменту VIII,veins-trunk,передневерхняя сегментарная ветвь правой ветви воротной вены
 FJ3074,Anterior inferior segmental branch of right portal vein,Ramus segmenti V venae portae hepatis,Ветвь воротной вены к сегменту V,veins-trunk,передненижняя сегментарная ветвь правой ветви воротной вены
 FJ3075,Anterior inferior segmental hepatic artery,Arteria segmenti anterioris inferioris hepatis,Артерия переднего нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента V печени
 FJ3076,Anterior superior segmental hepatic artery,Arteria segmenti anterioris superioris hepatis,Артерия переднего верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента VIII печени
 FJ3077,Caudate lobe branch of left hepatic artery,Ramus lobi caudati arteriae hepaticae sinistrae,Ветвь печёночной артерии к хвостатой доле,arteries-trunk,ramus lobi caudati;ветвь хвостатой доли;ветвь левой печёночной артерии к хвостатой доле
 FJ3078,Common hepatic artery,Arteria hepatica communis,Общая печёночная артерия,arteries-trunk,
+FJ3079,Common hepatic duct,Ductus hepaticus communis,Общий печёночный проток,digestive,ductus choledochus;общий жёлчный проток
+FJ3080,Cystic duct,Ductus cysticus,Пузырный проток,digestive,
 FJ3081,Hepatic artery proper,Arteria hepatica propria,Собственная печёночная артерия,arteries-trunk,
 FJ3082,Pre-hepatic portal vein,Vena portae hepatis,Воротная вена печени,veins-trunk,vena portae;воротная вена;предпечёночная часть воротной вены
 FJ3083,Anterior inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti V","Средняя печёночная вена, приток от сегмента V",veins-trunk,передненижний сегментарный приток средней печёночной вены
 FJ3084,Medial inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti IVb","Средняя печёночная вена, приток от сегмента IVb",veins-trunk,медиальный нижний сегментарный приток средней печёночной вены
 FJ3085,Medial inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti IVb","Средняя печёночная вена, приток от сегмента IVb",veins-trunk,медиальный нижний сегментарный приток средней печёночной вены
 FJ3086,Anterior inferior segmental tributary of middle hepatic vein,"Vena hepatica intermedia, affluens segmenti V","Средняя печёночная вена, приток от сегмента V",veins-trunk,передненижний сегментарный приток средней печёночной вены
+FJ3088,Lateral superior tributary of left hepatic biliary tree,Ductus segmenti lateralis superioris,Проток латерального верхнего сегмента печени,digestive,ductus segmenti II;проток сегмента II;lateral superior tributary of left hepatic biliary tree (BodyParts3D label)
+FJ3089,Lateral inferior tributary of left hepatic biliary tree,Ductus segmenti lateralis inferioris,Проток латерального нижнего сегмента печени,digestive,ductus segmenti III;проток сегмента III;lateral inferior tributary of left hepatic biliary tree (BodyParts3D label)
+FJ3090,Lateral superior tributary of left hepatic biliary tree,Ductus segmenti lateralis superioris,Проток латерального верхнего сегмента печени,digestive,ductus segmenti II;проток сегмента II;lateral superior tributary of left hepatic biliary tree (BodyParts3D label)
 FJ3091,Lateral superior segmental hepatic artery,Arteria segmenti lateralis superioris hepatis,Артерия латерального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента II печени
 FJ3092,Lateral inferior segmental hepatic artery,Arteria segmenti lateralis inferioris hepatis,Артерия латерального нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента III печени
 FJ3093,Lateral superior segmental hepatic artery,Arteria segmenti lateralis superioris hepatis,Артерия латерального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента II печени
+FJ3094,Left duct of caudate lobe of liver,Ductus lobi caudati sinister,Проток хвостатой доли,digestive,левый проток хвостатой доли;ductus segmenti I;проток сегмента I
 FJ3095,Trunk of left hepatic artery,"Arteria hepatica propria, ramus sinister","Собственная печёночная артерия, долевая ветвь",arteries-trunk,arteria hepatica sinistra;левая ветвь собственной печёночной артерии;левая печёночная артерия
+FJ3096,Left hepatic duct,Ductus hepaticus sinister,Печёночный проток,digestive,левый печёночный проток
 FJ3097,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
 FJ3098,Lateral superior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti II","Печёночная вена, приток от сегмента II",veins-trunk,латеральный верхний сегментарный приток левой печёночной вены
 FJ3099,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
 FJ3100,Lateral inferior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti III","Печёночная вена, приток от сегмента III",veins-trunk,латеральный нижний сегментарный приток левой печёночной вены
 FJ3101,Medial superior segmental tributary of left hepatic vein,"Vena hepatica sinistra, affluens segmenti IVa","Печёночная вена, приток от сегмента IVa",veins-trunk,медиальный верхний сегментарный приток левой печёночной вены
 FJ3102,Trunk of left portal vein,Truncus rami sinistri venae portae hepatis,Ствол ветви воротной вены печени,veins-trunk,ствол левой ветви воротной вены
+FJ3103,Medial inferior tributary of left hepatic biliary tree,Ductus segmenti medialis inferioris,Проток медиального нижнего сегмента печени,digestive,ductus segmenti IVb;проток сегмента IVb;medial inferior tributary of left hepatic biliary tree (BodyParts3D label)
+FJ3104,Medial superior tributary of left hepatic biliary tree,Ductus segmenti medialis superioris,Проток медиального верхнего сегмента печени,digestive,ductus segmenti IVa;проток сегмента IVa;medial superior tributary of left hepatic biliary tree (BodyParts3D label)
+FJ3105,Medial superior tributary of left hepatic biliary tree,Ductus segmenti medialis superioris,Проток медиального верхнего сегмента печени,digestive,ductus segmenti IVa;проток сегмента IVa;medial superior tributary of left hepatic biliary tree (BodyParts3D label)
 FJ3106,Medial inferior segmental hepatic artery,Arteria segmenti medialis inferioris hepatis,Артерия медиального нижнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента IVb печени
 FJ3107,Medial superior segmental hepatic artery,Arteria segmenti medialis superioris hepatis,Артерия медиального верхнего сегмента печени,arteries-trunk,сегментарная печёночная артерия;артерия сегмента IVa печени
+FJ3108,Posterior inferior tributary of right hepatic biliary tree,Ductus segmenti posterioris inferioris,Проток заднего нижнего сегмента печени,digestive,ductus segmenti VI;проток сегмента VI;posterior inferior tributary of right hepatic biliary tree (BodyParts3D label)
+FJ3109,Posterior superior tributary of right hepatic biliary tree,Ductus segmenti posterioris superioris,Проток заднего верхнего сегмента печени,digestive,ductus segmenti VII;проток сегмента VII;posterior superior tributary of right hepatic biliary tree (BodyParts3D label)
+FJ3110,Posterior superior tributary of right hepatic biliary tree,Ductus segmenti posterioris superioris,Проток заднего верхнего сегмента печени,digestive,ductus segmenti VII;проток сегмента VII;posterior superior tributary of right hepatic biliary tree (BodyParts3D label)
 FJ3111,Posterior inferior segmental branch of right portal vein,Ramus segmenti VI venae portae hepatis,Ветвь воротной вены к сегменту VI,veins-trunk,задненижняя сегментарная ветвь правой ветви воротной вены
 FJ3112,Posterior superior segmental branch of right portal vein,Ramus segmenti VII venae portae hepatis,Ветвь воротной вены к сегменту VII,veins-trunk,задневерхняя сегментарная ветвь правой ветви воротной вены
 FJ3113,Posterior superior segmental branch of right portal vein,Ramus segmenti VII venae portae hepatis,Ветвь воротной вены к сегменту VII,veins-trunk,задневерхняя сегментарная ветвь правой ветви воротной вены
@@ -1491,6 +1698,7 @@ FJ3119,Posterior superior segmental tributary of right hepatic vein,"Vena hepati
 FJ3120,Posterior inferior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VI","Печёночная вена, приток от сегмента VI",veins-trunk,задненижний сегментарный приток правой печёночной вены
 FJ3121,Anterior superior segmental tributary of right hepatic vein,"Vena hepatica dextra, affluens segmenti VIII","Печёночная вена, приток от сегмента VIII",veins-trunk,передневерхний сегментарный приток правой печёночной вены
 FJ3122,Trunk of right portal vein,Truncus rami dextri venae portae hepatis,Ствол ветви воротной вены печени,veins-trunk,ствол правой ветви воротной вены
+FJ3123,Right hepatic duct,Ductus hepaticus dexter,Печёночный проток,digestive,правый печёночный проток
 FJ3124,Caudate lobe branch of left portal vein,Ramus lobi caudati venae portae hepatis,Ветвь воротной вены к хвостатой доле,veins-trunk,rami lobi caudati;ветвь левой ветви воротной вены к хвостатой доле
 FJ3125,Lateral inferior segmental branch of left portal vein,Ramus segmenti III venae portae hepatis,Ветвь воротной вены к сегменту III,veins-trunk,латеральная нижняя сегментарная ветвь левой ветви воротной вены
 FJ3126,Lateral superior segmental branch of left portal vein,Ramus segmenti II venae portae hepatis,Ветвь воротной вены к сегменту II,veins-trunk,латеральная верхняя сегментарная ветвь левой ветви воротной вены
@@ -1739,6 +1947,9 @@ FJ3392,Right zygomatic bone,Os zygomaticum,Скуловая кость,skull-fac
 FJ3393,Sacrum,Os sacrum,Крестец,spine,крестцовая кость
 FJ3394,Sphenoid bone,Os sphenoidale,Клиновидная кость,skull-cerebral,
 FJ3395,Vomer,Vomer,Сошник,skull-facial,
+FJ3396,Mesentery of small intestine,Mesenterium,Брыжейка тонкой кишки,digestive,брыжейка
+FJ3397,Mesoappendix,Mesoappendix,Брыжейка червеобразного отростка,digestive,
+FJ3398,Transverse mesocolon,Mesocolon transversum,Брыжейка поперечной ободочной кишки,digestive,
 FJ3399,Ascending branch of left colic artery,"Arteria colica sinistra, ramus ascendens","Ободочная артерия, восходящая ветвь",arteries-trunk,восходящая ветвь левой ободочной артерии
 FJ3400,Left colic vein,Vena colica sinistra,Ободочная вена,veins-trunk,левая ободочная вена
 FJ3401,Anterior inferior pancreaticoduodenal artery,"Arteria pancreaticoduodenalis inferior, ramus anterior","Нижняя поджелудочно-двенадцатиперстная артерия, передняя ветвь",arteries-trunk,"передняя нижняя панкреатодуоденальная артерия;нижняя панкреатодуоденальная артерия, передняя ветвь"
