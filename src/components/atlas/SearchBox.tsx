@@ -2,10 +2,20 @@
 import { useMemo, useState } from "react";
 import { buildIndex, search } from "@/lib/atlas/search";
 import type { AtlasManifest } from "@/lib/atlas/types";
+import { searchLabels } from "@/lib/content/names";
+import type { ContentBundle } from "@/lib/content/types";
 
-export function SearchBox({ manifest, onPick }: { manifest: AtlasManifest; onPick(id: string): void }) {
+const SIDE_RU = { left: " (левая)", right: " (правая)", "": "" } as const;
+
+export function SearchBox({
+  manifest, content, onPick,
+}: { manifest: AtlasManifest; content: ContentBundle; onPick(id: string): void }) {
   const [q, setQ] = useState("");
-  const index = useMemo(() => buildIndex(manifest.parts.map((p) => ({ id: p.id, labels: [p.name] }))), [manifest]);
+  // ищем сразу по английскому, латыни, русскому и синонимам
+  const index = useMemo(
+    () => buildIndex(manifest.parts.map((p) => ({ id: p.id, labels: searchLabels(p.name, content.structures[p.id]) }))),
+    [manifest, content],
+  );
   const byId = useMemo(() => new Map(manifest.parts.map((p) => [p.id, p])), [manifest]);
   const results = useMemo(() => (q.trim().length < 2 ? [] : search(index, q, 12)), [index, q]);
   return (
@@ -19,16 +29,22 @@ export function SearchBox({ manifest, onPick }: { manifest: AtlasManifest; onPic
       />
       {results.length > 0 && (
         <ul className="mt-1 max-h-72 overflow-y-auto rounded-lg border bg-white shadow" role="listbox">
-          {results.map((id) => (
-            <li key={id}>
-              <button
-                className="w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-100"
-                onClick={() => { onPick(id); setQ(""); }}
-              >
-                {byId.get(id)?.name}
-              </button>
-            </li>
-          ))}
+          {results.map((id) => {
+            const part = byId.get(id);
+            const entry = content.structures[id];
+            const primary = entry?.ru ?? part?.name ?? id;
+            return (
+              <li key={id}>
+                <button
+                  className="w-full px-3 py-1.5 text-left text-sm hover:bg-neutral-100"
+                  onClick={() => { onPick(id); setQ(""); }}
+                >
+                  <span className="font-medium">{primary}{entry ? SIDE_RU[entry.side] : ""}</span>
+                  {entry?.la && <span className="ml-1 italic text-neutral-500">{entry.la}</span>}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

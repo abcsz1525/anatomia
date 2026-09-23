@@ -3,17 +3,19 @@ import { useCallback, useMemo, useState } from "react";
 import { useAtlasData } from "@/hooks/use-atlas-data";
 import { SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasPart } from "@/lib/atlas/types";
+import { displayNames } from "@/lib/content/names";
+import type { ContentBundle } from "@/lib/content/types";
 import { useAtlasStore } from "@/store/atlas-store";
 import { AtlasCanvas } from "./AtlasCanvas";
 import { LayerPanel } from "./LayerPanel";
 import { LoadingOverlay } from "./LoadingOverlay";
-import { PartCard, type PartNames } from "./PartCard";
+import { PartCard } from "./PartCard";
 import { SearchBox } from "./SearchBox";
 import { WebGLGate } from "./WebGLGate";
 
-// План 2 подменит это на данные structures.json (латынь и русский).
-function getPartNames(part: AtlasPart): PartNames {
-  return { en: part.name };
+// латынь/русский из structures.json; без записи остаётся только английское имя
+function getPartNames(part: AtlasPart, content: ContentBundle) {
+  return displayNames(part.name, content.structures[part.id], content.topics);
 }
 
 export function AtlasScreen() {
@@ -46,6 +48,7 @@ export function AtlasScreen() {
                   the hit's system (and unhide/un-isolate it) before flying the camera there */}
               <SearchBox
                 manifest={state.data.manifest}
+                content={state.data.content}
                 onPick={(id) => {
                   const part = partById.get(id);
                   if (part) reveal(id, part.system);
@@ -57,7 +60,7 @@ export function AtlasScreen() {
               {selected && (
                 <PartCard
                   partId={selected.id}
-                  names={getPartNames(selected)}
+                  names={getPartNames(selected, state.data.content)}
                   systemRu={SYSTEM_BY_ID[selected.system].ru}
                   isolated={isolatedPartId === selected.id}
                   onHide={() => hidePart(selected.id)}
