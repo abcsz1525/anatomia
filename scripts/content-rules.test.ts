@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SIDE_WORD_EXEMPT_IDS, buildBundle, validateContent, type CsvRow } from "./content-rules";
+import { buildBundle, validateContent, type CsvRow } from "./content-rules";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import type { Topic } from "@/lib/content/types";
 
@@ -60,18 +60,23 @@ describe("validateContent", () => {
     expect(msgs).toMatch(/FJ3.*side word/);
     expect(msgs).toMatch(/FJ3.*unknown topic nope/);
   });
-  it("exempts the semilunar cusps from the side-word rule (side is part of the name)", () => {
+  it("requires the side in ru exactly when la carries a Latin side word", () => {
     const cuspManifest: AtlasManifest = { ...manifest, parts: [...manifest.parts, part("FJ2435", "Anterior cusp of aortic valve", "cardiac")] };
     const cusp: CsvRow = { id: "FJ2435", en: "Anterior cusp of aortic valve", la: "Valva aortae, valvula semilunaris dextra",
       ru: "Клапан аорты, правая полулунная заслонка", topic: "other", aliases: "" };
     // ids are strings: "FJ2435" sorts between "FJ2" and "FJ3"
     const rows = [ok[0], ok[1], cusp, ...ok.slice(2)];
-    expect(SIDE_WORD_EXEMPT_IDS.has("FJ2435")).toBe(true);
     expect(validateContent(rows, cuspManifest, topics)).toEqual([]);
-    // a non-exempt id with the same word still fails
-    const notExempt = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Правая грудина" } : r));
-    const msgs = validateContent(notExempt, cuspManifest, topics).map((e) => e.message);
-    expect(msgs.join("\n")).toMatch(/FJ5.*side word/);
+    // la с латинской стороной, а ru без неё — ошибка
+    const noSide = rows.map((r) => (r.id === "FJ2435" ? { ...r, ru: "Клапан аорты, полулунная заслонка" } : r));
+    expect(validateContent(noSide, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
+    // косвенный падеж тоже засчитывается
+    const oblique = rows.map((r) => (r.id === "FJ2435" ? { ...r, la: "Cavitas ventriculi sinistri", ru: "Полость левого желудочка" } : r));
+    expect(validateContent(oblique, cuspManifest, topics)).toEqual([]);
+    // а без латинской стороны «Левая …» в ru по-прежнему запрещена
+    const invented = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Левая грудина" } : r));
+    const msgs = validateContent(invented, cuspManifest, topics).map((e) => e.message);
+    expect(msgs.join("\n")).toMatch(/FJ5.*side word in la\/ru/);
     expect(msgs.some((m) => m.includes("FJ2435"))).toBe(false);
   });
   it("rejects a container topic: rows belong to leaves only", () => {
@@ -97,6 +102,9 @@ describe("buildBundle", () => {
     const b = buildBundle(ok, manifest, topics);
     expect(b.structures.FJ1).toEqual({ la: "Femur", ru: "Бедренная кость", topic: "lower-limb-bones", side: "left", aliases: ["os femoris", "бедро"] });
     expect(b.structures.FJ5.side).toBe("");
+    // la называет сторону сама — бейдж не нужен
+    const named = ok.map((r) => (r.id === "FJ1" ? { ...r, la: "Femur sinistrum", ru: "Левая бедренная кость" } : r));
+    expect(buildBundle(named, manifest, topics).structures.FJ1.side).toBe("");
     expect(b.topics).toEqual(topics);
   });
 });

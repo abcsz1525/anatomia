@@ -2,6 +2,12 @@ import type { Side } from "./types";
 
 const SIDE_RE = /\b(left|right)\b/i;
 
+// Латинское название само несёт сторону (dexter/sinistra и падежные формы):
+// «Arteria gastrica sinistra», «Cavitas ventriculi dextri». В таких строках
+// сторона — часть анатомического термина, а не признак меша, поэтому бейдж
+// «(слева)/(справа)» не нужен: имя уже её называет.
+export const LATIN_SIDE = /\b(dext(er|ra|rum|ri)|sinist(er|ra|rum|ri))\b/i;
+
 export function detectSide(en: string): Side {
   const m = SIDE_RE.exec(en);
   if (!m) return "";
@@ -16,6 +22,10 @@ export function detectSide(en: string): Side {
 // The LAD's "First/Second/Third right anterior branch … of left coronary
 // artery" meshes: "right" there names the right ventricle they supply, and
 // detectSide takes the first match, so pin them to the left coronary side.
+//
+// Здесь остались только геометрические правки манифеста и случаи, где
+// сторону из en не видно в la: всё, что la называет прямо (dexter/sinistra),
+// теперь снимает правило LATIN_SIDE в sideFor.
 export const SIDE_OVERRIDES: Record<string, Side> = {
   FJ1469: "right",
   FJ1469M: "left",
@@ -24,18 +34,6 @@ export const SIDE_OVERRIDES: Record<string, Side> = {
   FJ2645: "left",
   FJ2646: "left",
   FJ2647: "left",
-  // "Posterior vein of left ventricle": "left" names the chamber, not the
-  // body side — the vein is unpaired, so no side.
-  FJ2701: "",
-  FJ2702: "",
-  FJ2706: "",
-  FJ2707: "",
-  FJ2708: "",
-  FJ2709: "",
-  FJ2710: "",
-  FJ2711: "",
-  FJ2712: "",
-  FJ2713: "",
   // "Right fibular vein" FJ2190 is actually the perforating veins of the
   // LEFT thigh (x > 0 in the model).
   FJ2190: "left",
@@ -50,33 +48,14 @@ export const SIDE_OVERRIDES: Record<string, Side> = {
   // ("Left middle pharyngeal constrictor") is actually the right one.
   FJ2742: "left",
   FJ2754: "right",
-  // Heart: "left/right" in these labels names the chamber or the cusp
-  // (ventriculus sinister, valvula semilunaris dextra), not a body side — the
-  // heart is one unpaired organ, so no side badge. Semilunar cusps (their
-  // ru carries the TA2 side in the name):
+  // Полулунные заслонки, у которых la не называет сторону (valvula semilunaris
+  // anterior/posterior), а en BodyParts3D называет: сердце непарное, бейджа нет.
   FJ2417: "",
-  FJ2426: "",
-  FJ2427: "",
   FJ2431: "",
-  FJ2434: "",
-  FJ2435: "",
-  // chamber cavities and walls:
-  FJ2422: "",
-  FJ2423: "",
-  FJ2424: "",
-  FJ2425: "",
-  FJ2438: "",
-  FJ2439: "",
-  // papillary muscles ("… of left/right ventricle"):
-  FJ2418: "",
-  FJ2419: "",
-  FJ2429: "",
-  FJ2430: "",
-  FJ2437: "",
 };
 
-export function sideFor(id: string, en: string): Side {
-  return SIDE_OVERRIDES[id] ?? detectSide(en);
+export function sideFor(id: string, en: string, la: string): Side {
+  return SIDE_OVERRIDES[id] ?? (LATIN_SIDE.test(la) ? "" : detectSide(en));
 }
 
 export function stripSide(en: string): string {

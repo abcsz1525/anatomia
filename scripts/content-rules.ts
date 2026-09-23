@@ -1,6 +1,6 @@
 import type { AtlasManifest } from "@/lib/atlas/types";
 import { SYSTEMS } from "@/lib/atlas/systems";
-import { sideFor } from "@/lib/content/side";
+import { LATIN_SIDE, sideFor } from "@/lib/content/side";
 import type { ContentBundle, StructureEntry, Topic } from "@/lib/content/types";
 
 export const COURSE_SYSTEMS = SYSTEMS.map((s) => s.id);
@@ -12,14 +12,10 @@ export interface RuleError { row?: number; id?: string; message: string }
 // прав(ая|ый|...) are actually detected.
 const SIDE_WORDS = /(?<![\p{L}\p{N}])(left|right|лев(?:ый|ая|ое|ые)|прав(?:ый|ая|ое|ые))(?![\p{L}\p{N}])/iu;
 
-// Semilunar cusps of the aortic and pulmonary valves: «правая/левая полулунная
-// заслонка» is the TA2/Сапин name of the cusp (valvula semilunaris dextra/
-// sinistra) — the side is part of the anatomical name, not the mesh side, so
-// rule 5 (no side words in la/ru) does not apply to these ids.
-export const SIDE_WORD_EXEMPT_IDS: ReadonlySet<string> = new Set([
-  "FJ2417", "FJ2427", "FJ2434", // valva trunci pulmonalis: anterior, sinistra, dextra
-  "FJ2426", "FJ2431", "FJ2435", // valva aortae: sinistra, posterior, dextra
-]);
+// Русское слово стороны в любом падеже: «левая венечная артерия», «задняя вена
+// левого желудочка». Нужен отдельный от SIDE_WORDS вариант, потому что правило 5
+// проверяет ru не на запрет, а на соответствие латыни.
+const RU_SIDE_WORDS = /(?<![\p{L}\p{N}])(лев(?:ый|ая|ое|ые|ого|ой|ую|ых|ым|ыми)|прав(?:ый|ая|ое|ые|ого|ой|ую|ых|ым|ыми))(?![\p{L}\p{N}])/iu;
 
 export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[]): RuleError[] {
   const errors: RuleError[] = [];
@@ -44,8 +40,13 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (part.name !== r.en) errors.push({ row, id: r.id, message: `${tag}: en mismatch (manifest: "${part.name}")` });
     if (!r.la.trim()) errors.push({ row, id: r.id, message: `${tag}: la is empty` });
     if (!r.ru.trim()) errors.push({ row, id: r.id, message: `${tag}: ru is empty` });
-    if (!SIDE_WORD_EXEMPT_IDS.has(r.id) && (SIDE_WORDS.test(r.la) || SIDE_WORDS.test(r.ru)))
-      errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
+    // правило 5: la — только латынь (без left/right и «левый/правый»);
+    // сторону в ru диктует латынь: есть dexter/sinistra в la — ru обязан её
+    // назвать, нет — ru не имеет права её выдумывать
+    if (SIDE_WORDS.test(r.la)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
+    else if (LATIN_SIDE.test(r.la)) {
+      if (!RU_SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side missing in ru` });
+    } else if (SIDE_WORDS.test(r.ru)) errors.push({ row, id: r.id, message: `${tag}: side word in la/ru` });
     if (!knownIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: unknown topic ${r.topic}` });
     else if (!leafIds.has(r.topic)) errors.push({ row, id: r.id, message: `${tag}: non-leaf topic ${r.topic}` });
     else {
@@ -78,7 +79,7 @@ export function buildBundle(rows: CsvRow[], manifest: AtlasManifest, topics: Top
       la: r.la.trim(),
       ru: r.ru.trim(),
       topic: r.topic,
-      side: sideFor(r.id, r.en),
+      side: sideFor(r.id, r.en, r.la),
       aliases: r.aliases.split(";").map((a) => a.trim()).filter(Boolean),
     };
   }
