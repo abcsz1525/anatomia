@@ -5,10 +5,16 @@ import type { ThreeEvent } from "@react-three/fiber";
 import { partGeometry } from "@/lib/atlas/parse-chunk";
 import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasPart, SystemId } from "@/lib/atlas/types";
-import { isPartVisible, useAtlasStore } from "@/store/atlas-store";
+import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-store";
 import type { AtlasData } from "@/hooks/use-atlas-data";
 
 const HIGHLIGHT = new THREE.Color("#ffb020");
+// цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
+const HIGHLIGHT_COLORS: Record<HighlightKind, THREE.Color> = {
+  target: new THREE.Color("#ffb020"),
+  correct: new THREE.Color("#2e9e5b"),
+  wrong: new THREE.Color("#d33a2c"),
+};
 
 interface SystemBatch {
   system: SystemId;
@@ -41,7 +47,16 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   return { system, mesh, parts, baseColor };
 }
 
-export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () => void }) {
+export function BodyMeshes({
+  data,
+  onReady,
+  onPick,
+}: {
+  data: AtlasData;
+  onReady?: () => void;
+  /** Клик по структуре: викторина перехватывает выбор, иначе обычное выделение. */
+  onPick?: (id: string) => void;
+}) {
   const batches = useMemo(() => {
     const bySystem = new Map<SystemId, AtlasPart[]>();
     for (const p of data.manifest.parts) {
@@ -73,6 +88,7 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
   const isolatedPartId = useAtlasStore((s) => s.isolatedPartId);
   const selectedPartId = useAtlasStore((s) => s.selectedPartId);
   const restrictTo = useAtlasStore((s) => s.restrictTo);
+  const highlights = useAtlasStore((s) => s.highlights);
   const select = useAtlasStore((s) => s.select);
 
   useEffect(() => {
@@ -83,12 +99,14 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
         const visible = isPartVisible(state, part.id, b.system);
         anyVisible ||= visible;
         b.mesh.setVisibleAt(i, visible);
-        b.mesh.setColorAt(i, part.id === selectedPartId ? HIGHLIGHT : b.baseColor);
+        // приоритет: подсветка викторины > выделение > цвет системы
+        const hl = highlights[part.id];
+        b.mesh.setColorAt(i, hl ? HIGHLIGHT_COLORS[hl] : part.id === selectedPartId ? HIGHLIGHT : b.baseColor);
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
     }
-  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo]);
+  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights]);
 
   const onClick = (b: SystemBatch) => (e: ThreeEvent<MouseEvent>) => {
     // R3F applies its drag threshold only to onPointerMissed; hit handlers must
@@ -97,7 +115,9 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
     e.stopPropagation();
     const batchId = e.batchId ?? e.intersections.find((i) => i.object === b.mesh)?.batchId;
     if (batchId === undefined || batchId === null) return;
-    select(b.parts[batchId].id);
+    const id = b.parts[batchId].id;
+    if (onPick) onPick(id);
+    else select(id);
   };
 
   return (

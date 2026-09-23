@@ -11,17 +11,34 @@ export type AtlasDataState =
   | { status: "error"; message: string; retry: () => void }
   | { status: "ready"; data: AtlasData };
 
+// модульный кэш: чанки геометрии весят десятки мегабайт, поэтому возврат на /atlas
+// (клиентская навигация) не должен грузить их заново
+let cache: AtlasData | null = null;
+
 export function useAtlasData(): AtlasDataState {
   const [attempt, setAttempt] = useState(0);
-  const [state, setState] = useState<AtlasDataState>({ status: "loading", loaded: 0, total: 0 });
-  const retry = useCallback(() => setAttempt((a) => a + 1), []);
+  const [state, setState] = useState<AtlasDataState>(() =>
+    cache ? { status: "ready", data: cache } : { status: "loading", loaded: 0, total: 0 },
+  );
+  const retry = useCallback(() => {
+    cache = null;
+    setAttempt((a) => a + 1);
+  }, []);
 
   useEffect(() => {
+    if (cache) {
+      // уже готово из кэша (useState-инициализатор) — сеть не трогаем; setState здесь
+      // нужен только на случай, если кэш заполнился уже после монтирования
+      const cached = cache;
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- no-op unless the cache appeared after mount
+      setState((s) => (s.status === "ready" && s.data === cached ? s : { status: "ready", data: cached }));
+      return;
+    }
     const controller = new AbortController();
     // после ready/error прогресс чанков больше не должен перетирать состояние,
     // иначе отвалившийся контент оставляет загрузчик висеть в "loading"
     let settled = false;
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- reset progress whenever a new load starts
+    // сбрасываем прогресс при каждом новом запуске загрузки (повтор после ошибки)
     setState({ status: "loading", loaded: 0, total: 0 });
     (async () => {
       try {
@@ -45,7 +62,8 @@ export function useAtlasData(): AtlasDataState {
           }),
         ]);
         settled = true;
-        setState({ status: "ready", data: { manifest, buffers, content } });
+        cache = { manifest, buffers, content };
+        setState({ status: "ready", data: cache });
       } catch (e) {
         settled = true;
         if (controller.signal.aborted) return;
