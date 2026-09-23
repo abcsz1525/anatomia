@@ -168,11 +168,11 @@ FJ3260,Left fibula,Fibula,Малоберцовая кость,lower-limb-bones,
 FJ3261,Left hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
 FJ3262,Left humerus,Humerus,Плечевая кость,upper-limb-bones,
 FJ3264,Left intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
-FJ3266,Sesamoid bone of left foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3266,Sesamoid bone of left foot,Os sesamoideum mediale,Медиальная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3267,Left lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
 FJ3268,Left lunate,Os lunatum,Полулунная кость,upper-limb-bones,
 FJ3269,Left maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
-FJ3270,Sesamoid bone of left foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3270,Sesamoid bone of left foot,Os sesamoideum laterale,Латеральная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3271,Left medial cuneiform bone,Os cuneiforme mediale,Медиальная клиновидная кость,lower-limb-bones,
 FJ3272,Left nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3273,Left palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
@@ -271,11 +271,11 @@ FJ3366,Right fibula,Fibula,Малоберцовая кость,lower-limb-bones,
 FJ3367,Right hamate,Os hamatum,Крючковидная кость,upper-limb-bones,
 FJ3368,Right humerus,Humerus,Плечевая кость,upper-limb-bones,
 FJ3370,Right intermediate cuneiform bone,Os cuneiforme intermedium,Промежуточная клиновидная кость,lower-limb-bones,
-FJ3372,Sesamoid bone of right foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3372,Sesamoid bone of right foot,Os sesamoideum mediale,Медиальная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3373,Right lateral cuneiform bone,Os cuneiforme laterale,Латеральная клиновидная кость,lower-limb-bones,
 FJ3374,Right lunate,Os lunatum,Полулунная кость,upper-limb-bones,
 FJ3375,Right maxilla,Maxilla,Верхняя челюсть,skull-facial,верхнечелюстная кость
-FJ3376,Sesamoid bone of right foot,Os sesamoideum pedis,Сесамовидная кость стопы,lower-limb-bones,сесамовидная кость
+FJ3376,Sesamoid bone of right foot,Os sesamoideum laterale,Латеральная сесамовидная кость,lower-limb-bones,сесамовидная кость стопы;os sesamoideum
 FJ3377,Right medial cuneiform bone,Os cuneiforme mediale,Медиальная клиновидная кость,lower-limb-bones,
 FJ3378,Right nasal bone,Os nasale,Носовая кость,skull-facial,
 FJ3379,Right palatine bone,Os palatinum,Нёбная кость,skull-facial,небная кость
