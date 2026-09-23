@@ -25,6 +25,8 @@ export interface AtlasState {
   reveal(id: string, system: SystemId): void;
   /** Камера к структуре БЕЗ выделения (викторина не должна подсказывать ответ карточкой). */
   flyTo(id: string): void;
+  /** Перекадрировать камеру на всё тело, не трогая ограничение/подсветки/выбор. */
+  reframe(): void;
   setRestrict(ids: string[] | null): void;
   setHighlights(map: Record<string, HighlightKind>): void;
   clearQuiz(): void;
@@ -87,6 +89,7 @@ export const useAtlasStore = create<AtlasState>((set) => ({
       };
     }),
   flyTo: (id) => set((s) => ({ focusPartId: id, focusNonce: s.focusNonce + 1 })),
+  reframe: () => set((s) => ({ resetNonce: s.resetNonce + 1 })),
   setRestrict: (ids) =>
     set({ restrictTo: ids ? Object.fromEntries(ids.map((i) => [i, true as const])) : null }),
   setHighlights: (map) => set({ highlights: { ...map } }),

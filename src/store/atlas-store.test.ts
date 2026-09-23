@@ -132,6 +132,20 @@ describe("atlas store", () => {
     expect(st.selectedPartId).toBeNull();
   });
 
+  it("reframe bumps resetNonce and keeps the quiz scene", () => {
+    const s = useAtlasStore.getState();
+    s.setRestrict(["FJ1", "FJ2"]);
+    s.setHighlights({ FJ1: "target" });
+    s.select("FJ1");
+    const nonce = useAtlasStore.getState().resetNonce;
+    s.reframe();
+    const st = useAtlasStore.getState();
+    expect(st.resetNonce).toBe(nonce + 1);
+    expect(st.restrictTo).toEqual({ FJ1: true, FJ2: true });
+    expect(st.highlights).toEqual({ FJ1: "target" });
+    expect(st.selectedPartId).toBe("FJ1");
+  });
+
   it("reset clears quiz state", () => {
     const s = useAtlasStore.getState();
     s.setRestrict(["FJ1"]);

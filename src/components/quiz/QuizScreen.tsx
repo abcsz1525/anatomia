@@ -37,6 +37,7 @@ type QuizState =
 type Action =
   | { type: "start"; topicId: string; mode: QuizMode; questions: Question[]; startedAt: string }
   | { type: "answer"; correct: boolean }
+  | { type: "offtopic" }
   | { type: "choose"; index: number; correct: boolean }
   | { type: "next"; now: string }
   | { type: "abort" };
@@ -79,6 +80,10 @@ function reducer(state: QuizState, action: Action): QuizState {
       }
       return { ...state, attempts, feedback: { kind: "wrong", left: FIND_ATTEMPTS - attempts } };
     }
+    // клик по скелету-контексту чужой темы: подсказка вместо попытки
+    case "offtopic":
+      if (state.phase !== "running" || isAnswered(state.feedback)) return state;
+      return { ...state, feedback: { kind: "offtopic" } };
     case "choose": {
       if (state.phase !== "running" || isAnswered(state.feedback)) return state;
       const q = state.questions[state.index];
@@ -120,6 +125,7 @@ export function QuizScreen() {
   const setRestrict = useAtlasStore((s) => s.setRestrict);
   const setHighlights = useAtlasStore((s) => s.setHighlights);
   const flyTo = useAtlasStore((s) => s.flyTo);
+  const reframe = useAtlasStore((s) => s.reframe);
   const clearQuiz = useAtlasStore((s) => s.clearQuiz);
 
   const bundle = atlas.status === "ready" ? atlas.data : null;
@@ -170,9 +176,11 @@ export function QuizScreen() {
       const visible = visibleIdsForTopic(content, manifest, content.topics, id);
       // setRestrict([]) спрятал бы всё; пустого списка здесь быть не может, но проверяем
       if (visible.length > 0) setRestrict(visible);
+      // кадр с прошлого вопроса/сессии не имеет отношения к новой теме
+      reframe();
       dispatch({ type: "start", topicId: id, mode: m, questions, startedAt: new Date().toISOString() });
     },
-    [bundle, clearQuiz, setRestrict],
+    [bundle, clearQuiz, setRestrict, reframe],
   );
 
   // подсветка/камера для вновь показанного вопроса; между вопросами подсветки сбрасываются
@@ -189,6 +197,14 @@ export function QuizScreen() {
     }
   }, [questions, index, setHighlights, flyTo]);
 
+  // ответами считаются только части самой темы: visibleIdsForTopic добавляет
+  // скелет как декорацию для мышц/связок, и клик по нему не должен стоить попытки
+  const runningTopicId = quiz.phase === "running" ? quiz.topicId : null;
+  const topicPartIds = useMemo(() => {
+    if (!bundle || !runningTopicId) return null;
+    return new Set(topicParts(bundle.content, bundle.manifest, runningTopicId).map((p) => p.id));
+  }, [bundle, runningTopicId]);
+
   // результат записывается ровно один раз на сессию
   const result = quiz.phase === "result" ? quiz.result : null;
   const recorded = useRef<SessionResult | null>(null);
@@ -196,14 +212,22 @@ export function QuizScreen() {
     if (!result || recorded.current === result) return;
     recorded.current = result;
     saveProgress(recordSession(loadProgress(), result));
-    clearQuiz();
-  }, [result, clearQuiz]);
+    // тема остаётся изолированной для разбора ошибок: гасим только подсветки
+    setHighlights({});
+    reframe();
+  }, [result, setHighlights, reframe]);
 
   const handlePick = useCallback(
     (clickedId: string) => {
       if (quiz.phase !== "running" || isAnswered(quiz.feedback)) return;
       const q = quiz.questions[quiz.index];
       if (q.kind !== "find") return;
+      // повторный клик по уже отвергнутой части — не новая попытка
+      if (useAtlasStore.getState().highlights[clickedId] === "wrong") return;
+      if (topicPartIds && !topicPartIds.has(clickedId)) {
+        dispatch({ type: "offtopic" });
+        return;
+      }
       const correct = checkFind(q, clickedId);
       if (correct) {
         setHighlights({ [clickedId]: "correct" });
@@ -216,7 +240,7 @@ export function QuizScreen() {
       }
       dispatch({ type: "answer", correct });
     },
-    [quiz, setHighlights, flyTo],
+    [quiz, topicPartIds, setHighlights, flyTo],
   );
 
   const handleChoose = useCallback(

@@ -1,10 +1,12 @@
 "use client";
+import { useEffect, useRef } from "react";
 import { sideLabel } from "@/lib/content/names";
 import type { Question } from "@/lib/quiz/types";
 
 /**
  * Состояние текущего вопроса в панели.
  * - "wrong" — только режим «найди»: попытки ещё есть, вопрос не закрыт.
+ * - "offtopic" — клик по части-декорации (скелет-контекст): попытка не тратится.
  * - "revealed" — попытки кончились, ответ показан на модели.
  * - "chosen" — режим «назови»: вариант выбран, вопрос закрыт.
  */
@@ -12,6 +14,7 @@ export type Feedback =
   | { kind: "idle" }
   | { kind: "correct" }
   | { kind: "wrong"; left: number }
+  | { kind: "offtopic" }
   | { kind: "revealed" }
   | { kind: "chosen"; index: number; correct: boolean };
 
@@ -34,6 +37,8 @@ function feedbackText(f: Feedback, q: Question): string {
       return "Верно";
     case "wrong":
       return `Не то, осталось попыток: ${f.left}`;
+    case "offtopic":
+      return "Это не относится к теме";
     case "revealed":
       return "Правильный ответ показан";
     case "chosen":
@@ -43,7 +48,7 @@ function feedbackText(f: Feedback, q: Question): string {
 
 function feedbackClass(f: Feedback): string {
   if (f.kind === "correct" || (f.kind === "chosen" && f.correct)) return "text-green-700";
-  if (f.kind === "idle") return "text-neutral-500";
+  if (f.kind === "idle" || f.kind === "offtopic") return "text-neutral-500";
   return "text-red-700";
 }
 
@@ -72,6 +77,12 @@ export function QuizRunner({
   onAbort(): void;
 }) {
   const answered = isAnswered(feedback);
+  // ответ закрыт — фокус уезжает на «Дальше», чтобы клавиатура вела дальше сама
+  const nextRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (answered) nextRef.current?.focus();
+  }, [answered]);
+
   return (
     <div className="flex h-full flex-col gap-3" data-testid="quiz-runner">
       <div className="flex items-baseline justify-between">
@@ -109,12 +120,13 @@ export function QuizRunner({
         )}
       </div>
 
-      <p className={`text-sm ${feedbackClass(feedback)}`} data-testid="quiz-feedback">
+      <p className={`text-sm ${feedbackClass(feedback)}`} data-testid="quiz-feedback" aria-live="polite">
         {feedbackText(feedback, question)}
       </p>
 
       {answered && (
         <button
+          ref={nextRef}
           type="button"
           data-testid="quiz-next"
           onClick={onNext}
