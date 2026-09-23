@@ -29,6 +29,17 @@ FJ1278,Right upper second secondary premolar tooth,Dens premolaris secundus supe
 FJ1279,Right upper central secondary incisor tooth,Dens incisivus medialis superior,Верхний медиальный резец,teeth,dens incisivus centralis;центральный резец
 FJ1280,Right upper lateral secondary incisor tooth,Dens incisivus lateralis superior,Верхний латеральный резец,teeth,
 FJ1281,Right upper secondary canine tooth,Dens caninus superior,Верхний клык,teeth,
+FJ1284,Check ligament of left lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
+FJ1292,Check ligament of left medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
+FJ1329,Trochlea of left superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
+FJ1334,Check ligament of right lateral rectus,Retinaculum musculi recti lateralis,Сдерживающая связка латеральной прямой мышцы,ligaments-head-neck,lacertus musculi recti lateralis
+FJ1335,Check ligament of right medial rectus,Retinaculum musculi recti medialis,Сдерживающая связка медиальной прямой мышцы,ligaments-head-neck,lacertus musculi recti medialis
+FJ1343,Tendon of right levator palpebrae superioris,Tendo musculi levatoris palpebrae superioris,"Сухожилие мышцы, поднимающей верхнее веко",ligaments-head-neck,
+FJ1380,Trochlea of right superior oblique,Trochlea musculi obliqui superioris,Блок верхней косой мышцы,ligaments-head-neck,trochlea;блок
+FJ1392,Interosseous membrane of right leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
+FJ1392M,Interosseous membrane of left leg,Membrana interossea cruris,Межкостная перепонка голени,ligaments-limbs,межкостная мембрана голени
+FJ1405,Right calcaneal tendon,Tendo calcaneus,Пяточное сухожилие,ligaments-limbs,ахиллово сухожилие;tendo Achillis
+FJ1405M,Left calcaneal tendon,Tendo calcaneus,Пяточное сухожилие,ligaments-limbs,ахиллово сухожилие;tendo Achillis
 FJ1409,Right fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
 FJ1409M,Left fibularis brevis,Musculus fibularis brevis,Короткая малоберцовая мышца,muscles-lower-limb,musculus peroneus brevis
 FJ1410,Right fibularis longus,Musculus fibularis longus,Длинная малоберцовая мышца,muscles-lower-limb,musculus peroneus longus
@@ -37,25 +48,54 @@ FJ1411,Right fibularis tertius,Musculus fibularis tertius,Третья мало�
 FJ1411M,Left fibularis tertius,Musculus fibularis tertius,Третья малоберцовая мышца,muscles-lower-limb,musculus peroneus tertius
 FJ1423,Right iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
 FJ1423M,Left iliotibial tract,Tractus iliotibialis,Подвздошно-большеберцовый тракт,ligaments-limbs,
+FJ1424,Right long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
+FJ1424M,Left long plantar ligament,Ligamentum plantare longum,Длинная подошвенная связка,ligaments-limbs,
+FJ1438,Right tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
+FJ1438M,Left tensor fasciae latae,Musculus tensor fasciae latae,Напрягатель широкой фасции,muscles-lower-limb,"мышца, напрягающая широкую фасцию"
 FJ1439,Right tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1439M,Left tibialis anterior,Musculus tibialis anterior,Передняя большеберцовая мышца,muscles-lower-limb,
 FJ1440,Right tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
 FJ1440M,Left tibialis posterior,Musculus tibialis posterior,Задняя большеберцовая мышца,muscles-lower-limb,
+FJ1448,Linea alba,Linea alba,Белая линия живота,ligaments-trunk,белая линия
+FJ1465,tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ1465M,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ1476,Interosseous membrane of right forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
+FJ1476M,Interosseous membrane of left forearm,Membrana interossea antebrachii,Межкостная перепонка предплечья,ligaments-limbs,межкостная мембрана предплечья
 FJ1504,Right subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
 FJ1504M,Left subscapularis,Musculus subscapularis,Подлопаточная мышца,muscles-upper-limb,
 FJ1532,Right levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
 FJ1532M,Left levator scapulae,Musculus levator scapulae,"Мышца, поднимающая лопатку",muscles-back,
+FJ1581,Right intermediate tendon,Tendo intermedius musculi digastrici,Промежуточное сухожилие двубрюшной мышцы,ligaments-head-neck,
 FJ2440,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2552,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
+FJ2553,Tendinous arch of levator ani,Arcus tendineus musculi levatoris ani,"Сухожильная дуга мышцы, поднимающей задний проход",ligaments-trunk,
 FJ2554,Right major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
 FJ2555,Left major alar cartilage,Cartilago alaris major,Большой хрящ крыла носа,larynx-cartilages,большой хрящ крыла
+FJ2744,Left pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2749,Pharyngeal raphe,Raphe pharyngis,Шов глотки,ligaments-head-neck,
+FJ2756,Right pterygomandibular raphe,Raphe pterygomandibularis,Крыловидно-нижнечелюстной шов,ligaments-head-neck,
+FJ2763,Left stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
+FJ2764,Right stylohyoid ligament,Ligamentum stylohyoideum,Шилоподъязычная связка,ligaments-head-neck,
 FJ2769,Cricoid cartilage,Cartilago cricoidea,Перстневидный хрящ,larynx-cartilages,
+FJ2771,Hyo-epiglottic ligament,Ligamentum hyoepiglotticum,Подъязычно-надгортанная связка,ligaments-head-neck,
 FJ2772,Hyoid bone,Os hyoideum,Подъязычная кость,skull-facial,подъязычная
 FJ2773,Left cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
 FJ2775,Left arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2776,Left corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
+FJ2777,Left conus elasticus,Conus elasticus,Эластический конус,ligaments-head-neck,membrana cricovocalis
+FJ2779,Left lateral thyrohyoid ligament,Ligamentum thyrohyoideum laterale,Латеральная щитоподъязычная связка,ligaments-head-neck,
+FJ2786,Left thyrohyoid membrane,Membrana thyrohyoidea,Щитоподъязычная мембрана,ligaments-head-neck,щитоподъязычная перепонка
+FJ2787,Left vocal ligament,Ligamentum vocale,Голосовая связка,ligaments-head-neck,
+FJ2789,Median cricothyroid ligament,Ligamentum cricothyroideum medianum,Срединная перстнещитовидная связка,ligaments-head-neck,ligamentum cricothyroideum;перстнещитовидная связка
+FJ2790,Median thyrohyoid ligament,Ligamentum thyrohyoideum medianum,Срединная щитоподъязычная связка,ligaments-head-neck,
 FJ2792,Right arytenoid cartilage,Cartilago arytenoidea,Черпаловидный хрящ,larynx-cartilages,
 FJ2793,Right corniculate cartilage,Cartilago corniculata,Рожковидный хрящ,larynx-cartilages,
+FJ2794,Right conus elasticus,Conus elasticus,Эластический конус,ligaments-head-neck,membrana cricovocalis
 FJ2795,Right cuneiform cartilage,Cartilago cuneiformis,Клиновидный хрящ,larynx-cartilages,клиновидный хрящ гортани
+FJ2797,Right lateral thyrohyoid ligament,Ligamentum thyrohyoideum laterale,Латеральная щитоподъязычная связка,ligaments-head-neck,
+FJ2804,Right thyrohyoid membrane,Membrana thyrohyoidea,Щитоподъязычная мембрана,ligaments-head-neck,щитоподъязычная перепонка
+FJ2805,Right vocal ligament,Ligamentum vocale,Голосовая связка,ligaments-head-neck,
+FJ2807,Thyro-epiglottic ligament,Ligamentum thyroepiglotticum,Щитонадгортанная связка,ligaments-head-neck,
 FJ2808,Thyroid cartilage,Cartilago thyroidea,Щитовидный хрящ,larynx-cartilages,cartilago thyreoidea
 FJ3152,Right hip bone,Os coxae,Тазовая кость,lower-limb-bones,os pelvicum
 FJ3153,Xiphoid process,Processus xiphoideus,Мечевидный отросток,thorax,мечевидный отросток грудины
