@@ -49,7 +49,10 @@ test("search focuses a structure and shows its card", async ({ page }) => {
 test("search in russian shows latin name", async ({ page }) => {
   await page.goto("/atlas");
   await expect(page.locator("[data-atlas-ready='true']")).toBeVisible({ timeout: 90_000 });
-  await page.getByLabel("Поиск структуры").fill("бедренная");
+  // "бедренная" alone now also matches the femoral artery/vein/nerve (all
+  // systems are translated), so search the full bone name to keep this a
+  // deterministic single match.
+  await page.getByLabel("Поиск структуры").fill("бедренная кость");
   await page.getByRole("listbox").getByRole("button").first().click();
   await expect(page.getByTestId("part-la")).toHaveText("Femur");
   await expect(page.getByTestId("part-ru")).toContainText("Бедренная кость");
