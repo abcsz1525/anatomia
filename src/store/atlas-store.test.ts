@@ -86,11 +86,58 @@ describe("atlas store", () => {
   });
 
   it("isPartVisible combines system, hidden and isolation", () => {
-    const base = { visibleSystems: useAtlasStore.getState().visibleSystems, hiddenParts: {}, isolatedPartId: null };
+    const base = {
+      visibleSystems: useAtlasStore.getState().visibleSystems,
+      hiddenParts: {},
+      isolatedPartId: null,
+      restrictTo: null,
+    };
     expect(isPartVisible(base, "FJ1", "skeletal")).toBe(true);
     expect(isPartVisible(base, "FJ1", "arterial")).toBe(false);
     expect(isPartVisible({ ...base, hiddenParts: { FJ1: true } }, "FJ1", "skeletal")).toBe(false);
     expect(isPartVisible({ ...base, isolatedPartId: "FJ2" }, "FJ1", "skeletal")).toBe(false);
     expect(isPartVisible({ ...base, isolatedPartId: "FJ2" }, "FJ2", "arterial")).toBe(true); // isolated part shows even if its system is off
+  });
+
+  it("restrictTo overrides systems, hidden and isolation", () => {
+    const s = useAtlasStore.getState();
+    s.hidePart("FJ1");
+    s.isolate("FJ9");
+    s.setSystemVisible("skeletal", false);
+    s.setRestrict(["FJ1", "FJ2"]);
+    const st = useAtlasStore.getState();
+    expect(isPartVisible(st, "FJ1", "skeletal")).toBe(true);
+    expect(isPartVisible(st, "FJ9", "skeletal")).toBe(false);
+    expect(isPartVisible(st, "FJ3", "muscular")).toBe(false);
+    s.setRestrict(null);
+    expect(isPartVisible(useAtlasStore.getState(), "FJ9", "skeletal")).toBe(true); // isolation again
+  });
+
+  it("flyTo moves camera without selecting; highlights and clearQuiz", () => {
+    const s = useAtlasStore.getState();
+    const n = useAtlasStore.getState().focusNonce;
+    s.select("FJ5");
+    s.flyTo("FJ7");
+    let st = useAtlasStore.getState();
+    expect(st.focusPartId).toBe("FJ7");
+    expect(st.focusNonce).toBe(n + 1);
+    expect(st.selectedPartId).toBe("FJ5");
+    s.setHighlights({ FJ7: "target", FJ8: "wrong" });
+    expect(useAtlasStore.getState().highlights.FJ8).toBe("wrong");
+    s.setRestrict(["FJ7"]);
+    s.clearQuiz();
+    st = useAtlasStore.getState();
+    expect(st.restrictTo).toBeNull();
+    expect(st.highlights).toEqual({});
+    expect(st.selectedPartId).toBeNull();
+  });
+
+  it("reset clears quiz state", () => {
+    const s = useAtlasStore.getState();
+    s.setRestrict(["FJ1"]);
+    s.setHighlights({ FJ1: "correct" });
+    s.reset();
+    expect(useAtlasStore.getState().restrictTo).toBeNull();
+    expect(useAtlasStore.getState().highlights).toEqual({});
   });
 });

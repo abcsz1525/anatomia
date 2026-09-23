@@ -72,10 +72,11 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
   const hiddenParts = useAtlasStore((s) => s.hiddenParts);
   const isolatedPartId = useAtlasStore((s) => s.isolatedPartId);
   const selectedPartId = useAtlasStore((s) => s.selectedPartId);
+  const restrictTo = useAtlasStore((s) => s.restrictTo);
   const select = useAtlasStore((s) => s.select);
 
   useEffect(() => {
-    const state = { visibleSystems, hiddenParts, isolatedPartId };
+    const state = { visibleSystems, hiddenParts, isolatedPartId, restrictTo };
     for (const b of batches) {
       let anyVisible = false;
       b.parts.forEach((part, i) => {
@@ -87,7 +88,7 @@ export function BodyMeshes({ data, onReady }: { data: AtlasData; onReady?: () =>
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
     }
-  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId]);
+  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo]);
 
   const onClick = (b: SystemBatch) => (e: ThreeEvent<MouseEvent>) => {
     // R3F applies its drag threshold only to onPointerMissed; hit handlers must
