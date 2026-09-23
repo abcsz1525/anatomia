@@ -24,6 +24,21 @@ export const SIDE_OVERRIDES: Record<string, Side> = {
   FJ2645: "left",
   FJ2646: "left",
   FJ2647: "left",
+  // "Posterior vein of left ventricle": "left" names the chamber, not the
+  // body side — the vein is unpaired, so no side.
+  FJ2701: "",
+  FJ2702: "",
+  FJ2706: "",
+  FJ2707: "",
+  FJ2708: "",
+  FJ2709: "",
+  FJ2710: "",
+  FJ2711: "",
+  FJ2712: "",
+  FJ2713: "",
+  // "Right fibular vein" FJ2190 is actually the perforating veins of the
+  // LEFT thigh (x > 0 in the model).
+  FJ2190: "left",
 };
 
 export function sideFor(id: string, en: string): Side {

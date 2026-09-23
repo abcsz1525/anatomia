@@ -25,6 +25,15 @@ describe("sideFor", () => {
     expect(detectSide(en)).toBe("right"); // first match wins without the override
     for (const id of ["FJ2632", "FJ2641", "FJ2645", "FJ2646", "FJ2647"]) expect(sideFor(id, en)).toBe("left");
   });
+  it("treats the unpaired 'Posterior vein of left ventricle' meshes as sideless", () => {
+    const en = "Posterior vein of left ventricle";
+    expect(detectSide(en)).toBe("left"); // 'left' names the chamber, not the side
+    for (const id of ["FJ2701", "FJ2702", "FJ2706", "FJ2707", "FJ2708", "FJ2709", "FJ2710", "FJ2711", "FJ2712", "FJ2713"])
+      expect(sideFor(id, en)).toBe("");
+  });
+  it("pins the mislabeled 'Right fibular vein' FJ2190 (left-thigh perforating veins) to the left", () => {
+    expect(sideFor("FJ2190", "Right fibular vein")).toBe("left");
+  });
   it("falls back to detectSide for ids without an override", () => {
     expect(sideFor("FJ1254", "Left femur")).toBe("left");
   });
