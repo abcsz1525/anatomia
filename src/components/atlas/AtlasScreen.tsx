@@ -29,6 +29,7 @@ export function AtlasScreen() {
   const hidePart = useAtlasStore((s) => s.hidePart);
   const isolate = useAtlasStore((s) => s.isolate);
   const reveal = useAtlasStore((s) => s.reveal);
+  const showOnlySystems = useAtlasStore((s) => s.showOnlySystems);
 
   const partById = useMemo(() => {
     if (state.status !== "ready") return new Map<string, AtlasPart>();
@@ -47,7 +48,12 @@ export function AtlasScreen() {
     if (!part) return;
     focused.current = focus;
     reveal(focus, part.system);
-  }, [focus, partById, reveal]);
+    // мышцы по умолчанию включены и закрывают кость: ссылка «Показать в атласе»
+    // должна приводить к видимой структуре, поэтому оставляем только скелет
+    // (ориентир) и её собственную систему — остальные слои возвращаются
+    // галочками в панели
+    showOnlySystems(["skeletal", part.system]);
+  }, [focus, partById, reveal, showOnlySystems]);
 
   return (
     <div className="flex h-full w-full" data-atlas-ready={ready ? "true" : "false"}>

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
+import { SYSTEMS } from "@/lib/atlas/systems";
 import { isPartVisible, useAtlasStore } from "./atlas-store";
 
 beforeEach(() => useAtlasStore.getState().reset());
@@ -130,6 +131,37 @@ describe("atlas store", () => {
     expect(st.restrictTo).toBeNull();
     expect(st.highlights).toEqual({});
     expect(st.selectedPartId).toBeNull();
+    // иначе эффект фокуса в CameraRig при следующем монтировании увёл бы
+    // камеру к последней цели викторины
+    expect(st.focusPartId).toBeNull();
+  });
+
+  it("clearQuiz drops the pending focus target", () => {
+    const s = useAtlasStore.getState();
+    s.flyTo("FJ7");
+    const nonce = useAtlasStore.getState().focusNonce;
+    expect(useAtlasStore.getState().focusPartId).toBe("FJ7");
+    s.clearQuiz();
+    const st = useAtlasStore.getState();
+    expect(st.focusPartId).toBeNull();
+    expect(st.focusNonce).toBe(nonce); // nonce не сбрасывается, гасится только цель
+  });
+
+  it("showOnlySystems leaves exactly the listed systems on", () => {
+    const s = useAtlasStore.getState();
+    expect(useAtlasStore.getState().visibleSystems.muscular).toBe(true);
+
+    s.showOnlySystems(["skeletal", "arterial"]);
+
+    const v = useAtlasStore.getState().visibleSystems;
+    expect(v.skeletal).toBe(true);
+    expect(v.arterial).toBe(true);
+    expect(v.muscular).toBe(false);
+    expect(v.connective).toBe(false);
+    expect(v.venous).toBe(false);
+    // все системы остаются в объекте, панель слоёв рисует их по SYSTEMS
+    expect(Object.keys(v).length).toBe(SYSTEMS.length);
+    expect(Object.values(v).filter(Boolean).length).toBe(2);
   });
 
   it("reframe bumps resetNonce and keeps the quiz scene", () => {

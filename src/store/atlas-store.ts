@@ -17,6 +17,8 @@ export interface AtlasState {
   highlights: Record<string, HighlightKind>;
   setSystemVisible(id: SystemId, visible: boolean): void;
   toggleSystem(id: SystemId): void;
+  /** Оставить включёнными ровно эти системы, остальные выключить. */
+  showOnlySystems(ids: SystemId[]): void;
   select(id: string | null): void;
   hidePart(id: string): void;
   isolate(id: string | null): void;
@@ -67,6 +69,15 @@ export const useAtlasStore = create<AtlasState>((set) => ({
     set((s) => ({ visibleSystems: { ...s.visibleSystems, [id]: visible } })),
   toggleSystem: (id) =>
     set((s) => ({ visibleSystems: { ...s.visibleSystems, [id]: !s.visibleSystems[id] } })),
+  showOnlySystems: (ids) => {
+    const on = new Set<SystemId>(ids);
+    set({
+      visibleSystems: Object.fromEntries(SYSTEMS.map((s) => [s.id, on.has(s.id)])) as Record<
+        SystemId,
+        boolean
+      >,
+    });
+  },
   select: (id) => set({ selectedPartId: id }),
   hidePart: (id) =>
     set((s) => ({
@@ -93,6 +104,9 @@ export const useAtlasStore = create<AtlasState>((set) => ({
   setRestrict: (ids) =>
     set({ restrictTo: ids ? Object.fromEntries(ids.map((i) => [i, true as const])) : null }),
   setHighlights: (map) => set({ highlights: { ...map } }),
-  clearQuiz: () => set({ restrictTo: null, highlights: {}, selectedPartId: null }),
+  // focusPartId тоже гасим: эффект фокуса в CameraRig срабатывает при монтировании
+  // (focusPartId && focusNonce > 0), и без этого атлас после теста улетал бы
+  // к последней цели викторины вместо общего кадра
+  clearQuiz: () => set({ restrictTo: null, highlights: {}, selectedPartId: null, focusPartId: null }),
   reset: () => set((s) => ({ ...initial(), resetNonce: s.resetNonce + 1 })),
 }));

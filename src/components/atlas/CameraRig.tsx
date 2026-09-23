@@ -24,12 +24,23 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     target.current = { position: lookAt.clone().add(dir.multiplyScalar(dist)), lookAt, t: 0 };
   };
 
-  // initial framing of the whole body
+  // initial framing of what is actually on screen: the whole body, or — during a
+  // quiz — only the restricted set, otherwise the topic stays a tiny silhouette
   // eslint-disable-next-line react-hooks/immutability -- the three.js camera is external mutable state
   useEffect(() => {
     // cancel any in-flight fly-to, otherwise it overrides this framing
     target.current = null;
-    const all = unionBounds(manifest.parts.map((p) => p.bounds));
+    // restrictTo is read via getState() instead of a subscription on purpose:
+    // the frame must change only on resetNonce (reframe()/reset()), never just
+    // because the restriction changed mid-session — setRestrict() runs while a
+    // question is still on screen (quiz start, abort, unmount) and re-framing
+    // there would yank the camera away from the structure the student is on.
+    // Hence the deps stay [manifest, camera, resetNonce].
+    const restrictTo = useAtlasStore.getState().restrictTo;
+    const framed = restrictTo ? manifest.parts.filter((p) => restrictTo[p.id]) : manifest.parts;
+    // an empty restriction would hide everything anyway; fall back to the body
+    // so unionBounds never throws
+    const all = unionBounds((framed.length > 0 ? framed : manifest.parts).map((p) => p.bounds));
     const c = boundsCenter(all);
     const dist = cameraDistance(boundsRadius(all), camera.fov, 1.1);
     camera.position.set(c[0], c[1], c[2] + dist);
