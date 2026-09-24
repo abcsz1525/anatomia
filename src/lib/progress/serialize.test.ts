@@ -12,6 +12,12 @@ function validProgress(): ProgressV1 {
       { topicId: "lower-limb-bones", mode: "find", finishedAt: "2026-09-23T10:00:00.000Z", correct: 1, total: 2 },
     ],
     activeDays: ["2026-09-22", "2026-09-23"],
+    cards: {
+      femur: { ease: 2.5, interval: 6, reps: 3, lapses: 0, due: "2026-09-30", lastAt: "2026-09-23T10:00:00.000Z" },
+    },
+    reviews: [
+      { finishedAt: "2026-09-23T10:00:00.000Z", topicId: "lower-limb-bones", reviewed: 5, again: 1 },
+    ],
   };
 }
 
@@ -61,6 +67,40 @@ describe("parseProgress", () => {
 
   it("returns null when activeDays entries are not YYYY-MM-DD strings", () => {
     const bad = { ...validProgress(), activeDays: ["2026-9-23"] };
+    expect(parseProgress(JSON.stringify(bad))).toBeNull();
+  });
+
+  it("parses old progress saved without cards/reviews, filling in empty defaults", () => {
+    const legacy = {
+      version: 1,
+      parts: validProgress().parts,
+      sessions: validProgress().sessions,
+      activeDays: validProgress().activeDays,
+    };
+    const parsed = parseProgress(JSON.stringify(legacy));
+    expect(parsed).toEqual({ ...legacy, cards: {}, reviews: [] });
+  });
+
+  it("returns null when cards entries are malformed", () => {
+    const bad = {
+      ...validProgress(),
+      cards: { femur: { ease: "2.5", interval: 6, reps: 3, lapses: 0, due: "2026-09-30", lastAt: "x" } },
+    };
+    expect(parseProgress(JSON.stringify(bad))).toBeNull();
+  });
+
+  it("returns null when a card's due is not a YYYY-MM-DD string", () => {
+    const bad = {
+      ...validProgress(),
+      cards: {
+        femur: { ease: 2.5, interval: 6, reps: 3, lapses: 0, due: "30-09-2026", lastAt: "2026-09-23T10:00:00.000Z" },
+      },
+    };
+    expect(parseProgress(JSON.stringify(bad))).toBeNull();
+  });
+
+  it("returns null when reviews entries are malformed", () => {
+    const bad = { ...validProgress(), reviews: [{ finishedAt: "2026-09-23T10:00:00.000Z", topicId: "t" }] };
     expect(parseProgress(JSON.stringify(bad))).toBeNull();
   });
 

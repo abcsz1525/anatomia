@@ -1,4 +1,5 @@
 import type { QuizPart } from "@/lib/quiz/types";
+import type { Card } from "@/lib/srs/types";
 import type { ProgressV1 } from "./types";
 
 const DAY_KEY_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
@@ -33,9 +34,9 @@ export function dayKey(iso: string): string {
  * нормализует выход за границы месяца/года. Невалидный ключ возвращается
  * без изменений.
  */
-export function addDays(dayKey: string, n: number): string {
-  const parts = parseDayKey(dayKey);
-  if (!parts) return dayKey;
+export function addDays(key: string, n: number): string {
+  const parts = parseDayKey(key);
+  if (!parts) return key;
   const { y, m, d } = parts;
   return formatDayKey(new Date(y, m - 1, d + n));
 }
@@ -59,6 +60,15 @@ export function topicMastery(p: ProgressV1, parts: QuizPart[]): { known: number;
   }
 
   return { known, total: idsByLa.size };
+}
+
+/** Считает освоенные карточки колоды: learned = число ключей деки с interval >= 7 (отсутствие состояния — не освоена). */
+export function cardMastery(p: ProgressV1, deck: Card[]): { learned: number; total: number } {
+  let learned = 0;
+  for (const card of deck) {
+    if ((p.cards[card.key]?.interval ?? 0) >= 7) learned += 1;
+  }
+  return { learned, total: deck.length };
 }
 
 /** Подряд идущие дни активности, заканчивающиеся today или today-1; иначе 0. */

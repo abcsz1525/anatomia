@@ -1,15 +1,36 @@
 import { describe, expect, it } from "vitest";
 import type { Side } from "@/lib/content/types";
 import type { QuizPart } from "@/lib/quiz/types";
+import type { Card, CardState } from "@/lib/srs/types";
 import type { ProgressV1 } from "./types";
-import { addDays, dayKey, streakDays, topicMastery } from "./stats";
+import { addDays, cardMastery, dayKey, streakDays, topicMastery } from "./stats";
 
 function part(id: string, la: string, side: Side = "left"): QuizPart {
   return { id, la, ru: la, side, system: "skeletal", topic: "lower-limb-bones" };
 }
 
 function progressWith(parts: ProgressV1["parts"]): ProgressV1 {
-  return { version: 1, parts, sessions: [], activeDays: [] };
+  return { version: 1, parts, sessions: [], activeDays: [], cards: {}, reviews: [] };
+}
+
+function progressWithCards(cards: Record<string, CardState>): ProgressV1 {
+  return { version: 1, parts: {}, sessions: [], activeDays: [], cards, reviews: [] };
+}
+
+function deckCard(key: string): Card {
+  return { key, la: key, ru: key, topic: "lower-limb-bones" };
+}
+
+function cardState(overrides: Partial<CardState> = {}): CardState {
+  return {
+    ease: 2.5,
+    interval: 7,
+    reps: 3,
+    lapses: 0,
+    due: "2026-09-30",
+    lastAt: "2026-09-23T10:00:00.000Z",
+    ...overrides,
+  };
 }
 
 describe("dayKey", () => {
@@ -133,5 +154,42 @@ describe("addDays", () => {
     // must still land on the correct calendar day regardless.
     expect(addDays("2026-03-07", 1)).toBe("2026-03-08");
     expect(addDays("2026-03-08", 1)).toBe("2026-03-09");
+  });
+});
+
+describe("cardMastery", () => {
+  it("counts total as the deck size", () => {
+    const deck = [deckCard("femur"), deckCard("tibia")];
+    expect(cardMastery(progressWithCards({}), deck).total).toBe(2);
+  });
+
+  it("counts a card as learned when interval is exactly 7", () => {
+    const deck = [deckCard("femur")];
+    const p = progressWithCards({ femur: cardState({ interval: 7 }) });
+    expect(cardMastery(p, deck).learned).toBe(1);
+  });
+
+  it("does not count a card as learned when interval is 6", () => {
+    const deck = [deckCard("femur")];
+    const p = progressWithCards({ femur: cardState({ interval: 6 }) });
+    expect(cardMastery(p, deck).learned).toBe(0);
+  });
+
+  it("counts a card as learned when interval is above 7", () => {
+    const deck = [deckCard("femur")];
+    const p = progressWithCards({ femur: cardState({ interval: 20 }) });
+    expect(cardMastery(p, deck).learned).toBe(1);
+  });
+
+  it("treats a missing card state as not learned", () => {
+    const deck = [deckCard("femur"), deckCard("tibia")];
+    const p = progressWithCards({ femur: cardState({ interval: 10 }) });
+    const result = cardMastery(p, deck);
+    expect(result.learned).toBe(1);
+    expect(result.total).toBe(2);
+  });
+
+  it("returns zero for an empty deck", () => {
+    expect(cardMastery(progressWithCards({}), [])).toEqual({ learned: 0, total: 0 });
   });
 });

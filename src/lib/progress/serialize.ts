@@ -1,4 +1,5 @@
 import type { QuizMode } from "@/lib/quiz/types";
+import type { CardState, ReviewSummary } from "@/lib/srs/types";
 import type { PartStat, ProgressV1, SessionSummary } from "./types";
 
 const DAY_RE = /^\d{4}-\d{2}-\d{2}$/;
@@ -43,6 +44,37 @@ function isActiveDaysList(v: unknown): v is string[] {
   return Array.isArray(v) && v.every((d) => typeof d === "string" && DAY_RE.test(d));
 }
 
+function isCardState(v: unknown): v is CardState {
+  return (
+    isRecord(v) &&
+    typeof v.ease === "number" &&
+    typeof v.interval === "number" &&
+    typeof v.reps === "number" &&
+    typeof v.lapses === "number" &&
+    typeof v.due === "string" &&
+    DAY_RE.test(v.due) &&
+    typeof v.lastAt === "string"
+  );
+}
+
+function isCardsMap(v: unknown): v is Record<string, CardState> {
+  return isRecord(v) && Object.values(v).every(isCardState);
+}
+
+function isReviewSummary(v: unknown): v is ReviewSummary {
+  return (
+    isRecord(v) &&
+    typeof v.finishedAt === "string" &&
+    typeof v.topicId === "string" &&
+    typeof v.reviewed === "number" &&
+    typeof v.again === "number"
+  );
+}
+
+function isReviewsList(v: unknown): v is ReviewSummary[] {
+  return Array.isArray(v) && v.every(isReviewSummary);
+}
+
 /** Возвращает ProgressV1 только если форма и версия валидны; иначе null. Никогда не бросает. */
 export function parseProgress(raw: string | null): ProgressV1 | null {
   if (raw === null || raw === "") return null;
@@ -60,11 +92,20 @@ export function parseProgress(raw: string | null): ProgressV1 | null {
   if (!isSessionsList(data.sessions)) return null;
   if (!isActiveDaysList(data.activeDays)) return null;
 
+  // cards/reviews are newer, optional-on-disk fields: absent -> default to
+  // empty, present-but-malformed -> reject (same policy as every other field).
+  if (data.cards !== undefined && !isCardsMap(data.cards)) return null;
+  if (data.reviews !== undefined && !isReviewsList(data.reviews)) return null;
+  const cards: Record<string, CardState> = data.cards === undefined ? {} : data.cards;
+  const reviews: ReviewSummary[] = data.reviews === undefined ? [] : data.reviews;
+
   return {
     version: 1,
     parts: data.parts,
     sessions: data.sessions,
     activeDays: data.activeDays,
+    cards,
+    reviews,
   };
 }
 

@@ -89,6 +89,24 @@ describe("review", () => {
     expect(state.lapses).toBe(2);
   });
 
+  it("carries a lowered ease from again through good and into the next easy", () => {
+    let state = review(undefined, "again", today, "2026-09-23T10:00:00.000Z");
+    expect(state.ease).toBe(2.3);
+
+    state = review(state, "good", today, "2026-09-23T10:00:00.000Z"); // reps 0 -> 1, interval 1
+    state = review(state, "good", today, "2026-09-23T10:00:00.000Z"); // reps 1 -> 2, interval 3
+    expect(state.ease).toBe(2.3);
+
+    // reps is now 2, so this good interval is round(prevInterval * ease) = round(3 * 2.3) = 7:
+    // the lowered ease from "again" (not the default 2.5) feeds the calculation.
+    state = review(state, "good", today, "2026-09-23T10:00:00.000Z");
+    expect(state.ease).toBe(2.3);
+    expect(state.interval).toBe(7);
+
+    state = review(state, "easy", today, "2026-09-23T10:00:00.000Z");
+    expect(state.ease).toBeCloseTo(2.45, 10); // 2.3 + 0.15 (floating point, not exactly toBe)
+  });
+
   it("easy multiplies the good interval by 1.3", () => {
     let state = review(undefined, "good", today, "2026-09-23T10:00:00.000Z"); // interval 1, reps 1
     state = review(state, "good", today, "2026-09-23T10:00:00.000Z"); // interval 3, reps 2
