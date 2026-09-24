@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Side } from "@/lib/content/types";
 import type { QuizPart } from "@/lib/quiz/types";
 import type { ProgressV1 } from "./types";
-import { dayKey, streakDays, topicMastery } from "./stats";
+import { addDays, dayKey, streakDays, topicMastery } from "./stats";
 
 function part(id: string, la: string, side: Side = "left"): QuizPart {
   return { id, la, ru: la, side, system: "skeletal", topic: "lower-limb-bones" };
@@ -96,5 +96,42 @@ describe("streakDays", () => {
 
   it("counts a streak across a year boundary", () => {
     expect(streakDays(["2025-12-31", "2026-01-01"], "2026-01-01")).toBe(2);
+  });
+});
+
+describe("addDays", () => {
+  it("adds days within a month", () => {
+    expect(addDays("2026-09-20", 3)).toBe("2026-09-23");
+  });
+
+  it("rolls over a month boundary", () => {
+    expect(addDays("2026-09-28", 5)).toBe("2026-10-03");
+  });
+
+  it("rolls over a year boundary", () => {
+    expect(addDays("2025-12-30", 5)).toBe("2026-01-04");
+  });
+
+  it("supports negative n", () => {
+    expect(addDays("2026-09-01", -1)).toBe("2026-08-31");
+  });
+
+  it("supports negative n across a year boundary", () => {
+    expect(addDays("2026-01-01", -1)).toBe("2025-12-31");
+  });
+
+  it("returns 0 days unchanged", () => {
+    expect(addDays("2026-09-23", 0)).toBe("2026-09-23");
+  });
+
+  it("returns an invalid key unchanged", () => {
+    expect(addDays("not-a-date", 3)).toBe("not-a-date");
+  });
+
+  it("is DST-safe via the local-date constructor idiom", () => {
+    // 2026-03-08 is the US DST spring-forward day; local-date arithmetic
+    // must still land on the correct calendar day regardless.
+    expect(addDays("2026-03-07", 1)).toBe("2026-03-08");
+    expect(addDays("2026-03-08", 1)).toBe("2026-03-09");
   });
 });

@@ -27,6 +27,19 @@ export function dayKey(iso: string): string {
   return formatDayKey(new Date(iso));
 }
 
+/**
+ * Добавляет n (местных) календарных дней к dayKey. Использует тот же
+ * DST-safe идиому new Date(y, m-1, d+n), что и streakDays: JS сам
+ * нормализует выход за границы месяца/года. Невалидный ключ возвращается
+ * без изменений.
+ */
+export function addDays(dayKey: string, n: number): string {
+  const parts = parseDayKey(dayKey);
+  if (!parts) return dayKey;
+  const { y, m, d } = parts;
+  return formatDayKey(new Date(y, m - 1, d + n));
+}
+
 /** Считает освоенные структуры: known = distinct la с суммой correct >= 2 по всем id этой la. */
 export function topicMastery(p: ProgressV1, parts: QuizPart[]): { known: number; total: number } {
   const idsByLa = new Map<string, string[]>();
