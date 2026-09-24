@@ -37,7 +37,7 @@ export function CardsDone({
             type="button"
             data-testid="cards-more"
             onClick={onMore}
-            className="rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white"
+            className="min-h-11 rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white md:min-h-0"
           >
             Ещё
           </button>
@@ -46,7 +46,7 @@ export function CardsDone({
           type="button"
           data-testid="cards-other-topic"
           onClick={onOther}
-          className="rounded border px-4 py-2 text-sm hover:bg-neutral-100"
+          className="min-h-11 rounded border px-4 py-2 text-sm hover:bg-neutral-100 md:min-h-0"
         >
           Другая тема
         </button>

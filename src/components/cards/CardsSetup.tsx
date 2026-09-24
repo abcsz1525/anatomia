@@ -53,7 +53,7 @@ export function CardsSetup({
       <div className="min-h-0 flex-1 overflow-y-auto" role="radiogroup" aria-label="Тема">
         <label
           data-testid="cards-topic"
-          className="mb-3 flex cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100"
+          className="mb-3 flex min-h-11 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100 md:min-h-0"
         >
           <input
             type="radio"
@@ -72,7 +72,7 @@ export function CardsSetup({
               <label
                 key={topic.id}
                 data-testid="cards-topic"
-                className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100"
+                className="flex min-h-11 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100 md:min-h-0"
               >
                 <input
                   type="radio"
@@ -94,7 +94,7 @@ export function CardsSetup({
           <label
             key={d.id}
             data-testid="cards-direction"
-            className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100"
+            className="flex min-h-11 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100 md:min-h-0"
           >
             <input
               type="radio"
@@ -129,7 +129,7 @@ export function CardsSetup({
           data-testid="cards-start"
           onClick={onStart}
           disabled={due + fresh === 0}
-          className="w-full rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white disabled:bg-neutral-300"
+          className="min-h-12 w-full rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white disabled:bg-neutral-300 md:min-h-0"
         >
           Начать
         </button>

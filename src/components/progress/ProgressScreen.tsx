@@ -199,42 +199,45 @@ export function ProgressScreen() {
       {data.status === "error" && (
         <p className="text-sm text-red-700">Не удалось загрузить список тем. Обновите страницу.</p>
       )}
+      {/* узкий экран: таблица не растягивает страницу, а прокручивается сама */}
       {data.status === "ready" && (
-        <table className="w-full border-collapse text-sm" data-testid="progress-table">
-          <caption className="sr-only">Освоенные понятия, выученные карточки и число сессий по темам</caption>
-          <thead>
-            <tr className="border-b text-left text-xs uppercase tracking-wide text-neutral-500">
-              <th scope="col" className="py-2 pr-4 font-semibold">Тема</th>
-              <th scope="col" className="py-2 pr-4 font-semibold">Освоено</th>
-              <th scope="col" className="py-2 font-semibold">Сессии</th>
-            </tr>
-          </thead>
-          {groups.map((group) => (
-            <tbody key={group.id}>
-              <tr>
-                <th
-                  scope="colgroup"
-                  colSpan={3}
-                  className="pt-4 pb-1 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500"
-                >
-                  {group.ru}
-                </th>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[36rem] border-collapse text-sm" data-testid="progress-table">
+            <caption className="sr-only">Освоенные понятия, выученные карточки и число сессий по темам</caption>
+            <thead>
+              <tr className="border-b text-left text-xs uppercase tracking-wide text-neutral-500">
+                <th scope="col" className="py-2 pr-4 font-semibold">Тема</th>
+                <th scope="col" className="py-2 pr-4 font-semibold">Освоено</th>
+                <th scope="col" className="py-2 font-semibold">Сессии</th>
               </tr>
-              {group.rows.map((row) => (
-                <tr key={row.id} data-testid="progress-topic" data-topic={row.id} className="border-b">
-                  <th scope="row" className="py-2 pr-4 text-left font-normal">{row.ru}</th>
-                  <td className="py-2 pr-4 whitespace-nowrap text-neutral-600">
-                    <span className="block">освоено {row.known} из {row.total} понятий</span>
-                    <span className="block text-xs text-neutral-500" data-testid="topic-cards">
-                      Карточки: выучено {row.learned} из {row.cards}
-                    </span>
-                  </td>
-                  <td className="py-2 whitespace-nowrap text-neutral-600">{sessionsLabel(row.sessions)}</td>
+            </thead>
+            {groups.map((group) => (
+              <tbody key={group.id}>
+                <tr>
+                  <th
+                    scope="colgroup"
+                    colSpan={3}
+                    className="pt-4 pb-1 text-left text-xs font-semibold uppercase tracking-wide text-neutral-500"
+                  >
+                    {group.ru}
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          ))}
-        </table>
+                {group.rows.map((row) => (
+                  <tr key={row.id} data-testid="progress-topic" data-topic={row.id} className="border-b">
+                    <th scope="row" className="py-2 pr-4 text-left font-normal">{row.ru}</th>
+                    <td className="py-2 pr-4 whitespace-nowrap text-neutral-600">
+                      <span className="block">освоено {row.known} из {row.total} понятий</span>
+                      <span className="block text-xs text-neutral-500" data-testid="topic-cards">
+                        Карточки: выучено {row.learned} из {row.cards}
+                      </span>
+                    </td>
+                    <td className="py-2 whitespace-nowrap text-neutral-600">{sessionsLabel(row.sessions)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            ))}
+          </table>
+        </div>
       )}
 
       <div className="flex flex-wrap items-center gap-2 border-t pt-4">
@@ -242,7 +245,7 @@ export function ProgressScreen() {
           type="button"
           data-testid="progress-export"
           onClick={handleExport}
-          className="rounded border px-3 py-2 text-sm hover:bg-neutral-100"
+          className="min-h-11 rounded border px-3 py-2 text-sm hover:bg-neutral-100 md:min-h-0"
         >
           Экспорт
         </button>
@@ -253,7 +256,7 @@ export function ProgressScreen() {
             setMessage(null);
             fileRef.current?.click();
           }}
-          className="rounded border px-3 py-2 text-sm hover:bg-neutral-100"
+          className="min-h-11 rounded border px-3 py-2 text-sm hover:bg-neutral-100 md:min-h-0"
         >
           Импорт
         </button>
@@ -279,7 +282,7 @@ export function ProgressScreen() {
               type="button"
               data-testid="progress-clear-confirm"
               onClick={handleClear}
-              className="rounded bg-red-700 px-3 py-2 text-sm font-medium text-white hover:bg-red-800"
+              className="min-h-11 rounded bg-red-700 px-3 py-2 text-sm font-medium text-white hover:bg-red-800 md:min-h-0"
             >
               Да, очистить
             </button>
@@ -287,7 +290,7 @@ export function ProgressScreen() {
               type="button"
               data-testid="progress-clear-cancel"
               onClick={() => setConfirming(false)}
-              className="rounded border px-3 py-2 text-sm hover:bg-neutral-100"
+              className="min-h-11 rounded border px-3 py-2 text-sm hover:bg-neutral-100 md:min-h-0"
             >
               Отмена
             </button>
@@ -300,7 +303,7 @@ export function ProgressScreen() {
               setMessage(null);
               setConfirming(true);
             }}
-            className="rounded border px-3 py-2 text-sm text-red-700 hover:bg-red-50"
+            className="min-h-11 rounded border px-3 py-2 text-sm text-red-700 hover:bg-red-50 md:min-h-0"
           >
             Очистить прогресс
           </button>

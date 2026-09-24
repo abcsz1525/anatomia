@@ -2,7 +2,7 @@ export const metadata = { title: "Об источниках — Анатомия
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-2xl space-y-6 p-6 text-sm leading-relaxed">
+    <main className="mx-auto max-w-2xl space-y-6 px-4 py-6 text-sm leading-relaxed md:px-6">
       <h1 className="text-2xl font-semibold">Об источниках</h1>
       <section className="space-y-2">
         <h2 className="text-lg font-semibold">3D-модель</h2>

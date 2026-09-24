@@ -68,7 +68,7 @@ export function CardReview({
 
       {revealed && (
         <div className="rounded-lg border bg-neutral-50 px-4 py-4 text-center" data-testid="card-back">
-          <p className={`text-xl ${frontLatin ? "" : "italic"}`}>{back}</p>
+          <p className={`text-2xl md:text-xl ${frontLatin ? "" : "italic"}`}>{back}</p>
           {topicRu && <p className="mt-1 text-xs text-neutral-500">{topicRu}</p>}
         </div>
       )}
@@ -81,7 +81,7 @@ export function CardReview({
               type="button"
               data-testid={`card-grade-${g.id}`}
               onClick={() => onGrade(g.id)}
-              className={`rounded border px-2 py-2 text-sm ${g.className}`}
+              className={`min-h-14 rounded border px-2 py-2 text-sm md:min-h-0 ${g.className}`}
             >
               <span className="block font-medium">{g.ru}</span>
               <span className="block text-xs text-neutral-500">через {intervals[g.id]} д</span>

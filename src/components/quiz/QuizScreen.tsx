@@ -4,6 +4,7 @@ import { AtlasCanvas } from "@/components/atlas/AtlasCanvas";
 import { LoadingOverlay } from "@/components/atlas/LoadingOverlay";
 import { WebGLGate } from "@/components/atlas/WebGLGate";
 import { useAtlasData } from "@/hooks/use-atlas-data";
+import { useIsMobile } from "@/hooks/use-media-query";
 import { recordSession } from "@/lib/progress/record";
 import { loadProgress, saveProgress } from "@/lib/progress/storage";
 import { acceptIds, checkFind, checkName } from "@/lib/quiz/check";
@@ -35,6 +36,11 @@ export function QuizScreen() {
   const [quiz, dispatch] = useReducer(reducer, initialQuizState);
   const [topicId, setTopicId] = useState<string | null>(null);
   const [mode, setMode] = useState<QuizMode>("find");
+  const isMobile = useIsMobile();
+  // на мобайле панель стоит под моделью и занимает 45dvh; в фазе вопросов её
+  // можно свернуть до строки с вопросом, откликом и «Дальше», чтобы видеть модель
+  const [panelCollapsed, setPanelCollapsed] = useState(false);
+  const togglePanel = useCallback(() => setPanelCollapsed((v) => !v), []);
 
   const setRestrict = useAtlasStore((s) => s.setRestrict);
   const setHighlights = useAtlasStore((s) => s.setHighlights);
@@ -187,9 +193,17 @@ export function QuizScreen() {
     dispatch({ type: "abort" });
   }, [clearQuiz, reframe]);
 
+  // свёрнутая панель существует только на мобайле и только с вопросами на экране
+  const collapsed = isMobile && quiz.phase === "running" && panelCollapsed;
+
   return (
-    <div className="flex h-full w-full" data-atlas-ready={ready ? "true" : "false"}>
-      <aside className="flex w-80 shrink-0 flex-col overflow-hidden border-r bg-white p-4 text-sm" aria-label="Тест">
+    <div className="flex h-full w-full flex-col md:flex-row" data-atlas-ready={ready ? "true" : "false"}>
+      <aside
+        className={`order-2 flex w-full shrink-0 flex-col border-t bg-white text-sm md:order-1 md:h-auto md:w-80 md:overflow-hidden md:border-t-0 md:border-r ${
+          collapsed ? "h-14 overflow-hidden px-3 py-1" : "h-[45dvh] overflow-y-auto p-4"
+        }`}
+        aria-label="Тест"
+      >
         {!bundle ? (
           <p className="text-neutral-500">Загружаем модель…</p>
         ) : quiz.phase === "setup" ? (
@@ -210,6 +224,8 @@ export function QuizScreen() {
             onChoose={handleChoose}
             onNext={handleNext}
             onAbort={handleAbort}
+            collapsed={collapsed}
+            onToggle={isMobile ? togglePanel : undefined}
           />
         ) : (
           <QuizResult
@@ -219,7 +235,7 @@ export function QuizScreen() {
           />
         )}
       </aside>
-      <div className="relative flex-1">
+      <div className="relative order-1 min-h-0 flex-1 md:order-2">
         <WebGLGate>
           {atlas.status === "loading" && <LoadingOverlay loaded={atlas.loaded} total={atlas.total} />}
           {atlas.status === "error" && (

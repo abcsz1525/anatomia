@@ -46,7 +46,7 @@ export function QuizSetup({
               <label
                 key={topic.id}
                 data-testid="quiz-topic"
-                className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100"
+                className="flex min-h-11 cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-neutral-100 md:min-h-0"
               >
                 <input
                   type="radio"
@@ -65,7 +65,10 @@ export function QuizSetup({
 
       <div role="radiogroup" aria-label="Режим" className="space-y-1 border-t pt-3">
         {MODES.map((m) => (
-          <label key={m.id} className="flex cursor-pointer items-start gap-2 rounded px-1 py-1 hover:bg-neutral-100">
+          <label
+            key={m.id}
+            className="flex min-h-11 cursor-pointer items-start gap-2 rounded px-1 py-1 hover:bg-neutral-100 md:min-h-0"
+          >
             <input
               type="radio"
               name="quiz-mode"
@@ -91,7 +94,7 @@ export function QuizSetup({
         data-testid="quiz-start"
         onClick={onStart}
         disabled={!canStart}
-        className="rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white disabled:bg-neutral-300"
+        className="min-h-12 w-full rounded bg-neutral-900 px-4 py-2 text-sm font-medium text-white disabled:bg-neutral-300 md:min-h-0 md:w-auto"
       >
         Начать
       </button>
