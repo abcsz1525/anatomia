@@ -54,6 +54,11 @@ describe("buildQueue", () => {
     expect(buildQueue(deck, {}, today, 0)).toEqual([]);
   });
 
+  it("takes no new cards when newLimit is negative", () => {
+    const deck = [card("n1"), card("n2")];
+    expect(buildQueue(deck, {}, today, -5)).toEqual([]);
+  });
+
   it("caps the whole result at max (default 50)", () => {
     const deck = Array.from({ length: 60 }, (_, i) => card(`n${i}`));
     expect(buildQueue(deck, {}, today, 60)).toHaveLength(50);

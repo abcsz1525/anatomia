@@ -10,6 +10,11 @@ export function cardKey(la: string): string {
   return la.trim().toLowerCase();
 }
 
+/** Округляет до 2 знаков после запятой — иначе повторные +/-0.1..0.2 копят float-мусор (2.4499999999999997) в сохранённом JSON. */
+function round2(x: number): number {
+  return Math.round(x * 100) / 100;
+}
+
 /**
  * Упрощённый SM-2: один шаг повторения карточки.
  * today — dayKey дня повторения (используется для вычисления due).
@@ -29,7 +34,7 @@ export function review(
   if (grade === "again") {
     const interval = 1;
     return {
-      ease: Math.max(MIN_EASE, ease - 0.2),
+      ease: Math.max(MIN_EASE, round2(ease - 0.2)),
       interval,
       reps: 0,
       lapses: lapses + 1,
@@ -54,7 +59,7 @@ export function review(
   // easy
   const interval = Math.round(goodInterval * 1.3);
   return {
-    ease: Math.min(MAX_EASE, ease + 0.15),
+    ease: Math.min(MAX_EASE, round2(ease + 0.15)),
     interval,
     reps: reps + 1,
     lapses,

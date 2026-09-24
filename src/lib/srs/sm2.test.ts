@@ -104,7 +104,7 @@ describe("review", () => {
     expect(state.interval).toBe(7);
 
     state = review(state, "easy", today, "2026-09-23T10:00:00.000Z");
-    expect(state.ease).toBeCloseTo(2.45, 10); // 2.3 + 0.15 (floating point, not exactly toBe)
+    expect(state.ease).toBe(2.45); // 2.3 + 0.15, rounded to 2 decimals
   });
 
   it("easy multiplies the good interval by 1.3", () => {

@@ -89,6 +89,16 @@ describe("parseProgress", () => {
     expect(parseProgress(JSON.stringify(bad))).toBeNull();
   });
 
+  it("returns null when cards is null", () => {
+    const bad = { ...validProgress(), cards: null };
+    expect(parseProgress(JSON.stringify(bad))).toBeNull();
+  });
+
+  it("returns null when cards is an array", () => {
+    const bad = { ...validProgress(), cards: [] };
+    expect(parseProgress(JSON.stringify(bad))).toBeNull();
+  });
+
   it("returns null when a card's due is not a YYYY-MM-DD string", () => {
     const bad = {
       ...validProgress(),

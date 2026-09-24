@@ -33,12 +33,9 @@ export function recordSession(p: ProgressV1, r: SessionResult): ProgressV1 {
     },
   ];
 
-  const day = dayKey(r.finishedAt);
-  const activeDays = p.activeDays.includes(day)
-    ? [...p.activeDays]
-    : [...p.activeDays, day].sort();
+  const activeDays = activeDaysFrom(sessions, p.reviews);
 
-  return { version: 1, parts, sessions, activeDays, cards: p.cards, reviews: p.reviews };
+  return { version: 1, parts, sessions, activeDays, cards: { ...p.cards }, reviews: [...p.reviews] };
 }
 
 /**
