@@ -1,6 +1,6 @@
 import { DEFAULT_NEW_LIMIT, parseDirection, parseNewLimit, type Direction } from "@/lib/srs/session";
 import { emptyProgress, normalizeActiveDays } from "./record";
-import { parseProgress, stringifyProgress } from "./serialize";
+import { parseProgressDetailed, stringifyProgress } from "./serialize";
 import type { ProgressV1 } from "./types";
 
 export const PROGRESS_KEY = "anatomia.progress.v1";
@@ -22,22 +22,36 @@ export function loadProgress(): ProgressV1 {
     const raw = localStorage.getItem(PROGRESS_KEY);
     if (raw === null) return emptyProgress();
 
-    const parsed = parseProgress(raw);
+    const { progress: parsed, degraded } = parseProgressDetailed(raw);
     if (parsed === null) {
-      try {
-        localStorage.setItem(BACKUP_KEY, raw);
-      } catch {
-        // ignore backup failure — still fall back to empty progress
-      }
+      writeBackup(raw);
       return emptyProgress();
     }
 
     // normalise activeDays on every load: older saves may carry keys written
     // by the pre-local-day dayKey() (UTC-based), which would otherwise stay
     // wrong forever since nothing else rewrites activeDays for past sessions
-    return normalizeActiveDays(parsed);
+    const normalized = normalizeActiveDays(parsed);
+
+    // part of the save was unreadable (cards/reviews): keep the rest, but
+    // stash the original under BACKUP_KEY — that is what raises the notice on
+    // /progress — and write the cleaned version back so the next load is quiet
+    if (degraded) {
+      writeBackup(raw);
+      saveProgress(normalized);
+    }
+
+    return normalized;
   } catch {
     return emptyProgress();
+  }
+}
+
+function writeBackup(raw: string): void {
+  try {
+    localStorage.setItem(BACKUP_KEY, raw);
+  } catch {
+    // ignore backup failure — the caller still returns usable progress
   }
 }
 

@@ -79,41 +79,71 @@ function isReviewsList(v: unknown): v is StoredReviewSummary[] {
   return Array.isArray(v) && v.every(isReviewSummary);
 }
 
-/** Возвращает ProgressV1 только если форма и версия валидны; иначе null. Никогда не бросает. */
-export function parseProgress(raw: string | null): ProgressV1 | null {
-  if (raw === null || raw === "") return null;
+/**
+ * Разбор прогресса с признаком деградации. progress === null — сохранение
+ * непригодно целиком (версия, parts, sessions, activeDays). degraded === true —
+ * прогресс разобран, но испорченные поля карточек (cards/reviews) заменены
+ * пустыми: терять из-за них результаты тестов нечестно, поэтому вместо отказа
+ * сохранение чистится, а вызывающий (loadProgress) кладёт исходную строку в
+ * backup и показывает обычное предупреждение.
+ */
+export function parseProgressDetailed(raw: string | null): { progress: ProgressV1 | null; degraded: boolean } {
+  if (raw === null || raw === "") return { progress: null, degraded: false };
 
   let data: unknown;
   try {
     data = JSON.parse(raw);
   } catch {
-    return null;
+    return { progress: null, degraded: false };
   }
 
-  if (!isRecord(data)) return null;
-  if (data.version !== 1) return null;
-  if (!isPartsMap(data.parts)) return null;
-  if (!isSessionsList(data.sessions)) return null;
-  if (!isActiveDaysList(data.activeDays)) return null;
+  const reject = { progress: null, degraded: false };
+  if (!isRecord(data)) return reject;
+  if (data.version !== 1) return reject;
+  if (!isPartsMap(data.parts)) return reject;
+  if (!isSessionsList(data.sessions)) return reject;
+  if (!isActiveDaysList(data.activeDays)) return reject;
 
   // cards/reviews are newer, optional-on-disk fields: absent -> default to
-  // empty, present-but-malformed -> reject (same policy as every other field).
-  if (data.cards !== undefined && !isCardsMap(data.cards)) return null;
-  if (data.reviews !== undefined && !isReviewsList(data.reviews)) return null;
-  const cards: Record<string, CardState> = data.cards === undefined ? {} : data.cards;
-  // reviews[].fresh — тоже поле «новее диска»: сводки, записанные до дневной
-  // нормы новых карточек, читаются как «новых не было»
-  const reviews: ReviewSummary[] =
-    data.reviews === undefined ? [] : data.reviews.map((r) => ({ ...r, fresh: r.fresh ?? 0 }));
+  // empty, present-but-malformed -> empty + degraded (the quiz half of the
+  // save survives). reviews[].fresh is itself optional: older summaries
+  // carried no new-card count and read back as 0.
+  let degraded = false;
+  let cards: Record<string, CardState> = {};
+  let reviews: ReviewSummary[] = [];
+
+  if (data.cards !== undefined) {
+    if (isCardsMap(data.cards)) {
+      cards = data.cards;
+    } else {
+      degraded = true;
+    }
+  }
+
+  if (data.reviews !== undefined) {
+    if (isReviewsList(data.reviews)) {
+      reviews = data.reviews.map((r) => ({ ...r, fresh: r.fresh ?? 0 }));
+    } else {
+      degraded = true;
+    }
+  }
 
   return {
-    version: 1,
-    parts: data.parts,
-    sessions: data.sessions,
-    activeDays: data.activeDays,
-    cards,
-    reviews,
+    progress: {
+      version: 1,
+      parts: data.parts,
+      sessions: data.sessions,
+      activeDays: data.activeDays,
+      cards,
+      reviews,
+    },
+    degraded,
   };
+}
+
+/** Возвращает ProgressV1 только если форма и версия валидны; иначе null. Никогда не бросает. */
+export function parseProgress(raw: string | null): ProgressV1 | null {
+  return parseProgressDetailed(raw).progress;
 }
 
 export function stringifyProgress(p: ProgressV1): string {
