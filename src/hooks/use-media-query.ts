@@ -18,23 +18,37 @@ export function subscribeMatchMedia(mql: MediaQueryListLike, onChange: () => voi
   return () => mql.removeEventListener("change", onChange);
 }
 
+/** Один MediaQueryList на запрос: иначе matchMedia аллоцирует объект на каждый рендер. */
+const mqlByQuery = new Map<string, MediaQueryList>();
+
+function mediaQueryList(query: string): MediaQueryList {
+  let mql = mqlByQuery.get(query);
+  if (!mql) {
+    mql = window.matchMedia(query);
+    mqlByQuery.set(query, mql);
+  }
+  return mql;
+}
+
 /**
- * Совпадает ли медиазапрос прямо сейчас. На сервере (и в момент гидратации)
- * — всегда `false`: ширины окна там нет, поэтому разметка рендерится
- * десктопной, а после гидратации `useSyncExternalStore` перечитает снимок.
- * Чтобы мобильный пользователь не увидел вспышку десктопной раскладки,
- * элементы, скрываемые на мобайле, дополнительно несут классы `hidden md:*`.
+ * Совпадает ли медиазапрос прямо сейчас. На сервере ширины окна нет, поэтому
+ * серверный снимок — всегда `false` (десктопная раскладка). Сегодня он не
+ * используется: `/atlas` из-за `useSearchParams` под Suspense целиком уходит
+ * в клиентский рендер, и первый же рендер знает настоящую ширину. Страховка
+ * на случай, если страница когда-нибудь начнёт рендериться на сервере:
+ * панель слоёв дополнительно несёт `hidden md:flex`, так что даже ошибочно
+ * «десктопный» первый кадр не покажет её на телефоне.
  */
 export function useMediaQuery(query: string): boolean {
   const subscribe = useCallback(
     (onChange: () => void) => {
       if (typeof window === "undefined") return () => {};
-      return subscribeMatchMedia(window.matchMedia(query), onChange);
+      return subscribeMatchMedia(mediaQueryList(query), onChange);
     },
     [query],
   );
   const getSnapshot = useCallback(
-    () => (typeof window === "undefined" ? false : window.matchMedia(query).matches),
+    () => (typeof window === "undefined" ? false : mediaQueryList(query).matches),
     [query],
   );
   return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);

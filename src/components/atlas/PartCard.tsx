@@ -19,11 +19,13 @@ export function PartCard({
   partId: string; names: DisplayNames; systemRu: string; isolated: boolean; topicId?: string;
   /** `card` — плавающая карточка справа (десктоп); `sheet` — содержимое шторки снизу (мобайл). */
   variant?: PartCardVariant;
-  onHide(): void; onIsolate(): void; onClearIsolation(): void; onClose(): void;
+  onHide(): void; onIsolate(): void; onClearIsolation(): void;
+  /** Нужен только варианту `card` — в шторке закрывает она сама. */
+  onClose?(): void;
 }) {
   // в шторке рамку, тень и позицию задаёт сама шторка, а закрывает её её же крестик
   const shell = variant === "sheet"
-    ? "relative pr-10"
+    ? "pr-10"
     : "absolute right-3 top-3 z-10 w-72 rounded-lg border bg-white p-4 shadow-lg";
   return (
     <section className={shell} data-testid="part-card" data-part-id={partId}>

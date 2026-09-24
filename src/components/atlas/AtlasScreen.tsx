@@ -31,6 +31,7 @@ export function AtlasScreen() {
   const selectedPartId = useAtlasStore((s) => s.selectedPartId);
   const isolatedPartId = useAtlasStore((s) => s.isolatedPartId);
   const select = useAtlasStore((s) => s.select);
+  const closePart = useCallback(() => select(null), [select]);
   const hidePart = useAtlasStore((s) => s.hidePart);
   const isolate = useAtlasStore((s) => s.isolate);
   const reveal = useAtlasStore((s) => s.reveal);
@@ -116,7 +117,7 @@ export function AtlasScreen() {
                   в шторке; иначе тестовые id задвоились бы */}
               {selected && !isMobile && <PartCard {...partCardProps(selected, state.data.content)} variant="card" />}
               {selected && isMobile && (
-                <Sheet open onClose={() => select(null)} label="Структура" testId="part-sheet">
+                <Sheet open onClose={closePart} label="Структура" testId="part-sheet">
                   <PartCard {...partCardProps(selected, state.data.content)} variant="sheet" />
                 </Sheet>
               )}
