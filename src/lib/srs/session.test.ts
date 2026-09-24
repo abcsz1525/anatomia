@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
+import { buildQueue } from "./queue";
 import {
   MAX_REQUEUE,
   cardSides,
   deckCounts,
+  dueLabel,
   formatDay,
   gradeIntervals,
   initialCardsState,
@@ -177,8 +179,10 @@ describe("deckCounts", () => {
   });
 
   it("matches the size of the queue the same inputs build", () => {
+    // очередь короче потолка max=50, поэтому счётчики совпадают с её длиной
     const states = { a: state("2026-09-24"), b: state("2026-09-30") };
     const { due, fresh } = deckCounts(deck, states, TODAY, 1);
+    expect(due + fresh).toBe(buildQueue(deck, states, TODAY, 1).length);
     expect(due + fresh).toBe(2);
   });
 });
@@ -216,6 +220,21 @@ describe("formatDay", () => {
 
   it("returns an unparseable key unchanged", () => {
     expect(formatDay("завтра")).toBe("завтра");
+  });
+});
+
+describe("dueLabel", () => {
+  it("says «сегодня» while the next card is due today or earlier", () => {
+    expect(dueLabel(TODAY, TODAY)).toBe("сегодня");
+    expect(dueLabel("2026-09-23", TODAY)).toBe("сегодня");
+  });
+
+  it("prints a future date as DD.MM.YYYY", () => {
+    expect(dueLabel("2026-09-25", TODAY)).toBe("25.09.2026");
+  });
+
+  it("is «—» without a next card", () => {
+    expect(dueLabel(null, TODAY)).toBe("—");
   });
 });
 

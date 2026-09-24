@@ -7,6 +7,7 @@ import {
   distinctConcepts,
   groupKey,
   groupsOf,
+  topicGroups,
   topicParts,
   visibleIdsForTopic,
 } from "./pool";
@@ -188,5 +189,32 @@ describe("groupsOf", () => {
     const parts = topicParts(content, manifest, "muscles-upper-limb");
     const ids = [...groupsOf(parts).values()].flat();
     expect(ids.sort()).toEqual(parts.map((p) => p.id).sort());
+  });
+});
+
+describe("topicGroups", () => {
+  it("groups course topics under their parent, with concept counts", () => {
+    expect(topicGroups(content, manifest)).toEqual([
+      { id: "osteology", ru: "Остеология", topics: [{ id: "lower-limb-bones", ru: "Кости нижней конечности", concepts: 2 }] },
+      { id: "myology", ru: "Миология", topics: [{ id: "muscles-upper-limb", ru: "Мышцы верхней конечности", concepts: 1 }] },
+    ]);
+  });
+
+  it("skips topics without concepts", () => {
+    // arteries-limbs: единственная артерия манифеста без записи в structures.json;
+    // digestive: частей в манифесте нет вовсе
+    const ids = topicGroups(content, manifest).flatMap((g) => g.topics.map((t) => t.id));
+    expect(ids).not.toContain("arteries-limbs");
+    expect(ids).not.toContain("digestive");
+  });
+
+  it("makes a top-level topic without a parent its own group", () => {
+    const loose: ContentBundle = {
+      structures,
+      topics: [{ id: "lower-limb-bones", ru: "Кости нижней конечности", la: "Ossa membri inferioris" }],
+    };
+    expect(topicGroups(loose, manifest)).toEqual([
+      { id: "lower-limb-bones", ru: "Кости нижней конечности", topics: [{ id: "lower-limb-bones", ru: "Кости нижней конечности", concepts: 2 }] },
+    ]);
   });
 });

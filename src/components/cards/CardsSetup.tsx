@@ -1,5 +1,5 @@
 "use client";
-import type { TopicGroup } from "@/components/quiz/QuizSetup";
+import type { TopicGroup } from "@/lib/quiz/pool";
 import { ALL_TOPICS, MAX_NEW_LIMIT, MIN_NEW_LIMIT, type Direction } from "@/lib/srs/session";
 
 const DIRECTIONS: { id: Direction; ru: string }[] = [

@@ -197,6 +197,12 @@ export function formatDay(key: string): string {
   return m ? `${m[3]}.${m[2]}.${m[1]}` : key;
 }
 
+/** «25.09.2026» для будущей даты, «сегодня» пока карточки ещё ждут, «—» без повторений. */
+export function dueLabel(due: string | null, today: string): string {
+  if (due === null) return "—";
+  return due <= today ? "сегодня" : formatDay(due);
+}
+
 /** Лицевая и обратная стороны карточки в выбранном направлении. */
 export function cardSides(card: Card, direction: Direction): { front: string; back: string; frontLatin: boolean } {
   return direction === "la-ru"

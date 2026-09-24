@@ -8,7 +8,7 @@ import { recordSession } from "@/lib/progress/record";
 import { loadProgress, saveProgress } from "@/lib/progress/storage";
 import { acceptIds, checkFind, checkName } from "@/lib/quiz/check";
 import { generateSession } from "@/lib/quiz/generate";
-import { courseTopics, distinctConcepts, groupsOf, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
+import { groupsOf, topicGroups, topicParts, visibleIdsForTopic } from "@/lib/quiz/pool";
 import {
   FIND_ATTEMPTS,
   initialQuizState,
@@ -19,7 +19,7 @@ import type { Question, QuizMode, SessionResult } from "@/lib/quiz/types";
 import { useAtlasStore, type HighlightKind } from "@/store/atlas-store";
 import { QuizResult } from "./QuizResult";
 import { QuizRunner } from "./QuizRunner";
-import { QuizSetup, type TopicGroup } from "./QuizSetup";
+import { QuizSetup } from "./QuizSetup";
 
 /** Одна подсветка на всю группу дублей: половины мышцы должны гореть вместе. */
 function paint(ids: string[], kind: HighlightKind): Record<string, HighlightKind> {
@@ -50,26 +50,7 @@ export function QuizScreen() {
     return () => clearQuiz();
   }, [clearQuiz]);
 
-  const groups = useMemo<TopicGroup[]>(() => {
-    if (!bundle) return [];
-    const { content, manifest } = bundle;
-    const topicById = new Map(content.topics.map((t) => [t.id, t]));
-    const byParent = new Map<string, TopicGroup>();
-    const result: TopicGroup[] = [];
-    for (const topic of courseTopics(content.topics)) {
-      const concepts = distinctConcepts(topicParts(content, manifest, topic.id)).length;
-      if (concepts === 0) continue;
-      const parentId = topic.parent ?? topic.id;
-      let group = byParent.get(parentId);
-      if (!group) {
-        group = { id: parentId, ru: topicById.get(parentId)?.ru ?? topic.ru, topics: [] };
-        byParent.set(parentId, group);
-        result.push(group);
-      }
-      group.topics.push({ id: topic.id, ru: topic.ru, concepts });
-    }
-    return result;
-  }, [bundle]);
+  const groups = useMemo(() => (bundle ? topicGroups(bundle.content, bundle.manifest) : []), [bundle]);
 
   // без явного выбора берём первую тему списка, чтобы «Начать» было активно сразу
   const selectedTopicId = topicId ?? groups[0]?.topics[0]?.id ?? null;

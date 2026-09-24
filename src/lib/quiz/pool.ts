@@ -90,3 +90,42 @@ export function groupsOf(parts: QuizPart[]): Map<string, string[]> {
   }
   return result;
 }
+
+/** Курсовая тема как вариант выбора: подпись и число различных концептов (la). */
+export interface TopicOption {
+  id: string;
+  ru: string;
+  concepts: number;
+}
+
+/** Курсовые темы, сгруппированные по родителю (остеология/артрология/миология). */
+export interface TopicGroup {
+  id: string;
+  ru: string;
+  topics: TopicOption[];
+}
+
+/**
+ * Общий список тем для экранов квиза, карточек и прогресса: курсовые темы,
+ * сгруппированные по родителю, в порядке topics.json. Тема без концептов
+ * выпадает — по ней нечего ни спрашивать, ни учить, ни считать освоение.
+ */
+export function topicGroups(content: ContentBundle, manifest: AtlasManifest): TopicGroup[] {
+  const topicById = new Map(content.topics.map((t) => [t.id, t]));
+  const byParent = new Map<string, TopicGroup>();
+  const result: TopicGroup[] = [];
+  for (const topic of courseTopics(content.topics)) {
+    const concepts = distinctConcepts(topicParts(content, manifest, topic.id)).length;
+    if (concepts === 0) continue;
+    // тема верхнего уровня (без родителя) образует группу из самой себя
+    const parentId = topic.parent ?? topic.id;
+    let group = byParent.get(parentId);
+    if (!group) {
+      group = { id: parentId, ru: topicById.get(parentId)?.ru ?? topic.ru, topics: [] };
+      byParent.set(parentId, group);
+      result.push(group);
+    }
+    group.topics.push({ id: topic.id, ru: topic.ru, concepts });
+  }
+  return result;
+}

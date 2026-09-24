@@ -1,19 +1,6 @@
 "use client";
+import type { TopicGroup } from "@/lib/quiz/pool";
 import type { QuizMode } from "@/lib/quiz/types";
-
-/** Курсовая тема как вариант выбора: подпись и число различных концептов (la). */
-export interface TopicOption {
-  id: string;
-  ru: string;
-  concepts: number;
-}
-
-/** Курсовые темы, сгруппированные по родителю (остеология/артрология/миология). */
-export interface TopicGroup {
-  id: string;
-  ru: string;
-  topics: TopicOption[];
-}
 
 const MODES: { id: QuizMode; ru: string; hint: string }[] = [
   { id: "find", ru: "Найди структуру", hint: "Показываем название — вы кликаете по модели." },

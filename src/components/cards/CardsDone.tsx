@@ -1,11 +1,5 @@
 "use client";
-import { formatDay } from "@/lib/srs/session";
-
-/** «25.09.2026» для будущей даты, «сегодня» пока карточки ещё ждут, «—» без повторений. */
-function dueLabel(due: string | null, today: string): string {
-  if (due === null) return "—";
-  return due <= today ? "сегодня" : formatDay(due);
-}
+import { dueLabel } from "@/lib/srs/session";
 
 export function CardsDone({
   reviewed,

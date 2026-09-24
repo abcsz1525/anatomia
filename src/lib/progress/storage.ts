@@ -1,9 +1,12 @@
+import { DEFAULT_NEW_LIMIT, parseNewLimit } from "@/lib/srs/session";
 import { emptyProgress, normalizeActiveDays } from "./record";
 import { parseProgress, stringifyProgress } from "./serialize";
 import type { ProgressV1 } from "./types";
 
 export const PROGRESS_KEY = "anatomia.progress.v1";
 const BACKUP_KEY = `${PROGRESS_KEY}.backup`;
+/** «Новых в день» — настройка экрана карточек, не часть прогресса. */
+export const NEW_LIMIT_KEY = "anatomia.cards.newLimit";
 
 /**
  * Единственный файл, который трогает localStorage. При отсутствии DOM
@@ -63,6 +66,27 @@ export function saveProgress(p: ProgressV1): void {
 
   try {
     localStorage.setItem(PROGRESS_KEY, stringifyProgress(p));
+  } catch {
+    // ignore — storage may be full or unavailable (private mode, etc.)
+  }
+}
+
+/** «Новых в день» из localStorage: целое 1…100, по умолчанию DEFAULT_NEW_LIMIT. */
+export function loadNewLimit(): number {
+  if (typeof localStorage === "undefined") return DEFAULT_NEW_LIMIT;
+
+  try {
+    return parseNewLimit(localStorage.getItem(NEW_LIMIT_KEY));
+  } catch {
+    return DEFAULT_NEW_LIMIT;
+  }
+}
+
+export function saveNewLimit(n: number): void {
+  if (typeof localStorage === "undefined") return;
+
+  try {
+    localStorage.setItem(NEW_LIMIT_KEY, String(n));
   } catch {
     // ignore — storage may be full or unavailable (private mode, etc.)
   }

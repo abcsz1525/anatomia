@@ -1,16 +1,15 @@
 "use client";
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import type { TopicGroup } from "@/components/quiz/QuizSetup";
 import { loadManifest } from "@/lib/atlas/load-atlas";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import { loadContent } from "@/lib/content/load-content";
 import type { ContentBundle } from "@/lib/content/types";
 import { recordReview } from "@/lib/progress/record";
 import { dayKey } from "@/lib/progress/stats";
-import { loadProgress, saveProgress } from "@/lib/progress/storage";
+import { loadNewLimit, loadProgress, saveNewLimit, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
-import { courseTopics, distinctConcepts, topicParts } from "@/lib/quiz/pool";
+import { topicGroups } from "@/lib/quiz/pool";
 import { allDeck, topicDeck } from "@/lib/srs/deck";
 import { buildQueue } from "@/lib/srs/queue";
 import {
@@ -31,8 +30,6 @@ import { CardReview } from "./CardReview";
 import { CardsDone } from "./CardsDone";
 import { CardsSetup } from "./CardsSetup";
 
-const NEW_LIMIT_KEY = "anatomia.cards.newLimit";
-
 /** Общая пустая карта состояний: literal `{}` в рендере ломал бы мемоизацию. */
 const NO_CARDS: Record<string, CardState> = {};
 
@@ -41,42 +38,6 @@ type DataState =
   | { status: "loading" }
   | { status: "error" }
   | { status: "ready"; content: ContentBundle; manifest: AtlasManifest };
-
-/** Курсовые темы, сгруппированные по родителю — тот же список, что в квизе. */
-function topicGroups(content: ContentBundle, manifest: AtlasManifest): TopicGroup[] {
-  const topicById = new Map(content.topics.map((t) => [t.id, t]));
-  const byParent = new Map<string, TopicGroup>();
-  const result: TopicGroup[] = [];
-  for (const topic of courseTopics(content.topics)) {
-    const concepts = distinctConcepts(topicParts(content, manifest, topic.id)).length;
-    if (concepts === 0) continue;
-    const parentId = topic.parent ?? topic.id;
-    let group = byParent.get(parentId);
-    if (!group) {
-      group = { id: parentId, ru: topicById.get(parentId)?.ru ?? topic.ru, topics: [] };
-      byParent.set(parentId, group);
-      result.push(group);
-    }
-    group.topics.push({ id: topic.id, ru: topic.ru, concepts });
-  }
-  return result;
-}
-
-function readNewLimit(): string {
-  try {
-    return String(parseNewLimit(localStorage.getItem(NEW_LIMIT_KEY)));
-  } catch {
-    return String(DEFAULT_NEW_LIMIT);
-  }
-}
-
-function writeNewLimit(value: number): void {
-  try {
-    localStorage.setItem(NEW_LIMIT_KEY, String(value));
-  } catch {
-    // ignore — storage may be full or unavailable (private mode, etc.)
-  }
-}
 
 export function CardsScreen() {
   const [data, setData] = useState<DataState>({ status: "loading" });
@@ -110,7 +71,7 @@ export function CardsScreen() {
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is unavailable until mount
     setProgress(loadProgress());
-    setNewLimitText(readNewLimit());
+    setNewLimitText(String(loadNewLimit()));
   }, []);
 
   const groups = useMemo(() => (data.status === "ready" ? topicGroups(data.content, data.manifest) : []), [data]);
@@ -141,11 +102,14 @@ export function CardsScreen() {
     [state.phase, deck, cards, today, newLimit],
   );
 
+  // итог сессии: его же показывает экран «Повторено N» и пишет flush()
+  const tally = useMemo(() => sessionTally(state), [state]);
+
   // последний снимок сессии для записи при уходе со страницы
   const pending = useRef<ReturnType<typeof sessionTally>>(null);
   useEffect(() => {
-    if (state.phase !== "setup") pending.current = sessionTally(state);
-  }, [state]);
+    if (state.phase !== "setup") pending.current = tally;
+  }, [state.phase, tally]);
 
   /** Пишет сессию в прогресс ровно один раз: pending обнуляется до записи. */
   const flush = useCallback((): ProgressV1 | null => {
@@ -190,7 +154,7 @@ export function CardsScreen() {
 
   const changeNewLimit = useCallback((value: string) => {
     setNewLimitText(value);
-    writeNewLimit(parseNewLimit(value));
+    saveNewLimit(parseNewLimit(value));
   }, []);
 
   return (
@@ -232,11 +196,11 @@ export function CardsScreen() {
           onAbort={abort}
         />
       )}
-      {state.phase === "done" && (
+      {state.phase === "done" && tally !== null && (
         <CardsDone
-          reviewed={Object.keys(state.states).length}
-          again={state.forgotten.length}
-          due={nextDue(state.states)}
+          reviewed={tally.reviewed}
+          again={tally.again}
+          due={nextDue(tally.states)}
           today={today}
           hasMore={hasMore}
           onMore={start}

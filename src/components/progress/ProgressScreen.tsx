@@ -10,7 +10,7 @@ import { parseProgress, stringifyProgress } from "@/lib/progress/serialize";
 import { dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
 import { clearBackup, hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
-import { courseTopics, topicParts } from "@/lib/quiz/pool";
+import { topicGroups, topicParts } from "@/lib/quiz/pool";
 
 const EXPORT_FILENAME = "anatomia-progress.json";
 
@@ -22,8 +22,8 @@ interface TopicRow {
   sessions: number;
 }
 
-/** Курсовые темы, сгруппированные по родителю (остеология/артрология/миология). */
-interface TopicGroup {
+/** Группа тем экрана прогресса: тот же список, что в квизе и карточках, со строками вместо вариантов. */
+interface ProgressGroup {
   id: string;
   ru: string;
   rows: TopicRow[];
@@ -69,34 +69,27 @@ export function ProgressScreen() {
     setBackupNotice(hasBackup());
   }, []);
 
-  const groups = useMemo<TopicGroup[]>(() => {
+  const groups = useMemo<ProgressGroup[]>(() => {
     if (data.status !== "ready") return [];
     const { content, manifest } = data;
     const p = progress ?? emptyProgress();
     const sessionsByTopic = new Map<string, number>();
     for (const s of p.sessions) sessionsByTopic.set(s.topicId, (sessionsByTopic.get(s.topicId) ?? 0) + 1);
 
-    const topicById = new Map(content.topics.map((t) => [t.id, t]));
-    const byParent = new Map<string, TopicGroup>();
-    const result: TopicGroup[] = [];
-    for (const topic of courseTopics(content.topics)) {
-      const { known, total } = topicMastery(p, topicParts(content, manifest, topic.id));
-      const parentId = topic.parent ?? topic.id;
-      let group = byParent.get(parentId);
-      if (!group) {
-        group = { id: parentId, ru: topicById.get(parentId)?.ru ?? topic.ru, rows: [] };
-        byParent.set(parentId, group);
-        result.push(group);
-      }
-      group.rows.push({
-        id: topic.id,
-        ru: topic.ru,
-        known,
-        total,
-        sessions: sessionsByTopic.get(topic.id) ?? 0,
-      });
-    }
-    return result;
+    return topicGroups(content, manifest).map((group) => ({
+      id: group.id,
+      ru: group.ru,
+      rows: group.topics.map((topic) => {
+        const { known, total } = topicMastery(p, topicParts(content, manifest, topic.id));
+        return {
+          id: topic.id,
+          ru: topic.ru,
+          known,
+          total,
+          sessions: sessionsByTopic.get(topic.id) ?? 0,
+        };
+      }),
+    }));
   }, [data, progress]);
 
   const streak = useMemo(
