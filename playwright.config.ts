@@ -13,11 +13,31 @@ export default defineConfig({
   expect: { timeout: 20_000 },
   use: {
     baseURL,
-    viewport: { width: 1280, height: 800 },
+    // SwiftShader: headless Chromium has no GPU, а без WebGL атлас не грузится
     launchOptions: {
       args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"],
     },
   },
+  projects: [
+    {
+      // прежний прогон: широкое окно, мобильный спек сюда не попадает
+      name: "desktop",
+      use: { viewport: { width: 1280, height: 800 } },
+      testIgnore: /mobile\.spec/,
+    },
+    {
+      // телефон (iPhone 12-ish): тач и `isMobile` включают мобильную раскладку
+      // по-настоящему — meta viewport, тач-события, отсутствие hover
+      name: "mobile",
+      use: {
+        viewport: { width: 390, height: 844 },
+        hasTouch: true,
+        isMobile: true,
+        deviceScaleFactor: 2,
+      },
+      testMatch: /mobile\.spec/,
+    },
+  ],
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
