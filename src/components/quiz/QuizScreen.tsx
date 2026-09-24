@@ -203,7 +203,11 @@ export function QuizScreen() {
     <div className="flex h-full w-full flex-col md:flex-row" data-atlas-ready={ready ? "true" : "false"}>
       <aside
         className={`order-2 flex w-full shrink-0 flex-col border-t bg-white text-sm md:order-1 md:h-auto md:w-80 md:overflow-hidden md:border-t-0 md:border-r ${
-          collapsed ? "h-14 overflow-hidden px-3 py-1" : "h-[45dvh] overflow-y-auto p-4"
+          collapsed
+            ? "h-14 overflow-hidden px-3 py-1"
+            : // на выборе темы и на итогах модель — фон, а списку нужен экран;
+              // во время вопросов наоборот: модель должна быть видна
+              `overflow-y-auto p-4 ${quiz.phase === "running" ? "h-[45dvh]" : "h-[70dvh]"}`
         }`}
         aria-label="Тест"
       >

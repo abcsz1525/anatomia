@@ -8,6 +8,7 @@ import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasManifest, AtlasPart, SystemId } from "@/lib/atlas/types";
 import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-store";
 import { isCachedBundle, releaseBuffers, type AtlasData } from "@/hooks/use-atlas-data";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 const HIGHLIGHT = new THREE.Color("#ffb020");
 // цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
@@ -121,6 +122,10 @@ export function BodyMeshes({
     };
   }, [batches, cacheable]);
 
+  // порог «это тап, а не вращение»: палец дрожит сильнее мыши
+  const coarsePointer = useMediaQuery("(pointer: coarse)");
+  const tapSlop = coarsePointer ? 10 : 2;
+
   const visibleSystems = useAtlasStore((s) => s.visibleSystems);
   const hiddenParts = useAtlasStore((s) => s.hiddenParts);
   const isolatedPartId = useAtlasStore((s) => s.isolatedPartId);
@@ -149,7 +154,10 @@ export function BodyMeshes({
   const onClick = (b: SystemBatch) => (e: ThreeEvent<MouseEvent>) => {
     // R3F applies its drag threshold only to onPointerMissed; hit handlers must
     // check `delta` themselves, or orbiting the camera selects on release.
-    if (e.delta > 2) return;
+    // Порог мыши (2 px) для пальца мал: обычный тап смещается на 3–8 px, и
+    // структура просто не выделялась бы. Для грубого указателя берём 10 px —
+    // вращение камеры пальцем всегда длиннее.
+    if (e.delta > tapSlop) return;
     e.stopPropagation();
     const batchId = e.batchId ?? e.intersections.find((i) => i.object === b.mesh)?.batchId;
     if (batchId === undefined || batchId === null) return;
