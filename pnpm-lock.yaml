@@ -14,6 +14,9 @@ importers:
       '@react-three/fiber':
         specifier: ^9.7.0
         version: 9.7.0(@types/react@19.3.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(three@0.186.0)
+      csv-parse:
+        specifier: ^5.6.0
+        version: 5.6.0
       next:
         specifier: 16.3.6
         version: 16.3.6(@babel/core@7.29.7)(@playwright/test@1.63.0)(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -26,6 +29,9 @@ importers:
       three:
         specifier: ^0.186.0
         version: 0.186.0
+      tsx:
+        specifier: ^4.23.15
+        version: 4.23.15
       zustand:
         specifier: ^5.0.15
         version: 5.0.15(@types/react@19.3.0)(react@19.2.8)(use-sync-external-store@1.7.0(react@19.2.8))
@@ -48,9 +54,6 @@ importers:
       '@types/three':
         specifier: ^0.186.0
         version: 0.186.0
-      csv-parse:
-        specifier: ^5.6.0
-        version: 5.6.0
       eslint:
         specifier: ^9
         version: 9.39.5(jiti@2.7.0)
@@ -63,9 +66,6 @@ importers:
       three-stdlib:
         specifier: 2.36.1
         version: 2.36.1(three@0.186.0)
-      tsx:
-        specifier: ^4.23.15
-        version: 4.23.15
       typescript:
         specifier: ^5
         version: 5.9.3
