@@ -1,4 +1,4 @@
-import { DEFAULT_NEW_LIMIT, parseNewLimit } from "@/lib/srs/session";
+import { DEFAULT_NEW_LIMIT, parseDirection, parseNewLimit, type Direction } from "@/lib/srs/session";
 import { emptyProgress, normalizeActiveDays } from "./record";
 import { parseProgress, stringifyProgress } from "./serialize";
 import type { ProgressV1 } from "./types";
@@ -7,6 +7,8 @@ export const PROGRESS_KEY = "anatomia.progress.v1";
 const BACKUP_KEY = `${PROGRESS_KEY}.backup`;
 /** «Новых в день» — настройка экрана карточек, не часть прогресса. */
 export const NEW_LIMIT_KEY = "anatomia.cards.newLimit";
+/** Направление карточек — такая же настройка экрана, не часть прогресса. */
+export const DIRECTION_KEY = "anatomia.cards.direction";
 
 /**
  * Единственный файл, который трогает localStorage. При отсутствии DOM
@@ -87,6 +89,27 @@ export function saveNewLimit(n: number): void {
 
   try {
     localStorage.setItem(NEW_LIMIT_KEY, String(n));
+  } catch {
+    // ignore — storage may be full or unavailable (private mode, etc.)
+  }
+}
+
+/** Направление карточек из localStorage; по умолчанию «Латынь → Русский». */
+export function loadDirection(): Direction {
+  if (typeof localStorage === "undefined") return parseDirection(null);
+
+  try {
+    return parseDirection(localStorage.getItem(DIRECTION_KEY));
+  } catch {
+    return parseDirection(null);
+  }
+}
+
+export function saveDirection(d: Direction): void {
+  if (typeof localStorage === "undefined") return;
+
+  try {
+    localStorage.setItem(DIRECTION_KEY, d);
   } catch {
     // ignore — storage may be full or unavailable (private mode, etc.)
   }

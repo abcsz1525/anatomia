@@ -1,5 +1,6 @@
+import { dayKey } from "@/lib/progress/stats";
 import { review } from "./sm2";
-import type { Card, CardState, Grade } from "./types";
+import type { Card, CardState, Grade, ReviewSummary } from "./types";
 
 /** Что показывается лицевой стороной карточки. */
 export type Direction = "la-ru" | "ru-la";
@@ -48,6 +49,8 @@ export type CardsState =
   | {
       phase: "done";
       topicId: string;
+      /** Тот же снимок, что в фазе review: по нему sessionTally считает fresh. */
+      base: Record<string, CardState>;
       states: Record<string, CardState>;
       forgotten: string[];
       startedAt: string;
@@ -114,6 +117,7 @@ export function reducer(state: CardsState, action: Action): CardsState {
       return {
         phase: "done",
         topicId: next.topicId,
+        base: next.base,
         states: next.states,
         forgotten: next.forgotten,
         startedAt: next.startedAt,
@@ -129,19 +133,36 @@ export function remaining(state: CardsState): number {
 
 /**
  * Итог сессии для ReviewSummary: reviewed — сколько различных карточек
- * оценено, again — скольких из них хотя бы раз не вспомнили. Повторный показ
- * одной карточки не увеличивает ни то, ни другое.
+ * оценено, again — скольких из них хотя бы раз не вспомнили, fresh — сколько
+ * из них не имели состояния на старте сессии (новые). Повторный показ одной
+ * карточки не увеличивает ни одно из трёх чисел.
  */
 export function sessionTally(
   state: CardsState,
-): { topicId: string; states: Record<string, CardState>; reviewed: number; again: number } | null {
+): { topicId: string; states: Record<string, CardState>; reviewed: number; again: number; fresh: number } | null {
   if (state.phase === "setup") return null;
+  const keys = Object.keys(state.states);
   return {
     topicId: state.topicId,
     states: state.states,
-    reviewed: Object.keys(state.states).length,
+    reviewed: keys.length,
     again: state.forgotten.length,
+    fresh: keys.filter((key) => state.base[key] === undefined).length,
   };
+}
+
+/**
+ * Сколько новых карточек уже показано сегодня: сумма fresh по сводкам,
+ * законченным в этот день. Дневной лимит новых — это остаток
+ * newLimit − newShownToday, иначе каждая следующая сессия снова выдавала бы
+ * полный лимит новых карточек.
+ */
+export function newShownToday(reviews: ReviewSummary[], today: string): number {
+  let count = 0;
+  for (const r of reviews) {
+    if (dayKey(r.finishedAt) === today) count += r.fresh;
+  }
+  return count;
 }
 
 /** Ближайшая дата повторения среди состояний сессии; null, если их нет. */
@@ -149,6 +170,22 @@ export function nextDue(states: Record<string, CardState>): string | null {
   let min: string | null = null;
   for (const s of Object.values(states)) {
     if (min === null || s.due < min) min = s.due;
+  }
+  return min;
+}
+
+/**
+ * Ближайшая дата повторения строго позже today среди карточек колоды, у
+ * которых есть состояние; null, если ждать нечего. Нужна, когда на сегодня
+ * очередь пуста: экран настройки и экран «готово» говорят, когда прийти
+ * снова, вместо тупика с неактивной кнопкой.
+ */
+export function deckNextDue(deck: Card[], states: Record<string, CardState>, today: string): string | null {
+  let min: string | null = null;
+  for (const card of deck) {
+    const state = states[card.key];
+    if (state === undefined || state.due <= today) continue;
+    if (min === null || state.due < min) min = state.due;
   }
   return min;
 }
@@ -189,6 +226,11 @@ export function parseNewLimit(raw: string | null): number {
   const n = Number(raw);
   if (raw === null || raw.trim() === "" || !Number.isFinite(n)) return DEFAULT_NEW_LIMIT;
   return Math.min(MAX_NEW_LIMIT, Math.max(MIN_NEW_LIMIT, Math.trunc(n)));
+}
+
+/** Направление карточек из хранилища: всё, кроме "ru-la", читается как "la-ru". */
+export function parseDirection(raw: string | null): Direction {
+  return raw === "ru-la" ? "ru-la" : "la-ru";
 }
 
 /** dayKey "2026-09-25" → «25.09.2026»; неразобранный ключ возвращается как есть. */

@@ -12,6 +12,7 @@ export function CardsDone({
 }: {
   reviewed: number;
   again: number;
+  /** Ближайшее повторение по всей колоде (deckNextDue), а не только по карточкам сессии. */
   due: string | null;
   today: string;
   hasMore: boolean;

@@ -48,6 +48,20 @@ test("a topic session grades its new cards and shows up in progress", async ({ p
   // первый «Помню» даёт интервал в 1 день, до «выучено» (≥ 7) ещё далеко
   await expect(row.getByTestId("topic-cards")).toContainText("выучено 0 из");
   await expect(page.getByTestId("progress-reviews-today")).toHaveText("Повторений сегодня: 1");
+
+  // дневная норма новых израсходована: вторая сессия того же дня новых не даёт,
+  // хотя в теме остались непоказанные карточки
+  await gotoCardsSetup(page, `?topic=${TOPIC_ID}`);
+  await page.getByTestId("cards-new-limit").fill(String(NEW_LIMIT));
+  await expect(page.getByTestId("cards-today")).toHaveText("Сегодня: 0 к повторению, 0 новых");
+  await expect(page.getByTestId("cards-new-today")).toHaveText(
+    `(сегодня уже показано ${NEW_LIMIT} новых)`,
+  );
+  await expect(page.getByTestId("cards-start")).toBeDisabled();
+  // тупика нет: экран говорит, когда карточки вернутся («Помню» → завтра)
+  await expect(page.getByTestId("cards-next-due")).toHaveText(
+    /^Следующее повторение: \d{2}\.\d{2}\.\d{4}$/,
+  );
 });
 
 test("the all-topics setup shows today's counters", async ({ page }) => {

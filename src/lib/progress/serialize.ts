@@ -61,17 +61,21 @@ function isCardsMap(v: unknown): v is Record<string, CardState> {
   return isRecord(v) && Object.values(v).every(isCardState);
 }
 
-function isReviewSummary(v: unknown): v is ReviewSummary {
+/** Сводка, как она лежит на диске: fresh появился позже и может отсутствовать. */
+type StoredReviewSummary = Omit<ReviewSummary, "fresh"> & { fresh?: number };
+
+function isReviewSummary(v: unknown): v is StoredReviewSummary {
   return (
     isRecord(v) &&
     typeof v.finishedAt === "string" &&
     typeof v.topicId === "string" &&
     typeof v.reviewed === "number" &&
-    typeof v.again === "number"
+    typeof v.again === "number" &&
+    (v.fresh === undefined || typeof v.fresh === "number")
   );
 }
 
-function isReviewsList(v: unknown): v is ReviewSummary[] {
+function isReviewsList(v: unknown): v is StoredReviewSummary[] {
   return Array.isArray(v) && v.every(isReviewSummary);
 }
 
@@ -97,7 +101,10 @@ export function parseProgress(raw: string | null): ProgressV1 | null {
   if (data.cards !== undefined && !isCardsMap(data.cards)) return null;
   if (data.reviews !== undefined && !isReviewsList(data.reviews)) return null;
   const cards: Record<string, CardState> = data.cards === undefined ? {} : data.cards;
-  const reviews: ReviewSummary[] = data.reviews === undefined ? [] : data.reviews;
+  // reviews[].fresh — тоже поле «новее диска»: сводки, записанные до дневной
+  // нормы новых карточек, читаются как «новых не было»
+  const reviews: ReviewSummary[] =
+    data.reviews === undefined ? [] : data.reviews.map((r) => ({ ...r, fresh: r.fresh ?? 0 }));
 
   return {
     version: 1,

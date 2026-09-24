@@ -107,6 +107,22 @@ describe("review", () => {
     expect(state.ease).toBe(2.45); // 2.3 + 0.15, rounded to 2 decimals
   });
 
+  it("easy gives 4 days for a new card, unlike good", () => {
+    const easy = review(undefined, "easy", today, "2026-09-23T10:00:00.000Z");
+    const good = review(undefined, "good", today, "2026-09-23T10:00:00.000Z");
+    expect(easy.interval).toBe(4);
+    expect(easy.due).toBe("2026-09-27");
+    expect(good.interval).toBe(1);
+    expect(easy.reps).toBe(1);
+  });
+
+  it("easy gives 4 days again after a lapse has reset reps", () => {
+    let state = review(undefined, "good", today, "2026-09-23T10:00:00.000Z"); // reps 1
+    state = review(state, "again", today, "2026-09-23T10:00:00.000Z"); // reps 0
+    state = review(state, "easy", today, "2026-09-23T10:00:00.000Z");
+    expect(state.interval).toBe(4);
+  });
+
   it("easy multiplies the good interval by 1.3", () => {
     let state = review(undefined, "good", today, "2026-09-23T10:00:00.000Z"); // interval 1, reps 1
     state = review(state, "good", today, "2026-09-23T10:00:00.000Z"); // interval 3, reps 2

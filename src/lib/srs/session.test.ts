@@ -4,18 +4,21 @@ import {
   MAX_REQUEUE,
   cardSides,
   deckCounts,
+  deckNextDue,
   dueLabel,
   formatDay,
   gradeIntervals,
   initialCardsState,
+  newShownToday,
   nextDue,
+  parseDirection,
   parseNewLimit,
   reducer,
   remaining,
   sessionTally,
   type CardsState,
 } from "./session";
-import type { Card, CardState } from "./types";
+import type { Card, CardState, ReviewSummary } from "./types";
 
 const TODAY = "2026-09-24";
 const NOW = "2026-09-24T10:00:00.000Z";
@@ -136,6 +139,20 @@ describe("reducer", () => {
   });
 });
 
+/**
+ * Сводка сессии с местным finishedAt: dayKey() считает местный день, поэтому
+ * фикстура строится из компонентов даты, а не из литерала с "Z".
+ */
+function summary(y: number, m: number, d: number, fresh: number): ReviewSummary {
+  return {
+    finishedAt: new Date(y, m - 1, d, 10, 0).toISOString(),
+    topicId: "lower-limb-bones",
+    reviewed: fresh + 1,
+    again: 0,
+    fresh,
+  };
+}
+
 describe("sessionTally", () => {
   it("is null before a session starts", () => {
     expect(sessionTally(initialCardsState)).toBeNull();
@@ -153,6 +170,74 @@ describe("sessionTally", () => {
     const s = grade(start([card("a")]), "good");
     expect(s.phase).toBe("done");
     expect(sessionTally(s)).toMatchObject({ reviewed: 1, again: 0 });
+  });
+
+  it("counts as fresh only the cards without a state at the start of the session", () => {
+    // a уже повторялась раньше, b видна впервые
+    const s = grade(grade(start([card("a"), card("b")], { a: state("2026-09-24") }), "good"), "good");
+    expect(sessionTally(s)).toMatchObject({ reviewed: 2, fresh: 1 });
+  });
+
+  it("counts a re-queued new card once", () => {
+    let s = grade(start([card("a"), card("b")]), "again"); // a → в конец очереди
+    s = grade(s, "good"); // b
+    s = grade(s, "good"); // a снова
+    expect(sessionTally(s)).toMatchObject({ reviewed: 2, fresh: 2 });
+  });
+
+  it("has no fresh cards when the whole queue came from saved states", () => {
+    const base = { a: state("2026-09-24"), b: state("2026-09-24") };
+    const s = grade(grade(start([card("a"), card("b")], base), "good"), "good");
+    expect(sessionTally(s)).toMatchObject({ reviewed: 2, fresh: 0 });
+  });
+});
+
+describe("newShownToday", () => {
+  it("is 0 without any reviews", () => {
+    expect(newShownToday([], TODAY)).toBe(0);
+  });
+
+  it("sums fresh over the summaries finished today", () => {
+    expect(newShownToday([summary(2026, 9, 24, 5), summary(2026, 9, 24, 3)], TODAY)).toBe(8);
+  });
+
+  it("ignores summaries from other days", () => {
+    const reviews = [summary(2026, 9, 23, 20), summary(2026, 9, 24, 4), summary(2026, 9, 25, 7)];
+    expect(newShownToday(reviews, TODAY)).toBe(4);
+  });
+});
+
+describe("deckNextDue", () => {
+  const deck = [card("a"), card("b"), card("c")];
+
+  it("is null when no card of the deck has a state", () => {
+    expect(deckNextDue(deck, {}, TODAY)).toBeNull();
+  });
+
+  it("is the earliest due strictly after today", () => {
+    const states = { a: state("2026-09-28"), b: state("2026-09-26"), c: state("2026-09-24") };
+    expect(deckNextDue(deck, states, TODAY)).toBe("2026-09-26");
+  });
+
+  it("is null when every card of the deck is already due", () => {
+    expect(deckNextDue(deck, { a: state("2026-09-24"), b: state("2026-09-20") }, TODAY)).toBeNull();
+  });
+
+  it("ignores states of cards outside the deck", () => {
+    expect(deckNextDue([card("a")], { z: state("2026-09-25") }, TODAY)).toBeNull();
+  });
+});
+
+describe("parseDirection", () => {
+  it("defaults to la→ru for missing or unknown values", () => {
+    expect(parseDirection(null)).toBe("la-ru");
+    expect(parseDirection("")).toBe("la-ru");
+    expect(parseDirection("ru")).toBe("la-ru");
+  });
+
+  it("reads both stored directions", () => {
+    expect(parseDirection("la-ru")).toBe("la-ru");
+    expect(parseDirection("ru-la")).toBe("ru-la");
   });
 });
 
@@ -188,8 +273,8 @@ describe("deckCounts", () => {
 });
 
 describe("gradeIntervals", () => {
-  it("gives the next interval of each grade for a new card", () => {
-    expect(gradeIntervals(undefined, TODAY)).toEqual({ again: 1, good: 1, easy: 1 });
+  it("gives the next interval of each grade for a new card: «Легко» is 4 days, not 1", () => {
+    expect(gradeIntervals(undefined, TODAY)).toEqual({ again: 1, good: 1, easy: 4 });
   });
 
   it("gives 1/3/4 days for a card seen once", () => {

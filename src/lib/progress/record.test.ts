@@ -47,6 +47,7 @@ function reviewSummary(overrides: Partial<ReviewSummary> = {}): ReviewSummary {
     topicId: "lower-limb-bones",
     reviewed: 5,
     again: 1,
+    fresh: 3,
     ...overrides,
   };
 }
@@ -276,7 +277,7 @@ describe("normalizeActiveDays", () => {
     const finishedAt = localIso(2026, 9, 23, 10, 5);
     const p: ProgressV1 = {
       ...emptyProgress(),
-      reviews: [{ finishedAt, topicId: "lower-limb-bones", reviewed: 3, again: 0 }],
+      reviews: [{ finishedAt, topicId: "lower-limb-bones", reviewed: 3, again: 0, fresh: 0 }],
     };
 
     const next = normalizeActiveDays(p);
@@ -292,8 +293,8 @@ describe("normalizeActiveDays", () => {
       ...emptyProgress(),
       sessions: [{ topicId: "t", mode: "find", finishedAt: sessionFinishedAt, correct: 1, total: 1 }],
       reviews: [
-        { finishedAt: reviewOnlyDay, topicId: "t", reviewed: 2, again: 0 },
-        { finishedAt: reviewSameDayAsSession, topicId: "t", reviewed: 2, again: 0 },
+        { finishedAt: reviewOnlyDay, topicId: "t", reviewed: 2, again: 0, fresh: 0 },
+        { finishedAt: reviewSameDayAsSession, topicId: "t", reviewed: 2, again: 0, fresh: 0 },
       ],
     };
 

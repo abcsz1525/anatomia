@@ -7,7 +7,14 @@ import { loadContent } from "@/lib/content/load-content";
 import type { ContentBundle } from "@/lib/content/types";
 import { recordReview } from "@/lib/progress/record";
 import { dayKey } from "@/lib/progress/stats";
-import { loadNewLimit, loadProgress, saveNewLimit, saveProgress } from "@/lib/progress/storage";
+import {
+  loadDirection,
+  loadNewLimit,
+  loadProgress,
+  saveDirection,
+  saveNewLimit,
+  saveProgress,
+} from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
 import { topicGroups } from "@/lib/quiz/pool";
 import { allDeck, topicDeck } from "@/lib/srs/deck";
@@ -16,22 +23,27 @@ import {
   ALL_TOPICS,
   DEFAULT_NEW_LIMIT,
   deckCounts,
+  deckNextDue,
   gradeIntervals,
   initialCardsState,
+  newShownToday,
   nextDue,
+  parseDirection,
   parseNewLimit,
   reducer,
   remaining,
   sessionTally,
   type Direction,
 } from "@/lib/srs/session";
-import type { CardState, Grade } from "@/lib/srs/types";
+import type { CardState, Grade, ReviewSummary } from "@/lib/srs/types";
 import { CardReview } from "./CardReview";
 import { CardsDone } from "./CardsDone";
 import { CardsSetup } from "./CardsSetup";
 
 /** Общая пустая карта состояний: literal `{}` в рендере ломал бы мемоизацию. */
 const NO_CARDS: Record<string, CardState> = {};
+/** То же для сводок: стабильная ссылка, пока прогресс ещё не прочитан. */
+const NO_REVIEWS: ReviewSummary[] = [];
 
 /** Экрану нужны только названия и список частей — геометрия (чанки) не грузится. */
 type DataState =
@@ -44,7 +56,7 @@ export function CardsScreen() {
   const [progress, setProgress] = useState<ProgressV1 | null>(null);
   const [newLimitText, setNewLimitText] = useState(String(DEFAULT_NEW_LIMIT));
   const [picked, setPicked] = useState<string | null>(null);
-  const [direction, setDirection] = useState<Direction>("la-ru");
+  const [direction, setDirection] = useState<Direction>(() => parseDirection(null));
   const [state, dispatch] = useReducer(reducer, initialCardsState);
   const param = useSearchParams().get("topic");
 
@@ -72,6 +84,7 @@ export function CardsScreen() {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- localStorage is unavailable until mount
     setProgress(loadProgress());
     setNewLimitText(String(loadNewLimit()));
+    setDirection(loadDirection());
   }, []);
 
   const groups = useMemo(() => (data.status === "ready" ? topicGroups(data.content, data.manifest) : []), [data]);
@@ -94,13 +107,23 @@ export function CardsScreen() {
   const today = dayKey(new Date().toISOString());
   const newLimit = parseNewLimit(newLimitText);
   const cards = progress?.cards ?? NO_CARDS;
-  const counts = useMemo(() => deckCounts(deck, cards, today, newLimit), [deck, cards, today, newLimit]);
-  // «Ещё» показывается, только если на сегодня осталась очередь: карточки,
-  // не поместившиеся в лимит max=50, или следующая порция новых
-  const hasMore = useMemo(
-    () => state.phase === "done" && buildQueue(deck, cards, today, newLimit).length > 0,
-    [state.phase, deck, cards, today, newLimit],
+  const reviews = progress?.reviews ?? NO_REVIEWS;
+  // дневная норма новых считается по уже записанным сегодня сводкам: иначе
+  // каждая следующая сессия дня снова выдавала бы полный лимит новых карточек
+  const newToday = useMemo(() => newShownToday(reviews, today), [reviews, today]);
+  const remainingNew = Math.max(0, newLimit - newToday);
+  const counts = useMemo(
+    () => deckCounts(deck, cards, today, remainingNew),
+    [deck, cards, today, remainingNew],
   );
+  // «Ещё» показывается, только если на сегодня осталась очередь: карточки,
+  // не поместившиеся в лимит max=50, или следующая порция новых в пределах нормы
+  const hasMore = useMemo(
+    () => state.phase === "done" && buildQueue(deck, cards, today, remainingNew).length > 0,
+    [state.phase, deck, cards, today, remainingNew],
+  );
+  // когда на сегодня всё сделано, экран говорит, когда карточки вернутся
+  const upcoming = useMemo(() => deckNextDue(deck, cards, today), [deck, cards, today]);
 
   // итог сессии: его же показывает экран «Повторено N» и пишет flush()
   const tally = useMemo(() => sessionTally(state), [state]);
@@ -118,7 +141,13 @@ export function CardsScreen() {
     if (p === null || p.reviewed === 0) return null;
     const next = recordReview(
       loadProgress(),
-      { finishedAt: new Date().toISOString(), topicId: p.topicId, reviewed: p.reviewed, again: p.again },
+      {
+        finishedAt: new Date().toISOString(),
+        topicId: p.topicId,
+        reviewed: p.reviewed,
+        again: p.again,
+        fresh: p.fresh,
+      },
       p.states,
     );
     saveProgress(next);
@@ -136,10 +165,10 @@ export function CardsScreen() {
   useEffect(() => () => void flush(), [flush]);
 
   const start = useCallback(() => {
-    const queue = buildQueue(deck, cards, today, newLimit);
+    const queue = buildQueue(deck, cards, today, remainingNew);
     if (queue.length === 0) return;
     dispatch({ type: "start", topicId, queue, base: cards, startedAt: new Date().toISOString() });
-  }, [deck, cards, today, newLimit, topicId]);
+  }, [deck, cards, today, remainingNew, topicId]);
 
   const grade = useCallback((g: Grade) => {
     const now = new Date().toISOString();
@@ -157,6 +186,11 @@ export function CardsScreen() {
     saveNewLimit(parseNewLimit(value));
   }, []);
 
+  const changeDirection = useCallback((d: Direction) => {
+    setDirection(d);
+    saveDirection(d);
+  }, []);
+
   return (
     <div className="mx-auto flex h-full w-full max-w-xl flex-col p-6 text-sm">
       {state.phase === "setup" && data.status === "loading" && (
@@ -172,11 +206,14 @@ export function CardsScreen() {
           topicId={topicId}
           onTopic={setPicked}
           direction={direction}
-          onDirection={setDirection}
+          onDirection={changeDirection}
           newLimit={newLimitText}
           onNewLimit={changeNewLimit}
           due={counts.due}
           fresh={counts.fresh}
+          newToday={newToday}
+          nextDue={upcoming}
+          deckCards={deck.length}
           onStart={start}
         />
       )}
@@ -200,7 +237,7 @@ export function CardsScreen() {
         <CardsDone
           reviewed={tally.reviewed}
           again={tally.again}
-          due={nextDue(tally.states)}
+          due={upcoming ?? nextDue(tally.states)}
           today={today}
           hasMore={hasMore}
           onMore={start}

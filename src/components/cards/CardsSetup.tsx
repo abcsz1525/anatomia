@@ -1,6 +1,6 @@
 "use client";
 import type { TopicGroup } from "@/lib/quiz/pool";
-import { ALL_TOPICS, MAX_NEW_LIMIT, MIN_NEW_LIMIT, type Direction } from "@/lib/srs/session";
+import { ALL_TOPICS, MAX_NEW_LIMIT, MIN_NEW_LIMIT, formatDay, type Direction } from "@/lib/srs/session";
 
 const DIRECTIONS: { id: Direction; ru: string }[] = [
   { id: "la-ru", ru: "Латынь → Русский" },
@@ -18,6 +18,9 @@ export function CardsSetup({
   onNewLimit,
   due,
   fresh,
+  newToday,
+  nextDue,
+  deckCards,
   onStart,
 }: {
   groups: TopicGroup[];
@@ -30,6 +33,12 @@ export function CardsSetup({
   onNewLimit(value: string): void;
   due: number;
   fresh: number;
+  /** Сколько новых карточек уже показано сегодня: остаток дневной нормы. */
+  newToday: number;
+  /** Ближайшее будущее повторение по всей колоде темы; null — ждать нечего. */
+  nextDue: string | null;
+  /** Размер выбранной колоды: пустая тема объясняется отдельной строкой. */
+  deckCards: number;
   onStart(): void;
 }) {
   return (
@@ -127,6 +136,23 @@ export function CardsSetup({
         <p className="mt-2 text-xs text-neutral-500" data-testid="cards-today">
           Сегодня: {due} к повторению, {fresh} новых
         </p>
+        {newToday > 0 && (
+          <p className="mt-1 text-xs text-neutral-400" data-testid="cards-new-today">
+            (сегодня уже показано {newToday} новых)
+          </p>
+        )}
+        {/* на сегодня очередь пуста — кнопка неактивна, поэтому экран
+            обязан сказать, когда карточки вернутся, а не молчать */}
+        {due + fresh === 0 && nextDue !== null && (
+          <p className="mt-1 text-xs text-neutral-500" data-testid="cards-next-due">
+            Следующее повторение: {formatDay(nextDue)}
+          </p>
+        )}
+        {due + fresh === 0 && nextDue === null && deckCards === 0 && (
+          <p className="mt-1 text-xs text-neutral-500" data-testid="cards-empty-deck">
+            В этой теме пока нет карточек
+          </p>
+        )}
       </div>
     </div>
   );

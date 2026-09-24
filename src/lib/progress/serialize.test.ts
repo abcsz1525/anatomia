@@ -16,7 +16,7 @@ function validProgress(): ProgressV1 {
       femur: { ease: 2.5, interval: 6, reps: 3, lapses: 0, due: "2026-09-30", lastAt: "2026-09-23T10:00:00.000Z" },
     },
     reviews: [
-      { finishedAt: "2026-09-23T10:00:00.000Z", topicId: "lower-limb-bones", reviewed: 5, again: 1 },
+      { finishedAt: "2026-09-23T10:00:00.000Z", topicId: "lower-limb-bones", reviewed: 5, again: 1, fresh: 3 },
     ],
   };
 }
@@ -79,6 +79,16 @@ describe("parseProgress", () => {
     };
     const parsed = parseProgress(JSON.stringify(legacy));
     expect(parsed).toEqual({ ...legacy, cards: {}, reviews: [] });
+  });
+
+  it("reads a summary saved without fresh as 0 new cards", () => {
+    const legacy = {
+      ...validProgress(),
+      reviews: [{ finishedAt: "2026-09-23T10:00:00.000Z", topicId: "lower-limb-bones", reviewed: 5, again: 1 }],
+    };
+    expect(parseProgress(JSON.stringify(legacy))?.reviews).toEqual([
+      { finishedAt: "2026-09-23T10:00:00.000Z", topicId: "lower-limb-bones", reviewed: 5, again: 1, fresh: 0 },
+    ]);
   });
 
   it("returns null when cards entries are malformed", () => {

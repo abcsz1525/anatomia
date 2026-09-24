@@ -1,6 +1,9 @@
 import { addDays } from "@/lib/progress/stats";
 import type { CardState, Grade } from "./types";
 
+/** Первый интервал «Легко» у карточки без повторений (значение Anki). */
+const EASY_FIRST_INTERVAL = 4;
+
 const MIN_EASE = 1.3;
 const MAX_EASE = 2.5;
 const START_EASE = 2.5;
@@ -57,7 +60,10 @@ export function review(
   }
 
   // easy
-  const interval = Math.round(goodInterval * 1.3);
+  // у новой карточки (и после сброса «Не помню») goodInterval = 1, и
+  // round(1 × 1.3) снова дал бы 1 — «Легко» ничем не отличалось бы от
+  // «Помню». Поэтому первый шаг «Легко» — 4 дня, как в Anki.
+  const interval = reps === 0 ? EASY_FIRST_INTERVAL : Math.round(goodInterval * 1.3);
   return {
     ease: Math.min(MAX_EASE, round2(ease + 0.15)),
     interval,

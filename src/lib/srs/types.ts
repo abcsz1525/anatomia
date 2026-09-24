@@ -24,4 +24,11 @@ export interface ReviewSummary {
   topicId: string;
   reviewed: number;
   again: number;
+  /**
+   * Сколько карточек сессии не имели состояния на её старте. Из суммы fresh
+   * по сегодняшним сводкам считается дневная норма новых карточек, поэтому
+   * поле обязательно в типе; в сохранениях до этого поля parseProgress
+   * подставляет 0.
+   */
+  fresh: number;
 }
