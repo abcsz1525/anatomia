@@ -7,10 +7,11 @@ import type { ContentBundle } from "@/lib/content/types";
 import { daysLabel, sessionsLabel } from "@/lib/progress/format";
 import { emptyProgress, normalizeActiveDays } from "@/lib/progress/record";
 import { parseProgress, stringifyProgress } from "@/lib/progress/serialize";
-import { dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
+import { cardMastery, dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
 import { clearBackup, hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
 import { topicGroups, topicParts } from "@/lib/quiz/pool";
+import { topicDeck } from "@/lib/srs/deck";
 
 const EXPORT_FILENAME = "anatomia-progress.json";
 
@@ -19,6 +20,9 @@ interface TopicRow {
   ru: string;
   known: number;
   total: number;
+  /** Карточки темы с интервалом ≥ 7 дней и размер колоды. */
+  learned: number;
+  cards: number;
   sessions: number;
 }
 
@@ -81,11 +85,14 @@ export function ProgressScreen() {
       ru: group.ru,
       rows: group.topics.map((topic) => {
         const { known, total } = topicMastery(p, topicParts(content, manifest, topic.id));
+        const cards = cardMastery(p, topicDeck(content, manifest, topic.id));
         return {
           id: topic.id,
           ru: topic.ru,
           known,
           total,
+          learned: cards.learned,
+          cards: cards.total,
           sessions: sessionsByTopic.get(topic.id) ?? 0,
         };
       }),
@@ -97,6 +104,11 @@ export function ProgressScreen() {
     [progress],
   );
   const totalSessions = progress?.sessions.length ?? 0;
+  // сессии карточек, законченные сегодня: одна строка на сессию, а не на карточку
+  const reviewsToday = useMemo(() => {
+    const today = dayKey(new Date().toISOString());
+    return (progress?.reviews ?? []).filter((r) => dayKey(r.finishedAt) === today).length;
+  }, [progress]);
 
   const handleExport = useCallback(() => {
     const blob = new Blob([stringifyProgress(progress ?? emptyProgress())], {
@@ -172,6 +184,9 @@ export function ProgressScreen() {
           Серия: {daysLabel(streak)}
         </p>
         <p className="text-sm text-neutral-600">Всего {sessionsLabel(totalSessions)}</p>
+        <p className="text-sm text-neutral-600" data-testid="progress-reviews-today">
+          Повторений сегодня: {reviewsToday}
+        </p>
       </div>
 
       {data.status === "loading" && <p className="text-sm text-neutral-500">Загружаем темы…</p>}
@@ -180,7 +195,7 @@ export function ProgressScreen() {
       )}
       {data.status === "ready" && (
         <table className="w-full border-collapse text-sm" data-testid="progress-table">
-          <caption className="sr-only">Освоенные понятия и число сессий по темам</caption>
+          <caption className="sr-only">Освоенные понятия, выученные карточки и число сессий по темам</caption>
           <thead>
             <tr className="border-b text-left text-xs uppercase tracking-wide text-neutral-500">
               <th scope="col" className="py-2 pr-4 font-semibold">Тема</th>
@@ -203,7 +218,10 @@ export function ProgressScreen() {
                 <tr key={row.id} data-testid="progress-topic" data-topic={row.id} className="border-b">
                   <th scope="row" className="py-2 pr-4 text-left font-normal">{row.ru}</th>
                   <td className="py-2 pr-4 whitespace-nowrap text-neutral-600">
-                    освоено {row.known} из {row.total} понятий
+                    <span className="block">освоено {row.known} из {row.total} понятий</span>
+                    <span className="block text-xs text-neutral-500" data-testid="topic-cards">
+                      Карточки: выучено {row.learned} из {row.cards}
+                    </span>
                   </td>
                   <td className="py-2 whitespace-nowrap text-neutral-600">{sessionsLabel(row.sessions)}</td>
                 </tr>

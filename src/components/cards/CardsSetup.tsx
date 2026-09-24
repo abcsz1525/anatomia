@@ -91,6 +91,7 @@ export function CardsSetup({
               type="radio"
               name="cards-direction"
               value={d.id}
+              data-testid={`cards-direction-${d.id}`}
               checked={direction === d.id}
               onChange={() => onDirection(d.id)}
             />
