@@ -1,12 +1,13 @@
 "use client";
+import Link from "next/link";
 import type { DisplayNames } from "@/lib/content/names";
 
 export type { DisplayNames };
 
 export function PartCard({
-  partId, names, systemRu, isolated, onHide, onIsolate, onClearIsolation, onClose,
+  partId, names, systemRu, isolated, topicId, onHide, onIsolate, onClearIsolation, onClose,
 }: {
-  partId: string; names: DisplayNames; systemRu: string; isolated: boolean;
+  partId: string; names: DisplayNames; systemRu: string; isolated: boolean; topicId?: string;
   onHide(): void; onIsolate(): void; onClearIsolation(): void; onClose(): void;
 }) {
   return (
@@ -19,6 +20,16 @@ export function PartCard({
       </p>
       <p className="text-sm text-neutral-500" data-testid="part-en">{names.en}</p>
       {names.topicRu && <p className="mt-1 text-xs text-neutral-500" data-testid="part-topic">{names.topicRu}</p>}
+      {/* у непереведённой структуры нет ни латыни, ни русского — карточек по ней не собрать */}
+      {names.translated && topicId && (
+        <Link
+          href={`/cards?topic=${topicId}`}
+          data-testid="part-cards-link"
+          className="mt-2 inline-block text-sm text-blue-700 hover:underline"
+        >
+          Учить карточки темы
+        </Link>
+      )}
       <div className="mt-3 flex flex-wrap gap-2 text-sm">
         <button onClick={onHide} className="rounded border px-2 py-1 hover:bg-neutral-100">Скрыть</button>
         {isolated ? (

@@ -83,6 +83,7 @@ export function AtlasScreen() {
                   names={getPartNames(selected, state.data.content)}
                   systemRu={SYSTEM_BY_ID[selected.system].ru}
                   isolated={isolatedPartId === selected.id}
+                  topicId={state.data.content.structures[selected.id]?.topic}
                   onHide={() => hidePart(selected.id)}
                   onIsolate={() => isolate(selected.id)}
                   onClearIsolation={() => isolate(null)}
