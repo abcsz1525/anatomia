@@ -59,7 +59,7 @@ test("a topic session grades its new cards and shows up in progress", async ({ p
   );
   await expect(page.getByTestId("cards-start")).toBeDisabled();
   // тупика нет: экран говорит, когда карточки вернутся («Помню» → завтра)
-  await expect(page.getByTestId("cards-next-due")).toHaveText(
+  await expect(page.getByTestId("cards-setup-next-due")).toHaveText(
     /^Следующее повторение: \d{2}\.\d{2}\.\d{4}$/,
   );
 });

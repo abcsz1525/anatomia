@@ -6,7 +6,7 @@ import { loadContent } from "@/lib/content/load-content";
 import type { ContentBundle } from "@/lib/content/types";
 import { daysLabel, sessionsLabel } from "@/lib/progress/format";
 import { emptyProgress, normalizeActiveDays } from "@/lib/progress/record";
-import { parseProgress, stringifyProgress } from "@/lib/progress/serialize";
+import { parseProgressDetailed, stringifyProgress } from "@/lib/progress/serialize";
 import { cardMastery, dayKey, streakDays, topicMastery } from "@/lib/progress/stats";
 import { clearBackup, hasBackup, loadProgress, saveProgress } from "@/lib/progress/storage";
 import type { ProgressV1 } from "@/lib/progress/types";
@@ -134,9 +134,15 @@ export function ProgressScreen() {
     } catch {
       raw = null;
     }
-    const parsed = parseProgress(raw);
+    const { progress: parsed, degraded } = parseProgressDetailed(raw);
     if (parsed === null) {
       setMessage("Файл не распознан");
+      return;
+    }
+    // импорт — страховка от потери данных, поэтому файл с повреждённым разделом
+    // карточек не принимаем: иначе он молча заменил бы сохранённые карточки пустыми
+    if (degraded) {
+      setMessage("Файл не загружен: раздел карточек в нём повреждён. Сохранённый прогресс не тронут.");
       return;
     }
     const normalized = normalizeActiveDays(parsed);

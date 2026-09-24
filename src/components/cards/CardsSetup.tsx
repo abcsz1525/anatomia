@@ -144,7 +144,7 @@ export function CardsSetup({
         {/* на сегодня очередь пуста — кнопка неактивна, поэтому экран
             обязан сказать, когда карточки вернутся, а не молчать */}
         {due + fresh === 0 && nextDue !== null && (
-          <p className="mt-1 text-xs text-neutral-500" data-testid="cards-next-due">
+          <p className="mt-1 text-xs text-neutral-500" data-testid="cards-setup-next-due">
             Следующее повторение: {formatDay(nextDue)}
           </p>
         )}
