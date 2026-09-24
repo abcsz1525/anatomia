@@ -28,6 +28,19 @@ describe("getCached", () => {
     expect(second.map((b) => b.id)).toEqual(["a", "b"]);
   });
 
+  it("stores nothing when build throws, and a later build still succeeds", () => {
+    const cache = new Map<object, FakeBatch[]>();
+    const key = {};
+    expect(() =>
+      getCached(cache, key, () => {
+        throw new Error("atlas buffers already released");
+      }),
+    ).toThrow("atlas buffers already released");
+    expect(cache.size).toBe(0);
+    // неудачная сборка не должна отравить ключ: следующая попытка обязана сработать
+    expect(getCached(cache, key, () => [fake("a")]).map((b) => b.id)).toEqual(["a"]);
+  });
+
   it("builds separately for different keys", () => {
     const cache = new Map<object, FakeBatch[]>();
     const first = getCached(cache, {}, () => [fake("a")]);

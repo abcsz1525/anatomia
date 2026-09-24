@@ -7,7 +7,7 @@ import { partGeometry } from "@/lib/atlas/parse-chunk";
 import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasManifest, AtlasPart, SystemId } from "@/lib/atlas/types";
 import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-store";
-import { releaseBuffers, type AtlasData } from "@/hooks/use-atlas-data";
+import { isCachedBundle, releaseBuffers, type AtlasData } from "@/hooks/use-atlas-data";
 
 const HIGHLIGHT = new THREE.Color("#ffb020");
 // цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
@@ -63,6 +63,10 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
 }
 
 function buildBatches(data: AtlasData): SystemBatch[] {
+  // Инвариант: собирать можно только из живых буферов. `new Float32Array(undefined, …)`
+  // не бросает исключение — он берёт перегрузку с длиной и отдаёт пустой массив,
+  // поэтому сборка из освобождённых буферов дала бы молча пустую модель.
+  if (data.buffers.length === 0) throw new Error("atlas buffers already released");
   const bySystem = new Map<SystemId, AtlasPart[]>();
   for (const p of data.manifest.parts) {
     const list = bySystem.get(p.system) ?? [];
@@ -82,26 +86,40 @@ export function BodyMeshes({
   /** Клик по структуре: викторина перехватывает выбор, иначе обычное выделение. */
   onPick?: (id: string) => void;
 }) {
+  // Кэшируем батчи только для бандла из модульного кэша: он приходит тем же объектом
+  // на каждом маршруте. У деградировавшего бандла каждое монтирование даёт новый
+  // объект манифеста, то есть новый ключ, и записи копились бы в кэше навсегда.
+  const cacheable = isCachedBundle(data);
+
   // Сборка батчей стоит сотни миллисекунд, поэтому она живёт в модульном кэше и
   // переживает переходы между /atlas и /quiz. Приведение типа нужно потому, что
   // batch-cache не знает про three: батчи под этим ключом собирает только этот модуль.
   const batches = useMemo(
     () =>
-      getCached(batchCache as Map<AtlasManifest, SystemBatch[]>, data.manifest, () => {
-        const built = buildBatches(data);
-        // геометрия уехала на GPU — сырые чанки больше не нужны
-        releaseBuffers(data);
-        return built;
-      }),
-    [data],
+      cacheable
+        ? getCached(batchCache as Map<AtlasManifest, SystemBatch[]>, data.manifest, () => {
+            const built = buildBatches(data);
+            // геометрия уехала на GPU — сырые чанки больше не нужны
+            releaseBuffers(data);
+            return built;
+          })
+        : buildBatches(data),
+    [data, cacheable],
   );
 
   useEffect(() => {
     onReady?.();
   }, [batches, onReady]);
 
-  // dispose при размонтировании нет намеренно: владелец GPU-ресурсов — кэш
+  // Кэшированные батчи переживают размонтирование: владелец их GPU-ресурсов — кэш
   // (`resetAtlasCache`), иначе возврат на /atlas получил бы уничтоженные меши.
+  // Некэшируемые батчи не переживут никого — их уничтожаем сами.
+  useEffect(() => {
+    if (cacheable) return;
+    return () => {
+      for (const b of batches) b.dispose();
+    };
+  }, [batches, cacheable]);
 
   const visibleSystems = useAtlasStore((s) => s.visibleSystems);
   const hiddenParts = useAtlasStore((s) => s.hiddenParts);
