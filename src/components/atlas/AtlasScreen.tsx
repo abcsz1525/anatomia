@@ -2,6 +2,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useAtlasData } from "@/hooks/use-atlas-data";
+import { useIsMobile } from "@/hooks/use-media-query";
 import { SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasPart } from "@/lib/atlas/types";
 import { displayNames } from "@/lib/content/names";
@@ -13,6 +14,7 @@ import { LoadingOverlay } from "./LoadingOverlay";
 import { PartCard } from "./PartCard";
 import { SearchBox } from "./SearchBox";
 import { WebGLGate } from "./WebGLGate";
+import { Sheet } from "@/components/ui/Sheet";
 
 // латынь/русский из structures.json; без записи остаётся только английское имя
 function getPartNames(part: AtlasPart, content: ContentBundle) {
@@ -21,6 +23,9 @@ function getPartNames(part: AtlasPart, content: ContentBundle) {
 
 export function AtlasScreen() {
   const state = useAtlasData();
+  const isMobile = useIsMobile();
+  const [layersOpen, setLayersOpen] = useState(false);
+  const closeLayers = useCallback(() => setLayersOpen(false), []);
   const [ready, setReady] = useState(false);
   const onReady = useCallback(() => setReady(true), []);
   const selectedPartId = useAtlasStore((s) => s.selectedPartId);
@@ -55,9 +60,39 @@ export function AtlasScreen() {
     showOnlySystems(["skeletal", part.system]);
   }, [focus, partById, reveal, showOnlySystems]);
 
+  // общие пропсы карточки для обоих вариантов раскладки
+  const partCardProps = (part: AtlasPart, content: ContentBundle) => ({
+    partId: part.id,
+    names: getPartNames(part, content),
+    systemRu: SYSTEM_BY_ID[part.system].ru,
+    isolated: isolatedPartId === part.id,
+    topicId: content.structures[part.id]?.topic,
+    onHide: () => hidePart(part.id),
+    onIsolate: () => isolate(part.id),
+    onClearIsolation: () => isolate(null),
+    onClose: () => select(null),
+  });
+
   return (
     <div className="flex h-full w-full" data-atlas-ready={ready ? "true" : "false"}>
-      <LayerPanel />
+      {!isMobile && <LayerPanel variant="aside" />}
+      {isMobile && (
+        <>
+          <button
+            type="button"
+            onClick={() => setLayersOpen(true)}
+            data-testid="layers-toggle"
+            // справа: слева внизу в dev-режиме сидит индикатор Next.js, да и
+            // большому пальцу правой руки правый угол ближе
+            className="fixed bottom-4 right-4 z-10 min-h-11 rounded-full border bg-white px-4 py-3 text-sm shadow"
+          >
+            Слои
+          </button>
+          <Sheet open={layersOpen} onClose={closeLayers} label="Слои" testId="layers-sheet">
+            <LayerPanel variant="sheet" />
+          </Sheet>
+        </>
+      )}
       <div className="relative flex-1">
         <WebGLGate>
           {state.status === "loading" && <LoadingOverlay loaded={state.loaded} total={state.total} />}
@@ -77,18 +112,13 @@ export function AtlasScreen() {
               {/* the canvas must mount so the synchronous BatchedMesh build runs; the
                   overlay stays on top of it until BodyMeshes reports it is ready */}
               <AtlasCanvas data={state.data} onReady={onReady} />
-              {selected && (
-                <PartCard
-                  partId={selected.id}
-                  names={getPartNames(selected, state.data.content)}
-                  systemRu={SYSTEM_BY_ID[selected.system].ru}
-                  isolated={isolatedPartId === selected.id}
-                  topicId={state.data.content.structures[selected.id]?.topic}
-                  onHide={() => hidePart(selected.id)}
-                  onIsolate={() => isolate(selected.id)}
-                  onClearIsolation={() => isolate(null)}
-                  onClose={() => select(null)}
-                />
+              {/* ровно один экземпляр карточки: на десктопе — плавающая, на мобайле —
+                  в шторке; иначе тестовые id задвоились бы */}
+              {selected && !isMobile && <PartCard {...partCardProps(selected, state.data.content)} variant="card" />}
+              {selected && isMobile && (
+                <Sheet open onClose={() => select(null)} label="Структура" testId="part-sheet">
+                  <PartCard {...partCardProps(selected, state.data.content)} variant="sheet" />
+                </Sheet>
               )}
               {!ready && <LoadingOverlay loaded={1} total={1} />}
             </>

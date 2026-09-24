@@ -17,7 +17,7 @@ export function SearchBox({
   const byId = useMemo(() => new Map(manifest.parts.map((p) => [p.id, p])), [manifest]);
   const results = useMemo(() => (q.trim().length < 2 ? [] : search(index, q, 12)), [index, q]);
   return (
-    <div className="absolute left-3 top-3 z-10 w-80">
+    <div className="absolute left-3 right-3 top-3 z-10 md:right-auto md:w-80">
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
