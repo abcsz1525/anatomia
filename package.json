@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "pnpm build:content",
-    "build": "next build",
+    "build": "pnpm build:content && next build",
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",

@@ -79,6 +79,9 @@ export function QuizScreen() {
       if (visible.length > 0) setRestrict(visible);
       // кадр с прошлого вопроса/сессии не имеет отношения к новой теме
       reframe();
+      // новая сессия всегда начинается с развёрнутой панели: в режиме «назови»
+      // свёрнутая строка не показывает вариантов, и отвечать было бы нечем
+      setPanelCollapsed(false);
       dispatch({ type: "start", topicId: id, mode: m, questions, startedAt: new Date().toISOString() });
     },
     [bundle, clearQuiz, setRestrict, reframe],

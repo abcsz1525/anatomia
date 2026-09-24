@@ -118,9 +118,11 @@ export function QuizRunner({
       <p
         // в свёрнутой строке отклик уступает место кнопке «Дальше»: вопрос
         // важнее, а вердикт виден на самой модели (подсветка) и после «Развернуть»
-        className={`text-sm ${feedbackClass(feedback)} ${
-          collapsed ? (answered ? "hidden" : "min-w-0 max-w-[45%] shrink truncate") : ""
-        }`}
+        className={[
+          "text-sm",
+          feedbackClass(feedback),
+          collapsed ? (answered ? "hidden" : "min-w-0 max-w-[45%] shrink truncate") : "",
+        ].filter(Boolean).join(" ")}
         data-testid="quiz-feedback"
         aria-live="polite"
       >
@@ -145,6 +147,7 @@ export function QuizRunner({
           type="button"
           data-testid="quiz-panel-toggle"
           onClick={onToggle}
+          aria-expanded={!collapsed}
           // развёрнутая панель прижимает кнопку вправо: слева внизу в dev-режиме
           // сидит индикатор Next.js и перехватывает касания
           className={`min-h-11 shrink-0 rounded border px-3 text-xs text-neutral-600 ${

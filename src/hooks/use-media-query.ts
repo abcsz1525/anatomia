@@ -60,5 +60,7 @@ function getServerSnapshot() {
 
 /** Мобильная раскладка — всё, что уже Tailwind-брейкпойнта `md` (768 px). */
 export function useIsMobile(): boolean {
-  return useMediaQuery("(max-width: 767px)");
+  // 47.9375rem, а не 767px: Tailwind-брейкпойнт `md` задан в rem, и при
+  // увеличенном системном шрифте пиксельный порог разошёлся бы с раскладкой
+  return useMediaQuery("(max-width: 47.9375rem)");
 }

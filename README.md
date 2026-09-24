@@ -201,8 +201,10 @@ pnpm build:content --report   # покрытие по всем 15 система
 pnpm build:content            # валидирует content/structures.csv и пересобирает public/content/*.json
 ```
 
-`pnpm build` вызывает `pnpm build:content` автоматически через `prebuild`, так
-что prod-сборка падает, если контент не проходит валидацию.
+`pnpm build` сам запускает `pnpm build:content` первым шагом, так что
+prod-сборка падает, если контент не проходит валидацию. (Скрипт `prebuild`
+для этого не годится: pnpm 10 не выполняет pre/post-скрипты без
+`enable-pre-post-scripts=true`.)
 
 ### SIDE_OVERRIDES — если манифест перепутал сторону
 
