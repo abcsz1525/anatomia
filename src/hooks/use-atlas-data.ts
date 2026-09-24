@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
+import { resetAtlasCache } from "@/lib/atlas/batch-cache";
 import { AtlasLoadError, loadAllChunks, loadManifest } from "@/lib/atlas/load-atlas";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import { loadContent } from "@/lib/content/load-content";
@@ -15,12 +16,29 @@ export type AtlasDataState =
 // (клиентская навигация) не должен грузить их заново
 let cache: AtlasData | null = null;
 
+/**
+ * Сырые буферы чанков (десятки мегабайт) нужны только для первой сборки
+ * BatchedMesh — дальше геометрия живёт на GPU и в кэше батчей. Освобождаем их
+ * сразу после сборки: на телефоне это главный источник расхода памяти.
+ * Чистим только бандл из модульного кэша — он единственный переживает
+ * размонтирование, и его батчи лежат в `batchCache`, так что второй сборки из
+ * буферов не будет. Чужой (деградировавший, не закэшированный) бандл не трогаем:
+ * его буферы может ждать другая сборка.
+ */
+export function releaseBuffers(data: AtlasData): void {
+  if (data !== cache) return;
+  data.buffers.length = 0;
+}
+
 export function useAtlasData(): AtlasDataState {
   const [attempt, setAttempt] = useState(0);
   const [state, setState] = useState<AtlasDataState>(() =>
     cache ? { status: "ready", data: cache } : { status: "loading", loaded: 0, total: 0 },
   );
   const retry = useCallback(() => {
+    // батчи собраны из старых данных и больше ничему не соответствуют;
+    // без этого повторная загрузка оставила бы их висеть на GPU навсегда
+    resetAtlasCache();
     cache = null;
     setAttempt((a) => a + 1);
   }, []);

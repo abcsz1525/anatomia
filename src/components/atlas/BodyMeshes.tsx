@@ -2,11 +2,12 @@
 import { useEffect, useMemo } from "react";
 import * as THREE from "three";
 import type { ThreeEvent } from "@react-three/fiber";
+import { batchCache, getCached } from "@/lib/atlas/batch-cache";
 import { partGeometry } from "@/lib/atlas/parse-chunk";
 import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
-import type { AtlasPart, SystemId } from "@/lib/atlas/types";
+import type { AtlasManifest, AtlasPart, SystemId } from "@/lib/atlas/types";
 import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-store";
-import type { AtlasData } from "@/hooks/use-atlas-data";
+import { releaseBuffers, type AtlasData } from "@/hooks/use-atlas-data";
 
 const HIGHLIGHT = new THREE.Color("#ffb020");
 // цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
@@ -21,6 +22,8 @@ interface SystemBatch {
   mesh: THREE.BatchedMesh;
   parts: AtlasPart[]; // index = instanceId
   baseColor: THREE.Color;
+  /** Освобождение GPU-ресурсов; вызывает только владелец батчей — `batchCache`. */
+  dispose(): void;
 }
 
 function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]): SystemBatch {
@@ -47,7 +50,26 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     geometry.dispose();
   });
   mesh.computeBoundingSphere();
-  return { system, mesh, parts, baseColor };
+  return {
+    system,
+    mesh,
+    parts,
+    baseColor,
+    dispose() {
+      mesh.dispose();
+      material.dispose();
+    },
+  };
+}
+
+function buildBatches(data: AtlasData): SystemBatch[] {
+  const bySystem = new Map<SystemId, AtlasPart[]>();
+  for (const p of data.manifest.parts) {
+    const list = bySystem.get(p.system) ?? [];
+    list.push(p);
+    bySystem.set(p.system, list);
+  }
+  return SYSTEMS.filter((s) => bySystem.has(s.id)).map((s) => buildBatch(s.id, bySystem.get(s.id)!, data.buffers));
 }
 
 export function BodyMeshes({
@@ -60,31 +82,26 @@ export function BodyMeshes({
   /** Клик по структуре: викторина перехватывает выбор, иначе обычное выделение. */
   onPick?: (id: string) => void;
 }) {
-  const batches = useMemo(() => {
-    const bySystem = new Map<SystemId, AtlasPart[]>();
-    for (const p of data.manifest.parts) {
-      const list = bySystem.get(p.system) ?? [];
-      list.push(p);
-      bySystem.set(p.system, list);
-    }
-    return SYSTEMS.filter((s) => bySystem.has(s.id)).map((s) => buildBatch(s.id, bySystem.get(s.id)!, data.buffers));
-  }, [data]);
+  // Сборка батчей стоит сотни миллисекунд, поэтому она живёт в модульном кэше и
+  // переживает переходы между /atlas и /quiz. Приведение типа нужно потому, что
+  // batch-cache не знает про three: батчи под этим ключом собирает только этот модуль.
+  const batches = useMemo(
+    () =>
+      getCached(batchCache as Map<AtlasManifest, SystemBatch[]>, data.manifest, () => {
+        const built = buildBatches(data);
+        // геометрия уехала на GPU — сырые чанки больше не нужны
+        releaseBuffers(data);
+        return built;
+      }),
+    [data],
+  );
 
   useEffect(() => {
     onReady?.();
   }, [batches, onReady]);
 
-  // GPU ownership is keyed on `batches` alone: an `onReady` identity change must
-  // never dispose meshes that are still mounted.
-  useEffect(
-    () => () => {
-      for (const b of batches) {
-        b.mesh.dispose();
-        (b.mesh.material as THREE.Material).dispose();
-      }
-    },
-    [batches],
-  );
+  // dispose при размонтировании нет намеренно: владелец GPU-ресурсов — кэш
+  // (`resetAtlasCache`), иначе возврат на /atlas получил бы уничтоженные меши.
 
   const visibleSystems = useAtlasStore((s) => s.visibleSystems);
   const hiddenParts = useAtlasStore((s) => s.hiddenParts);
