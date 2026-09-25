@@ -4,6 +4,15 @@ import { syllables } from "./syllables";
 const nuclei = (word: string) => syllables(word).map((s) => s.nucleus);
 
 describe("syllables", () => {
+  it("splits oe on a morpheme seam, but keeps the digraph elsewhere", () => {
+    // thyro-epiglottica: «o» закрывает соединительную основу, «e» начинает корень
+    expect(syllables("thyroepiglottica")).toHaveLength(7);
+    expect(syllables("hyoepiglotticum")).toHaveLength(7);
+    // обычный диграф: coe-li-a-cus, oe-so-pha-gus
+    expect(syllables("coeliacus")).toHaveLength(4);
+    expect(syllables("oesophagus")).toHaveLength(4);
+  });
+
   it("gives one syllable per vowel", () => {
     expect(nuclei("os")).toEqual(["o"]);
     expect(nuclei("vena")).toEqual(["e", "a"]);

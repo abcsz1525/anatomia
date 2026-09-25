@@ -2,6 +2,19 @@ import { describe, expect, it } from "vitest";
 import { latinWords, transcribe, transcribeWord, withAcute } from "./transcribe";
 import type { StressMap } from "./types";
 
+const ACUTE_CHAR = String.fromCharCode(0x301);
+
+describe("морфемный стык oe", () => {
+  it("читает o и e раздельно в thyro-/hyo- словах", () => {
+    expect(transcribeWord("thyroepiglottica", 3)).toBe(`тироэпигло${ACUTE_CHAR}ттика`);
+    expect(transcribeWord("hyoepiglotticum", 3)).toBe(`хиоэпигло${ACUTE_CHAR}ттикум`);
+  });
+  it("оставляет диграф в остальных словах", () => {
+    expect(transcribeWord("coeliacus", 3)).toBe(`цэли${ACUTE_CHAR}акус`);
+    expect(transcribeWord("oesophagus", 3)).toBe(`эзо${ACUTE_CHAR}фагус`);
+  });
+});
+
 describe("transcribeWord", () => {
   it("reads the words of the plan's example list", () => {
     expect(transcribeWord("musculus", 3)).toBe("му́скулюс");

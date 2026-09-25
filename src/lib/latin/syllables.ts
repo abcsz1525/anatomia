@@ -12,11 +12,26 @@ export function isVowel(ch: string | undefined): boolean {
  *
  * `eu` не дифтонг, когда это окончание `-eus`/`-eum`: там `e` принадлежит
  * основе, а `u` — окончанию (`deltoide-us` → дэльтои́дэус, `perine-um` →
- * пэринэ́ум). `ae`/`oe` в анатомическом корпусе всегда диграфы.
+ * пэринэ́ум). `oe` не диграф на стыке морфем, где `o` закрывает греческую
+ * соединительную основу, а `e` начинает корень: `thyro-epiglottica` →
+ * тироэпигло́ттика, а не «тирэпиглоттика».
  */
+
+/**
+ * Соединительные основы на `-o`, после которых `oe` — это два звука.
+ * Список пополняется по мере появления таких слов в корпусе; сейчас в нём
+ * `thyroepiglottic*` и `hyoepiglotticum`.
+ */
+const O_STEM_BEFORE_E = ["thyro", "hyo"];
+
+function splitsOE(word: string, i: number): boolean {
+  return O_STEM_BEFORE_E.some((stem) => word.startsWith(stem) && i === stem.length - 1);
+}
+
 export function diphthongAt(word: string, i: number): string | null {
   const pair = word.slice(i, i + 2);
-  if (pair === "ae" || pair === "oe" || pair === "au") return pair;
+  if (pair === "oe") return splitsOE(word, i) ? null : "oe";
+  if (pair === "ae" || pair === "au") return pair;
   if (pair === "eu") return /^eu[sm]$/.test(word.slice(i)) ? null : "eu";
   return null;
 }
