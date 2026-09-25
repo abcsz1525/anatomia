@@ -40,11 +40,15 @@ export async function loadContent(baseUrl: string, opts: LoadContentOptions = {}
   const [structures, topics, stress] = await Promise.all([
     loadJson<Record<string, StructureEntry>>(`${baseUrl}/content/structures.json`, opts),
     loadJson<Topic[]>(`${baseUrl}/content/topics.json`, opts),
-    loadJson<StressMap>(`${baseUrl}/content/latin-stress.json`, opts).catch((e: unknown) => {
-      if (opts.signal?.aborted) throw e;
-      console.warn("latin-stress.json unavailable, transcription is hidden", e);
-      return {} as StressMap;
-    }),
+    // форму проверяем здесь: `null` или строка вместо объекта уронили бы рендер
+    // подписи, а показать структуру важнее, чем её чтение
+    loadJson<unknown>(`${baseUrl}/content/latin-stress.json`, opts)
+      .then((m) => (m !== null && typeof m === "object" && !Array.isArray(m) ? (m as StressMap) : ({} as StressMap)))
+      .catch((e: unknown) => {
+        if (opts.signal?.aborted) throw e;
+        console.warn("latin-stress.json unavailable, transcription is hidden", e);
+        return {} as StressMap;
+      }),
   ]);
   return { structures, topics, stress };
 }

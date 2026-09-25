@@ -2,7 +2,7 @@ import type { AtlasManifest } from "@/lib/atlas/types";
 import { SYSTEMS } from "@/lib/atlas/systems";
 import { LATIN_SIDE, sideFor } from "@/lib/content/side";
 import type { ContentBundle, StructureEntry, Topic } from "@/lib/content/types";
-import { latinWords, type StressMap } from "@/lib/latin";
+import { latinWords, syllables, type StressMap } from "@/lib/latin";
 
 export const COURSE_SYSTEMS = SYSTEMS.map((s) => s.id);
 export interface CsvRow { id: string; en: string; la: string; ru: string; topic: string; aliases: string }
@@ -94,6 +94,15 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (!STRESS_KEY.test(word)) errors.push({ message: `latin-stress.json has bad word "${word}" (lower-case Latin letters only)` });
     const pos: number = value;
     if (pos !== 1 && pos !== 2 && pos !== 3) errors.push({ message: `latin-stress.json has bad stress ${pos} for "${word}" (expected 1, 2 or 3)` });
+    else {
+      // значение из диапазона 1..3 ещё не значит, что оно возможно для этого
+      // слова: правка руками легко даёт ударение за пределами слова (тогда
+      // транскрипция молча остаётся без знака) или на последнем слоге, чего
+      // в латыни не бывает
+      const n = syllables(word).length;
+      if (pos > n) errors.push({ message: `latin-stress.json: stress ${pos} for "${word}" exceeds its ${n} syllable(s)` });
+      else if (pos === 1 && n > 1) errors.push({ message: `latin-stress.json: "${word}" has ${n} syllables — stress 1 would fall on the last one` });
+    }
     if (!usedWords.has(word)) errors.push({ message: `latin-stress.json has unused word "${word}"` });
   }
   return errors;

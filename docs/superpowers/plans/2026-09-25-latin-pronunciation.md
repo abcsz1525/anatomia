@@ -4,7 +4,7 @@
 
 **Goal:** Рядом с каждым латинским названием показывать русскую транскрипцию с ударением — `Arteria carotis interna` → `[артэ́риа каро́тис интэ́рна]`, — чтобы студент сразу знал, как термин читается вслух.
 
-**Architecture:** Чистый модуль `src/lib/latin`: `syllables` (слогоделение), `transcribeWord`/`transcribe` (правила чтения медицинской латыни), `stressOf` (ударение из словаря). Словарь `content/latin-stress.json` — 677 слов корпуса, значение = номер ударного слога **с конца** (1, 2 или 3). Черновик словаря генерирует `pnpm build:stress` по позиционным правилам и таблице суффиксов; окончательное значение выверяется вручную. `build:content` падает, если хоть одно слово из `la` отсутствует в словаре. Транскрипция считается в рантайме (дёшево, 677 слов), кладётся в `DisplayNames.laRu` и показывается в атласе, карточках, тесте и разборе ошибок.
+**Architecture:** Чистый модуль `src/lib/latin`: `syllables` (слогоделение), `transcribeWord`/`transcribe` (правила чтения медицинской латыни), `stressOf` (ударение из словаря). Словарь `content/latin-stress.json` — 659 слов корпуса, значение = номер ударного слога **с конца** (1, 2 или 3). Черновик словаря генерирует `pnpm build:stress` по позиционным правилам и таблице суффиксов; окончательное значение выверяется вручную. `build:content` падает, если хоть одно слово из `la` отсутствует в словаре. Транскрипция считается в рантайме (дёшево, 659 слов), кладётся в `DisplayNames.laRu` и показывается в атласе, карточках, тесте и разборе ошибок.
 
 **Tech Stack:** без новых зависимостей.
 
@@ -44,7 +44,8 @@
   русская «ё» всегда ударная и в безударном слоге («ко́лон», «лобу́лус») читалась бы неверно.
 - `qu` → кв: `obliquus` → обли́квус.
 - `ngu` + гласная → нгв: `lingua` → ли́нгва. Перед согласной остаётся нгу (`longus` → ло́нгус).
-- `s` → с; между двумя гласными → з: `nasalis` → наза́лис. `ss` → сс.
+- `s` → с; между двумя гласными → з: `nasalis` → наза́лис; после гласной перед `m`/`n` тоже з
+  (греческие `platysma` → пляти́зма, `chiasma` → хиа́зма). `ss` → сс.
 - `ti` + гласная → ци: `substantia` → субста́нциа; **но** после `s`, `t`, `x` → ти: `ostium` → о́стиум.
 - `x` → кс: `plexus` → пле́ксус.
 - Диграфы: `ch` → х, `ph` → ф, `th` → т, `rh` → р (`brachium` → бра́хиум, `ophthalmicus` → офта́льмикус).
@@ -69,7 +70,7 @@ src/lib/latin/syllables.ts      syllables(word): {nucleus, start}[] (+test)
 src/lib/latin/transcribe.ts     transcribeWord(word, stress?) / transcribe(phrase, map) (+test)
 src/lib/latin/stress.ts         guessStress(word) — правила выше; stressOf(word, map) (+test)
 src/lib/latin/index.ts          реэкспорт
-content/latin-stress.json       677 слов → 1|2|3, отсортировано по алфавиту
+content/latin-stress.json       659 слов → 1|2|3, отсортировано по алфавиту
 scripts/build-stress.ts         дописывает недостающие слова черновиком, печатает их списком
 scripts/content-rules.ts        правило 8: каждое слово из la есть в latin-stress.json
 src/lib/content/names.ts        DisplayNames.laRu; displayNames(en, entry, topics, stress)
@@ -103,7 +104,7 @@ export function latinWords(phrase: string): string[];             // слова 
 ```
 Tests (каждый пример из раздела «Правила чтения» плюс):
 - `syllables("deltoideus")` → 5 ядер (`e o i e u`), `syllables("lingua")` → 2 (`i`, `ua`? нет: `i`, `u`+`a` — ядра `i`, `a`, потому что `ngu` даёт согласный `в`); зафиксировать поведение тестом.
-- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `ею́нум`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `плати́зма`.
+- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `ею́нум`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `пляти́зма`.
 - `transcribe("Arteria carotis interna", map)` → `артэ́риа каро́тис интэ́рна`; `transcribe("Ramus ventricularis anterior I", map)` сохраняет `I`; `transcribe("Valva aortae, valvula semilunaris dextra", map)` сохраняет запятую.
 - `guessStress`: `vena`→2, `arteria`→3, `musculus`→3, `segmentalis`→2 (суффикс), `maxilla`→2 (две согласные), `vertebra`→3 (немая+плавная), `deltoideus`→3, `humerus`→3.
 Commit `feat(latin): syllables, medical-Latin transcription and stress rules`.
@@ -115,12 +116,12 @@ Commit `feat(latin): syllables, medical-Latin transcription and stress rules`.
 - `scripts/build-stress.ts`: собирает слова из `content/structures.csv` (колонка `la`), пропускает римские цифры, дописывает в `content/latin-stress.json` отсутствующие со значением `guessStress`, сортирует по алфавиту, печатает список дописанных (чтобы человек их вычитал). Скрипт `"build:stress": "tsx scripts/build-stress.ts"`.
 - `scripts/content-rules.ts`: новое правило — для каждой строки все слова `la` (без римских цифр) должны быть ключами словаря; иначе ошибка `latin word "<w>" missing from latin-stress.json (run pnpm build:stress)`.
 - `scripts/build-content.ts`: копирует словарь в `public/content/latin-stress.json`.
-- Прогнать `pnpm build:stress`, получить 677 записей, затем **вычитать весь словарь** (отдельная задача ревью, см. Task 3).
+- Прогнать `pnpm build:stress`, получить 659 записей, затем **вычитать весь словарь** (отдельная задача ревью, см. Task 3).
 Commit `feat(content): latin-stress dictionary with generator and validation`.
 
 ### Task 3: Вычитка словаря (ревью данных)
 
-Не код: эксперт по медицинской латыни проверяет все 677 записей `content/latin-stress.json` по таблице «слово · слоги · ударение · транскрипция» и правит ошибки. Опора: правила выше, TA2, словарь медицинских терминов. Отдельно проверяются: все `-alis/-aris` (должны быть `2`), все `-icus/-ulus/-eus/-ius` (должны быть `3`), греческие слова (`bronchus`, `thorax`, `pharynx`, `oesophagus`, `platysma`, `gaster`), составные (`sternocleidomastoideus`, `musculocutaneus`).
+Не код: эксперт по медицинской латыни проверяет все 659 записей `content/latin-stress.json` по таблице «слово · слоги · ударение · транскрипция» и правит ошибки. Опора: правила выше, TA2, словарь медицинских терминов. Отдельно проверяются: все `-alis/-aris` (должны быть `2`), все `-icus/-ulus/-eus/-ius` (должны быть `3`), греческие слова (`bronchus`, `thorax`, `pharynx`, `oesophagus`, `platysma`, `gaster`), составные (`sternocleidomastoideus`, `musculocutaneus`).
 Commit `fix(content): expert-checked stress marks`.
 
 ### Task 4: Транскрипция в интерфейсе
