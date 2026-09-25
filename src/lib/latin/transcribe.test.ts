@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { latinWords, transcribe, transcribeWord } from "./transcribe";
+import { latinWords, transcribe, transcribeWord, withAcute } from "./transcribe";
 import type { StressMap } from "./types";
 
 describe("transcribeWord", () => {
@@ -63,7 +63,6 @@ describe("transcribeWord", () => {
 
   it("softens l before every vowel and writes ль before a consonant", () => {
     expect(transcribeWord("lamina", 3)).toBe("ля́мина"); // la → ля
-    expect(transcribeWord("colon", 2)).toBe("ко́лён"); // lo → лё
     expect(transcribeWord("musculus", 3)).toBe("му́скулюс"); // lu → лю
     expect(transcribeWord("levator", 2)).toBe("лева́тор"); // le → ле
     expect(transcribeWord("cervicalis", 2)).toBe("цэрвика́лис"); // li → ли
@@ -73,21 +72,24 @@ describe("transcribeWord", () => {
     expect(transcribeWord("fel", 1)).toBe("фэль"); // в конце слова
   });
 
-  // Правило «l — мягкое» и три примера плана расходятся: в них l записана
-  // твёрдо (плэ́ксус, плати́зма, ло́нгус) — так эти слова обрусели. Правило
-  // общее, примеры единичные, и традиция Чернявского («lamina» [ля́мина],
-  // «clavicula» [кляви́куля]) на стороне правила, поэтому читаем мягко везде.
-  it("keeps l soft even in the plan's three Russified examples", () => {
-    expect(transcribeWord("longus", 2)).toBe("лё́нгус"); // план: ло́нгус
-    expect(transcribeWord("plexus", 2)).toBe("пле́ксус"); // план: плэ́ксус
-    expect(transcribeWord("platysma", 2)).toBe("пляти́зма"); // план: плати́зма
+  // `lo` — исключение по технике записи: «ё» в русском всегда ударная, и в
+  // безударном слоге её прочитали бы с ударением. Мягкость остальных гласных
+  // это не трогает, даже в обрусевших словах («плексус», «платизма»).
+  it("reads lo hard, and keeps l soft everywhere else", () => {
+    expect(transcribeWord("longus", 2)).toBe("ло́нгус");
+    expect(transcribeWord("lobus", 2)).toBe("ло́бус");
+    expect(transcribeWord("colon", 2)).toBe("ко́лон"); // безударное lo
+    expect(transcribeWord("lobulus", 3)).toBe("ло́булюс"); // и ло, и лю в одном слове
+    expect(transcribeWord("plexus", 2)).toBe("пле́ксус");
+    expect(transcribeWord("platysma", 2)).toBe("пляти́зма");
+    expect(transcribeWord("lateralis", 2)).toBe("лятэра́лис");
   });
 
   it("reads qu as кв and ngu + vowel as нгв", () => {
     expect(transcribeWord("obliquus", 2)).toBe("обли́квус");
     expect(transcribeWord("lingua", 2)).toBe("ли́нгва");
     expect(transcribeWord("sanguineus", 3)).toBe("сангви́нэус");
-    expect(transcribeWord("longus", 2)).toBe("лё́нгус"); // перед согласной ngu — «нгу»
+    expect(transcribeWord("longus", 2)).toBe("ло́нгус"); // перед согласной ngu — «нгу»
   });
 
   it("voices s between vowels and before m, n", () => {
@@ -117,10 +119,22 @@ describe("transcribeWord", () => {
   });
 
   it("puts the acute right after the stressed vowel letter", () => {
-    expect(transcribeWord("vena", 2)).toBe("вэ́на");
-    expect(transcribeWord("caecum", 2)).toBe("цэ́кум"); // диграф ae → одна э
-    expect(transcribeWord("auris", 2)).toBe("а́урис"); // дифтонг — после первой
-    expect(transcribeWord("lobus", 2)).toBe("лё́бус"); // мягкое l не мешает
+    const acute = String.fromCharCode(0x301); // тот же знак, что в ожиданиях выше, но видимый
+    expect(transcribeWord("vena", 2)).toBe(`вэ${acute}на`);
+    expect(transcribeWord("caecum", 2)).toBe(`цэ${acute}кум`); // диграф ae — одна э, знак после неё
+    expect(transcribeWord("auris", 2)).toBe(`а${acute}урис`); // дифтонг — знак после первой гласной
+    expect(transcribeWord("lobus", 2)).toBe(`ло${acute}бус`);
+  });
+
+  it("never puts the acute on ё, which is stressed by itself", () => {
+    const acute = String.fromCharCode(0x301);
+    expect(withAcute("ё")).toBe("ё");
+    expect(withAcute("э")).toBe(`э${acute}`);
+    expect(withAcute("ау")).toBe(`а${acute}у`);
+    // в самой транскрипции «ё» не появляется вовсе: lo читается твёрдо
+    for (const [word, stress] of [["lobus", 2], ["colon", 2], ["longus", 2], ["callosum", 2]] as const) {
+      expect(transcribeWord(word, stress), word).not.toContain("ё");
+    }
   });
 
   it("ignores letter case", () => {
