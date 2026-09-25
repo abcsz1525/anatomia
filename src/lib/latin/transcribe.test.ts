@@ -14,7 +14,7 @@ describe("transcribeWord", () => {
     expect(transcribeWord("lingua", 2)).toBe("ли́нгва");
     expect(transcribeWord("substantia", 2)).toBe("субста́нциа");
     expect(transcribeWord("ostium", 3)).toBe("о́стиум");
-    expect(transcribeWord("jejunum", 2)).toBe("йэйу́нум");
+    expect(transcribeWord("jejunum", 2)).toBe("ею́нум");
     expect(transcribeWord("major", 2)).toBe("ма́йор");
     expect(transcribeWord("nasalis", 2)).toBe("наза́лис");
     expect(transcribeWord("brachium", 3)).toBe("бра́хиум");
@@ -31,8 +31,14 @@ describe("transcribeWord", () => {
 
   it("gives a word missing from the dictionary no stress mark", () => {
     expect(transcribeWord("arteria", null)).toBe("артэриа");
-    // номер слога больше, чем слогов (словарь разошёлся со слогоделением)
-    expect(transcribeWord("vena", 3)).toBe("вэна");
+  });
+
+  it("survives a stress number outside 1..слоги instead of throwing", () => {
+    // словарь — JSON с диска, там может оказаться любое число
+    const broken = JSON.parse('{"vena": 0}') as StressMap;
+    expect(transcribeWord("vena", broken.vena)).toBe("вэна");
+    expect(transcribe("Vena cava", broken)).toBe("вэна кава");
+    expect(transcribeWord("vena", 3)).toBe("вэна"); // номер больше числа слогов
   });
 
   it("reads single vowels", () => {
@@ -50,7 +56,7 @@ describe("transcribeWord", () => {
 
   it("reads i before a vowel at the start of a word and j as й", () => {
     expect(transcribeWord("iodum", 2)).toBe("йо́дум");
-    expect(transcribeWord("jejunum", 2)).toBe("йэйу́нум");
+    expect(transcribeWord("jejunum", 2)).toBe("ею́нум");
     expect(transcribeWord("major", 2)).toBe("ма́йор");
   });
 
@@ -145,6 +151,7 @@ describe("transcribeWord", () => {
 const MAP: StressMap = {
   arteria: 3, carotis: 2, interna: 2, ramus: 2, ventricularis: 2, anterior: 3,
   valva: 2, aortae: 2, valvula: 3, semilunaris: 2, dextra: 2, femur: 2,
+  discus: 2, intervertebralis: 2, vena: 2, affluens: 3, segmenti: 2,
 };
 
 describe("transcribe", () => {
@@ -164,6 +171,20 @@ describe("transcribe", () => {
     expect(transcribe("  Vena   cava  ", { vena: 2, cava: 2 })).toBe("  вэ́на   ка́ва  ");
   });
 
+  it("leaves vertebra-level labels alone — they are not words", () => {
+    expect(transcribe("Discus intervertebralis L5/S1", MAP)).toBe(
+      "ди́скус интэрвэртэбра́лис L5/S1",
+    );
+    expect(transcribe("Discus intervertebralis C7/Th1", MAP)).toBe(
+      "ди́скус интэрвэртэбра́лис C7/Th1",
+    );
+  });
+
+  it("keeps the segment letter of a Roman numeral", () => {
+    expect(transcribe("Vena affluens segmenti IVb", MAP)).toBe("вэ́на а́ффлюэнс сэгмэ́нти IVb");
+    expect(transcribe("Segmenti iva", MAP)).toBe("сэгмэ́нти IVa");
+  });
+
   it("still reads a word the dictionary does not know, just without the acute", () => {
     expect(transcribe("Femur ignotum", MAP)).toBe("фэ́мур игнотум");
     expect(transcribe("Femur", {})).toBe("фэмур");
@@ -179,7 +200,14 @@ describe("latinWords", () => {
     expect(latinWords("Arteria segmenti anterioris II")).toEqual(["arteria", "segmenti", "anterioris"]);
   });
 
-  it("returns an empty list for a name without Latin letters", () => {
+  it("drops labels: Roman numerals, segment letters and vertebra levels", () => {
+    expect(latinWords("Discus intervertebralis L5/S1")).toEqual(["discus", "intervertebralis"]);
+    expect(latinWords("Discus intervertebralis C7/Th1")).toEqual(["discus", "intervertebralis"]);
+    expect(latinWords("Vena affluens segmenti IVb")).toEqual(["vena", "affluens", "segmenti"]);
+  });
+
+  it("returns an empty list for a name without Latin words", () => {
     expect(latinWords("I, II")).toEqual([]);
+    expect(latinWords("L5/S1")).toEqual([]);
   });
 });

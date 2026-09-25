@@ -3,12 +3,15 @@ import type { StressMap, StressPos, Syllable } from "./types";
 
 /**
  * Суффиксы с долгим предпоследним слогом: ударение падает на него (значение 2).
- * `-ilis` долгий, но `-bilis` краткий — он длиннее и потому выигрывает при
- * поиске самого длинного совпадения.
+ * Косвенные падежи и множественное число здесь тоже нужны: словарь собирается
+ * по формам из корпуса, а не по словарным («musculi intercostales» → 2).
+ * `-ilis` в таблицу не входит: в анатомии он чаще краткий (`gracilis` →
+ * гра́цилис), как и `-inae` (`retinae` → рэ́тинэ).
  */
 const LONG_SUFFIXES = [
-  "alis", "ale", "aris", "are", "atus", "ata", "atum", "inus", "ina", "inum",
-  "osus", "osa", "osum", "ivus", "iva", "ivum", "ura", "urus", "ilis",
+  "alis", "ale", "ales", "alium", "aris", "are", "ares", "arium",
+  "atus", "ata", "atum", "ati", "atae", "inus", "ina", "inum", "ini",
+  "osus", "osa", "osum", "osi", "osae", "ivus", "iva", "ivum", "ura", "urus",
 ];
 
 /** Суффиксы с кратким предпоследним слогом: ударение на третьем от конца (3). */
@@ -23,7 +26,8 @@ const LIQUIDS = "lr";
 
 /**
  * Суффикс слова из таблиц: его длина и долгота. Выигрывает самое длинное
- * совпадение, поэтому `-bilis` (краткий) сильнее `-ilis` (долгого).
+ * совпадение, поэтому `vagina` читается по долгому `-ina`, а не по краткому
+ * `-ia`, а `mobilis` — по краткому `-bilis`.
  */
 function matchSuffix(word: string): { length: number; long: boolean } | null {
   let length = 0;

@@ -5,10 +5,25 @@ import type { StressMap, StressPos } from "./types";
 /** Комбинирующий акут: ставится сразу после ударной гласной буквы. */
 const ACUTE = "́";
 
-/** Римские цифры в названиях — не слова: «Ramus ventricularis anterior I». */
-const ROMAN = /^[ivx]+$/i;
+/**
+ * Римская цифра с необязательной буквой сегмента: `I`, `XII`, `IVa`, `IVb`.
+ * Это не слово: в транскрипцию цифра идёт заглавными, буква сегмента — как есть.
+ */
+const ROMAN = /^[ivx]+[ab]?$/i;
 
-const LATIN_WORD = /[a-z]+/gi;
+/**
+ * Метка уровня позвонка — буквы вплотную к цифре: `C2`, `Th4`, `L5`, `S1`.
+ * Читать её по-латински бессмысленно («ль5»), поэтому она идёт в транскрипцию
+ * как есть. Токен цифру не теряет — иначе «L5» распалось бы на слово и число.
+ */
+const LABEL = /\d/;
+
+const TOKEN = /[a-z0-9]+/gi;
+
+/** Не слово: метка уровня или римская цифра — в словарь ударений не попадает. */
+function isLabel(token: string): boolean {
+  return LABEL.test(token) || ROMAN.test(token);
+}
 
 /** Гласные после твёрдой согласной. `e` читается «э»: vena → вэ́на. */
 const HARD_VOWELS: Record<string, string> = {
@@ -17,7 +32,17 @@ const HARD_VOWELS: Record<string, string> = {
 };
 
 /**
- * Те же гласные после мягкого `l`: мягкость латинского «эль» в кириллице
+ * Йотированный ряд — после `j`: сама «й» в букву уже входит, поэтому `ja` → я,
+ * `je` → е, `jo` → ё, `ju` → ю, `ji` → и (`jejunum` → еюну́м). Так латынь
+ * записывают русские учебники: «йэ» в русской графике не пишется.
+ */
+const IOTATED_VOWELS: Record<string, string> = {
+  a: "я", e: "е", i: "и", o: "ё", u: "ю", y: "и",
+  ae: "е", oe: "е", au: "яу", eu: "еу",
+};
+
+/**
+ * Тот же ряд после мягкого `l`: мягкость латинского «эль» в кириллице
  * показывает сама гласная — `la` → ля, `lu` → лю, `le` → ле.
  *
  * `lo` — исключение по технике записи: «ё» в русском всегда ударная, и в
@@ -25,9 +50,15 @@ const HARD_VOWELS: Record<string, string> = {
  * `o` после `l` остаётся «о». Диграф `oe` читается как «э», не как «о», —
  * там «ё» не возникает и мягкость сохраняется («е»).
  */
-const SOFT_VOWELS: Record<string, string> = {
-  a: "я", e: "е", i: "и", o: "о", u: "ю", y: "и",
-  ae: "е", oe: "е", au: "яу", eu: "еу",
+const SOFT_VOWELS: Record<string, string> = { ...IOTATED_VOWELS, o: "о" };
+
+/** Ряд гласных, который задаёт предыдущая согласная. */
+type VowelStyle = "hard" | "soft" | "iotated";
+
+const VOWEL_TABLES: Record<VowelStyle, Record<string, string>> = {
+  hard: HARD_VOWELS,
+  soft: SOFT_VOWELS,
+  iotated: IOTATED_VOWELS,
 };
 
 /** Согласные, у которых нет условий чтения. */
@@ -44,12 +75,12 @@ interface Chunk {
   text: string;
   /** Сколько латинских букв он занял. */
   length: number;
-  /** Смягчает ли он следующую гласную (истинно только для `l`/`ll`). */
-  softens: boolean;
+  /** Каким рядом читать следующую гласную. */
+  next: VowelStyle;
 }
 
-function chunk(text: string, length: number, softens = false): Chunk {
-  return { text, length, softens };
+function chunk(text: string, length: number, next: VowelStyle = "hard"): Chunk {
+  return { text, length, next };
 }
 
 /**
@@ -74,9 +105,12 @@ function consonantAt(w: string, i: number): Chunk {
     // конце слова её показывает мягкий знак (deltoideus → дэльтои́дэус).
     const length = w[i + 1] === "l" ? 2 : 1;
     const base = length === 2 ? "лл" : "л";
-    return isVowel(w[i + length])
-      ? chunk(base, length, true)
-      : chunk(`${base}ь`, length);
+    return isVowel(w[i + length]) ? chunk(base, length, "soft") : chunk(`${base}ь`, length);
+  }
+  if (ch === "j" && isVowel(w[i + 1])) {
+    // сама «й» входит в йотированную букву, поэтому согласная пуста:
+    // jejunum → еюну́м, jugularis → югуля́рис
+    return chunk("", 1, "iotated");
   }
   if (ch === "c") {
     const palatal = PALATAL_C.has(w[i + 1]) || w.slice(i + 1, i + 3) === "ae" || w.slice(i + 1, i + 3) === "oe";
@@ -106,8 +140,11 @@ export function withAcute(text: string): string {
   return text[0] === "ё" ? text : `${text[0]}${ACUTE}${text.slice(1)}`;
 }
 
-function vowelText(nucleus: string, soft: boolean, stressed: boolean): string {
-  const text = (soft ? SOFT_VOWELS : HARD_VOWELS)[nucleus] ?? nucleus;
+function vowelText(nucleus: string, style: VowelStyle, stressed: boolean): string {
+  const text = VOWEL_TABLES[style][nucleus] ?? nucleus;
+  // «ё» всегда ударная, поэтому безударное `jo` пишем «йо» (major → ма́йор),
+  // а ударное остаётся «ё» — знака ударения ему не нужно.
+  if (text === "ё" && !stressed) return "йо";
   return stressed ? withAcute(text) : text;
 }
 
@@ -120,42 +157,44 @@ export function transcribeWord(word: string, stress: StressPos | null): string {
   const w = word.toLowerCase();
   const syls = syllables(w);
   const nucleusAt = new Map(syls.map((s) => [s.start, s]));
-  // Слишком большой номер (словарь разошёлся со слогоделением) — просто читаем
-  // слово без ударения, падать на этом нельзя.
-  const stressedStart =
-    stress !== null && syls.length > 1 && stress <= syls.length ? syls[syls.length - stress].start : -1;
+  // Номер вне диапазона (в словаре-JSON может оказаться что угодно) — просто
+  // читаем слово без ударения, падать на этом нельзя.
+  const inRange = stress !== null && stress >= 1 && stress <= syls.length;
+  const stressedStart = inRange && syls.length > 1 ? syls[syls.length - stress].start : -1;
 
   let result = "";
-  let soft = false;
+  let style: VowelStyle = "hard";
   let i = 0;
   while (i < w.length) {
     const syllable = nucleusAt.get(i);
     if (syllable) {
-      result += vowelText(syllable.nucleus, soft, i === stressedStart);
-      soft = false;
+      result += vowelText(syllable.nucleus, style, i === stressedStart);
+      style = "hard";
       i += syllable.nucleus.length;
       continue;
     }
     const next = consonantAt(w, i);
     result += next.text;
-    soft = next.softens;
+    style = next.next;
     i += next.length;
   }
   return result;
 }
 
-/** Слова латинского названия в нижнем регистре, без римских цифр. */
+/** Слова латинского названия в нижнем регистре, без цифр и меток. */
 export function latinWords(phrase: string): string[] {
-  return (phrase.match(LATIN_WORD) ?? []).filter((w) => !ROMAN.test(w)).map((w) => w.toLowerCase());
+  return (phrase.match(TOKEN) ?? []).filter((t) => !isLabel(t)).map((t) => t.toLowerCase());
 }
 
 /**
- * Транскрипция всего названия: пунктуация и пробелы сохраняются, римские цифры
- * выводятся заглавными как есть, слово без словарной пометки читается без
- * знака ударения — показать транскрипцию всё равно полезнее, чем ничего.
+ * Транскрипция всего названия: пунктуация и пробелы сохраняются, метки уровней
+ * идут как есть, римские цифры — заглавными, слово без словарной пометки
+ * читается без знака ударения: показать транскрипцию полезнее, чем ничего.
  */
 export function transcribe(phrase: string, map: StressMap): string {
-  return phrase.replace(LATIN_WORD, (word) =>
-    ROMAN.test(word) ? word.toUpperCase() : transcribeWord(word, stressOf(word, map)),
-  );
+  return phrase.replace(TOKEN, (token) => {
+    if (LABEL.test(token)) return token;
+    if (ROMAN.test(token)) return token.replace(/^[ivx]+/i, (n) => n.toUpperCase());
+    return transcribeWord(token, stressOf(token, map));
+  });
 }

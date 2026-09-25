@@ -33,8 +33,10 @@ describe("guessStress", () => {
   it("follows the long-suffix table", () => {
     for (const word of [
       "cervicalis", "laterale", "palmaris", "molare", "ligatus", "costata",
-      "vagina", "spinosus", "spinosa", "spinosum", "activus", "fissura",
-      "maturus", "subtilis",
+      "vagina", "spinosus", "spinosa", "spinosum", "activus", "fissura", "maturus",
+      // косвенные падежи и множественное число корпуса
+      "intercostales", "dorsales", "costalium", "molares", "alarium",
+      "caudati", "caudatae", "termini", "callosi", "spinosae",
     ]) expect(guessStress(word), word).toBe(2);
   });
 
@@ -44,6 +46,11 @@ describe("guessStress", () => {
       "alveolus", "alveola", "alveolum", "osseus", "ossea", "osseum",
       "radius", "tibia", "ilium", "mobilis",
     ]) expect(guessStress(word), word).toBe(3);
+  });
+
+  it("leaves -ilis and -inae out of the long table", () => {
+    expect(guessStress("gracilis")).toBe(3); // гра́цилис
+    expect(guessStress("retinae")).toBe(3); // рэ́тинэ
   });
 
   it("makes the position long before x, but lets the suffix table win", () => {
