@@ -29,11 +29,11 @@ if (errors.length) {
   console.error(`\n${errors.length} content error(s)`);
   process.exit(1);
 }
-const bundle = buildBundle(rows, manifest, topics);
+const bundle = buildBundle(rows, manifest, topics, stress);
 mkdirSync("public/content", { recursive: true });
 writeFileSync("public/content/structures.json", JSON.stringify(bundle.structures));
 writeFileSync("public/content/topics.json", JSON.stringify(bundle.topics));
 // словарь ударений лежит рядом с бандлами и грузится тем же fetch: транскрипция
 // считается в рантайме, в structures.json её нет
-writeFileSync("public/content/latin-stress.json", JSON.stringify(stress));
+writeFileSync("public/content/latin-stress.json", JSON.stringify(bundle.stress));
 console.log(`content ok: ${rows.length} structures, ${topics.length} topics, ${Object.keys(stress).length} stressed words`);

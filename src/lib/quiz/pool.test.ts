@@ -69,7 +69,7 @@ const topics: Topic[] = [
   { id: "other", ru: "Вне программы первого курса" },
 ];
 
-const content: ContentBundle = { structures, topics };
+const content: ContentBundle = { structures, topics, stress: {} };
 
 describe("courseTopics", () => {
   it("returns leaves except 'other', in topics.json order", () => {
@@ -212,6 +212,7 @@ describe("topicGroups", () => {
     const loose: ContentBundle = {
       structures,
       topics: [{ id: "lower-limb-bones", ru: "Кости нижней конечности", la: "Ossa membri inferioris" }],
+      stress: {},
     };
     expect(topicGroups(loose, manifest)).toEqual([
       { id: "lower-limb-bones", ru: "Кости нижней конечности", topics: [{ id: "lower-limb-bones", ru: "Кости нижней конечности", concepts: 2 }] },

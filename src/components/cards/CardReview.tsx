@@ -12,6 +12,7 @@ export function CardReview({
   card,
   direction,
   topicRu,
+  laRu,
   revealed,
   remaining,
   intervals,
@@ -22,6 +23,8 @@ export function CardReview({
   card: Card;
   direction: Direction;
   topicRu: string;
+  /** Транскрипция латыни карточки; пусто — словарь не загрузился. */
+  laRu: string;
   revealed: boolean;
   remaining: number;
   intervals: Record<Grade, number>;
@@ -63,12 +66,22 @@ export function CardReview({
         >
           {front}
         </span>
+        {/* транскрипция всегда стоит под латынью: при «Латынь → Русский» это лицо
+            карточки, при «Русский → Латынь» — оборот (ниже) */}
+        {frontLatin && laRu && (
+          <span className="mt-1 block break-words text-sm text-neutral-500" data-testid="card-la-ru">
+            [{laRu}]
+          </span>
+        )}
         {!revealed && <span className="mt-4 block text-sm text-neutral-500">Показать</span>}
       </button>
 
       {revealed && (
         <div className="rounded-lg border bg-neutral-50 px-4 py-4 text-center" data-testid="card-back">
           <p className={`text-2xl md:text-xl ${frontLatin ? "" : "italic"}`}>{back}</p>
+          {!frontLatin && laRu && (
+            <p className="mt-1 break-words text-sm text-neutral-500" data-testid="card-la-ru">[{laRu}]</p>
+          )}
           {topicRu && <p className="mt-1 text-xs text-neutral-500">{topicRu}</p>}
         </div>
       )}

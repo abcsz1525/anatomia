@@ -129,12 +129,14 @@ describe("validateContent", () => {
 
 describe("buildBundle", () => {
   it("derives side and splits aliases", () => {
-    const b = buildBundle(ok, manifest, topics);
+    const b = buildBundle(ok, manifest, topics, stressFor(ok));
     expect(b.structures.FJ1).toEqual({ la: "Femur", ru: "Бедренная кость", topic: "lower-limb-bones", side: "left", aliases: ["os femoris", "бедро"] });
     expect(b.structures.FJ5.side).toBe("");
     // la называет сторону сама — бейдж не нужен
     const named = ok.map((r) => (r.id === "FJ1" ? { ...r, la: "Femur sinistrum", ru: "Левая бедренная кость" } : r));
-    expect(buildBundle(named, manifest, topics).structures.FJ1.side).toBe("");
+    expect(buildBundle(named, manifest, topics, stressFor(ok)).structures.FJ1.side).toBe("");
     expect(b.topics).toEqual(topics);
+    // словарь ударений едет в бандле вместе с именами: его пишет тот же build:content
+    expect(b.stress).toEqual(stressFor(ok));
   });
 });

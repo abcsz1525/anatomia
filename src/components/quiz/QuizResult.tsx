@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { sideLabel } from "@/lib/content/names";
+import { sideLabel, transcription } from "@/lib/content/names";
+import type { StressMap } from "@/lib/latin";
 import type { AnswerRecord, SessionResult } from "@/lib/quiz/types";
 
 /**
@@ -22,15 +23,22 @@ function mistakes(answers: AnswerRecord[]): AnswerRecord[] {
 
 export function QuizResult({
   result,
+  stress,
   onAgain,
   onOther,
 }: {
   result: SessionResult;
+  /** Словарь ударений бандла: пустой — транскрипции нет. */
+  stress: StressMap;
   onAgain(): void;
   onOther(): void;
 }) {
   const correct = result.answers.filter((a) => a.correct).length;
-  const wrong = mistakes(result.answers);
+  // транскрипция считается один раз на ошибку, а не на каждый её рендер
+  const wrong = mistakes(result.answers).map((record) => ({
+    record,
+    laRu: transcription(record.la, stress),
+  }));
 
   return (
     <div className="flex h-full flex-col gap-3" data-testid="quiz-result">
@@ -45,9 +53,13 @@ export function QuizResult({
           <>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">Ошибки</p>
             <ul className="space-y-2">
-              {wrong.map((a) => (
+              {wrong.map(({ record: a, laRu }) => (
                 <li key={`${a.la}|${a.side}`} data-testid="quiz-mistake" className="rounded border px-3 py-2">
                   <span className="block font-semibold italic">{a.la}</span>
+                  {/* разбор ошибок — то место, где термин чаще всего проговаривают вслух */}
+                  {laRu && (
+                    <span className="block break-words text-xs text-neutral-500" data-testid="mistake-la-ru">[{laRu}]</span>
+                  )}
                   <span className="block text-xs text-neutral-500">
                     {a.ru}
                     {sideLabel(a.side) && ` (${sideLabel(a.side)})`}

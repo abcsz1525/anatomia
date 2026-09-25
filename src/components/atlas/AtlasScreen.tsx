@@ -18,7 +18,7 @@ import { Sheet } from "@/components/ui/Sheet";
 
 // латынь/русский из structures.json; без записи остаётся только английское имя
 function getPartNames(part: AtlasPart, content: ContentBundle) {
-  return displayNames(part.name, content.structures[part.id], content.topics);
+  return displayNames(part.name, content.structures[part.id], content.topics, content.stress);
 }
 
 export function AtlasScreen() {

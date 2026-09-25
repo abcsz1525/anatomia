@@ -1,12 +1,28 @@
+import { transcribe, type StressMap } from "@/lib/latin";
 import type { Side, StructureEntry, Topic } from "./types";
 
 export interface DisplayNames {
   la: string;
   ru: string;
   en: string;
+  /** Русская транскрипция латыни без скобок: «фэ́мур». Пусто — показывать нечего. */
+  laRu: string;
   sideRu: "" | "слева" | "справа";
   topicRu: string;
   translated: boolean;
+}
+
+/**
+ * Транскрипция латинского названия для интерфейса — общая для карточки
+ * структуры, карточек и теста.
+ *
+ * Пустой словарь означает, что `latin-stress.json` не загрузился: читать
+ * названия без ударений студенту незачем (ударение — весь смысл строки),
+ * поэтому в этом случае транскрипции нет вовсе.
+ */
+export function transcription(la: string, stress: StressMap): string {
+  if (la === "" || Object.keys(stress).length === 0) return "";
+  return transcribe(la, stress);
 }
 
 // "слева"/"справа" (adverbial) rather than "левая"/"правая" (adjective),
@@ -27,12 +43,18 @@ function topicPath(topicId: string, topics: Topic[]): string {
   return parent ? `${leaf.ru} · ${parent.ru}` : leaf.ru;
 }
 
-export function displayNames(en: string, entry: StructureEntry | undefined, topics: Topic[]): DisplayNames {
-  if (!entry) return { la: "", ru: "", en, sideRu: "", topicRu: "", translated: false };
+export function displayNames(
+  en: string,
+  entry: StructureEntry | undefined,
+  topics: Topic[],
+  stress: StressMap,
+): DisplayNames {
+  if (!entry) return { la: "", ru: "", en, laRu: "", sideRu: "", topicRu: "", translated: false };
   return {
     la: entry.la,
     ru: entry.ru,
     en,
+    laRu: transcription(entry.la, stress),
     sideRu: sideLabel(entry.side),
     topicRu: topicPath(entry.topic, topics),
     translated: true,

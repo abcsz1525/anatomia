@@ -55,7 +55,7 @@ const topics: Topic[] = [
   { id: "other", ru: "Вне программы первого курса" },
 ];
 
-const content: ContentBundle = { structures, topics };
+const content: ContentBundle = { structures, topics, stress: {} };
 
 describe("topicDeck", () => {
   it("returns one card per distinct concept, in distinctConcepts order", () => {
@@ -97,13 +97,13 @@ describe("allDeck", () => {
       chunks: [],
       parts: [makePart("X1", "skeletal"), makePart("X2", "skeletal")],
     };
-    const dupContent: ContentBundle = { structures: dupStructures, topics: dupTopics };
+    const dupContent: ContentBundle = { structures: dupStructures, topics: dupTopics, stress: {} };
     const deck = allDeck(dupContent, dupManifest);
     expect(deck).toHaveLength(1);
     expect(deck[0]).toEqual({ key: "femur", la: "Femur", ru: "Бедренная кость", topic: "a" });
   });
 
   it("returns an empty deck for no topics/parts", () => {
-    expect(allDeck({ structures: {}, topics: [] }, { version: "1", triangles: 0, chunks: [], parts: [] })).toEqual([]);
+    expect(allDeck({ structures: {}, topics: [], stress: {} }, { version: "1", triangles: 0, chunks: [], parts: [] })).toEqual([]);
   });
 });

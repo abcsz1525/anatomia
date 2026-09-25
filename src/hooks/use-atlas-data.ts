@@ -86,7 +86,7 @@ export function useAtlasData(): AtlasDataState {
           loadContent("", { signal: controller.signal }).catch((e) => {
             if (controller.signal.aborted) throw e;
             console.warn("content unavailable, names will be English only", e);
-            return { structures: {}, topics: [] } satisfies ContentBundle;
+            return { structures: {}, topics: [], stress: {} } satisfies ContentBundle;
           }),
         ]);
         settled = true;

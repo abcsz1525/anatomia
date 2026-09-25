@@ -1,4 +1,5 @@
 import { AtlasLoadError, type FetchLike } from "@/lib/atlas/load-atlas";
+import type { StressMap } from "@/lib/latin";
 import type { ContentBundle, StructureEntry, Topic } from "./types";
 
 export interface LoadContentOptions {
@@ -26,11 +27,24 @@ async function loadJson<T>(url: string, opts: LoadContentOptions): Promise<T> {
   }
 }
 
-/** Грузит structures.json и topics.json параллельно из `${baseUrl}/content/`. */
+/**
+ * Грузит structures.json, topics.json и latin-stress.json параллельно из
+ * `${baseUrl}/content/`.
+ *
+ * Имена обязательны — без них контента нет; словарь ударений необязателен:
+ * его отсутствие убирает только строку транскрипции, поэтому ошибка на нём
+ * не валит загрузку. Отмену (`signal`) пропускаем дальше: она не «нет
+ * словаря», а «страница ушла».
+ */
 export async function loadContent(baseUrl: string, opts: LoadContentOptions = {}): Promise<ContentBundle> {
-  const [structures, topics] = await Promise.all([
+  const [structures, topics, stress] = await Promise.all([
     loadJson<Record<string, StructureEntry>>(`${baseUrl}/content/structures.json`, opts),
     loadJson<Topic[]>(`${baseUrl}/content/topics.json`, opts),
+    loadJson<StressMap>(`${baseUrl}/content/latin-stress.json`, opts).catch((e: unknown) => {
+      if (opts.signal?.aborted) throw e;
+      console.warn("latin-stress.json unavailable, transcription is hidden", e);
+      return {} as StressMap;
+    }),
   ]);
-  return { structures, topics };
+  return { structures, topics, stress };
 }

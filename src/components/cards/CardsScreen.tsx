@@ -4,7 +4,9 @@ import { useSearchParams } from "next/navigation";
 import { loadManifest } from "@/lib/atlas/load-atlas";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import { loadContent } from "@/lib/content/load-content";
+import { transcription } from "@/lib/content/names";
 import type { ContentBundle } from "@/lib/content/types";
+import type { StressMap } from "@/lib/latin";
 import { recordReview } from "@/lib/progress/record";
 import { dayKey } from "@/lib/progress/stats";
 import {
@@ -42,6 +44,8 @@ import { CardsSetup } from "./CardsSetup";
 
 /** Общая пустая карта состояний: literal `{}` в рендере ломал бы мемоизацию. */
 const NO_CARDS: Record<string, CardState> = {};
+/** То же для словаря ударений, пока контент не загрузился. */
+const NO_STRESS: StressMap = {};
 /** То же для сводок: стабильная ссылка, пока прогресс ещё не прочитан. */
 const NO_REVIEWS: ReviewSummary[] = [];
 
@@ -103,6 +107,8 @@ export function CardsScreen() {
     () => new Map(data.status === "ready" ? data.content.topics.map((t) => [t.id, t.ru] as const) : []),
     [data],
   );
+  // словарь ударений приходит тем же бандлом; без него транскрипции просто нет
+  const stress = data.status === "ready" ? data.content.stress : NO_STRESS;
 
   const today = dayKey(new Date().toISOString());
   const newLimit = parseNewLimit(newLimitText);
@@ -222,6 +228,7 @@ export function CardsScreen() {
           card={state.queue[state.index]}
           direction={direction}
           topicRu={topicRu.get(state.queue[state.index].topic) ?? ""}
+          laRu={transcription(state.queue[state.index].la, stress)}
           revealed={state.revealed}
           remaining={remaining(state)}
           intervals={gradeIntervals(

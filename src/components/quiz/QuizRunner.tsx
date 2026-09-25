@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { sideLabel } from "@/lib/content/names";
+import { sideLabel, transcription } from "@/lib/content/names";
+import type { StressMap } from "@/lib/latin";
 import { FIND_ATTEMPTS, isAnswered, type Feedback } from "@/lib/quiz/session";
 import type { Question } from "@/lib/quiz/types";
 
@@ -47,6 +48,7 @@ export function QuizRunner({
   index,
   total,
   feedback,
+  stress,
   onChoose,
   onNext,
   onAbort,
@@ -57,6 +59,8 @@ export function QuizRunner({
   index: number;
   total: number;
   feedback: Feedback;
+  /** Словарь ударений бандла: пустой — транскрипции нет. */
+  stress: StressMap;
   onChoose(optionIndex: number): void;
   onNext(): void;
   onAbort(): void;
@@ -66,6 +70,9 @@ export function QuizRunner({
   onToggle?: () => void;
 }) {
   const answered = isAnswered(feedback);
+  // подсказка режима «найди» называет структуру по-латински — под ней её чтение.
+  // В вариантах «назови» транскрипции нет: четыре ответа и так плотные.
+  const laRu = question.kind === "find" ? transcription(question.target.la, stress) : "";
   // ответ закрыт — фокус уезжает на «Дальше», чтобы клавиатура вела дальше сама
   const nextRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -92,6 +99,17 @@ export function QuizRunner({
       >
         {promptText(question)}
       </p>
+
+      {/* в свёрнутой строке (мобильная панель на 390 px) остаётся только вопрос:
+          лишняя строка выдавила бы оттуда «Дальше» */}
+      {laRu && (
+        <p
+          className={collapsed ? "hidden" : "-mt-1 break-words text-sm text-neutral-500"}
+          data-testid="quiz-la-ru"
+        >
+          [{laRu}]
+        </p>
+      )}
 
       <div className={collapsed ? "hidden" : "min-h-0 flex-1 overflow-y-auto"}>
         {question.kind === "find" ? (

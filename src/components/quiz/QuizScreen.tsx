@@ -228,6 +228,7 @@ export function QuizScreen() {
             index={quiz.index}
             total={quiz.questions.length}
             feedback={quiz.feedback}
+            stress={bundle.content.stress}
             onChoose={handleChoose}
             onNext={handleNext}
             onAbort={handleAbort}
@@ -237,6 +238,7 @@ export function QuizScreen() {
         ) : (
           <QuizResult
             result={quiz.result}
+            stress={bundle.content.stress}
             onAgain={() => start(quiz.result.topicId, quiz.result.mode)}
             onOther={handleAbort}
           />

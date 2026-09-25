@@ -30,6 +30,10 @@ test("a topic session grades its new cards and shows up in progress", async ({ p
   );
   await page.getByTestId("cards-start").click();
 
+  // направление по умолчанию — «Латынь → Русский», поэтому уже на лице первой
+  // карточки под латынью стоит её русское чтение в квадратных скобках
+  await expect(page.getByTestId("card-la-ru")).toHaveText(/^\[.+\]$/);
+
   for (let i = 0; i < NEW_LIMIT; i++) {
     await expect(page.getByTestId("cards-counter")).toHaveText(`Осталось ${NEW_LIMIT - i}`);
     await expect(page.getByTestId("card-front")).not.toHaveText("");

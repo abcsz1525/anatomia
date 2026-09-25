@@ -73,6 +73,19 @@ test("search reveals a hidden system", async ({ page }) => {
   await expect(page.getByLabel("Артерии")).toBeChecked();
 });
 
+test("the part card reads the latin name in russian", async ({ page }) => {
+  // FJ3259 — левая бедренная кость: у двусложного femur ударение на первом
+  // слоге при любом раскладе, поэтому проверка не зависит от вычитки словаря
+  await page.goto("/atlas?focus=FJ3259");
+  await expect(page.locator("[data-atlas-ready='true']")).toBeVisible({ timeout: 90_000 });
+
+  await expect(page.getByTestId("part-la")).toHaveText("Femur");
+  const laRu = page.getByTestId("part-la-ru");
+  // ударение — комбинирующий акут после гласной, рамка — квадратные скобки
+  await expect(laRu).toContainText("фэ́мур");
+  await expect(laRu).toHaveText(/^\[.+\]$/);
+});
+
 test("about page lists BodyParts3D attribution", async ({ page }) => {
   await page.goto("/about");
   // "BodyParts3D" appears twice (the dataset link and the citation text),

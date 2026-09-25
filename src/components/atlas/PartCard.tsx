@@ -34,6 +34,12 @@ export function PartCard({
       )}
       <p className="text-xs uppercase tracking-wide text-neutral-500">{systemRu}</p>
       <h2 className="mt-1 text-lg font-semibold italic" data-testid="part-la">{names.la || names.en}</h2>
+      {/* чтение латыни: квадратные скобки — привычная в словарях рамка транскрипции.
+          `break-words` держит длинное слово («стэрноклеидомастоидэус») в ширине
+          карточки (w-72) и шторки на 390 px, не растягивая их вбок. */}
+      {names.laRu && (
+        <p className="break-words text-sm text-neutral-500" data-testid="part-la-ru">[{names.laRu}]</p>
+      )}
       <p className="text-base" data-testid="part-ru">
         {names.translated ? `${names.ru}${names.sideRu ? ` (${names.sideRu})` : ""}` : "Перевод в работе"}
       </p>

@@ -99,7 +99,7 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
   return errors;
 }
 
-export function buildBundle(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[]): ContentBundle {
+export function buildBundle(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[], stress: StressMap): ContentBundle {
   void manifest;
   const structures: Record<string, StructureEntry> = {};
   for (const r of rows) {
@@ -111,5 +111,5 @@ export function buildBundle(rows: CsvRow[], manifest: AtlasManifest, topics: Top
       aliases: r.aliases.split(";").map((a) => a.trim()).filter(Boolean),
     };
   }
-  return { structures, topics };
+  return { structures, topics, stress };
 }
