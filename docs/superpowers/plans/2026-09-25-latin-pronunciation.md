@@ -30,9 +30,10 @@
 - `eu` **не дифтонг** в конце слова перед `s`/`m`: `deltoideus` → дэльтои́дэус (`de-us`), `perineum` → пэринэ́ум.
 - `i` перед гласной в начале слова и между гласными → й (`iodum`); в корпусе таких нет, но правило нужно.
 - `j` перед гласной в начале слова или после согласной даёт **йотированную букву**: `ja` → я,
-  `je` → е, `jo` → ё, `ju` → ю, `ji` → и (`jejunum` → еюну́м, `jugularis` → югуля́рис) — так
-  латынь записывают русские учебники, «йэ» в русской графике не пишется. После гласной `j`
-  читается как «й» + обычная гласная: `major` → ма́йор.
+  `je` → е, `jo` → ё, `ju` → ю, `ji` → и (`jejunum` → ею́нум — три слога, ударение на «ю»; `jugularis` → югуля́рис) — так
+  латынь записывают русские учебники, «йэ» в русской графике не пишется. «ё» пишется только
+  под ударением (`jodum` → ёдум), безударное `jo` даёт «йо» — по той же причине, что и `lo`.
+  `major` → ма́йор.
 
 **Согласные**
 - `c` → ц перед `e`, `i`, `y`, `ae`, `oe`; иначе к: `cervicalis` → цэрвика́лис, `caput` → ка́пут.
@@ -102,7 +103,7 @@ export function latinWords(phrase: string): string[];             // слова 
 ```
 Tests (каждый пример из раздела «Правила чтения» плюс):
 - `syllables("deltoideus")` → 5 ядер (`e o i e u`), `syllables("lingua")` → 2 (`i`, `ua`? нет: `i`, `u`+`a` — ядра `i`, `a`, потому что `ngu` даёт согласный `в`); зафиксировать поведение тестом.
-- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `еюну́м`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `плати́зма`.
+- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `ею́нум`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `плати́зма`.
 - `transcribe("Arteria carotis interna", map)` → `артэ́риа каро́тис интэ́рна`; `transcribe("Ramus ventricularis anterior I", map)` сохраняет `I`; `transcribe("Valva aortae, valvula semilunaris dextra", map)` сохраняет запятую.
 - `guessStress`: `vena`→2, `arteria`→3, `musculus`→3, `segmentalis`→2 (суффикс), `maxilla`→2 (две согласные), `vertebra`→3 (немая+плавная), `deltoideus`→3, `humerus`→3.
 Commit `feat(latin): syllables, medical-Latin transcription and stress rules`.
