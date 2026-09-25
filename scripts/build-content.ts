@@ -2,14 +2,16 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { parse } from "csv-parse/sync";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import type { Topic } from "@/lib/content/types";
+import type { StressMap } from "@/lib/latin";
 import { COURSE_SYSTEMS, buildBundle, validateContent, type CsvRow } from "./content-rules";
 
 const report = process.argv.includes("--report");
 const manifest = JSON.parse(readFileSync("public/models/v1/atlas.json", "utf8")) as AtlasManifest;
 const topics = JSON.parse(readFileSync("content/topics.json", "utf8")) as Topic[];
 const rows = parse(readFileSync("content/structures.csv", "utf8"), { columns: true, skip_empty_lines: true, trim: true }) as CsvRow[];
+const stress = JSON.parse(readFileSync("content/latin-stress.json", "utf8")) as StressMap;
 
-const errors = validateContent(rows, manifest, topics);
+const errors = validateContent(rows, manifest, topics, stress);
 if (report) {
   const have = new Set(rows.map((r) => r.id));
   for (const s of COURSE_SYSTEMS) {
@@ -31,4 +33,7 @@ const bundle = buildBundle(rows, manifest, topics);
 mkdirSync("public/content", { recursive: true });
 writeFileSync("public/content/structures.json", JSON.stringify(bundle.structures));
 writeFileSync("public/content/topics.json", JSON.stringify(bundle.topics));
-console.log(`content ok: ${rows.length} structures, ${topics.length} topics`);
+// словарь ударений лежит рядом с бандлами и грузится тем же fetch: транскрипция
+// считается в рантайме, в structures.json её нет
+writeFileSync("public/content/latin-stress.json", JSON.stringify(stress));
+console.log(`content ok: ${rows.length} structures, ${topics.length} topics, ${Object.keys(stress).length} stressed words`);

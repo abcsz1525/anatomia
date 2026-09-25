@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "e2e": "playwright test",
     "export:names": "tsx scripts/export-names.ts",
-    "build:content": "tsx scripts/build-content.ts"
+    "build:content": "tsx scripts/build-content.ts",
+    "build:stress": "tsx scripts/build-stress.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.8",

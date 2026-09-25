@@ -2,6 +2,7 @@ import type { AtlasManifest } from "@/lib/atlas/types";
 import { SYSTEMS } from "@/lib/atlas/systems";
 import { LATIN_SIDE, sideFor } from "@/lib/content/side";
 import type { ContentBundle, StructureEntry, Topic } from "@/lib/content/types";
+import { latinWords, type StressMap } from "@/lib/latin";
 
 export const COURSE_SYSTEMS = SYSTEMS.map((s) => s.id);
 export interface CsvRow { id: string; en: string; la: string; ru: string; topic: string; aliases: string }
@@ -17,7 +18,11 @@ const SIDE_WORDS = /(?<![\p{L}\p{N}])(left|right|лев(?:ый|ая|ое|ые)|�
 // проверяет ru не на запрет, а на соответствие латыни.
 const RU_SIDE_WORDS = /(?<![\p{L}\p{N}])(лев(?:ый|ая|ое|ые|ого|ой|ую|ых|ым|ыми)|прав(?:ый|ая|ое|ые|ого|ой|ую|ых|ым|ыми))(?![\p{L}\p{N}])/iu;
 
-export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[]): RuleError[] {
+// Ключ latin-stress.json: слово в нижнем регистре и только латинские буквы —
+// ровно то, что отдаёт latinWords, иначе ударение просто никогда не найдётся.
+const STRESS_KEY = /^[a-z]+$/;
+
+export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics: Topic[], stress: StressMap): RuleError[] {
   const errors: RuleError[] = [];
   const parts = new Map(manifest.parts.map((p) => [p.id, p]));
   // темы-контейнеры (у них есть дочерние) не принимают строки напрямую:
@@ -29,10 +34,24 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
   // правило 8 считает РАЗНЫЕ термины (la), а не строки: левый и правый парный
   // орган — один термин, и тема из одной пары не считается наполненной
   const perTopic = new Map<string, Set<string>>();
+  // правило 9: слова la, встреченные в таблице. Нужны дважды — чтобы поймать
+  // отсутствующие в словаре и чтобы поймать лишние в нём
+  const usedWords = new Set<string>();
+  // одно слово стоит в сотне строк; ругаться на него сто раз бессмысленно
+  const missingWords = new Set<string>();
 
   rows.forEach((r, i) => {
     const row = i + 2; // 1-based + header
     const tag = `row ${row} ${r.id}`;
+    // ударение берётся из словаря, а не считается в рантайме, поэтому каждое
+    // слово la обязано быть его ключом. Проверяем до разбора id: слово есть
+    // слово, даже если строка сломана в другом месте
+    for (const w of latinWords(r.la)) {
+      usedWords.add(w);
+      if (w in stress || missingWords.has(w)) continue;
+      missingWords.add(w);
+      errors.push({ row, id: r.id, message: `${tag}: latin word "${w}" missing from latin-stress.json (run pnpm build:stress)` });
+    }
     if (seen.has(r.id)) errors.push({ row, id: r.id, message: `${tag}: duplicate id ${r.id}` });
     seen.add(r.id);
     const part = parts.get(r.id);
@@ -67,6 +86,15 @@ export function validateContent(rows: CsvRow[], manifest: AtlasManifest, topics:
     if (!isLeaf || t.id === "other") continue;
     const n = perTopic.get(t.id)?.size ?? 0;
     if (n > 0 && n < 4) errors.push({ message: `topic ${t.id} has ${n} distinct terms (<4)` });
+  }
+  // правило 9, обратная сторона: словарь вычитан человеком и не должен гнить.
+  // Лишний ключ — это либо опечатка, либо слово, выпавшее из csv: и то и другое
+  // надо заметить сразу, а не через полгода
+  for (const [word, value] of Object.entries(stress)) {
+    if (!STRESS_KEY.test(word)) errors.push({ message: `latin-stress.json has bad word "${word}" (lower-case Latin letters only)` });
+    const pos: number = value;
+    if (pos !== 1 && pos !== 2 && pos !== 3) errors.push({ message: `latin-stress.json has bad stress ${pos} for "${word}" (expected 1, 2 or 3)` });
+    if (!usedWords.has(word)) errors.push({ message: `latin-stress.json has unused word "${word}"` });
   }
   return errors;
 }

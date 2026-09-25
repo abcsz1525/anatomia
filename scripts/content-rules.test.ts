@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { buildBundle, validateContent, type CsvRow } from "./content-rules";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import type { Topic } from "@/lib/content/types";
+import { guessStress, latinWords, type StressMap } from "@/lib/latin";
 
 const part = (id: string, name: string, system: "skeletal" | "muscular" | "arterial" | "cardiac") => ({
   id, name, conceptId: "FMA0", system, chunk: 0, positions: 0, normals: 0, indices: 0, vertexCount: 0, indexCount: 0,
@@ -37,12 +38,19 @@ const ok: CsvRow[] = [
   { id: "FJ9", en: "Aorta", la: "Aorta", ru: "Аорта", topic: "other", aliases: "" },
 ];
 
+// правило 9 требует словарь ровно под таблицу: все слова la и ничего лишнего.
+// Собираем его из самих строк, чтобы каждый тест не выписывал его руками.
+const stressFor = (rows: CsvRow[]): StressMap =>
+  Object.fromEntries(rows.flatMap((r) => latinWords(r.la)).map((w) => [w, guessStress(w)]));
+const check = (rows: CsvRow[], m: AtlasManifest = manifest, t: Topic[] = topics) =>
+  validateContent(rows, m, t, stressFor(rows));
+
 describe("validateContent", () => {
   it("accepts a complete, sorted, valid table", () => {
-    expect(validateContent(ok, manifest, topics)).toEqual([]);
+    expect(check(ok)).toEqual([]);
   });
   it("reports missing course parts", () => {
-    const errs = validateContent(ok.slice(0, 4), manifest, topics);
+    const errs = check(ok.slice(0, 4));
     expect(errs.map((e) => e.message)).toContain("missing: FJ5 Sternum");
   });
   it("rejects duplicate ids, unknown ids, name mismatch, empty la/ru, side words, unknown topic", () => {
@@ -52,7 +60,7 @@ describe("validateContent", () => {
       { id: "FJ404", en: "Nope", la: "X", ru: "Y", topic: "other", aliases: "" },
     ];
     bad[2] = { ...bad[2], en: "Tibia left", ru: "Левая большеберцовая кость", la: "", topic: "nope" };
-    const msgs = validateContent(bad, manifest, topics).map((e) => e.message).join("\n");
+    const msgs = check(bad).map((e) => e.message).join("\n");
     expect(msgs).toMatch(/duplicate id FJ1/);
     expect(msgs).toMatch(/unknown id FJ404/);
     expect(msgs).toMatch(/FJ3.*en mismatch/);
@@ -66,40 +74,56 @@ describe("validateContent", () => {
       ru: "Клапан аорты, правая полулунная заслонка", topic: "other", aliases: "" };
     // ids are strings: "FJ2435" sorts between "FJ2" and "FJ3"
     const rows = [ok[0], ok[1], cusp, ...ok.slice(2)];
-    expect(validateContent(rows, cuspManifest, topics)).toEqual([]);
+    expect(check(rows, cuspManifest)).toEqual([]);
     // la с латинской стороной, а ru без неё — ошибка
     const noSide = rows.map((r) => (r.id === "FJ2435" ? { ...r, ru: "Клапан аорты, полулунная заслонка" } : r));
-    expect(validateContent(noSide, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
+    expect(check(noSide, cuspManifest).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
     // косвенный падеж тоже засчитывается
     const oblique = rows.map((r) => (r.id === "FJ2435" ? { ...r, la: "Cavitas ventriculi sinistri", ru: "Полость левого желудочка" } : r));
-    expect(validateContent(oblique, cuspManifest, topics)).toEqual([]);
+    expect(check(oblique, cuspManifest)).toEqual([]);
     // а без латинской стороны «Левая …» в ru по-прежнему запрещена
     const invented = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Левая грудина" } : r));
-    const msgs = validateContent(invented, cuspManifest, topics).map((e) => e.message);
+    const msgs = check(invented, cuspManifest).map((e) => e.message);
     expect(msgs.join("\n")).toMatch(/FJ5.*side word in la\/ru/);
     expect(msgs.some((m) => m.includes("FJ2435"))).toBe(false);
     // …и в косвенном падеже тоже
     const invented2 = rows.map((r) => (r.id === "FJ5" ? { ...r, ru: "Ветвь левой грудины" } : r));
-    expect(validateContent(invented2, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ5.*side word in la\/ru/);
+    expect(check(invented2, cuspManifest).map((e) => e.message).join("\n")).toMatch(/FJ5.*side word in la\/ru/);
     // родительный падеж латинской стороны требует стороны в ru
     const genitive = rows.map((r) => (r.id === "FJ2435" ? { ...r, la: "Ramus circumflexus arteriae coronariae sinistrae", ru: "Огибающая ветвь венечной артерии" } : r));
-    expect(validateContent(genitive, cuspManifest, topics).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
+    expect(check(genitive, cuspManifest).map((e) => e.message).join("\n")).toMatch(/FJ2435.*side missing in ru/);
   });
   it("rejects a container topic: rows belong to leaves only", () => {
     const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "osteology" } : r));
-    const msgs = validateContent(rows, manifest, topics).map((e) => e.message);
+    const msgs = check(rows).map((e) => e.message);
     expect(msgs.join("\n")).toMatch(/FJ5.*non-leaf topic osteology/);
     // и такая строка не засчитывается ни одной теме
     expect(msgs.some((m) => m.startsWith("topic osteology"))).toBe(false);
   });
   it("requires ≥4 distinct terms per course topic and sorted ids", () => {
     const rows = ok.map((r) => (r.id === "FJ5" ? { ...r, topic: "thorax" } : r));
-    expect(validateContent(rows, manifest, topics).map((e) => e.message)).toContain("topic thorax has 1 distinct terms (<4)");
+    expect(check(rows).map((e) => e.message)).toContain("topic thorax has 1 distinct terms (<4)");
     // 4 строки, но всего 2 термина (две пары) — тема всё ещё не наполнена
     const pairsOnly = ok.filter((r) => r.id !== "FJ8").map((r) => (r.id === "FJ6" || r.id === "FJ7" ? { ...r, topic: "thorax" } : r));
-    expect(validateContent(pairsOnly, manifest, topics).map((e) => e.message)).toContain("topic lower-limb-bones has 2 distinct terms (<4)");
+    expect(check(pairsOnly).map((e) => e.message)).toContain("topic lower-limb-bones has 2 distinct terms (<4)");
     const unsorted = [ok[1], ok[0], ...ok.slice(2)];
-    expect(validateContent(unsorted, manifest, topics).map((e) => e.message)).toContain("rows are not sorted by id (first at row 2)");
+    expect(check(unsorted).map((e) => e.message)).toContain("rows are not sorted by id (first at row 2)");
+  });
+  it("requires latin-stress.json to cover every la word and to carry nothing else", () => {
+    const full = stressFor(ok);
+    const noFemur = { ...full };
+    delete noFemur.femur;
+    const missing = validateContent(ok, manifest, topics, noFemur).map((e) => e.message);
+    expect(missing).toContain('row 2 FJ1: latin word "femur" missing from latin-stress.json (run pnpm build:stress)');
+    // femur стоит в двух строках, но ругаемся на слово один раз
+    expect(missing.filter((m) => m.includes('"femur"'))).toHaveLength(1);
+    // ключ, которого больше нет ни в одной la, — словарь начал гнить
+    expect(validateContent(ok, manifest, topics, { ...full, obsoletus: 3 }).map((e) => e.message))
+      .toContain('latin-stress.json has unused word "obsoletus"');
+    // значение вне 1|2|3 и ключ не из строчных латинских букв
+    const broken = validateContent(ok, manifest, topics, { ...full, Femur: 2, sternum: 4 } as unknown as StressMap).map((e) => e.message);
+    expect(broken).toContain('latin-stress.json has bad word "Femur" (lower-case Latin letters only)');
+    expect(broken).toContain('latin-stress.json has bad stress 4 for "sternum" (expected 1, 2 or 3)');
   });
 });
 
