@@ -14,7 +14,10 @@
 
 - **Традиция чтения — медицинская латынь по Чернявскому** (учебник для медвузов), русская транскрипция кириллицей.
 - **Ударение хранится, а не вычисляется в рантайме.** Значение в `latin-stress.json` — номер слога с конца: `1` (односложные), `2` (предпоследний), `3` (третий от конца). Других значений нет.
-- **Римские цифры** (`i`, `ii`, `iii`, `iv`, `v`, `vi`, `vii`, `viii`, `ix`, `x`, `xi`, `xii`) в названиях — не слова: в транскрипции выводятся как есть заглавными (`I`, `II`), в словарь ударений не попадают.
+- **Не слова** (в транскрипции выводятся как есть, в словарь ударений не попадают): римские цифры
+  (`I`, `II`, … `XII`) с необязательной буквой сегмента (`IVa`, `IVb`) и метки уровней позвонков,
+  где буквы стоят вплотную к цифре (`C2`, `Th4`, `L5`, `S1`). Правило: буквенный ряд, примыкающий
+  к цифре, словом не считается.
 - Знак ударения — комбинирующий акут U+0301 после ударной гласной (`а́`). На односложных словах и на словах из одной гласной ударение не ставится. На «ё» акут не ставится: она ударная сама по себе.
 - Пунктуация латинского названия (запятые, дефисы) сохраняется в транскрипции.
 - Dev-сервер пользователя на :3000 не трогать; e2e через `PLAYWRIGHT_BASE_URL`. Коммиты по явным путям с трейлером `Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>`.
@@ -26,7 +29,10 @@
 - `ae`, `oe` → э. `au` → ау, `eu` → эу.
 - `eu` **не дифтонг** в конце слова перед `s`/`m`: `deltoideus` → дэльтои́дэус (`de-us`), `perineum` → пэринэ́ум.
 - `i` перед гласной в начале слова и между гласными → й (`iodum`); в корпусе таких нет, но правило нужно.
-- `j` → й: `jejunum` → йэйу́нум, `major` → ма́йор.
+- `j` перед гласной в начале слова или после согласной даёт **йотированную букву**: `ja` → я,
+  `je` → е, `jo` → ё, `ju` → ю, `ji` → и (`jejunum` → еюну́м, `jugularis` → югуля́рис) — так
+  латынь записывают русские учебники, «йэ» в русской графике не пишется. После гласной `j`
+  читается как «й» + обычная гласная: `major` → ма́йор.
 
 **Согласные**
 - `c` → ц перед `e`, `i`, `y`, `ae`, `oe`; иначе к: `cervicalis` → цэрвика́лис, `caput` → ка́пут.
@@ -47,7 +53,10 @@
 2. Три и больше: предпоследний слог долгий → ударение на нём (значение `2`), иначе на третьем от конца (значение `3`).
 3. Предпоследний долгий, если: это дифтонг; или гласная стоит перед двумя и более согласными, перед `x`, `z` (но **не** перед сочетанием «немая + плавная»: `b c d g p t` + `l r` — там кратко); или слово оканчивается на суффикс из таблицы долгих.
 4. Предпоследний краткий, если гласная стоит перед гласной, или слово оканчивается на суффикс из таблицы кратких.
-5. **Таблица долгих суффиксов:** `-alis`, `-ale`, `-aris`, `-are`, `-atus`, `-ata`, `-atum`, `-inus`, `-ina`, `-inum`, `-osus`, `-osa`, `-osum`, `-ivus`, `-iva`, `-ivum`, `-ura`, `-urus`, `-ilis` (в `-bilis` — краткий, см. краткие).
+5. **Таблица долгих суффиксов:** `-alis`, `-ale`, `-ales`, `-alium`, `-aris`, `-are`, `-ares`, `-arium`,
+   `-atus`, `-ata`, `-atum`, `-ati`, `-atae`, `-inus`, `-ina`, `-inum`, `-ini`, `-osus`, `-osa`, `-osum`,
+   `-osi`, `-osae`, `-ivus`, `-iva`, `-ivum`, `-ura`, `-urus`. Суффикс `-ilis` в таблицу не входит:
+   в анатомии он чаще краткий (`gracilis` → гра́цилис).
 6. **Таблица кратких суффиксов:** `-icus`, `-ica`, `-icum`, `-ulus`, `-ula`, `-ulum`, `-olus`, `-ola`, `-olum`, `-eus`, `-ea`, `-eum`, `-ius`, `-ia`, `-ium`, `-bilis`.
 7. Генератор — только черновик: значение в словаре правит человек.
 
@@ -93,7 +102,7 @@ export function latinWords(phrase: string): string[];             // слова 
 ```
 Tests (каждый пример из раздела «Правила чтения» плюс):
 - `syllables("deltoideus")` → 5 ядер (`e o i e u`), `syllables("lingua")` → 2 (`i`, `ua`? нет: `i`, `u`+`a` — ядра `i`, `a`, потому что `ngu` даёт согласный `в`); зафиксировать поведение тестом.
-- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `йэйу́нум`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `плати́зма`.
+- `transcribeWord("musculus", 3)` → `му́скулюс`; `transcribeWord("arteria", 3)` → `артэ́риа`; `transcribeWord("segmentalis", 2)` → `сэгмэнта́лис`; `transcribeWord("maxilla", 2)` → `макси́лля`; `transcribeWord("vena", 2)` → `вэ́на`; `transcribeWord("caput", 2)` → `ка́пут`; `transcribeWord("os", 1)` → `ос` (односложное — без акута); `transcribeWord("obliquus", 2)` → `обли́квус`; `transcribeWord("lingua", 2)` → `ли́нгва`; `transcribeWord("substantia", 2)` → `субста́нциа`; `transcribeWord("ostium", 3)` → `о́стиум`; `transcribeWord("jejunum", 2)` → `еюну́м`; `transcribeWord("major", 2)` → `ма́йор`; `transcribeWord("nasalis", 2)` → `наза́лис`; `transcribeWord("plexus", 2)` → `плэ́ксус`; `transcribeWord("brachium", 3)` → `бра́хиум`; `transcribeWord("cervicalis", 2)` → `цэрвика́лис`; `transcribeWord("platysma", 2)` → `плати́зма`.
 - `transcribe("Arteria carotis interna", map)` → `артэ́риа каро́тис интэ́рна`; `transcribe("Ramus ventricularis anterior I", map)` сохраняет `I`; `transcribe("Valva aortae, valvula semilunaris dextra", map)` сохраняет запятую.
 - `guessStress`: `vena`→2, `arteria`→3, `musculus`→3, `segmentalis`→2 (суффикс), `maxilla`→2 (две согласные), `vertebra`→3 (немая+плавная), `deltoideus`→3, `humerus`→3.
 Commit `feat(latin): syllables, medical-Latin transcription and stress rules`.
