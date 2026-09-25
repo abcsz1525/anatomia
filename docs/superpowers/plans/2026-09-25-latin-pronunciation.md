@@ -98,8 +98,8 @@ export function syllables(word: string): Syllable[];
 export function guessStress(word: string): StressPos;             // черновик по правилам
 export function stressOf(word: string, map: StressMap): StressPos | null;  // null — слова нет в словаре
 export function transcribeWord(word: string, stress: StressPos | null): string;
-export function transcribe(phrase: string, map: StressMap): string;   // сохраняет пунктуацию, римские цифры как есть
-export function latinWords(phrase: string): string[];             // слова без римских цифр, в нижнем регистре
+export function transcribe(phrase: string, map: StressMap): string;   // сохраняет пунктуацию; метки (C2, L5/S1, IVa) и римские цифры выводит как есть
+export function latinWords(phrase: string): string[];             // слова без меток и римских цифр, в нижнем регистре
 ```
 Tests (каждый пример из раздела «Правила чтения» плюс):
 - `syllables("deltoideus")` → 5 ядер (`e o i e u`), `syllables("lingua")` → 2 (`i`, `ua`? нет: `i`, `u`+`a` — ядра `i`, `a`, потому что `ngu` даёт согласный `в`); зафиксировать поведение тестом.

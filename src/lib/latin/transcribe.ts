@@ -132,9 +132,9 @@ function consonantAt(w: string, i: number): Chunk {
 /**
  * Акут после ударной гласной. У дифтонга (ау, эу) он на первой гласной, у
  * диграфа (ae → э) — на единственной, то есть всегда после первой буквы.
- * На «ё» знака нет: она ударная сама по себе. Сейчас «ё» в транскрипции не
- * появляется (`lo` читается твёрдо), и эта проверка держит правило на месте,
- * если когда-нибудь появится.
+ * На «ё» знака нет: она ударная сама по себе. «ё» даёт ударное `jo`
+ * (`jodum` → ёдум) — единственный источник этой буквы, потому что `lo`
+ * читается твёрдо, а безударное `jo` даёт «йо».
  */
 export function withAcute(text: string): string {
   return text[0] === "ё" ? text : `${text[0]}${ACUTE}${text.slice(1)}`;
@@ -159,7 +159,7 @@ export function transcribeWord(word: string, stress: StressPos | null): string {
   const nucleusAt = new Map(syls.map((s) => [s.start, s]));
   // Номер вне диапазона (в словаре-JSON может оказаться что угодно) — просто
   // читаем слово без ударения, падать на этом нельзя.
-  const inRange = stress !== null && stress >= 1 && stress <= syls.length;
+  const inRange = stress !== null && Number.isInteger(stress) && stress >= 1 && stress <= syls.length;
   const stressedStart = inRange && syls.length > 1 ? syls[syls.length - stress].start : -1;
 
   let result = "";
