@@ -12,6 +12,9 @@ import { isCachedBundle, releaseBuffers, type AtlasData } from "@/hooks/use-atla
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 const HIGHLIGHT = new THREE.Color("#ffb020");
+// выбранная структура поверх всего: голубой не встречается ни в одном слое,
+// кроме вен, а у тех он заметно темнее
+const SELECTED_OVERLAY = new THREE.Color("#22c8ff");
 // цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
 const HIGHLIGHT_COLORS: Record<HighlightKind, THREE.Color> = {
   target: new THREE.Color("#ffb020"),
@@ -25,6 +28,12 @@ interface SystemBatch {
   parts: AtlasPart[]; // index = instanceId
   /** Собственный оттенок каждой части (index = instanceId): соседи в слое не сливаются. */
   colors: THREE.Color[];
+  /**
+   * Выбранная структура, нарисованная поверх остальных: глубокие структуры
+   * (миндалевидное тело, таламус, желудочки) иначе закрыты корой, и поиск
+   * наводит камеру на пустое место. Делит атрибуты с `mesh` — копий нет.
+   */
+  overlay: THREE.Mesh;
   /** Освобождение GPU-ресурсов; вызывает только владелец батчей — `batchCache`. */
   dispose(): void;
 }
@@ -54,14 +63,41 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     geometry.dispose();
   });
   mesh.computeBoundingSphere();
+  // Индексы BatchedMesh абсолютные, поэтому вырезать одну структуру — это
+  // drawRange по её диапазону индексов на тех же буферах. Не вызываем
+  // overlayGeometry.dispose() отдельно: он выгрузил бы с GPU общие буферы.
+  const overlayGeometry = new THREE.BufferGeometry();
+  overlayGeometry.setAttribute("position", mesh.geometry.getAttribute("position"));
+  overlayGeometry.setAttribute("normal", mesh.geometry.getAttribute("normal"));
+  overlayGeometry.setIndex(mesh.geometry.getIndex());
+  overlayGeometry.boundingSphere = mesh.boundingSphere;
+  const overlayMaterial = new THREE.MeshStandardMaterial({
+    color: SELECTED_OVERLAY,
+    emissive: SELECTED_OVERLAY,
+    emissiveIntensity: 0.35,
+    roughness: 0.6,
+    transparent: true,
+    opacity: 0.9,
+  });
+  const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
+  overlay.visible = false;
+  overlay.renderOrder = 10;
+  overlay.frustumCulled = false;
+  // Сброс глубины перед отрисовкой: структура видна сквозь всё, что её
+  // закрывает, но сама себя по-прежнему перекрывает правильно
+  overlay.onBeforeRender = (renderer) => renderer.clearDepth();
+  // клики проходят к настоящим структурам под ней
+  overlay.raycast = () => {};
   return {
     system,
     mesh,
     parts,
     colors,
+    overlay,
     dispose() {
       mesh.dispose();
       material.dispose();
+      overlayMaterial.dispose();
     },
   };
 }
@@ -151,6 +187,10 @@ export function BodyMeshes({
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
+      const sel = selectedPartId ? b.parts.findIndex((p) => p.id === selectedPartId) : -1;
+      const range = sel >= 0 && isPartVisible(state, b.parts[sel].id, b.system) ? b.mesh.getGeometryRangeAt(sel) : null;
+      b.overlay.visible = range !== null;
+      if (range) b.overlay.geometry.setDrawRange(range.indexStart, range.indexCount);
     }
   }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights]);
 
@@ -172,7 +212,10 @@ export function BodyMeshes({
   return (
     <>
       {batches.map((b) => (
-        <primitive key={b.system} object={b.mesh} onClick={onClick(b)} />
+        <group key={b.system}>
+          <primitive object={b.mesh} onClick={onClick(b)} />
+          <primitive object={b.overlay} />
+        </group>
       ))}
     </>
   );
