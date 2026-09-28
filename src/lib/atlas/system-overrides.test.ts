@@ -43,12 +43,12 @@ describe("SYSTEM_OVERRIDES", () => {
       expect(p.name).not.toMatch(organ);
     }
     for (const t of topics.filter((x) => x.parent === "myology"))
-      for (const s of systemsOfTopic(t.id)) expect(["muscular", "sensory", "respiratory", "digestive"], t.id).toContain(s);
+      for (const s of systemsOfTopic(t.id)) expect(["muscular", "sensory", "respiratory", "digestive", "reproductive"], t.id).toContain(s);
   });
 
   it("keeps the ligaments layer to joints of the skeleton", () => {
     for (const t of ["ligaments-head-neck", "ligaments-limbs"])
-      for (const s of systemsOfTopic(t)) expect(["connective", "muscular", "respiratory", "digestive", "sensory"], t).toContain(s);
+      for (const s of systemsOfTopic(t)) expect(["connective", "muscular", "respiratory", "digestive", "sensory", "reproductive"], t).toContain(s);
     const names = manifest.parts.filter((p) => p.system === "connective").map((p) => p.name);
     for (const n of names) expect(n).not.toMatch(/tendon|laryn|thyro|crico|vocal|epiglott|check ligament|trochlea|raphe|retinaculum|linea alba/i);
   });
@@ -64,6 +64,13 @@ describe("SYSTEM_OVERRIDES", () => {
     const eye = manifest.parts.filter((p) => /^(left |right )?(inferior|superior|lateral|medial) (rectus|oblique)$|^(left |right )?levator palpebrae/i.test(p.name));
     expect(eye.length).toBe(14);
     for (const p of eye) expect(p.system, p.name).toBe("sensory");
+  });
+
+  it("puts the perineum with the urogenital organs, as Sinelnikov does", () => {
+    const perineum = manifest.parts.filter((p) => /coccygeus|puborectalis|anal sphincter|perineal|levator ani/i.test(p.name));
+    expect(perineum.length).toBe(20);
+    for (const p of perineum) expect(p.system, p.name).toBe("reproductive");
+    for (const p of manifest.parts.filter((x) => /piriformis|obturator internus/i.test(x.name))) expect(p.system).toBe("muscular");
   });
 
   it("keeps brain ventricles out of the heart layer", () => {
