@@ -9,9 +9,12 @@ export function AtlasCanvas({
   data,
   onReady,
   onPick,
+  plainColors,
 }: {
   data: AtlasData;
   onReady?: () => void;
+  /** Тесты: один цвет на слой, без оттенков-подсказок. */
+  plainColors?: boolean;
   /** Перехват клика по структуре (викторина); без него клик выделяет структуру. */
   onPick?: (id: string) => void;
 }) {
@@ -33,7 +36,7 @@ export function AtlasCanvas({
           scene.children. BodyMeshes must also keep its BatchedMeshes as direct
           children of the scene (no wrapping <group>) — visibleDirection() filters
           scene.children for BatchedMesh instances, it does not walk the graph. */}
-      <BodyMeshes data={data} onReady={onReady} onPick={onPick} />
+      <BodyMeshes data={data} onReady={onReady} onPick={onPick} plainColors={plainColors} />
       <CameraRig manifest={data.manifest} />
     </Canvas>
   );

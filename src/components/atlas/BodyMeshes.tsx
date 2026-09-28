@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo } from "react";
+import { Fragment, useEffect, useMemo } from "react";
 import * as THREE from "three";
 import type { ThreeEvent } from "@react-three/fiber";
 import { batchCache, getCached } from "@/lib/atlas/batch-cache";
@@ -22,9 +22,9 @@ const OVERLAY_COLORS: Record<OverlayKind, THREE.Color> = {
   correct: new THREE.Color("#2e9e5b"),
   wrong: new THREE.Color("#e0301e"),
 };
-// пока идёт вопрос викторины, остальное — приглушённый фон одного тона,
-// иначе разноцветные соседи спорят с подсвеченной структурой
-const QUIZ_BACKDROP = new THREE.Color("#d9d4cc");
+// Зубы лежат в пищеварительной системе, но в тестах привычнее видеть их
+// белыми, как кости, а не бежевыми, как кишечник
+const TOOTH_COLOR = new THREE.Color(SYSTEM_BY_ID.skeletal.color);
 
 interface SystemBatch {
   system: SystemId;
@@ -32,6 +32,8 @@ interface SystemBatch {
   parts: AtlasPart[]; // index = instanceId
   /** Собственный оттенок каждой части (index = instanceId): соседи в слое не сливаются. */
   colors: THREE.Color[];
+  /** Один цвет системы для всех частей — в тестах оттенки подсказывали бы ответ. */
+  plainColors: THREE.Color[];
   /**
    * Выбранные и подсвеченные структуры, нарисованные поверх остальных:
    * глубокие структуры (миндалевидное тело, таламус, зуб за соседним зубом)
@@ -48,6 +50,8 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   const indexCount = parts.reduce((n, p) => n + p.indexCount, 0);
   const palette = shadePalette(SYSTEM_BY_ID[system].color);
   const colors = shadeIndices(parts, palette.length).map((i) => palette[i]);
+  const plain = new THREE.Color(SYSTEM_BY_ID[system].color);
+  const plainColors = parts.map((p) => (/\btooth\b/i.test(p.name) ? TOOTH_COLOR : plain));
   const material = new THREE.MeshStandardMaterial({ roughness: 0.75, metalness: 0.0 });
   const mesh = new THREE.BatchedMesh(parts.length, vertexCount, indexCount, material);
   mesh.name = system;
@@ -101,6 +105,7 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     mesh,
     parts,
     colors,
+    plainColors,
     overlay,
     dispose() {
       mesh.dispose();
@@ -128,9 +133,12 @@ export function BodyMeshes({
   data,
   onReady,
   onPick,
+  plainColors = false,
 }: {
   data: AtlasData;
   onReady?: () => void;
+  /** Все структуры одного слоя одним цветом (тесты): разные оттенки выдают ответ. */
+  plainColors?: boolean;
   /** Клик по структуре: викторина перехватывает выбор, иначе обычное выделение. */
   onPick?: (id: string) => void;
 }) {
@@ -183,7 +191,6 @@ export function BodyMeshes({
 
   useEffect(() => {
     const state = { visibleSystems, hiddenParts, isolatedPartId, restrictTo };
-    const quizBackdrop = Object.keys(highlights).length > 0;
     for (const b of batches) {
       let anyVisible = false;
       const overlayGeometry = b.overlay.geometry;
@@ -199,13 +206,13 @@ export function BodyMeshes({
           const range = b.mesh.getGeometryRangeAt(i);
           if (range) overlayGeometry.addGroup(range.indexStart, range.indexCount, OVERLAY_KINDS.indexOf(kind));
         }
-        b.mesh.setColorAt(i, kind ? OVERLAY_COLORS[kind] : quizBackdrop ? QUIZ_BACKDROP : b.colors[i]);
+        b.mesh.setColorAt(i, kind ? OVERLAY_COLORS[kind] : plainColors ? b.plainColors[i] : b.colors[i]);
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
       b.overlay.visible = overlayGeometry.groups.length > 0;
     }
-  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights]);
+  }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights, plainColors]);
 
   const onClick = (b: SystemBatch) => (e: ThreeEvent<MouseEvent>) => {
     // R3F applies its drag threshold only to onPointerMissed; hit handlers must
@@ -225,10 +232,11 @@ export function BodyMeshes({
   return (
     <>
       {batches.map((b) => (
-        <group key={b.system}>
+        // Fragment, а не group: CameraRig ищет BatchedMesh среди прямых детей сцены
+        <Fragment key={b.system}>
           <primitive object={b.mesh} onClick={onClick(b)} />
           <primitive object={b.overlay} />
-        </group>
+        </Fragment>
       ))}
     </>
   );

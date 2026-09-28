@@ -253,8 +253,9 @@ export function QuizScreen() {
           {atlas.status === "ready" && (
             <>
               {/* onPick всегда перехватывает клик: без него клик выделял бы структуру
-                  цветом и подсказывал ответ */}
-              <AtlasCanvas data={atlas.data} onReady={onReady} onPick={handlePick} />
+                  цветом и подсказывал ответ. plainColors — по той же причине: разные
+                  оттенки соседних структур тоже подсказка */}
+              <AtlasCanvas data={atlas.data} onReady={onReady} onPick={handlePick} plainColors />
               {!ready && <LoadingOverlay loaded={1} total={1} />}
             </>
           )}
