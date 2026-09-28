@@ -4,6 +4,7 @@ import * as THREE from "three";
 import type { ThreeEvent } from "@react-three/fiber";
 import { batchCache, getCached } from "@/lib/atlas/batch-cache";
 import { partGeometry } from "@/lib/atlas/parse-chunk";
+import { shadeIndices, shadePalette } from "@/lib/atlas/part-colors";
 import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
 import type { AtlasManifest, AtlasPart, SystemId } from "@/lib/atlas/types";
 import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-store";
@@ -22,7 +23,8 @@ interface SystemBatch {
   system: SystemId;
   mesh: THREE.BatchedMesh;
   parts: AtlasPart[]; // index = instanceId
-  baseColor: THREE.Color;
+  /** Собственный оттенок каждой части (index = instanceId): соседи в слое не сливаются. */
+  colors: THREE.Color[];
   /** Освобождение GPU-ресурсов; вызывает только владелец батчей — `batchCache`. */
   dispose(): void;
 }
@@ -30,7 +32,8 @@ interface SystemBatch {
 function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]): SystemBatch {
   const vertexCount = parts.reduce((n, p) => n + p.vertexCount, 0);
   const indexCount = parts.reduce((n, p) => n + p.indexCount, 0);
-  const baseColor = new THREE.Color(SYSTEM_BY_ID[system].color);
+  const palette = shadePalette(SYSTEM_BY_ID[system].color);
+  const colors = shadeIndices(parts, palette.length).map((i) => palette[i]);
   const material = new THREE.MeshStandardMaterial({ roughness: 0.75, metalness: 0.0 });
   const mesh = new THREE.BatchedMesh(parts.length, vertexCount, indexCount, material);
   mesh.name = system;
@@ -47,7 +50,7 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     const geometryId = mesh.addGeometry(geometry);
     const instanceId = mesh.addInstance(geometryId);
     if (instanceId !== index) throw new Error("BatchedMesh instance order mismatch");
-    mesh.setColorAt(instanceId, baseColor);
+    mesh.setColorAt(instanceId, colors[index]);
     geometry.dispose();
   });
   mesh.computeBoundingSphere();
@@ -55,7 +58,7 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     system,
     mesh,
     parts,
-    baseColor,
+    colors,
     dispose() {
       mesh.dispose();
       material.dispose();
@@ -142,9 +145,9 @@ export function BodyMeshes({
         const visible = isPartVisible(state, part.id, b.system);
         anyVisible ||= visible;
         b.mesh.setVisibleAt(i, visible);
-        // приоритет: подсветка викторины > выделение > цвет системы
+        // приоритет: подсветка викторины > выделение > собственный оттенок
         const hl = highlights[part.id];
-        b.mesh.setColorAt(i, hl ? HIGHLIGHT_COLORS[hl] : part.id === selectedPartId ? HIGHLIGHT : b.baseColor);
+        b.mesh.setColorAt(i, hl ? HIGHLIGHT_COLORS[hl] : part.id === selectedPartId ? HIGHLIGHT : b.colors[i]);
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
