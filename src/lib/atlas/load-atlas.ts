@@ -1,3 +1,4 @@
+import { applySystemOverrides } from "./system-overrides";
 import type { AtlasManifest } from "./types";
 
 export type FetchLike = (url: string, init?: { signal?: AbortSignal }) => Promise<Response>;
@@ -60,11 +61,13 @@ async function fetchWithRetry(url: string, opts: LoadOptions): Promise<Response>
 export async function loadManifest(baseUrl: string, opts: LoadOptions = {}): Promise<AtlasManifest> {
   const url = `${baseUrl}/models/v1/atlas.json`;
   const res = await fetchWithRetry(url, opts);
+  let manifest: AtlasManifest;
   try {
-    return (await res.json()) as AtlasManifest;
+    manifest = (await res.json()) as AtlasManifest;
   } catch (e) {
     throw new AtlasLoadError(url, `Не удалось прочитать ${url}: ${String(e)}`);
   }
+  return applySystemOverrides(manifest);
 }
 
 export async function loadChunk(url: string, opts: LoadOptions = {}): Promise<ArrayBuffer> {

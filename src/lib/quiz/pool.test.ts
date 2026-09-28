@@ -104,17 +104,17 @@ describe("topicParts", () => {
 });
 
 describe("contextIds", () => {
-  it("returns all skeletal ids for topics under myology", () => {
-    expect(contextIds(manifest, topics, "muscles-upper-limb")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
+  it("returns all osteology-topic ids for topics under myology", () => {
+    expect(contextIds(content, manifest, topics, "muscles-upper-limb")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
   });
 
-  it("returns all skeletal ids for topics under angiology", () => {
-    expect(contextIds(manifest, topics, "arteries-limbs")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
+  it("returns all osteology-topic ids for topics under angiology", () => {
+    expect(contextIds(content, manifest, topics, "arteries-limbs")).toEqual(["FEM_L", "FEM_R", "TIB_L"]);
   });
 
   it("returns [] for topics not under myology/arthrology/angiology", () => {
-    expect(contextIds(manifest, topics, "lower-limb-bones")).toEqual([]);
-    expect(contextIds(manifest, topics, "digestive")).toEqual([]);
+    expect(contextIds(content, manifest, topics, "lower-limb-bones")).toEqual([]);
+    expect(contextIds(content, manifest, topics, "digestive")).toEqual([]);
   });
 });
 

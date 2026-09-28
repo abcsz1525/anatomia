@@ -31,13 +31,16 @@ export function topicParts(content: ContentBundle, manifest: AtlasManifest, topi
  * "найди мышцу" или "найди артерию" не имеет смысла, но кости самой темы
  * искать не нужно — только показать. Для неврологии/спланхнологии/органов
  * чувств контекста нет: череп закрыл бы мозг и глаз.
+ * Скелет — это темы остеологии, а не слой «Кости»: рёберные хрящи и диски
+ * лежат в слое хрящей, но без них грудная клетка и позвоночник дырявые.
  */
 const SKELETAL_CONTEXT_PARENTS = new Set(["myology", "arthrology", "angiology"]);
 
-export function contextIds(manifest: AtlasManifest, topics: Topic[], topicId: string): string[] {
+export function contextIds(content: ContentBundle, manifest: AtlasManifest, topics: Topic[], topicId: string): string[] {
   const topic = topics.find((t) => t.id === topicId);
   if (!topic?.parent || !SKELETAL_CONTEXT_PARENTS.has(topic.parent)) return [];
-  return manifest.parts.filter((p) => p.system === "skeletal").map((p) => p.id);
+  const osteology = new Set(topics.filter((t) => t.parent === "osteology").map((t) => t.id));
+  return manifest.parts.filter((p) => osteology.has(content.structures[p.id]?.topic ?? "")).map((p) => p.id);
 }
 
 /** Все id, которые должны быть видимы в 3D-сцене для темы: части темы + контекст, без дублей. */
@@ -50,7 +53,7 @@ export function visibleIdsForTopic(
   const partIds = topicParts(content, manifest, topicId).map((p) => p.id);
   const seen = new Set(partIds);
   const result = [...partIds];
-  for (const id of contextIds(manifest, topics, topicId)) {
+  for (const id of contextIds(content, manifest, topics, topicId)) {
     if (seen.has(id)) continue;
     seen.add(id);
     result.push(id);
