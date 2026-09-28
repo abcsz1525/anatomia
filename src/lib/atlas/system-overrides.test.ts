@@ -35,14 +35,35 @@ describe("SYSTEM_OVERRIDES", () => {
       expect(parentOf.get(topicOf.get(p.id) ?? ""), p.name).toBe("osteology");
   });
 
-  it("puts every muscle topic on the muscles layer", () => {
+  it("keeps the muscles layer to skeletal muscles, their tendons and fasciae", () => {
+    // мышцы органов изучают вместе с органом: глаз, гортань, язык, нёбо, глотка
+    const organ = /rectus$|oblique$|levator palpebrae|arytenoid|aryepiglotticus|vocalis|cricothyroid|glossus$|veli palatini|uvular|pharyngeus|pharyngeal constrictor|papillary/i;
+    for (const p of manifest.parts.filter((x) => x.system === "muscular")) {
+      if (/rectus (femoris|capitis|abdominis)|obliquus|longus colli|oblique head|external oblique|internal oblique/i.test(p.name)) continue;
+      expect(p.name).not.toMatch(organ);
+    }
     for (const t of topics.filter((x) => x.parent === "myology"))
-      expect([...systemsOfTopic(t.id)], t.id).toEqual(["muscular"]);
+      for (const s of systemsOfTopic(t.id)) expect(["muscular", "sensory", "respiratory", "digestive"], t.id).toContain(s);
   });
 
-  it("puts ligaments and cartilages on their own layer", () => {
-    for (const t of ["ligaments-head-neck", "ligaments-limbs", "larynx-cartilages"])
-      expect([...systemsOfTopic(t)], t).toEqual(["connective"]);
+  it("keeps the ligaments layer to joints of the skeleton", () => {
+    for (const t of ["ligaments-head-neck", "ligaments-limbs"])
+      for (const s of systemsOfTopic(t)) expect(["connective", "muscular", "respiratory", "digestive", "sensory"], t).toContain(s);
+    const names = manifest.parts.filter((p) => p.system === "connective").map((p) => p.name);
+    for (const n of names) expect(n).not.toMatch(/tendon|laryn|thyro|crico|vocal|epiglott|check ligament|trochlea|raphe|retinaculum|linea alba/i);
+  });
+
+  it("puts the larynx together on the respiratory layer", () => {
+    expect([...systemsOfTopic("larynx-cartilages")]).toEqual(["respiratory"]);
+    const larynx = manifest.parts.filter((p) => /arytenoid|vocalis|cricothyroid|thyrohyoid (ligament|membrane)|conus elasticus|vocal ligament|epiglott/i.test(p.name));
+    for (const p of larynx) expect(p.system, p.name).toBe("respiratory");
+  });
+
+  it("puts the eye with its muscles and ligaments on the sense organs layer", () => {
+    expect([...systemsOfTopic("eye")]).toEqual(["sensory"]);
+    const eye = manifest.parts.filter((p) => /^(left |right )?(inferior|superior|lateral|medial) (rectus|oblique)$|^(left |right )?levator palpebrae/i.test(p.name));
+    expect(eye.length).toBe(14);
+    for (const p of eye) expect(p.system, p.name).toBe("sensory");
   });
 
   it("keeps brain ventricles out of the heart layer", () => {
