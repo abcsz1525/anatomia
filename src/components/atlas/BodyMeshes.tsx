@@ -11,16 +11,20 @@ import { isPartVisible, useAtlasStore, type HighlightKind } from "@/store/atlas-
 import { isCachedBundle, releaseBuffers, type AtlasData } from "@/hooks/use-atlas-data";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-const HIGHLIGHT = new THREE.Color("#ffb020");
-// выбранная структура поверх всего: голубой не встречается ни в одном слое,
-// кроме вен, а у тех он заметно темнее
-const SELECTED_OVERLAY = new THREE.Color("#22c8ff");
-// цвета викторины; создаются один раз — setColorAt копирует значение, а не ссылку
-const HIGHLIGHT_COLORS: Record<HighlightKind, THREE.Color> = {
-  target: new THREE.Color("#ffb020"),
+// Выбранная структура и подсветка викторины рисуются поверх всего (см.
+// overlay). Голубой не встречается ни в одном слое, кроме вен, а у тех он
+// заметно темнее; оранжевый, как раньше, терялся среди оттенков слоёв.
+type OverlayKind = HighlightKind | "selected";
+const OVERLAY_KINDS: OverlayKind[] = ["selected", "target", "correct", "wrong"];
+const OVERLAY_COLORS: Record<OverlayKind, THREE.Color> = {
+  selected: new THREE.Color("#22c8ff"),
+  target: new THREE.Color("#22c8ff"),
   correct: new THREE.Color("#2e9e5b"),
-  wrong: new THREE.Color("#d33a2c"),
+  wrong: new THREE.Color("#e0301e"),
 };
+// пока идёт вопрос викторины, остальное — приглушённый фон одного тона,
+// иначе разноцветные соседи спорят с подсвеченной структурой
+const QUIZ_BACKDROP = new THREE.Color("#d9d4cc");
 
 interface SystemBatch {
   system: SystemId;
@@ -29,9 +33,10 @@ interface SystemBatch {
   /** Собственный оттенок каждой части (index = instanceId): соседи в слое не сливаются. */
   colors: THREE.Color[];
   /**
-   * Выбранная структура, нарисованная поверх остальных: глубокие структуры
-   * (миндалевидное тело, таламус, желудочки) иначе закрыты корой, и поиск
-   * наводит камеру на пустое место. Делит атрибуты с `mesh` — копий нет.
+   * Выбранные и подсвеченные структуры, нарисованные поверх остальных:
+   * глубокие структуры (миндалевидное тело, таламус, зуб за соседним зубом)
+   * иначе закрыты другими. Делит атрибуты с `mesh` — копий нет; каждая
+   * структура — группа индексов со своим материалом из OVERLAY_KINDS.
    */
   overlay: THREE.Mesh;
   /** Освобождение GPU-ресурсов; вызывает только владелец батчей — `batchCache`. */
@@ -71,15 +76,18 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   overlayGeometry.setAttribute("normal", mesh.geometry.getAttribute("normal"));
   overlayGeometry.setIndex(mesh.geometry.getIndex());
   overlayGeometry.boundingSphere = mesh.boundingSphere;
-  const overlayMaterial = new THREE.MeshStandardMaterial({
-    color: SELECTED_OVERLAY,
-    emissive: SELECTED_OVERLAY,
-    emissiveIntensity: 0.35,
-    roughness: 0.6,
-    transparent: true,
-    opacity: 0.9,
-  });
-  const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
+  const overlayMaterials = OVERLAY_KINDS.map(
+    (kind) =>
+      new THREE.MeshStandardMaterial({
+        color: OVERLAY_COLORS[kind],
+        emissive: OVERLAY_COLORS[kind],
+        emissiveIntensity: 0.35,
+        roughness: 0.6,
+        transparent: true,
+        opacity: 0.9,
+      }),
+  );
+  const overlay = new THREE.Mesh(overlayGeometry, overlayMaterials);
   overlay.visible = false;
   overlay.renderOrder = 10;
   overlay.frustumCulled = false;
@@ -97,7 +105,7 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
     dispose() {
       mesh.dispose();
       material.dispose();
-      overlayMaterial.dispose();
+      for (const m of overlayMaterials) m.dispose();
     },
   };
 }
@@ -175,22 +183,27 @@ export function BodyMeshes({
 
   useEffect(() => {
     const state = { visibleSystems, hiddenParts, isolatedPartId, restrictTo };
+    const quizBackdrop = Object.keys(highlights).length > 0;
     for (const b of batches) {
       let anyVisible = false;
+      const overlayGeometry = b.overlay.geometry;
+      overlayGeometry.clearGroups();
       b.parts.forEach((part, i) => {
         const visible = isPartVisible(state, part.id, b.system);
         anyVisible ||= visible;
         b.mesh.setVisibleAt(i, visible);
         // приоритет: подсветка викторины > выделение > собственный оттенок
-        const hl = highlights[part.id];
-        b.mesh.setColorAt(i, hl ? HIGHLIGHT_COLORS[hl] : part.id === selectedPartId ? HIGHLIGHT : b.colors[i]);
+        const kind: OverlayKind | undefined =
+          highlights[part.id] ?? (part.id === selectedPartId ? "selected" : undefined);
+        if (kind && visible) {
+          const range = b.mesh.getGeometryRangeAt(i);
+          if (range) overlayGeometry.addGroup(range.indexStart, range.indexCount, OVERLAY_KINDS.indexOf(kind));
+        }
+        b.mesh.setColorAt(i, kind ? OVERLAY_COLORS[kind] : quizBackdrop ? QUIZ_BACKDROP : b.colors[i]);
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
-      const sel = selectedPartId ? b.parts.findIndex((p) => p.id === selectedPartId) : -1;
-      const range = sel >= 0 && isPartVisible(state, b.parts[sel].id, b.system) ? b.mesh.getGeometryRangeAt(sel) : null;
-      b.overlay.visible = range !== null;
-      if (range) b.overlay.geometry.setDrawRange(range.indexStart, range.indexCount);
+      b.overlay.visible = overlayGeometry.groups.length > 0;
     }
   }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights]);
 
