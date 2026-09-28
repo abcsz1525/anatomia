@@ -49,3 +49,11 @@ describe("SYSTEM_OVERRIDES", () => {
     expect([...systemsOfTopic("cns")]).toEqual(["nervous"]);
   });
 });
+
+describe("digestive layer", () => {
+  it("keeps the pharynx wall between the tongue and the oesophagus", () => {
+    const pharynx = manifest.parts.filter((p) => /pharyngeal constrictor|pharyngeus/i.test(p.name));
+    expect(pharynx.length).toBe(12);
+    for (const p of pharynx) expect(p.system, p.name).toBe("digestive");
+  });
+});
