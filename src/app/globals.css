@@ -27,3 +27,79 @@ body {
 body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Студия атласа: палитра по образцу human-atlas */
+:root {
+  --studio-bg: #f3f4f4;
+  --studio-fg: #20242b;
+  --studio-primary: #263b48;
+  --studio-muted: #68727d;
+  --studio-border: rgb(24 37 54 / 0.09);
+  --studio-accent: #458a85;
+}
+
+@theme inline {
+  --color-studio-bg: var(--studio-bg);
+  --color-studio-fg: var(--studio-fg);
+  --color-studio-primary: var(--studio-primary);
+  --color-studio-muted: var(--studio-muted);
+  --color-studio-border: var(--studio-border);
+  --color-studio-accent: var(--studio-accent);
+}
+
+/* Стеклянная панель поверх сцены */
+.glass {
+  background: rgb(255 255 255 / 0.92);
+  border: 1px solid var(--studio-border);
+  border-radius: 16px;
+  box-shadow:
+    0 2px 5px rgb(36 51 68 / 0.03),
+    0 16px 48px rgb(36 51 68 / 0.07);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* Мягкая виньетка поверх канваса; клики проходят сквозь неё */
+.studio-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 51% 43%, transparent 35%, rgb(131 145 158 / 0.06) 100%);
+}
+
+/* Ползунок разнесения: тонкая дорожка, круглый бегунок с белой обводкой */
+.studio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  border-radius: 1px;
+  background: rgb(24 37 54 / 0.12);
+  outline: none;
+  cursor: pointer;
+}
+.studio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--studio-primary);
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 1px rgb(38 59 72 / 0.2),
+    0 2px 5px rgb(24 37 54 / 0.1);
+}
+.studio-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--studio-primary);
+  border: 3px solid #fff;
+  box-shadow:
+    0 0 0 1px rgb(38 59 72 / 0.2),
+    0 2px 5px rgb(24 37 54 / 0.1);
+}
+.studio-slider:focus-visible {
+  outline: 2px solid var(--studio-accent);
+  outline-offset: 6px;
+}
