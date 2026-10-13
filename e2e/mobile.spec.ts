@@ -33,7 +33,7 @@ test("атлас: слои и карточка структуры открыва
 
   // боковой панели телефону не достаётся: вместо неё кнопка «Слои» внизу справа
   await expect(page.getByTestId("layers-toggle")).toBeVisible();
-  await expect(page.locator('aside[aria-label="Слои"]')).toBeHidden();
+  await expect(page.locator('aside[aria-label="Системы"]')).toBeHidden();
 
   await page.getByTestId("layers-toggle").click();
   const layers = page.getByTestId("layers-sheet");
