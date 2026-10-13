@@ -1,13 +1,14 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
-import { boundsCenter, boundsRadius, cameraDistance, unionBounds } from "@/lib/atlas/bounds";
+import { boundsCenter, boundsRadius, cameraDistance, fitDistance, unionBounds } from "@/lib/atlas/bounds";
+import { explodeAmount } from "@/lib/atlas/explode-amount";
 import type { AtlasManifest } from "@/lib/atlas/types";
 import { candidateDirections } from "@/lib/atlas/view-dirs";
-import { useAtlasStore } from "@/store/atlas-store";
+import { useAtlasStore, type AtlasView } from "@/store/atlas-store";
 
 const RAY_ORIGIN = new THREE.Vector3();
 const RAY_DIR = new THREE.Vector3();
@@ -41,6 +42,14 @@ const DIRECTIONS = 46;
  * истечении бюджета берём лучшее найденное направление (или текущее).
  */
 const SEARCH_BUDGET_MS = 150;
+
+/** Направление «от цели к камере» для каждого ракурса. */
+const VIEW_DIRECTIONS: Record<AtlasView, THREE.Vector3> = {
+  "three-quarter": new THREE.Vector3(0.35, 0.06, 1).normalize(),
+  front: new THREE.Vector3(0, 0.02, 1).normalize(),
+  side: new THREE.Vector3(1, 0.02, 0).normalize(),
+  back: new THREE.Vector3(0, 0.02, -1).normalize(),
+};
 
 /** Сколько лучей из SAMPLES упираются именно в цель, если смотреть из dir. */
 function visibleScore(
@@ -144,6 +153,26 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   const focusPartId = useAtlasStore((s) => s.focusPartId);
   const focusNonce = useAtlasStore((s) => s.focusNonce);
   const resetNonce = useAtlasStore((s) => s.resetNonce);
+  const view = useAtlasStore((s) => s.view);
+  const viewNonce = useAtlasStore((s) => s.viewNonce);
+  const autoRotate = useAtlasStore((s) => s.autoRotate);
+  const isolated = useAtlasStore((s) => s.isolatedPartId !== null);
+  const restricted = useAtlasStore((s) => s.restrictTo !== null);
+  /** Величина разнесения на прошлом кадре: кадр сетки пересчитываем только пока она движется. */
+  const lastAmount = useRef(0);
+
+  // Кадр всего тела (или ограничения теста). restrictTo читается через getState(),
+  // а не подпиской: кадр меняется только по nonce, не от самого ограничения —
+  // setRestrict() вызывается, пока вопрос ещё на экране, и перекадрировка
+  // там увела бы камеру от структуры, на которой студент.
+  const bodyFrame = useCallback(() => {
+    const restrictTo = useAtlasStore.getState().restrictTo;
+    const framed = restrictTo ? manifest.parts.filter((p) => restrictTo[p.id]) : manifest.parts;
+    // пустое ограничение и так всё скрывает; берём тело, чтобы unionBounds не бросил
+    const all = unionBounds((framed.length > 0 ? framed : manifest.parts).map((p) => p.bounds));
+    const lookAt = new THREE.Vector3(...boundsCenter(all));
+    return { lookAt, dist: cameraDistance(boundsRadius(all), camera.fov, 1.1) };
+  }, [manifest, camera]);
 
   // initial framing of what is actually on screen: the whole body, or — during a
   // quiz — only the restricted set, otherwise the topic stays a tiny silhouette
@@ -151,27 +180,16 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   useEffect(() => {
     // cancel any in-flight fly-to, otherwise it overrides this framing
     target.current = null;
-    // restrictTo is read via getState() instead of a subscription on purpose:
-    // the frame must change only on resetNonce (reframe()/reset()), never just
-    // because the restriction changed mid-session — setRestrict() runs while a
-    // question is still on screen (quiz start, abort, unmount) and re-framing
-    // there would yank the camera away from the structure the student is on.
-    // Hence the deps stay [manifest, camera, resetNonce].
-    const restrictTo = useAtlasStore.getState().restrictTo;
-    const framed = restrictTo ? manifest.parts.filter((p) => restrictTo[p.id]) : manifest.parts;
-    // an empty restriction would hide everything anyway; fall back to the body
-    // so unionBounds never throws
-    const all = unionBounds((framed.length > 0 ? framed : manifest.parts).map((p) => p.bounds));
-    const c = boundsCenter(all);
-    const dist = cameraDistance(boundsRadius(all), camera.fov, 1.1);
-    camera.position.set(c[0], c[1], c[2] + dist);
+    const { lookAt, dist } = bodyFrame();
+    const dir = VIEW_DIRECTIONS[useAtlasStore.getState().view];
+    camera.position.copy(lookAt).addScaledVector(dir, dist);
     // eslint-disable-next-line react-hooks/immutability -- the three.js camera is external mutable state
     camera.near = 0.01;
     camera.far = dist * 10;
     camera.updateProjectionMatrix();
-    controls.current?.target.set(...c);
+    controls.current?.target.copy(lookAt);
     controls.current?.update();
-  }, [manifest, camera, resetNonce]);
+  }, [manifest, camera, resetNonce, bodyFrame]);
 
   useEffect(() => {
     if (!focusPartId || focusNonce === 0) return;
@@ -195,14 +213,50 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focusPartId, focusNonce, manifest, scene]);
 
+  // выбор ракурса: перелёт к кадру тела с нужной стороны через ту же анимацию, что и фокус
+  useEffect(() => {
+    if (viewNonce === 0) return;
+    const { lookAt, dist } = bodyFrame();
+    target.current = { position: lookAt.clone().addScaledVector(VIEW_DIRECTIONS[view], dist), lookAt, t: 0 };
+  }, [view, viewNonce, bodyFrame]);
+
   useFrame((_, dt) => {
+    const ctl = controls.current;
+    if (!ctl) return;
+    const k = explodeAmount.value;
+
+    // разнесённую сетку панорамируют, собранное тело вращают
+    const exploded = k > 0.8;
+    ctl.enableRotate = !exploded;
+    ctl.mouseButtons.LEFT = exploded ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
+    ctl.touches.ONE = exploded ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE;
+    ctl.autoRotate = autoRotate && k < 0.4 && !isolated && !restricted;
+    ctl.autoRotateSpeed = 0.65;
+
+    // пока разнесение движется и больше 0.3, камера едет к сетке инвентаря:
+    // выше 0.5 — строго спереди, ниже — с текущего ракурса; расстояние
+    // интерполируется между кадром тела и кадром сетки
+    const size = useAtlasStore.getState().explodeLayoutSize;
+    if (size && k > 0.3 && Math.abs(k - lastAmount.current) > 1e-5) {
+      const extent = (k - 0.3) / 0.7;
+      const { lookAt, dist: bodyDist } = bodyFrame();
+      const gridDist = Math.max(0.2, fitDistance(size.width, size.height, camera.fov, camera.aspect));
+      const dist = THREE.MathUtils.lerp(bodyDist, gridDist, extent);
+      const dir = k > 0.5 ? VIEW_DIRECTIONS.front : VIEW_DIRECTIONS[useAtlasStore.getState().view];
+      camera.position.copy(lookAt).addScaledVector(dir, dist);
+      ctl.target.copy(lookAt);
+      ctl.update();
+      target.current = null;
+    }
+    lastAmount.current = k;
+
     const t = target.current;
-    if (!t || !controls.current) return;
+    if (!t) return;
     t.t = Math.min(1, t.t + dt / 0.4);
-    const k = 1 - Math.pow(1 - t.t, 3);
-    camera.position.lerp(t.position, k);
-    controls.current.target.lerp(t.lookAt, k);
-    controls.current.update();
+    const ease = 1 - Math.pow(1 - t.t, 3);
+    camera.position.lerp(t.position, ease);
+    ctl.target.lerp(t.lookAt, ease);
+    ctl.update();
     if (t.t >= 1) target.current = null;
   });
 
