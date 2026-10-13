@@ -103,8 +103,8 @@ describe("atlas store", () => {
   it("restrictTo overrides systems, hidden and isolation", () => {
     const s = useAtlasStore.getState();
     s.hidePart("FJ1");
+    s.setSystemVisible("skeletal", false); // смена систем снимает изоляцию, поэтому изолируем после
     s.isolate("FJ9");
-    s.setSystemVisible("skeletal", false);
     s.setRestrict(["FJ1", "FJ2"]);
     const st = useAtlasStore.getState();
     expect(isPartVisible(st, "FJ1", "skeletal")).toBe(true);
@@ -207,5 +207,97 @@ describe("atlas store", () => {
     s.reset();
     expect(useAtlasStore.getState().restrictTo).toBeNull();
     expect(useAtlasStore.getState().highlights).toEqual({});
+  });
+});
+
+describe("atlas store: студия", () => {
+  it("setExplode ограничивает 0..1, выше 0.8 ставит ракурс спереди и гасит автоповорот", () => {
+    const s = useAtlasStore.getState();
+    s.toggleAutoRotate();
+    s.setExplode(1.7);
+    expect(useAtlasStore.getState().explode).toBe(1);
+    expect(useAtlasStore.getState().view).toBe("front");
+    expect(useAtlasStore.getState().autoRotate).toBe(false);
+    s.setExplode(-2);
+    expect(useAtlasStore.getState().explode).toBe(0);
+  });
+
+  it("ниже 0.8 разнесение ракурс не трогает", () => {
+    const s = useAtlasStore.getState();
+    s.setView("side");
+    s.setExplode(0.5);
+    expect(useAtlasStore.getState().view).toBe("side");
+  });
+
+  it("изоляция, reveal, focus и flyTo собирают модель", () => {
+    const s = useAtlasStore.getState();
+    s.setExplode(1);
+    s.isolate("FJ1");
+    expect(useAtlasStore.getState().explode).toBe(0);
+    s.setExplode(1);
+    s.isolate(null); // снятие изоляции модель не собирает
+    expect(useAtlasStore.getState().explode).toBe(1);
+    s.reveal("FJ1", "arterial");
+    expect(useAtlasStore.getState().explode).toBe(0);
+    s.setExplode(1);
+    s.focus("FJ2");
+    expect(useAtlasStore.getState().explode).toBe(0);
+    s.setExplode(1);
+    s.flyTo("FJ3");
+    expect(useAtlasStore.getState().explode).toBe(0);
+  });
+
+  it("смена набора систем снимает выделение и изоляцию", () => {
+    const s = useAtlasStore.getState();
+    s.select("FJ1");
+    s.isolate("FJ1");
+    s.toggleSystem("venous");
+    expect(useAtlasStore.getState().selectedPartId).toBeNull();
+    expect(useAtlasStore.getState().isolatedPartId).toBeNull();
+    s.select("FJ1");
+    s.setSystemVisible("venous", false);
+    expect(useAtlasStore.getState().selectedPartId).toBeNull();
+    s.select("FJ1");
+    s.showOnlySystems(["skeletal"]);
+    expect(useAtlasStore.getState().selectedPartId).toBeNull();
+  });
+
+  it("hideAllSystems выключает все системы", () => {
+    const s = useAtlasStore.getState();
+    s.select("FJ1");
+    s.hideAllSystems();
+    const st = useAtlasStore.getState();
+    expect(Object.values(st.visibleSystems).every((v) => v === false)).toBe(true);
+    expect(st.selectedPartId).toBeNull();
+  });
+
+  it("setView увеличивает viewNonce и гасит автоповорот; toggleAutoRotate переключает", () => {
+    const s = useAtlasStore.getState();
+    s.toggleAutoRotate();
+    expect(useAtlasStore.getState().autoRotate).toBe(true);
+    const nonce = useAtlasStore.getState().viewNonce;
+    s.setView("back");
+    const st = useAtlasStore.getState();
+    expect(st.view).toBe("back");
+    expect(st.viewNonce).toBe(nonce + 1);
+    expect(st.autoRotate).toBe(false);
+    s.setView("back"); // тот же ракурс — всё равно новый nonce: камера возвращается в кадр
+    expect(useAtlasStore.getState().viewNonce).toBe(nonce + 2);
+  });
+
+  it("reset возвращает студию к началу, но помнит размер раскладки", () => {
+    const s = useAtlasStore.getState();
+    s.setExplode(1);
+    s.setView("back");
+    s.toggleAutoRotate();
+    s.setExplodeLayoutSize({ width: 1, height: 2 });
+    s.reset();
+    const st = useAtlasStore.getState();
+    expect(st.explode).toBe(0);
+    expect(st.view).toBe("three-quarter");
+    expect(st.autoRotate).toBe(false);
+    // размер — кэш сцены, а не настройка: после сброса набор видимых деталей
+    // может не измениться, и BodyMeshes размер заново не запишет
+    expect(st.explodeLayoutSize).toEqual({ width: 1, height: 2 });
   });
 });
