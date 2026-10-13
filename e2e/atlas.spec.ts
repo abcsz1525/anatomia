@@ -31,9 +31,10 @@ test("clicking empty space deselects", async ({ page }) => {
   await canvas.click({ position: { x: box.width / 2, y: box.height / 2 } });
   await expect(page.getByTestId("part-card")).toBeVisible();
 
-  // Правый нижний угол под доком — фон при кадре по умолчанию: слева внизу
-  // панель систем, справа по центру ракурсы, внизу по центру док.
-  await canvas.click({ position: { x: box.width - 30, y: box.height - 30 } });
+  // Правый нижний угол над ссылкой на источник — фон при кадре по умолчанию:
+  // слева внизу панель систем, справа по центру ракурсы, внизу по центру док,
+  // а в самой нижней строке подвал со ссылкой (её клик не перехватит).
+  await canvas.click({ position: { x: box.width - 30, y: box.height - 60 } });
   await expect(page.getByTestId("part-card")).not.toBeVisible();
 });
 

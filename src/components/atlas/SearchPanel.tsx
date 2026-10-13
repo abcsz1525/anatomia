@@ -49,7 +49,7 @@ export function SearchPanel({
         ref={input}
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Сердце, femur, бедренная кость…"
+        placeholder="Желудочек, femur, бедренная кость…"
         aria-label="Поиск структуры"
         // 16 px на мобайле: иначе iOS приближает страницу при фокусе
         className="h-11 w-full rounded-lg border border-studio-border bg-neutral-50 px-3 text-[16px] text-studio-fg outline-none focus:border-studio-accent md:text-[14px]"

@@ -6,7 +6,8 @@ export function SceneCaption({ text }: { text: string }) {
       data-testid="scene-caption"
     >
       <span className="h-px w-6 shrink-0 bg-studio-border" />
-      <span className="min-w-0 [overflow-wrap:anywhere]">{text}</span>
+      {/* светлый ореол: подпись читается и поверх модели */}
+      <span className="min-w-0 [overflow-wrap:anywhere] [text-shadow:0_0_2px_var(--studio-bg),0_0_6px_var(--studio-bg)]">{text}</span>
       <span className="h-px w-6 shrink-0 bg-studio-border" />
     </div>
   );

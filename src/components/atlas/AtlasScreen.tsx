@@ -85,8 +85,12 @@ export function AtlasScreen() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target;
-      const typing = t instanceof HTMLInputElement || t instanceof HTMLTextAreaElement;
-      if (e.key === "/" && !typing) {
+      // ползунок разнесения и тумблеры — тоже input, но текст в них не набирают
+      const typing =
+        (t instanceof HTMLInputElement && !["range", "checkbox", "radio", "button"].includes(t.type)) ||
+        t instanceof HTMLTextAreaElement;
+      const slash = e.key === "/" || e.code === "Slash"; // на ЙЦУКЕН эта клавиша даёт «.»
+      if (slash && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) {
         e.preventDefault();
         setPanel("search");
       } else if (e.key === "Escape") {
@@ -206,9 +210,10 @@ export function AtlasScreen() {
               </div>
             )}
 
-            {/* системы: панель на десктопе, шторка на мобайле */}
+            {/* системы: панель на десктопе, шторка на мобайле; min-h — на низком окне
+                панель не схлопывается, а уходит ниже: док по центру её не задевает */}
             {!isMobile && (
-              <div className="absolute bottom-[175px] left-8 top-[190px] z-10">
+              <div className="absolute bottom-[175px] left-8 top-[190px] z-10 min-h-[300px]">
                 <SystemsPanel manifest={state.data.manifest} variant="aside" />
               </div>
             )}
@@ -238,7 +243,8 @@ export function AtlasScreen() {
 
             {/* ровно один экземпляр карточки: на десктопе — плавающая, на мобайле —
                 в шторке; иначе тестовые id задвоились бы */}
-            {selected && !isMobile && <PartCard {...partCardProps(selected, state.data.content)} variant="card" />}
+            {/* открытый поиск ложится поверх карточки — пока он открыт, карточку прячем */}
+            {selected && !isMobile && panel !== "search" && <PartCard {...partCardProps(selected, state.data.content)} variant="card" />}
             {selected && isMobile && (
               <Sheet open onClose={closePart} label="Структура" testId="part-sheet">
                 <PartCard {...partCardProps(selected, state.data.content)} variant="sheet" />

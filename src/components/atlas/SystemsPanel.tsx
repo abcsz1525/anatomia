@@ -73,7 +73,7 @@ export function SystemsPanel({ manifest, variant = "aside" }: { manifest: AtlasM
               type="button"
               aria-pressed={on}
               onClick={() => showOnlySystems(p.ids)}
-              className={`flex-1 rounded-md text-[11px] font-medium transition-colors ${sheet ? "min-h-11 text-[12px]" : "min-h-8"} ${
+              className={`flex-1 rounded-md font-medium transition-colors ${sheet ? "min-h-11 text-[12px]" : "min-h-8 text-[11px]"} ${
                 on ? "bg-white text-studio-fg shadow-sm" : "text-studio-muted hover:text-studio-fg"
               }`}
             >
@@ -91,9 +91,9 @@ export function SystemsPanel({ manifest, variant = "aside" }: { manifest: AtlasM
                 type="button"
                 title={`Показать только: ${s.ru.toLowerCase()}`}
                 onClick={() => showOnlySystems([s.id])}
-                className={`flex min-w-0 flex-1 items-center gap-2 rounded-md px-1 py-1 text-left text-[12px] hover:bg-neutral-900/5 ${
-                  on ? "text-studio-fg" : "text-neutral-400"
-                } ${sheet ? "text-[13px]" : ""}`}
+                className={`flex min-w-0 flex-1 items-center gap-2 rounded-md px-1 py-1 text-left hover:bg-neutral-900/5 ${
+                  on ? "text-studio-fg" : "text-neutral-500"
+                } ${sheet ? "min-h-11 text-[13px]" : "text-[12px]"}`}
               >
                 <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: s.color }} />
                 <span className="truncate">{s.ru}</span>

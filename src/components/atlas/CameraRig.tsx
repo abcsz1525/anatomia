@@ -257,7 +257,7 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     ctl.autoRotateSpeed = 0.65;
 
     // пока разнесение движется и больше 0.3, камера едет к сетке инвентаря:
-    // выше 0.5 — строго спереди, ниже — с текущего ракурса; расстояние
+    // от 0.6 — строго спереди, ниже — плавно от текущего ракурса; расстояние
     // интерполируется между кадром тела и кадром сетки
     const size = useAtlasStore.getState().explodeLayoutSize;
     const active = size !== null && k > 0.3;
@@ -271,7 +271,9 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
       reframe.current = false;
       const extent = (k - 0.3) / 0.7;
       const { lookAt, dist: bodyDist } = bodyFrame();
-      const gridDist = Math.max(0.2, fitDistance(size.width, size.height, camera.fov, camera.aspect));
+      // на широком экране слева панель систем, справа ракурсы — сетке нужен больший запас
+      const pad = camera.aspect > 1 ? 1.7 : 1.35;
+      const gridDist = Math.max(0.2, fitDistance(size.width, size.height, camera.fov, camera.aspect, pad));
       const dist = THREE.MathUtils.lerp(bodyDist, gridDist, extent);
       // направление уходит от исходного к «спереди» на участке k 0.3..0.6; кватернион,
       // а не lerp векторов: при взгляде сзади lerp проходил бы через нулевой вектор
