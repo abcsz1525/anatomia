@@ -25,3 +25,13 @@ export function unionBounds(list: Bounds[]): Bounds {
 export function cameraDistance(radius: number, fovDeg: number, padding = 1.25): number {
   return (radius / Math.sin((fovDeg * Math.PI) / 360)) * padding;
 }
+
+/**
+ * Расстояние до камеры, с которого прямоугольник width×height, лежащий в
+ * плоскости, перпендикулярной взгляду, целиком входит в кадр. `aspect` —
+ * ширина/высота экрана, `padding` — запас по краям.
+ */
+export function fitDistance(width: number, height: number, fovDeg: number, aspect: number, padding = 1.35): number {
+  const tan = Math.tan((fovDeg * Math.PI) / 360);
+  return (Math.max(height, width / aspect) / 2 / tan) * padding;
+}
