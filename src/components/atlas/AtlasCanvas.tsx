@@ -26,7 +26,7 @@ export function AtlasCanvas({
       gl={{ antialias: true, powerPreference: "high-performance" }}
       onPointerMissed={() => select(null)}
       // touchAction none: жесты (вращение, щипок) уходят в OrbitControls, страница не скроллится
-      style={{ background: "#f4f4f2", touchAction: "none" }}
+      style={{ background: "#f3f4f4", touchAction: "none" }}
     >
       <ambientLight intensity={0.9} />
       <directionalLight position={[3, 5, 4]} intensity={1.6} />

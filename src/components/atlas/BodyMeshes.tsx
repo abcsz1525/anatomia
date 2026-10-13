@@ -1,8 +1,11 @@
 "use client";
-import { Fragment, useEffect, useMemo } from "react";
+import { Fragment, useCallback, useEffect, useMemo } from "react";
 import * as THREE from "three";
-import type { ThreeEvent } from "@react-three/fiber";
+import { useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
 import { batchCache, getCached } from "@/lib/atlas/batch-cache";
+import { boundsCenter, unionBounds } from "@/lib/atlas/bounds";
+import { explodeAmount } from "@/lib/atlas/explode-amount";
+import { explodeLayout, explodeOffset } from "@/lib/atlas/explode-layout";
 import { partGeometry } from "@/lib/atlas/parse-chunk";
 import { shadeIndices, shadePalette } from "@/lib/atlas/part-colors";
 import { SYSTEMS, SYSTEM_BY_ID } from "@/lib/atlas/systems";
@@ -56,6 +59,10 @@ function buildBatch(system: SystemId, parts: AtlasPart[], buffers: ArrayBuffer[]
   const mesh = new THREE.BatchedMesh(parts.length, vertexCount, indexCount, material);
   mesh.name = system;
   mesh.perObjectFrustumCulled = true;
+  // Сфера всего батча считается по собранной модели; разнесённые детали
+  // выходят за неё, и рендерер отсекал бы батч целиком. Отсечение по каждому
+  // инстансу (perObjectFrustumCulled) остаётся — оно и экономит draw calls.
+  mesh.frustumCulled = false;
   // batchId попадания -> id структуры: CameraRig трассирует сцену, подбирая
   // ракурс, с которого цель действительно видна
   mesh.userData.partIds = parts.map((p) => p.id);
@@ -188,6 +195,79 @@ export function BodyMeshes({
   const restrictTo = useAtlasStore((s) => s.restrictTo);
   const highlights = useAtlasStore((s) => s.highlights);
   const select = useAtlasStore((s) => s.select);
+  const explode = useAtlasStore((s) => s.explode);
+  const setExplodeLayoutSize = useAtlasStore((s) => s.setExplodeLayoutSize);
+  // пропорции канваса: раскладка подстраивается под экран, но пересчитывается
+  // с шагом 0.1, а не на каждый пиксель ресайза
+  const aspect = useThree((s) => s.viewport.aspect);
+  const aspectBucket = Math.round(aspect * 10) / 10;
+
+  // сетка инвентаря висит на высоте центра собранного тела
+  const bodyCenterY = useMemo(
+    () => boundsCenter(unionBounds(data.manifest.parts.map((p) => p.bounds)))[1],
+    [data.manifest],
+  );
+
+  // Смещение каждой видимой детали при полном разнесении. Пересчёт только при
+  // смене набора видимых деталей или пропорций; скрытые детали смещения не получают.
+  const offsets = useMemo(() => {
+    const state = { visibleSystems, hiddenParts, isolatedPartId, restrictTo };
+    const visible: AtlasPart[] = [];
+    for (const b of batches) for (const p of b.parts) if (isPartVisible(state, p.id, b.system)) visible.push(p);
+    const layout = explodeLayout(visible, aspectBucket);
+    const map = new Map<string, [number, number, number]>();
+    for (const p of visible) {
+      const cell = layout.cells.get(p.id);
+      if (cell) map.set(p.id, explodeOffset(cell, p.bounds, bodyCenterY));
+    }
+    return { map, size: { width: layout.width, height: layout.height } };
+  }, [batches, visibleSystems, hiddenParts, isolatedPartId, restrictTo, aspectBucket, bodyCenterY]);
+
+  useEffect(() => {
+    setExplodeLayoutSize(offsets.size);
+  }, [offsets, setExplodeLayoutSize]);
+
+  // текущая величина разнесения живёт вне React: догоняет целевую в useFrame
+  const matrix = useMemo(() => new THREE.Matrix4(), []);
+  const applyExplode = useCallback(() => {
+    const k = explodeAmount.value;
+    for (const b of batches) {
+      b.parts.forEach((part, i) => {
+        const o = offsets.map.get(part.id);
+        if (o) matrix.makeTranslation(o[0] * k, o[1] * k, o[2] * k);
+        else matrix.identity();
+        b.mesh.setMatrixAt(i, matrix);
+      });
+      // оверлей делит буферы с батчем и о матрицах инстансов не знает: при
+      // разнесении он гаснет, выделение остаётся цветом (перекрытий там нет)
+      // eslint-disable-next-line react-hooks/immutability -- three.js meshes and the explode amount are external mutable state
+      b.overlay.visible = k < 0.01 && b.overlay.geometry.groups.length > 0;
+    }
+  }, [batches, offsets, matrix]);
+
+  // При монтировании матрицы ставятся заново: батчи кэшируются между /atlas и
+  // /quiz и могли остаться разнесёнными. При смене раскладки (включили слой)
+  // уже разнесённые детали переезжают в новые ячейки сразу.
+  useEffect(() => {
+    applyExplode();
+  }, [applyExplode]);
+
+  // eslint-disable-next-line react-hooks/immutability -- three.js meshes and the explode amount are external mutable state
+  useEffect(() => {
+    explodeAmount.value = 0;
+    applyExplode();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- только при монтировании
+  }, []);
+
+  // eslint-disable-next-line react-hooks/immutability -- three.js meshes and the explode amount are external mutable state
+  useFrame((_, dt) => {
+    // в тестах модель всегда собрана
+    const target = restrictTo ? 0 : explode;
+    if (explodeAmount.value === target) return;
+    const next = THREE.MathUtils.damp(explodeAmount.value, target, 8, dt);
+    explodeAmount.value = Math.abs(next - target) < 1e-4 ? target : next;
+    applyExplode();
+  });
 
   useEffect(() => {
     const state = { visibleSystems, hiddenParts, isolatedPartId, restrictTo };
@@ -210,7 +290,7 @@ export function BodyMeshes({
       });
       // eslint-disable-next-line react-hooks/immutability -- three.js meshes are external mutable state
       b.mesh.visible = anyVisible;
-      b.overlay.visible = overlayGeometry.groups.length > 0;
+      b.overlay.visible = overlayGeometry.groups.length > 0 && explodeAmount.value < 0.01;
     }
   }, [batches, visibleSystems, hiddenParts, isolatedPartId, selectedPartId, restrictTo, highlights, plainColors]);
 
