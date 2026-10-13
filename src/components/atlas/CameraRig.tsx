@@ -15,6 +15,9 @@ const RAY_DIR = new THREE.Vector3();
 const AXIS_U = new THREE.Vector3();
 const AXIS_V = new THREE.Vector3();
 const HELPER = new THREE.Vector3();
+const DIR = new THREE.Vector3();
+const Q_FULL = new THREE.Quaternion();
+const Q = new THREE.Quaternion();
 
 /**
  * Точки пробы в плоскости экрана (в долях полуразмера цели): центр и четыре
@@ -160,11 +163,22 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   const restricted = useAtlasStore((s) => s.restrictTo !== null);
   /** Величина разнесения на прошлом кадре: кадр сетки пересчитываем только пока она движется. */
   const lastAmount = useRef(0);
+  /** Направление, с которого смотрел пользователь, когда началось разнесение: к «спереди» камера уходит от него плавно, без скачка. */
+  const baseDir = useRef(VIEW_DIRECTIONS["three-quarter"].clone());
+  const framingActive = useRef(false);
+  /** Запрос перекадрировать сетку, даже если k стоит: смена ракурса, сброс, новая раскладка, ресайз. */
+  const reframe = useRef(false);
+  const explodeLayoutSize = useAtlasStore((s) => s.explodeLayoutSize);
+  const aspect = useThree((s) => s.viewport.aspect);
+  useEffect(() => {
+    reframe.current = true;
+  }, [explodeLayoutSize, aspect]);
 
   // Кадр всего тела (или ограничения теста). restrictTo читается через getState(),
-  // а не подпиской: кадр меняется только по nonce, не от самого ограничения —
-  // setRestrict() вызывается, пока вопрос ещё на экране, и перекадрировка
-  // там увела бы камеру от структуры, на которой студент.
+  // а не подпиской: сам по себе вызов setRestrict() камеру не двигает — он идёт,
+  // пока вопрос ещё на экране, и перекадрировка там увела бы камеру от структуры,
+  // на которой студент. Кадр пересчитывают только nonce (сброс, ракурс) и
+  // разнесение, пока оно движется.
   const bodyFrame = useCallback(() => {
     const restrictTo = useAtlasStore.getState().restrictTo;
     const framed = restrictTo ? manifest.parts.filter((p) => restrictTo[p.id]) : manifest.parts;
@@ -183,6 +197,9 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     const { lookAt, dist } = bodyFrame();
     const dir = VIEW_DIRECTIONS[useAtlasStore.getState().view];
     camera.position.copy(lookAt).addScaledVector(dir, dist);
+    // сброс при разнесённой сетке должен сойтись к сброшенному ракурсу
+    baseDir.current.copy(dir);
+    reframe.current = true;
     // eslint-disable-next-line react-hooks/immutability -- the three.js camera is external mutable state
     camera.near = 0.01;
     camera.far = dist * 10;
@@ -216,6 +233,12 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   // выбор ракурса: перелёт к кадру тела с нужной стороны через ту же анимацию, что и фокус
   useEffect(() => {
     if (viewNonce === 0) return;
+    // при разнесении кадром управляет сетка: ракурс запоминаем как исходное направление
+    if (explodeAmount.value > 0.3) {
+      baseDir.current.copy(VIEW_DIRECTIONS[view]);
+      reframe.current = true;
+      return;
+    }
     const { lookAt, dist } = bodyFrame();
     target.current = { position: lookAt.clone().addScaledVector(VIEW_DIRECTIONS[view], dist), lookAt, t: 0 };
   }, [view, viewNonce, bodyFrame]);
@@ -237,13 +260,26 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     // выше 0.5 — строго спереди, ниже — с текущего ракурса; расстояние
     // интерполируется между кадром тела и кадром сетки
     const size = useAtlasStore.getState().explodeLayoutSize;
-    if (size && k > 0.3 && Math.abs(k - lastAmount.current) > 1e-5) {
+    const active = size !== null && k > 0.3;
+    if (active && !framingActive.current) {
+      // разнесение только началось: запоминаем, откуда смотрел пользователь
+      baseDir.current.copy(camera.position).sub(ctl.target).normalize();
+      if (baseDir.current.lengthSq() === 0) baseDir.current.copy(VIEW_DIRECTIONS.front);
+    }
+    framingActive.current = active;
+    if (active && (Math.abs(k - lastAmount.current) > 1e-5 || reframe.current)) {
+      reframe.current = false;
       const extent = (k - 0.3) / 0.7;
       const { lookAt, dist: bodyDist } = bodyFrame();
       const gridDist = Math.max(0.2, fitDistance(size.width, size.height, camera.fov, camera.aspect));
       const dist = THREE.MathUtils.lerp(bodyDist, gridDist, extent);
-      const dir = k > 0.5 ? VIEW_DIRECTIONS.front : VIEW_DIRECTIONS[useAtlasStore.getState().view];
-      camera.position.copy(lookAt).addScaledVector(dir, dist);
+      // направление уходит от исходного к «спереди» на участке k 0.3..0.6; кватернион,
+      // а не lerp векторов: при взгляде сзади lerp проходил бы через нулевой вектор
+      const t = Math.min(1, (k - 0.3) / 0.3);
+      Q_FULL.setFromUnitVectors(baseDir.current, VIEW_DIRECTIONS.front);
+      Q.identity().slerp(Q_FULL, t);
+      DIR.copy(baseDir.current).applyQuaternion(Q);
+      camera.position.copy(lookAt).addScaledVector(DIR, dist);
       ctl.target.copy(lookAt);
       ctl.update();
       target.current = null;
