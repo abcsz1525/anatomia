@@ -24,6 +24,10 @@ export function PartCard({
   const shell = variant === "sheet"
     ? "flex flex-col pr-8"
     : "glass absolute right-[88px] top-24 z-10 flex max-h-[calc(100dvh-290px)] w-[310px] flex-col p-6";
+  // в шторке на мобайле — пальцем: цели не меньше 44 px
+  const sheet = variant === "sheet";
+  const siblingHeight = sheet ? "min-h-11" : "min-h-10";
+  const actionHeight = sheet ? "min-h-11" : "min-h-9";
   return (
     <section className={shell} data-testid="part-card" data-part-id={partId}>
       {variant === "card" && (
@@ -74,7 +78,7 @@ export function PartCard({
                   <button
                     type="button"
                     onClick={() => onPickSibling(s.id)}
-                    className="flex min-h-10 w-full items-center justify-between gap-2 border-b border-studio-border py-2 text-left text-[12px] text-studio-fg hover:text-studio-primary"
+                    className={`flex ${siblingHeight} w-full items-center justify-between gap-2 border-b border-studio-border py-2 text-left text-[12px] text-studio-fg hover:text-studio-primary`}
                   >
                     <span>{s.label}</span>
                     <ChevronRightIcon size={14} />
@@ -97,8 +101,8 @@ export function PartCard({
           <ChevronRightIcon size={14} className="ml-auto" />
         </button>
         <div className="flex gap-1 text-[12px] text-studio-muted">
-          <button onClick={onHide} className="min-h-9 flex-1 rounded-lg px-2 hover:bg-neutral-900/5">Скрыть</button>
-          <button onClick={onClose} className="min-h-9 flex-1 rounded-lg px-2 hover:bg-neutral-900/5">Снять выделение</button>
+          <button onClick={onHide} className={`${actionHeight} flex-1 rounded-lg px-2 hover:bg-neutral-900/5`}>Скрыть</button>
+          <button onClick={onClose} className={`${actionHeight} flex-1 rounded-lg px-2 hover:bg-neutral-900/5`}>Снять выделение</button>
         </div>
       </div>
     </section>

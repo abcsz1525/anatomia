@@ -33,10 +33,10 @@ export function Identity({ partCount }: { partCount?: number }) {
         aria-label="Разделы"
         data-testid="atlas-nav"
       >
-        <Link href="/quiz" className="hover:text-studio-primary">Тесты</Link>
-        <Link href="/cards" className="hover:text-studio-primary">Карточки</Link>
-        <Link href="/progress" className="hover:text-studio-primary">Прогресс</Link>
-        <Link href="/about" className="hover:text-studio-primary">Об источниках</Link>
+        <Link href="/quiz" className="flex min-h-11 items-center hover:text-studio-primary md:min-h-0">Тесты</Link>
+        <Link href="/cards" className="flex min-h-11 items-center hover:text-studio-primary md:min-h-0">Карточки</Link>
+        <Link href="/progress" className="flex min-h-11 items-center hover:text-studio-primary md:min-h-0">Прогресс</Link>
+        <Link href="/about" className="flex min-h-11 items-center hover:text-studio-primary md:min-h-0">Об источниках</Link>
       </nav>
     </header>
   );

@@ -173,7 +173,7 @@ export function AtlasScreen() {
             <div className="studio-vignette" />
 
             {/* справа сверху: поиск и «об источниках» */}
-            <div className="absolute right-3 top-4 z-10 flex items-center gap-2 md:right-8 md:top-7">
+            <div className="absolute right-3 top-4 z-10 flex items-center gap-2 pt-[env(safe-area-inset-top)] md:right-8 md:top-7">
               <button
                 type="button"
                 onClick={() => togglePanel("search")}
@@ -235,7 +235,7 @@ export function AtlasScreen() {
             </div>
 
             {/* подпись и док разнесения */}
-            <div className="absolute inset-x-3 bottom-16 z-10 flex flex-col items-center gap-3 md:inset-x-auto md:bottom-[54px] md:left-1/2 md:w-[460px] md:-translate-x-1/2">
+            <div className="absolute inset-x-3 bottom-16 z-10 flex flex-col items-center gap-3 pb-[env(safe-area-inset-bottom)] md:inset-x-auto md:bottom-[54px] md:left-1/2 md:w-[460px] md:-translate-x-1/2">
               <SceneCaption text={caption} />
               <ExplodeDock className="w-full" trailing={isMobile ? layersButton : undefined} />
             </div>

@@ -40,7 +40,7 @@ export function SearchPanel({
           type="button"
           onClick={onClose}
           aria-label="Закрыть поиск"
-          className="flex h-9 w-9 items-center justify-center rounded-lg text-studio-muted hover:bg-neutral-900/5"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-studio-muted md:h-9 md:w-9 hover:bg-neutral-900/5"
         >
           <CloseIcon />
         </button>
