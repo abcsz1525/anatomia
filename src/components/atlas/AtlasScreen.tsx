@@ -223,11 +223,12 @@ export function AtlasScreen() {
               </Sheet>
             )}
 
-            {/* ракурсы: колонка справа на десктопе, полоска под заголовком на мобайле */}
+            {/* ракурсы: колонка справа на десктопе, полоска под заголовком на мобайле —
+                ниже 44px-ссылок разделов (низ ~148px), иначе зоны касания перекрываются */}
             <div
               className={
                 isMobile
-                  ? "absolute inset-x-0 top-[140px] z-10 flex justify-center"
+                  ? "absolute inset-x-0 top-[156px] z-10 flex justify-center"
                   : "absolute right-8 top-1/2 z-10 -translate-y-1/2"
               }
             >
