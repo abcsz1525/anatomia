@@ -255,20 +255,26 @@ describe("atlas store: студия", () => {
     expect(useAtlasStore.getState().selectedPartId).toBeNull();
     expect(useAtlasStore.getState().isolatedPartId).toBeNull();
     s.select("FJ1");
+    s.isolate("FJ1");
     s.setSystemVisible("venous", false);
     expect(useAtlasStore.getState().selectedPartId).toBeNull();
+    expect(useAtlasStore.getState().isolatedPartId).toBeNull();
     s.select("FJ1");
+    s.isolate("FJ1");
     s.showOnlySystems(["skeletal"]);
     expect(useAtlasStore.getState().selectedPartId).toBeNull();
+    expect(useAtlasStore.getState().isolatedPartId).toBeNull();
   });
 
   it("hideAllSystems выключает все системы", () => {
     const s = useAtlasStore.getState();
     s.select("FJ1");
+    s.isolate("FJ1");
     s.hideAllSystems();
     const st = useAtlasStore.getState();
     expect(Object.values(st.visibleSystems).every((v) => v === false)).toBe(true);
     expect(st.selectedPartId).toBeNull();
+    expect(st.isolatedPartId).toBeNull();
   });
 
   it("setView увеличивает viewNonce и гасит автоповорот; toggleAutoRotate переключает", () => {

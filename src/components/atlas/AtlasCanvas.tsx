@@ -10,6 +10,7 @@ export function AtlasCanvas({
   onReady,
   onPick,
   plainColors,
+  studio = false,
 }: {
   data: AtlasData;
   onReady?: () => void;
@@ -17,6 +18,11 @@ export function AtlasCanvas({
   plainColors?: boolean;
   /** Перехват клика по структуре (викторина); без него клик выделяет структуру. */
   onPick?: (id: string) => void;
+  /**
+   * Студия атласа: ракурсы, автоповорот, кадр сетки при разнесении. Викторина
+   * монтирует этот же холст без флага и кадрирует тело спереди, как до студии.
+   */
+  studio?: boolean;
 }) {
   const select = useAtlasStore((s) => s.select);
   return (
@@ -37,7 +43,7 @@ export function AtlasCanvas({
           children of the scene (no wrapping <group>) — visibleDirection() filters
           scene.children for BatchedMesh instances, it does not walk the graph. */}
       <BodyMeshes data={data} onReady={onReady} onPick={onPick} plainColors={plainColors} />
-      <CameraRig manifest={data.manifest} />
+      <CameraRig manifest={data.manifest} studio={studio} />
     </Canvas>
   );
 }

@@ -46,6 +46,9 @@ const DIRECTIONS = 46;
  */
 const SEARCH_BUDGET_MS = 150;
 
+/** Кадр викторины: строго спереди, как было до студии. */
+const LEGACY_DIRECTION = new THREE.Vector3(0, 0, 1);
+
 /** Направление «от цели к камере» для каждого ракурса. */
 const VIEW_DIRECTIONS: Record<AtlasView, THREE.Vector3> = {
   "three-quarter": new THREE.Vector3(0.35, 0.06, 1).normalize(),
@@ -147,7 +150,12 @@ function visibleDirection(
   return best ?? current;
 }
 
-export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
+/**
+ * `studio` — режим студии атласа (ракурсы, автоповорот, кадр сетки при разнесении).
+ * Викторина монтирует тот же холст без него: она должна кадрировать тело строго
+ * спереди, как до появления студии, и `view` из store на неё влиять не должен.
+ */
+export function CameraRig({ manifest, studio = false }: { manifest: AtlasManifest; studio?: boolean }) {
   const controls = useRef<OrbitControlsImpl>(null);
   const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
   const scene = useThree((s) => s.scene);
@@ -168,6 +176,8 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
   const framingActive = useRef(false);
   /** Запрос перекадрировать сетку, даже если k стоит: смена ракурса, сброс, новая раскладка, ресайз. */
   const reframe = useRef(false);
+  /** Фокус, отложенный до сборки модели (см. эффект фокуса). */
+  const pendingFocus = useRef<string | null>(null);
   const explodeLayoutSize = useAtlasStore((s) => s.explodeLayoutSize);
   const aspect = useThree((s) => s.viewport.aspect);
   useEffect(() => {
@@ -195,7 +205,8 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     // cancel any in-flight fly-to, otherwise it overrides this framing
     target.current = null;
     const { lookAt, dist } = bodyFrame();
-    const dir = VIEW_DIRECTIONS[useAtlasStore.getState().view];
+    // викторина кадрирует строго спереди, как до студии, — ракурс из store ей не указ
+    const dir = studio ? VIEW_DIRECTIONS[useAtlasStore.getState().view] : LEGACY_DIRECTION;
     camera.position.copy(lookAt).addScaledVector(dir, dist);
     // сброс при разнесённой сетке должен сойтись к сброшенному ракурсу
     baseDir.current.copy(dir);
@@ -206,33 +217,50 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     camera.updateProjectionMatrix();
     controls.current?.target.copy(lookAt);
     controls.current?.update();
-  }, [manifest, camera, resetNonce, bodyFrame]);
+  }, [manifest, camera, resetNonce, bodyFrame, studio]);
+
+  // перелёт к структуре с ракурса, где её не закрывают соседи
+  const flyToPart = useCallback(
+    (partId: string) => {
+      const part = manifest.parts.find((p) => p.id === partId);
+      if (!part) return;
+      const lookAt = new THREE.Vector3(...boundsCenter(part.bounds));
+      const half = new THREE.Vector3(
+        (part.bounds[1][0] - part.bounds[0][0]) / 2,
+        (part.bounds[1][1] - part.bounds[0][1]) / 2,
+        (part.bounds[1][2] - part.bounds[0][2]) / 2,
+      );
+      const radius = Math.max(boundsRadius(part.bounds), 0.03);
+      const dist = cameraDistance(radius, camera.fov);
+      const current = camera.position.clone().sub(controls.current?.target ?? lookAt).normalize();
+      if (current.lengthSq() === 0) current.set(0, 0, 1);
+      // у структуры бывает несколько мешей (парные/разрезанные части) — любой из них
+      // засчитывается как «цель видна»
+      const accept = useAtlasStore.getState().focusAccept ?? [partId];
+      const dir = visibleDirection(scene, raycaster.current, lookAt, half, dist, current, accept, radius);
+      target.current = { position: lookAt.clone().add(dir.multiplyScalar(dist)), lookAt, t: 0 };
+    },
+    [manifest, camera, scene],
+  );
 
   useEffect(() => {
     if (!focusPartId || focusNonce === 0) return;
-    const part = manifest.parts.find((p) => p.id === focusPartId);
-    if (!part) return;
-    const lookAt = new THREE.Vector3(...boundsCenter(part.bounds));
-    const half = new THREE.Vector3(
-      (part.bounds[1][0] - part.bounds[0][0]) / 2,
-      (part.bounds[1][1] - part.bounds[0][1]) / 2,
-      (part.bounds[1][2] - part.bounds[0][2]) / 2,
-    );
-    const radius = Math.max(boundsRadius(part.bounds), 0.03);
-    const dist = cameraDistance(radius, camera.fov);
-    const current = camera.position.clone().sub(controls.current?.target ?? lookAt).normalize();
-    if (current.lengthSq() === 0) current.set(0, 0, 1);
-    // у структуры бывает несколько мешей (парные/разрезанные части) — любой из них
-    // засчитывается как «цель видна»
-    const accept = useAtlasStore.getState().focusAccept ?? [focusPartId];
-    const dir = visibleDirection(scene, raycaster.current, lookAt, half, dist, current, accept, radius);
-    target.current = { position: lookAt.clone().add(dir.multiplyScalar(dist)), lookAt, t: 0 };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [focusPartId, focusNonce, manifest, scene]);
+    // reveal/focus/flyTo собирают модель (explode = 0), но на экране она ещё
+    // разнесена: поиск ракурса трассировал бы лучами разнесённую сцену, а кадр
+    // сетки в useFrame (пока k > 0.3 и движется) всё равно обнулил бы цель.
+    // Поэтому ждём, пока модель соберётся, и летим уже из useFrame.
+    if (explodeAmount.value > 0.01) {
+      pendingFocus.current = focusPartId;
+      return;
+    }
+    pendingFocus.current = null;
+    flyToPart(focusPartId);
+  }, [focusPartId, focusNonce, flyToPart]);
 
   // выбор ракурса: перелёт к кадру тела с нужной стороны через ту же анимацию, что и фокус
   useEffect(() => {
-    if (viewNonce === 0) return;
+    // викторина: ракурсов нет, кадр всегда спереди
+    if (!studio || viewNonce === 0) return;
     // при разнесении кадром управляет сетка: ракурс запоминаем как исходное направление
     if (explodeAmount.value > 0.3) {
       baseDir.current.copy(VIEW_DIRECTIONS[view]);
@@ -241,26 +269,27 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
     }
     const { lookAt, dist } = bodyFrame();
     target.current = { position: lookAt.clone().addScaledVector(VIEW_DIRECTIONS[view], dist), lookAt, t: 0 };
-  }, [view, viewNonce, bodyFrame]);
+  }, [view, viewNonce, bodyFrame, studio]);
 
   useFrame((_, dt) => {
     const ctl = controls.current;
     if (!ctl) return;
     const k = explodeAmount.value;
 
-    // разнесённую сетку панорамируют, собранное тело вращают
-    const exploded = k > 0.8;
+    // разнесённую сетку панорамируют, собранное тело вращают; викторина не
+    // разносит модель и не крутится — там всё как до студии
+    const exploded = studio && k > 0.8;
     ctl.enableRotate = !exploded;
     ctl.mouseButtons.LEFT = exploded ? THREE.MOUSE.PAN : THREE.MOUSE.ROTATE;
     ctl.touches.ONE = exploded ? THREE.TOUCH.PAN : THREE.TOUCH.ROTATE;
-    ctl.autoRotate = autoRotate && k < 0.4 && !isolated && !restricted;
+    ctl.autoRotate = studio && autoRotate && k < 0.4 && !isolated && !restricted;
     ctl.autoRotateSpeed = 0.65;
 
     // пока разнесение движется и больше 0.3, камера едет к сетке инвентаря:
     // от 0.6 — строго спереди, ниже — плавно от текущего ракурса; расстояние
     // интерполируется между кадром тела и кадром сетки
     const size = useAtlasStore.getState().explodeLayoutSize;
-    const active = size !== null && k > 0.3;
+    const active = studio && size !== null && k > 0.3;
     if (active && !framingActive.current) {
       // разнесение только началось: запоминаем, откуда смотрел пользователь
       baseDir.current.copy(camera.position).sub(ctl.target).normalize();
@@ -287,6 +316,14 @@ export function CameraRig({ manifest }: { manifest: AtlasManifest }) {
       target.current = null;
     }
     lastAmount.current = k;
+
+    // отложенный фокус: модель собралась — теперь можно искать ракурс и лететь
+    // (кадр сетки выше работает только при k > 0.3 и цель уже не обнулит)
+    if (pendingFocus.current && k < 0.01) {
+      const id = pendingFocus.current;
+      pendingFocus.current = null;
+      flyToPart(id);
+    }
 
     const t = target.current;
     if (!t) return;

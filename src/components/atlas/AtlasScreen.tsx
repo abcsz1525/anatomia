@@ -169,7 +169,7 @@ export function AtlasScreen() {
           <>
             {/* the canvas must mount so the synchronous BatchedMesh build runs; the
                 overlay stays on top of it until BodyMeshes reports it is ready */}
-            <AtlasCanvas data={state.data} onReady={onReady} />
+            <AtlasCanvas data={state.data} onReady={onReady} studio />
             <div className="studio-vignette" />
 
             {/* справа сверху: поиск и «об источниках» */}

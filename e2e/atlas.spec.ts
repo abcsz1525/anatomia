@@ -172,3 +172,20 @@ test("карточка понятия из нескольких мешей по�
   await expect(page.getByTestId("part-card")).toHaveAttribute("data-part-id", "FJ1772");
   await expect(page.getByTestId("part-la")).toHaveText("Nervus opticus");
 });
+
+test("поиск из разнесённого вида собирает модель и показывает структуру", async ({ page }) => {
+  await page.goto("/atlas");
+  await expect(page.locator("[data-atlas-ready='true']")).toBeVisible({ timeout: 90_000 });
+
+  await page.locator("#explode-slider").fill("100");
+  await expect(page.getByTestId("explode-value")).toHaveText("100%");
+
+  // фокус ждёт сборки модели и только потом летит к структуре; положение
+  // камеры из Playwright не проверить — проверяем карточку и сборку
+  await page.getByTestId("search-toggle").click();
+  await page.getByLabel("Поиск структуры").fill("бедренная кость");
+  await page.getByRole("listbox").getByRole("button").first().click();
+  await expect(page.getByTestId("part-la")).toHaveText("Femur");
+  await expect(page.getByTestId("explode-value")).toHaveText("0%");
+  await expect(page.getByTestId("scene-caption")).toHaveText(/взрослый мужчина/i);
+});
