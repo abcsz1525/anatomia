@@ -1,0 +1,26 @@
+Detailed bone viewer — sources and scope
+
+Geometry and authored leader meshes: Z-Anatomy, by Gauthier Kervyn and contributors.
+https://github.com/LluisV/Z-Anatomy
+Source: PC-Version / Resources/Models/FBX/SkeletalSystem100.fbx
+SHA-256: 294a649765cd060a62a4095da52b9c8ef2d97769aa447e196448aa5f7d596dea
+Z-Anatomy: CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/
+These adapted geometry and annotation assets are distributed under CC BY-SA 4.0.
+Original anatomy: BodyParts3D, The Database Center for Life Science.
+Z-Anatomy also credits University of Dundee CAHID, Cranial Nerves and Foramina (CC BY 4.0).
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+
+Adaptations: skeleton-only extraction, removal of attachment overlays, baking of
+world transforms, uniform centering/scaling per bone, preservation of authored
+leader geometry and relative positions, binary geometry packaging, Russian labels.
+No landmarks have been projected to the project's reduced BodyParts3D geometry.
+
+Latin labels: Z-Anatomy Resources/Translations0.txt, based on Terminologia Anatomica.
+FIPAT. Terminologia Anatomica. 2nd ed., 2019, approved by IFAA 2020.
+https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf
+Individual anatomical terms are in the public domain. No FIPAT tables or definitions
+are reproduced. Russian terminology is maintained in content/bone-landmarks-ru.tsv.
+
+Coverage is PARTIAL: coverage.json records unannotated models. A source pointer
+is an anatomical locator, not a segmented surface or a claim of expert validation.
+Manual browser annotations are drafts tied to a specific bone and source hash.

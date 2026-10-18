@@ -8,6 +8,7 @@ export function SiteHeader() {
           и сокращаем самую длинную подпись */}
       <nav className="flex gap-4 overflow-x-auto whitespace-nowrap text-neutral-600" data-testid="site-nav">
         <Link href="/atlas" className="hover:text-neutral-900">Атлас</Link>
+        <Link href="/osteology" className="hover:text-neutral-900">Строение костей</Link>
         <Link href="/quiz" className="hover:text-neutral-900">Тесты</Link>
         <Link href="/cards" className="hover:text-neutral-900">Карточки</Link>
         <Link href="/progress" className="hover:text-neutral-900">Прогресс</Link>

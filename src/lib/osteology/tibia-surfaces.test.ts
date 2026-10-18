@@ -1,0 +1,40 @@
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { describe,expect,it } from 'vitest';
+import { parseRegions } from './regions';
+import type { BoneDetail } from './types';
+import { latinWords,stressOf,type StressMap } from '../latin';
+import coreStress from '../../../content/latin-stress.json';
+import boneStress from '../../../content/bone-latin-stress.json';
+
+describe('bundled tibial anatomy',()=>{
+  for(const side of ['l','r'])it(`validates geometry, anatomical relations and pronunciation: ${side}`,()=>{
+    const base=`public/models/bone-details/v1/tibia-${side}`;
+    const d:BoneDetail=JSON.parse(readFileSync(`${base}.json`,'utf8'));
+    const bytes=readFileSync(`${base}.bin`);
+    expect(bytes.length).toBe(d.vertexCount*24);
+    expect(createHash('sha256').update(bytes).digest('hex')).toBe(d.regionHash);
+    const data=JSON.parse(readFileSync(`${base}.surfaces.json`,'utf8'));
+    const regions=parseRegions(data,d.id,d.regionHash!,d.vertexCount/3,d.landmarks.map(l=>l.id));
+    expect(Object.keys(regions)).toHaveLength(29);
+    const p=new Float32Array(bytes.buffer,bytes.byteOffset,d.vertexCount*3);
+    const byName=(name:string)=>regions[d.landmarks.find(l=>l.en===name)!.id];
+    const mean=(name:string,axis:number)=>{const faces=byName(name);return faces.reduce((s,f)=>s+(p[f*9+axis]+p[f*9+3+axis]+p[f*9+6+axis])/3,0)/faces.length;};
+    for(const faces of Object.values(regions))expect(faces.length).toBeGreaterThan(0);
+    const medial=byName('Articular surface of medial condyle'),lateral=byName('Superior articular surface of lateral condyle');
+    expect(new Set([...medial,...lateral])).toEqual(new Set(byName('Superior articular surfaces of tibia')));
+    expect(medial.some(f=>lateral.includes(f))).toBe(false);
+    const body=byName('Body of tibia'),surfaces=['Medial surface of tibia','Lateral surface of tibia','Posterior surface of tibia'].map(byName);
+    expect(surfaces.flat()).toHaveLength(body.length);
+    expect(new Set(surfaces.flat())).toEqual(new Set(body));
+    const reflect=side==='l'?1:-1;
+    expect(reflect*mean('Articular surface of medial condyle',0)).toBeLessThan(reflect*mean('Superior articular surface of lateral condyle',0));
+    expect(reflect*mean('Fibular notch',0)).toBeGreaterThan(reflect*mean('Medial malleolus',0));
+    expect(mean('Tibial tuberosity',2)).toBeGreaterThan(.1);
+    expect(mean('Soleal line',2)).toBeLessThan(0);
+    expect(mean('Anterior intercondylar area',2)).toBeGreaterThan(mean('Posterior intercondylar area',2));
+    expect(mean('Inferior articular surface of tibia',1)).toBeLessThan(-.9);
+    const map={...coreStress,...boneStress} as StressMap;
+    for(const l of d.landmarks)for(const word of latinWords(l.la))expect(stressOf(word,map),word).not.toBeNull();
+  });
+});

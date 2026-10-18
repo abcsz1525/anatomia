@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { ChevronRightIcon, CloseIcon, FocusIcon } from "@/components/ui/icons";
 import type { DisplayNames } from "@/lib/content/names";
+import boneDetailLinks from "../../../content/bone-detail-links.json";
 
 export type { DisplayNames };
 
@@ -59,6 +60,12 @@ export function PartCard({
         </p>
         <p className="text-[12px] text-studio-muted" data-testid="part-en">{names.en}</p>
         {names.topicRu && <p className="text-[11px] text-studio-muted" data-testid="part-topic">{names.topicRu}</p>}
+        {Object.hasOwn(boneDetailLinks, partId) && (
+          <Link href={`/osteology?part=${encodeURIComponent(partId)}`} data-testid="bone-details-link"
+            className="flex min-h-11 items-center rounded-lg border border-studio-border px-3 text-sm font-medium text-studio-primary hover:bg-white/70">
+            Строение кости · 3D-метки <ChevronRightIcon size={14} className="ml-auto" />
+          </Link>
+        )}
         {/* у непереведённой структуры нет ни латыни, ни русского — карточек по ней не собрать */}
         {names.translated && topicId && (
           <Link
