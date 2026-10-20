@@ -1,0 +1,171 @@
+{
+  "date": "2026-10-19",
+  "accuracy": "approximate",
+  "changes": [
+    {
+      "boneId": "vertebra-c3",
+      "pair": [
+        "vertebra-c3-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1"
+      ],
+      "faces": [
+        78,
+        76
+      ],
+      "notes": [
+        "Передний бугорок: передний участок поперечного отростка у поперечного отверстия, с обеих сторон.",
+        "Задний бугорок: заднелатеральный участок поперечного отростка, с обеих сторон."
+      ]
+    },
+    {
+      "boneId": "vertebra-c4",
+      "pair": [
+        "vertebra-c4-anterior-tubercle-of-transverse-process-2",
+        "vertebra-c4-posterior-tubercle-of-transverse-process-1"
+      ],
+      "faces": [
+        52,
+        42
+      ],
+      "notes": [
+        "Передний бугорок: передний участок поперечного отростка у поперечного отверстия, с обеих сторон.",
+        "Задний бугорок: заднелатеральный участок поперечного отростка, с обеих сторон."
+      ]
+    },
+    {
+      "boneId": "vertebra-c5",
+      "pair": [
+        "vertebra-c5-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1"
+      ],
+      "faces": [
+        56,
+        76
+      ],
+      "notes": [
+        "Передний бугорок: передний участок поперечного отростка у поперечного отверстия, с обеих сторон.",
+        "Задний бугорок: заднелатеральный участок поперечного отростка, с обеих сторон."
+      ]
+    },
+    {
+      "boneId": "vertebra-c6",
+      "pair": [
+        "vertebra-c6-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1"
+      ],
+      "faces": [
+        60,
+        44
+      ],
+      "notes": [
+        "Передний бугорок: передний участок поперечного отростка у поперечного отверстия, с обеих сторон.",
+        "Задний бугорок: заднелатеральный участок поперечного отростка, с обеих сторон."
+      ]
+    },
+    {
+      "boneId": "vertebra-c7",
+      "pair": [
+        "vertebra-c7-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1"
+      ],
+      "faces": [
+        122,
+        56
+      ],
+      "notes": [
+        "У C7 передний бугорок мал и может отсутствовать. Выделен только предполагаемый участок переднего корня; наличие отдельного бугорка этой моделью не подтверждено.",
+        "Задний бугорок: заднелатеральный участок поперечного отростка, с обеих сторон."
+      ]
+    },
+    {
+      "boneId": "vertebra-c7",
+      "pair": [
+        "vertebra-c7-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15"
+      ],
+      "faces": [
+        44,
+        310
+      ],
+      "notes": [
+        "Суставная площадка на верхнем суставном отростке, обращённая кверху и кзади. Разметка перенесена с ошибочно выбранной дуги.",
+        "Показана внесуставная часть верхнего суставного отростка. Его суставная площадка выделяется отдельно; анатомически она является частью отростка."
+      ]
+    },
+    {
+      "boneId": "vertebra-t1",
+      "pair": [
+        "vertebra-t1-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15"
+      ],
+      "faces": [
+        86,
+        364
+      ],
+      "notes": [
+        "Суставная площадка на верхнем суставном отростке, обращённая кверху и кзади. Разметка перенесена с ошибочно выбранной дуги.",
+        "Показана внесуставная часть верхнего суставного отростка. Его суставная площадка выделяется отдельно; анатомически она является частью отростка."
+      ]
+    },
+    {
+      "boneId": "vertebra-t3",
+      "pair": [
+        "vertebra-t3-anatomy-homolog-vertebra-t8-superior-costal-facet-1",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8"
+      ],
+      "faces": [
+        64,
+        120
+      ],
+      "notes": [
+        "Предполагаемая верхняя рёберная ямка на заднелатеральном крае тела. Её малый контур и граница хряща в исходной модели не выделены надёжно; использован локальный ориентир по атласу.",
+        "Ножка дуги: костная перемычка позади тела, медиальнее рёберной ямки. Суставная площадка исключена из этой маски."
+      ]
+    },
+    {
+      "boneId": "ethmoid-bone",
+      "pair": [
+        "ethmoid-bone-anatomy-left-orbital",
+        "ethmoid-bone-anatomy-left-labyrinth"
+      ],
+      "faces": [
+        1347,
+        2009
+      ],
+      "notes": [
+        "Латеральная пластинка лабиринта, обращённая в глазницу. Она является частью лабиринта; для выбора выделена отдельно.",
+        "Показаны доступные верхние и медиальные участки лабиринта без отдельно выделенной глазничной пластинки. Внутренние ячейки в поверхностной модели не сегментированы."
+      ]
+    },
+    {
+      "boneId": "ethmoid-bone",
+      "pair": [
+        "ethmoid-bone-anatomy-right-orbital",
+        "ethmoid-bone-anatomy-right-labyrinth"
+      ],
+      "faces": [
+        1349,
+        1987
+      ],
+      "notes": [
+        "Латеральная пластинка лабиринта, обращённая в глазницу. Она является частью лабиринта; для выбора выделена отдельно.",
+        "Показаны доступные верхние и медиальные участки лабиринта без отдельно выделенной глазничной пластинки. Внутренние ячейки в поверхностной модели не сегментированы."
+      ]
+    },
+    {
+      "boneId": "occipital-bone",
+      "pair": [
+        "occipital-bone-foramen-magnum-25",
+        "occipital-bone-groove-for-marginal-sinus-18"
+      ],
+      "faces": [
+        668,
+        313
+      ],
+      "notes": [
+        "Выделен костный край большого отверстия; пустой просвет нельзя окрасить как поверхность.",
+        "Приблизительная борозда на внутричерепной поверхности вдоль края большого отверстия. Выраженность борозды вариабельна; окрашена область её прохождения, а не подтверждённый глубокий желоб."
+      ]
+    }
+  ]
+}

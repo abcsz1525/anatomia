@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-19",
+  "completeAnatomicalInventory": false,
+  "additions": [
+    {
+      "boneId": "hip-bone-l",
+      "landmarkId": "hip-bone-l-canal-entry-obturator-entry",
+      "anchorId": "hip-bone-l-obturator-groove-31",
+      "faces": 10,
+      "reference": "https://www.kenhub.com/en/library/anatomy/hip-bone"
+    },
+    {
+      "boneId": "hip-bone-r",
+      "landmarkId": "hip-bone-r-canal-entry-obturator-entry",
+      "anchorId": "hip-bone-r-obturator-groove-41",
+      "faces": 10,
+      "reference": "https://www.kenhub.com/en/library/anatomy/hip-bone"
+    },
+    {
+      "boneId": "maxilla-l",
+      "landmarkId": "maxilla-l-canal-entry-infraorbital-entry",
+      "anchorId": "maxilla-l-anatomy-infraorbital-groove",
+      "faces": 1,
+      "reference": "https://www.kenhub.com/en/library/anatomy/infraorbital-nerve"
+    },
+    {
+      "boneId": "maxilla-r",
+      "landmarkId": "maxilla-r-canal-entry-infraorbital-entry",
+      "anchorId": "maxilla-r-anatomy-infraorbital-groove",
+      "faces": 1,
+      "reference": "https://www.kenhub.com/en/library/anatomy/infraorbital-nerve"
+    },
+    {
+      "boneId": "palatine-bone-l",
+      "landmarkId": "palatine-bone-l-canal-entry-sphenopalatine-rim",
+      "anchorId": "palatine-bone-l-anatomy-sphenopalatine-notch",
+      "faces": 26,
+      "reference": "https://www.kenhub.com/en/library/anatomy/anatomy-of-the-pterygopalatine-fossa"
+    },
+    {
+      "boneId": "palatine-bone-r",
+      "landmarkId": "palatine-bone-r-canal-entry-sphenopalatine-rim",
+      "anchorId": "palatine-bone-r-anatomy-sphenopalatine-notch",
+      "faces": 26,
+      "reference": "https://www.kenhub.com/en/library/anatomy/anatomy-of-the-pterygopalatine-fossa"
+    },
+    {
+      "boneId": "temporal-bone-l",
+      "landmarkId": "temporal-bone-l-canal-entry-jugular-rim",
+      "anchorId": "temporal-bone-l-anatomy-jugular-fossa",
+      "faces": 40,
+      "reference": "https://www.kenhub.com/en/library/anatomy/jugular-foramen"
+    },
+    {
+      "boneId": "temporal-bone-r",
+      "landmarkId": "temporal-bone-r-canal-entry-jugular-rim",
+      "anchorId": "temporal-bone-r-anatomy-jugular-fossa",
+      "faces": 40,
+      "reference": "https://www.kenhub.com/en/library/anatomy/jugular-foramen"
+    }
+  ],
+  "limitations": [
+    "Отмечены участки внешней поверхности, а не просветы и внутренний ход каналов.",
+    "Питательные отверстия длинных костей и мелкие канальцы височной кости без подтверждённого просвета не добавлены.",
+    "Края составных отверстий показаны только на кости, содержащей опорную вырезку или ямку."
+  ]
+}

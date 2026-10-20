@@ -1,6 +1,16 @@
 import type { Point3 } from './types';
 
 export type SurfaceRegions = Record<string, number[]>;
+/** One shared ordering for rendering and picking overlapping regions. */
+export function faceRegions(regions:SurfaceRegions, visibleIds:string[]) {
+  const visible=new Set(visibleIds),result=new Map<number,string[]>();
+  for(const [id,faces] of Object.entries(regions))if(visible.has(id))for(const f of faces)result.set(f,[...(result.get(f)??[]),id]);
+  for(const ids of result.values())ids.sort((a,b)=>regions[a].length-regions[b].length||a.localeCompare(b));
+  return result;
+}
+export function nextSurface(ids:string[],selected:string|null) {
+  return ids.length?ids[(ids.indexOf(selected??'')+1)%ids.length]:null;
+}
 export const regionKey = (bone: string, hash: string) => `anatomia.regions.v1.${hash}.${bone}`;
 
 /** Shared-vertex adjacency keeps a brush from jumping to a nearby opposite surface. */

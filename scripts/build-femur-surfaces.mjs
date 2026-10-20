@@ -1,3 +1,4 @@
+import { supplementSurfaces } from './supplement-surfaces.mjs';
 /** Femur-only editorial contours. Coordinates were traced against the four
  * orthographic views of this pinned Z-Anatomy mesh and the atlas references in
  * content/femur-surfaces.md. These are NOT nearest-landmark/Voronoi patches.
@@ -43,12 +44,20 @@ for(const side of ['l','r']){
  const positions=[],normals=[],tags=[];
  function emit(v,n,tag){const lengths=[dist(v[0],v[1]),dist(v[1],v[2]),dist(v[2],v[0])];const longest=Math.max(...lengths);if(longest>.035){const a=lengths.indexOf(longest),b=(a+1)%3,c=(a+2)%3;const m=mid(v[a],v[b]),mn=mid(n[a],n[b]);emit([v[a],m,v[c]],[n[a],mn,n[c]],tag);emit([m,v[b],v[c]],[mn,n[b],n[c]],tag);}else{for(let i=0;i<3;i++){positions.push(...v[i]);const len=Math.hypot(...n[i]);normals.push(...n[i].map(x=>x/len));}tags.push(tag);}}
  for(let f=0;f<pos.count/3;f++){let order=mesh.matrixWorld.determinant()<0?[0,2,1]:[0,1,2];emit(order.map(k=>[pos.getX(f*3+k),pos.getY(f*3+k),pos.getZ(f*3+k)]),order.map(k=>[nor.getX(f*3+k),nor.getY(f*3+k),nor.getZ(f*3+k)]),{cart:cart.has(f),fovea:fovea.has(f)});}
- const d=JSON.parse(fs.readFileSync(`${dir}/femur-${side}.json`));const names=new Map(d.landmarks.map(l=>[l.en,l.id]));const regions=Object.fromEntries(d.landmarks.map(l=>[l.id,[]]));
+ const d=JSON.parse(fs.readFileSync(`${dir}/femur-${side}.json`));for(const [key,en,ru,la] of [
+ ['head-articular','Articular surface of head of femur','Суставная поверхность головки бедренной кости','Facies articularis capitis femoris'],
+ ['medial-condyle-articular','Articular surface of medial condyle of femur','Суставная поверхность медиального мыщелка бедренной кости','Facies articularis condyli medialis femoris'],
+ ['lateral-condyle-articular','Articular surface of lateral condyle of femur','Суставная поверхность латерального мыщелка бедренной кости','Facies articularis condyli lateralis femoris']
+ ])if(!d.landmarks.some(l=>l.en===en))d.landmarks.push({id:d.id+'-'+key,en,ru,la,labelPosition:[0,0,0],pointer:[],source:'editorial'});
+ d.landmarks=d.landmarks.filter(l=>!l.id.includes('-supplement-'));const names=new Map(d.landmarks.map(l=>[l.en,l.id]));const regions=Object.fromEntries(d.landmarks.map(l=>[l.id,[]]));
  for(let f=0;f<tags.length;f++){
   const p=[0,1,2].map(a=>(positions[f*9+a]+positions[f*9+3+a]+positions[f*9+6+a])/3);if(side==='r')p[0]*=-1;const [x,y,z]=p,t=tags[f];
   const isHead=(t.cart&&y>.7)||t.fovea,notHead=!isHead;
   const masks={
    'Head of femur':isHead,
+   'Articular surface of head of femur':isHead&&!t.fovea,
+   'Articular surface of medial condyle of femur':t.cart&&y<-.82&&x<-.075&&!(y<-.78&&z>.012&&y>-.975),
+   'Articular surface of lateral condyle of femur':t.cart&&y<-.82&&x>=-.075&&!(y<-.78&&z>.012&&y>-.975),
    'Fovea for ligament of head of femur':t.fovea,
    'Neck of femur':notHead&&polygon(x,y,neck),
    'Greater trochanter':notHead&&polygon(x,y,greater),
@@ -88,3 +97,5 @@ for(const side of ['l','r']){
  report.push({bone:d.id,triangles:tags.length,regions:Object.fromEntries(d.landmarks.map(l=>[l.en,regions[l.id].length]))});g.dispose();
 }
 fs.writeFileSync('../.anatomy-source/femur-surface-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+
+supplementSurfaces('femur');

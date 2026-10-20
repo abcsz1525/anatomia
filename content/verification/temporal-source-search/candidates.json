@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-10-20",
+  "objective": "Complete detailed left temporal bone, downloadable and licensed for adaptation and integration into a local anatomy web app",
+  "replacementReady": false,
+  "existingGeometryChanged": false,
+  "candidates": [
+    {
+      "name": "Digital Science Platform / Regulski et al.",
+      "priority": 1,
+      "source": "https://link.springer.com/article/10.1186/s12909-022-03408-5",
+      "catalog": "https://pcn.cnt.edu.pl/",
+      "evidence": "Figure 4 caption explicitly identifies a left temporal bone with annotations. Article describes unreduced OBJ models, MTL/JPG materials and PAC annotations. The collection includes models up to five million triangles; this is not a verified count for the temporal bone.",
+      "permission": "Article states noncommercial use and reuse in educational materials; article CC BY 4.0 must not automatically be treated as the mesh license. Verify file-specific terms for modification and web delivery.",
+      "blocker": "Catalog failed in web tool; direct local HTTPS request failed with unknown host/DNS. No mesh obtained. Article warns that archaeological specimens can have missing structures, so completeness is unverified.",
+      "next": "Obtain current official download location, unreduced left temporal OBJ/MTL/textures/PAC and explicit use terms from corresponding author. Inspect anatomy before replacement."
+    },
+    {
+      "name": "eaziza Temporal Bone",
+      "source": "https://sketchfab.com/3d-models/temporal-bone-58589c3bfb8e48debe30578da8267e88",
+      "permission": "Search-indexed creator listing displays CC Attribution and Download 3D Model; verify exact license version with download.",
+      "evidence": "Creator describes patient CT; listing reports 542.8k triangles.",
+      "blocker": "Direct page fetch returns 403. No source archive obtained. Side and completeness unverified."
+    },
+    {
+      "name": "eaziza Temporal Bone Dataset 2",
+      "source": "https://sketchfab.com/3d-models/temporal-bone-dataset-2-f7f78845430b4fb1bef01b0eabd02123",
+      "permission": "Search-indexed creator listing displays CC Attribution and Download 3D Model; verify exact license version with download.",
+      "evidence": "Creator describes patient CT; listing reports 668.3k triangles.",
+      "blocker": "Direct page unavailable to web fetch. No source archive obtained. Side and completeness unverified."
+    },
+    {
+      "name": "MedPrint3D Temporal bone Segmented Models",
+      "source": "https://cults3d.com/en/3d-model/various/temporal-bone-segmented-models",
+      "evidence": "Creator listing explicitly provides Left temporal bone.stl and Right temporal bone.stl in ZIP archives; claims detailed segmentation.",
+      "permission": "No readable license value in retrieved page. Purchase does not establish web embedding or redistribution rights.",
+      "blocker": "Paid download, no purchase made. Geometry and permission not verified."
+    },
+    {
+      "name": "VOKA Temporal Bone Left",
+      "source": "https://voka.io/3d-anatomy/systemic/neurocranium/temporal-bone-left/",
+      "evidence": "Explicitly left temporal bone; provider offers a quote for embedding.",
+      "permission": "Embedding offer is not permission to download, modify or self-host a mesh.",
+      "blocker": "Requires provider-specific licensing; no authorized source mesh acquired."
+    },
+    {
+      "name": "UCSF Right Temporal Bone with Handwritten Labels",
+      "source": "https://sketchfab.com/3d-models/right-temporal-bone-with-handwritten-labels-9628cbafba8b4d18bbb70f19fd619e3e",
+      "evidence": "Creator listing describes scan, reports 82.7k triangles and CC Attribution-NonCommercial.",
+      "blocker": "Right side, not requested left specimen. Mirroring would need explicit labeling and would not establish complete internal anatomy. Not adopted."
+    },
+    {
+      "name": "University of Dundee Temporal Bone",
+      "source": "https://sketchfab.com/3d-models/temporal-bone-e108e4628521427f90e59d640824fb6b",
+      "evidence": "University creator listing reports 61.4k triangles.",
+      "blocker": "No download option or reusable mesh license in retrieved listing. Side unconfirmed."
+    },
+    {
+      "name": "Anatomy Standard",
+      "source": "https://www.anatomystandard.com/",
+      "permission": "Site grants CC BY-NC 4.0 for original images; no verified downloadable mesh license.",
+      "blocker": "Images, video and app access are not an authorized source mesh."
+    },
+    {
+      "name": "NIH 3DPX-014739",
+      "source": "https://3d.nih.gov/entries/3DPX-014739?version=2",
+      "evidence": "Surgical simulation model with downloadable STL/GLB options.",
+      "blocker": "License value not exposed in retrieved page, and complete left isolated bone not established."
+    },
+    {
+      "name": "OpenEar THETA",
+      "source": "https://zenodo.org/records/1473724",
+      "permission": "CC BY 4.0 verified previously",
+      "blocker": "Already integrated as prepared regional specimen. Does not meet complete isolated bone requirement."
+    }
+  ],
+  "acceptanceChecks": [
+    "Source archive and file-specific modification/web delivery license retained",
+    "Left sidedness verified, no silently mirrored right specimen",
+    "Squamous, petrous, tympanic and mastoid regions and processes inspected",
+    "All 28 existing named landmarks checked individually; missing features reported rather than invented",
+    "External/internal acoustic meatus, carotid apertures and stylomastoid foramen geometry inspected",
+    "New triangle masks manually checked; existing face indices never copied between unrelated meshes",
+    "Approximate boundaries explicitly marked; lower Russian/Latin/transcription panel retained",
+    "Browser rendering and hit testing verified when WebGL and browser access become available"
+  ]
+}

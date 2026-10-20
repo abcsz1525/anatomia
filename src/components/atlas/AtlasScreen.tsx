@@ -23,6 +23,7 @@ import { StudioFooter } from "./StudioFooter";
 import { SystemsPanel } from "./SystemsPanel";
 import { ViewControls } from "./ViewControls";
 import { WebGLGate } from "./WebGLGate";
+import boneDetailLinks from "../../../content/bone-detail-links.json";
 
 type Panel = "search" | "layers" | null;
 
@@ -237,7 +238,14 @@ export function AtlasScreen() {
 
             {/* подпись и док разнесения */}
             <div className="absolute inset-x-3 bottom-16 z-10 flex flex-col items-center gap-3 pb-[env(safe-area-inset-bottom)] md:inset-x-auto md:bottom-[54px] md:left-1/2 md:w-[460px] md:-translate-x-1/2">
-              <SceneCaption text={caption} />
+              {isolated && Object.hasOwn(boneDetailLinks,isolated.id) ? (
+                <Link href={`/osteology?part=${encodeURIComponent(isolated.id)}`}
+                  data-testid="isolated-bone-details-link"
+                  className="glass flex min-h-11 flex-col items-center justify-center px-4 py-2 text-center text-sm font-medium text-studio-primary hover:bg-white/90">
+                  <span>{shortLabel(isolated,state.data.content)}</span>
+                  <span className="text-xs">Открыть поверхности и отверстия →</span>
+                </Link>
+              ) : <SceneCaption text={caption} />}
               <ExplodeDock className="w-full" trailing={isMobile ? layersButton : undefined} />
             </div>
             <StudioFooter panning={explode > 0.8} />

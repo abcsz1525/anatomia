@@ -1,0 +1,1065 @@
+{
+  "models": 210,
+  "previouslyDetailed": 34,
+  "approximateBaseline": 176,
+  "completeAnatomicalInventory": false,
+  "modelsWithoutRegions": [],
+  "baselineModels": [
+    {
+      "id": "atlas-c1",
+      "regions": 17,
+      "sourceNeighborhoods": 11,
+      "directionalZones": 6
+    },
+    {
+      "id": "maxilla-l",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "maxilla-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "temporal-bone-l",
+      "regions": 18,
+      "sourceNeighborhoods": 12,
+      "directionalZones": 6
+    },
+    {
+      "id": "temporal-bone-r",
+      "regions": 18,
+      "sourceNeighborhoods": 12,
+      "directionalZones": 6
+    },
+    {
+      "id": "capitate-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "capitate-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "pisiform-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "pisiform-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-hand-l",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-hand-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-foot-l",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-foot-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "occipital-bone",
+      "regions": 34,
+      "sourceNeighborhoods": 28,
+      "directionalZones": 6
+    },
+    {
+      "id": "sphenoid-bone",
+      "regions": 49,
+      "sourceNeighborhoods": 43,
+      "directionalZones": 6
+    },
+    {
+      "id": "clavicle-l",
+      "regions": 16,
+      "sourceNeighborhoods": 10,
+      "directionalZones": 6
+    },
+    {
+      "id": "clavicle-r",
+      "regions": 16,
+      "sourceNeighborhoods": 10,
+      "directionalZones": 6
+    },
+    {
+      "id": "coccyx",
+      "regions": 9,
+      "sourceNeighborhoods": 3,
+      "directionalZones": 6
+    },
+    {
+      "id": "trapezium-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "trapezium-bone-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "sacrum",
+      "regions": 26,
+      "sourceNeighborhoods": 20,
+      "directionalZones": 6
+    },
+    {
+      "id": "hamate-bone-l",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "hamate-bone-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "scaphoid-bone-l",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "scaphoid-bone-r",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "frontal-bone",
+      "regions": 33,
+      "sourceNeighborhoods": 27,
+      "directionalZones": 6
+    },
+    {
+      "id": "ulna-l",
+      "regions": 22,
+      "sourceNeighborhoods": 16,
+      "directionalZones": 6
+    },
+    {
+      "id": "ulna-r",
+      "regions": 22,
+      "sourceNeighborhoods": 16,
+      "directionalZones": 6
+    },
+    {
+      "id": "scapula-l",
+      "regions": 30,
+      "sourceNeighborhoods": 24,
+      "directionalZones": 6
+    },
+    {
+      "id": "scapula-r",
+      "regions": 30,
+      "sourceNeighborhoods": 24,
+      "directionalZones": 6
+    },
+    {
+      "id": "radius-l",
+      "regions": 25,
+      "sourceNeighborhoods": 19,
+      "directionalZones": 6
+    },
+    {
+      "id": "radius-r",
+      "regions": 25,
+      "sourceNeighborhoods": 19,
+      "directionalZones": 6
+    },
+    {
+      "id": "xiphoid-process",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "malleus-l",
+      "regions": 12,
+      "sourceNeighborhoods": 6,
+      "directionalZones": 6
+    },
+    {
+      "id": "malleus-r",
+      "regions": 12,
+      "sourceNeighborhoods": 6,
+      "directionalZones": 6
+    },
+    {
+      "id": "incus-l",
+      "regions": 11,
+      "sourceNeighborhoods": 5,
+      "directionalZones": 6
+    },
+    {
+      "id": "incus-r",
+      "regions": 11,
+      "sourceNeighborhoods": 5,
+      "directionalZones": 6
+    },
+    {
+      "id": "palatine-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "palatine-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "inferior-nasal-concha-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "inferior-nasal-concha-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "mandible",
+      "regions": 21,
+      "sourceNeighborhoods": 15,
+      "directionalZones": 6
+    },
+    {
+      "id": "nasal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "nasal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "axis-c2",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "humerus-l",
+      "regions": 34,
+      "sourceNeighborhoods": 28,
+      "directionalZones": 6
+    },
+    {
+      "id": "humerus-r",
+      "regions": 34,
+      "sourceNeighborhoods": 28,
+      "directionalZones": 6
+    },
+    {
+      "id": "hyoid-bone",
+      "regions": 9,
+      "sourceNeighborhoods": 3,
+      "directionalZones": 6
+    },
+    {
+      "id": "lunate-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "lunate-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-first-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-first-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-hand-l",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-hand-r",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-foot-l",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-foot-r",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "ethmoid-bone",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "manubrium-of-sternum",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "sesamoid-bones-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "sesamoid-bones-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "zygomatic-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "zygomatic-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "lacrimal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "lacrimal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vomer",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-hand-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-hand-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-foot-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-foot-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "stapes-l",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "stapes-r",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "hip-bone-l",
+      "regions": 57,
+      "sourceNeighborhoods": 51,
+      "directionalZones": 6
+    },
+    {
+      "id": "hip-bone-r",
+      "regions": 57,
+      "sourceNeighborhoods": 51,
+      "directionalZones": 6
+    },
+    {
+      "id": "body-of-sternum",
+      "regions": 8,
+      "sourceNeighborhoods": 2,
+      "directionalZones": 6
+    },
+    {
+      "id": "parietal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "parietal-bone-r",
+      "regions": 21,
+      "sourceNeighborhoods": 15,
+      "directionalZones": 6
+    },
+    {
+      "id": "trapezoid-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "trapezoid-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "triquetrum-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "triquetrum-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t1",
+      "regions": 7,
+      "sourceNeighborhoods": 1,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-l1",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "first-metacarpal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "first-metacarpal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "first-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "first-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t2",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-l2",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "second-metacarpal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "second-metacarpal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "second-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "second-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t3",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-l3",
+      "regions": 25,
+      "sourceNeighborhoods": 19,
+      "directionalZones": 6
+    },
+    {
+      "id": "third-metacarpal-bone-l",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "third-metacarpal-bone-r",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "third-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "third-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-c3",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t4",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-l4",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fourth-metacarpal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fourth-metacarpal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fourth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fourth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-c4",
+      "regions": 12,
+      "sourceNeighborhoods": 6,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t9",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "ninth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "ninth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t5",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-l5",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fifth-metacarpal-bone-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fifth-metacarpal-bone-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fifth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "fifth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-c5",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t6",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "sixth-rib-l",
+      "regions": 17,
+      "sourceNeighborhoods": 11,
+      "directionalZones": 6
+    },
+    {
+      "id": "sixth-rib-r",
+      "regions": 17,
+      "sourceNeighborhoods": 11,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-c6",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t7",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "seventh-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "seventh-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-c7",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t8",
+      "regions": 10,
+      "sourceNeighborhoods": 4,
+      "directionalZones": 6
+    },
+    {
+      "id": "eighth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "eighth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t10",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "tenth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "tenth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t11",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "eleventh-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "eleventh-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "vertebra-t12",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "twelfth-rib-l",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    },
+    {
+      "id": "twelfth-rib-r",
+      "regions": 6,
+      "sourceNeighborhoods": 0,
+      "directionalZones": 6
+    }
+  ]
+}

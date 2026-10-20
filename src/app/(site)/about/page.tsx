@@ -18,6 +18,12 @@ export default function AboutPage() {
           <a className="underline" href="https://github.com/ismailatilan-44/human-atlas">human-atlas</a> (MIT).
         </p>
         <p>Публикация: Mitsuhashi et al. (2009), BodyParts3D: 3D structure database for anatomical concepts. Nucleic Acids Research.</p>
+        <p>
+          Мимические и жевательные мышцы дополнены моделями <a className="underline" href="https://github.com/LluisV/Z-Anatomy">Z-Anatomy (Lluís Vinent Juanico и участники проекта)</a>,
+          лицензия <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+          Геометрия преобразована и приблизительно совмещена с черепом BodyParts3D.
+          Совмещение разных моделей не прошло независимую экспертную проверку.
+        </p>
       </section>
       <section className="space-y-2">
         <h2 className="text-lg font-semibold">Ограничения</h2>

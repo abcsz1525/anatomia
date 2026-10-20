@@ -5,7 +5,8 @@ import { OrbitControls } from "@react-three/drei";
 import { BufferAttribute, BufferGeometry, Color, DoubleSide } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import type { BoneDetail, BoneLandmark, Point3 } from "@/lib/osteology/types";
-import { brushFaces, surfaceTopology, type SurfaceRegions } from "@/lib/osteology/regions";
+import { brushFaces, surfaceTopology, faceRegions, nextSurface, type SurfaceRegions } from "@/lib/osteology/regions";
+import { sectionPlane, sectionRaycast, type SectionSide } from "@/lib/osteology/section";
 
 function Controls({ reset, view, side }: { reset:number; view:string; side:string }) {
   const { camera } = useThree();
@@ -25,10 +26,13 @@ type Props = {
   showAll:boolean; reset:number; placing:boolean; regions:SurfaceRegions;
   paintMode:'off'|'paint'|'erase'; radius:number;
   view:string;
+  section:SectionSide; sectionOffset:number;
   onSelect(id:string):void; onPlace(point:Point3):void; onPaint(faces:number[]):void;
 };
 
-function Surface({detail,buffer,landmarks,selectedId,showAll,placing,regions,paintMode,radius,onSelect,onPlace,onPaint}:Props) {
+function Surface({detail,buffer,landmarks,selectedId,showAll,placing,regions,paintMode,radius,onSelect,onPlace,onPaint,section,sectionOffset}:Props) {
+  const plane=useMemo(()=>sectionPlane(section,sectionOffset),[section,sectionOffset]);
+  const raycast=useMemo(()=>sectionRaycast(plane),[plane]);
   const [hover,setHover]=useState<number|null>(null);
   const [preview,setPreview]=useState<number[]>([]);
   const geometry=useMemo(()=>{
@@ -41,13 +45,7 @@ function Surface({detail,buffer,landmarks,selectedId,showAll,placing,regions,pai
   },[buffer,detail.vertexCount]);
   useEffect(()=>()=>geometry.dispose(),[geometry]);
   const topology=useMemo(()=>surfaceTopology(geometry.attributes.position.array as Float32Array),[geometry]);
-  const byFace=useMemo(()=>{
-    const result=new Map<number,string[]>();
-    const visible=new Set(landmarks.map(l=>l.id));
-    for(const [id,faces] of Object.entries(regions)) if(visible.has(id)) for(const face of faces) result.set(face,[...(result.get(face)??[]),id]);
-    for(const ids of result.values())ids.sort((a,b)=>regions[a].length-regions[b].length);
-    return result;
-  },[regions,landmarks]);
+  const byFace=useMemo(()=>faceRegions(regions,landmarks.map(l=>l.id)),[regions,landmarks]);
   const hoverIds=hover===null?[]:byFace.get(hover)??[];
   const hovered=hoverIds.includes(selectedId??'')?selectedId:hoverIds[0];
   useEffect(()=>{
@@ -70,22 +68,23 @@ function Surface({detail,buffer,landmarks,selectedId,showAll,placing,regions,pai
     if(paintMode!=='off')setPreview(brushFaces(topology,e.faceIndex,e.point.toArray() as Point3,radius));
   }
   return <>
-    <mesh geometry={geometry} onPointerMove={move} onPointerOut={()=>{setHover(null);setPreview([]);}}
+    <mesh geometry={geometry} raycast={raycast} onPointerMove={move} onPointerOut={()=>{setHover(null);setPreview([]);}}
       onClick={e=>{
         if(e.delta>5 || e.faceIndex==null)return;
         e.stopPropagation();
         if(placing){onPlace(e.point.toArray() as Point3);return;}
         if(paintMode!=='off'){onPaint(brushFaces(topology,e.faceIndex,e.point.toArray() as Point3,radius));return;}
         const ids=byFace.get(e.faceIndex)??[];
-        if(ids.length)onSelect(ids[(ids.indexOf(selectedId??'')+1)%ids.length]);
+        const next=nextSurface(ids,selectedId);
+        if(next)onSelect(next);
       }}>
-      <meshStandardMaterial vertexColors roughness={0.78} side={DoubleSide}/>
+      <meshStandardMaterial vertexColors roughness={0.78} side={DoubleSide} clippingPlanes={plane?[plane]:null}/>
     </mesh>
   </>;
 }
 
 export default function BoneScene(props:Props) {
-  return <Canvas camera={{position:[0,0,3.8],fov:40}} dpr={[1,2]} style={{touchAction:'none',cursor:props.placing||props.paintMode!=='off'?'crosshair':'pointer'}}>
+  return <Canvas camera={{position:[0,0,3.8],fov:40}} onCreated={({gl})=>{gl.localClippingEnabled=true;}} dpr={[1,2]} style={{touchAction:'none',cursor:props.placing||props.paintMode!=='off'?'crosshair':'pointer'}}>
     <color attach="background" args={['#edf0f1']}/>
     <ambientLight intensity={1.15}/>
     <directionalLight position={[3,4,5]} intensity={2.2}/>

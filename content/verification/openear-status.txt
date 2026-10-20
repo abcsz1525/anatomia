@@ -1,0 +1,32 @@
+OpenEar integration status — 2026-10-20
+
+Source: https://zenodo.org/records/1473724, CC BY 4.0.
+Local route: /osteology/temporal, linked from temporal-bone-l.
+13 meshes: optimized bone (622,394 faces) and 12 source segmented structures.
+2 approximate canal-wall masks; 26 existing landmarks retained on original model.
+This is a prepared specimen, not a complete replacement of an isolated bone.
+Source scan axes retained; left designation derives from Theta-Left supplier catalogue.
+
+Validation:
+- scripts/verify-openear.mjs: PASS (hashes, sizes, finite geometry, non-overlapping masks).
+- TypeScript and ESLint: PASS.
+- Browser list selection: all 14 labels show Russian, Latin, transcription and approximate notice.
+- Actual GPU rendering, mesh clicks and anatomical boundary accuracy: NOT VERIFIED.
+  In-app browser cannot create WebGL 2, including for the pre-existing model.
+- Offline diagnostic render: openear-six-views.png; not a browser screenshot or expert validation.
+- UI evidence: openear-browser-check.jpg.
+
+Reproduction: scripts/openear-source.py downloads source PLYs using ZIP ranges;
+scripts/prepare-openear.py converts; scripts/annotate-openear.py adds labels/masks.
+Always run annotate after prepare because prepare regenerates the manifest.
+Original files and helper Python packages are in ../.anatomy-source/ (local only).
+No GitHub or Railway mutations were performed.
+
+Viewer continuation (2026-10-20):
+Added solid / translucent-context / isolated selection modes, bone opacity control,
+Russian/Latin filtering, selection framing from actual geometry bounds with narrow
+viewport fitting and preserved viewing direction. Near plane reduced for tiny ossicles.
+Transparent bone does not intercept clicks; opaque bone restores mesh raycasting.
+No new anatomical geometry or labels were added. Source specimen limitations remain.
+Browser verification blocked: browser tool rejected access to localhost via URL policy.
+GPU rendering and interaction still require verification; do not claim visual acceptance.

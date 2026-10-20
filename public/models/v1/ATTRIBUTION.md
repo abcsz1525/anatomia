@@ -1,5 +1,21 @@
 # Anatomy data attribution
 
+## Facial muscle supplement
+
+52 facial and masticatory muscle/part meshes (`ZF-*`, `facial-z-anatomy-mastication.bin.gz`) derive from
+Z-Anatomy, distributed by Lluís Vinent Juanico and Z-Anatomy contributors:
+https://github.com/LluisV/Z-Anatomy/tree/PC-Version/Resources/Models/FBX
+Source: MuscularSystem100.fbx. These adapted meshes are licensed under
+Creative Commons Attribution-ShareAlike 4.0:
+https://creativecommons.org/licenses/by-sa/4.0/
+Changes: world transforms applied, approximate skull registration to BodyParts3D,
+normals quantized and geometry packed; Russian/Latin labels added.
+Source checksum and registration parameters are in atlas.json supplements.
+The supplement is not independently expert-validated. It is separate from the
+original BodyParts3D chunks described below.
+
+## Original body model
+
 BodyParts3D, © The Database Center for Life Science licensed under CC Attribution 4.0 International.
 
 - License: https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html (updated 2025-02-27)

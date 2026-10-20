@@ -16,7 +16,7 @@ describe('bundled patellar anatomy', () => {
     expect(createHash('sha256').update(bytes).digest('hex')).toBe(d.regionHash);
     const data = JSON.parse(readFileSync(`${base}.surfaces.json`, 'utf8'));
     const regions = parseRegions(data, d.id, d.regionHash!, d.vertexCount / 3, d.landmarks.map(l => l.id));
-    expect(Object.keys(regions)).toHaveLength(11);
+    expect(Object.keys(regions)).toHaveLength(18);
     const p = new Float32Array(bytes.buffer, bytes.byteOffset, d.vertexCount * 3);
     const byName = (name: string) => regions[d.landmarks.find(l => l.en === name)!.id];
     const mean = (name: string, axis: number) => {
@@ -37,7 +37,7 @@ describe('bundled patellar anatomy', () => {
     expect(mean('Anterior surface of patella',2)).toBeGreaterThan(mean('Posterior surface of patella',2));
     expect(byName('Non-articular posterior area of patella').some(f=>byName('Articular surface of patella').includes(f))).toBe(false);
     const index=JSON.parse(readFileSync('public/models/bone-details/v1/index.json','utf8'));
-    expect(index.find((b:{id:string})=>b.id===d.id).landmarkCount).toBe(11);
+    expect(index.find((b:{id:string})=>b.id===d.id).landmarkCount).toBe(18);
     const map = { ...coreStress, ...boneStress } as StressMap;
     for (const l of d.landmarks) for (const word of latinWords(l.la)) expect(stressOf(word, map), word).not.toBeNull();
   });

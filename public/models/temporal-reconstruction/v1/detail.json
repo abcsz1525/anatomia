@@ -1,0 +1,504 @@
+{
+  "id": "temporal-bone-l-reconstruction",
+  "en": "Temporal bone",
+  "ru": "Левая височная кость — учебная реконструкция",
+  "la": "Os temporale",
+  "side": "left",
+  "sourceName": "Local reconstruction derived from Z-Anatomy",
+  "sourceHash": "98aaaacd680728e52aaf6ca91aad971cf4eb8c5f51a1940547d7b2e7fa36cce2",
+  "vertexCount": 186894,
+  "geometryUrl": "/models/temporal-reconstruction/v1/bone.bin",
+  "landmarks": [
+    {
+      "id": "temporal-bone-l-mastoid-process-0",
+      "en": "Mastoid process",
+      "la": "Processus mastoideus",
+      "ru": "Сосцевидный отросток",
+      "labelPosition": [
+        0.676918899049179,
+        -0.48003060178987056,
+        -0.2643404044659924
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "position": [
+        0.25236531244911387,
+        -0.37330088735393024,
+        -0.45526958374101845
+      ]
+    },
+    {
+      "id": "temporal-bone-l-styloid-process-of-temporal-bone-1",
+      "en": "Styloid process of temporal bone",
+      "la": "Processus styloideus ossis temporalis",
+      "ru": "Шиловидный отросток височной кости",
+      "labelPosition": [
+        -0.041560594201664025,
+        -0.866953455688801,
+        0.0927712526296586
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена. Кончик отростка немного удлинён при реконструкции; размер не является анатомическим измерением.",
+      "position": [
+        -0.043040216468113034,
+        -0.673744525642343,
+        0.07836977361289205
+      ]
+    },
+    {
+      "id": "temporal-bone-l-squamous-part-of-temporal-bone-3",
+      "en": "Squamous part of temporal bone",
+      "la": "Pars squamosa ossis temporalis",
+      "ru": "Чешуйчатая часть височной кости",
+      "labelPosition": [
+        1.1528146312967342,
+        0.3039757891164996,
+        -0.03287061073731523
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "position": [
+        0.4722344960788423,
+        0.4368677158401448,
+        0.00273993046452142
+      ]
+    },
+    {
+      "id": "temporal-bone-l-tympanic-part-of-temporal-bone-8",
+      "en": "Tympanic part of temporal bone",
+      "la": "Pars tympanica ossis temporalis",
+      "ru": "Барабанная часть височной кости",
+      "labelPosition": [
+        0.9680440343307171,
+        -0.3463364446395971,
+        0.0033493521165140344
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "position": [
+        0.20393485361948993,
+        -0.32251937565131056,
+        -0.0004197152516541961
+      ]
+    },
+    {
+      "id": "temporal-bone-l-mastoid-notch-10",
+      "en": "Mastoid notch",
+      "la": "Incisura mastoidea",
+      "ru": "Сосцевидная вырезка",
+      "labelPosition": [
+        0.21756713048296183,
+        -0.6132916977236604,
+        -0.3714172379849803
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "position": [
+        0.22187980031924898,
+        -0.4333116564344855,
+        -0.3814818499781562
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-zygomatic-process",
+      "en": "zygomatic-process",
+      "ru": "Скуловой отросток височной кости",
+      "la": "Processus zygomaticus ossis temporalis",
+      "labelPosition": [
+        0.43639007210731506,
+        -0.16752500335375467,
+        0.7558538913726807
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        0.3616302531226068,
+        -0.19783347284690372,
+        0.7676204295855925
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-mandibular-fossa",
+      "en": "mandibular-fossa",
+      "ru": "Нижнечелюстная ямка",
+      "la": "Fossa mandibularis",
+      "labelPosition": [
+        0.19972103337446848,
+        -0.15294412275155386,
+        0.3514472544193268
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        0.1568056655944878,
+        -0.14890935383311607,
+        0.33225774054940277
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-articular-tubercle",
+      "en": "articular-tubercle",
+      "ru": "Суставной бугорок",
+      "la": "Tuberculum articulare",
+      "labelPosition": [
+        0.3305916686852773,
+        -0.17638862133026123,
+        0.470564862092336
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Учебная реконструкция на основе Z-Anatomy. Наружная форма сглажена; положение и цветные границы приблизительные, независимая анатомическая проверка не выполнена.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        0.3445715357244816,
+        -0.17798256536540122,
+        0.4679163833090149
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-external-acoustic",
+      "en": "external-acoustic",
+      "ru": "Наружный слуховой проход — реконструкция входа",
+      "la": "Meatus acusticus externus",
+      "labelPosition": [
+        0.3011549810568492,
+        -0.1001213937997818,
+        0.0602713730186224
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        0.23407589476596166,
+        -0.15541868339737047,
+        0.11113299098888446
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-carotid-canal",
+      "en": "carotid-canal",
+      "ru": "Сонный канал — наружная апертура — реконструкция входа",
+      "la": "Apertura externa canalis carotici",
+      "labelPosition": [
+        -0.09204150984684627,
+        -0.2248434176047643,
+        0.21642807126045227
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        -0.08724004901091677,
+        -0.18092580225028612,
+        0.20739768377699982
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-stylomastoid",
+      "en": "stylomastoid",
+      "ru": "Шилососцевидное отверстие — реконструкция входа",
+      "la": "Foramen stylomastoideum",
+      "labelPosition": [
+        0.1377695177992185,
+        -0.42034028967221576,
+        -0.0578392893075943
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        0.14004914064482218,
+        -0.37807760990184286,
+        -0.054996571861711384
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-internal-acoustic",
+      "en": "internal-acoustic",
+      "ru": "Внутренний слуховой проход — реконструкция входа",
+      "la": "Meatus acusticus internus",
+      "labelPosition": [
+        -0.412913312514623,
+        -0.10478601356347401,
+        -0.091677392522494
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        -0.392240664998039,
+        -0.12609956919260285,
+        -0.08705409791187119
+      ]
+    },
+    {
+      "id": "temporal-bone-l-atlas-gap-inner-carotid",
+      "ru": "Внутренняя апертура сонного канала — область входа — реконструкция входа",
+      "la": "Apertura interna canalis carotici",
+      "en": "Apertura interna canalis carotici",
+      "labelPosition": [
+        -0.5864493052164713,
+        -0.1279802843928337,
+        0.21762042740980783
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-gap-review-v1",
+      "position": [
+        -0.6068209300991795,
+        -0.09305506253117418,
+        0.18537054041925208
+      ]
+    },
+    {
+      "id": "temporal-bone-l-anatomy-petrosal-hiatus",
+      "en": "petrosal-hiatus",
+      "ru": "Расщелина канала большого каменистого нерва — реконструкция входа",
+      "la": "Hiatus canalis nervi petrosi majoris",
+      "labelPosition": [
+        -0.37302151322364807,
+        -0.01637050447364648,
+        0.09231986105442047
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-local-contour",
+      "position": [
+        -0.3754661379454732,
+        -0.02868293315488931,
+        0.0888924563119003
+      ]
+    },
+    {
+      "id": "temporal-bone-l-atlas-gap-lesser-petrosal",
+      "ru": "Расщелина канала малого каменистого нерва — реконструкция входа",
+      "la": "Hiatus canalis nervi petrosi minoris",
+      "en": "Hiatus canalis nervi petrosi minoris",
+      "labelPosition": [
+        -0.269519105553627,
+        -0.05584554125865301,
+        0.0928000162045161
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-gap-review-v1",
+      "position": [
+        -0.2843371949042662,
+        -0.06053983900531465,
+        0.08870602269847701
+      ]
+    },
+    {
+      "id": "temporal-bone-l-atlas-gap-mastoid-foramen",
+      "ru": "Сосцевидное отверстие — предполагаемая область — реконструкция входа",
+      "la": "Foramen mastoideum",
+      "en": "Foramen mastoideum",
+      "labelPosition": [
+        0.20864433546861014,
+        -0.1819633593161901,
+        -0.7162986596425375
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией.",
+      "regionMethod": "atlas-gap-review-v1",
+      "position": [
+        0.1809217605413052,
+        -0.18554888170277856,
+        -0.8510706894230424
+      ]
+    },
+    {
+      "id": "temporal-bone-l-recon-vestibular-aqueduct",
+      "ru": "Наружная апертура водопровода преддверия — реконструкция входа",
+      "la": "Apertura externa aqueductus vestibuli",
+      "en": "Apertura externa aqueductus vestibuli",
+      "labelPosition": [
+        -0.3,
+        -0.16,
+        -0.19
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.3054829719413644,
+        -0.15747124556475464,
+        -0.19417572844863898
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-cochlear-canaliculus",
+      "ru": "Наружная апертура канальца улитки — реконструкция входа",
+      "la": "Apertura externa canaliculi cochleae",
+      "en": "Apertura externa canaliculi cochleae",
+      "labelPosition": [
+        -0.25,
+        -0.27,
+        -0.035
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.2626425804282307,
+        -0.2644089611931743,
+        -0.06872765187871671
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-tympanic-canaliculus",
+      "ru": "Барабанный каналец — реконструкция входа",
+      "la": "Canaliculus tympanicus",
+      "en": "Canaliculus tympanicus",
+      "labelPosition": [
+        -0.13,
+        -0.29,
+        0.065
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.1606770129414164,
+        -0.25838034435814494,
+        0.0626020083276957
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-mastoid-canaliculus",
+      "ru": "Сосцевидный каналец — реконструкция входа",
+      "la": "Canaliculus mastoideus",
+      "en": "Canaliculus mastoideus",
+      "labelPosition": [
+        -0.085,
+        -0.29,
+        -0.14
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.07033442637699974,
+        -0.30512347604708845,
+        -0.14790874621749572
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-musculotubal-tensor",
+      "ru": "Полуканал мышцы, напрягающей барабанную перепонку — реконструкция входа",
+      "la": "Semicanalis musculi tensoris tympani",
+      "en": "Semicanalis musculi tensoris tympani",
+      "labelPosition": [
+        -0.46,
+        -0.055,
+        0.24
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.5107436917448659,
+        -0.11815351833535068,
+        0.19696675030188707
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-musculotubal-tube",
+      "ru": "Полуканал слуховой трубы — реконструкция входа",
+      "la": "Semicanalis tubae auditivae",
+      "en": "Semicanalis tubae auditivae",
+      "labelPosition": [
+        -0.46,
+        -0.12,
+        0.27
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        -0.5115323664682373,
+        -0.12882992693510578,
+        0.20380051946324781
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    },
+    {
+      "id": "temporal-bone-l-recon-chorda-tympani",
+      "ru": "Каналец барабанной струны — реконструкция входа",
+      "la": "Canaliculus chordae tympani",
+      "en": "Canaliculus chordae tympani",
+      "labelPosition": [
+        0.08,
+        -0.22,
+        0.29
+      ],
+      "pointer": [],
+      "source": "editorial",
+      "position": [
+        0.05479561740685994,
+        -0.16510073980142118,
+        0.31393121676833435
+      ],
+      "accuracy": "approximate",
+      "accuracyNote": "Приблизительно смоделированное входное углубление. Положение, диаметр и глубина заданы вручную по общим ориентирам атласа; полный ход канала и его соединения НЕ реконструированы. Не является подтверждённой анатомией."
+    }
+  ],
+  "regionHash": "98aaaacd680728e52aaf6ca91aad971cf4eb8c5f51a1940547d7b2e7fa36cce2",
+  "regionsUrl": "/models/temporal-reconstruction/v1/regions.json",
+  "surfaceCoverage": "atlas-features",
+  "entranceViews": {
+    "temporal-bone-l-anatomy-external-acoustic": "lateral",
+    "temporal-bone-l-anatomy-carotid-canal": "inferior",
+    "temporal-bone-l-anatomy-stylomastoid": "inferior",
+    "temporal-bone-l-anatomy-internal-acoustic": "posterior",
+    "temporal-bone-l-atlas-gap-inner-carotid": "inferior",
+    "temporal-bone-l-anatomy-petrosal-hiatus": "anterior",
+    "temporal-bone-l-atlas-gap-lesser-petrosal": "anterior",
+    "temporal-bone-l-atlas-gap-mastoid-foramen": "medial",
+    "temporal-bone-l-recon-vestibular-aqueduct": "posterior",
+    "temporal-bone-l-recon-cochlear-canaliculus": "inferior",
+    "temporal-bone-l-recon-tympanic-canaliculus": "inferior",
+    "temporal-bone-l-recon-mastoid-canaliculus": "inferior",
+    "temporal-bone-l-recon-musculotubal-tensor": "superior",
+    "temporal-bone-l-recon-musculotubal-tube": "anterior",
+    "temporal-bone-l-recon-chorda-tympani": "inferior"
+  }
+}

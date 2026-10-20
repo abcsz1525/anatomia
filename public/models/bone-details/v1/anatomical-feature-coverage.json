@@ -1,0 +1,2413 @@
+{
+  "modelCount": 210,
+  "completeAnatomicalInventory": false,
+  "modelsWithoutNamedFeatures": [],
+  "added": 1114,
+  "models": [
+    {
+      "id": "atlas-c1",
+      "added": 2,
+      "anatomicalRegions": 13,
+      "methods": {
+        "atlas-c1-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "atlas-c1-anatomy-vertebral-foramen": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "maxilla-l",
+      "added": 16,
+      "anatomicalRegions": 17,
+      "methods": {
+        "maxilla-l-anatomy-body": "atlas-local-contour",
+        "maxilla-l-anatomy-frontal-process": "atlas-local-contour",
+        "maxilla-l-anatomy-zygomatic-process": "atlas-local-contour",
+        "maxilla-l-anatomy-palatine-process": "atlas-local-contour",
+        "maxilla-l-anatomy-alveolar-process": "atlas-local-contour",
+        "maxilla-l-anatomy-infraorbital-foramen": "atlas-local-contour",
+        "maxilla-l-anatomy-infraorbital-groove": "atlas-local-contour",
+        "maxilla-l-anatomy-canine-fossa": "atlas-local-contour",
+        "maxilla-l-anatomy-maxillary-tuberosity": "atlas-local-contour",
+        "maxilla-l-anatomy-nasal-notch": "atlas-local-contour",
+        "maxilla-l-anatomy-anterior-nasal-spine": "atlas-local-contour",
+        "maxilla-l-anatomy-maxillary-hiatus": "atlas-local-contour",
+        "maxilla-l-anatomy-lacrimal-groove": "atlas-local-contour",
+        "maxilla-l-anatomy-incisive-canal": "atlas-local-contour",
+        "maxilla-l-anatomy-orbital-surface": "atlas-local-contour",
+        "maxilla-l-anatomy-alveolar-foramina": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "maxilla-r",
+      "added": 16,
+      "anatomicalRegions": 17,
+      "methods": {
+        "maxilla-r-anatomy-body": "atlas-local-contour",
+        "maxilla-r-anatomy-frontal-process": "atlas-local-contour",
+        "maxilla-r-anatomy-zygomatic-process": "atlas-local-contour",
+        "maxilla-r-anatomy-palatine-process": "atlas-local-contour",
+        "maxilla-r-anatomy-alveolar-process": "atlas-local-contour",
+        "maxilla-r-anatomy-infraorbital-foramen": "atlas-local-contour",
+        "maxilla-r-anatomy-infraorbital-groove": "atlas-local-contour",
+        "maxilla-r-anatomy-canine-fossa": "atlas-local-contour",
+        "maxilla-r-anatomy-maxillary-tuberosity": "atlas-local-contour",
+        "maxilla-r-anatomy-nasal-notch": "atlas-local-contour",
+        "maxilla-r-anatomy-anterior-nasal-spine": "atlas-local-contour",
+        "maxilla-r-anatomy-maxillary-hiatus": "atlas-local-contour",
+        "maxilla-r-anatomy-lacrimal-groove": "atlas-local-contour",
+        "maxilla-r-anatomy-incisive-canal": "atlas-local-contour",
+        "maxilla-r-anatomy-orbital-surface": "atlas-local-contour",
+        "maxilla-r-anatomy-alveolar-foramina": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "temporal-bone-l",
+      "added": 10,
+      "anatomicalRegions": 22,
+      "methods": {
+        "temporal-bone-l-anatomy-zygomatic-process": "atlas-local-contour",
+        "temporal-bone-l-anatomy-mandibular-fossa": "atlas-local-contour",
+        "temporal-bone-l-anatomy-articular-tubercle": "atlas-local-contour",
+        "temporal-bone-l-anatomy-external-acoustic": "atlas-local-contour",
+        "temporal-bone-l-anatomy-internal-acoustic": "atlas-local-contour",
+        "temporal-bone-l-anatomy-carotid-canal": "atlas-local-contour",
+        "temporal-bone-l-anatomy-stylomastoid": "atlas-local-contour",
+        "temporal-bone-l-anatomy-jugular-fossa": "atlas-local-contour",
+        "temporal-bone-l-anatomy-sigmoid-groove": "atlas-local-contour",
+        "temporal-bone-l-anatomy-petrosal-hiatus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "temporal-bone-r",
+      "added": 10,
+      "anatomicalRegions": 22,
+      "methods": {
+        "temporal-bone-r-anatomy-zygomatic-process": "atlas-local-contour",
+        "temporal-bone-r-anatomy-mandibular-fossa": "atlas-local-contour",
+        "temporal-bone-r-anatomy-articular-tubercle": "atlas-local-contour",
+        "temporal-bone-r-anatomy-external-acoustic": "atlas-local-contour",
+        "temporal-bone-r-anatomy-internal-acoustic": "atlas-local-contour",
+        "temporal-bone-r-anatomy-carotid-canal": "atlas-local-contour",
+        "temporal-bone-r-anatomy-stylomastoid": "atlas-local-contour",
+        "temporal-bone-r-anatomy-jugular-fossa": "atlas-local-contour",
+        "temporal-bone-r-anatomy-sigmoid-groove": "atlas-local-contour",
+        "temporal-bone-r-anatomy-petrosal-hiatus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "capitate-bone-l",
+      "added": 8,
+      "anatomicalRegions": 8,
+      "methods": {
+        "capitate-bone-l-anatomy-lunate-facet": "source-cartilage",
+        "capitate-bone-l-anatomy-scaphoid-facet": "source-cartilage",
+        "capitate-bone-l-anatomy-trapezoid-facet": "source-cartilage",
+        "capitate-bone-l-anatomy-hamate-facet": "source-cartilage",
+        "capitate-bone-l-anatomy-metacarpal-III-facet": "source-cartilage",
+        "capitate-bone-l-anatomy-head": "atlas-local-contour",
+        "capitate-bone-l-anatomy-neck": "atlas-local-contour",
+        "capitate-bone-l-anatomy-body": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "capitate-bone-r",
+      "added": 8,
+      "anatomicalRegions": 8,
+      "methods": {
+        "capitate-bone-r-anatomy-lunate-facet": "source-cartilage",
+        "capitate-bone-r-anatomy-scaphoid-facet": "source-cartilage",
+        "capitate-bone-r-anatomy-trapezoid-facet": "source-cartilage",
+        "capitate-bone-r-anatomy-hamate-facet": "source-cartilage",
+        "capitate-bone-r-anatomy-metacarpal-III-facet": "source-cartilage",
+        "capitate-bone-r-anatomy-head": "atlas-local-contour",
+        "capitate-bone-r-anatomy-neck": "atlas-local-contour",
+        "capitate-bone-r-anatomy-body": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "pisiform-bone-l",
+      "added": 1,
+      "anatomicalRegions": 1,
+      "methods": {
+        "pisiform-bone-l-anatomy-triquetrum-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "pisiform-bone-r",
+      "added": 1,
+      "anatomicalRegions": 1,
+      "methods": {
+        "pisiform-bone-r-anatomy-triquetrum-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-hand-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fourth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-hand-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fourth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-hand-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-first-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-hand-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-first-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-foot-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-first-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-first-finger-of-foot-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-first-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-first-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-hand-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fifth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-hand-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fifth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-hand-l",
+      "added": 3,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-third-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-l-tuberosity-of-distal-phalanx-of-hand-0": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-hand-r",
+      "added": 3,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-third-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-r-tuberosity-of-distal-phalanx-of-hand-0": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-hand-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-second-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-hand-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-second-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-foot-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-second-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-second-finger-of-foot-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-second-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-second-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-foot-l",
+      "added": 3,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-third-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-l-tuberosity-of-distal-phalanx-of-foot-0": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-third-finger-of-foot-r",
+      "added": 3,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-third-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-r-tuberosity-of-distal-phalanx-of-foot-0": "anatomical-axis-partition",
+        "distal-phalanx-of-third-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-foot-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fourth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fourth-finger-of-foot-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fourth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fourth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-foot-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fifth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-l-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "distal-phalanx-of-fifth-finger-of-foot-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "distal-phalanx-of-fifth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-r-anatomy-tuberosity": "anatomical-axis-partition",
+        "distal-phalanx-of-fifth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "occipital-bone",
+      "added": 0,
+      "anatomicalRegions": 28,
+      "methods": {}
+    },
+    {
+      "id": "sphenoid-bone",
+      "added": 0,
+      "anatomicalRegions": 43,
+      "methods": {}
+    },
+    {
+      "id": "clavicle-l",
+      "added": 0,
+      "anatomicalRegions": 10,
+      "methods": {
+        "clavicle-l-sternal-articular-surface-1": "source-cartilage",
+        "clavicle-l-acromial-facet-7": "source-cartilage"
+      }
+    },
+    {
+      "id": "clavicle-r",
+      "added": 0,
+      "anatomicalRegions": 10,
+      "methods": {
+        "clavicle-r-sternal-articular-surface-4": "source-cartilage",
+        "clavicle-r-acromial-facet-3": "source-cartilage"
+      }
+    },
+    {
+      "id": "coccyx",
+      "added": 0,
+      "anatomicalRegions": 3,
+      "methods": {}
+    },
+    {
+      "id": "trapezium-bone-l",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "trapezium-bone-l-anatomy-scaphoid-facet": "source-cartilage",
+        "trapezium-bone-l-anatomy-trapezoid-facet": "source-cartilage",
+        "trapezium-bone-l-anatomy-metacarpal-I-facet": "source-cartilage",
+        "trapezium-bone-l-anatomy-metacarpal-II-facet": "source-cartilage",
+        "trapezium-bone-l-anatomy-tubercle": "atlas-local-contour",
+        "trapezium-bone-l-anatomy-fcr-groove": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "trapezium-bone-r",
+      "added": 5,
+      "anatomicalRegions": 6,
+      "methods": {
+        "trapezium-bone-r-anatomy-scaphoid-facet": "source-cartilage",
+        "trapezium-bone-r-anatomy-trapezoid-facet": "source-cartilage",
+        "trapezium-bone-r-anatomy-metacarpal-I-facet": "source-cartilage",
+        "trapezium-bone-r-anatomy-metacarpal-II-facet": "source-cartilage",
+        "trapezium-bone-r-tubercle-of-trapezium-bone-0": "atlas-local-contour",
+        "trapezium-bone-r-anatomy-fcr-groove": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "sacrum",
+      "added": 0,
+      "anatomicalRegions": 20,
+      "methods": {}
+    },
+    {
+      "id": "hamate-bone-l",
+      "added": 4,
+      "anatomicalRegions": 5,
+      "methods": {
+        "hamate-bone-l-anatomy-triquetrum-facet": "source-cartilage",
+        "hamate-bone-l-anatomy-capitate-facet": "source-cartilage",
+        "hamate-bone-l-anatomy-metacarpal-IV-facet": "source-cartilage",
+        "hamate-bone-l-anatomy-metacarpal-V-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "hamate-bone-r",
+      "added": 4,
+      "anatomicalRegions": 5,
+      "methods": {
+        "hamate-bone-r-anatomy-triquetrum-facet": "source-cartilage",
+        "hamate-bone-r-anatomy-capitate-facet": "source-cartilage",
+        "hamate-bone-r-anatomy-metacarpal-IV-facet": "source-cartilage",
+        "hamate-bone-r-anatomy-metacarpal-V-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "scaphoid-bone-l",
+      "added": 5,
+      "anatomicalRegions": 6,
+      "methods": {
+        "scaphoid-bone-l-anatomy-radial-facet": "source-cartilage",
+        "scaphoid-bone-l-anatomy-lunate-facet": "source-cartilage",
+        "scaphoid-bone-l-anatomy-capitate-facet": "source-cartilage",
+        "scaphoid-bone-l-anatomy-trapezium-facet": "source-cartilage",
+        "scaphoid-bone-l-anatomy-trapezoid-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "scaphoid-bone-r",
+      "added": 5,
+      "anatomicalRegions": 6,
+      "methods": {
+        "scaphoid-bone-r-anatomy-radial-facet": "source-cartilage",
+        "scaphoid-bone-r-anatomy-lunate-facet": "source-cartilage",
+        "scaphoid-bone-r-anatomy-capitate-facet": "source-cartilage",
+        "scaphoid-bone-r-anatomy-trapezium-facet": "source-cartilage",
+        "scaphoid-bone-r-anatomy-trapezoid-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "frontal-bone",
+      "added": 0,
+      "anatomicalRegions": 27,
+      "methods": {}
+    },
+    {
+      "id": "ulna-l",
+      "added": 0,
+      "anatomicalRegions": 16,
+      "methods": {
+        "ulna-l-trochlear-notch-6": "source-cartilage",
+        "ulna-l-radial-notch-4": "source-cartilage",
+        "ulna-l-articular-circumference-of-head-of-ulna-12": "source-cartilage"
+      }
+    },
+    {
+      "id": "ulna-r",
+      "added": 0,
+      "anatomicalRegions": 16,
+      "methods": {
+        "ulna-r-trochlear-notch-14": "source-cartilage",
+        "ulna-r-radial-notch-10": "source-cartilage",
+        "ulna-r-articular-circumference-of-head-of-ulna-5": "source-cartilage"
+      }
+    },
+    {
+      "id": "scapula-l",
+      "added": 0,
+      "anatomicalRegions": 24,
+      "methods": {
+        "scapula-l-glenoid-fossa-10": "source-cartilage",
+        "scapula-l-clavicular-facet-5": "source-cartilage"
+      }
+    },
+    {
+      "id": "scapula-r",
+      "added": 0,
+      "anatomicalRegions": 24,
+      "methods": {
+        "scapula-r-glenoid-fossa-6": "source-cartilage",
+        "scapula-r-clavicular-facet-20": "source-cartilage"
+      }
+    },
+    {
+      "id": "radius-l",
+      "added": 0,
+      "anatomicalRegions": 19,
+      "methods": {
+        "radius-l-articular-circumference-of-head-of-radius-0": "source-cartilage",
+        "radius-l-articular-facet-of-head-of-radius-17": "source-cartilage",
+        "radius-l-carpal-articular-surface-16": "source-cartilage",
+        "radius-l-ulnar-notch-15": "source-cartilage"
+      }
+    },
+    {
+      "id": "radius-r",
+      "added": 0,
+      "anatomicalRegions": 19,
+      "methods": {
+        "radius-r-articular-circumference-of-head-of-radius-11": "source-cartilage",
+        "radius-r-articular-facet-of-head-of-radius-4": "source-cartilage",
+        "radius-r-carpal-articular-surface-0": "source-cartilage",
+        "radius-r-ulnar-notch-1": "source-cartilage"
+      }
+    },
+    {
+      "id": "xiphoid-process",
+      "added": 2,
+      "anatomicalRegions": 2,
+      "methods": {
+        "xiphoid-process-anatomy-base": "atlas-local-contour",
+        "xiphoid-process-anatomy-apex": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "malleus-l",
+      "added": 0,
+      "anatomicalRegions": 6,
+      "methods": {}
+    },
+    {
+      "id": "malleus-r",
+      "added": 0,
+      "anatomicalRegions": 6,
+      "methods": {}
+    },
+    {
+      "id": "incus-l",
+      "added": 0,
+      "anatomicalRegions": 5,
+      "methods": {}
+    },
+    {
+      "id": "incus-r",
+      "added": 0,
+      "anatomicalRegions": 5,
+      "methods": {}
+    },
+    {
+      "id": "palatine-bone-l",
+      "added": 9,
+      "anatomicalRegions": 9,
+      "methods": {
+        "palatine-bone-l-anatomy-horizontal-plate": "atlas-local-contour",
+        "palatine-bone-l-anatomy-perpendicular-plate": "atlas-local-contour",
+        "palatine-bone-l-anatomy-pyramidal-process": "atlas-local-contour",
+        "palatine-bone-l-anatomy-orbital-process": "atlas-local-contour",
+        "palatine-bone-l-anatomy-sphenoidal-process": "atlas-local-contour",
+        "palatine-bone-l-anatomy-sphenopalatine-notch": "atlas-local-contour",
+        "palatine-bone-l-anatomy-greater-palatine": "atlas-local-contour",
+        "palatine-bone-l-anatomy-lesser-palatine": "atlas-local-contour",
+        "palatine-bone-l-anatomy-nasal-spine": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "palatine-bone-r",
+      "added": 9,
+      "anatomicalRegions": 9,
+      "methods": {
+        "palatine-bone-r-anatomy-horizontal-plate": "atlas-local-contour",
+        "palatine-bone-r-anatomy-perpendicular-plate": "atlas-local-contour",
+        "palatine-bone-r-anatomy-pyramidal-process": "atlas-local-contour",
+        "palatine-bone-r-anatomy-orbital-process": "atlas-local-contour",
+        "palatine-bone-r-anatomy-sphenoidal-process": "atlas-local-contour",
+        "palatine-bone-r-anatomy-sphenopalatine-notch": "atlas-local-contour",
+        "palatine-bone-r-anatomy-greater-palatine": "atlas-local-contour",
+        "palatine-bone-r-anatomy-lesser-palatine": "atlas-local-contour",
+        "palatine-bone-r-anatomy-nasal-spine": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "inferior-nasal-concha-bone-l",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "inferior-nasal-concha-bone-l-anatomy-lacrimal-process": "atlas-local-contour",
+        "inferior-nasal-concha-bone-l-anatomy-ethmoidal-process": "atlas-local-contour",
+        "inferior-nasal-concha-bone-l-anatomy-maxillary-process": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "inferior-nasal-concha-bone-r",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "inferior-nasal-concha-bone-r-anatomy-lacrimal-process": "atlas-local-contour",
+        "inferior-nasal-concha-bone-r-anatomy-ethmoidal-process": "atlas-local-contour",
+        "inferior-nasal-concha-bone-r-anatomy-maxillary-process": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "mandible",
+      "added": 21,
+      "anatomicalRegions": 36,
+      "methods": {
+        "mandible-anatomy-left-ramus": "atlas-local-contour",
+        "mandible-anatomy-right-ramus": "atlas-local-contour",
+        "mandible-anatomy-left-angle": "atlas-local-contour",
+        "mandible-anatomy-right-angle": "atlas-local-contour",
+        "mandible-anatomy-left-head": "atlas-local-contour",
+        "mandible-anatomy-right-head": "atlas-local-contour",
+        "mandible-anatomy-left-neck": "atlas-local-contour",
+        "mandible-anatomy-right-neck": "atlas-local-contour",
+        "mandible-anatomy-left-coronoid": "atlas-local-contour",
+        "mandible-anatomy-right-coronoid": "atlas-local-contour",
+        "mandible-anatomy-left-notch": "atlas-local-contour",
+        "mandible-anatomy-right-notch": "atlas-local-contour",
+        "mandible-anatomy-left-foramen": "atlas-local-contour",
+        "mandible-anatomy-right-foramen": "atlas-local-contour",
+        "mandible-anatomy-left-lingula": "atlas-local-contour",
+        "mandible-anatomy-right-lingula": "atlas-local-contour",
+        "mandible-anatomy-left-masseter": "atlas-local-contour",
+        "mandible-anatomy-right-masseter": "atlas-local-contour",
+        "mandible-anatomy-left-pterygoid": "atlas-local-contour",
+        "mandible-anatomy-right-pterygoid": "atlas-local-contour",
+        "mandible-anatomy-alveolar-part": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "nasal-bone-l",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "nasal-bone-l-anatomy-ethmoidal-groove": "atlas-local-contour",
+        "nasal-bone-l-anatomy-frontal-border": "atlas-local-contour",
+        "nasal-bone-l-anatomy-maxillary-border": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "nasal-bone-r",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "nasal-bone-r-anatomy-ethmoidal-groove": "atlas-local-contour",
+        "nasal-bone-r-anatomy-frontal-border": "atlas-local-contour",
+        "nasal-bone-r-anatomy-maxillary-border": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "axis-c2",
+      "added": 10,
+      "anatomicalRegions": 14,
+      "methods": {
+        "axis-c2-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "axis-c2-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "axis-c2-anatomy-homolog-vertebra-l3-spinous-process-5": "homologous-atlas-transfer",
+        "axis-c2-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "axis-c2-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "axis-c2-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "axis-c2-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "axis-c2-anatomy-homolog-vertebra-l3-vertebral-body-17": "homologous-atlas-transfer",
+        "axis-c2-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "axis-c2-anatomy-superior-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "humerus-l",
+      "added": 2,
+      "anatomicalRegions": 30,
+      "methods": {
+        "humerus-l-anatomy-articular-head": "source-cartilage",
+        "humerus-l-anatomy-articular-condyle": "source-cartilage"
+      }
+    },
+    {
+      "id": "humerus-r",
+      "added": 2,
+      "anatomicalRegions": 30,
+      "methods": {
+        "humerus-r-anatomy-articular-head": "source-cartilage",
+        "humerus-r-anatomy-articular-condyle": "source-cartilage"
+      }
+    },
+    {
+      "id": "hyoid-bone",
+      "added": 0,
+      "anatomicalRegions": 3,
+      "methods": {}
+    },
+    {
+      "id": "lunate-bone-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "lunate-bone-l-anatomy-radial-facet": "source-cartilage",
+        "lunate-bone-l-anatomy-scaphoid-facet": "source-cartilage",
+        "lunate-bone-l-anatomy-triquetrum-facet": "source-cartilage",
+        "lunate-bone-l-anatomy-capitate-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "lunate-bone-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "lunate-bone-r-anatomy-radial-facet": "source-cartilage",
+        "lunate-bone-r-anatomy-scaphoid-facet": "source-cartilage",
+        "lunate-bone-r-anatomy-triquetrum-facet": "source-cartilage",
+        "lunate-bone-r-anatomy-capitate-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fourth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fourth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fourth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fourth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-first-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-first-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-first-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-first-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-first-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-first-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-first-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fifth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fifth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fifth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fifth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-hand-l",
+      "added": 1,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-third-finger-of-hand-l-base-of-phalanx-of-hand-1": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-l-body-of-phalanx-of-hand-3": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-l-head-of-phalanx-of-hand-0": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-l-trochlea-of-phalanx-of-hand-2": "source-cartilage",
+        "proximal-phalanx-of-third-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-hand-r",
+      "added": 1,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-third-finger-of-hand-r-base-of-phalanx-of-hand-1": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-r-body-of-phalanx-of-hand-2": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-r-head-of-phalanx-of-hand-0": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-hand-r-trochlea-of-phalanx-of-hand-3": "source-cartilage",
+        "proximal-phalanx-of-third-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-second-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-second-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-second-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-second-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-second-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-second-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-second-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-second-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-second-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-second-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-foot-l",
+      "added": 1,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-third-finger-of-foot-l-base-of-phalanx-of-foot-2": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-l-body-of-phalanx-of-foot-3": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-l-head-of-phalanx-of-foot-1": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-l-trochlea-of-phalanx-of-foot-0": "source-cartilage",
+        "proximal-phalanx-of-third-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-third-finger-of-foot-r",
+      "added": 1,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-third-finger-of-foot-r-base-of-phalanx-of-foot-2": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-r-body-of-phalanx-of-foot-3": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-r-head-of-phalanx-of-foot-1": "anatomical-axis-partition",
+        "proximal-phalanx-of-third-finger-of-foot-r-trochlea-of-phalanx-of-foot-0": "source-cartilage",
+        "proximal-phalanx-of-third-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fourth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fourth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fourth-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fourth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fourth-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fourth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fifth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fifth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "proximal-phalanx-of-fifth-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "proximal-phalanx-of-fifth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "proximal-phalanx-of-fifth-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "proximal-phalanx-of-fifth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "ethmoid-bone",
+      "added": 14,
+      "anatomicalRegions": 14,
+      "methods": {
+        "ethmoid-bone-anatomy-crista-galli": "atlas-local-contour",
+        "ethmoid-bone-anatomy-cribriform-plate": "atlas-local-contour",
+        "ethmoid-bone-anatomy-cribriform-foramina": "atlas-local-contour",
+        "ethmoid-bone-anatomy-perpendicular-plate": "atlas-local-contour",
+        "ethmoid-bone-anatomy-left-labyrinth": "atlas-local-contour",
+        "ethmoid-bone-anatomy-right-labyrinth": "atlas-local-contour",
+        "ethmoid-bone-anatomy-left-orbital": "atlas-local-contour",
+        "ethmoid-bone-anatomy-right-orbital": "atlas-local-contour",
+        "ethmoid-bone-anatomy-left-middle-concha": "atlas-local-contour",
+        "ethmoid-bone-anatomy-right-middle-concha": "atlas-local-contour",
+        "ethmoid-bone-anatomy-left-superior-concha": "atlas-local-contour",
+        "ethmoid-bone-anatomy-right-superior-concha": "atlas-local-contour",
+        "ethmoid-bone-anatomy-left-uncinate": "atlas-local-contour",
+        "ethmoid-bone-anatomy-right-uncinate": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "manubrium-of-sternum",
+      "added": 3,
+      "anatomicalRegions": 4,
+      "methods": {
+        "manubrium-of-sternum-anatomy-jugular-notch": "atlas-local-contour",
+        "manubrium-of-sternum-anatomy-first-costal-notch": "atlas-local-contour",
+        "manubrium-of-sternum-anatomy-second-costal-notch": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "sesamoid-bones-of-foot-l",
+      "added": 1,
+      "anatomicalRegions": 1,
+      "methods": {
+        "sesamoid-bones-of-foot-l-anatomy-articular-all": "source-cartilage"
+      }
+    },
+    {
+      "id": "sesamoid-bones-of-foot-r",
+      "added": 1,
+      "anatomicalRegions": 1,
+      "methods": {
+        "sesamoid-bones-of-foot-r-anatomy-articular-all": "source-cartilage"
+      }
+    },
+    {
+      "id": "zygomatic-bone-l",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "zygomatic-bone-l-anatomy-frontal-process": "atlas-local-contour",
+        "zygomatic-bone-l-anatomy-temporal-process": "atlas-local-contour",
+        "zygomatic-bone-l-anatomy-zygomaticofacial": "atlas-local-contour",
+        "zygomatic-bone-l-anatomy-zygomaticotemporal": "atlas-local-contour",
+        "zygomatic-bone-l-anatomy-zygomaticoorbital": "atlas-local-contour",
+        "zygomatic-bone-l-anatomy-orbital-surface": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "zygomatic-bone-r",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "zygomatic-bone-r-anatomy-frontal-process": "atlas-local-contour",
+        "zygomatic-bone-r-anatomy-temporal-process": "atlas-local-contour",
+        "zygomatic-bone-r-anatomy-zygomaticofacial": "atlas-local-contour",
+        "zygomatic-bone-r-anatomy-zygomaticotemporal": "atlas-local-contour",
+        "zygomatic-bone-r-anatomy-zygomaticoorbital": "atlas-local-contour",
+        "zygomatic-bone-r-anatomy-orbital-surface": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "lacrimal-bone-l",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "lacrimal-bone-l-anatomy-posterior-lacrimal-crest": "atlas-local-contour",
+        "lacrimal-bone-l-anatomy-lacrimal-groove": "atlas-local-contour",
+        "lacrimal-bone-l-anatomy-lacrimal-hamulus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "lacrimal-bone-r",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "lacrimal-bone-r-anatomy-posterior-lacrimal-crest": "atlas-local-contour",
+        "lacrimal-bone-r-anatomy-lacrimal-groove": "atlas-local-contour",
+        "lacrimal-bone-r-anatomy-lacrimal-hamulus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "vomer",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "vomer-anatomy-left-ala": "atlas-local-contour",
+        "vomer-anatomy-right-ala": "atlas-local-contour",
+        "vomer-anatomy-vomer-groove": "atlas-local-contour",
+        "vomer-anatomy-choanal-border": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fourth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fourth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fourth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fourth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fifth-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fifth-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fifth-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fifth-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-third-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-third-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-third-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-third-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-hand-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-second-finger-of-hand-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-second-finger-of-hand-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-hand-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-second-finger-of-hand-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-hand-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-second-finger-of-hand-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-second-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-second-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-second-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-second-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-second-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-second-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-third-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-third-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-third-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-third-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-third-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-third-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fourth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fourth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fourth-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fourth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fourth-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fourth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-foot-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fifth-finger-of-foot-l-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-l-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-l-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-l-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fifth-finger-of-foot-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "middle-phalanx-of-fifth-finger-of-foot-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "middle-phalanx-of-fifth-finger-of-foot-r-anatomy-base": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-r-anatomy-shaft": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-r-anatomy-head": "anatomical-axis-partition",
+        "middle-phalanx-of-fifth-finger-of-foot-r-anatomy-head-joint": "source-cartilage",
+        "middle-phalanx-of-fifth-finger-of-foot-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "stapes-l",
+      "added": 0,
+      "anatomicalRegions": 4,
+      "methods": {}
+    },
+    {
+      "id": "stapes-r",
+      "added": 0,
+      "anatomicalRegions": 4,
+      "methods": {}
+    },
+    {
+      "id": "hip-bone-l",
+      "added": 0,
+      "anatomicalRegions": 51,
+      "methods": {
+        "hip-bone-l-lunate-surface-14": "source-cartilage",
+        "hip-bone-l-auricular-surface-of-ilium-22": "source-cartilage",
+        "hip-bone-l-symphysial-surface-of-pubis-28": "source-cartilage"
+      }
+    },
+    {
+      "id": "hip-bone-r",
+      "added": 0,
+      "anatomicalRegions": 51,
+      "methods": {
+        "hip-bone-r-lunate-surface-19": "source-cartilage",
+        "hip-bone-r-auricular-surface-of-ilium-43": "source-cartilage",
+        "hip-bone-r-symphysial-surface-of-pubis-30": "source-cartilage"
+      }
+    },
+    {
+      "id": "body-of-sternum",
+      "added": 2,
+      "anatomicalRegions": 4,
+      "methods": {
+        "body-of-sternum-anatomy-xiphoid-junction": "atlas-local-contour",
+        "body-of-sternum-anatomy-transverse-lines": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "parietal-bone-l",
+      "added": 15,
+      "anatomicalRegions": 15,
+      "methods": {
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-occipital-angle-of-parietal-bone-0": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-frontal-angle-of-parietal-bone-1": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-squamosal-border-of-parietal-bone-2": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-sphenoidal-angle-of-parietal-bone-3": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-superior-temporal-line-4": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-parietal-foramen-5": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-external-surface-of-parietal-bone-6": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-occipital-border-of-parietal-bone-7": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-sagittal-border-of-parietal-bone-8": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-frontal-border-of-parietal-bone-9": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-parietal-eminence-10": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-mastoid-angle-of-parietal-bone-11": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-groove-for-middle-meningeal-artery-12": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-internal-surface-of-parietal-bone-13": "homologous-atlas-transfer",
+        "parietal-bone-l-anatomy-homolog-parietal-bone-r-inferior-temporal-line-14": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "parietal-bone-r",
+      "added": 0,
+      "anatomicalRegions": 15,
+      "methods": {}
+    },
+    {
+      "id": "trapezoid-bone-l",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "trapezoid-bone-l-anatomy-scaphoid-facet": "source-cartilage",
+        "trapezoid-bone-l-anatomy-trapezium-facet": "source-cartilage",
+        "trapezoid-bone-l-anatomy-capitate-facet": "source-cartilage",
+        "trapezoid-bone-l-anatomy-metacarpal-II-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "trapezoid-bone-r",
+      "added": 4,
+      "anatomicalRegions": 4,
+      "methods": {
+        "trapezoid-bone-r-anatomy-scaphoid-facet": "source-cartilage",
+        "trapezoid-bone-r-anatomy-trapezium-facet": "source-cartilage",
+        "trapezoid-bone-r-anatomy-capitate-facet": "source-cartilage",
+        "trapezoid-bone-r-anatomy-metacarpal-II-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "triquetrum-bone-l",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "triquetrum-bone-l-anatomy-lunate-facet": "source-cartilage",
+        "triquetrum-bone-l-anatomy-hamate-facet": "source-cartilage",
+        "triquetrum-bone-l-anatomy-pisiform-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "triquetrum-bone-r",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "triquetrum-bone-r-anatomy-lunate-facet": "source-cartilage",
+        "triquetrum-bone-r-anatomy-hamate-facet": "source-cartilage",
+        "triquetrum-bone-r-anatomy-pisiform-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "vertebra-t1",
+      "added": 18,
+      "anatomicalRegions": 19,
+      "methods": {
+        "vertebra-t1-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t1-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t1-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t1-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-l1",
+      "added": 21,
+      "anatomicalRegions": 21,
+      "methods": {
+        "vertebra-l1-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-lateral-part-of-transverse-process-9": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-homolog-vertebra-l3-costal-part-of-transverse-process-10": "bilateral-atlas-contour",
+        "vertebra-l1-anatomy-mammillary--1": "atlas-local-contour",
+        "vertebra-l1-anatomy-accessory--1": "atlas-local-contour",
+        "vertebra-l1-anatomy-mammillary-1": "atlas-local-contour",
+        "vertebra-l1-anatomy-accessory-1": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "first-metacarpal-bone-l",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "first-metacarpal-bone-l-anatomy-base": "anatomical-axis-partition",
+        "first-metacarpal-bone-l-anatomy-shaft": "anatomical-axis-partition",
+        "first-metacarpal-bone-l-anatomy-head": "anatomical-axis-partition",
+        "first-metacarpal-bone-l-anatomy-neck": "anatomical-axis-partition",
+        "first-metacarpal-bone-l-anatomy-head-joint": "source-cartilage",
+        "first-metacarpal-bone-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "first-metacarpal-bone-r",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "first-metacarpal-bone-r-anatomy-base": "anatomical-axis-partition",
+        "first-metacarpal-bone-r-anatomy-shaft": "anatomical-axis-partition",
+        "first-metacarpal-bone-r-anatomy-head": "anatomical-axis-partition",
+        "first-metacarpal-bone-r-anatomy-neck": "anatomical-axis-partition",
+        "first-metacarpal-bone-r-anatomy-head-joint": "source-cartilage",
+        "first-metacarpal-bone-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "first-rib-l",
+      "added": 9,
+      "anatomicalRegions": 9,
+      "methods": {
+        "first-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "first-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "first-rib-l-anatomy-head-facet": "source-cartilage",
+        "first-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "first-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "first-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "first-rib-l-anatomy-scalene": "atlas-local-contour",
+        "first-rib-l-anatomy-artery-groove": "atlas-local-contour",
+        "first-rib-l-anatomy-vein-groove": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "first-rib-r",
+      "added": 9,
+      "anatomicalRegions": 9,
+      "methods": {
+        "first-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "first-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "first-rib-r-anatomy-head-facet": "source-cartilage",
+        "first-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "first-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "first-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "first-rib-r-anatomy-scalene": "atlas-local-contour",
+        "first-rib-r-anatomy-artery-groove": "atlas-local-contour",
+        "first-rib-r-anatomy-vein-groove": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "vertebra-t2",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t2-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t2-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t2-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t2-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-l2",
+      "added": 21,
+      "anatomicalRegions": 21,
+      "methods": {
+        "vertebra-l2-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-lateral-part-of-transverse-process-9": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-homolog-vertebra-l3-costal-part-of-transverse-process-10": "bilateral-atlas-contour",
+        "vertebra-l2-anatomy-mammillary--1": "atlas-local-contour",
+        "vertebra-l2-anatomy-accessory--1": "atlas-local-contour",
+        "vertebra-l2-anatomy-mammillary-1": "atlas-local-contour",
+        "vertebra-l2-anatomy-accessory-1": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "second-metacarpal-bone-l",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "second-metacarpal-bone-l-anatomy-base": "anatomical-axis-partition",
+        "second-metacarpal-bone-l-anatomy-shaft": "anatomical-axis-partition",
+        "second-metacarpal-bone-l-anatomy-head": "anatomical-axis-partition",
+        "second-metacarpal-bone-l-anatomy-neck": "anatomical-axis-partition",
+        "second-metacarpal-bone-l-anatomy-head-joint": "source-cartilage",
+        "second-metacarpal-bone-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "second-metacarpal-bone-r",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "second-metacarpal-bone-r-anatomy-base": "anatomical-axis-partition",
+        "second-metacarpal-bone-r-anatomy-shaft": "anatomical-axis-partition",
+        "second-metacarpal-bone-r-anatomy-head": "anatomical-axis-partition",
+        "second-metacarpal-bone-r-anatomy-neck": "anatomical-axis-partition",
+        "second-metacarpal-bone-r-anatomy-head-joint": "source-cartilage",
+        "second-metacarpal-bone-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "second-rib-l",
+      "added": 11,
+      "anatomicalRegions": 11,
+      "methods": {
+        "second-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer",
+        "second-rib-l-anatomy-serratus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "second-rib-r",
+      "added": 11,
+      "anatomicalRegions": 11,
+      "methods": {
+        "second-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer",
+        "second-rib-r-anatomy-serratus": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "vertebra-t3",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t3-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t3-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t3-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t3-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-l3",
+      "added": 4,
+      "anatomicalRegions": 23,
+      "methods": {
+        "vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-l3-anatomy-mammillary--1": "atlas-local-contour",
+        "vertebra-l3-anatomy-accessory--1": "atlas-local-contour",
+        "vertebra-l3-anatomy-mammillary-1": "atlas-local-contour",
+        "vertebra-l3-anatomy-accessory-1": "atlas-local-contour",
+        "vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-l3-lateral-part-of-transverse-process-9": "bilateral-atlas-contour",
+        "vertebra-l3-costal-part-of-transverse-process-10": "bilateral-atlas-contour",
+        "vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "third-metacarpal-bone-l",
+      "added": 3,
+      "anatomicalRegions": 7,
+      "methods": {
+        "third-metacarpal-bone-l-metacarpal-base-2": "anatomical-axis-partition",
+        "third-metacarpal-bone-l-body-of-metacarpal-bone-3": "anatomical-axis-partition",
+        "third-metacarpal-bone-l-head-of-metacarpal-bone-1": "anatomical-axis-partition",
+        "third-metacarpal-bone-l-anatomy-neck": "anatomical-axis-partition",
+        "third-metacarpal-bone-l-anatomy-head-joint": "source-cartilage",
+        "third-metacarpal-bone-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "third-metacarpal-bone-r",
+      "added": 3,
+      "anatomicalRegions": 7,
+      "methods": {
+        "third-metacarpal-bone-r-metacarpal-base-1": "anatomical-axis-partition",
+        "third-metacarpal-bone-r-body-of-metacarpal-bone-2": "anatomical-axis-partition",
+        "third-metacarpal-bone-r-head-of-metacarpal-bone-3": "anatomical-axis-partition",
+        "third-metacarpal-bone-r-anatomy-neck": "anatomical-axis-partition",
+        "third-metacarpal-bone-r-anatomy-head-joint": "source-cartilage",
+        "third-metacarpal-bone-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "third-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "third-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "third-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "third-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "third-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "third-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-c3",
+      "added": 20,
+      "anatomicalRegions": 20,
+      "methods": {
+        "vertebra-c3-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-c3-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-groove-for-spinal-nerve-0": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "vertebra-c3-anatomy-homolog-vertebra-c4-uncinate-process-of-vertebra-4": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t4",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t4-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t4-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t4-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t4-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-l4",
+      "added": 21,
+      "anatomicalRegions": 21,
+      "methods": {
+        "vertebra-l4-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-lateral-part-of-transverse-process-9": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-homolog-vertebra-l3-costal-part-of-transverse-process-10": "bilateral-atlas-contour",
+        "vertebra-l4-anatomy-mammillary--1": "atlas-local-contour",
+        "vertebra-l4-anatomy-accessory--1": "atlas-local-contour",
+        "vertebra-l4-anatomy-mammillary-1": "atlas-local-contour",
+        "vertebra-l4-anatomy-accessory-1": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "fourth-metacarpal-bone-l",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "fourth-metacarpal-bone-l-anatomy-base": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-l-anatomy-shaft": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-l-anatomy-head": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-l-anatomy-neck": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-l-anatomy-head-joint": "source-cartilage",
+        "fourth-metacarpal-bone-l-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "fourth-metacarpal-bone-r",
+      "added": 6,
+      "anatomicalRegions": 6,
+      "methods": {
+        "fourth-metacarpal-bone-r-anatomy-base": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-r-anatomy-shaft": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-r-anatomy-head": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-r-anatomy-neck": "anatomical-axis-partition",
+        "fourth-metacarpal-bone-r-anatomy-head-joint": "source-cartilage",
+        "fourth-metacarpal-bone-r-anatomy-base-joint": "source-cartilage"
+      }
+    },
+    {
+      "id": "fourth-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "fourth-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "fourth-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "fourth-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-c4",
+      "added": 15,
+      "anatomicalRegions": 21,
+      "methods": {
+        "vertebra-c4-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-c4-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-c4-groove-for-spinal-nerve-0": "bilateral-atlas-contour",
+        "vertebra-c4-posterior-tubercle-of-transverse-process-1": "bilateral-atlas-contour",
+        "vertebra-c4-anterior-tubercle-of-transverse-process-2": "bilateral-atlas-contour",
+        "vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-t9",
+      "added": 17,
+      "anatomicalRegions": 17,
+      "methods": {
+        "vertebra-t9-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t9-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t9-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t9-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "ninth-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "ninth-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "ninth-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "ninth-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t5",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t5-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t5-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t5-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t5-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "vertebra-l5",
+      "added": 21,
+      "anatomicalRegions": 21,
+      "methods": {
+        "vertebra-l5-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-lateral-part-of-transverse-process-9": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-homolog-vertebra-l3-costal-part-of-transverse-process-10": "bilateral-atlas-contour",
+        "vertebra-l5-anatomy-mammillary--1": "atlas-local-contour",
+        "vertebra-l5-anatomy-accessory--1": "atlas-local-contour",
+        "vertebra-l5-anatomy-mammillary-1": "atlas-local-contour",
+        "vertebra-l5-anatomy-accessory-1": "atlas-local-contour"
+      }
+    },
+    {
+      "id": "fifth-metacarpal-bone-l",
+      "added": 7,
+      "anatomicalRegions": 7,
+      "methods": {
+        "fifth-metacarpal-bone-l-anatomy-base": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-l-anatomy-shaft": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-l-anatomy-head": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-l-anatomy-neck": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-l-anatomy-head-joint": "source-cartilage",
+        "fifth-metacarpal-bone-l-anatomy-base-joint": "source-cartilage",
+        "fifth-metacarpal-bone-l-anatomy-tuberosity": "anatomical-axis-partition"
+      }
+    },
+    {
+      "id": "fifth-metacarpal-bone-r",
+      "added": 7,
+      "anatomicalRegions": 7,
+      "methods": {
+        "fifth-metacarpal-bone-r-anatomy-base": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-r-anatomy-shaft": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-r-anatomy-head": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-r-anatomy-neck": "anatomical-axis-partition",
+        "fifth-metacarpal-bone-r-anatomy-head-joint": "source-cartilage",
+        "fifth-metacarpal-bone-r-anatomy-base-joint": "source-cartilage",
+        "fifth-metacarpal-bone-r-anatomy-tuberosity": "anatomical-axis-partition"
+      }
+    },
+    {
+      "id": "fifth-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "fifth-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "fifth-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "fifth-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-c5",
+      "added": 20,
+      "anatomicalRegions": 20,
+      "methods": {
+        "vertebra-c5-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-c5-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-groove-for-spinal-nerve-0": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "vertebra-c5-anatomy-homolog-vertebra-c4-uncinate-process-of-vertebra-4": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t6",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t6-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t6-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t6-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t6-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "sixth-rib-l",
+      "added": 0,
+      "anatomicalRegions": 11,
+      "methods": {}
+    },
+    {
+      "id": "sixth-rib-r",
+      "added": 0,
+      "anatomicalRegions": 11,
+      "methods": {}
+    },
+    {
+      "id": "vertebra-c6",
+      "added": 20,
+      "anatomicalRegions": 20,
+      "methods": {
+        "vertebra-c6-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-c6-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-groove-for-spinal-nerve-0": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "vertebra-c6-anatomy-homolog-vertebra-c4-uncinate-process-of-vertebra-4": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t7",
+      "added": 18,
+      "anatomicalRegions": 18,
+      "methods": {
+        "vertebra-t7-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t7-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t7-anatomy-homolog-vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t7-anatomy-homolog-vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "seventh-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "seventh-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "seventh-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "seventh-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-c7",
+      "added": 20,
+      "anatomicalRegions": 20,
+      "methods": {
+        "vertebra-c7-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-c7-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-groove-for-spinal-nerve-0": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-posterior-tubercle-of-transverse-process-1": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-anterior-tubercle-of-transverse-process-2": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-foramen-transversarium-3": "bilateral-atlas-contour",
+        "vertebra-c7-anatomy-homolog-vertebra-c4-uncinate-process-of-vertebra-4": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t8",
+      "added": 15,
+      "anatomicalRegions": 19,
+      "methods": {
+        "vertebra-t8-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t8-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t8-superior-costal-facet-1": "bilateral-atlas-contour",
+        "vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t8-inferior-costal-facet-3": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "eighth-rib-l",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-head-of-rib-0": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-crest-of-neck-of-rib-4": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-articular-facets-of-head-of-rib-9": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "eighth-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "eighth-rib-r",
+      "added": 10,
+      "anatomicalRegions": 10,
+      "methods": {
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-articular-facets-of-head-of-rib-2": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-head-of-rib-4": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-crest-of-neck-of-rib-9": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "eighth-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t10",
+      "added": 17,
+      "anatomicalRegions": 17,
+      "methods": {
+        "vertebra-t10-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t10-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t10-anatomy-homolog-vertebra-t8-transverse-costal-facet-2": "bilateral-atlas-contour",
+        "vertebra-t10-anatomy-costal-facet": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "tenth-rib-l",
+      "added": 7,
+      "anatomicalRegions": 7,
+      "methods": {
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-articular-facet-of-tubercle-of-rib-8": "homologous-atlas-transfer",
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-neck-of-rib-10": "homologous-atlas-transfer",
+        "tenth-rib-l-anatomy-head-facet": "source-cartilage",
+        "tenth-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "tenth-rib-r",
+      "added": 7,
+      "anatomicalRegions": 7,
+      "methods": {
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-tubercle-of-rib-1": "homologous-atlas-transfer",
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-articular-facet-of-tubercle-of-rib-5": "homologous-atlas-transfer",
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-neck-of-rib-6": "homologous-atlas-transfer",
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "tenth-rib-r-anatomy-head-facet": "source-cartilage",
+        "tenth-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t11",
+      "added": 16,
+      "anatomicalRegions": 16,
+      "methods": {
+        "vertebra-t11-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t11-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t11-anatomy-costal-facet": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "eleventh-rib-l",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "eleventh-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "eleventh-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "eleventh-rib-l-anatomy-head-facet": "source-cartilage",
+        "eleventh-rib-l-anatomy-homolog-sixth-rib-l-costal-groove-6": "homologous-atlas-transfer",
+        "eleventh-rib-l-anatomy-homolog-sixth-rib-l-angle-of-rib-1": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "eleventh-rib-r",
+      "added": 5,
+      "anatomicalRegions": 5,
+      "methods": {
+        "eleventh-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "eleventh-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "eleventh-rib-r-anatomy-head-facet": "source-cartilage",
+        "eleventh-rib-r-anatomy-homolog-sixth-rib-r-costal-groove-8": "homologous-atlas-transfer",
+        "eleventh-rib-r-anatomy-homolog-sixth-rib-r-angle-of-rib-0": "homologous-atlas-transfer"
+      }
+    },
+    {
+      "id": "vertebra-t12",
+      "added": 16,
+      "anatomicalRegions": 16,
+      "methods": {
+        "vertebra-t12-anatomy-homolog-vertebra-l3-lamina-of-vertebral-arch-1": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-superior-articular-facet-of-vertebra-2": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-superior-vertebral-notch-3": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-vertebral-foramen-4": "homologous-atlas-transfer",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-spinous-process-5": "anatomical-partition",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-pars-interarticularis-of-vertebral-arch-6": "homologous-atlas-transfer",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-inferior-articular-facet-of-vertebra-7": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-pedicle-of-vertebral-arch-8": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-inferior-vertebral-notch-11": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-intervertebral-surface-12": "homologous-atlas-transfer",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-transverse-process-13": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-superior-articular-process-of-vertebra-15": "bilateral-atlas-contour",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-vertebral-arch-16": "homologous-atlas-transfer",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-vertebral-body-17": "anatomical-partition",
+        "vertebra-t12-anatomy-homolog-vertebra-l3-annular-epiphysis-18": "homologous-atlas-transfer",
+        "vertebra-t12-anatomy-costal-facet": "bilateral-atlas-contour"
+      }
+    },
+    {
+      "id": "twelfth-rib-l",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "twelfth-rib-l-anatomy-homolog-sixth-rib-l-body-of-rib-2": "homologous-atlas-transfer",
+        "twelfth-rib-l-anatomy-homolog-sixth-rib-l-head-of-rib-7": "homologous-atlas-transfer",
+        "twelfth-rib-l-anatomy-head-facet": "source-cartilage"
+      }
+    },
+    {
+      "id": "twelfth-rib-r",
+      "added": 3,
+      "anatomicalRegions": 3,
+      "methods": {
+        "twelfth-rib-r-anatomy-homolog-sixth-rib-r-body-of-rib-7": "homologous-atlas-transfer",
+        "twelfth-rib-r-anatomy-homolog-sixth-rib-r-head-of-rib-10": "homologous-atlas-transfer",
+        "twelfth-rib-r-anatomy-head-facet": "source-cartilage"
+      }
+    }
+  ]
+}

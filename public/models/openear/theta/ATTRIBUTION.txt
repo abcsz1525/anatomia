@@ -1,0 +1,30 @@
+OpenEar THETA — adapted locally for Anatomia.
+
+Source: The OpenEar library of 3D models of the human temporal bone based on
+computed tomography and micro-slicing, version 2 (2019).
+Authors: Daniel Manuel Sieber, Peter Erfurt, Samuel John,
+Gabriel Ribeiro dos Santos, Daniel Schurzig, Mads Sølvsten Sørensen,
+Thomas Lenarz.
+Dataset: https://doi.org/10.5281/zenodo.1473724
+Paper: https://doi.org/10.1038/sdata.2018.297
+License: Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/
+No endorsement by the source authors is implied.
+
+Changes: converted original PLY coordinates to a common normalized frame;
+bone surface simplified by vertex clustering on a 0.4 mm grid; averaged normals;
+internal segmented meshes converted without face simplification.
+Russian labels, Latin labels, display colours and approximate canal-wall masks
+were added locally. The masks select bone faces close to source segmentations;
+they are not independently validated anatomical boundaries.
+The specimen includes preparation cuts and adjacent fragments. It must not be
+represented as a complete isolated temporal bone. Original source scan axes
+are retained; they are not established anatomical display directions.
+THETA is identified as left in the derivative supplier catalogue:
+https://augment.surgery/products/theta-left-openear-3d-temporal-bones
+This is not an independent anatomical sidedness verification.
+
+Only two approximate wall regions have been transferred. The remaining
+landmarks remain on the original complete-bone model.
+Nerve, vessel and canal-volume meshes are not bone walls.
+This adaptation is an educational prototype, not a validated clinical model.

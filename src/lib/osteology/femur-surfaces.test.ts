@@ -8,14 +8,14 @@ import coreStress from '../../../content/latin-stress.json';
 import boneStress from '../../../content/bone-latin-stress.json';
 
 describe('bundled femur surfaces',()=>{
-  for(const side of ['l','r'])it(`loads all 28 regions against exact geometry: ${side}`,()=>{
+  for(const side of ['l','r'])it(`loads all 35 regions against exact geometry: ${side}`,()=>{
     const base=`public/models/bone-details/v1/femur-${side}`;
     const detail:BoneDetail=JSON.parse(readFileSync(`${base}.json`,'utf8'));
     const bytes=readFileSync(`${base}.bin`);
     expect(createHash('sha256').update(bytes).digest('hex')).toBe(detail.regionHash);
     const data=JSON.parse(readFileSync(`${base}.surfaces.json`,'utf8'));
     const regions=parseRegions(data,detail.id,detail.regionHash!,detail.vertexCount/3,detail.landmarks.map(l=>l.id));
-    expect(Object.keys(regions)).toHaveLength(28);
+    expect(Object.keys(regions)).toHaveLength(35);
     const positions=new Float32Array(bytes.buffer,bytes.byteOffset,detail.vertexCount*3);
     const byName=(name:string)=>regions[detail.landmarks.find(l=>l.en===name)!.id];
     const mean=(faces:number[],axis:number)=>faces.reduce((s,f)=>s+(positions[f*9+axis]+positions[f*9+3+axis]+positions[f*9+6+axis])/3,0)/faces.length;

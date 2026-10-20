@@ -60,10 +60,13 @@ export function PartCard({
         </p>
         <p className="text-[12px] text-studio-muted" data-testid="part-en">{names.en}</p>
         {names.topicRu && <p className="text-[11px] text-studio-muted" data-testid="part-topic">{names.topicRu}</p>}
+        {partId.startsWith("ZF-") && (
+          <p className="text-[11px] text-studio-muted">Z-Anatomy · приблизительное совмещение с моделью головы.</p>
+        )}
         {Object.hasOwn(boneDetailLinks, partId) && (
           <Link href={`/osteology?part=${encodeURIComponent(partId)}`} data-testid="bone-details-link"
             className="flex min-h-11 items-center rounded-lg border border-studio-border px-3 text-sm font-medium text-studio-primary hover:bg-white/70">
-            Строение кости · 3D-метки <ChevronRightIcon size={14} className="ml-auto" />
+            Поверхности и отверстия · 3D <ChevronRightIcon size={14} className="ml-auto" />
           </Link>
         )}
         {/* у непереведённой структуры нет ни латыни, ни русского — карточек по ней не собрать */}

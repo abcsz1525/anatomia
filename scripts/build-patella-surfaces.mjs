@@ -1,3 +1,4 @@
+import { approximateSurfaces } from './approximate-surfaces.mjs';
 /** Patella-specific atlas-referenced contours; see content/patella-surfaces.md. */
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -72,3 +73,5 @@ const profiles=[];for(let y=-.48;y<.95;y+=.01){const pts=profileAt(pos,y).map(p=
 fs.writeFileSync('../.anatomy-source/patella-surface-report.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 
 const index=JSON.parse(fs.readFileSync(dir+'/index.json'));for(const bone of index)if(['patella-l','patella-r'].includes(bone.id)){const d=JSON.parse(fs.readFileSync(dir+'/'+bone.id+'.json'));bone.landmarkCount=d.landmarks.length;bone.searchText=d.landmarks.map(l=>l.ru+' '+l.la+' '+l.en).join(' ');}fs.writeFileSync(dir+'/index.json',JSON.stringify(index));
+
+approximateSurfaces('patella');

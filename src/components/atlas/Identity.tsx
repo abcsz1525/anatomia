@@ -26,7 +26,7 @@ export function Identity({ partCount }: { partCount?: number }) {
             <span className="px-1.5 text-neutral-400">·</span>
           </>
         )}
-        BodyParts3D
+        BodyParts3D + Z-Anatomy
       </p>
       <nav
         className="pointer-events-auto mt-3 flex gap-3 text-[12px] text-studio-muted"

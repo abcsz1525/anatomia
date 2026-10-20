@@ -1,0 +1,274 @@
+{
+  "status": "approximate-educational-prototype",
+  "baseGeometrySha256": "1999afa9762cbbf7a8ceaef9465a9d5684cad2f2fb78a9fbe57729617576658a",
+  "geometrySha256": "98aaaacd680728e52aaf6ca91aad971cf4eb8c5f51a1940547d7b2e7fa36cce2",
+  "facesBefore": 14094,
+  "facesAfter": 62298,
+  "watertight": true,
+  "cuts": [
+    {
+      "suffix": "anatomy-external-acoustic",
+      "start": [
+        0.46,
+        -0.145,
+        0.1
+      ],
+      "end": [
+        0.15,
+        -0.145,
+        0.1
+      ],
+      "radius": 0.062,
+      "removedVolume": 0.001279597117198883
+    },
+    {
+      "suffix": "anatomy-carotid-canal",
+      "start": [
+        -0.092,
+        -0.4,
+        0.21
+      ],
+      "end": [
+        -0.092,
+        -0.15,
+        0.21
+      ],
+      "radius": 0.04,
+      "removedVolume": 0.0002468963985696737
+    },
+    {
+      "suffix": "anatomy-stylomastoid",
+      "start": [
+        0.14,
+        -0.55,
+        -0.055
+      ],
+      "end": [
+        0.14,
+        -0.3,
+        -0.055
+      ],
+      "radius": 0.022,
+      "removedVolume": 0.0001969065311979712
+    },
+    {
+      "suffix": "anatomy-internal-acoustic",
+      "start": [
+        -0.41501854106792607,
+        -0.0711152114994896,
+        -0.12762395758238076
+      ],
+      "end": [
+        -0.3787796904674043,
+        -0.17190372758188927,
+        -0.05394614047939563
+      ],
+      "radius": 0.045,
+      "removedVolume": 0.0005270463365493194
+    },
+    {
+      "suffix": "atlas-gap-inner-carotid",
+      "start": [
+        -0.6229908054186327,
+        -0.13852536874203455,
+        0.22404372807917428
+      ],
+      "end": [
+        -0.5901056738591954,
+        -0.06751304553731985,
+        0.1617876594963635
+      ],
+      "radius": 0.026,
+      "removedVolume": 8.74507092171184e-05
+    },
+    {
+      "suffix": "anatomy-petrosal-hiatus",
+      "start": [
+        -0.36678583164629763,
+        0.004110287283503166,
+        0.13282545421842054
+      ],
+      "end": [
+        -0.37887556448026605,
+        -0.03851778977865246,
+        0.07481092667586281
+      ],
+      "radius": 0.017,
+      "removedVolume": 2.5080041208658255e-05
+    },
+    {
+      "suffix": "atlas-gap-lesser-petrosal",
+      "start": [
+        -0.27129109213740155,
+        -0.024979878611880727,
+        0.12725638988006105
+      ],
+      "end": [
+        -0.28696402903388296,
+        -0.07150042252935578,
+        0.07735450572063089
+      ],
+      "radius": 0.014,
+      "removedVolume": 1.5360660734986542e-05
+    },
+    {
+      "suffix": "atlas-gap-mastoid-foramen",
+      "start": [
+        0.13589713587809482,
+        -0.16486826177223307,
+        -0.8918448349001122
+      ],
+      "end": [
+        0.2016726783202186,
+        -0.19679107994761355,
+        -0.8311858562062209
+      ],
+      "radius": 0.022,
+      "removedVolume": 7.588297318250614e-05
+    },
+    {
+      "suffix": "recon-vestibular-aqueduct",
+      "start": [
+        -0.3404484396733756,
+        -0.1333377736641028,
+        -0.23005327731501857
+      ],
+      "end": [
+        -0.29456767367536996,
+        -0.16533796386237803,
+        -0.18314972586408415
+      ],
+      "radius": 0.014,
+      "removedVolume": 1.7240169730370347e-05
+    },
+    {
+      "suffix": "recon-cochlear-canaliculus",
+      "start": [
+        -0.23213860412458223,
+        -0.3053228459204145,
+        -0.048686709286632004
+      ],
+      "end": [
+        -0.27111083319717855,
+        -0.25295388614415,
+        -0.07395838143283294
+      ],
+      "radius": 0.012,
+      "removedVolume": 1.1028395735412921e-05
+    },
+    {
+      "suffix": "recon-tympanic-canaliculus",
+      "start": [
+        -0.1526927268560728,
+        -0.3007970357821444,
+        0.08902749397777376
+      ],
+      "end": [
+        -0.16588364736649028,
+        -0.24129437833269995,
+        0.05459737093788437
+      ],
+      "radius": 0.012,
+      "removedVolume": 1.1748983698045556e-05
+    },
+    {
+      "suffix": "recon-mastoid-canaliculus",
+      "start": [
+        -0.0784940292034455,
+        -0.3433302741072723,
+        -0.13628832137922373
+      ],
+      "end": [
+        -0.06336645262433539,
+        -0.27773090990774163,
+        -0.15546851542048654
+      ],
+      "radius": 0.012,
+      "removedVolume": 1.5093437372160068e-05
+    },
+    {
+      "suffix": "recon-musculotubal-tensor",
+      "start": [
+        -0.4756676015388014,
+        -0.0734641679266516,
+        0.22628933948973334
+      ],
+      "end": [
+        -0.5226177285322502,
+        -0.12525889227214448,
+        0.17793655151144366
+      ],
+      "radius": 0.014,
+      "removedVolume": 2.450413161336762e-05
+    },
+    {
+      "suffix": "recon-musculotubal-tube",
+      "start": [
+        -0.4675381241053229,
+        -0.137993560829203,
+        0.2622881415717435
+      ],
+      "end": [
+        -0.5293005483022902,
+        -0.13974226282287777,
+        0.19012620563144897
+      ],
+      "radius": 0.02,
+      "removedVolume": 5.852508474779583e-05
+    },
+    {
+      "suffix": "recon-chorda-tympani",
+      "start": [
+        0.07637400347634048,
+        -0.2084005398090415,
+        0.28752671783579126
+      ],
+      "end": [
+        0.048376459811887075,
+        -0.15369046533359415,
+        0.3210370938355921
+      ],
+      "radius": 0.01,
+      "removedVolume": 7.841370934735803e-06
+    }
+  ],
+  "regions": {
+    "temporal-bone-l-mastoid-process-0": 4978,
+    "temporal-bone-l-styloid-process-of-temporal-bone-1": 305,
+    "temporal-bone-l-squamous-part-of-temporal-bone-3": 3276,
+    "temporal-bone-l-tympanic-part-of-temporal-bone-8": 109,
+    "temporal-bone-l-mastoid-notch-10": 94,
+    "temporal-bone-l-anatomy-zygomatic-process": 736,
+    "temporal-bone-l-anatomy-mandibular-fossa": 375,
+    "temporal-bone-l-anatomy-articular-tubercle": 323,
+    "temporal-bone-l-anatomy-external-acoustic": 612,
+    "temporal-bone-l-anatomy-carotid-canal": 381,
+    "temporal-bone-l-anatomy-stylomastoid": 345,
+    "temporal-bone-l-anatomy-internal-acoustic": 549,
+    "temporal-bone-l-atlas-gap-inner-carotid": 826,
+    "temporal-bone-l-anatomy-petrosal-hiatus": 444,
+    "temporal-bone-l-atlas-gap-lesser-petrosal": 415,
+    "temporal-bone-l-atlas-gap-mastoid-foramen": 380,
+    "temporal-bone-l-recon-vestibular-aqueduct": 371,
+    "temporal-bone-l-recon-cochlear-canaliculus": 429,
+    "temporal-bone-l-recon-tympanic-canaliculus": 425,
+    "temporal-bone-l-recon-mastoid-canaliculus": 439,
+    "temporal-bone-l-recon-musculotubal-tensor": 131,
+    "temporal-bone-l-recon-musculotubal-tube": 1084,
+    "temporal-bone-l-recon-chorda-tympani": 356
+  },
+  "references": [
+    "https://www.anatomystandard.com/ossa-et-juncturae/cranium/os-temporale.html",
+    "https://www.anatomyatlases.org/atlasofanatomy/plate02/03ltemporalouter.shtml"
+  ],
+  "notReconstructed": [
+    "complete internal canals",
+    "middle and inner ear",
+    "mastoid air cells",
+    "complete facial canal",
+    "verified deep canal connectivity"
+  ],
+  "license": "CC BY-SA 4.0",
+  "note": "Atlas pages consulted as reference only, no atlas images or proprietary meshes included.",
+  "stage": 2
+}
