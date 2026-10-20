@@ -1,11 +1,12 @@
 "use client";
 import {useEffect,useMemo,useRef} from 'react';
-import {Canvas,useThree} from '@react-three/fiber';
+import {Canvas,events,useThree} from '@react-three/fiber';
 import {OrbitControls} from '@react-three/drei';
 import {BufferGeometry,BufferAttribute,CatmullRomCurve3,TubeGeometry,SphereGeometry,Box3,Vector3,Plane,DoubleSide} from 'three';
 import {mergeGeometries} from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import type {OrbitControls as ControlsType} from 'three-stdlib';
 import type {BoneLandmark,Point3} from '@/lib/osteology/types';
+import {visibleHit} from '@/lib/osteology/visible-hit';
 type Shape={points:Point3[];radius:number;shape?:'ellipsoid'|'mesh'|'compound';scale?:Point3;vertices?:number[];parts?:Shape[]};
 export type Canal=BoneLandmark & Shape & {color:string;bulbs?:Point3[];group?:'labyrinth'|'middle-ear'|'mastoid'|'ear-muscles'|'nerves';wall?:boolean};
 function makeGeometry(item:Shape):BufferGeometry{
@@ -17,14 +18,15 @@ function makeGeometry(item:Shape):BufferGeometry{
 type Props={buffer:ArrayBuffer;vertexCount:number;items:Canal[];selected:string|null;mode:'cut'|'transparent'|'isolated';offset:number;onSelect:(id:string)=>void};
 function Camera({items,selected,mode}:Pick<Props,'items'|'selected'|'mode'>){
  const ref=useRef<ControlsType>(null);const {camera,size}=useThree();
+ const focused=mode==='isolated'?selected:null;
  useEffect(()=>{
-  const item=mode==='isolated'?items.find(x=>x.id===selected):undefined;
+  const item=items.find(x=>x.id===focused);
   const center=new Vector3(-.1,-.1,0);let radius=1.1;
   if(item){const box=new Box3().setFromPoints(item.points.map(p=>new Vector3(...p)));box.getCenter(center);radius=box.getSize(new Vector3()).length()/2+(item.scale?Math.max(...item.scale):item.radius*2);}
   const halfFov=Math.atan(Math.tan(20*Math.PI/180)*Math.min(1,size.width/Math.max(size.height,1)));
   const distance=Math.max(.15,radius/Math.sin(halfFov)*1.15);
   camera.position.copy(center).addScaledVector(new Vector3(.55,.9,-.8).normalize(),distance);ref.current?.target.copy(center);ref.current?.update();
- },[camera,size.width,size.height,items,selected,mode]);
+ },[camera,size.width,size.height,items,focused]);
  return <OrbitControls ref={ref} makeDefault minDistance={.08} maxDistance={15}/>;
 }
 function Bone({buffer,vertexCount,mode,offset}:Props){
@@ -42,7 +44,7 @@ function Path({item,selected,onSelect}:{item:Canal;selected:boolean;onSelect:(id
  </group>;
 }
 export default function TemporalCanalScene(props:Props){
- return <Canvas camera={{position:[2,3,-3],fov:40}} onCreated={({gl})=>{gl.localClippingEnabled=true;}} dpr={[1,2]} style={{touchAction:'none'}}>
+ return <Canvas events={store=>({...events(store),filter:visibleHit})} camera={{position:[2,3,-3],fov:40}} onCreated={({gl})=>{gl.localClippingEnabled=true;}} dpr={[1,2]} style={{touchAction:'none'}}>
   <color attach="background" args={['#edf0f1']}/><ambientLight intensity={1.5}/><directionalLight position={[2,4,-3]} intensity={2}/>
   <Bone {...props}/>
   {props.items.filter(c=>!(props.selected?.startsWith('canal-nerve-')&&['canal-facial','canal-internal-acoustic','canal-chorda','canal-greater-petrosal'].includes(c.id))).filter(c=>!(props.selected?.startsWith('canal-muscle-tensor')&&c.id==='canal-tensor')).filter(c=>props.mode!=='isolated'||!props.selected||c.id===props.selected).map(c=><Path key={c.id} item={c} selected={props.selected===c.id} onSelect={props.onSelect}/>)}
